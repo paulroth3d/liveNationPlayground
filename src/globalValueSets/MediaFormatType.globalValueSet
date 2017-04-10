@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AAA</fullName>
+        <default>false</default>
+        <label>AAA</label>
+    </customValue>
+    <customValue>
+        <fullName>ABC</fullName>
+        <default>false</default>
+        <label>ABC</label>
+    </customValue>
+    <customValue>
+        <fullName>Adult Alternative</fullName>
+        <default>false</default>
+        <label>Adult Alternative</label>
+    </customValue>
+    <customValue>
+        <fullName>Adult Contemporary</fullName>
+        <default>false</default>
+        <label>Adult Contemporary</label>
+    </customValue>
+    <customValue>
+        <fullName>Adult Standards</fullName>
+        <default>false</default>
+        <label>Adult Standards</label>
+    </customValue>
+    <customValue>
+        <fullName>Alternative</fullName>
+        <default>false</default>
+        <label>Alternative</label>
+    </customValue>
+    <customValue>
+        <fullName>CHR</fullName>
+        <default>false</default>
+        <label>CHR</label>
+    </customValue>
+    <customValue>
+        <fullName>Classic Hits</fullName>
+        <default>false</default>
+        <label>Classic Hits</label>
+    </customValue>
+    <customValue>
+        <fullName>Classic Rock</fullName>
+        <default>false</default>
+        <label>Classic Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>Classical</fullName>
+        <default>false</default>
+        <label>Classical</label>
+    </customValue>
+    <customValue>
+        <fullName>College Paper</fullName>
+        <default>false</default>
+        <label>College Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>College Radio</fullName>
+        <default>false</default>
+        <label>College Radio</label>
+    </customValue>
+    <customValue>
+        <fullName>Contemporary Christian</fullName>
+        <default>false</default>
+        <label>Contemporary Christian</label>
+    </customValue>
+    <customValue>
+        <fullName>Country</fullName>
+        <default>false</default>
+        <label>Country</label>
+    </customValue>
+    <customValue>
+        <fullName>Dance - CHR</fullName>
+        <default>false</default>
+        <label>Dance - CHR</label>
+    </customValue>
+    <customValue>
+        <fullName>Format Not Available</fullName>
+        <default>false</default>
+        <label>Format Not Available</label>
+    </customValue>
+    <customValue>
+        <fullName>High School Paper</fullName>
+        <default>false</default>
+        <label>High School Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>Hot AC</fullName>
+        <default>false</default>
+        <label>Hot AC</label>
+    </customValue>
+    <customValue>
+        <fullName>Modern Rock</fullName>
+        <default>false</default>
+        <label>Modern Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>N/A</fullName>
+        <default>false</default>
+        <label>N/A</label>
+    </customValue>
+    <customValue>
+        <fullName>News/Talk</fullName>
+        <default>false</default>
+        <label>News/Talk</label>
+    </customValue>
+    <customValue>
+        <fullName>Oldies</fullName>
+        <default>false</default>
+        <label>Oldies</label>
+    </customValue>
+    <customValue>
+        <fullName>Online Publication</fullName>
+        <default>false</default>
+        <label>Online Publication</label>
+    </customValue>
+    <customValue>
+        <fullName>Outdoor</fullName>
+        <default>false</default>
+        <label>Outdoor</label>
+    </customValue>
+    <customValue>
+        <fullName>Print Daily</fullName>
+        <default>false</default>
+        <label>Print Daily</label>
+    </customValue>
+    <customValue>
+        <fullName>Print Monthly</fullName>
+        <default>false</default>
+        <label>Print Monthly</label>
+    </customValue>
+    <customValue>
+        <fullName>Print Weekly</fullName>
+        <default>false</default>
+        <label>Print Weekly</label>
+    </customValue>
+    <customValue>
+        <fullName>Print Bi-Weekly</fullName>
+        <default>false</default>
+        <label>Print Bi-Weekly</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Television</fullName>
+        <default>false</default>
+        <label>Public Television</label>
+    </customValue>
+    <customValue>
+        <fullName>Regional Mexican</fullName>
+        <default>false</default>
+        <label>Regional Mexican</label>
+    </customValue>
+    <customValue>
+        <fullName>Rock</fullName>
+        <default>false</default>
+        <label>Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>Romantica</fullName>
+        <default>false</default>
+        <label>Romantica</label>
+    </customValue>
+    <customValue>
+        <fullName>Soft AC</fullName>
+        <default>false</default>
+        <label>Soft AC</label>
+    </customValue>
+    <customValue>
+        <fullName>Spanish</fullName>
+        <default>false</default>
+        <label>Spanish</label>
+    </customValue>
+    <customValue>
+        <fullName>Spanish CHR</fullName>
+        <default>false</default>
+        <label>Spanish CHR</label>
+    </customValue>
+    <customValue>
+        <fullName>Sports</fullName>
+        <default>false</default>
+        <label>Sports</label>
+    </customValue>
+    <customValue>
+        <fullName>Television</fullName>
+        <default>false</default>
+        <label>Television</label>
+    </customValue>
+    <customValue>
+        <fullName>TV - Cable</fullName>
+        <default>false</default>
+        <label>TV - Cable</label>
+    </customValue>
+    <customValue>
+        <fullName>TV - Broadcast</fullName>
+        <default>false</default>
+        <label>TV - Broadcast</label>
+    </customValue>
+    <customValue>
+        <fullName>Undefined</fullName>
+        <default>false</default>
+        <label>Undefined</label>
+    </customValue>
+    <customValue>
+        <fullName>Urban AC</fullName>
+        <default>false</default>
+        <label>Urban AC</label>
+    </customValue>
+    <customValue>
+        <fullName>Urban Contemporary</fullName>
+        <default>false</default>
+        <label>Urban Contemporary</label>
+    </customValue>
+    <description>Types of music broadcast on media channels</description>
+    <masterLabel>Media Format Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

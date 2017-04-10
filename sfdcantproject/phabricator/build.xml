@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Phabricator Reports" basedir="." default="help"
+	xmlns:mm="http://com.modelmetrics"
+>
+	
+	<!-- List of @TODOs -->
+	
+	<property name="antlib" value="../antlib" />
+	
+	<!--
+	Defines task extensions for additional functionality in the ant scripts
+	antcontrib: provides additional logic and file handling capabilities
+	salesforce: provides salesforce integration
+	
+	notice the URI matching the xmlns defined above
+	-->
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="${antlib}/ant-contrib-1.0b3.jar" />
+		</classpath>
+	</taskdef>
+	
+	<taskdef resource="com/salesforce/sforce_ant.properties" uri="http://com.salesforce">
+		<classpath>
+			<pathelement location="${antlib}/ant-salesforce.jar" />
+		</classpath>
+	</taskdef>
+	
+	<taskdef resource="com/modelmetrics/Ant_Lib.properties" uri="http://com.modelmetrics">
+		<classpath>
+			<pathelement location="${antlib}/ant-salesforce-mm.jar" />
+		</classpath>
+	</taskdef>
+	
+	<!-- prefix for environment variables -->
+	<property environment="env" />
+	
+	<target name="help" description="Shows high level help">
+		<echo><![CDATA[
+Separate ant task that runs phabricator reports.
+
+Until Phabricator can be updated, the oAuth server can't be used to grab
+the authentication tokens, and this needs to be scraped from a current session.
+
+For general information, or to see this help again, simply run
+$> ant
+or
+$> ant help
+
+The following is a list of high level targets / functionality
+** Please note: ANT is case sensitive **
+
+	ant listApproved				- Creates a report of the commits based on a range and by acceptance.
+
+]]></echo>
+	</target>
+	
+	
+	<!--
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
+	Properties
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+	-->
+	
+	
+	
+	
+	<!-- default values not meant to change -->
+	<property name="abort.user" value="Halting due to user request" />
+	<property name="abort.stop" value="Unable to continue" />
+	<property name="tab" value="	" />
+	<property name="n" value="${line.separator}" />
+	<property name="enterContinue" value="(Press enter to continue)" />
+	
+	<!-- properties from property files -->
+	<!--
+		to keep this loose and used by other projects,
+		this does not currently share from the ant project
+	-->
+	<property name="build.phabricator.path" value="build.phabricator" />
+	<property file="build.phabricator" />
+	
+	<!-- default values in case they haven't been defined yet -->
+	<if>
+		<and>
+		<not><equals arg1="${outputPath}" arg2="$${outputPath}" /></not>
+		<not><equals arg1="${outputPath}" arg2="" /></not>
+		</and>
+		<then>
+			<property name="output.path" value="${outputPath}" />
+		</then>
+	</if>
+	
+	
+	<!-- names of files -->
+	<property name="output.dir" value="phabReports" />
+	<property name="output.path" value="${output.dir}" />
+	
+	<property name="template.dir" value="templates" />
+	<property name="template.path" value="${template.dir}" />
+	<property name="build.phabricator.file" value="build.phabricator" />
+	<property name="build.phabricator.template.file" value="build.phabricator.template" />
+	<property name="build.phabricator.template.path" value="${template.path}/${build.phabricator.template.file}" />
+	
+	<property name="auditApproval.file" value="auditApproval.html" />
+	<property name="auditApproval.path" value="${output.path}/${auditApproval.file}" />
+	
+	<property name="internalCommitRegex" value="(@INTERNAL\\b|CONFIG:|WHITESPACE:)" />
+	
+	<!-- calculated values -->
+	<tstamp>
+		<format property="timestamp.numeric" pattern="yyyyMMdd_hhmmss" />
+	</tstamp>
+	<tstamp>
+		<format property="timestamp.readible" pattern="MM-dd-yyy @ hh:mm:ss" />
+	</tstamp>
+	
+	
+	
+	
+	<!-- 
+	/**
+	 *	Sets up the phabricator properties
+	**/
+	-->
+	<target name="setup"
+		description="Sets up the phabricator properties"
+	>
+		<property name="template.path" value="${template.dir}" />
+		<property name="build.phabricator.file" value="build.phabricator" />
+		<property name="build.phabricator.template.file" value="build.phabricator.template" />
+		<property name="build.phabricator.template.path" value="${template.path}/${build.phabricator.template.file}" />
+		
+		<copy file="${build.phabricator.template.path}" tofile="${build.phabricator.file}" />
+		
+		<antcall target="setProjectShort" />
+		<antcall target="setProjectId" />
+		<antcall target="setSrcPath" />
+		<antcall target="setOutputPath" />
+		
+		<var name="phabProjectShort" unset="true" />
+		<var name="phabProjectId" unset="true" />
+		<var name="srcPath" unset="true" />
+		<var name="outputPath" unset="true" />
+		
+		<property file="${build.phabricator.path}" />
+		
+		<mkdir dir="${output.path}" />
+		
+		<echo><![CDATA[
+Complete.
+]]></echo>
+		<antcall target="status" />
+	</target>
+	
+	
+	
+	
+	<!--
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
+	High level targets
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+	-->
+	
+	
+	
+	
+	<target name="status"
+		description="Shows the current property settings and status"
+	>
+		<echo><![CDATA[
+## What was the Short Project Identifier (Callsign) for your project
+## (This was used when setting up your repostitory )
+phabProjectShort=${phabProjectShort}
+
+## Phabricator ID for your project
+## (If you are unsure, or wish to find it
+## visit https://phabricator.modelmetricssoftware.com/conduit/method/repository.query/
+## and find 'phid' for your project
+phabProjectId=${phabProjectId}
+
+## Path to the source code
+#EX: ../src
+srcPath=${srcPath}
+
+## Path to the output directory
+#EX: output
+outputPath=${output.path}
+]]></echo>
+	</target>
+	
+	
+	
+	
+	<!-- high level doc target -->
+	<target name="doc"
+		description="Documentation targets"
+	>
+		<echo><![CDATA[
+What type of report should we run?
+
+1 - auditApproval	  - Creates a report of the audits and the approvals given
+]]></echo>
+		<input addproperty="reportType" validargs="1" defaultvalue="1" />
+		<switch value="${reportType}">
+			<case value="1">
+				<antcall target="auditApproval" />
+			</case>
+			<default>
+				<mm:Halt>${abort.user}</mm:Halt>
+			</default>
+		</switch>
+	</target>
+	
+	
+	
+	
+	<!--
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
+	Medium level targets
+	(Targets that can be called individually)
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+	-->
+	
+	
+	
+	
+	<!--
+	/**
+	 * Target that lists the commits that have been approved between commit SHAs
+	 * 
+	 * List of parameters that can be sent by Jenkins:
+	 * 
+	 * @param phabProjectShort (String) - Short Project Identifier used for your phabricator project
+	 * 
+	 * @param phabProjectId (String) - Phabricator id of the project
+	 *			(If you are unsure, simply visit https://phabricator.modelmetricssoftware.com/conduit/method/repository.query/
+	 *			(and find the 'phid' for your project)
+	 * 
+	 * @param phabricatorSession (String) - Secure cookie for your session
+	 *		(This is LESS than ideal, but is the only workaround until Phabricator can be updated to fix the broken oAuth server)
+	 *		(This can be found by inspecting the page and finding the 'phsid' cookie)
+	 * 
+	 * @param phabricatorUserId (String) - phabricator user of the running session
+	 * 
+	 * @param rangeStart (String) SHA of the starting commit
+	 * 		(For example: HEAD~2 - 2 commits from the most recent)
+	 * 
+	 * @param rangeEnd (String) SHA of the ending commit
+	 *		(For example: HEAD is the most recent)
+	 * 
+	 **/
+	 -->
+	<target name="listApproved" description="Creates a report of a commit range by who accepted them in phabricator" >
+		<echo>What is your phabricator session id?
+(This is the phsid secure cookie value)</echo>
+		<input addproperty="phabricatorSession" />
+		
+		<echo>What is your phabricator user id?
+(This is the phusr secure cookie value)</echo>
+		<input addproperty="phabricatorUserId" />
+		
+		<echo>Starting commit? (Default is 10th commit from HEAD, but can be a specific SHA)</echo>
+		<input addproperty="rangeStart" defaultvalue="HEAD~10" />
+		
+		<echo>Ending commit?</echo>
+		<input addproperty="rangeEnd" defaultvalue="HEAD" />
+		
+		<exec dir="${srcPath}" executable="git" outputProperty="commitList">
+			<arg value="log" />
+			<arg value="--no-merges" />
+			<arg value="--format='%H'" />
+			<arg value="${rangeStart}..${rangeEnd}" />
+		</exec>
+		
+		<echo>commits[
+${commitList}
+]
+
+Continue?</echo>
+		
+		<input
+			addProperty="shouldContinue"
+			validargs="y,n"
+			defaultvalue="y"
+		/>
+		<condition property="do.abort">
+			<equals arg1="${shouldContinue}" arg2="n" />
+		</condition>
+		<fail if="do.abort">Aborted</fail>
+		
+		<!-- clear out output file -->
+		<echo file="${auditApproval.path}" append="false"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/modernizr.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/jquery.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/foundation/foundation.js" type="text/javascript"></script>
+
+
+<link class="user" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.css" rel="stylesheet" type="text/css" />
+<link class="user" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.css" rel="stylesheet" type="text/css" />
+<link class="user" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.sortable.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<nav class="top-bar">
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href='#'>Auditor Report</a></h1>
+			</li>
+		</ul>
+	</nav>
+	
+	<div class='row'>
+		<div class='small-12 columns'>
+			<p>Last run: ${timestamp.readible}</p>
+			<table class='footable auditReport'>
+				<thead>
+				<tr><th>Commit</th><th>By</th><th>Date</th><th>No Decision</th><th>Concerns from</th><th>Accepted by</th><th data-hide="all">Commit Msg</th></tr>
+				</thead>
+				<tbody>
+]]></echo>
+		
+		<foreach list="${commitList}"
+			target="listApproved_internal"
+			param="commitSHA"
+			inheritall="Yes"
+			delimiter="${line.separator}"
+		/>
+		
+		<echo append="yes" file="${auditApproval.path}"><![CDATA[
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+<script>
+  
+  $(document).ready( function(){
+  	$(document).foundation();
+  	$(".footable").footable();
+  });
+</script></body></html>
+]]></echo>
+	</target>
+	
+	
+	
+	
+	<!--
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	
+	Internal Targets
+	(Targets that shouldn't really be called directly)
+	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#	#
+	-->
+	
+	
+	
+	
+	<target name="listApproved_internal">
+		<!--
+		<property name="commitSHA" value="458e858e513130acc6a45d0bc4be4b46f64d194d" />
+		<property name="commitSHA_Clean" value="${commitSHA}" />
+		<property name="phabProjectShort" value="CATTELECA" />
+		<property name="phabProjectId" value="PHID-PROJ-di3k54eihxuiov5zz4nx" />
+		<property name="phabricatorSession" value="drbajmarzxsfmcdxhriu7tqudxygby2brcau2yqn" />
+		<property name="phabricatorUserId" value="proth" />
+		-->
+		
+		<!--
+		<property name="url" value="https://phabricator.modelmetricssoftware.com/diffusion/${phabProjectShort}/commit/${commitSHA}/edit/" />
+		<echo>${url}</echo>
+		<echo>${phabricatorSession}</echo>
+		-->
+		
+		<propertyregex property="commitSHA_Clean"
+			input="${commitSHA}"
+			regexp="'"
+			replace=""
+			global="true"
+		/>
+		<var name="commitSHA" unset="true" />
+		<property name="commitSHA" value="${commitSHA_Clean}" />
+		
+		<!-- check if it is an internal commit  -->
+		<var name="commitMsg" unset="true" />
+		<var name="isInternalCommit" unset="true" />
+		<var name="commitType" unset="true" />
+		<var name="internalCommitFlag" unset="true" />
+		<var name="specialAuditor" unset="true" />
+		
+		<exec dir='${srcPath}' executable="git" outputproperty="fullCommitMsg">
+			<arg value="log" />
+			<arg value="${commitSHA_Clean}~1..${commitSHA_Clean}" />
+		</exec>
+		
+		<exec dir='${srcPath}' executable="git" outputproperty="commitMsg">
+			<arg value="log" />
+			<arg value="${commitSHA_Clean}~1..${commitSHA_Clean}" />
+			<arg value="--format=%s%n%b" />
+		</exec>
+		
+		<if>
+			<and>
+				<not><equals arg1="${internalCommitRegex}" arg2="$${internalCommitRegex}" /></not>
+				<not><equals arg1="${internalCommitRegex}" arg2="" /></not>
+			</and>
+			<then>
+				<propertyregex
+					property="isInternalCommit"
+					override="true"
+					input="${commitMsg}"
+					regexp="${internalCommitRegex}"
+					select="\0"
+					global="true"
+					casesensitive="true"
+				/>
+			</then>
+		</if>
+		
+		<propertyregex
+			property="hasCommitType"
+			override="true"
+			input="${commitMsg}"
+			regexp="^\s*(\w+)\s*:"
+			select="\1"
+			global="true"
+			casesensitive="true"
+		/>
+		
+		<!-- if the type of commit includes a special tag, then mark it internal,
+			otherwise, use the first word: in the message to give a brief glimpse
+			of what type of commit it is
+		-->
+		<if>
+			<not><equals arg1="${isInternalCommit}" arg2="$${isInternalCommit}" /></not>
+			<then>
+				<property name="commitType" value="[internal]" />
+			</then>
+			<elseif>
+				<not><equals arg1="${hasCommitType}" arg2="$${hasCommitType}" /></not>
+				<then>
+					<property name="commitType" value="[${hasCommitType}]" />
+				</then>
+			</elseif>
+		</if>
+		<property name="commitType" value="" />
+		
+		<!-- if the commit type is a special set, then mark the auditors as that type as a pass -->
+		<if>
+			<or>
+				<equals arg1="${commitType}" arg2="[internal]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[whitespace]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[config]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[profile]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[test]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[doc]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[documentation]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[mockup]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[commentcleanup]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[comment_cleanup]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[comments]" caseSensitive="false" />
+				<equals arg1="${commitType}" arg2="[comment]" caseSensitive="false" />
+			</or>
+			<then>
+				<property name="specialAuditor" value="${commitType}" />
+			</then>
+		</if>
+		<property name="specialAuditor" value="" />
+		
+		<!-- get the commit date -->
+		<exec dir='${srcPath}' executable="git" outputproperty="commitInfo">
+			<arg value="log" />
+			<arg value="${commitSHA_Clean}~1..${commitSHA_Clean}" />
+			<arg value="--pretty=format:dateRelative[%cr]dateTime[%cD]author[%an]authorEmail[%aE]" />
+		</exec>
+		
+		<!-- relative date -->
+		<propertyregex
+			property="dateRelative"
+			override="true"
+			input="${commitInfo}"
+			regexp="\bdateRelative\[([^]]+)\]"
+			select="\1"
+			global="true"
+			casesensitive="true"
+		/>
+		<propertyregex
+			property="dateTime"
+			override="true"
+			input="${commitInfo}"
+			regexp="\bdateTime\[([^]]+)\]"
+			select="\1"
+			global="true"
+			casesensitive="true"
+		/>
+		<propertyregex
+			property="author"
+			override="true"
+			input="${commitInfo}"
+			regexp="\bauthor\[([^]]+)\]"
+			select="\1"
+			global="true"
+			casesensitive="true"
+		/>
+		<propertyregex
+			property="authorEmail"
+			override="true"
+			input="${commitInfo}"
+			regexp="\bauthorEmail\[([^]]+)\]"
+			select="\1"
+			global="true"
+			casesensitive="true"
+		/>
+		
+		<echo><![CDATA[
+dateRelative:${dateRelative}
+dateTime:${dateTime}
+author:${author}
+authorEmail:${authorEmail}
+]]></echo>
+		
+		<echo><![CDATA[
+Calling:
+https://phabricator.modelmetricssoftware.com/r${phabProjectShort}${commitSHA}
+]]></echo>
+		
+		<exec dir="." executable="curl" outputproperty="httpResponse">
+			<arg value="https://phabricator.modelmetricssoftware.com/r${phabProjectShort}${commitSHA}" />
+			<arg value="-H" />
+			<arg value="Accept-Encoding: gzip,deflate,sdch" />
+			<arg value="-H" />
+			<arg value="Host: phabricator.modelmetricssoftware.com" />
+			<arg value="-H" />
+			<arg value="Accept-Language: en-US,en;q=0.8" />
+			<arg value="-H" />
+			<arg value="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36" />
+			<arg value="-H" />
+			<arg value="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+			<arg value="-H" />
+			<arg value="Cache-Control: max-age=0" />
+			<arg value="-H" />
+			<arg value="Cookie: phusr=${phabricatorUserId}; phsid=${phabricatorSession}" />
+			<arg value="-H" />
+			<arg value="Connection: keep-alive" />
+			<arg value="--compressed" />
+		</exec>
+		
+		<!-- check for invalid session -->
+		<propertyregex
+			property="httpResponse_token"
+			override="true"
+			input="${httpResponse}"
+			regexp="&lt;h1&gt;Invalid Session&lt;/h1&gt;"
+			select="\0"
+			global="true"
+			casesensitive="false"
+		/>
+		
+		<if>
+			<not><equals arg1="${httpResponse_token}" arg2="$${httpResponse_token}" /></not>
+			<then>
+				<echo><![CDATA[
+Invalid/Expired Phabricator Session.
+Please try again.
+]]></echo>
+				<fail><![CDATA[
+Invalid/Expired Phabricator Session.
+Please try again.
+				]]></fail>
+			</then>
+		</if>
+		
+		
+		<!-- determine the ones with concerns -->
+		<var name="httpResponse_token" unset="true" />
+		<var name="httpResponse_tokenPadded" unset="true" />
+		<var name="httpResponse_tokenPaddedCleaned" unset="true" />
+		
+		<!--
+		<echo>output ${httpResponse}</echo>
+		-->
+		<!-- determine the accepters -->
+		<propertyregex
+			property="httpResponse_token"
+			override="true"
+			input="${httpResponse}"
+			regexp="&gt;\s*(\w+)\s*&lt;\s*/\s*a\s*&gt;\s*&lt;\s*/\s*td\s*&gt;\s*&lt;\s*td\s*&gt;\s*Accepted\s*&lt;\s*/\s*td\s*&gt;"
+			replace="‡\1†"
+			global="true"
+			casesensitive="false"
+		/>
+		
+		
+		<property name="httpResponse_tokenPadded" value="†${httpResponse_token}‡" />
+		
+		<propertyregex
+			property="httpResponse_tokenPaddedCleaned"
+			override="true"
+			input="${httpResponse_tokenPadded}"
+			regexp="†[^‡†]+‡"
+			replace=" "
+			global="true"
+			casesensitive="false"
+		/>
+		<property name="accepters" value="${httpResponse_tokenPaddedCleaned}" />
+		
+		<!--
+		<mm:Halt><![CDATA[
+regexp=">\s*(\w+)\s*<\s*/\s*a\s*>\s*<\s*/\s*td\s*>\s*<\s*td\s*>\s*Concern Raised\s*<\s*/\s*td\s*>"
+
+httpResponse_token[${httpResponse_token}]
+httpResponse_tokenPadded[${httpResponse_tokenPadded}]
+httpResponse_tokenPaddedCleaned[${httpResponse_tokenPaddedCleaned}]
+accepters[${accepters}]
+concerns[${concerns}]
+noDecision[${noDecision}]
+]]></mm:Halt>
+		-->
+
+		<!-- determine the ones with concerns -->
+		<var name="httpResponse_token" unset="true" />
+		<var name="httpResponse_tokenPadded" unset="true" />
+		<var name="httpResponse_tokenPaddedCleaned" unset="true" />
+		
+		<propertyregex
+			property="httpResponse_token"
+			override="true"
+			input="${httpResponse}"
+			regexp="&gt;\s*(\w+)\s*&lt;\s*/\s*a\s*&gt;\s*&lt;\s*/\s*td\s*&gt;\s*&lt;\s*td\s*&gt;\s*Concern Raised\s*&lt;\s*/\s*td\s*&gt;"
+			replace="‡\1†"
+			global="true"
+			casesensitive="false"
+		/>
+		
+		<property name="httpResponse_tokenPadded" value="†${httpResponse_token}‡" />
+		
+		<propertyregex
+			property="httpResponse_tokenPaddedCleaned"
+			override="true"
+			input="${httpResponse_tokenPadded}"
+			regexp="†[^‡†]+‡"
+			replace=" "
+			global="true"
+			casesensitive="false"
+		/>
+		<property name="concerns" value="${httpResponse_tokenPaddedCleaned}" />
+		
+		<!-- determine the auditors with no decision -->
+		<var name="httpResponse_token" unset="true" />
+		<var name="httpResponse_tokenPadded" unset="true" />
+		<var name="httpResponse_tokenPaddedCleaned" unset="true" />
+		
+		<propertyregex
+			property="httpResponse_token"
+			override="true"
+			input="${httpResponse}"
+			regexp="&gt;\s*(\w+)\s*&lt;\s*/\s*a\s*&gt;\s*&lt;\s*/\s*td\s*&gt;\s*&lt;\s*td\s*&gt;\s*Audit\s+(Requested|Not\s+Required)\s*&lt;\s*/\s*td\s*&gt;"
+			replace="‡\1†"
+			global="true"
+			casesensitive="false"
+		/>
+		
+		<property name="httpResponse_tokenPadded" value="†${httpResponse_token}‡" />
+		
+		<propertyregex
+			property="httpResponse_tokenPaddedCleaned"
+			override="true"
+			input="${httpResponse_tokenPadded}"
+			regexp="†[^‡†]+‡"
+			replace=" "
+			global="true"
+			casesensitive="false"
+		/>
+		<property name="noDecision" value="${httpResponse_tokenPaddedCleaned}" />
+
+		<echo>${commitSHA} ${author} ${authorEmail} ${dateTime} ${dateRelative} ${commitType}, accepted: ${accepters}, concerns: ${concerns}, no decision: ${noDecision}</echo>
+		<echo append="yes" file="${auditApproval.path}"><![CDATA[
+<tr>
+	<td><a target='_blank' href='https://phabricator.modelmetricssoftware.com/r${phabProjectShort}${commitSHA}'>${commitSHA}<br />${commitType}</a></td>
+	<td><a href='mailto:${authorEmail}'>${author}</a></td>
+	<td><span data-tooltip='data-tooltip' class="has-tip" title="${dateTime}">${dateRelative}</span></td>
+	<td>${noDecision}</td>
+	<td>${concerns}</td>
+	<td>${accepters} ${specialAuditor}</td>
+	<td><pre>${fullCommitMsg}</pre></td>
+</tr>
+]]></echo>
+	</target>
+	
+	
+	
+	
+	<!--
+	/**
+	 *	Defines the short id for the phabricator project
+	**/
+	-->
+	<target name="setProjectShort"
+		description="Defines the short id for the phabricator project"
+	>
+		<echo><![CDATA[
+What was the Short Project Identifier (Callsign) for your project
+(This was used when setting up your repostitory )
+]]></echo>
+		<input addproperty="projectShortIn" />
+		<antcall target="changePropertyFileValue">
+			<param name="propertyFile.path" value="${build.phabricator.path}" />
+			<param name="property.name" value="phabProjectShort" />
+			<param name="property.value" value="${projectShortIn}" />
+		</antcall>
+	</target>
+	
+	
+	
+	
+	<!--
+	/**
+	 *	Defines the short id for the phabricator project
+	**/
+	-->
+	<target name="setProjectId"
+		description="Defines the phabricator id for the project"
+	>
+		<echo><![CDATA[
+Phabricator ID for your project
+(If you are unsure, or wish to find it
+visit https://phabricator.modelmetricssoftware.com/conduit/method/repository.query/
+and find 'phid' for your project
+]]></echo>
+		<input addproperty="projectIdIn" />
+		<antcall target="changePropertyFileValue">
+			<param name="propertyFile.path" value="${build.phabricator.path}" />
+			<param name="property.name" value="phabProjectId" />
+			<param name="property.value" value="${projectIdIn}" />
+		</antcall>
+	</target>
+	
+	
+	
+	
+	<!--
+	/**
+	 *	Defines the short id for the phabricator project
+	**/
+	-->
+	<target name="setSrcPath"
+		description="Sets the location of the salesforce files"
+	>
+		<echo><![CDATA[
+## Path to the source code
+#EX: ../src
+]]></echo>
+		<input addproperty="srcPathIn" />
+		<antcall target="changePropertyFileValue">
+			<param name="propertyFile.path" value="${build.phabricator.path}" />
+			<param name="property.name" value="srcPath" />
+			<param name="property.value" value="${srcPathIn}" />
+		</antcall>
+	</target>
+	
+	
+	
+	
+	<!--
+	/**
+	 *	Defines the short id for the phabricator project
+	**/
+	-->
+	<target name="setOutputPath"
+		description="Sets the location of the salesforce files"
+	>
+		<echo><![CDATA[
+## Path to the output directory
+#EX: output
+]]></echo>
+		<input addproperty="outputPathIn" />
+		<antcall target="changePropertyFileValue">
+			<param name="propertyFile.path" value="${build.phabricator.path}" />
+			<param name="property.name" value="outputPath" />
+			<param name="property.value" value="${outputPathIn}" />
+		</antcall>
+		
+		<mkdir dir="${outputPathIn}" />
+	</target>
+	
+	
+	
+	
+	<!-- 
+	/**
+	 *	Creates a comma separated list of files based on some matching string
+	 *	@param source.dir
+	 *	@param file.match
+	 *	@return file.list
+	**/
+	-->
+	<target name="getDirectoryFiles">
+		<var name="file.list1" unset="true" />
+		<var name="file.list2" unset="true" />
+		<var name="file.list" unset="true" />
+		<property name="file.exclude" value="" />
+		
+		<fileset dir="${source.dir}" id="source.dirset" >
+			<include name="${file.match}" />
+			<exclude name="${file.exclude}" />
+		</fileset>
+		<property name="file.list1" refid="source.dirset" />
+		<propertyregex property="file.list2"
+			input="${file.list1}"
+			regexp="\s*;\s*"
+			replace=","
+			global="true"
+		/>
+		
+		<if>
+			<not>
+			<or>
+				<equals arg1="${remove.extension}" arg2="" />
+				<equals arg1="${remove.extension}" arg2="$${remove.extension}" />
+			</or>
+			</not>
+			<then>
+				<propertyregex property="file.list"
+					input="${file.list2}"
+					regexp="${remove.extension}"
+					replace=""
+					global="true"
+					casesensitive="false"
+				/>
+			</then>
+			<else>
+				<property name="file.list" value="${file.list2}" />
+			</else>
+		</if>
+		
+		<property name="file.list" value="" />
+		
+		<!--
+		<echo>${file.list}</echo>
+		-->
+	</target>
+	
+	
+	
+	
+	<!--
+	/**
+	 *	Change the property value in a specific property file
+	 *	@visibility INTERNAL
+	 *	@param propertyFile.path (String) - the path of the property file to change
+	 *	@param propertyName (String) - the name of the property
+	 *	@param propertyValue (String) - the new value of the property
+	 **/
+	-->
+	<target name="changePropertyFileValue">
+		<fail unless="propertyFile.path">propertyFile.path must be set</fail>
+		<fail unless="property.name">property.name must be set</fail>
+		<fail unless="property.value">property.value must be set</fail>
+		
+		<replaceregexp encoding="UTF-8" file="${propertyFile.path}"
+			match="^([ \t]*)${property.name}\s*=[^\n]*"
+			replace="\1${property.name}=${property.value}"
+			flags="img"
+		/>
+		
+		<var name="propertyFile.path" unset="true" />
+		<var name="property.name" unset="true" />
+		<var name="property.value" unset="true" />
+	</target>
+</project>

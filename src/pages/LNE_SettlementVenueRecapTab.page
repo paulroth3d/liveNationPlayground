@@ -1,0 +1,80 @@
+<apex:page standardController="Event__c" extensions="LNE_SettlementVenueRecapTab_CX" sidebar="false" showHeader="false">
+
+	<!-- PostMessage communicates between windows -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage2.js")}" />
+    <!-- handles routing of PostMessages -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_MessagePostOffice.js")}" />
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>Settlement Venue</title>
+
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+
+        </head>
+        
+        <body id="LNE_SettlementVenueRecapTab_CX--body">
+        	<div class="rome-lds">
+
+	            <apex:outputPanel rendered="{!eventRecord.SettlementStarted__c = false}">
+
+	                <apex:form >
+	                	<div style="margin:20px;">
+		                	<span class="slds-icon_container">
+		                		<svg class="slds-icon slds-icon-text-default slds-icon--x-small" aria-hidden="true">
+		                			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.LNE_romelds, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+		                		</svg>
+		                	</span>
+		                    <apex:commandLink action="{!startSettlement}" value="Start Settlement Process" />
+	                    </div>
+	                </apex:form>
+
+	            </apex:outputPanel>
+
+	            <apex:outputPanel rendered="{!eventRecord.SettlementStarted__c = true}">
+	            
+	            </apex:outputPanel>
+
+           </div>
+
+           <script>
+
+           		function postRefreshMessage() {
+                    var WINDOW_PAGE_NAME = 'LNE_SettlementBoxOfficeTab';
+                    var auraId = '{!$CurrentPage.parameters.auraId}';
+                    var messageType = 'saveComplete';
+                    var isSuccessful = true;
+
+                    var data = {
+                        auraId: auraId,
+                        src: window.location.href
+                    };
+
+                    var postMessage = new LNE_PostMessage( WINDOW_PAGE_NAME, messageType, isSuccessful, data );
+                    postMessage.dispatch( parent );
+
+                    location.reload(true);
+                }
+
+                //-- handle inbound PostMessages
+                this.postOffice = new LNE_MessagePostOffice(this);
+                
+                //-- handle any inbound events
+                this.postOffice.addTypeHandler( 'saveComplete', function( myPostMessage ){
+                    if( myPostMessage.data.src != window.location.href ){
+                        window.location.href=window.location.href;
+                    }
+                });
+                
+                postOffice.listenForPostEvents(window);
+            </script>
+
+
+        </body>
+
+    </html>
+</apex:page>

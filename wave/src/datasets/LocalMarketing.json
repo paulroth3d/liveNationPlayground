@@ -1,0 +1,24 @@
+{
+    "_alias": "LocalMarketing",
+    "_createdBy": {
+        "_type": "user",
+        "_uid": "00536000002vJe9AAE",
+        "name": "Sivaram Chamiraju",
+        "profilePhotoUrl": "https://lne--tst--c.cs63.content.force.com/profilephoto/005/T"
+    },
+    "_createdDateTime": 1488400623,
+    "_permissions": {
+        "modify": true,
+        "view": true
+    },
+    "_shallow": false,
+    "_type": "edgemart",
+    "_uid": "0Fb6C0000008OSUSA2",
+    "_url": "/insights/internal_api/v1.0/esObject/edgemart/0Fb6C0000008OSUSA2/json",
+    "folder": {
+        "_type": "folder",
+        "_uid": "00l36000001QyMGAA0",
+        "name": "Shared App"
+    },
+    "name": "LocalMarketing"
+}

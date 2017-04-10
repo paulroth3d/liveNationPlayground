@@ -1,0 +1,144 @@
+<apex:page standardController="Event__c" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>Artist Deal</title>
+
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+            <!-- PostMessage communicates between windows -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+            <style>
+                .artistDealMetrics{ margin:0px 0px 15px 3px; }
+                
+                tr.selloutRowA td, tr.selloutRowB td { border-bottom:1px solid #c7c7c7;  font-size:11.36px;}
+                tr.selloutRowA td, tr.selloutRowB td, tr.selloutRowC td { padding:4px 8px; text-align:right; font-size:11.36px;}
+
+                .spacer{
+                    height:20px;
+                    display:block;
+                }
+                
+                .bold{
+                    font-weight:bold;
+                }
+                
+                #LNE_ArtistDealSubTab--body{
+                    padding-left:1.5em;
+                }
+            </style>
+        </head>
+
+        <body id="LNE_ArtistDealSubTab--body">
+            
+            <apex:form >
+                 <apex:panelGrid styleClass="artistDealMetrics" columns="5" rowClasses="selloutRowA,selloutRowB, selloutRowC" cellpadding="0" cellspacing="0">
+                     <apex:outputText value=""/>
+                     <apex:outputText value="Show Count" styleClass="bold"/> 
+                     <apex:outputText value="Paid Tickets" styleClass="bold"/> 
+                     <apex:outputText value="Drop Count" styleClass="bold" /> 
+                     <apex:outputText value="Net Gross" styleClass="bold"/> 
+
+                    <apex:outputText value="SELLOUT" styleClass="bold"/>
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="sellout_show_count" value="{!Event__c.ShowCount__c}"/> </apex:outputText>
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="sellout_paidTickets" value="{!Event__c.SelloutPaidTickets__c}"/> </apex:outputText>
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="sellout_dropCount" value="{!Event__c.SelloutDropCount__c}"/> </apex:outputText> 
+                    <apex:outputText value="{0, number, ##,###.00}"> <apex:param id="sellout_grossPotential" value="{!Event__c.NetGrossPotential__c}"/> </apex:outputText> 
+                    
+                     <apex:outputText value="PROJECTION" styleClass="bold"/>
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="projection_show_count" value="{!Event__c.ShowCount__c}"/> </apex:outputText>
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="projection_paidTickets" value="{!Event__c.ProjectedPaidTickets__c}"/> </apex:outputText> 
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="projection_dropCount" value="{!Event__c.ProjectedDropCount__c}"/> </apex:outputText> 
+                    <apex:outputText value="{0, number, ##,###.00}"> <apex:param id="projection_grossPotential" value="{!Event__c.ProjectedNetGross__c}"/> </apex:outputText> 
+                </apex:panelGrid>
+            </apex:form>
+           
+            <div class="spacer"></div>
+
+            <div id="all-grids-container">
+                <div id="grid-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}"/>
+
+                    <!-- Artist Deal Grid -->
+                    <iframe id="grid-frame-artist-deal" data-grid-name="artistdeal" scrolling="auto" height="780" width="100%" frameborder="0" src="{!gridPage}gname=Artist%20Deal&fpf=Event__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                    
+                    <!-- merchandise deal -->
+                    <iframe id="gridFrame" data-grid-name="merchandisedeal" scrolling="auto" style='margin-top: 30px;' height="480" width="100%" frameborder="0" src="{!gridPage}gname=Merchandise%20Deal&fpf=Event__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                    <div class='merchandise-deal-note'>Note: The standard merchandise deal wording (after deductions of taxes, credit card commissions and requested bootleg security) will automatically be added to the merchandise deal.</div>
+                    
+                </div>
+            </div>
+            
+            <script type="text/javascript">
+                lneArtistDealSubTab = {};
+                adst = lneArtistDealSubTab;
+
+                adst.init = function() {
+                    console.log('ARTIST DEAL INIT');
+                    lneSharedJs.sharedInit();
+                };
+
+                adst.init();
+
+                var overlayWindow;
+                var selectExpensesUrl = createApexURL('LNE_SplitHeadlinerPayouts');
+
+                function launchSplitHeadlinerPayouts(evt) {
+                  var initialFocus = true;
+
+                  overlayWindow = window.open(selectExpensesUrl + '?eventId={!Event__c.Id}&stageType=Plan', '_blank', 'location=no,width=900,height=600,menubard=yes');
+                  
+                  $(overlayWindow).on('unload', function() {
+                    console.log('close unload - ');
+                    closeOverlayWindow();
+                    refreshGrid();
+                  });
+
+                  $(overlayWindow).on('blur', function() {
+                    console.log('close blur - ');
+                    closeOverlayWindow();
+                    refreshGrid();
+                  });
+                }
+
+                function closeOverlayWindow() {
+                  if (overlayWindow && !overlayWindow.closed) {
+                    overlayWindow.close();
+                  }
+
+                  overlayWindow = null;
+                }
+
+                function refreshGrid() {
+                  var gridContainer = $('#all-grids-container');
+                  var iframeLoc = $('#grid-frame-artist-deal').attr('src');
+                  $('#grid-frame-artist-deal').attr('src', iframeLoc);
+                  gridContainer.show();
+                }
+
+                function createApexURL(pageName) {
+                  var currentLocation = window.location.href;
+                  var ajaxURL = currentLocation.replace( 'gblite.', 'c.' );
+
+                  ajaxURL = ajaxURL.substring(0, ajaxURL.toLowerCase().indexOf('/apex/' )) + '/apex/' + pageName;
+
+                  return( ajaxURL );
+                }
+
+                //-- onlick event for split-headliner-payouts
+                $(document).ready( function(){
+                    $('#split-headliner-payouts').on('click', function() {
+                        if (!overlayWindow && document.hasFocus()) {
+                            launchSplitHeadlinerPayouts.apply(this, arguments);
+                        }
+                    });
+                });
+
+            </script>
+            <c:LNE_Copyright />
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Club Night</fullName>
+        <default>false</default>
+        <label>Club Night</label>
+    </customValue>
+    <customValue>
+        <fullName>Filler Show</fullName>
+        <default>false</default>
+        <label>Filler Show</label>
+    </customValue>
+    <customValue>
+        <fullName>Internal Rental</fullName>
+        <default>false</default>
+        <label>Internal Rental</label>
+    </customValue>
+    <customValue>
+        <fullName>Promoted</fullName>
+        <default>false</default>
+        <label>Promoted</label>
+    </customValue>
+    <customValue>
+        <fullName>Radio Show</fullName>
+        <default>false</default>
+        <label>Radio Show</label>
+    </customValue>
+    <customValue>
+        <fullName>Rental/Special Events/Venue Holds</fullName>
+        <default>false</default>
+        <label>Rental/Special Events/Venue Holds</label>
+    </customValue>
+    <customValue>
+        <fullName>Restaurant Show</fullName>
+        <default>false</default>
+        <label>Restaurant Show</label>
+    </customValue>
+    <customValue>
+        <fullName>Special Event</fullName>
+        <default>false</default>
+        <label>Special Event</label>
+    </customValue>
+    <customValue>
+        <fullName>Tentpole</fullName>
+        <default>false</default>
+        <label>Tentpole</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Used</fullName>
+        <default>false</default>
+        <label>Not Used</label>
+    </customValue>
+    <description>Centralized values for the Event Subtype field</description>
+    <masterLabel>Event Subtype</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

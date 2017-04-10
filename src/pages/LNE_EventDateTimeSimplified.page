@@ -1,0 +1,22 @@
+<apex:page standardController="Event__c" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title></title>
+        </head>
+
+        <body>
+            
+            <apex:outputPanel rendered="{!not(IsBlank(Id))}">
+            <div id="all-grids-container">
+                <div id="grid-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+                    <iframe id="grid-frame-event-date-time-simplified" data-grid-name="eventdatetimesimplified" scrolling="auto" height="490" width="500" frameborder="0" src="{!gridPage}gname=Event%20Date%20Time%20-%20Simplified&fpf=Event__c&fpv={!Id}&sh=0&ssb=0&sbb=0"></iframe>
+                </div>
+            </div>
+            </apex:outputPanel>
+
+        </body>
+
+    </html>
+</apex:page>

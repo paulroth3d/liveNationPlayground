@@ -1,0 +1,711 @@
+<apex:page applyBodyTag="false"
+    applyHtmlTag="false"
+    extensions="LNE_AdvertisementSplit_CX" 
+    showHeader="false" 
+    sidebar="false" 
+    standardController="Advertisement__c" 
+    standardStylesheets="false" 
+    title="Advertisement Split">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+
+    <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources,'jquery/jquery-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/jquery-ui.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/jquery.ba-throttle-debounce.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/mustache.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds,'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+    <style type="text/css">
+        .strong { font-weight: bold; }
+    </style>
+
+</head>
+<body>
+
+    <apex:outputPanel rendered="false">
+        {!Advertisement__c.MasterAdForSplit__c}
+    </apex:outputPanel>
+
+    <div class="rome-lds slds-content">
+
+        <!-- MODAL MESSAGE -->
+        <div id="dialog" class="slds-hide">
+            <div tabindex="-1" class="slds-modal slds-fade-in-open">
+              <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                  <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close">
+                    <svg class="slds-button__icon slds-button__icon--large">
+                      <use xlink:href="{!URLFOR($Resource.LNE_romelds,'/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Close</span>
+                  </button>
+                  <h2 class="slds-text-heading--medium">Alert</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                  <p class="msg strong"></p>
+                </div>
+                <div class="slds-modal__footer">
+                </div>
+              </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </div>
+    
+        <div class="slds-grid slds-wrap">
+
+            <!-- PAGE HEADER -->
+            <div class="slds-size--3-of-3">
+              <div class="slds-m-around--x-small">
+                <div class="slds-text-heading--medium">
+                    <apex:outputText value="{0} ({1}) {2,date,MM/dd/yy} - {3,date,MM/dd/yy}">
+                        <apex:param value="{!masterAdvertisement.Vendor__r.Name}"/>
+                        <apex:param value="{!masterAdvertisement.Market__c}"/>
+                        <apex:param value="{!masterAdvertisement.StartDate__c}"/>
+                        <apex:param value="{!masterAdvertisement.EndDate__c}"/>
+                    </apex:outputText>
+                </div>
+              </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="slds-size--2-of-3">
+              <div class="slds-m-around--x-small">
+                <div class="slds-input-has-icon slds-input-has-icon--left">
+                  <svg id="search-icon" class="slds-input__icon">
+                    <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+                  </svg>
+                  <input id="text-input-search" class="slds-lookup__search-input slds-input" placeholder="Search {!$ObjectType.AdPlan__c.LabelPlural}"/>
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--1-of-3">
+                <div class="slds-m-around--x-small">
+                    <button class="slds-button slds-button--brand" type="button" id="button-search">Search</button>
+                </div>
+            </div>
+
+            <!-- RESULTS -->
+            <div class="slds-size--2-of-3">
+              <div class="slds-m-around--x-small">
+                <select id="search-result-select" multiple="multiple" size="5" class="slds-select"></select>
+              </div>
+            </div>
+            <div class="slds-size--1-of-3">
+              <div class="slds-m-around--x-small">
+                <button class="slds-button slds-button--brand" type="button" id="button-add">Add</button>
+              </div>
+            </div>
+
+            <!-- GRID -->
+            <div class="slds-size--3-of-3">
+              <div class="slds-m-around--x-small">
+                <div class="slds-text-heading--medium">Ad Plans in Split</div>
+              </div>
+            </div>
+            <div class="slds-size--3-of-3">
+              <div class="slds-m-around--x-small">
+                <table id="ads-table" class="slds-table slds-table--bordered slds-table--cell-buffer">
+                  <thead>
+                    <tr class="slds-text-title--caps">
+                      <th scope="col"></th>
+                      <th scope="col">
+                        <div class="slds-truncate strong" title="{!$ObjectType.AdPlan__c.fields.AdPlanName__c.label}">{!$ObjectType.AdPlan__c.fields.AdPlanName__c.label}</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate strong" title="{!$ObjectType.AdPlan__c.fields.Event__c.label}">{!$ObjectType.AdPlan__c.fields.Event__c.label}</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate strong" title="{!$ObjectType.AdPlan__c.fields.Venue__c.label}">{!$ObjectType.AdPlan__c.fields.Venue__c.label}</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate strong" title="On Sales Date">On Sale Date</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate strong" title="{!$ObjectType.Event__c.fields.Status__c.label}">{!$ObjectType.Event__c.fields.Status__c.label}</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate strong" title="Split Amount">Split Amount</div>
+                      </th>
+                      <th scope="col">
+                        <div class="slds-truncate strong" title="Split %">Split %</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tfoot>
+                    <tr class="strong">
+                      <td></td>
+                      <td>Total</td>
+                      <td></td>
+                      <td></td>
+                      <td colspan="2">
+                        <div id="footer-error-message" class="slds-text-color--error"></div>
+                      </td>
+                      <td>
+                        <div id="total-split-amount"><span>0</span></div>
+                      </td>
+                      <td>
+                        <div id="total-split-pct"><span>100</span>%</div>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="slds-size--3-of-3">
+              <div class="slds-m-top--xx-large slds-m-right--x-large">
+                <section class="slds-clearfix">
+                    <div class="button-box slds-float--right">
+                        <button class="slds-button" type="button" id="button-cancel">Cancel</button>
+                        <button class="slds-button slds-button--brand" type="button" id="button-save">Save</button>
+                    </div>
+                </section>
+              </div>
+            </div>
+
+        </div>      
+    </div>
+
+    <script id="ad-template" type="text/html">
+        <tr data-recordid="{{recordId}}" data-parentid="{{parentId}}">
+          <td scope="row">
+            {{^isMaster}}
+            <div class="del-div slds-truncate" title="delete">
+                <svg class="action-delete slds-icon slds-icon-text-default slds-icon--x-small">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.LNE_romelds,'/assets/icons/utility-sprite/svg/symbols.svg#delete')}"></use>
+                </svg>
+            </div>
+            {{/isMaster}}
+          </td>
+          <td data-label="{!$ObjectType.AdPlan__c.fields.AdPlanName__c.label}">
+            <div class="slds-truncate" title="{{adPlanName}}">
+            {{#isMaster}}<a class="slds-text-link rec-link" data-href="{{recUrl}}">{{/isMaster}}
+                {{adPlanName}}
+            {{#isMaster}}</a>{{/isMaster}}
+            </div>
+          </td>
+          <td data-label="{!$ObjectType.AdPlan__c.fields.Event__c.label}">
+            <div class="slds-truncate" title="{{eventName}}">{{eventName}}</div>
+          </td>
+          <td data-label="{!$ObjectType.AdPlan__c.fields.Venue__c.label}">
+            <div class="slds-truncate" title="{{venue}}">{{venue}}</div>
+          </td>
+          <td data-label="On Sale Date">
+            <div class="slds-truncate" title="{{onSaleDate}}">{{onSaleDate}}</div>
+          </td>
+          <td data-label="{!$ObjectType.Event__c.fields.Status__c.label}">
+            <div class="slds-truncate" title="{{eventStatus}}">{{eventStatus}}</div>
+          </td>
+          <td data-label="Split Amount">
+            <div class="slds-form-element"><!--slds-has-error-->
+              <div class="slds-form-element__control">
+                <input type="text" class="slds-input split-amt slds-text-align--right" value="{{splitAmount}}"/>
+              </div>
+            </div>
+          </td>
+          <td data-label="Split %">
+            <div class="slds-form-element"><!--slds-has-error-->
+              <div class="slds-form-element__control">
+                <input type="text" class="slds-input split-pct slds-text-align--right" value="{{splitPct}}"/>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </script>
+
+    <script type="text/javascript">
+        
+    (function ($) {
+
+        var isSaving = false,
+            isSearching = false,
+            masterAdId = '{!masterAdvertisement.Id}',
+            $adsTableBody = $('#ads-table tbody'),
+            $dialog = $('#dialog'),
+            $saveButton = $('#button-save'),
+            $searchButton = $('#button-search'),
+            $searchInput = $('#text-input-search'),
+            $searchResult = $('#search-result-select'),
+            calc = new Calculator($('#ads-table'), $('#ad-template').text());
+
+        // search event
+        $searchInput.on('keypress', function(e) {
+            if (e.which == 13) {
+                doSearch();
+            }
+        })
+        // search event
+        $searchButton.on('click', doSearch);
+
+        function doSearch() {
+
+            if (isSearching || $searchInput.val().length < 3) {
+                return;
+            }
+
+            toggleSearchButton();
+
+            // ignore any adplans for the search that are already used
+            var ignoredIds = [];
+            calc.getRows().forEach(function (r) { 
+                if (!r.isdeleted) {
+                    ignoredIds.push(r.parentId);
+                }
+            });
+
+            // remove current options
+            $searchResult.find('option').remove();
+
+            // send search request
+            LNE_AdvertisementSplit_CX.searchAdPlans(
+                $searchInput.val(),
+                ignoredIds,
+                function(results) {
+
+                    // create/add new options
+                    results.forEach(function(item) {
+
+                        var parts = item.split('|');
+                        $searchResult.append(
+                            $('<option></option>')
+                                .attr('value', parts[0])
+                                .text(parts.slice(1).join('|')) // incase the text portion was split up
+                        );
+
+                    });
+
+                    toggleSearchButton();
+
+                }
+            );
+
+            function toggleSearchButton() {
+                isSearching = !isSearching;
+                $searchButton
+                    .attr('disabled', isSearching)
+                    .text('Search' + (isSearching ? 'ing...' : ''));
+            }
+
+        }
+
+        // add event
+        $('#button-add').on('click', function() {
+
+            // add each selected ad plan as a new advertisement row
+            // need to do a callback to get adplan infos
+            var $selectedOptions = $searchResult.find('option:selected'),
+                adplanIds = $selectedOptions
+                    .map(function() {
+                        return this.value;
+                    })
+                    .get();
+
+            LNE_AdvertisementSplit_CX.createAdvertisements(
+                adplanIds,
+                masterAdId,
+                function(newAdverts) {
+                    newAdverts.forEach(calc.addRow);
+                    $selectedOptions.remove();
+                }
+            );
+
+        });
+
+        $adsTableBody
+            // record link
+            .on('click', 'a.rec-link', function() {
+                window.open(this.dataset.href, '_blank');
+                window.self.close();
+            })
+            // delete event
+            .on('click', 'svg.action-delete', function() {
+                calc.removeRow($(this).closest('tr').data('recordid'));
+            })
+            // restrict inputs to whole numbers
+            .on('keypress', 'input.slds-input', function(e) {
+                var dl = this.classList.contains('split-amt') ? 2 : 1;
+                return validateFloatKeyPress(this, e, dl);
+            })
+            // default blanks to 0
+            .on('blur', 'input.slds-input', function() {
+                if (this.value == '') this.value = 0;
+            })
+            // on input change send input to calculator
+            .on('input', 'input.split-amt, input.split-pct', $.debounce(200, function() {
+                var $this = $(this);
+                calc.updateRow(
+                    $this.closest('tr').data('recordid'),
+                    $this.hasClass('split-amt') ? 'splitAmount' : 'splitPct',
+                    parseFloat(this.value || 0, 10)
+                );  
+            }));
+
+        // save event
+        $saveButton.on('click', function() {
+
+            if (isSaving) {
+                return;
+            }
+
+            var $this = $(this);
+
+            toggleSaveButton();
+
+            LNE_AdvertisementSplit_CX.saveAdvertisements(
+                calc.getRows(),
+                masterAdId,
+                function(success) {
+
+                    $dialog.find('.msg').text(
+                        success
+                            ? 'Saved successfully!'
+                            : 'An error occurred, please contact your administrator.'
+                    );
+                    $dialog.removeClass('slds-hide').addClass('slds-show');
+                    toggleSaveButton();
+
+                    window.opener.postMessage('refresh', '*');
+                    window.setTimeout(window.close, 1000);
+
+                }
+            );
+
+            function toggleSaveButton() {
+                isSaving = !isSaving;
+                $this
+                    .attr('disabled', isSaving)
+                    .text(isSaving ? 'Saving...' : 'Save');
+            }
+
+        });
+
+        // cancel event
+        $('#button-cancel').on('click', function() {
+            window.close();
+        });        
+
+        function Calculator($table, template) {
+
+            var $tbody = $table.find('tbody'),
+                $tfoot = $table.find('tfoot'),
+                $totalAmount = $tfoot.find('#total-split-amount span'),
+                $totalPct = $tfoot.find('#total-split-pct span'),
+                $error = $tfoot.find('#footer-error-message'),
+                _ix = 0,
+                _netTotal = 0,
+                _masterRow = {},
+                _rows = {},
+                _rows$ = {},
+                _drows = [];
+
+            function appendRow(item) {
+
+                item.recordId = item.recordId || _ix++;
+                item.refresh = function(input) {
+                    var $tr = $tbody.find('tr[data-recordid="'+this.recordId+'"]');
+                    if (!input || input == 'splitAmount') {
+                        $tr.find('input.split-amt').val(this.splitAmount);
+                    }
+                    if (!input || input == 'splitPct') {
+                        $tr.find('input.split-pct').val(this.splitPct);
+                    }
+                }
+
+                $tbody.append(Mustache.render(template, item));
+
+                var row$ = {
+                    $splitAmount: $tbody.find('tr[data-recordid="'+item.recordId+'"] input.split-amt'),
+                    $splitPct: $tbody.find('tr[data-recordid="'+item.recordId+'"] input.split-pct')
+                };
+
+                _rows[item.recordId] = item;
+                _rows$[item.recordId] = row$;
+
+                if (item.isMaster) {
+                    _masterRow = item;
+                }
+
+                recalculateTotalsAndValidate();
+
+            }
+
+            function updateRowVal(id, input, val) {
+
+
+                var row = _rows[id];
+
+                // master or not?
+                if (id == _masterRow.recordId) {
+
+                    var children = [];
+                    for (rid in _rows) {
+                        if (rid != _masterRow.recordId) {
+                            children.push(_rows[rid]);
+                        }
+                    }
+
+                    if (children.length < 1) {
+                        // no children , shouldn't be able to edit
+                        
+                    }
+                    else {
+
+                        var delta = 0;
+
+                        if (input == 'splitPct') {
+                            
+                            var newamount = val * _netTotal / 100;
+
+                            delta = makeFloat(_masterRow.splitAmount - newamount);
+
+                            _masterRow.splitAmount = makeFloat(newamount);
+                            _masterRow.splitPct = val;
+                            _masterRow.refresh('splitAmount')
+
+                        }
+                        else if (input == 'splitAmount') {
+                            
+                            // master deltas are distributed amongst living children
+                            delta = makeFloat(_masterRow.splitAmount - val);
+
+                            _masterRow.splitAmount = val;
+                            _masterRow.splitPct = makeFloat(_masterRow.splitAmount / _netTotal * 100, 1);
+                            _masterRow.refresh('splitPct');
+
+                        }
+
+                        if (delta != 0) {
+
+                            var neg = delta < 0,
+                                vals = distribute(2)(children.length)(Math.abs(delta));
+
+                            children
+                                .sort(function(a,b) {
+                                    return neg
+                                        ? b.splitAmount - a.splitAmount
+                                        : a.splitAmount - b.splitAmount;
+                                })
+                                .forEach(function(row) {
+
+                                    var v = vals.pop();
+
+                                    if (neg) {
+                                        v = -v;
+                                    }
+
+                                    row.splitAmount = makeFloat(row.splitAmount + v);
+                                    row.splitPct = makeFloat(row.splitAmount / _netTotal * 100, 1);
+                                    row.refresh();
+
+                                });
+                        }
+
+                    }
+                }
+                else {
+
+                    var masterdelta = 0;
+
+                    if (input == 'splitPct') {
+                        
+                        // just get new value from nettotal, easier and more accurante
+                        var newamount = val * _netTotal / 100;
+
+                        masterdelta = makeFloat(row.splitAmount - newamount);
+
+                        row.splitAmount = makeFloat(newamount);
+                        row.refresh('splitAmount');
+
+                    }
+                    else if (input == 'splitAmount') {
+
+                        // child deltas are directly applied to the master
+                        masterdelta = makeFloat(row.splitAmount - val);
+
+                        row.splitAmount = val;
+                        row.splitPct = makeFloat(row.splitAmount / _netTotal * 100, 1);
+                        row.refresh('splitPct');
+
+                    }
+
+                    _masterRow.splitAmount += makeFloat(masterdelta);
+                    _masterRow.splitPct = makeFloat(_masterRow.splitAmount / _netTotal * 100, 1);
+                    _masterRow.refresh();
+
+                }
+
+                recalculateTotalsAndValidate();
+
+            }
+
+            function recalculateTotalsAndValidate() {
+
+                var haserror = false,
+                    total = 0;
+
+                for (rid in _rows) {
+                    var row = _rows[rid];
+
+                    if (row.isdeleted) continue;
+
+                    total += row.splitAmount;
+
+                    if (row.splitAmount <= 0) {
+                        _rows$[rid].$splitAmount.closest('.slds-form-element').addClass('slds-has-error');
+                        haserror = true;
+                    }
+                    else {
+                        _rows$[rid].$splitAmount.closest('.slds-form-element').removeClass('slds-has-error');
+                    }
+
+                    if (row.splitPct <= 0) {
+                        _rows$[rid].$splitPct.closest('.slds-form-element').addClass('slds-has-error');
+                        haserror = true;
+                    }
+                    else {
+                        _rows$[rid].$splitPct.closest('.slds-form-element').removeClass('slds-has-error');
+                    }
+
+                }
+
+                
+                $error.text(haserror ? 'All values must be greater than zero' : '');
+                $saveButton.attr('disabled', haserror);
+                $totalAmount.text(addCommas(total.toFixed(2)));
+                $totalPct.text((total / _netTotal * 100).toFixed(1));
+
+            }
+
+            return {
+                init: function(package) {
+                    _netTotal = package.originalTotal;
+                    _masterRow = {};
+                    _rows = {};
+                    package.advertisements.forEach(appendRow);
+                    recalculateTotalsAndValidate();
+                },
+                addRow: appendRow,
+                updateRow: updateRowVal,
+                refreshTotals: recalculateTotalsAndValidate,
+                removeRow: function(id) {
+                    updateRowVal(id, 'splitAmount', 0);
+                    // move item to another object
+                    var row = _rows[id];
+                    row.isdeleted = true;
+                    _drows.push(row);
+                    delete _rows[id];
+                    recalculateTotalsAndValidate();
+                    $tbody.find('tr[data-recordid="'+id+'"]').fadeOut(function () {
+                        $(this).remove();
+                    });
+                },
+                getRows: function() {
+                    var rows = [];
+                    for (rid in _rows) {
+                        var row = _rows[rid];
+                        if ($.isNumeric(row.recordId)) {
+                            row.recordId = null;
+                        }
+                        rows.push(row);
+                    }
+                    _drows.forEach(function(row) {
+                        if (row.recordId) {
+                            rows.push(row);
+                        }
+                    });
+                    return rows;
+                },
+                flushDeletedRows: function() {
+                    _drows = [];
+                },
+                debug: function() {
+                    return _rows;
+                }
+            };
+
+        }
+
+        // fetch/build existing advertisements
+        LNE_AdvertisementSplit_CX.getRelatedAdvertisements(masterAdId, calc.init);
+
+        window.calc = calc;
+
+    })(jQuery);
+
+    function addCommas(nStr) {
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1,$2');
+        }
+        return x1 + x2;
+    }
+
+    function validateFloatKeyPress(el, evt, dl) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        var number = el.value.split('.');
+        if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        //just one dot (thanks ddlab)
+        if(number.length>1 && charCode == 46){
+             return false;
+        }
+        //get the carat position
+        var caratPos = getSelectionStart(el);
+        var dotPos = el.value.indexOf(".");
+        if( caratPos > dotPos && dotPos>-1 && (number[1].length > dl-1)) {
+            return false;
+        }
+        return true;
+
+        function getSelectionStart(o) {
+            if (o.createTextRange) {
+                var r = document.selection.createRange().duplicate()
+                r.moveEnd('character', o.value.length)
+                if (r.text == '') return o.value.length
+                return o.value.lastIndexOf(r.text)
+            } else return o.selectionStart
+        }
+    }
+
+    function makeFloat(number, decimalPlaces) {
+        decimalPlaces = decimalPlaces || 2;
+        return parseFloat(number.toFixed(decimalPlaces), 10);
+    }
+
+    // fill :: a -> Integer -> [a]
+    var fill = function fill(x) {
+      return function (y) {
+        return new Array(y).fill(x);
+      };
+    };
+
+    // quotrem :: Integer -> Integer -> [Integer]
+    var quotrem = function quotrem(x) {
+      return function (y) {
+        return [Math.floor(y / x), Math.floor(y % x)];
+      };
+    };
+
+    // distribute :: Integer -> Integer -> Number -> [Number]
+    var distribute = function distribute(p) {
+      return function (d) {
+        return function (n) {
+          var e = Math.pow(10, p);
+          var x = quotrem(d)(n * e);
+          return fill(x[0] / e)(d - x[1]).concat(fill((x[0] + 1) / e)(x[1]));
+        };
+      };
+    };
+
+    </script>
+
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,50 @@
+<apex:page showHeader="false" showChat="false" sidebar="false">
+    <SLCA2:calendar namespace="SLCA2" 
+        calendar="LNE_Events,LNE_Occasions"
+        css="{!$Resource.LNE_CalendarAnythingCSS}"
+        settings="['r_c', 'r_d', 'r_s']"
+        userAdditionalSettings="{'confirmDelete':'true','dayModeArea':'1_0','uiFilter':'true','uiFilterSets':'true'}"
+        view="month"
+        func="{ready:fReady}"
+    ></SLCA2:calendar>
+
+    <script>
+        var fReady = function(oResultAPI) {
+            oResultAPI.setFiltersPanel({
+               fields : ['eventdatetime__c|market__c','eventdatetime__c|venue__c','eventdatetime__c|artists__c','eventdatetime__c|eventtype__c','eventdatetime__c|eventstatus__c','occasion__c|country__c','occasion__c|state__c','occasion__c|market__c','occasion__c|venue__c'], // list of fields, each field include lowercase  object name (or "common" ) PLUS '|' (vertical line) + API field name - also lowercase
+               filterSets : [{
+                   'name':'Hide Global Occasions', // title
+                   'type' : 'custom', // type - custom
+                   'criteria' : [
+                       {'name':'global__c','object':'occasion__c','oper':'equal','value':'false','text':'false'}
+                   ],
+                   'id' : 'f1'
+               }]
+           ,
+           'addCustomFilterSet' : true,
+           'addGlobalFilterSet' : true
+           });
+        }
+    </script>
+    
+    
+</apex:page>
+<!--
+Component parameters removed or replaced:
+        urlparams="sb=2">
+        settings="['l_ds', 'r_c', 'r_d', 'r_s']"
+        enabled="LNE_Events,LNE_Occasions"
+        readonly="{
+            edit            : true, 
+            create          : true, 
+            detail          : true, 
+            move            : true, 
+            hover           : true, 
+            contextEvent    : true, 
+            contextCalendar : true, 
+            contextArea     : true,
+            cloneSharing    : true,
+            contextCalendar : false,
+            contextFilter   : true
+        }"
+-->

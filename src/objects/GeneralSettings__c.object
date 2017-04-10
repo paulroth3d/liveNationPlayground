@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Hierarchical settings that may apply to any area of the application and can be referenced via code as well as config. Before creating additional hierarchical custom settings, consider whether you can add fields to this setting and achieve the same results.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ApproverFinance1CanadaConcerts__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Finance1 Canada Concerts</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverFinance1TheatersClubs__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Finance1 Theaters &amp; Clubs</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverFinance1USConcerts__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Finance1 US Concerts</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverFinance2USConcerts__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Finance2 US Concerts</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverFinance3__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Finance3</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverSecondLevelCanadaConcerts__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Second-Level Canada Concerts</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverSecondLevelTheatersClubs__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Second-Level Theaters &amp; Clubs</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverSecondLevelUSConcertsEast__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Second-Level US Concerts East</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverSecondLevelUSConcertsWest__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver: Second-Level US Concerts West</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ArtistDataReviewer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked for a profile or user, enables user to bypass the artist record&apos;s status value to &quot;In Review&quot; upon record creation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked for a profile or user, enables user to bypass the artist record&apos;s status value to &quot;In Review&quot; upon record creation.</inlineHelpText>
+        <label>Artist Data Reviewer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassAutomationFinancialCalculator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Bypasses Automation - Financial Calculator
+(used within data loads)</description>
+        <externalId>false</externalId>
+        <label>Bypass Automation-Financial Calculator</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassAutomation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>All forms of workflow (Process Builder, Flow, workflow rules), validation rules, and triggers will be prevented from running when changing this value to true/checked. Apply at the org, profile, or user level.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>All forms of workflow (Process Builder, Flow, workflow rules), validation rules, and triggers will be prevented from running when changing this value to true/checked. Apply at the org, profile, or user level.</inlineHelpText>
+        <label>Bypass Automation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassMultiCurrency__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If this flag is checked, then the multi-currency work will not be executed.
+(FOR DEVELOPMENT PURPOSES ONLY, to be removed on completion)</inlineHelpText>
+        <label>Bypass Multi-Currency</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BypassPBFlow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Flag that bypasses all Process Builder Flows.</inlineHelpText>
+        <label>Bypass PB Flow</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CoPromoterDataReviewer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked for a profile or user, enables user to bypass the co-promoters record&apos;s status value to &quot;In Review&quot; upon record creation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked for a profile or user, enables user to bypass the co-promoters record&apos;s status value to &quot;In Review&quot; upon record creation.</inlineHelpText>
+        <label>Co-Promoter Data Reviewer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DebugAPI__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Currently this only means that additional information is provided for error messages on the API.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether additional information should be provided for working with the API.</inlineHelpText>
+        <label>Debug API</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DefaultEventApproverID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of the user who will be assigned as the Event default first-level approver if no other approver is found</inlineHelpText>
+        <label>Default Event Approver ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ForceFlagLogic__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>With this field checked, Flag flows/logic will will not be bypassed.</inlineHelpText>
+        <label>Force Flag Logic</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GlobalDataAdministrator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked for a profile or user, enables user to bypass many workflows and validation rules that might otherwise prevent successful editing or loading of data. Generally used for the integration and system admin profiles as well as granting a higher level of access to trusted users.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked for a profile or user, enables user to bypass many workflows and validation rules that might otherwise prevent successful editing or loading of data. May grant a higher level of access to trusted users on an exception basis.</inlineHelpText>
+        <label>Global Data Administrator</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Grid_Lost_Focus_Poll_Interval__c</fullName>
+        <description>Used in ExpensesTab and AncillaryTab VF pages javascript to set how often the code polls to check the current in focus element. Used to show warning if grid has focus removed but has unsaved changes. Please enter a numeric value for the desired milliseconds.</description>
+        <externalId>false</externalId>
+        <label>Grid Lost Focus Poll Interval</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NotificationAgeLimit__c</fullName>
+        <defaultValue>7</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The limit in number of days that a Notification record is allowed to live.  A daily batch will remove any Notification record that is older than the limit in days.</inlineHelpText>
+        <label>Notification Age Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SearchLimit__c</fullName>
+        <defaultValue>500</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The most number of records to be returned from a &apos;Search&apos; that would not require further filtering/narrowing of search.</inlineHelpText>
+        <label>Search Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SponsorDataReviewer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sponsor Data Reviewer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VendorDataReviewer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked for a profile or user, enables user to bypass the vendor record&apos;s status value to &quot;In Review&quot; upon record creation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked for a profile or user, enables user to bypass the vendor record&apos;s status value to &quot;In Review&quot; upon record creation.</inlineHelpText>
+        <label>Vendor Data Reviewer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>General Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

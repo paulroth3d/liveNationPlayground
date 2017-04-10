@@ -1,0 +1,389 @@
+<apex:page standardController="Event__c" extensions="LNE_UpdateEventHouseNut,LNE_FinanceSubTabs_CX,LNE_EventStandardController_CX,LNE_ExpenseTab_CX" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>Expense</title>
+
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/underscore.js")}" />
+            
+            <!-- PostMessage communicates between windows -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage2.js")}" />
+            <!-- Used to simplify remoting calls -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/remoting/RemotingHelper.js")}" />
+            <!-- handles routing of PostMessages -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_MessagePostOffice.js")}" />
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+
+            <apex:form >
+              <apex:actionFunction action="{!getRelatedExpenses}" name="GetRelatedExpenses_JS" oncomplete="refreshGrid('{!relatedExpensesCount}');">
+              </apex:actionFunction>
+            </apex:form>
+
+             <style>
+                .top-master-container,
+                .top-row-2-container {
+                    width: 100%;
+                }
+                
+                .select-expenses-container {
+                    float: left;
+                    margin: 0 0 15px 3px;
+                    width: 30%;
+                }
+                .house-nut-top-container,
+                .top-row-2-container { 
+                  float: right; 
+                  margin: 0 0 0 3px; 
+                  text-align: right;
+                  width: 70%;
+                }
+                .top-row-2-container {
+                    margin-bottom: 0;   
+                }
+                .top-container .cell {
+                  display: inline-block;
+                  padding: 4px 8px; 
+                  text-align: right;
+                  vertical-align: top;
+                }
+                .house-nut-top-container label {
+                  display: block;
+                  margin-bottom: 8px;
+                }
+                .house-nut-top-container input {
+                    text-align: right;
+                }
+                .house-nut-top-container td.shortPad {
+                  padding: 4px 4px;
+                }
+                .bold { 
+                  font-weight:bold; 
+                }
+                .hide {
+                    display: none;
+                }
+                .show {
+                    display: block;
+                }
+            </style>
+        </head>
+
+        <body class="rome-lds" id="LNE_ExpenseTab--body" data-event-id="{!Event__c.Id}" data-has-related-expenses="{!hasRelatedExpenses}">
+            <div class="slds-clearfix top-master-container">
+              <div class="top-container select-expenses-container">
+                <div class="cell">
+                    <a href="#" id="select-expenses-button">Select Expenses</a>
+                </div>
+              </div>
+              <div class="top-container house-nut-top-container">
+                <apex:form id="houseNutTopForm">
+                    <div class="cell">
+                      <label for="using-house-nut-check" class="slds-text-heading--label-normal">{!$ObjectType['Event__c'].fields['UsingHouseNut__c'].Label}</label>
+                      <apex:inputField html-data-control="nut-amount-chk" id="using-house-nut-check" value="{!Event__c.UsingHouseNut__c}" styleClass="shortPad" onBlur=""/>
+                    </div>
+                    <div class="cell">
+                      <label for="house-nut-amount" class="slds-text-heading--label-normal">{!$ObjectType['Event__c'].fields['BookingHouseNut__c'].Label}</label>
+                      <apex:inputField html-data-control="nut-amount-input" id="house-nut-amount" value="{!Event__c.BookingHouseNut__c}" onBlur=""/>
+                    </div>
+                    <!-- US342 Start-->
+                    <div class="cell">
+                      <label for="number-of-Trucks" class="slds-text-heading--label-normal">{!$ObjectType['Event__c'].fields['NumberofTrucks__c'].Label}</label>
+                      <apex:inputField html-data-control="number-of-Trucks-input" id="number-of-Trucks" value="{!relatedEvent.NumberofTrucks__c}" onBlur=""/>
+                    </div>
+                    <!-- US342 End-->
+                    <!-- US116 Start-->
+                    <div class="cell">
+                      <label for="advertisingbudget" class="slds-text-heading--label-normal">{!$ObjectType['Event__c'].fields['AdvertisingBudget__c'].Label}</label>
+                      <apex:inputField html-data-control="advertisingbudget-input" id="advertisingbudget" value="{!relatedEvent.AdvertisingBudget__c}" onBlur=""/>
+                    </div>
+                    <div class="cell">
+                      <label for="advertisingsettlementplan" class="slds-text-heading--label-normal">{!$ObjectType['Event__c'].fields['AdvertisingSettlementPlan__c'].Label}</label>
+                      <apex:inputField html-data-control="advertisingsettlementplan-input" id="advertisingsettlementplan" value="{!relatedEvent.AdvertisingSettlementPlan__c}" onBlur=""/>
+                    </div>
+                    <!-- US116 End-->
+                </apex:form>
+              </div>
+            </div>
+
+            <div class="slds-clearfix top-container top-row-2-container">
+                <div class="cell">
+                    <button data-control="apply-house-nut-top" class="slds-button slds-button--brand">Apply</button>
+                </div>
+            </div>
+            
+            <div class="slds-spinner_container hide" id="grid-spin">
+              <div role="status" class="slds-spinner slds-spinner--large">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+              </div>
+            </div>
+
+            <apex:outputPanel id="grids" layout="none">
+                <div id="all-grids-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+                    <iframe class="hide" id="grid-frame-expenses" data-grid-name="expenses" scrolling="auto" height="780" width="100%" frameborder="0" src=""></iframe>
+                </div>
+            </apex:outputPanel>
+
+            <script type="text/javascript">
+                var lneExpenseTab = {
+                  bodyId: 'LNE_ExpenseTab--body',
+                  gridId: 'all-grids-container',
+                  useNutGrid: false
+                };
+                var overlayWindow;
+                var selectExpensesUrl = createApexURL('LNE_SelectExpenseEntries');
+                
+                window.postOffice = new LNE_MessagePostOffice(this);
+                this.postOffice.addTypeHandler( 'iframeResizeRequest', function( myPostMessage ){
+                    console.log( 'iframeResizeRequest received' );
+                    var selector = 'iframe';
+                    if( myPostMessage.data && myPostMessage.data.frameTarget ){
+                        selector = "iframe#" + myPostMessage.data.frameTarget;
+                    }
+                    jQuery( selector ).css( "height", myPostMessage.data.newHeight ).attr( "height",myPostMessage.data.newHeight )
+
+                });
+                postOffice.listenForPostEvents(window);
+
+                function applySelectedExpenseEntries(evt) {
+                  var initialFocus = true;
+
+                  overlayWindow = window.open(selectExpensesUrl + '?event_id={!Event__c.Id}', '_blank', 'location=no,width=900,height=600,menubard=yes');
+
+                  $(overlayWindow).on('unload', function() {
+                    closeOverlayWindow();
+                    GetRelatedExpenses_JS();
+                  });
+
+                  $(overlayWindow).on('blur', function() {
+                    closeOverlayWindow();
+                    GetRelatedExpenses_JS();
+                  });
+                }
+
+                function closeOverlayWindow() {
+                  if (overlayWindow && !overlayWindow.closed) {
+                    overlayWindow.close();
+                  }
+
+                  overlayWindow = null;
+                }
+
+                function createApexURL(pageName) {
+                  var currentLocation = window.location.href;
+                  var ajaxURL = currentLocation.replace( 'gblite.', 'c.' );
+
+                  ajaxURL = ajaxURL.substring(0, ajaxURL.toLowerCase().indexOf('/apex/' )) + '/apex/' + pageName;
+
+                  return( ajaxURL );
+                }
+
+                function refreshGrid(expenseCount) {
+                  var gridContainer = $('#' + lneExpenseTab.gridId);
+
+                  if (expenseCount > 0) {
+                    var iframeLoc = $('#grid-frame-expenses').attr('src');
+
+                    $('#grid-frame-expenses').attr('src', iframeLoc);
+
+                    gridContainer.show();
+                  } else {
+                    gridContainer.hide();
+                  }
+                }
+
+                function updateEventNut(chk, amt) {
+                    console.log('updateEventNut VF called');
+                    var win;
+                    var useNut = false;
+                    if ($('[data-control="nut-amount-chk" ]').prop('checked')) {
+                        useNut = true;
+                    }
+                    
+                    win = $('#grid-frame-expenses').get(0).contentWindow;  
+
+                    console.log('chk is ' + chk + ' amt is ' + amt);
+                    // Have to check for any grid changes if there are any do NOT save!
+                    remotingHelper( 'LNE_UpdateEventHouseNut.updateEvent', 
+                        '{!Event__c.Id}',
+                        chk,
+                        amt,
+                        function( event ){
+                                console.log('saved EventHouseNut event');
+                                console.log(event);
+                                toggleGrids();
+                                lneSharedJs.handleSuccessfulSave();
+                            },
+                            function( errorMessage ){
+                                console.log('failed to save EventHouseNut: ' + errorMessage);
+                            }
+                    );
+                };
+
+                function receiveNutMessage(event) {
+                    console.log('receiveNutMessage VF event.data.requestedAction ' + event.data.requestedAction);
+                    console.log(event);
+                    
+                    var useNut = false;
+                    if (event.data.requestedAction === 'reportForNutSave' && event.data.changes === 'true') {
+                        window.alert('Please save any grid changes before applying house nut. Save your changes, then click Apply again when ready.');
+                        $('#grid-spin').hide();
+                    } else if (event.data.requestedAction === 'reportForNutSave' && event.data.changes !== 'true') {
+                        if ($('[data-control="nut-amount-chk" ]').prop('checked')) {
+                            useNut = true;
+                        }
+                        var amt = $('[data-control="nut-amount-input"]').val();
+                        amt = amt.replace(',','');
+                        if (amt == undefined || amt == null || amt == "") {
+                          amt = 0;
+                        }
+                        updateEventNut(useNut, amt);
+                    }
+                }
+
+                function toggleGrids() {
+                    var curr = $('#grid-frame-expenses').attr('src');
+                    var useNut = false;
+                    var src;
+                    
+                    if ($('[data-control="nut-amount-chk" ]').prop('checked')) {
+                        useNut = true;
+                        if (!curr) {
+                            curr = '{!gridPage}gname=Expense - House Nut&fpf=Event__c&fpv={!Id}&sbb=0&sh=0&ssb=0';    
+                        }
+                    } else {
+                         if (!curr) {
+                            curr = '{!gridPage}gname=Expenses&fpf=Event__c&fpv={!Id}&sbb=0&sh=0&ssb=0';    
+                        }                       
+                    }
+                    
+                    if (useNut) {
+                        console.log('############################################################## use nut');
+                        r = 'gname=Expense - House Nut';
+                        if (curr.indexOf('gname=Expense - House Nut') == -1) {
+                            src = curr.replace('gname=Expenses',r);
+                        } else {
+                            src = curr;
+                        }
+                    } else {
+                        console.log('############################################################## no nut');
+                        r = 'gname=Expenses';
+                        if (curr.indexOf('gname=Expenses') == -1) {
+                            src = curr.replace('gname=Expense - House Nut',r);
+                        } else {
+                            src = curr;
+                        }
+                    }
+                    
+                    src += '&frameTarget=grid-frame-expenses';
+                
+                    console.log('curre - ' + curr);
+                    console.log('src - ' + src);
+                    console.log('change url!');
+                    document.getElementById('grid-frame-expenses').src = src;
+                    
+                    console.log('iframe src now ' + $('#grid-frame-expenses').attr('src'));
+                    $('#grid-frame-expenses').removeClass('hide');
+                    function removeSpin() {
+                      $('#grid-spin').hide();
+                    }
+                    window.setTimeout(removeSpin, 2000);
+                }
+
+                lneExpenseTab.init = function() {
+                  var changedDom = false;
+                  var hasRelatedExpenses = $('#' + lneExpenseTab.bodyId).attr('data-has-related-expenses');
+                  var gridContainer = $('#' + lneExpenseTab.gridId);
+                  var chk = $('[data-control="nut-amount-chk" ]').val();
+                  var useNut = chk == 1 ? true : false;
+                  console.log(' lneExpenseTab.init ');
+                  window.addEventListener("message", receiveNutMessage, false);
+
+                  if (hasRelatedExpenses === 'true') {
+                    gridContainer.show();
+                  } else {
+                    gridContainer.hide();
+                  }
+
+                  toggleGrids();
+                  
+                  //-- reintroduce the select expense button
+                  $('#select-expenses-button').on('click', function() {
+                    if (!overlayWindow && document.hasFocus()) {
+                        applySelectedExpenseEntries.apply(this, arguments);
+                    }
+                  });
+    
+                   $('[data-control="nut-amount-chk" ]').on('click', function() {
+                       if ($(this).prop('checked')) {
+                           console.log('nut on');
+                            $('[data-control="nut-amount-input" ]').val('');
+                            $('[data-control="nut-amount-input" ]').prop('disabled',''); 
+                       } else {
+                           console.log('nut off');
+
+                            $('[data-control="nut-amount-input" ]').val(0);
+                            $('[data-control="nut-amount-input" ]').prop('disabled','disabled');
+                       }
+                  }); 
+
+                  $('[data-control="apply-house-nut-top"]').on('click', function(e) {
+                    e.preventDefault();
+                    console.log('apply clicked');
+                    var win;
+                    var useNut = false;
+                    if ($('[data-control="nut-amount-chk" ]').prop('checked')) {
+                        useNut = true;
+                        if ($('[data-control="nut-amount-input" ]').val() === '') {
+                            $('[data-control="nut-amount-input" ]').attr('style','border: solid red 2px;');
+                            return false;
+                        } else {
+                            $('[data-control="nut-amount-input" ]').attr('style','none;');
+                        }
+                    }
+                    
+                    //save event details - US116
+                    var eventId = '{!event}';
+                    var numberofTrucks = $('[data-control="number-of-Trucks-input"]').val();
+                    numberofTrucks = numberofTrucks.replace(',','');
+                    if (numberofTrucks == undefined || numberofTrucks == null || numberofTrucks == "") {
+                        numberofTrucks = 0;
+                    }
+                    numberofTrucks = parseFloat(numberofTrucks).toFixed(2);
+
+                    var advertisingbudget = $('[data-control="advertisingbudget-input"]').val();
+                    advertisingbudget = advertisingbudget.replace(',','');
+                    if (advertisingbudget == undefined || advertisingbudget == null || advertisingbudget == "") {
+                        advertisingbudget = 0;
+                    }
+                    var advertisingsettlementplan = $('[data-control="advertisingsettlementplan-input"]').val();
+                    console.log('@@ - ' + eventId + ' - ' + advertisingbudget + ' - ' +advertisingsettlementplan + ' - '+ numberofTrucks);
+                    remotingHelper( 'LNE_ExpenseTab_CX.saveEvent', eventId, advertisingbudget, advertisingsettlementplan, numberofTrucks,function( eventSaveSuccess ){
+                            console.log('@@@ event save SUCCESS: '+ eventSaveSuccess);   
+                        }, function( errorMessage ){
+                            console.log( '@@@ event save FAILURE: ' + errorMessage );
+                        }
+                    );
+                    //end US116
+
+                    $('#grid-spin').show();
+                    win = $('#grid-frame-expenses').get(0).contentWindow;
+                    win.postMessage({'action': 'reportForNutSave'}, '*');
+                  });
+
+                  lneSharedJs.sharedInit();
+                };
+
+                lneExpenseTab.init();
+            </script>
+            <c:LNE_Copyright />
+        </body>
+    </html>
+</apex:page>

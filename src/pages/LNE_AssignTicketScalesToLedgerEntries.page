@@ -1,0 +1,185 @@
+<!--
+/**
+ * Popup to determine which 'selected ticket scales' should be used on a ledger entry when the 'Apply Ticket Scales' field is set to 'Selected Tickets'.
+ * <p>Said more plainly, if someone says that a rule should only apply to selected tickets, they should probably say which those are</p>
+ * @author Scott Will
+ * 
+ **/
+ -->
+<apex:page extensions="LNE_TicketScalesToLedgerController"
+    showHeader="false" 
+    sidebar="false" 
+    standardController="Event__c" 
+    title="Assign Ticket Scales to Ancillary Ledger Entry">
+
+    <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources,'jquery/jquery-min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds,'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+    <style>
+        .title-box,
+        #scales-list {
+            margin: 16px;
+        }
+
+        .button-box .slds-button {
+            float: right;
+            display: inline-block;
+            margin: 16px;
+        }
+
+        #all-or-none-ghost-box, 
+        #all-or-none-label {
+            display: inline-block;
+        }
+
+        #all-or-none-label {
+            cursor: pointer;
+        }
+
+        .edt-panel {
+            padding:10px;
+        }
+
+        .all-or-none-div {
+            padding-left: 10px;
+        }
+    </style>
+
+    <apex:form rendered="false">
+        <apex:inputHidden value="{!Event__c.ShowCount__c}"/>
+        <apex:inputHidden value="{!Event__c.StatusStage__c}"/>
+        <apex:inputHidden value="{!Event__c.UsingMultiScale__c}"/>
+    </apex:form>
+
+    <div class="rome-lds slds-content">
+        
+        <div class="title-box">
+            <h4 class="title">Please select the price levels to apply</h4>
+        </div>
+
+        <div id="scales-list">
+
+            <div class="all-or-none-div">
+                <label id="all-or-none-label" for="all-or-none-ghost-box">
+                    <input id="all-or-none-ghost-box" type="checkbox"/>&nbsp;&nbsp;
+                    <span>Select All</span>
+                </label>
+            </div>
+            <br/>
+
+            <div class="slds-tabs--scoped tab-strip">
+
+                <c:LNE_EventDateTimeTabs eventId="{!Event__c.Id}" rendered="{!isMultiScale}"/>
+            
+                <apex:repeat var="r" value="{!eventDateTimes}">
+                <div class="edt-panel {!IF(isMultiScale,'slds-tabs--scoped__content','')} slds-hide" role="tabpanel" data-id="{!r.recordId}">
+                    
+                    <apex:repeat var="ts" value="{!r.ticketScales}">
+                        <div>
+                            <input type="checkbox" class="ticket-scale-check" data-id="{!LEFT(ts.recordId,15)}" data-checked="{!ts.checked}"/>&nbsp;&nbsp;
+                            <span class="check-label">
+                                <apex:outputText value="{!ts.record.PriceLevel__c}"/>&nbsp;
+                                <apex:outputText value="{!ts.priceLevelMessage}"/>
+                            </span>
+                        </div>
+                    </apex:repeat>
+
+                </div>
+                </apex:repeat>
+
+            </div>
+
+        </div>
+
+        <div class="button-box">
+            <button class="slds-button slds-button--brand" type="button" id="assign-scales-submit">Save</button>
+            <button class="slds-button" type="button" id="assign-scales-cancel">Cancel</button>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        (function ($) {
+
+            // check checked checkboxes
+            $('.ticket-scale-check').each(function() {
+                $(this).prop('checked', this.dataset.checked == 'true');
+            });
+
+            // activate first tab
+            $('.edt-panel:first').removeClass('slds-hide').addClass('slds-show');
+
+            // capture tab click event
+            $('body').on('eventdatetime-tab-clicked', function(e) {
+                // toggle the visible panel(s)
+                $('.edt-panel.slds-show').toggleClass('slds-show slds-hide');
+                // show relevant panel if one is there. 
+                // need to explicilty add/remove here incase same tab was clicked
+                $('.edt-panel[data-id="' + e.originalEvent.detail + '"')
+                    .addClass('slds-show')
+                    .removeClass('slds-hide');
+            });
+
+            // capture all or none toggle
+            $('#all-or-none-ghost-box').on('change', function() {
+                // update label
+                $(this).siblings('span').text(this.checked ? 'Select None' : 'Select All');
+                // toggle checkboxes
+                $('.ticket-scale-check').prop('checked', this.checked);
+            });
+
+            // pseudo-label handling for the checkboxes.  apex tag wasnt working properly
+            $('.check-label').on('click', function() {
+                // find sibling checkbox and toggle it
+                var $checkbox = $(this).siblings(':checkbox');
+                $checkbox.prop('checked', !$checkbox.is(':checked'));
+            });
+
+            // save event
+            $('#assign-scales-submit').on('click', function() {
+
+                var $this = $(this);
+                // disable button
+                $this.attr('disabled', true);
+                $this.text('Saving...');
+
+                // get a pipe delimited string of each checked input's data-id
+                var selectedTicketScales = $('.ticket-scale-check:checked')
+                    .map(function() {
+                        return this.dataset.id.substring(0,15);
+                    })
+                    .get()
+                    .join('|');
+
+                if (selectedTicketScales.length > 0) {
+                    selectedTicketScales = '|' + selectedTicketScales + '|';
+                }
+
+                // call the remote action
+                LNE_TicketScalesToLedgerController.updateLedgerEntry(
+                    '{!$CurrentPage.parameters.ledgerEntryId}',
+                    selectedTicketScales,
+                    function (result) {
+                        // replace the panel with a message
+                        $('#scales-list').html(
+                            result
+                                ? '<span class="slds-m-right--small"><svg aria-hidden="true" class="slds-icon slds-icon--small slds-icon-text-default"><use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use></svg></span><span>Saved successfully!</span>'
+                                : '<p>Failure saving TicketScaleList__c on LedgerEntry__c</p>'
+                        );
+                        // and close after a second
+                        window.setTimeout(window.close, 1000);
+                    }
+                );
+            });
+
+            // cancel event
+            $('#assign-scales-cancel').on('click', function() {
+                window.close();
+            });
+
+        })(jQuery);
+
+    </script>
+
+</apex:page>

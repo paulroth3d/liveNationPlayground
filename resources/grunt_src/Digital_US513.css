@@ -1,0 +1,9 @@
+//-- your info goes here:Digital_US513
+//-- to deploy run: grunt deployGridBuddyResource:Digital_US513
+
+/** Remove number spinners **/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

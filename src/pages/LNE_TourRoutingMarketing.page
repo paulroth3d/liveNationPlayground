@@ -1,0 +1,655 @@
+<apex:page applyBodyTag="false"
+    applyHtmlTag="false"
+    extensions="LNE_TourRoutingMarketing_C" 
+    showHeader="false" 
+    sidebar="false" 
+    standardController="Tour__c" 
+    standardStylesheets="false" 
+    title="Routing - Marketing">
+<apex:variable var="canEdit" value="{!OR($Setup.GeneralSettings__c.GlobalDataAdministrator__c,$Permission.TourMarketing)}"/>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+
+    <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources,'jquery/jquery-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/jquery-ui.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/mustache.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_GeneralResources,'css/lib/jquery-ui.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds,'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+    <style type="text/css">
+        .strong { font-weight: bold; }
+    </style>
+
+</head>
+<body>
+  <div class="rome-lds slds-content">
+
+    <div id="dialog" role="dialog" tabindex="-1" aria-labelledby="dialog-header" class="slds-modal slds-modal--prompt">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header slds-theme--alert-texture">
+          <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close">
+            <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+              <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+            </svg>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 class="slds-text-heading--medium"></h2>
+        </div>
+        <div class="slds-modal__content slds-p-around--medium">
+        </div>
+        <div class="slds-modal__footer">
+          <button id="button-dialog-cancel" class="slds-button slds-button--neutral">Cancel</button>
+          <button id="button-dialog-confirm" class="slds-button slds-button--brand">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="slds-backdrop"></div>
+
+    <div class="slds-section slds-is-open {!IF(canEdit,'slds-show','slds-hide')}">
+      <h3 class="slds-section__title">
+        <button class="slds-button slds-section__title-action">
+          <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon--left" aria-hidden="true">
+            <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+          </svg>Search</button>
+      </h3>
+      <div class="slds-section__content slds-show">
+
+        <fieldset class="slds-form--compound">
+          <legend class="slds-form-element__label slds-text-title--caps">SEARCH AD PLANS</legend>
+
+          <div id="div-search" class="slds-grid slds-wrap">
+
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-artist">Artist</label>
+                <input type="text" id="input-artist" class="slds-input" />
+              </div>
+            </div>
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-adplan_name">Ad Plan Search</label>
+                <input type="text" id="input-adplan_name" class="slds-input exclusive" />
+              </div>
+            </div>
+
+            <div class="slds-size--2-of-8">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-event_date_begin">Event Date</label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+                  <svg class="svg-today slds-input__icon slds-icon-text-default" aria-hidden="true">
+                    <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#event')}"></use>
+                  </svg>
+                  <input type="date" id="input-event_date_begin" class="slds-input" />
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--2-of-8">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-event_date_end">&nbsp;</label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+                  <svg class="svg-today slds-input__icon slds-icon-text-default" aria-hidden="true">
+                    <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#event')}"></use>
+                  </svg>
+                  <input type="date" id="input-event_date_end" class="slds-input" />
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--1-of-8">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-adplan_id">Ad Plan Id</label>
+                <div class="slds-form-element__control slds-input-has-fixed-addon">
+                  <span class="slds-form-element__addon">AP-</span>
+                  <input type="text" id="input-adplan_id" class="slds-input slds-text-align--right exclusive" placeholder="000000" />
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--3-of-8"></div>
+
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="select-division">Division</label>
+                <div class="slds-form-element__control">
+                  <div class="slds-select_container">
+                    <select id="select-division" class="slds-select">
+                    <apex:repeat var="d" value="{!divisions}">
+                      <option value="{!d.value}">{!d.label}</option>
+                    </apex:repeat>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--1-of-2"></div>
+
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="select-venue_type">Venue Type</label>
+                <div class="slds-form-element__control">
+                  <div class="slds-select_container">
+                    <select id="select-venue_type" class="slds-select">
+                    <apex:repeat var="v" value="{!venueTypes}">
+                      <option value="{!v.value}">{!v.label}</option>
+                    </apex:repeat>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--1-of-2"></div>
+
+            <div class="slds-size--1-of-4">
+              <div class="slds-form-element slds-p-around--x-small">
+                <input type="checkbox" name="options" id="checkbox-standalone" checked="" />
+                <label for="checkbox-standalone">Is Standalone</label>
+              </div>
+            </div>
+            <div class="slds-size--3-of-4"></div>
+
+            <div class="slds-size--1-of-1">
+              <div class="slds-form-element slds-p-around--x-small">
+                <section class="slds-clearfix">
+                  <div class="slds-float--right">
+                    <button id="button-reset" class="slds-button">Reset</button>
+                    <button id="button-search" class="slds-button slds-button--brand">Search</button>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <fieldset class="slds-form--compound">
+          <legend class="slds-form-element__label slds-text-title--caps">AD PLAN RESULTS</legend>
+          <div class="slds-form-element__group">
+            <div class="slds-form-element__row">
+              <div class="slds-form-element slds-size--1-of-1">
+                <label class="slds-form-element__label" for="input-artist">AdPlans</label>
+                <select id="select-search-result" multiple="multiple" size="5" class="slds-select"></select>
+              </div>
+            </div>
+            <div class="slds-form-element__row">
+              <div class="slds-form-element slds-size--1-of-1">
+                <section class="slds-clearfix">
+                  <div class="slds-float--right">
+                    <button id="button-deselect" class="slds-button">Deselect All</button>
+                    <button id="button-add" class="slds-button slds-button--brand" disabled="disabled">Add</button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+    </div>
+
+    <div id="section-tour_adplans" class="slds-section slds-is-open">
+      <h3 class="slds-section__title">
+        <button class="slds-button slds-section__title-action">
+          <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon--left" aria-hidden="true">
+            <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+          </svg>Tour Ad Plans</button>
+      </h3>
+      <div class="slds-section__content slds-show">
+
+        <div class="slds-m-around--x-small">
+          <table id="adplans-table" class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+              <tr class="slds-text-title--caps">
+                <th scope="col" class="{!IF(canEdit,'slds-show','slds-hide')}"></th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Name">Name</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Artists">Artists</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Date">Date</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Division">Division</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Venue Type">Venue Type</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Split Amount">Standalone</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script id="adplan-template" type="text/html">
+      <tr data-recordid="{{Id}}">
+        <td scope="row" class="{!IF(canEdit,'slds-show','slds-hide')}">
+          <div class="del-div slds-truncate" title="delete">
+              <svg class="action-delete slds-icon slds-icon-text-default slds-icon--x-small">
+                  <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#delete')}"></use>
+              </svg>
+          </div>
+          <div class="slds-spinner_container slds-hide">
+            <div role="status" class="slds-spinner slds-spinner--x-small">
+              <span class="slds-assistive-text">Deleting</span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+          </div>
+        </td>
+        <td data-label="Name">
+          <div class="slds-truncate" title="{{AdPlanName__c}}">{{AdPlanName__c}}</div>
+        </td>
+        <td data-label="Artists">
+          <div class="slds-truncate" title="{{Artists__c}}">{{Artists__c}}</div>
+        </td>
+        <td data-label="Date">
+          <div class="slds-truncate" title="{{FormattedDate}}">{{FormattedDate}}</div>
+        </td>
+        <td data-label="Division">
+          <div class="slds-truncate" title="{{Event__r.Office__r.Division__c}}">{{Event__r.Office__r.Division__c}}</div>
+        </td>
+        <td data-label="Venue Type">
+          <div class="slds-truncate" title="{{Event__r.Venue__r.Type}}">{{Event__r.Venue__r.Type}}</div>
+        </td>
+        <td data-label="Standalone">
+          <div class="slds-form-element"><!--slds-has-error-->
+            <div class="slds-form-element__control">
+              <input type="checkbox" class="slds-input split-amt slds-text-align--right" disabled="disabled" {{^Event__c}}checked="checked"{{/Event__c}}/>
+            </div>
+          </div>
+        </td>
+      </tr>
+  </script>
+
+  <script type="text/javascript">
+  (function($) {
+
+      var dialogTimeout,
+          isAdding = false,
+          isSearching = false,
+          searchResults = {},
+          template = $('#adplan-template').text(),
+          tourId = '{!Tour__c.Id}',
+          $adplanId = $('#input-adplan_id'),
+          $adplanName = $('#input-adplan_name'),
+          $adplansTbody = $('#adplans-table tbody'),
+          $artist = $('#input-artist'),
+          $buttonAdd = $('#button-add'),
+          $buttonDialogCancel = $('#button-dialog-cancel'),
+          $buttonDialogConfirm = $('#button-dialog-confirm'),
+          $buttonSearch = $('#button-search'),
+          $dialog = $('#dialog'),
+          $dialogBackdrop = $('.slds-backdrop'),
+          $dialogHeader = $('#dialog .slds-modal__header'),
+          $division = $('#select-division'),
+          $eventBegin = $('#input-event_date_begin'),
+          $eventEnd = $('#input-event_date_end'),
+          $isStandalone = $('#checkbox-standalone'),
+          $searchInputs = $('#div-search').find('.slds-input, .slds-select, #checkbox-standalone'),
+          $searchResult = $('#select-search-result'),
+          $venueType = $('#select-venue_type');
+
+      // section visibility
+      $('.slds-section__title').on('click', function() {
+        var $this = $(this);
+        $this.parent().toggleClass('slds-is-open');
+        $this.siblings('.slds-section__content').toggleClass('slds-show slds-hide');
+      });
+
+      // calendars icons, sets input to today
+      $('.svg-today').on('click', function() {
+        $(this).siblings('.slds-input').each(function() {
+          if (!this.disabled) {
+            this.valueAsDate = new Date();
+          }
+        });
+      });
+
+      $isStandalone.on('change', function() {
+        $division.attr('disabled', this.checked);
+        $venueType.attr('disabled', this.checked);
+        if (this.checked) {
+          $division.val('');
+          $venueType.val('');
+        }
+      });
+
+      // resets search inputs
+      $('#button-reset').on('click', function() {
+        $searchInputs
+          .attr('disabled', false)
+          .attr('checked', false)
+          .val('');
+      });
+
+      // exclusive search inputs, Ad Plan Name and Ad Plan Id
+      $('input.exclusive').on('input', function() {
+        // if has value then disable other inputs
+        var _this = this,
+            disabled = this.value !== '';
+        $searchInputs.each(function() {
+          if (this !== _this) {
+            $(this).attr('disabled', disabled);
+          }
+        });
+      });
+
+      // // search events
+      $artist.autocomplete({
+        delay: 200,
+        minLength: 3,
+        source: function(request, responseCallback) {
+          LNE_TourRoutingMarketing_C.searchArtists(
+            request.term,
+            function(result) {
+              responseCallback(result.map(function(r) {
+                return formatName(r);
+              }));
+            }
+          );
+        }
+      });
+
+      $buttonSearch.on('click', doSearch);
+
+      $searchInputs.on('keypress', function(e) {
+        if (e.which == 13) {
+          doSearch();
+        }
+      });
+
+      function doSearch() {
+
+        if (isSearching) {
+            return;
+        }
+
+        // disables search button
+        toggleSearchButton();
+
+        var searchTerms = {
+          adplanId: $adplanId.val().trim(),
+          adplanName: $adplanName.val().trim(),
+          artist: $artist.val().trim(),
+          division: $division.val(),
+          eventBegin: reformatDate($eventBegin.val()),
+          eventEnd: reformatDate($eventEnd.val()),
+          standalone: $isStandalone.is(':checked'),
+          venueType: $venueType.val()
+        };
+
+        // remove current options
+        $searchResult.find('option').remove();
+
+        // search callback
+        LNE_TourRoutingMarketing_C.searchAdPlans(
+          searchTerms,
+          tourId,
+          function(results) {
+            // create/add new options
+            searchResults = {};
+            results.forEach(function(item) {
+                if (item.Tour__c) {
+                  item.AdPlanName__c += ' - Tour: ' + item.Tour__r.TourName__c;
+                }
+                item.AdPlanName__c = formatName(item.AdPlanName__c);
+                item.Artists__c = reformatArtists(item.Artists__c);
+                item.FormattedDate = function() {
+                  return formatDate.call(this);
+                };
+                searchResults[item.Id] = item;
+                $searchResult.append(
+                    $('<option></option>')
+                        .attr('value', item.Id)
+                        .text(item.AdPlanName__c)
+                );
+            });
+            // reenable search
+            toggleSearchButton();
+          }
+        );
+
+        function toggleSearchButton() {
+            isSearching = !isSearching;
+            $buttonSearch
+                .attr('disabled', isSearching)
+                .text('Search' + (isSearching ? 'ing...' : ''));
+        }
+
+        function reformatDate(val) {
+          return val
+            ? new Date(val).toUTCString()
+            : null;
+        }
+
+      }
+
+      // toggle Add button
+      $searchResult.on('change', function() {
+        $buttonAdd.attr('disabled', $searchResult.find('option:selected').length < 1);
+      });
+
+      $('#button-deselect').on('click', function() {
+        $searchResult.find('option:selected').attr('selected', false);
+        $buttonAdd.attr('disabled', true);
+      });
+
+      // add event
+      $buttonAdd.on('click', doAdd);
+
+      function doAdd() {
+
+        if (isAdding) {
+          return;
+        }
+
+        toggleAddButton();
+
+        // get ids of each selected option
+        var adplanIds = $searchResult.find('option:selected')
+          .map(function() {
+            return this.value;
+          })
+          .get();
+
+        LNE_TourRoutingMarketing_C.associateAdPlansToTour(
+          adplanIds,
+          tourId,
+          function(results) {
+
+            var errors = [];
+
+            for (rid in results) {
+              var result = results[rid],
+                  item = searchResults[rid];
+              if (result === '') {
+                // add to table
+                $adplansTbody.append(Mustache.render(template, item));
+                // remove from options
+                $searchResult.find('option[value="' + rid + '"]').remove();
+              }
+              else {
+                errors.push(item.AdPlanName__c + ' could not be added to the Tour: ' + result);
+              }
+            }
+
+            if (errors.length > 0) {
+              openDialog({
+                isError: true,
+                messages: ['The following error(s) occured.  They will need to be resolved before the Ad Plan(s) can be added.'].concat(errors)
+              });
+            }
+
+            toggleAddButton();
+
+          }
+        );
+
+        function toggleAddButton() {
+          isAdding = !isAdding;
+          $buttonAdd
+              .attr('disabled', isAdding)
+              .text('Add' + (isAdding ? 'ing...' : ''));
+        }
+
+      }
+
+      // remove event
+      $('#adplans-table').on('click', 'svg.action-delete', function() {
+
+        var _this = this;
+
+        openDialog({
+          messages: 'Are you sure you want to remove this Ad Plan from the Tour?',
+          confirm: function() {
+
+            var $this = $(_this),
+                $parentTr = $this.parents('tr:first'),
+                $spinner = $this.parent().siblings('.slds-spinner_container'),
+                recordId = $parentTr.data('recordid');
+
+            $spinner.toggleClass('slds-hide slds-show');
+
+            LNE_TourRoutingMarketing_C.associateAdPlansToTour(
+              [recordId],
+              null,
+              function(results) {
+                var result = results[recordId];
+                if (result === '') {
+                  $parentTr.fadeOut(function() {
+                    $parentTr.remove();
+                  });
+                }
+                else {
+                  //uh oh couldnt remove the association...
+                  $spinner.toggleClass('slds-hide slds-show');
+                  openDialog({
+                    isError: true,
+                    messages: 'Could not remove the Ad Plan from the Tour: ' + result, 
+                    duration: 3000
+                  });
+                  
+                }
+              }
+            );
+
+          }
+        });
+
+      });
+
+      // dialog closure
+      $dialog.find('#button-dialog-cancel, .slds-modal__close').on('click', closeDialog);
+
+      function openDialog(settings) {
+
+        settings = settings || {};
+
+        if (settings.messages) {
+          var $messages = $dialog.find('.slds-modal__content');
+          $messages.text('');
+
+          if (typeof settings.messages === 'string') {
+            settings.messages = [settings.messages];
+          }
+
+          settings.messages.forEach(function(message) {
+            $messages.append('<p>' + message + '</p>');
+          });
+
+          if (settings.isError) {
+
+            $dialogHeader
+              .addClass('slds-theme--error')
+              .removeClass('slds-notify--alert')
+              .find('h2').text('Error');
+            $buttonDialogCancel.text('Close');
+            $buttonDialogConfirm.hide();
+          }
+          else {
+            $dialogHeader
+              .addClass('slds-notify--alert')
+              .removeClass('slds-theme--error')
+              .find('h2').text('Confirm');
+            $buttonDialogCancel.text('Cancel');
+            $buttonDialogConfirm.show();
+            // bind once so the callback can be passed
+            $buttonDialogConfirm.one('click', function() {
+              closeDialog();
+              if (settings.confirm) {
+                settings.confirm();
+              }
+            });
+
+          }
+
+          $dialog.addClass('slds-fade-in-open');
+          $dialogBackdrop.addClass('slds-backdrop--open');
+
+          if (settings.duration) {
+            dialogTimeout = setTimeout(closeDialog, settings.duration);
+          }
+
+        }
+
+      }
+
+      function closeDialog() {
+        if (dialogTimeout) {
+          clearTimeout(dialogTimeout);
+        }
+        $dialog.removeClass('slds-fade-in-open');
+        $dialogBackdrop.removeClass('slds-backdrop--open');
+      }
+
+      function formatDate() {
+        var result = '';
+        if (this.EventDate__c) {
+          var d = new Date(parseInt(this.EventDate__c, 10));
+          result = d.getUTCMonth() + '/' + d.getUTCDate() + '/' + d.getUTCFullYear();
+        }
+        return result;
+      }
+
+      function formatName(val) {
+        var dom = new DOMParser().parseFromString('<!doctype html><body>' + val, 'text/html');
+        return dom.body.textContent;
+      }
+
+      function reformatArtists(artists) {
+        artists = artists || '';
+        var reformatted = [];
+        artists.split('\n').forEach(function(item) {
+          item = item || '';
+          reformatted.push(formatName(item.trim()));
+        });
+        return reformatted.join(', ');
+      }
+
+      // get current ad plans
+      LNE_TourRoutingMarketing_C.getAdPlans(
+        tourId,
+        function(results) {
+          results.forEach(function(item) {
+            item.AdPlanName__c = formatName(item.AdPlanName__c);
+            item.Artists__c = reformatArtists(item.Artists__c);
+            item.FormattedDate = function() {
+              return formatDate.call(this);
+            };
+            $adplansTbody.append(Mustache.render(template, item));
+          });
+        }
+      );
+
+  })(jQuery);
+  </script>
+</body>
+</html>
+</apex:page>

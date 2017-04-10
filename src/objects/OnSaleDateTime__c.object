@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Dates that tickets are on sale or pre sale or other important dates around ticket sales/announcements to identify</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EventDateTime__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event Date Time</label>
+        <referenceTo>EventDateTime__c</referenceTo>
+        <relationshipLabel>On Sale Date Times</relationshipLabel>
+        <relationshipName>OnSaleDateTimes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventTicketAgency__c</fullName>
+        <externalId>false</externalId>
+        <label>Event-Ticket Agency</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EventTicketAgency__c.EventDateTime__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.EventDateTime__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>EventTicketAgency__c</referenceTo>
+        <relationshipLabel>On Sale Date Times</relationshipLabel>
+        <relationshipName>OnSaleDateTimes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <externalId>false</externalId>
+        <label>Password</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SaleEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Sale End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SaleEndTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Sale End Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SaleName__c</fullName>
+        <externalId>false</externalId>
+        <label>Sale Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SaleStartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Sale Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SaleStartTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Sale Start Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Ticket_Limit_Per_Purchaser__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Limit Per Purchaser</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Public On Sale</fullName>
+                    <default>false</default>
+                    <label>Public On Sale</label>
+                </value>
+                <value>
+                    <fullName>Pre Sale</fullName>
+                    <default>false</default>
+                    <label>Pre Sale</label>
+                </value>
+                <value>
+                    <fullName>Fan Club</fullName>
+                    <default>false</default>
+                    <label>Fan Club</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>On Sale Date Time</label>
+    <nameField>
+        <displayFormat>OSD-{000000}</displayFormat>
+        <label>On Sale Date Time ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>On Sale Date Times</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>LNE_TimeFormat</fullName>
+        <active>true</active>
+        <description>Time fields must be in format HH:MM AM|PM</description>
+        <errorConditionFormula>NOT(REGEX( SaleEndTime__c , &quot;[0-1]?[0-9]:[0-5][0-9] [A|P]M&quot;)) 
+&amp;&amp;!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp; 
+SaleEndTime__c  &lt;&gt; NULL 
+|| 
+
+NOT(REGEX( SaleStartTime__c  , &quot;[0-1]?[0-9]:[0-5][0-9] [A|P]M&quot;)) 
+&amp;&amp;!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp; 
+SaleStartTime__c &lt;&gt; NULL</errorConditionFormula>
+        <errorMessage>Time fields must be in format HH:MM AM|PM</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

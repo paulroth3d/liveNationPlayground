@@ -1,0 +1,800 @@
+<apex:page standardController="Event__c" extensions="LNE_TicketRevenueTab_CX" sidebar="false" showHeader="false" id="thePage">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>Ticket Revenue</title>
+
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script><!-- PostMessage communicates between windows -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+            <apex:includeScript value="{! urlFor( $Resource.LNE_GeneralResources, 'js/lib/alertify.js' )}" />
+			<apex:stylesheet value="{! urlFor( $Resource.LNE_GeneralResources, 'css/lib/alertify.css')}" id="alertifyCSS" />
+
+            <apex:form >
+                <apex:actionFunction action="{!checkPlatinumTicketScales}" name="CheckPlatinumTicketScales_JS" oncomplete="lneTicketRevenueTab.refreshPlatinumGrid('{!numPlatinumTicketScales}');">
+                </apex:actionFunction>
+            </apex:form>
+        </head>
+        
+        <body id="LNE_TicketRevenueTab--body" class="rome-lds">
+             <style>
+                .ticketRevenueMetrics, .dropCountGrid { margin:0px 0px 15px 3px; }
+                tr.selloutRowA td, tr.selloutRowB td, .dateTimeMetrics tfoot tr  { border-bottom:1px solid #c7c7c7; font-size: 11.36px;}
+                tr.selloutRowA td, tr.selloutRowB td, tr.selloutRowC td, .dateTimeMetrics tfoot tr { padding:4px 8px; text-align:right; font-size: 11.36px;}
+                .bold { font-weight:bold; }
+                
+                .apply-button {
+                    position: relative;
+                    left: -82px;
+                    top: 36px;
+                }
+                
+                .dropCountGridForm {
+                    margin-right: -70px;
+                    margin-left: 100px;
+                }
+                
+                .rowContainer {
+                	display: flex;
+                	align-items: center;
+                }
+                 
+                .verticalDivider {
+                	height: 50px;
+                	margin: 0 30px 0 30px;
+                	border-right: 1px solid #c7c7c7;
+                }
+                
+                input.multiscaleConvertButton, button.multiscaleConvertButton {
+                	margin-right: 30px;
+                }
+                
+                .rowMargin {
+                	margin-top: 20px;
+                }
+                
+                .dateTimeMetrics thead th, .dateTimeMetrics tfoot td {
+                	text-align: right;
+                	font-weight: bold;
+                	padding: 4px 8px;
+                }
+                
+                #dateTimeTabsContainer li a {
+                	display: flex;
+				    align-items: center;
+				    flex-direction: column;
+                }
+                
+                #dateTimeTabsContainer li a span {
+                	height: 17px;
+    				line-height: 2;
+                }
+                
+                .topContainerRow {
+                	display: flex;
+                	justify-content: space-between;
+                	align-items: flex-start;
+                }
+                
+                .pageMessage {
+                	margin-left:-20px;
+                }
+                
+                .pageMessage td:first-of-type {
+                	width: 25px;
+                }
+            </style>
+            
+            <div id='TicketRevenueMetricsHeader' class="slds-clearfix">
+            	<div>
+            		<div class="topContainerRow">
+            			<apex:form id="ticketRevenueMetricsForm">
+	            			<apex:panelGrid columns="7" id="TicketRevenueMetrics" styleClass="ticketRevenueMetrics" rowClasses="selloutRowA,selloutRowB, selloutRowC" cellpadding="0" cellspacing="0" style="max-width: 750px;">
+			                        <apex:outputText value=""/>
+			                        <apex:outputText value="Show Count" styleClass="bold"/>
+			                        <apex:outputText value="Gross Sales" styleClass="bold"/>
+			                        <apex:outputText value="Platinum Lift" styleClass="bold"/>
+			                        <apex:outputText value="Gross + Lift" styleClass="bold"/>
+			                        <apex:outputText value="Adjusted Gross" styleClass="bold"/>
+			                        <apex:outputText value="Net Gross" styleClass="bold"/>
+			                        
+			                        <apex:outputText value="SELLOUT" styleClass="bold"/>
+			                        <apex:outputText value="{0, number, ###,###}"><apex:param value="{!eventMetrics.ShowCount__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.SelloutGrossSales__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.PlatinumLift__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.GrossPotential__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.AdjustedGrossPotential__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.NetGrossPotential__c}" /></apex:outputText>
+			                        
+			                        <apex:outputText value="PROJECTION" styleClass="bold"/>
+			                        <apex:outputText value="{0, number, ###,###}"><apex:param value="{!eventMetrics.ShowCount__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.ProjectedGrossSales__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.PlatinumLift__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.ProjectedGross__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.ProjectedAdjustedGross__c}" /></apex:outputText>
+			                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.ProjectedNetGross__c}" /></apex:outputText>
+			                    </apex:panelGrid>
+			                    
+			                    <apex:panelGrid columns="3" id="PreviouslyForecastedValues" styleClass="ticketRevenueMetrics" rowClasses="selloutRowA,selloutRowB, selloutRowC" cellpadding="0" cellspacing="0" rendered="{!(eventMetrics.HidePreviouslyForecastedProjPdTkt__c = false || eventMetrics.HidePreviouslyForecastedLiftBfrTxs__c == false) && eventMetrics.UsingTicketFeed__c == true && eventMetrics.UsingMultiScale__c == false}">
+			                        <apex:outputText value="Previously Forecasted Gross Sales" styleClass="bold" rendered="{!eventMetrics.HidePreviouslyForecastedProjPdTkt__c = false}"/>
+			                        <apex:outputText value="{0, number, ###,###}" rendered="{!eventMetrics.HidePreviouslyForecastedProjPdTkt__c = false}"><apex:param value="{!eventMetrics.PreviouslyForecastedGrossSales__c}"/></apex:outputText>
+			                        <apex:commandLink action="{!hideProjectedTickets}" value="" rendered="{!eventMetrics.HidePreviouslyForecastedProjPdTkt__c = false}"/>
+			                        
+			                        <apex:outputText value="Previously Forecasted Projected Paid Tickets" styleClass="bold" rendered="{!eventMetrics.HidePreviouslyForecastedProjPdTkt__c = false}"/>
+			                        <apex:outputText value="{0, number, ###,###}" rendered="{!eventMetrics.HidePreviouslyForecastedProjPdTkt__c = false}"><apex:param value="{!eventMetrics.PreviouslyForecastedProjPaidTickets__c}"/></apex:outputText>
+			                        <apex:commandLink action="{!hideProjectedTickets}" value="Hide" rendered="{!eventMetrics.HidePreviouslyForecastedProjPdTkt__c = false}"/>
+			                        
+			                        <apex:outputText value="Previously Forecasted Lift Before Fee" styleClass="bold" rendered="{!eventMetrics.HidePreviouslyForecastedLiftBfrTxs__c = false && eventMetrics.PreviouslyForecastedLiftBeforeFee__c > 0}"/>
+			                        <apex:outputText value="{0, number, ###,###.00}" rendered="{!eventMetrics.HidePreviouslyForecastedLiftBfrTxs__c = false && eventMetrics.PreviouslyForecastedLiftBeforeFee__c > 0}"><apex:param value="{!eventMetrics.PreviouslyForecastedLiftBeforeFee__c}" /></apex:outputText>
+			                        <apex:commandLink action="{!hideLiftBeforeTaxes}" value="Hide" rendered="{!eventMetrics.HidePreviouslyForecastedLiftBfrTxs__c = false && eventMetrics.PreviouslyForecastedLiftBeforeFee__c > 0}"/>
+			                	</apex:panelGrid>
+		                </apex:form>
+		                <apex:form >
+			                <div class="dropCountGridForm">
+				                <apex:panelGrid columns="3" id="DropCountGrid" styleClass="dropCountGrid" rowClasses="selloutRowC">
+				                    <apex:outputText value="{!$ObjectType['Event__c'].fields['ProjectedDropCountPct__c'].Label}" styleClass="slds-text-heading--label-normal"/>
+				                    <apex:outputText value="{!$ObjectType['Event__c'].fields['DropCountAdjustment__c'].Label}" styleClass="slds-text-heading--label-normal"/>
+				                    <apex:outputText value=" " />
+				                    
+				                    <apex:inputField id="ProjectedDropCountPct" value="{!eventMetrics.ProjectedDropCountPct__c}" onBlur=""/>
+				                    <apex:inputField id="DropCountAdjustment" value="{!eventMetrics.DropCountAdjustment__c}" onBlur=""/>
+				                    <apex:panelGroup >
+				                        <apex:commandButton styleClass="slds-button slds-button--brand apply-button" action="{!dropCountGridSave}" value="Apply" />
+				                    </apex:panelGroup>
+				                </apex:panelGrid>
+				            </div>
+			            </apex:form>
+            		</div>
+            		<div>
+		                <apex:form >
+		                    <apex:actionFunction action="{!getEventMetrics}" name="rerenderTicketRevenueMetrics" rerender="TicketRevenueMetrics" />
+		                    <apex:actionFunction action="{!getDateTimeSummary}" name="rerenderDateTimeSummaryJS" rerender="summaryGridPanel" oncomplete="showHideSummaryGrid();" />
+		                    <apex:actionFunction action="{!convertToMultiScale}" name="convertToMultiScaleJS" />
+		                    <apex:actionFunction action="{!revertToSingleScale}" name="revertToSingleScaleJS" />
+		                    <apex:actionFunction action="{!importAuditFeedForCurrentDateTime}" name="importAuditFeedForCurrentDateTimeJS" rerender="thePage" oncomplete="refreshCurrentPage();">
+		                    	<apex:param name="edtAuditToImport" assignTo="{!eventDateTimeToImport}" value="" />
+		                    </apex:actionFunction>
+
+		                    <apex:actionFunction action="{!hideFieldForEventDateTime}" name="hideFieldForEventDateTimeJS" rerender="scriptPanel">
+		                    	<apex:param name="edtToUse" assignTo="{!eventDateTimeToImport}" value="" />
+		                    	<apex:param name="fieldToHide" assignTo="{!fieldToHide}" value="" />
+		                    </apex:actionFunction>
+		                    
+		                    <div class="rome-lds">
+		                    	<div class="slds-spinner_container hide" id="grid-spin">
+		                          <div role="status" class="slds-spinner slds-spinner--large">
+		                            <span class="slds-assistive-text">Loading</span>
+		                            <div class="slds-spinner__dot-a"></div>
+		                            <div class="slds-spinner__dot-b"></div>
+		                          </div>
+		                        </div>
+		                    	
+		                    	<div class="rowContainer">
+			                        <apex:outputPanel rendered="{!showBothPlanAndProjectionButtons}" style="flex-shrink: 0;">
+			                            <div style="margin-left: 0px;">
+			                                <apex:commandButton action="{!showPlan}" value="Plan" styleClass="slds-button slds-button--neutral {!IF(currentGridType='Plan', 'slds-button--brand' ,'')}"/>
+			                                <apex:commandButton action="{!showProjection}" value="Projection" styleClass="slds-button slds-button--neutral {!IF(currentGridType='Projection', 'slds-button--brand' ,'')}"/>
+			                            </div>
+			                        </apex:outputPanel>
+			                        
+			                        <apex:outputPanel rendered="{!(showConvertToMultiscaleButton || showRevertToSingleScaleButton || showEventDateTimeTabs) && showBothPlanAndProjectionButtons}" style="flex-shrink: 0;" styleClass="verticalDivider">
+			                        	
+			                        </apex:outputPanel>
+			                        
+			                        <apex:outputPanel rendered="{!showConvertToMultiscaleButton}" style="flex-shrink: 0;">
+			                        	<button id="convertButton" onclick="handleConvertToMultiscale(); return false;" class="slds-button slds-button--neutral multiscaleConvertButton">Convert to Multi-Scale</button>
+			                        </apex:outputPanel>
+			                        
+			                        <apex:outputPanel rendered="{!showRevertToSingleScaleButton}" style="flex-shrink: 0;">
+			                        	<button id="revertButton" onclick="handleRevertPrompt(); return false;" class="slds-button slds-button--neutral multiscaleConvertButton">Revert to Single Scale</button>
+			                        </apex:outputPanel>
+			                        
+			                    	<span style="width:200px;max-width:70%;overflow:scroll;" id="dateTimeTabsContainer">
+			                    		<c:LNE_EventDateTimeTabs eventId="{!Id}" showSummary="true" width="500px" rendered="{!showEventDateTimeTabs}"/>
+			                    	</span>
+		                        </div>
+
+		                        <div class="rowContainer">
+			                        <apex:panelGrid columns="3" id="PreviouslyForecastedValuesForSingleDateTime" styleClass="ticketRevenueMetrics" rowClasses="selloutRowA,selloutRowB, selloutRowC" cellpadding="0" cellspacing="0" rendered="{!eventMetrics.UsingMultiScale__c == true && eventMetrics.UsingTicketFeed__c == true}" style="width: 375px;">
+
+			                        	<apex:outputPanel ><span class="bold">Previously Forecasted Projected Gross Sales</span></apex:outputPanel>
+			                        	<apex:outputPanel ><span id="prevForecastedGrossSales">123.00</span></apex:outputPanel>
+			                        	<apex:outputPanel ><span></span></apex:outputPanel>
+
+			                        	<apex:outputPanel ><span class="bold">Previously Forecasted Projected Paid Tickets</span></apex:outputPanel>
+			                        	<apex:outputPanel ><span id="prevForecastedPaidTickets">123</span></apex:outputPanel>
+			                        	<apex:outputPanel ><a id="hidePrevForecastedPaidTickets" href="#">Hide</a></apex:outputPanel>
+
+			                        	<apex:outputPanel ><span class="bold">Previously Forecasted Platinum Lift Before Fee</span></apex:outputPanel>
+			                        	<apex:outputPanel ><span id="prevForecastedLiftBeforeFee">123.00</span></apex:outputPanel>
+			                        	<apex:outputPanel ><a id="hidePrevForecastedLiftBeforeFee" href="#">Hide</a></apex:outputPanel>
+
+				                	</apex:panelGrid>
+		                        </div>
+		                        
+		                        <div class="rowContainer">
+		                        	<apex:outputPanel id="summaryGridPanel">
+		                        		
+		                        		<apex:outputPanel id="summaryGridInnerPanel" rendered="{!eventMetrics.UsingMultiScale__c == true}">
+		                        			
+				                        	<apex:variable value="{!0}" var="totalCapacity"/>
+											<apex:variable value="{!0}" var="totalComps"/>
+											<apex:variable value="{!0}" var="totalKills"/>
+											<apex:variable value="{!0}" var="totalSellableCapacity"/>
+											<apex:variable value="{!0.00}" var="totalGrossSales"/>
+											<apex:variable value="{!0}" var="totalProjectedTickets"/>
+											<apex:variable value="{!0.00}" var="totalProjectedSales"/>
+											<apex:variable value="{!0}" var="totalActualSalesToDate"/>
+											<apex:variable value="{!0.00}" var="totalActualGrossToDate"/>
+					                    	
+					                    	<apex:dataTable value="{!dateTimeSummary}" var="dateTimeRow" id="dateTimeSummary" styleClass="ticketRevenueMetrics rowMargin dateTimeMetrics" rowClasses="selloutRowA,selloutRowB">
+					                    		<apex:column >
+										            <apex:facet name="header">Date/Time</apex:facet>
+										            <apex:outputText value="{0} {1}" rendered="{!dateTimeRow['Id'] != null}">
+										            	<apex:param value="{!CASE(MONTH(dateTimeMap[dateTimeRow['Id']]['EventDate__c']),1,"Jan",2,"Feb",3,"Mar",4,"Apr",5,"May",6,"Jun",7,"Jul",8,"Aug",9,"Sep",10,"Oct",11,"Nov","Dec")+' '+TEXT(DAY(dateTimeMap[dateTimeRow['Id']]['EventDate__c']))+' '+TEXT(YEAR(dateTimeMap[dateTimeRow['Id']]['EventDate__c']))}"></apex:param>
+										            	<apex:param value="{!dateTimeMap[dateTimeRow['Id']]['StartTime__c']}"></apex:param>
+										            </apex:outputText>
+										            <apex:facet name="footer">
+											            <span>Total (All Dates)</span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column >
+										            <apex:facet name="header">Total Capacity</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0}">
+										            	<apex:param value="{!ROUND(dateTimeRow['totalCapacity'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalCapacity" value="{!totalCapacity + dateTimeRow['totalCapacity']}" />
+										            <apex:facet name="footer">
+											            <span class="totalCapacityJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column >
+										            <apex:facet name="header">Comps</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0}">
+										            	<apex:param value="{!ROUND(dateTimeRow['comps'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalComps" value="{!totalComps + IF(dateTimeRow['comps']=null, 0, dateTimeRow['comps'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalCompsJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column >
+										            <apex:facet name="header">Kills</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0}">
+										            	<apex:param value="{!ROUND(dateTimeRow['kills'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalKills" value="{!totalKills + IF(dateTimeRow['kills']=null, 0, dateTimeRow['kills'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalKillsJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column >
+										            <apex:facet name="header">Sellable Capacity</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0}">
+										            	<apex:param value="{!ROUND(dateTimeRow['sellableCapacity'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalSellableCapacity" value="{!totalSellableCapacity + IF(dateTimeRow['sellableCapacity']=null, 0, dateTimeRow['sellableCapacity'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalSellableCapacityJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column >
+										            <apex:facet name="header">Gross Sales</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0.00}">
+										            	<apex:param value="{!ROUND(dateTimeRow['grossSales'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalGrossSales" value="{!totalGrossSales + IF(dateTimeRow['grossSales']=null, 0.0, dateTimeRow['grossSales'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalGrossSalesJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column >
+										            <apex:facet name="header">Projected Tickets</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0}">
+										            	<apex:param value="{!ROUND(dateTimeRow['projectedTickets'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalProjectedTickets" value="{!totalProjectedTickets + IF(dateTimeRow['projectedTickets']=null, 0, dateTimeRow['projectedTickets'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalProjectedTicketsJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column >
+										            <apex:facet name="header">Projected Sales</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0.00}">
+										            	<apex:param value="{!ROUND(dateTimeRow['projectedSales'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalProjectedSales" value="{!totalProjectedSales + IF(dateTimeRow['projectedSales']=null, 0.0, dateTimeRow['projectedSales'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalProjectedSalesJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column rendered="{!eventMetrics.UsingTicketFeed__c == true}">
+										            <apex:facet name="header">Actual Sales To Date</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0}">
+										            	<apex:param value="{!ROUND(dateTimeRow['actualSalesToDate'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalActualSalesToDate" value="{!totalActualSalesToDate + IF(dateTimeRow['actualSalesToDate']=null, 0, dateTimeRow['actualSalesToDate'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalActualSalesToDateJS"></span>
+											        </apex:facet>
+										        </apex:column>
+										        <apex:column rendered="{!eventMetrics.UsingTicketFeed__c == true}">
+										            <apex:facet name="header">Actual Gross To Date</apex:facet>
+										            <apex:outputText value="{0, number, ###,##0.00}">
+										            	<apex:param value="{!ROUND(dateTimeRow['actualGrossToDate'],0)}"/>
+										            </apex:outputText>
+										            <apex:variable var="totalActualGrossToDate" value="{!totalActualGrossToDate + IF(dateTimeRow['actualGrossToDate']=null, 0.0, dateTimeRow['actualGrossToDate'])}" />
+										            <apex:facet name="footer">
+											            <span class="totalActualGrossToDateJS"></span>
+											        </apex:facet>
+										        </apex:column>
+					                    	</apex:dataTable>
+					                    	
+					                    	<script>
+					                    		function formatNumber( num, maxDecimals){
+													try {
+														var result = num.toLocaleString(  "en-US", { minimumFractionDigits: maxDecimals, maximumFractionDigits: maxDecimals });
+														return( result );
+													} catch( err ){
+														console.log( 'unable to format number[' + num + ']' );
+														return( num );
+													}
+												}
+												
+					                    		document.getElementsByClassName('totalCapacityJS')[0].innerHTML = formatNumber({!ROUND(totalCapacity,0)}, 0);
+					                    		document.getElementsByClassName('totalCompsJS')[0].innerHTML = formatNumber({!ROUND(totalComps,0)}, 0);
+					                    		document.getElementsByClassName('totalKillsJS')[0].innerHTML = formatNumber({!ROUND(totalKills,0)}, 0);
+					                    		document.getElementsByClassName('totalSellableCapacityJS')[0].innerHTML = formatNumber({!ROUND(totalSellableCapacity,0)}, 0);
+					                    		document.getElementsByClassName('totalGrossSalesJS')[0].innerHTML = formatNumber({!totalGrossSales}, 2);
+					                    		document.getElementsByClassName('totalProjectedTicketsJS')[0].innerHTML = formatNumber({!ROUND(totalProjectedTickets,0)}, 0);
+					                    		document.getElementsByClassName('totalProjectedSalesJS')[0].innerHTML = formatNumber({!totalProjectedSales}, 2);
+					                    		try {
+					                    			document.getElementsByClassName('totalActualSalesToDateJS')[0].innerHTML = formatNumber({!ROUND(totalActualSalesToDate,0)}, 0);
+					                    			document.getElementsByClassName('totalActualGrossToDateJS')[0].innerHTML = formatNumber({!totalActualGrossToDate}, 2);
+					                    		} catch (e) {
+					                    			
+					                    		}
+					                    	</script>
+					                    	
+					                    </apex:outputPanel>
+			                    	
+			                    	</apex:outputPanel>
+			                    	
+		                        </div> 
+		                        
+		                        <apex:outputPanel rendered="{!showAuditAvailableMessage}">
+		                            <div class="pageMessage">
+		                                <apex:pageMessage summary="Audit information is available for forecasting use. Click Import Audit to replace current projections with audit information." severity="info" strength="2" />
+		                            </div>
+		                            <apex:commandLink action="{!importAuditFeed}" value="Import Audit" />
+		                        </apex:outputPanel>
+		                        
+		                        <apex:outputPanel rendered="{!eventMetrics.UsingTicketFeed__c == true && eventMetrics.UsingMultiScale__c == false}">
+		                            <div class="pageMessage">
+		                                <apex:pageMessage summary="You are now using the ticket agency's audit feed." severity="info" strength="2" />
+		                            </div>
+		                        </apex:outputPanel>
+
+		                        <apex:outputPanel id="selectedDateTimeAuditMessage" style="display: none;">
+		                            <div class="pageMessage">
+		                                <apex:pageMessage summary="Audit information is available for forecasting use. Click Import Audit to replace current projections with audit information." severity="info" strength="2" />
+		                            </div>
+		                            <a id="importSingleEventDateTimeAuditButton" href="#">Import Audit</a>
+		                        </apex:outputPanel>
+		                        
+		                        <apex:outputPanel id="selectedDateTimeAuditFeedMessage" style="display: none;">
+		                            <div class="pageMessage">
+		                                <apex:pageMessage summary="You are now using the ticket agency's audit feed." severity="info" strength="2" />
+		                            </div>
+		                        </apex:outputPanel>
+		                        
+		                        <apex:outputPanel rendered="{!showBothPlanAndProjectionButtons && currentGridType='Plan'}">
+		                            <div class="pageMessage">
+		                                <apex:pageMessage summary="Please change the Event status to 'Pending Likely' to make changes to the records below." severity="warning" strength="2" />
+		                            </div>
+		                        </apex:outputPanel>
+		                    </div>
+		                    <br/>
+		                </apex:form>
+		            </div>
+		                    
+            	</div>
+            
+            </div>
+    
+            <div id="all-grids-container">
+                <div id="grid-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}"/>
+
+                    <!-- Ticket Scale Grid -->
+                    <iframe id="grid-frame-ticket-scale" data-grid-name="ticketscale" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Ticket%20Scale&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}&gridType={!IF(eventMetrics.UsingTicketFeed__c == true, 'Audit', currentGridType)}&UsingTicketFeeds={!eventMetrics.UsingTicketFeed__c}"></iframe>
+                    
+                    <!-- Platinum Lift Grid -->
+                    <iframe id="grid-frame-platinum-lift" data-grid-name="platinumliftcalculator" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Platinum%20Lift%20Calculator&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}&gridType={!IF(eventMetrics.UsingTicketFeed__c == true, 'Audit', currentGridType)}&UsingTicketFeeds={!eventMetrics.UsingTicketFeed__c}"></iframe>
+
+                    <!-- Before Adjusted Deductions Grid -->
+                    <iframe id="grid-frame-before-adjusted-deductions" data-grid-name="beforeadjusteddeductions" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Before%20Adjusted%20Deductions&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}&gridType={!IF(eventMetrics.UsingTicketFeed__c == true, 'Audit', currentGridType)}&UsingTicketFeeds={!eventMetrics.UsingTicketFeed__c}"></iframe>
+
+                    <!-- After Adjusted Deductions Grid -->
+                    <iframe id="grid-frame-after-adjusted-deductions" data-grid-name="afteradjusteddeductions" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=After%20Adjusted%20Deductions&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}&gridType={!IF(eventMetrics.UsingTicketFeed__c == true, 'Audit', currentGridType)}&UsingTicketFeeds={!eventMetrics.UsingTicketFeed__c}"></iframe>
+                </div>
+            </div>
+
+            <apex:outputPanel id="scriptPanel">
+            	<script type="text/javascript">
+            		var dateTimeMap = {!dateTimeMapJSON};
+
+            		if (typeof setActiveTab == 'function') { 
+						setActiveTab(); 
+					}
+            	</script>
+            </apex:outputPanel>
+
+            <script type="text/javascript">
+                var oldChildGridState = '';
+                var newChildGridState = '';
+                var currentlySelectedTab = 'summary';
+                var clickedTab;
+                const delimiter = '{!delimiter}';
+                const showConvertToMultiscaleButton = {!showConvertToMultiscaleButton};
+                const showRevertToSingleScaleButton = {!showRevertToSingleScaleButton};
+                const usingMultiScale = {!eventMetrics.UsingMultiScale__c};
+                const auditAvailableMap = {!edtAuditMap};
+                const currentGridType = '{!currentGridType}';
+                var countPlatinumTicketScales = '{!numPlatinumTicketScales}';
+            
+                var lneTicketRevenueTab = {
+                    numPlatinumTicketScales: 0,
+                    showPlatinumLiftGrid: false,
+                    projectedDropCountPctOld: {!IF(eventMetrics.ProjectedDropCountPct__c == null,101,eventMetrics.ProjectedDropCountPct__c)},
+                    dropCountAdjustmentOld: {!IF(eventMetrics.DropCountAdjustment__c == null,9812348234,eventMetrics.DropCountAdjustment__c)}
+                };
+
+                var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+                
+                var needToCheckGrids = false;
+                var ticketScaleChecked = false;
+                var platinumChecked = false;
+
+                lneTicketRevenueTab.init = function() {
+                	setDateTimeTabsWidth();
+                	$("[id$='selectedDateTimeAuditMessage']").hide();
+                	$("[id$='selectedDateTimeAuditFeedMessage']").hide();
+                	$("[id$='PreviouslyForecastedValuesForSingleDateTime']").hide();
+
+                    lneTicketRevenueTab.numPlatinumTicketScales = countPlatinumTicketScales;
+                    lneTicketRevenueTab.showHidePlatinumGrid();
+                   
+                    eventer(messageEvent, function (e) {
+                    	if (e && e.data && e.data.changes && needToCheckGrids === true) {
+                    		if (e.data.gridName == 'Ticket Scale' || e.data.gridName == 'Platinum Lift Calculator') {
+                    			
+                    			if (e.data.gridName == 'Ticket Scale') {
+                    				ticketScaleChecked = true;
+                    			}
+                    			
+                    			if (e.data.gridName == 'Platinum Lift Calculator') {
+                    				platinumChecked = true;
+                    			}
+                    			
+                    			if (ticketScaleChecked === true && platinumChecked === true) {
+                    				needToCheckGrids = false;
+                    				
+                    				if (e.data.changes === 'true') {
+		                    			$('#grid-spin').hide();
+		                    			alert('You must save your current entries before changing the view or discard by clicking Refresh in the grid.');
+		                    		} else {
+		                    			if (clickedTab) {
+		                    				currentlySelectedTab = clickedTab;
+			                    			setActiveTab();
+			                    			showHideSummaryGrid();
+			                    			clickedTab = null;
+			                    			checkPlatinumForCurrentDateTime();
+			                    			lneTicketRevenueTab.showHidePlatinumGrid();
+		                    			}
+		                    		}
+                    			}
+                    		}
+                    	}
+                    	// else if (e && e.data && e.data.resize) {
+	                    //     $('iframe[data-grid-name=' + e.data.id + ']').height(e.data.resize);
+                    	// }
+                        if (typeof e.data == 'string') {  
+                        	if (e.data == 'Saving' || e.data == 'SavingPL' || e.data == 'Loaded' || e.data == 'SavingErrors') {
+	                            oldChildGridState = newChildGridState;
+	                            newChildGridState = e.data;
+	                            
+	                            console.log(e.data);
+	                                
+	                            if (newChildGridState == 'Loaded' && (oldChildGridState == 'Saving' || oldChildGridState == 'SavingPL')){
+	                                
+	                                if (oldChildGridState != 'SavingPL'){ // do not run if platinum lift is saved.
+	                                    setTimeout(function () {
+	                                      CheckPlatinumTicketScales_JS();
+	                                    }, 1000);
+	                                }
+	                                
+	                                setTimeout(function(){
+	                                    rerenderTicketRevenueMetrics();
+	                                }, 1000);
+	                                
+	                                setTimeout(function(){
+	                                    rerenderDateTimeSummaryJS();
+	                                }, 1000);
+	                                
+	                                setTimeout(function(){
+	                                    checkPlatinumForCurrentDateTime();
+	                                }, 1000);
+	                                
+	                                $('#grid-spin').hide();
+	                            }
+	                            
+	                            if (newChildGridState == 'Loaded') {
+	                            	$('#grid-spin').hide();
+	                            }
+	                        }
+	                        else if (e.data.indexOf('Resize:') != -1) {
+	                        	
+	                        }
+	                    }
+                    }, false);
+
+                    lneSharedJs.sharedInit();
+					
+					if (usingMultiScale == false) {
+						toggleTicketScaleGrids('show');	
+					} else {
+						toggleTicketScaleGrids('hide');
+					}
+					
+					initTabs();
+					showHideSummaryGrid();
+                };
+                
+                //-- @Deprecated
+                //-- @TODO: review if this is needed / should be kept
+                lneTicketRevenueTab.refreshPlatinumGrid = function(numPlatinumTicketScales) {
+                    console.log('refreshPlatinumGrid');
+                    countPlatinumTicketScales = numPlatinumTicketScales;
+                    lneTicketRevenueTab.numPlatinumTicketScales = numPlatinumTicketScales;
+
+                    var platinumGridIframeLoc = $('#grid-frame-platinum-lift').attr('src');
+                    $('#grid-frame-platinum-lift').attr('src', platinumGridIframeLoc);
+
+                    lneTicketRevenueTab.showHidePlatinumGrid();
+                };
+
+                lneTicketRevenueTab.showHidePlatinumGrid = function() {
+                    if (countPlatinumTicketScales > 0) {
+                        console.log('show');
+                        lneTicketRevenueTab.showPlatinumLiftGrid = true;
+ 
+                        $('#grid-frame-platinum-lift').show();
+                    } else {
+                        console.log('hide');
+                        lneTicketRevenueTab.showPlatinumLiftGrid = false;
+
+                        $('#grid-frame-platinum-lift').hide();
+                    }
+                };
+                
+                function showHideSummaryGrid() {
+                	$('#grid-spin').show();
+                	
+                	if (usingMultiScale === true) {
+                		if (currentlySelectedTab == 'summary') {
+	                		$('.dateTimeMetrics').show();
+	                		toggleTicketScaleGrids('hide');
+	                		$('#grid-spin').hide(); 
+	                	} else {
+	                		$('.dateTimeMetrics').hide();
+	                		toggleTicketScaleGrids('show');
+	                		switchGridsToEventDateTime(currentlySelectedTab);
+	                	}
+                	} else {
+                		$('.dateTimeMetrics').hide();
+                	}
+                }
+                
+                function toggleTicketScaleGrids(action) {
+                	$('#grid-frame-ticket-scale, #grid-frame-platinum-lift')[action]();
+                	lneTicketRevenueTab.showHidePlatinumGrid();
+                }
+                
+                function switchGridsToEventDateTime(selectedTab) {
+                	const newFpf = 'EventIDStageTypeDateTime__c';
+                	const ticketScaleSrc = $('#grid-frame-ticket-scale').attr('src');
+                	const platinumSrc = $('#grid-frame-platinum-lift').attr('src');
+                	const currentFpv = ticketScaleSrc.match(/[&?]fpv=([^&?]+)[&?]/)[1];
+                	const params = currentFpv.split(delimiter);
+                	if (params.length == 2) {
+                		params.push(selectedTab.substring(0,15));
+                	} else {
+                		params[2] = selectedTab.substring(0,15);
+                	}
+
+                	const newGridType = dateTimeMap[currentlySelectedTab]["UsingTicketFeed__c"] === true && currentGridType === 'Projection' ? "Audit" : currentGridType;
+                	const newUsingTicketFeeds = dateTimeMap[currentlySelectedTab]["UsingTicketFeed__c"] === true && currentGridType === 'Projection';
+                	
+					const newFpv = params.join(delimiter);
+					var newTicketScaleSrc = ticketScaleSrc.replace(/(fpf=).*?($|[&?])/,'$1' + newFpf + '$2');
+					newTicketScaleSrc = newTicketScaleSrc.replace(/(fpv=).*?($|[&?])/,'$1' + newFpv + '$2');
+					newTicketScaleSrc = newTicketScaleSrc.replace(/(gridType=).*?($|[&?])/,'$1' + newGridType + '$2');
+					newTicketScaleSrc = newTicketScaleSrc.replace(/(UsingTicketFeeds=).*?($|[&?])/,'$1' + newUsingTicketFeeds + '$2');
+
+					var newPlatinumSrc = platinumSrc.replace(/(fpf=).*?($|[&?])/,'$1' + newFpf + '$2');
+					newPlatinumSrc = newPlatinumSrc.replace(/(fpv=).*?($|[&?])/,'$1' + newFpv + '$2');
+					newPlatinumSrc = newPlatinumSrc.replace(/(gridType=).*?($|[&?])/,'$1' + newGridType + '$2');
+					newPlatinumSrc = newPlatinumSrc.replace(/(UsingTicketFeeds=).*?($|[&?])/,'$1' + newUsingTicketFeeds + '$2');
+					
+					$('#grid-frame-ticket-scale').attr('src', newTicketScaleSrc);
+					$('#grid-frame-platinum-lift').attr('src', newPlatinumSrc);
+                }
+                
+                alertify.parent(document.body);
+                
+				function handleRevertPrompt(){
+					alertify
+						.okBtn('Yes')
+						.cancelBtn('No')
+						.confirm("The ticket scales associated with the first date/time will be used for all date/times and the additional ticket scales will be deleted. Proceed with reversion to single-scale?", function(successArgs){
+							$('#grid-spin').show();
+							toggleTicketScaleGrids('show');	
+							revertToSingleScaleJS();
+							
+						}, function( cancelArgs ){
+							
+						});
+				}
+				
+				function handleConvertToMultiscale() {
+					$('#grid-spin').show();
+					toggleTicketScaleGrids('hide');
+					convertToMultiScaleJS();
+				}
+				
+				function handleEventDateTimeTabClick() {
+					$('#grid-spin').show();
+                    win = $('#grid-frame-ticket-scale').get(0).contentWindow;
+                    win.postMessage({'action': 'reportForNutSave'}, '*');
+				}
+				
+				function initTabs() {
+					$('#dateTimeTabsContainer a').prop('onclick',null);
+					$('#dateTimeTabsContainer a').click(function(event){
+						clickedTab = this.dataset.recordid;
+						needToCheckGrids = true;
+						event.preventDefault();
+						handleEventDateTimeTabClick();
+					});
+				}
+				
+				function setActiveTab() {
+					$('#grid-spin').hide();
+					tabClicked($("#dateTimeTabsContainer").find(`[data-recordid='${currentlySelectedTab}']`)[0]);
+					$("[id$='selectedDateTimeAuditMessage']").hide();
+					$("[id$='selectedDateTimeAuditFeedMessage']").hide();
+
+					if (`${currentlySelectedTab}` in auditAvailableMap && auditAvailableMap[`${currentlySelectedTab}`] === true) {
+						$("[id$='selectedDateTimeAuditMessage']").show();
+						$('#importSingleEventDateTimeAuditButton').unbind();
+						const idToImport = `${currentlySelectedTab}`;
+						$('#importSingleEventDateTimeAuditButton').click(function(){
+							$('#grid-spin').show();
+							importAuditFeedForCurrentDateTimeJS(idToImport);
+							return false;
+						});
+						
+					}
+					$("[id$='PreviouslyForecastedValuesForSingleDateTime']").hide();
+					$('#hidePrevForecastedPaidTickets').unbind();
+					$('#hidePrevForecastedLiftBeforeFee').unbind();
+
+					if (currentlySelectedTab != 'summary') {
+						const usingFeed = dateTimeMap[currentlySelectedTab]["UsingTicketFeed__c"] === true;
+
+						if (usingFeed === true) {
+							$("[id$='PreviouslyForecastedValuesForSingleDateTime']").show();
+							$("[id$='selectedDateTimeAuditFeedMessage']").show();
+						}
+
+						if (`${currentlySelectedTab}` in dateTimeMap) {
+							const hideProjectedTickets = dateTimeMap[`${currentlySelectedTab}`]['HidePreviouslyForecastedProjPdTkt__c'];
+							const hideLift = dateTimeMap[`${currentlySelectedTab}`]['HidePreviouslyForecastedLiftBfrTxs__c'];
+
+							if (hideProjectedTickets && hideProjectedTickets === true) {
+								$('#prevForecastedGrossSales').closest('tr').hide();
+								$('#prevForecastedPaidTickets').closest('tr').hide();
+							} else {
+								$('#prevForecastedGrossSales').closest('tr').show();
+								$('#prevForecastedPaidTickets').closest('tr').show();
+							}
+
+							if (hideLift && hideLift === true) {
+								$('#prevForecastedLiftBeforeFee').closest('tr').hide();
+							} else {
+								$('#prevForecastedLiftBeforeFee').closest('tr').show();
+							}
+
+							const grossSales = dateTimeMap[`${currentlySelectedTab}`]['PreviouslyForecastedGrossSales__c'] || 0.0;
+							const projectedTickets = dateTimeMap[`${currentlySelectedTab}`]['PreviouslyForecastedProjPaidTickets__c'] || 0;
+							const liftBeforeFee = dateTimeMap[`${currentlySelectedTab}`]['PrevForecastedPlatinumLiftbeforeFee__c'] || 0.0;
+
+							$('#prevForecastedGrossSales').text(grossSales);
+							$('#prevForecastedPaidTickets').text(projectedTickets);
+							$('#prevForecastedLiftBeforeFee').text(liftBeforeFee);
+
+							try {
+								const liftBeforeFeeNumber = parseFloat(liftBeforeFee);
+								if (liftBeforeFeeNumber <= 0) {
+									$('#prevForecastedLiftBeforeFee').closest('tr').hide();
+								}
+							} catch (e) {
+								console.log(e);
+							}
+						}
+
+						const idToUse = `${currentlySelectedTab}`;
+
+						$('#hidePrevForecastedPaidTickets').click(function(){
+							$('#grid-spin').show();
+							hideFieldForEventDateTimeJS(idToUse, 'HidePreviouslyForecastedProjPdTkt__c');
+						});
+
+						$('#hidePrevForecastedLiftBeforeFee').click(function(){
+							$('#grid-spin').show();
+							hideFieldForEventDateTimeJS(idToUse, 'HidePreviouslyForecastedLiftBfrTxs__c');
+						});
+					}
+				}
+				
+				function checkPlatinumForCurrentDateTime() {
+                    if (currentlySelectedTab && currentlySelectedTab != 'summary') {
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.LNE_TicketRevenueTab_CX.checkPlatinum}',
+                            currentlySelectedTab,
+                            currentGridType,
+                            function(result, event){
+                                if (event.status) {
+                                    countPlatinumTicketScales = result;
+                                    lneTicketRevenueTab.showHidePlatinumGrid();
+                                } else if (event.type === 'exception') {
+                                    console.log('Error event ',event);
+
+                                } else {
+                                    console.log('Error event ',event);
+                                }
+                            }, 
+                            {escape: true}
+                        );
+                    }
+                }
+
+				function setDateTimeTabsWidth() {
+					const elList = $('.slds-tabs--scoped__nav');
+					if (elList.length > 0) {
+						const widthNeeded = elList[0].scrollWidth;
+						$($('#dateTimeTabsContainer')[0]).width(`${widthNeeded}px`);
+						$('#dateTimeTabsContainer ul').width(`${widthNeeded}px`);
+					}
+				}
+
+				function refreshCurrentPage(evt) {
+					location.reload(true);
+				}
+
+				setDateTimeTabsWidth();
+
+                lneTicketRevenueTab.init();
+
+            </script>
+            <c:LNE_Copyright />
+        </body>
+
+    </html>
+</apex:page>

@@ -1,0 +1,1761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AA - Armed Forces Americas</fullName>
+        <default>false</default>
+        <label>AA - Armed Forces Americas</label>
+    </customValue>
+    <customValue>
+        <fullName>AE - Armed Forces Europe</fullName>
+        <default>false</default>
+        <label>AE - Armed Forces Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>AK - Alaska</fullName>
+        <default>false</default>
+        <label>AK - Alaska</label>
+    </customValue>
+    <customValue>
+        <fullName>AL - Alabama</fullName>
+        <default>false</default>
+        <label>AL - Alabama</label>
+    </customValue>
+    <customValue>
+        <fullName>AP - Armed Forces Pacific</fullName>
+        <default>false</default>
+        <label>AP - Armed Forces Pacific</label>
+    </customValue>
+    <customValue>
+        <fullName>AR - Arkansas</fullName>
+        <default>false</default>
+        <label>AR - Arkansas</label>
+    </customValue>
+    <customValue>
+        <fullName>AS - American Samoa</fullName>
+        <default>false</default>
+        <label>AS - American Samoa</label>
+    </customValue>
+    <customValue>
+        <fullName>AZ - Arizona</fullName>
+        <default>false</default>
+        <label>AZ - Arizona</label>
+    </customValue>
+    <customValue>
+        <fullName>CA - California</fullName>
+        <default>false</default>
+        <label>CA - California</label>
+    </customValue>
+    <customValue>
+        <fullName>CO - Colorado</fullName>
+        <default>false</default>
+        <label>CO - Colorado</label>
+    </customValue>
+    <customValue>
+        <fullName>CT - Connecticut</fullName>
+        <default>false</default>
+        <label>CT - Connecticut</label>
+    </customValue>
+    <customValue>
+        <fullName>DC - District of Columbia</fullName>
+        <default>false</default>
+        <label>DC - District of Columbia</label>
+    </customValue>
+    <customValue>
+        <fullName>DE - Delaware</fullName>
+        <default>false</default>
+        <label>DE - Delaware</label>
+    </customValue>
+    <customValue>
+        <fullName>FL - Florida</fullName>
+        <default>false</default>
+        <label>FL - Florida</label>
+    </customValue>
+    <customValue>
+        <fullName>FM - Federated Micronesia</fullName>
+        <default>false</default>
+        <label>FM - Federated Micronesia</label>
+    </customValue>
+    <customValue>
+        <fullName>GA - Georgia</fullName>
+        <default>false</default>
+        <label>GA - Georgia</label>
+    </customValue>
+    <customValue>
+        <fullName>GU - Guam</fullName>
+        <default>false</default>
+        <label>GU - Guam</label>
+    </customValue>
+    <customValue>
+        <fullName>HI - Hawaii</fullName>
+        <default>false</default>
+        <label>HI - Hawaii</label>
+    </customValue>
+    <customValue>
+        <fullName>IA - Iowa</fullName>
+        <default>false</default>
+        <label>IA - Iowa</label>
+    </customValue>
+    <customValue>
+        <fullName>ID - Idaho</fullName>
+        <default>false</default>
+        <label>ID - Idaho</label>
+    </customValue>
+    <customValue>
+        <fullName>IL - Illinois</fullName>
+        <default>false</default>
+        <label>IL - Illinois</label>
+    </customValue>
+    <customValue>
+        <fullName>IN - Indiana</fullName>
+        <default>false</default>
+        <label>IN - Indiana</label>
+    </customValue>
+    <customValue>
+        <fullName>KS - Kansas</fullName>
+        <default>false</default>
+        <label>KS - Kansas</label>
+    </customValue>
+    <customValue>
+        <fullName>KY - Kentucky</fullName>
+        <default>false</default>
+        <label>KY - Kentucky</label>
+    </customValue>
+    <customValue>
+        <fullName>LA - Louisiana</fullName>
+        <default>false</default>
+        <label>LA - Louisiana</label>
+    </customValue>
+    <customValue>
+        <fullName>MA - Massachusetts</fullName>
+        <default>false</default>
+        <label>MA - Massachusetts</label>
+    </customValue>
+    <customValue>
+        <fullName>MD - Maryland</fullName>
+        <default>false</default>
+        <label>MD - Maryland</label>
+    </customValue>
+    <customValue>
+        <fullName>ME - Maine</fullName>
+        <default>false</default>
+        <label>ME - Maine</label>
+    </customValue>
+    <customValue>
+        <fullName>MH - Marshall Islands</fullName>
+        <default>false</default>
+        <label>MH - Marshall Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>MI - Michigan</fullName>
+        <default>false</default>
+        <label>MI - Michigan</label>
+    </customValue>
+    <customValue>
+        <fullName>MN - Minnesota</fullName>
+        <default>false</default>
+        <label>MN - Minnesota</label>
+    </customValue>
+    <customValue>
+        <fullName>MO - Missouri</fullName>
+        <default>false</default>
+        <label>MO - Missouri</label>
+    </customValue>
+    <customValue>
+        <fullName>MP - Northern Mariana Islands</fullName>
+        <default>false</default>
+        <label>MP - Northern Mariana Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>MS - Mississippi</fullName>
+        <default>false</default>
+        <label>MS - Mississippi</label>
+    </customValue>
+    <customValue>
+        <fullName>MT - Montana</fullName>
+        <default>false</default>
+        <label>MT - Montana</label>
+    </customValue>
+    <customValue>
+        <fullName>NC - North Carolina</fullName>
+        <default>false</default>
+        <label>NC - North Carolina</label>
+    </customValue>
+    <customValue>
+        <fullName>ND - North Dakota</fullName>
+        <default>false</default>
+        <label>ND - North Dakota</label>
+    </customValue>
+    <customValue>
+        <fullName>NE - Nebraska</fullName>
+        <default>false</default>
+        <label>NE - Nebraska</label>
+    </customValue>
+    <customValue>
+        <fullName>NH - New Hampshire</fullName>
+        <default>false</default>
+        <label>NH - New Hampshire</label>
+    </customValue>
+    <customValue>
+        <fullName>NJ - New Jersey</fullName>
+        <default>false</default>
+        <label>NJ - New Jersey</label>
+    </customValue>
+    <customValue>
+        <fullName>NM - New Mexico</fullName>
+        <default>false</default>
+        <label>NM - New Mexico</label>
+    </customValue>
+    <customValue>
+        <fullName>NV - Nevada</fullName>
+        <default>false</default>
+        <label>NV - Nevada</label>
+    </customValue>
+    <customValue>
+        <fullName>NY - New York</fullName>
+        <default>false</default>
+        <label>NY - New York</label>
+    </customValue>
+    <customValue>
+        <fullName>OH - Ohio</fullName>
+        <default>false</default>
+        <label>OH - Ohio</label>
+    </customValue>
+    <customValue>
+        <fullName>OK - Oklahoma</fullName>
+        <default>false</default>
+        <label>OK - Oklahoma</label>
+    </customValue>
+    <customValue>
+        <fullName>OR - Oregon</fullName>
+        <default>false</default>
+        <label>OR - Oregon</label>
+    </customValue>
+    <customValue>
+        <fullName>PA - Pennsylvania</fullName>
+        <default>false</default>
+        <label>PA - Pennsylvania</label>
+    </customValue>
+    <customValue>
+        <fullName>PR - Puerto Rico</fullName>
+        <default>false</default>
+        <label>PR - Puerto Rico</label>
+    </customValue>
+    <customValue>
+        <fullName>PW - Palau</fullName>
+        <default>false</default>
+        <label>PW - Palau</label>
+    </customValue>
+    <customValue>
+        <fullName>RI - Rhode Island</fullName>
+        <default>false</default>
+        <label>RI - Rhode Island</label>
+    </customValue>
+    <customValue>
+        <fullName>SC - South Carolina</fullName>
+        <default>false</default>
+        <label>SC - South Carolina</label>
+    </customValue>
+    <customValue>
+        <fullName>SD - South Dakota</fullName>
+        <default>false</default>
+        <label>SD - South Dakota</label>
+    </customValue>
+    <customValue>
+        <fullName>TN - Tennessee</fullName>
+        <default>false</default>
+        <label>TN - Tennessee</label>
+    </customValue>
+    <customValue>
+        <fullName>TX - Texas</fullName>
+        <default>false</default>
+        <label>TX - Texas</label>
+    </customValue>
+    <customValue>
+        <fullName>UM - United States Minor Outlying Islands</fullName>
+        <default>false</default>
+        <label>UM - United States Minor Outlying Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>UT - Utah</fullName>
+        <default>false</default>
+        <label>UT - Utah</label>
+    </customValue>
+    <customValue>
+        <fullName>VA - Virginia</fullName>
+        <default>false</default>
+        <label>VA - Virginia</label>
+    </customValue>
+    <customValue>
+        <fullName>VI - US Virgin Islands</fullName>
+        <default>false</default>
+        <label>VI - US Virgin Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>VT - Vermont</fullName>
+        <default>false</default>
+        <label>VT - Vermont</label>
+    </customValue>
+    <customValue>
+        <fullName>WA - Washington</fullName>
+        <default>false</default>
+        <label>WA - Washington</label>
+    </customValue>
+    <customValue>
+        <fullName>WI - Wisconsin</fullName>
+        <default>false</default>
+        <label>WI - Wisconsin</label>
+    </customValue>
+    <customValue>
+        <fullName>WV - West Virginia</fullName>
+        <default>false</default>
+        <label>WV - West Virginia</label>
+    </customValue>
+    <customValue>
+        <fullName>WY - Wyoming</fullName>
+        <default>false</default>
+        <label>WY - Wyoming</label>
+    </customValue>
+    <customValue>
+        <fullName>AB - Alberta</fullName>
+        <default>false</default>
+        <label>AB - Alberta</label>
+    </customValue>
+    <customValue>
+        <fullName>BC - British Columbia</fullName>
+        <default>false</default>
+        <label>BC - British Columbia</label>
+    </customValue>
+    <customValue>
+        <fullName>MB - Manitoba</fullName>
+        <default>false</default>
+        <label>MB - Manitoba</label>
+    </customValue>
+    <customValue>
+        <fullName>NB - New Brunswick</fullName>
+        <default>false</default>
+        <label>NB - New Brunswick</label>
+    </customValue>
+    <customValue>
+        <fullName>NL - Newfoundland and Labrador</fullName>
+        <default>false</default>
+        <label>NL - Newfoundland and Labrador</label>
+    </customValue>
+    <customValue>
+        <fullName>NS - Nova Scotia</fullName>
+        <default>false</default>
+        <label>NS - Nova Scotia</label>
+    </customValue>
+    <customValue>
+        <fullName>NT - Northwest Territories</fullName>
+        <default>false</default>
+        <label>NT - Northwest Territories</label>
+    </customValue>
+    <customValue>
+        <fullName>NU - Nunavut</fullName>
+        <default>false</default>
+        <label>NU - Nunavut</label>
+    </customValue>
+    <customValue>
+        <fullName>ON - Ontario</fullName>
+        <default>false</default>
+        <label>ON - Ontario</label>
+    </customValue>
+    <customValue>
+        <fullName>PE - Prince Edward Island</fullName>
+        <default>false</default>
+        <label>PE - Prince Edward Island</label>
+    </customValue>
+    <customValue>
+        <fullName>QC - Quebec</fullName>
+        <default>false</default>
+        <label>QC - Quebec</label>
+    </customValue>
+    <customValue>
+        <fullName>SK - Saskatchewan</fullName>
+        <default>false</default>
+        <label>SK - Saskatchewan</label>
+    </customValue>
+    <customValue>
+        <fullName>YT - Yukon Territories</fullName>
+        <default>false</default>
+        <label>YT - Yukon Territories</label>
+    </customValue>
+    <customValue>
+        <fullName>ACT - Australian Capital Territory</fullName>
+        <default>false</default>
+        <label>ACT - Australian Capital Territory</label>
+    </customValue>
+    <customValue>
+        <fullName>NSW - New South Wales</fullName>
+        <default>false</default>
+        <label>NSW - New South Wales</label>
+    </customValue>
+    <customValue>
+        <fullName>NT - Northern Territory</fullName>
+        <default>false</default>
+        <label>NT - Northern Territory</label>
+    </customValue>
+    <customValue>
+        <fullName>QLD - Queensland</fullName>
+        <default>false</default>
+        <label>QLD - Queensland</label>
+    </customValue>
+    <customValue>
+        <fullName>SA - South Australia</fullName>
+        <default>false</default>
+        <label>SA - South Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>TAS - Tasmania</fullName>
+        <default>false</default>
+        <label>TAS - Tasmania</label>
+    </customValue>
+    <customValue>
+        <fullName>VIC - Victoria</fullName>
+        <default>false</default>
+        <label>VIC - Victoria</label>
+    </customValue>
+    <customValue>
+        <fullName>WA - Western Australia</fullName>
+        <default>false</default>
+        <label>WA - Western Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>BI - Bimini</fullName>
+        <default>false</default>
+        <label>BI - Bimini</label>
+    </customValue>
+    <customValue>
+        <fullName>EN - England</fullName>
+        <default>false</default>
+        <label>EN - England</label>
+    </customValue>
+    <customValue>
+        <fullName>AC - Acre</fullName>
+        <default>false</default>
+        <label>AC - Acre</label>
+    </customValue>
+    <customValue>
+        <fullName>AL - Alagoas</fullName>
+        <default>false</default>
+        <label>AL - Alagoas</label>
+    </customValue>
+    <customValue>
+        <fullName>AM - Amazonas</fullName>
+        <default>false</default>
+        <label>AM - Amazonas</label>
+    </customValue>
+    <customValue>
+        <fullName>AP - Amapá</fullName>
+        <default>false</default>
+        <label>AP - Amapá</label>
+    </customValue>
+    <customValue>
+        <fullName>BA - Bahia</fullName>
+        <default>false</default>
+        <label>BA - Bahia</label>
+    </customValue>
+    <customValue>
+        <fullName>CE - Ceará</fullName>
+        <default>false</default>
+        <label>CE - Ceará</label>
+    </customValue>
+    <customValue>
+        <fullName>DF - Distrito Federal</fullName>
+        <default>false</default>
+        <label>DF - Distrito Federal</label>
+    </customValue>
+    <customValue>
+        <fullName>ES - Espírito Santo</fullName>
+        <default>false</default>
+        <label>ES - Espírito Santo</label>
+    </customValue>
+    <customValue>
+        <fullName>GO - Goiás</fullName>
+        <default>false</default>
+        <label>GO - Goiás</label>
+    </customValue>
+    <customValue>
+        <fullName>MA - Maranhão</fullName>
+        <default>false</default>
+        <label>MA - Maranhão</label>
+    </customValue>
+    <customValue>
+        <fullName>MG - Minas Gerais</fullName>
+        <default>false</default>
+        <label>MG - Minas Gerais</label>
+    </customValue>
+    <customValue>
+        <fullName>MS - Mato Grosso do Sul</fullName>
+        <default>false</default>
+        <label>MS - Mato Grosso do Sul</label>
+    </customValue>
+    <customValue>
+        <fullName>MT - Mato Grosso</fullName>
+        <default>false</default>
+        <label>MT - Mato Grosso</label>
+    </customValue>
+    <customValue>
+        <fullName>PA - Pará</fullName>
+        <default>false</default>
+        <label>PA - Pará</label>
+    </customValue>
+    <customValue>
+        <fullName>PB - Paraíba</fullName>
+        <default>false</default>
+        <label>PB - Paraíba</label>
+    </customValue>
+    <customValue>
+        <fullName>PE - Pernambuco</fullName>
+        <default>false</default>
+        <label>PE - Pernambuco</label>
+    </customValue>
+    <customValue>
+        <fullName>PI - Piauí</fullName>
+        <default>false</default>
+        <label>PI - Piauí</label>
+    </customValue>
+    <customValue>
+        <fullName>PR - Paraná</fullName>
+        <default>false</default>
+        <label>PR - Paraná</label>
+    </customValue>
+    <customValue>
+        <fullName>RJ - Rio de Janeiro</fullName>
+        <default>false</default>
+        <label>RJ - Rio de Janeiro</label>
+    </customValue>
+    <customValue>
+        <fullName>RN - Rio Grande do Norte</fullName>
+        <default>false</default>
+        <label>RN - Rio Grande do Norte</label>
+    </customValue>
+    <customValue>
+        <fullName>RO - Rondônia</fullName>
+        <default>false</default>
+        <label>RO - Rondônia</label>
+    </customValue>
+    <customValue>
+        <fullName>RR - Roraima</fullName>
+        <default>false</default>
+        <label>RR - Roraima</label>
+    </customValue>
+    <customValue>
+        <fullName>RS - Rio Grande do Sul</fullName>
+        <default>false</default>
+        <label>RS - Rio Grande do Sul</label>
+    </customValue>
+    <customValue>
+        <fullName>SC - Santa Catarina</fullName>
+        <default>false</default>
+        <label>SC - Santa Catarina</label>
+    </customValue>
+    <customValue>
+        <fullName>SE - Sergipe</fullName>
+        <default>false</default>
+        <label>SE - Sergipe</label>
+    </customValue>
+    <customValue>
+        <fullName>SP - São Paulo</fullName>
+        <default>false</default>
+        <label>SP - São Paulo</label>
+    </customValue>
+    <customValue>
+        <fullName>TO - Tocantins</fullName>
+        <default>false</default>
+        <label>TO - Tocantins</label>
+    </customValue>
+    <customValue>
+        <fullName>11 - Beijing</fullName>
+        <default>false</default>
+        <label>11 - Beijing</label>
+    </customValue>
+    <customValue>
+        <fullName>12 - Tianjin</fullName>
+        <default>false</default>
+        <label>12 - Tianjin</label>
+    </customValue>
+    <customValue>
+        <fullName>13 - Hebei</fullName>
+        <default>false</default>
+        <label>13 - Hebei</label>
+    </customValue>
+    <customValue>
+        <fullName>14 - Shanxi</fullName>
+        <default>false</default>
+        <label>14 - Shanxi</label>
+    </customValue>
+    <customValue>
+        <fullName>15 - Nei Mongol</fullName>
+        <default>false</default>
+        <label>15 - Nei Mongol</label>
+    </customValue>
+    <customValue>
+        <fullName>21 - Liaoning</fullName>
+        <default>false</default>
+        <label>21 - Liaoning</label>
+    </customValue>
+    <customValue>
+        <fullName>22 - Jilin</fullName>
+        <default>false</default>
+        <label>22 - Jilin</label>
+    </customValue>
+    <customValue>
+        <fullName>23 - Heilongjiang</fullName>
+        <default>false</default>
+        <label>23 - Heilongjiang</label>
+    </customValue>
+    <customValue>
+        <fullName>31 - Shanghai</fullName>
+        <default>false</default>
+        <label>31 - Shanghai</label>
+    </customValue>
+    <customValue>
+        <fullName>32 - Jiangsu</fullName>
+        <default>false</default>
+        <label>32 - Jiangsu</label>
+    </customValue>
+    <customValue>
+        <fullName>33 - Zhejiang</fullName>
+        <default>false</default>
+        <label>33 - Zhejiang</label>
+    </customValue>
+    <customValue>
+        <fullName>34 - Anhui</fullName>
+        <default>false</default>
+        <label>34 - Anhui</label>
+    </customValue>
+    <customValue>
+        <fullName>35 - Fujian</fullName>
+        <default>false</default>
+        <label>35 - Fujian</label>
+    </customValue>
+    <customValue>
+        <fullName>36 - Jiangxi</fullName>
+        <default>false</default>
+        <label>36 - Jiangxi</label>
+    </customValue>
+    <customValue>
+        <fullName>37 - Shandong</fullName>
+        <default>false</default>
+        <label>37 - Shandong</label>
+    </customValue>
+    <customValue>
+        <fullName>41 - Henan</fullName>
+        <default>false</default>
+        <label>41 - Henan</label>
+    </customValue>
+    <customValue>
+        <fullName>42 - Hubei</fullName>
+        <default>false</default>
+        <label>42 - Hubei</label>
+    </customValue>
+    <customValue>
+        <fullName>43 - Hunan</fullName>
+        <default>false</default>
+        <label>43 - Hunan</label>
+    </customValue>
+    <customValue>
+        <fullName>44 - Guangdong</fullName>
+        <default>false</default>
+        <label>44 - Guangdong</label>
+    </customValue>
+    <customValue>
+        <fullName>45 - Guangxi</fullName>
+        <default>false</default>
+        <label>45 - Guangxi</label>
+    </customValue>
+    <customValue>
+        <fullName>46 - Hainan</fullName>
+        <default>false</default>
+        <label>46 - Hainan</label>
+    </customValue>
+    <customValue>
+        <fullName>50 - Chongqing</fullName>
+        <default>false</default>
+        <label>50 - Chongqing</label>
+    </customValue>
+    <customValue>
+        <fullName>51 - Sichuan</fullName>
+        <default>false</default>
+        <label>51 - Sichuan</label>
+    </customValue>
+    <customValue>
+        <fullName>52 - Guizhou</fullName>
+        <default>false</default>
+        <label>52 - Guizhou</label>
+    </customValue>
+    <customValue>
+        <fullName>53 - Yunnan</fullName>
+        <default>false</default>
+        <label>53 - Yunnan</label>
+    </customValue>
+    <customValue>
+        <fullName>54 - Xizang</fullName>
+        <default>false</default>
+        <label>54 - Xizang</label>
+    </customValue>
+    <customValue>
+        <fullName>61 - Shaanxi</fullName>
+        <default>false</default>
+        <label>61 - Shaanxi</label>
+    </customValue>
+    <customValue>
+        <fullName>62 - Gansu</fullName>
+        <default>false</default>
+        <label>62 - Gansu</label>
+    </customValue>
+    <customValue>
+        <fullName>63 - Qinghai</fullName>
+        <default>false</default>
+        <label>63 - Qinghai</label>
+    </customValue>
+    <customValue>
+        <fullName>64 - Ningxia</fullName>
+        <default>false</default>
+        <label>64 - Ningxia</label>
+    </customValue>
+    <customValue>
+        <fullName>65 - Xinjiang</fullName>
+        <default>false</default>
+        <label>65 - Xinjiang</label>
+    </customValue>
+    <customValue>
+        <fullName>71 - Taiwan</fullName>
+        <default>false</default>
+        <label>71 - Taiwan</label>
+    </customValue>
+    <customValue>
+        <fullName>91 - Hong Kong</fullName>
+        <default>false</default>
+        <label>91 - Hong Kong</label>
+    </customValue>
+    <customValue>
+        <fullName>92 - Macao</fullName>
+        <default>false</default>
+        <label>92 - Macao</label>
+    </customValue>
+    <customValue>
+        <fullName>CE - Clare</fullName>
+        <default>false</default>
+        <label>CE - Clare</label>
+    </customValue>
+    <customValue>
+        <fullName>CN - Cavan</fullName>
+        <default>false</default>
+        <label>CN - Cavan</label>
+    </customValue>
+    <customValue>
+        <fullName>CO - Cork</fullName>
+        <default>false</default>
+        <label>CO - Cork</label>
+    </customValue>
+    <customValue>
+        <fullName>CW - Carlow</fullName>
+        <default>false</default>
+        <label>CW - Carlow</label>
+    </customValue>
+    <customValue>
+        <fullName>D - Dublin</fullName>
+        <default>false</default>
+        <label>D - Dublin</label>
+    </customValue>
+    <customValue>
+        <fullName>DL - Donegal</fullName>
+        <default>false</default>
+        <label>DL - Donegal</label>
+    </customValue>
+    <customValue>
+        <fullName>G - Galway</fullName>
+        <default>false</default>
+        <label>G - Galway</label>
+    </customValue>
+    <customValue>
+        <fullName>KE - Kildare</fullName>
+        <default>false</default>
+        <label>KE - Kildare</label>
+    </customValue>
+    <customValue>
+        <fullName>KK - Kilkenny</fullName>
+        <default>false</default>
+        <label>KK - Kilkenny</label>
+    </customValue>
+    <customValue>
+        <fullName>KY - Kerry</fullName>
+        <default>false</default>
+        <label>KY - Kerry</label>
+    </customValue>
+    <customValue>
+        <fullName>LD - Longford</fullName>
+        <default>false</default>
+        <label>LD - Longford</label>
+    </customValue>
+    <customValue>
+        <fullName>LH - Louth</fullName>
+        <default>false</default>
+        <label>LH - Louth</label>
+    </customValue>
+    <customValue>
+        <fullName>LK - Limerick</fullName>
+        <default>false</default>
+        <label>LK - Limerick</label>
+    </customValue>
+    <customValue>
+        <fullName>LM - Leitrim</fullName>
+        <default>false</default>
+        <label>LM - Leitrim</label>
+    </customValue>
+    <customValue>
+        <fullName>LS - Laois</fullName>
+        <default>false</default>
+        <label>LS - Laois</label>
+    </customValue>
+    <customValue>
+        <fullName>MH - Meath</fullName>
+        <default>false</default>
+        <label>MH - Meath</label>
+    </customValue>
+    <customValue>
+        <fullName>MN - Monaghan</fullName>
+        <default>false</default>
+        <label>MN - Monaghan</label>
+    </customValue>
+    <customValue>
+        <fullName>MO - Mayo</fullName>
+        <default>false</default>
+        <label>MO - Mayo</label>
+    </customValue>
+    <customValue>
+        <fullName>OY - Offaly</fullName>
+        <default>false</default>
+        <label>OY - Offaly</label>
+    </customValue>
+    <customValue>
+        <fullName>RN - Roscommon</fullName>
+        <default>false</default>
+        <label>RN - Roscommon</label>
+    </customValue>
+    <customValue>
+        <fullName>SO - Sligo</fullName>
+        <default>false</default>
+        <label>SO - Sligo</label>
+    </customValue>
+    <customValue>
+        <fullName>TA - Tipperary</fullName>
+        <default>false</default>
+        <label>TA - Tipperary</label>
+    </customValue>
+    <customValue>
+        <fullName>WD - Waterford</fullName>
+        <default>false</default>
+        <label>WD - Waterford</label>
+    </customValue>
+    <customValue>
+        <fullName>WH - Westmeath</fullName>
+        <default>false</default>
+        <label>WH - Westmeath</label>
+    </customValue>
+    <customValue>
+        <fullName>WW - Wicklow</fullName>
+        <default>false</default>
+        <label>WW - Wicklow</label>
+    </customValue>
+    <customValue>
+        <fullName>WX - Wexford</fullName>
+        <default>false</default>
+        <label>WX - Wexford</label>
+    </customValue>
+    <customValue>
+        <fullName>AN - Andaman and Nicobar Islands</fullName>
+        <default>false</default>
+        <label>AN - Andaman and Nicobar Islands</label>
+    </customValue>
+    <customValue>
+        <fullName>AP - Andhra Pradesh</fullName>
+        <default>false</default>
+        <label>AP - Andhra Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>AR - Arunachal Pradesh</fullName>
+        <default>false</default>
+        <label>AR - Arunachal Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>AS - Assam</fullName>
+        <default>false</default>
+        <label>AS - Assam</label>
+    </customValue>
+    <customValue>
+        <fullName>BR - Bihar</fullName>
+        <default>false</default>
+        <label>BR - Bihar</label>
+    </customValue>
+    <customValue>
+        <fullName>CH - Chandigarh</fullName>
+        <default>false</default>
+        <label>CH - Chandigarh</label>
+    </customValue>
+    <customValue>
+        <fullName>CT - Chhattisgarh</fullName>
+        <default>false</default>
+        <label>CT - Chhattisgarh</label>
+    </customValue>
+    <customValue>
+        <fullName>DD - Daman and Diu</fullName>
+        <default>false</default>
+        <label>DD - Daman and Diu</label>
+    </customValue>
+    <customValue>
+        <fullName>DL - Delhi</fullName>
+        <default>false</default>
+        <label>DL - Delhi</label>
+    </customValue>
+    <customValue>
+        <fullName>DN - Dadra and Nagar Haveli</fullName>
+        <default>false</default>
+        <label>DN - Dadra and Nagar Haveli</label>
+    </customValue>
+    <customValue>
+        <fullName>GA - Goa</fullName>
+        <default>false</default>
+        <label>GA - Goa</label>
+    </customValue>
+    <customValue>
+        <fullName>GJ - Gujarat</fullName>
+        <default>false</default>
+        <label>GJ - Gujarat</label>
+    </customValue>
+    <customValue>
+        <fullName>HP - Himachal Pradesh</fullName>
+        <default>false</default>
+        <label>HP - Himachal Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>HR - Haryana</fullName>
+        <default>false</default>
+        <label>HR - Haryana</label>
+    </customValue>
+    <customValue>
+        <fullName>JH - Jharkhand</fullName>
+        <default>false</default>
+        <label>JH - Jharkhand</label>
+    </customValue>
+    <customValue>
+        <fullName>JK - Jammu and Kashmir</fullName>
+        <default>false</default>
+        <label>JK - Jammu and Kashmir</label>
+    </customValue>
+    <customValue>
+        <fullName>KA - Karnataka</fullName>
+        <default>false</default>
+        <label>KA - Karnataka</label>
+    </customValue>
+    <customValue>
+        <fullName>KL - Kerala</fullName>
+        <default>false</default>
+        <label>KL - Kerala</label>
+    </customValue>
+    <customValue>
+        <fullName>LD - Lakshadweep</fullName>
+        <default>false</default>
+        <label>LD - Lakshadweep</label>
+    </customValue>
+    <customValue>
+        <fullName>MH - Maharashtra</fullName>
+        <default>false</default>
+        <label>MH - Maharashtra</label>
+    </customValue>
+    <customValue>
+        <fullName>ML - Meghalaya</fullName>
+        <default>false</default>
+        <label>ML - Meghalaya</label>
+    </customValue>
+    <customValue>
+        <fullName>MN - Manipur</fullName>
+        <default>false</default>
+        <label>MN - Manipur</label>
+    </customValue>
+    <customValue>
+        <fullName>MP - Madhya Pradesh</fullName>
+        <default>false</default>
+        <label>MP - Madhya Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>MZ - Mizoram</fullName>
+        <default>false</default>
+        <label>MZ - Mizoram</label>
+    </customValue>
+    <customValue>
+        <fullName>NL - Nagaland</fullName>
+        <default>false</default>
+        <label>NL - Nagaland</label>
+    </customValue>
+    <customValue>
+        <fullName>OR - Odisha</fullName>
+        <default>false</default>
+        <label>OR - Odisha</label>
+    </customValue>
+    <customValue>
+        <fullName>PB - Punjab</fullName>
+        <default>false</default>
+        <label>PB - Punjab</label>
+    </customValue>
+    <customValue>
+        <fullName>PY - Puducherry</fullName>
+        <default>false</default>
+        <label>PY - Puducherry</label>
+    </customValue>
+    <customValue>
+        <fullName>RJ - Rajasthan</fullName>
+        <default>false</default>
+        <label>RJ - Rajasthan</label>
+    </customValue>
+    <customValue>
+        <fullName>SK - Sikkim</fullName>
+        <default>false</default>
+        <label>SK - Sikkim</label>
+    </customValue>
+    <customValue>
+        <fullName>TN - Tamil Nadu</fullName>
+        <default>false</default>
+        <label>TN - Tamil Nadu</label>
+    </customValue>
+    <customValue>
+        <fullName>TR - Tripura</fullName>
+        <default>false</default>
+        <label>TR - Tripura</label>
+    </customValue>
+    <customValue>
+        <fullName>UP - Uttar Pradesh</fullName>
+        <default>false</default>
+        <label>UP - Uttar Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>UT - Uttarakhand</fullName>
+        <default>false</default>
+        <label>UT - Uttarakhand</label>
+    </customValue>
+    <customValue>
+        <fullName>WB - West Bengal</fullName>
+        <default>false</default>
+        <label>WB - West Bengal</label>
+    </customValue>
+    <customValue>
+        <fullName>AG - Agrigento</fullName>
+        <default>false</default>
+        <label>AG - Agrigento</label>
+    </customValue>
+    <customValue>
+        <fullName>AL - Alessandria</fullName>
+        <default>false</default>
+        <label>AL - Alessandria</label>
+    </customValue>
+    <customValue>
+        <fullName>AN - Ancona</fullName>
+        <default>false</default>
+        <label>AN - Ancona</label>
+    </customValue>
+    <customValue>
+        <fullName>AO - Aosta</fullName>
+        <default>false</default>
+        <label>AO - Aosta</label>
+    </customValue>
+    <customValue>
+        <fullName>AP - Ascoli Piceno</fullName>
+        <default>false</default>
+        <label>AP - Ascoli Piceno</label>
+    </customValue>
+    <customValue>
+        <fullName>AQ - L&apos;Aquila</fullName>
+        <default>false</default>
+        <label>AQ - L&apos;Aquila</label>
+    </customValue>
+    <customValue>
+        <fullName>AR - Arezzo</fullName>
+        <default>false</default>
+        <label>AR - Arezzo</label>
+    </customValue>
+    <customValue>
+        <fullName>AT - Asti</fullName>
+        <default>false</default>
+        <label>AT - Asti</label>
+    </customValue>
+    <customValue>
+        <fullName>AV - Avellino</fullName>
+        <default>false</default>
+        <label>AV - Avellino</label>
+    </customValue>
+    <customValue>
+        <fullName>BA - Bari</fullName>
+        <default>false</default>
+        <label>BA - Bari</label>
+    </customValue>
+    <customValue>
+        <fullName>BG - Bergamo</fullName>
+        <default>false</default>
+        <label>BG - Bergamo</label>
+    </customValue>
+    <customValue>
+        <fullName>BI - Biella</fullName>
+        <default>false</default>
+        <label>BI - Biella</label>
+    </customValue>
+    <customValue>
+        <fullName>BL - Belluno</fullName>
+        <default>false</default>
+        <label>BL - Belluno</label>
+    </customValue>
+    <customValue>
+        <fullName>BN - Benevento</fullName>
+        <default>false</default>
+        <label>BN - Benevento</label>
+    </customValue>
+    <customValue>
+        <fullName>BO - Bologna</fullName>
+        <default>false</default>
+        <label>BO - Bologna</label>
+    </customValue>
+    <customValue>
+        <fullName>BR - Brindisi</fullName>
+        <default>false</default>
+        <label>BR - Brindisi</label>
+    </customValue>
+    <customValue>
+        <fullName>BS - Brescia</fullName>
+        <default>false</default>
+        <label>BS - Brescia</label>
+    </customValue>
+    <customValue>
+        <fullName>BT - Barletta-Andria-Trani</fullName>
+        <default>false</default>
+        <label>BT - Barletta-Andria-Trani</label>
+    </customValue>
+    <customValue>
+        <fullName>BZ - Bolzano</fullName>
+        <default>false</default>
+        <label>BZ - Bolzano</label>
+    </customValue>
+    <customValue>
+        <fullName>CA - Cagliari</fullName>
+        <default>false</default>
+        <label>CA - Cagliari</label>
+    </customValue>
+    <customValue>
+        <fullName>CB - Campobasso</fullName>
+        <default>false</default>
+        <label>CB - Campobasso</label>
+    </customValue>
+    <customValue>
+        <fullName>CE - Caserta</fullName>
+        <default>false</default>
+        <label>CE - Caserta</label>
+    </customValue>
+    <customValue>
+        <fullName>CH - Chieti</fullName>
+        <default>false</default>
+        <label>CH - Chieti</label>
+    </customValue>
+    <customValue>
+        <fullName>CI - Carbonia-Iglesias</fullName>
+        <default>false</default>
+        <label>CI - Carbonia-Iglesias</label>
+    </customValue>
+    <customValue>
+        <fullName>CL - Caltanissetta</fullName>
+        <default>false</default>
+        <label>CL - Caltanissetta</label>
+    </customValue>
+    <customValue>
+        <fullName>CN - Cuneo</fullName>
+        <default>false</default>
+        <label>CN - Cuneo</label>
+    </customValue>
+    <customValue>
+        <fullName>CO - Como</fullName>
+        <default>false</default>
+        <label>CO - Como</label>
+    </customValue>
+    <customValue>
+        <fullName>CR - Cremona</fullName>
+        <default>false</default>
+        <label>CR - Cremona</label>
+    </customValue>
+    <customValue>
+        <fullName>CS - Cosenza</fullName>
+        <default>false</default>
+        <label>CS - Cosenza</label>
+    </customValue>
+    <customValue>
+        <fullName>CT - Catania</fullName>
+        <default>false</default>
+        <label>CT - Catania</label>
+    </customValue>
+    <customValue>
+        <fullName>CZ - Catanzaro</fullName>
+        <default>false</default>
+        <label>CZ - Catanzaro</label>
+    </customValue>
+    <customValue>
+        <fullName>EN - Enna</fullName>
+        <default>false</default>
+        <label>EN - Enna</label>
+    </customValue>
+    <customValue>
+        <fullName>FC - Forlì-Cesena</fullName>
+        <default>false</default>
+        <label>FC - Forlì-Cesena</label>
+    </customValue>
+    <customValue>
+        <fullName>FE - Ferrara</fullName>
+        <default>false</default>
+        <label>FE - Ferrara</label>
+    </customValue>
+    <customValue>
+        <fullName>FG - Foggia</fullName>
+        <default>false</default>
+        <label>FG - Foggia</label>
+    </customValue>
+    <customValue>
+        <fullName>FI - Florence</fullName>
+        <default>false</default>
+        <label>FI - Florence</label>
+    </customValue>
+    <customValue>
+        <fullName>FM - Fermo</fullName>
+        <default>false</default>
+        <label>FM - Fermo</label>
+    </customValue>
+    <customValue>
+        <fullName>FR - Frosinone</fullName>
+        <default>false</default>
+        <label>FR - Frosinone</label>
+    </customValue>
+    <customValue>
+        <fullName>GE - Genoa</fullName>
+        <default>false</default>
+        <label>GE - Genoa</label>
+    </customValue>
+    <customValue>
+        <fullName>GO - Gorizia</fullName>
+        <default>false</default>
+        <label>GO - Gorizia</label>
+    </customValue>
+    <customValue>
+        <fullName>GR - Grosseto</fullName>
+        <default>false</default>
+        <label>GR - Grosseto</label>
+    </customValue>
+    <customValue>
+        <fullName>IM - Imperia</fullName>
+        <default>false</default>
+        <label>IM - Imperia</label>
+    </customValue>
+    <customValue>
+        <fullName>IS - Isernia</fullName>
+        <default>false</default>
+        <label>IS - Isernia</label>
+    </customValue>
+    <customValue>
+        <fullName>KR - Crotone</fullName>
+        <default>false</default>
+        <label>KR - Crotone</label>
+    </customValue>
+    <customValue>
+        <fullName>LC - Lecco</fullName>
+        <default>false</default>
+        <label>LC - Lecco</label>
+    </customValue>
+    <customValue>
+        <fullName>LE - Lecce</fullName>
+        <default>false</default>
+        <label>LE - Lecce</label>
+    </customValue>
+    <customValue>
+        <fullName>LI - Livorno</fullName>
+        <default>false</default>
+        <label>LI - Livorno</label>
+    </customValue>
+    <customValue>
+        <fullName>LO - Lodi</fullName>
+        <default>false</default>
+        <label>LO - Lodi</label>
+    </customValue>
+    <customValue>
+        <fullName>LT - Latina</fullName>
+        <default>false</default>
+        <label>LT - Latina</label>
+    </customValue>
+    <customValue>
+        <fullName>LU - Lucca</fullName>
+        <default>false</default>
+        <label>LU - Lucca</label>
+    </customValue>
+    <customValue>
+        <fullName>MB - Monza and Brianza</fullName>
+        <default>false</default>
+        <label>MB - Monza and Brianza</label>
+    </customValue>
+    <customValue>
+        <fullName>MC - Macerata</fullName>
+        <default>false</default>
+        <label>MC - Macerata</label>
+    </customValue>
+    <customValue>
+        <fullName>ME - Messina</fullName>
+        <default>false</default>
+        <label>ME - Messina</label>
+    </customValue>
+    <customValue>
+        <fullName>MI - Milan</fullName>
+        <default>false</default>
+        <label>MI - Milan</label>
+    </customValue>
+    <customValue>
+        <fullName>MN - Mantua</fullName>
+        <default>false</default>
+        <label>MN - Mantua</label>
+    </customValue>
+    <customValue>
+        <fullName>MO - Modena</fullName>
+        <default>false</default>
+        <label>MO - Modena</label>
+    </customValue>
+    <customValue>
+        <fullName>MS - Massa and Carrara</fullName>
+        <default>false</default>
+        <label>MS - Massa and Carrara</label>
+    </customValue>
+    <customValue>
+        <fullName>MT - Matera</fullName>
+        <default>false</default>
+        <label>MT - Matera</label>
+    </customValue>
+    <customValue>
+        <fullName>NA - Naples</fullName>
+        <default>false</default>
+        <label>NA - Naples</label>
+    </customValue>
+    <customValue>
+        <fullName>NO - Novara</fullName>
+        <default>false</default>
+        <label>NO - Novara</label>
+    </customValue>
+    <customValue>
+        <fullName>NU - Nuoro</fullName>
+        <default>false</default>
+        <label>NU - Nuoro</label>
+    </customValue>
+    <customValue>
+        <fullName>OG - Ogliastra</fullName>
+        <default>false</default>
+        <label>OG - Ogliastra</label>
+    </customValue>
+    <customValue>
+        <fullName>OR - Oristano</fullName>
+        <default>false</default>
+        <label>OR - Oristano</label>
+    </customValue>
+    <customValue>
+        <fullName>OT - Olbia-Tempio</fullName>
+        <default>false</default>
+        <label>OT - Olbia-Tempio</label>
+    </customValue>
+    <customValue>
+        <fullName>PA - Palermo</fullName>
+        <default>false</default>
+        <label>PA - Palermo</label>
+    </customValue>
+    <customValue>
+        <fullName>PC - Piacenza</fullName>
+        <default>false</default>
+        <label>PC - Piacenza</label>
+    </customValue>
+    <customValue>
+        <fullName>PD - Padua</fullName>
+        <default>false</default>
+        <label>PD - Padua</label>
+    </customValue>
+    <customValue>
+        <fullName>PE - Pescara</fullName>
+        <default>false</default>
+        <label>PE - Pescara</label>
+    </customValue>
+    <customValue>
+        <fullName>PG - Perugia</fullName>
+        <default>false</default>
+        <label>PG - Perugia</label>
+    </customValue>
+    <customValue>
+        <fullName>PI - Pisa</fullName>
+        <default>false</default>
+        <label>PI - Pisa</label>
+    </customValue>
+    <customValue>
+        <fullName>PN - Pordenone</fullName>
+        <default>false</default>
+        <label>PN - Pordenone</label>
+    </customValue>
+    <customValue>
+        <fullName>PO - Prato</fullName>
+        <default>false</default>
+        <label>PO - Prato</label>
+    </customValue>
+    <customValue>
+        <fullName>PR - Parma</fullName>
+        <default>false</default>
+        <label>PR - Parma</label>
+    </customValue>
+    <customValue>
+        <fullName>PT - Pistoia</fullName>
+        <default>false</default>
+        <label>PT - Pistoia</label>
+    </customValue>
+    <customValue>
+        <fullName>PU - Pesaro and Urbino</fullName>
+        <default>false</default>
+        <label>PU - Pesaro and Urbino</label>
+    </customValue>
+    <customValue>
+        <fullName>PV - Pavia</fullName>
+        <default>false</default>
+        <label>PV - Pavia</label>
+    </customValue>
+    <customValue>
+        <fullName>PZ - Potenza</fullName>
+        <default>false</default>
+        <label>PZ - Potenza</label>
+    </customValue>
+    <customValue>
+        <fullName>RA - Ravenna</fullName>
+        <default>false</default>
+        <label>RA - Ravenna</label>
+    </customValue>
+    <customValue>
+        <fullName>RC - Reggio Calabria</fullName>
+        <default>false</default>
+        <label>RC - Reggio Calabria</label>
+    </customValue>
+    <customValue>
+        <fullName>RE - Reggio Emilia</fullName>
+        <default>false</default>
+        <label>RE - Reggio Emilia</label>
+    </customValue>
+    <customValue>
+        <fullName>RG - Ragusa</fullName>
+        <default>false</default>
+        <label>RG - Ragusa</label>
+    </customValue>
+    <customValue>
+        <fullName>RI - Rieti</fullName>
+        <default>false</default>
+        <label>RI - Rieti</label>
+    </customValue>
+    <customValue>
+        <fullName>RM - Rome</fullName>
+        <default>false</default>
+        <label>RM - Rome</label>
+    </customValue>
+    <customValue>
+        <fullName>RN - Rimini</fullName>
+        <default>false</default>
+        <label>RN - Rimini</label>
+    </customValue>
+    <customValue>
+        <fullName>RO - Rovigo</fullName>
+        <default>false</default>
+        <label>RO - Rovigo</label>
+    </customValue>
+    <customValue>
+        <fullName>SA - Salerno</fullName>
+        <default>false</default>
+        <label>SA - Salerno</label>
+    </customValue>
+    <customValue>
+        <fullName>SI - Siena</fullName>
+        <default>false</default>
+        <label>SI - Siena</label>
+    </customValue>
+    <customValue>
+        <fullName>SO - Sondrio</fullName>
+        <default>false</default>
+        <label>SO - Sondrio</label>
+    </customValue>
+    <customValue>
+        <fullName>SP - La Spezia</fullName>
+        <default>false</default>
+        <label>SP - La Spezia</label>
+    </customValue>
+    <customValue>
+        <fullName>SR - Syracuse</fullName>
+        <default>false</default>
+        <label>SR - Syracuse</label>
+    </customValue>
+    <customValue>
+        <fullName>SS - Sassari</fullName>
+        <default>false</default>
+        <label>SS - Sassari</label>
+    </customValue>
+    <customValue>
+        <fullName>SV - Savona</fullName>
+        <default>false</default>
+        <label>SV - Savona</label>
+    </customValue>
+    <customValue>
+        <fullName>TA - Taranto</fullName>
+        <default>false</default>
+        <label>TA - Taranto</label>
+    </customValue>
+    <customValue>
+        <fullName>TE - Teramo</fullName>
+        <default>false</default>
+        <label>TE - Teramo</label>
+    </customValue>
+    <customValue>
+        <fullName>TN - Trento</fullName>
+        <default>false</default>
+        <label>TN - Trento</label>
+    </customValue>
+    <customValue>
+        <fullName>TO - Turin</fullName>
+        <default>false</default>
+        <label>TO - Turin</label>
+    </customValue>
+    <customValue>
+        <fullName>TP - Trapani</fullName>
+        <default>false</default>
+        <label>TP - Trapani</label>
+    </customValue>
+    <customValue>
+        <fullName>TR - Terni</fullName>
+        <default>false</default>
+        <label>TR - Terni</label>
+    </customValue>
+    <customValue>
+        <fullName>TS - Trieste</fullName>
+        <default>false</default>
+        <label>TS - Trieste</label>
+    </customValue>
+    <customValue>
+        <fullName>TV - Treviso</fullName>
+        <default>false</default>
+        <label>TV - Treviso</label>
+    </customValue>
+    <customValue>
+        <fullName>UD - Udine</fullName>
+        <default>false</default>
+        <label>UD - Udine</label>
+    </customValue>
+    <customValue>
+        <fullName>VA - Varese</fullName>
+        <default>false</default>
+        <label>VA - Varese</label>
+    </customValue>
+    <customValue>
+        <fullName>VB - Verbano-Cusio-Ossola</fullName>
+        <default>false</default>
+        <label>VB - Verbano-Cusio-Ossola</label>
+    </customValue>
+    <customValue>
+        <fullName>VC - Vercelli</fullName>
+        <default>false</default>
+        <label>VC - Vercelli</label>
+    </customValue>
+    <customValue>
+        <fullName>VE - Venice</fullName>
+        <default>false</default>
+        <label>VE - Venice</label>
+    </customValue>
+    <customValue>
+        <fullName>VI - Vicenza</fullName>
+        <default>false</default>
+        <label>VI - Vicenza</label>
+    </customValue>
+    <customValue>
+        <fullName>VR - Verona</fullName>
+        <default>false</default>
+        <label>VR - Verona</label>
+    </customValue>
+    <customValue>
+        <fullName>VS - Medio Campidano</fullName>
+        <default>false</default>
+        <label>VS - Medio Campidano</label>
+    </customValue>
+    <customValue>
+        <fullName>VT - Viterbo</fullName>
+        <default>false</default>
+        <label>VT - Viterbo</label>
+    </customValue>
+    <customValue>
+        <fullName>VV - Vibo Valentia</fullName>
+        <default>false</default>
+        <label>VV - Vibo Valentia</label>
+    </customValue>
+    <customValue>
+        <fullName>AG - Aguascalientes</fullName>
+        <default>false</default>
+        <label>AG - Aguascalientes</label>
+    </customValue>
+    <customValue>
+        <fullName>BC - Baja California</fullName>
+        <default>false</default>
+        <label>BC - Baja California</label>
+    </customValue>
+    <customValue>
+        <fullName>BS - Baja California Sur</fullName>
+        <default>false</default>
+        <label>BS - Baja California Sur</label>
+    </customValue>
+    <customValue>
+        <fullName>CH - Chihuahua</fullName>
+        <default>false</default>
+        <label>CH - Chihuahua</label>
+    </customValue>
+    <customValue>
+        <fullName>CL - Colima</fullName>
+        <default>false</default>
+        <label>CL - Colima</label>
+    </customValue>
+    <customValue>
+        <fullName>CM - Campeche</fullName>
+        <default>false</default>
+        <label>CM - Campeche</label>
+    </customValue>
+    <customValue>
+        <fullName>CO - Coahuila</fullName>
+        <default>false</default>
+        <label>CO - Coahuila</label>
+    </customValue>
+    <customValue>
+        <fullName>CS - Chiapas</fullName>
+        <default>false</default>
+        <label>CS - Chiapas</label>
+    </customValue>
+    <customValue>
+        <fullName>DF - Federal District</fullName>
+        <default>false</default>
+        <label>DF - Federal District</label>
+    </customValue>
+    <customValue>
+        <fullName>DG - Durango</fullName>
+        <default>false</default>
+        <label>DG - Durango</label>
+    </customValue>
+    <customValue>
+        <fullName>GR - Guerrero</fullName>
+        <default>false</default>
+        <label>GR - Guerrero</label>
+    </customValue>
+    <customValue>
+        <fullName>GT - Guanajuato</fullName>
+        <default>false</default>
+        <label>GT - Guanajuato</label>
+    </customValue>
+    <customValue>
+        <fullName>HG - Hidalgo</fullName>
+        <default>false</default>
+        <label>HG - Hidalgo</label>
+    </customValue>
+    <customValue>
+        <fullName>JA - Jalisco</fullName>
+        <default>false</default>
+        <label>JA - Jalisco</label>
+    </customValue>
+    <customValue>
+        <fullName>ME - Mexico State</fullName>
+        <default>false</default>
+        <label>ME - Mexico State</label>
+    </customValue>
+    <customValue>
+        <fullName>MI - Michoacán</fullName>
+        <default>false</default>
+        <label>MI - Michoacán</label>
+    </customValue>
+    <customValue>
+        <fullName>MO - Morelos</fullName>
+        <default>false</default>
+        <label>MO - Morelos</label>
+    </customValue>
+    <customValue>
+        <fullName>NA - Nayarit</fullName>
+        <default>false</default>
+        <label>NA - Nayarit</label>
+    </customValue>
+    <customValue>
+        <fullName>NL - Nuevo León</fullName>
+        <default>false</default>
+        <label>NL - Nuevo León</label>
+    </customValue>
+    <customValue>
+        <fullName>OA - Oaxaca</fullName>
+        <default>false</default>
+        <label>OA - Oaxaca</label>
+    </customValue>
+    <customValue>
+        <fullName>PB - Puebla</fullName>
+        <default>false</default>
+        <label>PB - Puebla</label>
+    </customValue>
+    <customValue>
+        <fullName>QE - Querétaro</fullName>
+        <default>false</default>
+        <label>QE - Querétaro</label>
+    </customValue>
+    <customValue>
+        <fullName>QR - Quintana Roo</fullName>
+        <default>false</default>
+        <label>QR - Quintana Roo</label>
+    </customValue>
+    <customValue>
+        <fullName>SI - Sinaloa</fullName>
+        <default>false</default>
+        <label>SI - Sinaloa</label>
+    </customValue>
+    <customValue>
+        <fullName>SL - San Luis Potosí</fullName>
+        <default>false</default>
+        <label>SL - San Luis Potosí</label>
+    </customValue>
+    <customValue>
+        <fullName>SO - Sonora</fullName>
+        <default>false</default>
+        <label>SO - Sonora</label>
+    </customValue>
+    <customValue>
+        <fullName>TB - Tabasco</fullName>
+        <default>false</default>
+        <label>TB - Tabasco</label>
+    </customValue>
+    <customValue>
+        <fullName>TL - Tlaxcala</fullName>
+        <default>false</default>
+        <label>TL - Tlaxcala</label>
+    </customValue>
+    <customValue>
+        <fullName>TM - Tamaulipas</fullName>
+        <default>false</default>
+        <label>TM - Tamaulipas</label>
+    </customValue>
+    <customValue>
+        <fullName>VE - Veracruz</fullName>
+        <default>false</default>
+        <label>VE - Veracruz</label>
+    </customValue>
+    <customValue>
+        <fullName>YU - Yucatán</fullName>
+        <default>false</default>
+        <label>YU - Yucatán</label>
+    </customValue>
+    <customValue>
+        <fullName>ZA - Zacatecas</fullName>
+        <default>false</default>
+        <label>ZA - Zacatecas</label>
+    </customValue>
+    <customValue>
+        <fullName>MD - Mexico D.F.</fullName>
+        <default>false</default>
+        <label>MD - Mexico D.F.</label>
+    </customValue>
+    <description>Replicates States standard picklist</description>
+    <masterLabel>State</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

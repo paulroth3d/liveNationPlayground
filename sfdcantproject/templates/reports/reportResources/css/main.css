@@ -1,0 +1,31 @@
+.testElement {
+	font-family: sans-serif;
+}
+
+.isHidden { display:none; }
+
+.formula {
+	background-color: #eee;
+	color: #777;
+	padding: 10px;
+	word-wrap: break-word;
+}
+
+#rep_Object table.fields.responsive td.f_opt {
+	padding-top: 0px !important;
+}
+#rep_Object table.fields.responsive td.f_opt .options {
+	display:none;
+}
+#rep_Object table.fields.responsive td.f_cmt,
+#rep_Object table.fields.responsive td.f_help {
+	max-width: 150px;
+}
+
+/*@media print {
+	.isHidden { display:inherit; }
+}*/
+
+#flowReport .isRequired {
+	color: #AA0000;
+}

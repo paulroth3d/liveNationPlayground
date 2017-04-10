@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object linking Tour Campaigns and Ad Plans</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AdPlanID__c</fullName>
+        <externalId>false</externalId>
+        <formula>AdPlan__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ad Plan ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AdPlanName__c</fullName>
+        <externalId>false</externalId>
+        <formula>AdPlan__r.AdPlanName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ad Plan Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AdPlan__c</fullName>
+        <externalId>false</externalId>
+        <label>Ad Plan</label>
+        <referenceTo>AdPlan__c</referenceTo>
+        <relationshipLabel>Tour Campaign-Ad Plans</relationshipLabel>
+        <relationshipName>TourCampaignAdPlans</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Agency__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.Agency__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AllocatedAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Allocated Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AnnouncementType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(TourCampaign__r.AnnouncementType__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Announcement Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(TourCampaign__r.Channel__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <formula>AdPlan__r.Event__r.Venue__r.BillingCity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Clicks__c</fullName>
+        <externalId>false</externalId>
+        <label>Clicks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CostType__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CoverageSort__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES(TourCampaign__r.Coverage__c, &quot;Onsale&quot;), 1,
+  IF(INCLUDES(TourCampaign__r.Coverage__c, &quot;Maintenance&quot;), 2,
+    IF(INCLUDES(TourCampaign__r.Coverage__c, &quot;Closing&quot;), 3,
+    4)
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Coverage Sort</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Coverage__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES(TourCampaign__r.Coverage__c, &quot;Onsale&quot;), &quot;Onsale&quot;,
+IF(INCLUDES(TourCampaign__r.Coverage__c, &quot;Maintenance&quot;), &quot;Maintenance&quot;,
+IF(INCLUDES(TourCampaign__r.Coverage__c, &quot;Closing&quot;), &quot;Closing&quot;, NULL)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Coverage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(TourCampaign__r.CurrencyIsoCode)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Currency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DigitalMediaTypeFormat__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(TourCampaign__r.DigitalMediaTypeFormat__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Digital Media Type Format</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventDateAdPlan__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(EventDate__c) &amp; &quot; &quot; &amp;  AdPlanName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Date + Ad Plan</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>AdPlan__r.EventDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>GTVRevenue__c</fullName>
+        <externalId>false</externalId>
+        <label>GTV Revenue</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HasNonLNETourBudget__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether the Tour Campaign Ad Plan is associated with a tour campaign that has a Non-LNE Tour Budget.
+assigned through apex
+and used because a roll up summary cannot use formula fields.</description>
+        <externalId>false</externalId>
+        <label>Has Non-LNE Tour Budget</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Impressions__c</fullName>
+        <externalId>false</externalId>
+        <label>Impressions</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(AdPlan__r.Market__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>National__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.National__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>National</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NonLNETourBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.NonLNETourBudget__r.Type__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Non-LNE Tour Budget</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>AdPlan__r.Owner:User.FirstName &amp; &quot; &quot; &amp; AdPlan__r.Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PackageId__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PackageName__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PublisherName__c</fullName>
+        <externalId>false</externalId>
+        <label>Publisher Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecordTypeCoverageVendor__c</fullName>
+        <externalId>false</externalId>
+        <formula>RecordType__c &amp; &quot; &quot; &amp; IF(CoverageSort__c &lt; 4, TEXT(CoverageSort__c) &amp; &quot;-&quot;, &quot;&quot;) &amp; Coverage__c &amp; &quot; &quot; &amp;  Vendor__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Type + Coverage + Vendor</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecordType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RemainingTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.RemainingTotal__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RequestID__c</fullName>
+        <externalId>false</externalId>
+        <label>Request ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShortURL__c</fullName>
+        <description>Bitly-generated Tracking URL or from an alternative service</description>
+        <externalId>false</externalId>
+        <label>Short URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsor__c</fullName>
+        <externalId>false</externalId>
+        <label>Sponsor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(AdPlan__r.Event__r.Venue__r.BillingStateCode)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TicketsSold__c</fullName>
+        <externalId>false</externalId>
+        <label>Tickets Sold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TourBudgetRemaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>AdPlan__r.TourBudgetRemaining__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tour Budget Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TourCampaignType__c</fullName>
+        <description>Filled through apex, as the RecordType name of the associated Tour Campaign.
+Used because RollUpSummaries cannot use formula fields</description>
+        <externalId>false</externalId>
+        <label>Tour Campaign Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TourCampaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour Campaign</label>
+        <referenceTo>TourCampaign__c</referenceTo>
+        <relationshipLabel>Tour Campaign-Ad Plan</relationshipLabel>
+        <relationshipName>Tour_Campaign_Ad_Plan</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>TourName__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.Tour__r.TourName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tour Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrackingCustomParameter__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;events/344444-may-6-2014-backstreet-boys-in-a-world-like-this-tour/?c=LN_NAC_SEM_NAT_Google_Toronto_RogersKRockCentre_BackstreetBoysInaWorldLikeThisTour_NONE_Native_O_12286_20140317_20140317&quot;</formula>
+        <label>Tracking Custom Parameter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrackingDomain__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;www.livenation.com/&quot;</formula>
+        <label>Tracking Domain</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrackingURL__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;http://www.livenation.com/events/344444-may-6-2014-backstreet-boys-in-a-world-like-this-tour/?c=LN_NAC_SEM_NAT_Google_Toronto_RogersKRockCentre_BackstreetBoysInaWorldLikeThisTour_NONE_Native_O_12286_20140317_20140317&quot;</formula>
+        <label>Tracking URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(TourCampaign__r.Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourCampaign__r.Vendor__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vendor</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue__c</fullName>
+        <externalId>false</externalId>
+        <formula>AdPlan__r.Venue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Venue</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxAllocatedAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AllocatedAmount__c / (TourCampaign__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Allocated Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRemainingTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RemainingTotal__c / (TourCampaign__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Remaining Total (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTourBudgetRemaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TourBudgetRemaining__c / (TourCampaign__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Tour Budget Remaining (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Tour Campaign-Ad Plan</label>
+    <nameField>
+        <displayFormat>TCAP-{000000}</displayFormat>
+        <label>Tour Campaign-Ad Plan ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Tour Campaign-Ad Plan</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Reject_Allocated_Changes_on_Past_Events</fullName>
+        <active>true</active>
+        <description>The Allocated Amount field cannot be changed once the Event Date has passed.</description>
+        <errorConditionFormula>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+EventDate__c &lt; TODAY() &amp;&amp;
+ISCHANGED(AllocatedAmount__c)</errorConditionFormula>
+        <errorDisplayField>AllocatedAmount__c</errorDisplayField>
+        <errorMessage>The Allocated Amount field cannot be changed once the Event Date has passed.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,135 @@
+<apex:page cache="false" standardController="Event__c" extensions="LNE_EventVenuePromoterPicker_CX" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false" action="{!checkCanEdit}">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+    <title></title>
+    <meta http-Equiv="Cache-Control" Content="no-cache" />
+    <meta http-Equiv="Pragma" Content="no-cache" />
+    <meta http-Equiv="Expires" Content="0" />
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"/>
+    <style type="text/css">
+        .hide {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        .row {
+            margin: 0;
+        }
+        .container {
+            display: inline-block;
+            margin: 0 0 12px 0;
+            padding: 0;
+            vertical-align: top;
+            width: 38%;
+        }
+        .container.mini {
+            margin-right: 5%;
+            width: auto;
+        }
+        .component-container.container {
+            width: 100%;
+        }
+        .container.component-display-values {
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+        .drop-container {
+            margin-right: 16px;
+            width: auto;
+        }
+        .restart-container {
+            border: 1px solid gray;
+            margin: 0 0 32px 0;
+            padding: 16px;
+        }
+        #response-errors {
+            display:none;
+        }
+        label {
+            display: block;
+            margin-bottom: 4px;
+        }
+        input {
+            border-radius: 0.25em;
+        }
+    </style>
+</head>
+<body class="rome-lds">
+<div class="slds-box">
+    <h1 class="slds-page-header__title" style="font-size:1.1rem">{!IF(isLocked,'','Update ')}Office/Venue/Promoter</h1>
+    <apex:form >
+        <apex:inputHidden id="newOfficeId" value="{!eventOfficeId}"/>
+        <apex:inputHidden id="newVenueId" value="{!eventVenueId}"/>
+        <apex:inputHidden id="newPromoterId" value="{!eventPromoterId}"/>
+        <apex:outputPanel layout="none" rendered="{!NOT(isLocked)}">
+            <c:LNE_OfficeVenuePromoterPicker id="picker" eventVenueId="{!Event__c.Venue__c}" 
+                isCloning="false"
+                isEdit="true"
+                isLocked="{!isLocked}"
+                eventOfficeId="{!Event__c.Office__c}"
+                eventPromoterId="{!Event__c.Promoter__c}">
+            </c:LNE_OfficeVenuePromoterPicker>
+            <apex:outputPanel id="btns" layout="none">
+                <div id="div-buttons" class="container hide">
+                    <apex:commandButton action="{!save}" value="Save" onclick="disableMe(this);" oncomplete="fadeOut(this);" styleClass="slds-button slds-button--brand" rerender="btns, msgs"/>
+                    <apex:commandButton onclick="resetPage();" value="Reset" styleClass="slds-button" rerender="btns"/>
+                </div>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!isLocked}">
+            <div id="ovpp-picker-container" class="component-container rome-lds">
+                <div class="row">
+                    <div class="drop-container container">
+                        <label for="office-select">Office&nbsp;</label> 
+                        <apex:outputText value="{!Event__c.Office__r.Name}"/>
+                    </div>
+                    <div id="venue-container" class="drop-container container hide">
+                        <label for="venue-select">Venue</label>
+                        <apex:outputText value="{!Event__c.Venue__r.Name}"/>
+                    </div>
+                    <div id="promoter-container" class="drop-container container hide">
+                        <label for="promoter-select">Promoter</label>
+                        <apex:outputText value="{!Event__c.Promoter__r.Name}"/>
+                    </div>
+                </div>
+            </div>
+        </apex:outputPanel>
+        <apex:messages id="msgs" />
+    </apex:form>
+    <script type="text/javascript">
+
+        function ovpComponentSelectChanged() {
+            $('input[id$="newOfficeId"]').val($('select[id$="office-select"] option:selected').val());
+            $('input[id$="newVenueId"]').val($('#venue-select option:selected').val());
+            $('input[id$="newPromoterId"]').val($('#promoter-select option:selected').val());
+            if (!loading) {
+                $('#div-buttons').removeClass('hide').addClass('show');
+            }
+        }
+
+        function disableMe(obj) {
+            $(obj).attr('disabled', true).val('Saving...');
+        }
+
+        function fadeOut(obj) {
+            $(obj).attr('disabled', false).val('Save');
+            $('#div-buttons').removeClass('show').addClass('hide');
+            setTimeout(function() {
+                if ($('.container ul li:first').text() == 'Save Complete') {
+                    $('.container ul').fadeOut();
+                }
+            }, 1000);
+        }
+
+        function resetPage() {
+            window.location.reload(true);
+        }
+
+    </script>
+</div>
+</body>
+</html>
+</apex:page>

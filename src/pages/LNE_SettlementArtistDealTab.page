@@ -1,0 +1,134 @@
+<apex:page standardController="Event__c" extensions="LNE_SettlementArtistDealTab_CX" sidebar="false" showHeader="false" id="LNE_SettlementArtistDealTabPage">
+
+	<!-- PostMessage communicates between windows -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+    <!-- handles routing of PostMessages -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_MessagePostOffice.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>Settlement Artist Deal Metrics</title>
+
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+
+        </head>
+        
+        <body id="LNE_SettlementArtistDealTab--body">
+        	<div class="rome-lds">
+
+	            <apex:outputPanel rendered="{!eventRecord.SettlementStarted__c = false}" id="settlementNotStartedPanel">
+
+	                <apex:form id="startSettlementForm">
+                        <apex:actionFunction name="startSettlementJS" action="{!startSettlement}" oncomplete="postRefreshMessage();" rerender="LNE_SettlementArtistDealTabPage" status="progressSpinner"/>
+                        <div style="margin:20px;">
+                            <span class="slds-icon_container">
+                                <svg class="slds-icon slds-icon-text-default slds-icon--x-small" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.LNE_romelds, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+                                </svg>
+                            </span>
+                            <a id="startSettlementLink" onclick="startSettlement();return false;">Start Settlement Process</a>
+                            <apex:actionStatus id="progressSpinner">
+                                <apex:facet name="start">
+                                    <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                                        <span class="slds-assistive-text">Loading...</span>
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </div>
+                    </apex:form>
+
+	            </apex:outputPanel>
+
+	            <apex:outputPanel rendered="{!eventRecord.SettlementStarted__c = true}">
+
+                    <div class="spacer"></div>
+                
+                    <div id="all-grids-container">
+                        <div id="grid-container">
+                            <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}"/>
+
+                            <!-- Artist Deal Settlement Grid -->
+                            <iframe id="grid-frame-artist-deal-settlement" data-grid-name="artistdealsettlement" scrolling="auto" height="780" width="100%" frameborder="0" src="{!gridPage}gname=Artist%20Deal%20-%20Settlement&fpf=Event__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                        </div>
+                    </div>
+                
+	            </apex:outputPanel>
+
+           </div>
+
+           <script>
+
+           		function postRefreshMessage() {
+                    var WINDOW_PAGE_NAME = 'LNE_SettlementArtistDealTab';
+                    var auraId = '{!$CurrentPage.parameters.auraId}';
+                    var messageType = 'saveComplete';
+                    var isSuccessful = true;
+
+                    var data = {
+                        auraId: auraId,
+                        src: window.location.href
+                    };
+
+                    var postMessage = new LNE_PostMessage( WINDOW_PAGE_NAME, messageType, isSuccessful, data );
+                    postMessage.dispatch( parent );
+
+                    location.reload(true);
+                }
+
+                //-- handle inbound PostMessages
+                this.postOffice = new LNE_MessagePostOffice(this);
+                
+                //-- handle any inbound events
+                this.postOffice.addTypeHandler( 'saveComplete', function( myPostMessage ){
+                    if( myPostMessage.data.src != window.location.href ){
+                        window.location.href=window.location.href;
+                    }
+                });
+                
+                postOffice.listenForPostEvents(window);
+
+                lneArtistDealSettlementTab = {};
+                adset = lneArtistDealSettlementTab;
+
+                adset.init = function() {
+                    console.log('ARTIST DEAL SETTLEMENT INIT');
+                    lneSharedJs.sharedInit();
+                };
+
+                adset.init();
+
+                var startSettlementClicked = false;
+
+                function startSettlement() {
+                    if (startSettlementClicked == false) {
+                        disableStartSettlementLink();
+                        startSettlementClicked = true;
+                        startSettlementJS();
+                    }
+                }
+
+                function disableStartSettlementLink() {
+                    var link = document.getElementById('startSettlementLink');
+                    link.onclick = null;
+                    link.style.color = 'grey';
+                    link.style.cursor = 'default';
+                    var css = '#startSettlementLink:hover{ text-decoration: none; }';
+                    var style = document.createElement('style');
+                    style.appendChild(document.createTextNode(css));
+                    document.getElementsByTagName('head')[0].appendChild(style);
+                }
+            </script>
+            
+            <c:LNE_Copyright />
+
+        </body>
+
+    </html>
+</apex:page>

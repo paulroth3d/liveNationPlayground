@@ -1,0 +1,536 @@
+<apex:page standardController="Event__c" extensions="LNE_FinanceSubTabs_CX,LNE_EventStandardController_CX" showHeader="false" sidebar="false" standardStylesheets="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.LNE_GeneralResources, 'css/lneCommon.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage2.js")}" />
+        <!-- Used to simplify remoting calls -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/remoting/RemotingHelper.js")}" />
+        <!-- handles routing of PostMessages -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_MessagePostOffice.js")}" />
+        <!-- JQuery, not essential -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/jquery-min.js")}" />
+        <!-- underscore, again not essential -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/underscore.js")}" />
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/recordDetailStyleForm.js")}" />
+        <apex:includeScript value="{!URLFOR($Resource.LNE_vf_shared_js, "gridUnsavedChangePrompt.js")}" />
+    </head>
+    
+    <body class="rome-lds forceDetailPanel recordDetailStyle" id="LNE_FinanceSummary--body">
+        <div class="rome-lds main-container" id="recdet-main-container">
+            <apex:form >
+                <apex:outputPanel id="topHeader">
+                <div class="slds-page-header" role="banner">
+                  <div class="slds-media slds-media--center">
+                    <div class="slds-media__body">
+                      <p class="slds-page-header__title slds-truncate" title="Settlement Recap">Settlement Recap</p>
+                    </div>
+                    <div class="slds-media__figure slds-media__figure--reverse">
+                      <apex:outputPanel rendered="{!event.SettlementRecapComplete__c}">
+                        <button class="slds-button slds-button--success" disabled="true">Settlement Recap Completed</button>
+                      </apex:outputPanel>
+                      <apex:outputPanel rendered="{!NOT(event.SettlementRecapComplete__c)}">
+                        <button class="slds-button slds-button--neutral" onclick="completeSettlementRecap(); return(false);" >Settlement Recap Complete</button>
+                      </apex:outputPanel>
+                    </div>
+                  </div>
+                </div>
+                </apex:outputPanel>
+                <apex:actionFunction action="{!completeSettlementRecap}" name="completeSettlementRecap" oncomplete="console.log('now reload' ); reloadRecord(); return(false);" rerender="topHeader,pageMessages"/>
+                <apex:actionFunction action="{!reloadRecord}" name="reloadRecord" oncomplete="console.log( 'done' ); recdet.handleSuccessfulSave(); return(false);" rerender="settlementRecapComplete,settlementRecapCompletedBy" />
+                
+                <apex:outputPanel id="pageMessages">
+                    <apex:pageMessages />
+                </apex:outputPanel>
+                
+                <!-- allows the page to refresh if save successfully completed -->
+                <apex:outputPanel id="pageRefresherOuter">
+                    <apex:outputPanel id="pageRefresher">
+                        <script type='text/javascript'>
+                            var d = '{! now() }';
+                            if( '{! shouldPageRefresh }' == 'true' ){
+                                debugger;
+                                window.location.href=window.location.href;
+                            }
+                        </script>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+
+                <!-- currency (gross , net gross, platinum revenue and to be shared settlement values) -->
+                <!-- gross (per artist settlement) -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="gross-input">
+                        <span>Gross (per Artist Settlement)</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="gross-input" value="{!Event__c.SettlementGross__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementGross__c}"/>
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- platinum revenue (per artist settlement) -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="plat-rev-input">
+                        <span>Platinum Revenue (per Artist Settlement)</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="plat-rev-input" value="{!Event__c.SettlementPlatinumLift__c }" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementPlatinumLift__c }" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- net gross -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="net-gross-input">
+                        <span>Net Gross (per Artist Settlement)</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="net-gross-input" value="{!Event__c.SettlementNetGross__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementNetGross__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- to be shared (per artist settlement) -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="be-shared-input">
+                        <span>To Be Shared (per Artist Settlement)</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="be-shared-input" value="{!Event__c.SettlementToBeSharedAmount__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementToBeSharedAmount__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- artist share -->
+                <!--
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="artist-share-input">
+                        <span>Artist Share</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="artist-share-input" value="{!Event__c.SettlementArtistShare__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.SettlementArtistShare__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                -->
+                
+                <h2 class="slds-text-heading--medium slds-m-top--large slds-m-bottom--medium">Artist Settlement Deal Terms</h2>
+                <!-- deal type -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="deal-type-input">
+                        <span>Deal Type</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="deal-type-input" value="{!Event__c.SettlementDealType__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.SettlementDealType__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- promoter earnings -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="promo-earn-input">
+                        <span>Promoter Earnings</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="promo-earn-input" value="{!Event__c.SettlementPromoterEarnings__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementPromoterEarnings__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- backend percent -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="backend-per-input">
+                        <span>Backend %</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="backend-per-input" value="{!Event__c.SettlementBackendPercentage__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementBackendPercentage__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- artist share -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="art-share-input">
+                        <span>Artist Share</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="art-share-input" value="{!Event__c.SettlementArtistShare__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementArtistShare__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- deal calculation -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="deal-calc-input">
+                        <span>Deal Calculation</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="deal-calc-input" value="{!Event__c.SettlementDealCalculation__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.SettlementDealCalculation__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- did the show go into percentage -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="goinpercent-input">
+                        <span>Did the show go into percentage?</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="goinpercent-input" value="{!Event__c.DidtheShowGointoPercentage__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.DidtheShowGointoPercentage__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- guarantee -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="guarantee-input">
+                        <span>Guarantee</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="guarantee-input" value="{!Event__c.SettlementGuarantee__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementGuarantee__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- notes -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="settle-notes-input">
+                        <span>Notes</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="settle-notes-input" value="{!Event__c.SettlementNotes__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.SettlementNotes__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- artist supplied S&L -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="a-sl-input">
+                        <span>Artist Supplied S&amp;L</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="a-sl-input" value="{!Event__c.SettlementArtistSuppliedSL__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementArtistSuppliedSL__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class='container'>
+                    <div class='dataCol'>&nbsp;</div>
+                    <div class='controlCol'>&nbsp;</div>
+                </div>
+                <!-- Other Talent Amount -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="other-talent-input">
+                        <span>Other Talent Fee</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="other-talent-input" value="{!Event__c.SettlementOtherTalentAmount__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementOtherTalentAmount__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class='container'>
+                    <div class='dataCol'>&nbsp;</div>
+                    <div class='controlCol'>&nbsp;</div>
+                </div>
+                <!-- artist inclusive guarantee -->
+                <div class="container">
+                    <!-- Artist Inclusive Guarantee (read-only calculated as sum of previous 3) -->
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="aig-input">
+                        <span>Artist Inclusive Guarantee</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###.00}"> 
+                            <apex:param value="{!Event__c.SettlementGuarantee__c + Event__c.SettlementArtistSuppliedSL__c + Event__c.SettlementOtherTalentAmount__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                    </div>
+                </div>
+                
+                    <h2 class="slds-text-heading--medium slds-m-top--large slds-m-bottom--medium">Event Checklist</h2>
+                    <!--box office import complete -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="bo-import-input">
+                            <span>Box Office Import Complete</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="bo-import-input" style="" value="{!Event__c.BoxOfficeImportComplete__c}" />
+                        </div>
+                    </div>
+                    <!-- box office import completed by -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="bo-import-comp-input">
+                            <span>Box Office Import Completed By</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="bo-import-comp-input" style="" value="{!Event__c.BoxOfficeImportCompletedBy__c}" />
+                        </div>
+                    </div>
+                    <!-- artist settlement complete -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="as-comp-input">
+                            <span>Artist Settlement Complete</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="as-comp-input" style="" value="{!event.ArtistSettlementComplete__c}" />
+                        </div>
+                    </div>
+                    <!-- artist settlement completed by -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="as-comp-by-input">
+                            <span>Artist Settlement Completed By</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="as-comp-by-input" style="" value="{!event.ArtistSettlementCompletedBy__c}" />
+                        </div>
+                    </div>
+                    <!-- event recap complete -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="ev-recap-input">
+                            <span>Event Recap Complete</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="ev-recap-input" style="" value="{!Event__c.EventRecapComplete__c}" />
+                        </div>
+                    </div>
+                    <!-- event recap completed by -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="ev-recap-by-input">
+                            <span>Event Recap Completed By</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="ev-recap-by-input" style="" value="{!Event__c.EventRecapCompletedBy__c}" />
+                        </div>
+                    </div>
+                    <!-- settlement recap complete -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="srecap-input">
+                            <span>Settlement Recap Complete</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputPanel id="settlementRecapComplete" >
+                                <apex:outputText id="srecap-input" style="" value="{!event.SettlementRecapComplete__c}" />
+                            </apex:outputPanel>
+                        </div>
+                    </div>
+                    <!-- settlement recap completed by -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="srecap-by-input">
+                            <span> Settlement Recap Completed By</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputPanel id="settlementRecapCompletedBy" >
+                                <apex:outputText id="srecap-by-input" style="" value="{!event.SettlementRecapCompletedBy__c}" />
+                            </apex:outputPanel>
+                        </div>
+                    </div>
+                    <!-- metrics complete -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="mcomp-input">
+                            <span>Metrics Complete</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="mcomp-input" style="" value="{!Event__c.MetricsComplete__c}" />
+                        </div>
+                    </div>
+                    <!-- metrics completed by -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="mcomp-by-input" >
+                            <span>Metrics Completed By</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="mcomp-by-input" style="" value="{!Event__c.MetricsCompletedBy__c}" />
+                        </div>
+                    </div>
+                    <!-- flash complete -->
+                    <div class="container">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="fcomp-input">
+                            <span>Flash Complete</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="fcomp-input" style="" value="{!Event__c.FlashComplete__c}" />
+                        </div>
+                    </div>
+                    <!-- flash completed by -->
+                    <div class="container last-on-page">
+                        <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="fcomp-by-input">
+                            <span>Flash Completed By</span>
+                        </label>
+                        <div class="dataCol">
+                            <apex:outputText id="fcomp-by-input" style="" value="{!Event__c.FlashCompletedBy__c}" />
+                        </div>
+                    </div>
+                <!-- buttons -->
+                <div class="edit-footer footer hide">
+                    <div class="actionsContainer" id="actions-wrapper">
+                        <apex:outputPanel id="savePanel" layout="none">
+                        <!-- hide class removed when venue and promoter dropdowns are client side rendered -->
+                            <div class="cancel-container button-box">
+                                <button data-control="cancel-edit" class="slds-button slds-button--neutral uiButton--neutral uiButton forceActionButton" aria-live="off" type="button" title="Cancel" data-aura-class="uiButton forceActionButton">
+                                    <span class="label bBody truncate" dir="ltr">Cancel</span>
+                                </button>
+                            </div>
+                            <div class="save-container button-box">
+                                <!-- note - the page refreshes by refreshing the pageRefresher block -->
+                                <apex:commandButton action="{!customSave}" value="Save" rerender="pageMessages,pageRefresherOuter" status="buttonStatus" styleClass="slds-button slds-button--brand" />
+                                &nbsp;
+                                <apex:actionStatus startText=" (Please wait...)" stopText="" id="buttonStatus"/>
+                            </div>
+                        </apex:outputPanel>
+                    </div>
+                </div>
+            </apex:form>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                lneRecordDetailStyleForm.init();
+                //-- Handles leaving grid focus and selecting/unselecting visible channels aka grids
+                lneSharedJs.sharedInit();                      
+            });
+        </script>   
+    </body>
+</html>
+</apex:page>

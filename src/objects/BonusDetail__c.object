@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Additional terms for an artist or co-promoter usually based upon ticket sales representing a bonus above a guarantee or percentage of ticket revenues</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ApplyTo__c</fullName>
+        <externalId>false</externalId>
+        <label>Apply To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Guarantee</fullName>
+                    <default>false</default>
+                    <label>Guarantee</label>
+                </value>
+                <value>
+                    <fullName>Regardless</fullName>
+                    <default>false</default>
+                    <label>Regardless</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ArtistBonusExplanation__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist Bonus Explanation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BonusAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Bonus Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BonusBase__c</fullName>
+        <externalId>false</externalId>
+        <label>Bonus Base</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paid Tickets</fullName>
+                    <default>false</default>
+                    <label>Paid Tickets</label>
+                </value>
+                <value>
+                    <fullName>Drop Count</fullName>
+                    <default>false</default>
+                    <label>Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Net Gross</fullName>
+                    <default>false</default>
+                    <label>Net Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BonusPotentialatProjectionRetro__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ispickval(Type__c, &quot;Retro&quot;),
+case( BonusBase__c,
+&quot;Paid Tickets&quot;,
+	if(
+		and(
+			Deal__r.Event__r.ProjectedPaidTickets__c &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.ProjectedPaidTickets__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		/* true */
+		FLOOR((Deal__r.Event__r.ProjectedPaidTickets__c)/ Increment__c) *  BonusAmount__c,
+		/* false */
+		0
+	),
+&quot;Drop Count&quot;,
+	/* retro / drop count */
+	if(
+		and(
+			Deal__r.Event__r.ProjectedDropCount__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.ProjectedDropCount__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		/* true */
+		FLOOR((Deal__r.Event__r.ProjectedDropCount__c)/ Increment__c) *  BonusAmount__c,
+		/* false */
+		0
+	),
+&quot;Net Gross&quot;,
+        /* retro/ net gross */
+	if(
+		and(
+			Deal__r.Event__r.ProjectedNetGross__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.ProjectedNetGross__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		/* true */
+		FLOOR((Deal__r.Event__r.ProjectedNetGross__c)/ Increment__c) *  BonusAmount__c,
+		/* false */
+		0
+	),
+/* else */
+	/* retro / not paid tickets-DropCount-NetGross */
+	0
+),
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bonus Potential at Projection - Retro</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BonusPotentialatProjectionStepUp__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ispickval(Type__c, &quot;Step Up&quot;),
+case( BonusBase__c,
+&quot;Paid Tickets&quot;,
+	if(
+		and(
+			Deal__r.Event__r.ProjectedPaidTickets__c &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.ProjectedPaidTickets__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		if( Deal__r.Event__r.ProjectedPaidTickets__c &lt;= EndPoint__c || EndPoint__c = 0,
+			/* true */
+			FLOOR((Deal__r.Event__r.ProjectedPaidTickets__c -  StartPoint__c + 1)/ Increment__c) *  BonusAmount__c,
+			/* false */
+			FLOOR(( EndPoint__c -  StartPoint__c + 1)/Increment__c) *  BonusAmount__c
+		),
+		0
+	),
+&quot;Drop Count&quot;,
+	if(
+		and(
+			Deal__r.Event__r.ProjectedDropCount__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.ProjectedDropCount__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		if( Deal__r.Event__r.ProjectedDropCount__c &lt;= EndPoint__c || EndPoint__c = 0,
+			/* true */
+			FLOOR((Deal__r.Event__r.ProjectedDropCount__c -  StartPoint__c + 1)/ Increment__c) *  BonusAmount__c,
+			/* false */
+			FLOOR(( EndPoint__c -  StartPoint__c + 1)/Increment__c) *  BonusAmount__c
+		),
+		0
+        ),
+&quot;Net Gross&quot;,
+	if(
+		and(
+			 Deal__r.Event__r.ProjectedNetGross__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.ProjectedNetGross__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		if( Deal__r.Event__r.ProjectedNetGross__c &lt;= EndPoint__c || EndPoint__c = 0,
+			/* true */
+			FLOOR((Deal__r.Event__r.ProjectedNetGross__c -  StartPoint__c + 1)/ Increment__c) *  BonusAmount__c,
+			/* false */
+			FLOOR(( EndPoint__c -  StartPoint__c + 1)/Increment__c) *  BonusAmount__c
+		),
+		0
+	),
+/* else */
+	0
+),
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bonus Potential at Projection - Step Up</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BonusPotentialatProjection__c</fullName>
+        <externalId>false</externalId>
+        <label>Bonus Potential at Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BonusPotentialatSelloutRetro__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ispickval(Type__c, &quot;Retro&quot;),
+case( BonusBase__c,
+&quot;Paid Tickets&quot;,
+	if(
+		and(
+			Deal__r.Event__r.SelloutPaidTickets__c &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.SelloutPaidTickets__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		/* true */
+		FLOOR((Deal__r.Event__r.SelloutPaidTickets__c)/ Increment__c) *  BonusAmount__c,
+		/* false */
+		0
+	),
+&quot;Drop Count&quot;,
+	/* retro / drop count */
+	if(
+		and(
+			Deal__r.Event__r.SelloutDropCount__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.SelloutDropCount__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		/* true */
+		FLOOR((Deal__r.Event__r.SelloutDropCount__c)/ Increment__c) *  BonusAmount__c,
+		/* false */
+		0
+	),
+&quot;Net Gross&quot;,
+        /* retro/ net gross */
+	if(
+		and(
+			Deal__r.Event__r.NetGrossPotential__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.NetGrossPotential__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		/* true */
+		FLOOR((Deal__r.Event__r.NetGrossPotential__c)/ Increment__c) *  BonusAmount__c,
+		/* false */
+		0
+	),
+/* else */
+	/* retro / not paid tickets-DropCount-NetGross */
+	0
+),
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bonus Potential at Sellout - Retro</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BonusPotentialatSelloutStepUp__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ispickval(Type__c, &quot;Step Up&quot;),
+case( BonusBase__c,
+&quot;Paid Tickets&quot;,
+	if(
+		and(
+			Deal__r.Event__r.SelloutPaidTickets__c &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.SelloutPaidTickets__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		if( Deal__r.Event__r.SelloutPaidTickets__c &lt;= EndPoint__c || EndPoint__c = 0,
+			/* true */
+			FLOOR((Deal__r.Event__r.SelloutPaidTickets__c -  StartPoint__c + 1)/ Increment__c) *  BonusAmount__c,
+			/* false */
+			FLOOR(( EndPoint__c -  StartPoint__c + 1)/Increment__c) *  BonusAmount__c
+		),
+		0
+	),
+&quot;Drop Count&quot;,
+	if(
+		and(
+			Deal__r.Event__r.SelloutDropCount__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.SelloutDropCount__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		if( Deal__r.Event__r.SelloutDropCount__c &lt;= EndPoint__c || EndPoint__c = 0,
+			/* true */
+			FLOOR((Deal__r.Event__r.SelloutDropCount__c -  StartPoint__c + 1)/ Increment__c) *  BonusAmount__c,
+			/* false */
+			FLOOR(( EndPoint__c -  StartPoint__c + 1)/Increment__c) *  BonusAmount__c
+		),
+		0
+        ),
+&quot;Net Gross&quot;,
+	if(
+		and(
+			 Deal__r.Event__r.NetGrossPotential__c  &gt;=  StartPoint__c,
+			OR(Deal__r.Event__r.NetGrossPotential__c &lt;=  EndPoint__c, EndPoint__c = 0)
+		),
+		if( Deal__r.Event__r.NetGrossPotential__c &lt;= EndPoint__c || EndPoint__c = 0,
+			/* true */
+			FLOOR((Deal__r.Event__r.NetGrossPotential__c -  StartPoint__c + 1)/ Increment__c) *  BonusAmount__c,
+			/* false */
+			FLOOR(( EndPoint__c -  StartPoint__c + 1)/Increment__c) *  BonusAmount__c
+		),
+		0
+	),
+/* else */
+	0
+),
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bonus Potential at Sellout - Step Up</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BonusPotentialatSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>Bonus Potential at Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Deal__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal</label>
+        <referenceTo>Deal__c</referenceTo>
+        <relationshipLabel>Bonus Details</relationshipLabel>
+        <relationshipName>BonusDetails</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>EndPoint__c</fullName>
+        <externalId>false</externalId>
+        <label>End Point</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Increment__c</fullName>
+        <externalId>false</externalId>
+        <label>Increment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentEventId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Deal__r.Event__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Event Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SettlementBonusRetro__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ispickval(Type__c, &quot;Retro&quot;),
+case( BonusBase__c,
+&quot;Paid Tickets&quot;,
+if(
+and(
+Deal__r.Event__r.SettlementPaidTickets__c &gt;= StartPoint__c,
+OR(Deal__r.Event__r.SettlementPaidTickets__c &lt;= EndPoint__c, EndPoint__c = 0)
+),
+/* true */
+FLOOR((Deal__r.Event__r.SettlementPaidTickets__c)/ Increment__c) * BonusAmount__c,
+/* false */
+0
+),
+&quot;Drop Count&quot;,
+/* retro / drop count */
+if(
+and(
+Deal__r.Event__r.ActualDropCount__c &gt;= StartPoint__c,
+OR(Deal__r.Event__r.ActualDropCount__c &lt;= EndPoint__c, EndPoint__c = 0)
+),
+/* true */
+FLOOR((Deal__r.Event__r.ActualDropCount__c)/ Increment__c) * BonusAmount__c,
+/* false */
+0
+),
+&quot;Net Gross&quot;,
+/* retro/ net gross */
+if(
+and(
+Deal__r.Event__r.SettlementNetGross__c &gt;= StartPoint__c,
+OR(Deal__r.Event__r.SettlementNetGross__c &lt;= EndPoint__c, EndPoint__c = 0)
+),
+/* true */
+FLOOR((Deal__r.Event__r.SettlementNetGross__c)/ Increment__c) * BonusAmount__c,
+/* false */
+0
+),
+/* else */
+/* retro / not paid tickets-DropCount-NetGross */
+0
+),
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Bonus - Retro</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementBonusStepUp__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(ispickval(Type__c, &quot;Step Up&quot;),
+case( BonusBase__c,
+&quot;Paid Tickets&quot;,
+if(
+and(
+ Deal__r.Event__r.SettlementPaidTickets__c &gt;= StartPoint__c,
+OR( Deal__r.Event__r.SettlementPaidTickets__c &lt;= EndPoint__c, EndPoint__c = 0)
+),
+if( Deal__r.Event__r.SettlementPaidTickets__c &lt;= EndPoint__c || EndPoint__c = 0,
+/* true */
+FLOOR(( Deal__r.Event__r.SettlementPaidTickets__c - StartPoint__c + 1)/ Increment__c) * BonusAmount__c,
+/* false */
+FLOOR(( EndPoint__c - StartPoint__c + 1)/Increment__c) * BonusAmount__c
+),
+0
+),
+&quot;Drop Count&quot;,
+if(
+and(
+Deal__r.Event__r.ActualDropCount__c &gt;= StartPoint__c,
+OR(Deal__r.Event__r.ActualDropCount__c &lt;= EndPoint__c, EndPoint__c = 0)
+),
+if( Deal__r.Event__r.ActualDropCount__c &lt;= EndPoint__c || EndPoint__c = 0,
+/* true */
+FLOOR((Deal__r.Event__r.ActualDropCount__c - StartPoint__c + 1)/ Increment__c) * BonusAmount__c,
+/* false */
+FLOOR(( EndPoint__c - StartPoint__c + 1)/Increment__c) * BonusAmount__c
+),
+0
+),
+&quot;Net Gross&quot;,
+if(
+and(
+Deal__r.Event__r.SettlementNetGross__c
+ &gt;= StartPoint__c,
+OR(Deal__r.Event__r.SettlementNetGross__c
+ &lt;= EndPoint__c, EndPoint__c = 0)
+),
+if( Deal__r.Event__r.SettlementNetGross__c &lt;= EndPoint__c || EndPoint__c = 0,
+/* true */
+FLOOR((Deal__r.Event__r.SettlementNetGross__c
+ - StartPoint__c + 1)/ Increment__c) * BonusAmount__c,
+/* false */
+FLOOR(( EndPoint__c - StartPoint__c + 1)/Increment__c) * BonusAmount__c
+),
+0
+),
+/* else */
+0
+),
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Bonus - Step Up</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementBonus__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement Bonus</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>StartPoint__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Point</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartPointlessonother__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the start point is less than the end point on other records with a lesser starting point</description>
+        <externalId>false</externalId>
+        <label>Start Point less on other?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Step Up</fullName>
+                    <default>false</default>
+                    <label>Step Up</label>
+                </value>
+                <value>
+                    <fullName>Retro</fullName>
+                    <default>false</default>
+                    <label>Retro</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>fxBonusAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusAmount__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotentialatProjectionRetro__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotentialatProjectionRetro__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Poten. at Projection - Retro (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotentialatProjectionStepUp__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotentialatProjectionStepUp__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Potential at Proj. - Step Up (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotentialatProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotentialatProjection__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Potential at Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotentialatSelloutRetro__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotentialatSelloutRetro__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Potential at Sellout - Retro (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotentialatSelloutStepUp__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotentialatSelloutStepUp__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Poten. at Sellout - Step Up (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotentialatSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotentialatSellout__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Potential at Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBonusRetro__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBonusRetro__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Bonus - Retro (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBonusStepUp__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBonusStepUp__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Bonus - Step Up (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBonus__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBonus__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Bonus (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Bonus Detail</label>
+    <nameField>
+        <displayFormat>BD-{000000}</displayFormat>
+        <label>Bonus Detail ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Bonus Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>LNE_EndPoint</fullName>
+        <active>true</active>
+        <description>End point must be greater than the start point.</description>
+        <errorConditionFormula>EndPoint__c &lt; StartPoint__c &amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>EndPoint__c</errorDisplayField>
+        <errorMessage>End point must be greater than the start point.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_StartPointlessonother</fullName>
+        <active>false</active>
+        <description>If &apos;Start Point less on other?&apos; is checked, then can&apos;t save record.</description>
+        <errorConditionFormula>StartPointlessonother__c = TRUE &amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorMessage>Bonus records may not overlap between their start points and end points. Please review and correct.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

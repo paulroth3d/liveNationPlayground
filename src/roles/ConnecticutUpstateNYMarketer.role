@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Connecticut/Upstate NY Marketer</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Connecticut/Upstate NY Marketer</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>ConnecticutUpstateNY</parentRole>
+</Role>

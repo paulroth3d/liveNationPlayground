@@ -1,0 +1,272 @@
+<apex:page sidebar="false" showHeader="false" controller="LNE_SelectExpenseEntriesController">
+  <!-- <apex:form>
+    <apex:actionFunction action="{!}" name="_JS" oncomplete="('{!}')">
+      <apex:param name="_" assignTo="{!}" value="" />
+    </apex:actionFunction>
+  </apex:form> -->
+
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+      <title>Select Expense Placeholder Entries</title>
+
+      <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+      <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+
+      <apex:form >
+        <apex:actionFunction action="{!getRelatedExpenses}" name="GetRelatedExpenses_JS" oncomplete="setPreviousExpenses('{!previousSelectedEntriesJson}');">
+          <apex:param name="gre_eventId" assignTo="{!eventId}" value="" />
+        </apex:actionFunction>
+
+        <apex:actionFunction action="{!addOrRemoveExpenseEntries}" name="SaveSelectedExpenses_JS" oncomplete="saveSelectedExpensesCallback('{!saveSelectedExpensesSuccess}');">
+          <apex:param name="sse_selectedEntriesJson" assignTo="{!selectedEntriesJson}" value="" />
+        </apex:actionFunction>
+      </apex:form>
+
+      <style>
+        body {
+          position: relative;
+          margin: 0;
+          min-width: 100vw;
+          overflow-x: hidden;
+        }
+
+        h1 {
+          font-size: 1.05rem;
+        }
+
+        li {
+          clear: both;
+          cursor: pointer;
+        }
+
+        .button-box {
+          align-items: flex-end;
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+          justify-content: flex-end;
+        }
+
+        .category {
+          padding-bottom: 5px;
+          padding-top: 15px;
+        }
+
+        .error-msg {
+          color: red;
+        }
+
+        .expense-list {
+          padding: 10px 20px;
+        }
+
+        .gl_code {
+          float: right;
+        }
+
+        .header {
+          border-bottom: 1px solid black;
+          margin: 0 20px;
+        }
+
+        .parent {
+          padding: 10px 0;
+          -webkit-columns: 250px 3;
+          -moz-columns: 250px 3;
+          columns: 250px 4;
+          -webkit-column-gap: 15px;
+          -moz-column-gap: 15px;
+          column-gap: 15px;
+          max-width: 80vw;
+          margin: 0 auto;
+          display: block;
+          -moz-column-fill: balance;
+          column-fill: balance;
+        }
+
+        .child {
+          min-width: calc(100% - 4px);
+          margin: 3px;
+          background-color: white;
+          min-height: 5vh;
+          display: inline-block;
+          position: relative;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+          padding: 10px;
+          box-sizing: border-box;
+          border-radius: 3px;
+          -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+          break-inside: avoid-column;
+        }
+
+        .child:nth-child(2n) {
+          min-height: 5vh;
+        }
+
+        .child:nth-child(4n + 1) {
+          min-height: 5vh;
+        }
+
+        .child:nth-child(7n -1) {
+          min-height: 5vh;
+        }
+      </style>
+    </head>
+
+    <body class="rome-lds">
+      <div class="slds-text-heading--medium header">Select Expenses</div>
+
+      <div class="expense-list parent"></div>
+
+      <div class="button-box">
+        <div class="error-msg"></div>
+
+        <div>
+          <button class="slds-button slds-button--brand" type="button" id="save-selected-expenses">Save</button>
+
+          <button class="slds-button" type="cancel" id="cancel-selected-expenses">Cancel</button>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+      	console.log( 'selecteExpenseEntries started' );
+        var eventId = getParameterByName('event_id');
+        var expenseList = JSON.parse('{!expenseEntriesJson}');
+        var prevSelectedExpenses = [];
+        var expensesToDisable = [];
+        var isSettlement = {!isSettlement};
+
+        function createExpenseListFromJson() {
+          var categories = [];
+          var categoryId = 0;
+
+          for (var i = 0; i < expenseList.length; i++) {
+            if (categoryId !== expenseList[i]['CategorySort__c']) {
+              categories.push(expenseList[i]['Category__c']);
+              categoryId = expenseList[i]['CategorySort__c'];
+            }
+          }
+
+          var htmlStr = '';
+
+          for (var j = 0; j < categories.length; j++) {
+            htmlStr += '<div class="category child">';
+            htmlStr += '<strong>' + categories[j] + '</strong><br/>';
+            htmlStr += '<ul>';
+
+            for (var k = 0; k < expenseList.length; k++) {
+              if (expenseList[k]['Category__c'] === categories[j]) {
+                htmlStr += '<li><input type="checkbox" name="' + expenseList[k]['Id'] + '" value="' + expenseList[k]['Id'];
+
+                if (prevSelectedExpenses.indexOf(expenseList[k]['Id']) > -1) {
+                  htmlStr += '" checked';
+
+                  if (expensesToDisable.indexOf(expenseList[k]['Id']) > -1) {
+                    htmlStr += ' disabled';
+                  }
+
+                  htmlStr += '>&nbsp;';
+                } else {
+                  htmlStr += '">&nbsp;';
+                }
+
+                htmlStr += '<span class="expense_name">' + expenseList[k]['Name'] + '</span>';
+                htmlStr += '<span class="gl_code">' + expenseList[k]['GLCode__c'] + '</span></li>';
+              }
+            }
+
+            htmlStr += '</ul></div>';
+          }
+
+          $('.expense-list').html(htmlStr);
+
+          setupEventHandlers();
+        }
+
+        function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+
+          name = name.replace(/[\[\]]/g, "\\$&");
+
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+          var results = regex.exec(url);
+
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function setPreviousExpenses(prevExpensesJson) {
+          var expenses = JSON.parse(prevExpensesJson);
+          var relatedExpensesArr = [];
+          var toDisable = [];
+
+          for (var i = 0; i < expenses.length; i++) {
+            relatedExpensesArr.push(expenses[i]['ledger']['GLAccount__c']);
+
+            if (isSettlement == true && expenses[i].disableSelection == true) {
+              toDisable.push(expenses[i]['ledger']['GLAccount__c']);
+            }
+          }
+
+          prevSelectedExpenses = relatedExpensesArr;
+          expensesToDisable = toDisable;
+
+          createExpenseListFromJson();
+        }
+
+        function saveSelectedExpensesCallback(saveSelectedExpensesSuccess) {
+          if (saveSelectedExpensesSuccess == 'false') {
+            $('#error-msg').html('<p>Failure adding or removing expenses</p>');
+            $('#error-msg').hide();
+
+            $('#save-selected-expenses').attr('disabled', false);
+          } else {
+            $('#save-selected-expenses').attr('disabled', false);
+            window.self.close();
+          }
+        }
+
+        function setupEventHandlers() {
+          $('ul li span').click(function() {
+            var chbx = $(this).prev('input');
+
+            if (chbx.prop('checked')) {
+              if (chbx.prop('disabled') == false) {
+                chbx.prop('checked', false);
+              }
+            } else {
+              chbx.prop('checked', true);
+            }
+          });
+
+          $('#save-selected-expenses').click(function() {
+            $('#error-msg').hide();
+            $('#save-selected-expenses').attr('disabled', true);
+            $('#save-selected-expenses').text('Saving...');
+
+            var checkedEntries = [];
+
+            $('input:checked').each(function() {
+              checkedEntries.push($(this).attr('name'));
+            });
+
+            SaveSelectedExpenses_JS(JSON.stringify(checkedEntries));
+          });
+
+          $('#cancel-selected-expenses').click(function() {
+            window.self.close();
+          });
+        }
+
+        if (eventId) {
+          GetRelatedExpenses_JS(eventId);
+        } else {
+          createExpenseListFromJson();
+        }
+      </script>
+    </body>
+  </html>
+</apex:page>

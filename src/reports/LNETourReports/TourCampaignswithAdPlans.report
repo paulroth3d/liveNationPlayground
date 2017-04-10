@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>TourCampaignAdPlan__c$AllocatedAmount__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Display tour campaigns with related ad plan</description>
+    <filter>
+        <criteriaItems>
+            <column>TourCampaignAdPlan__c$TourCampaign__c.Tour__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>TourCampaignAdPlan__c$RecordTypeCoverageVendor__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TourCampaignAdPlan__c$EventDateAdPlan__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Tour Campaigns with Ad Plans</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>TourCampaignswithAdPlans__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>TourCampaignAdPlan__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

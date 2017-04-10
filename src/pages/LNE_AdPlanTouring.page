@@ -1,0 +1,581 @@
+<!--
+/**
+ * Visualforce page to show the grids found under Booking/LNE App -> Ad Plan -> Touring tab
+ * @author Paul Roth <proth@salesforce.com>
+ * @author Fahad Siddiqi <fsiddiqui@salesforce.com>
+ */
+-->
+<apex:page standardController="AdPlan__c" extensions="LNE_AdPlanTouring_CX" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <title>Local Plan</title>
+
+        <apex:remoteObjects jsNamespace="RemoteObjectModel">
+            <apex:remoteObjectModel name="AdPlan__c" fields="Id,uiGridVisibility__c">
+            </apex:remoteObjectModel>
+        </apex:remoteObjects>
+
+        <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+        <style>
+            .hide,
+            .rome-lds .slds-grid.hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+            
+            .bold{
+                font-weight:bold;
+            }
+            .spacer{
+                height:25px;
+                display:block;
+            }
+            .menu-bar {
+                width: 100%;
+                margin-top:15px;
+            }
+
+            .menu-bar .item {
+                border-right: solid 1px;
+                cursor: pointer;
+                display: inline-block;
+                margin: 0 12px 0 0;
+                min-width: 120px;
+                padding-right: 12px;
+                text-align: center;
+            }
+
+            .menu-bar .item.last {
+                border: none;
+            }
+            .menu-bar .item.active {
+                font-weight: 800;
+            }
+
+            .container.instruction,
+            .container.wide {
+                width: 100%;
+            }
+
+            .toggle-grid-list {
+                width: 60%;
+            }
+
+            #save-channel-visibility {
+                margin-left: 24px;
+                min-width: 136px;
+            }
+
+            #adplan-not-associated-to_tour {
+                color: rgb(225,161,82);
+            }
+
+            .rome-lds .unsaved .slds-form-element__label {
+                color: rgb(225,161,82);
+            }
+            
+            .grid-container {
+                margin: 16px 0 32px 0;
+            }
+
+            tr.rowA td, tr.rowB td { border-bottom:1px solid #c7c7c7;  font-size:11.36px; padding:4px 8px; }
+            
+            .rowB td:first-child{
+                min-width:80px;
+            }
+            .localMarketingTable{
+                display:none;
+            }
+            
+            .localMarketingTableTop{
+                width:auto !important;
+            }
+            .localMarketingTableBottom{
+                width:auto !important;
+            }
+
+            .localMarketingTableTour{
+                display:inline-block;
+            }
+        </style>
+    </head>
+
+    <body class="rome-lds hide" id="LNE_LocalPlanTab--body" data-current-record-id="{!AdPlan__c.Id}" data-grid-visibility="{!AdPlan__c.uiGridVisibility__c}">
+        <div class="rome-lds page-container">
+
+            <div id="loader">Loading...</div>
+            
+            <apex:form rendered="{!NOT(ISBLANK(adPlanMetrics.Tour__c))}">
+                 <apex:panelGrid id="AdPlanMetricsTop" styleClass="localMarketingTableTop" columns="7" rowClasses="rowA,rowB" cellpadding="0" cellspacing="0">
+                     <apex:outputText value=""/>
+                      <apex:outputText value="{0, number, ##,###}"> 
+                         <apex:outputText value="LNE Budget:  " styleClass="bold"/>
+                        <apex:param value="{!adPlanMetrics.LNEAdPlanBudget__c}"/> 
+                      </apex:outputText>
+                      
+                       <apex:outputText value="{0, number, ##,###}"> 
+                           <apex:outputText value="LNE Spend:  " styleClass="bold"/> 
+                            <apex:param value="{!BLANKVALUE(adPlanMetrics.LNESpend__c, 0) + BLANKVALUE(adPlanMetrics.TourSpend__c, 0)}"/>
+                       </apex:outputText>
+                     
+                     <apex:outputText value="{0, number, ##,###}">
+                          <apex:outputText value="Remaining LNE Budget:  " styleClass="bold" /> 
+                         <apex:param value="{!adPlanMetrics.RemainingLNEBudget__c}"/> 
+                    </apex:outputText>
+                    
+                    <apex:outputText value="{0, number, ##,###}"> 
+                        <apex:outputText value="Non-LNE Spend:  " styleClass="bold"/> 
+                        <apex:param value="{!adPlanMetrics.NonLNESpend__c}"/>
+                    </apex:outputText>
+                    
+                    <apex:outputText value="{0, number, ##,###}">
+                         <apex:outputText value="Non-LNE Budget:  " styleClass="bold"/> 
+                        <apex:param value="{!adPlanMetrics.NonLNEBudget__c}"/> 
+                    </apex:outputText>
+                    
+                     <apex:outputText value="{0, number, ##,###}"> 
+                        <apex:outputText value="Remaining Non-LNE Budget:  " styleClass="bold"/> 
+                        <apex:param value="{!adPlanMetrics.RemainingNonLNEBudget__c}"/> 
+                     </apex:outputText>
+                    
+                </apex:panelGrid>
+
+
+                <!--<div class="spacer"></div>-->
+                
+                <apex:outputPanel id="AdPlanMetricsBottom">
+                    <apex:panelGrid styleClass="localMarketingTableBottom" rowClasses="rowA,rowB" columns="9" cellpadding="0" cellspacing="0">
+                          <apex:outputText value=""/>
+                            
+                            <apex:outputPanel styleClass="localMarketingTable RadioTable"> 
+                                <apex:outputText value="({0, number, ##}%)">  
+                                    <apex:outputText value="Radio:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.RadioSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "><apex:param value="{!adPlanMetrics.RadioSpend__c}"/>  </apex:outputText>
+                                </apex:outputText>
+                            </apex:outputPanel>
+                            
+                            
+                            <apex:outputPanel styleClass="localMarketingTable DigitalTable">
+                                <apex:outputText value="({0, number, ##}%)"> 
+                                    <apex:outputText value="Digital:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.DigitalSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "> <apex:param value="{!adPlanMetrics.DigitalSpend__c}"/> </apex:outputText>
+                                </apex:outputText>
+                            </apex:outputPanel>
+                            
+                            
+                            <apex:outputPanel styleClass="localMarketingTable TelevisionTable">
+                                <apex:outputText value="({0, number, ##}%)"> 
+                                    <apex:outputText value="Television:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.TelevisionSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "> <apex:param value="{!adPlanMetrics.TelevisionSpend__c}"/> </apex:outputText>
+                                </apex:outputText>
+                            </apex:outputPanel>
+                            
+                            
+                            <apex:outputPanel styleClass="localMarketingTable PrintTable">
+                                 <apex:outputText value="({0, number, ##}%)">  
+                                    <apex:outputText value="Print:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.PrintSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "><apex:param value="{!adPlanMetrics.PrintSpend__c}"/>  </apex:outputText>
+                                </apex:outputText>
+                            </apex:outputPanel>
+                           
+                            
+                            <apex:outputPanel styleClass="localMarketingTable OutdoorTable">
+                                 <apex:outputText value="({0, number, ##}%)">  
+                                    <apex:outputText value="Outdoor:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.OutdoorSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "><apex:param value="{!adPlanMetrics.OutdoorSpend__c}"/>  </apex:outputText>
+                                </apex:outputText>
+                            </apex:outputPanel>
+                           
+                            <apex:outputPanel styleClass="localMarketingTable Production_Misc_Table">
+                                <apex:outputText value="({0, number, ##}%)">  
+                                    <apex:outputText value="Prod/Misc:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.ProductionMiscellaneousSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "><apex:param value="{!adPlanMetrics.ProductionMiscellaneousSpend__c}"/>  </apex:outputText>
+                                </apex:outputText>
+                                    
+                            </apex:outputPanel>
+
+                            <apex:outputPanel styleClass="localMarketingTableTour" rendered="{! IF( NOT(ISBLANK(adPlanMetrics.Tour__c)), true, false )}">
+                                <apex:outputText value="({0, number, ##}%)">  
+                                    <apex:outputText value="Tour Digital:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.TourDigitalSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "><apex:param value="{!adPlanMetrics.TourDigitalSpend__c}"/>  </apex:outputText>
+                                </apex:outputText>
+                                    
+                            </apex:outputPanel>
+
+                            <apex:outputPanel styleClass="localMarketingTableTour" rendered="{! IF( NOT(ISBLANK(adPlanMetrics.Tour__c)), true, false )}" >
+                                <apex:outputText value="({0, number, ##}%)">  
+                                    <apex:outputText value="Tour Other:  " styleClass="bold"/> 
+                                    <apex:param value="{!adPlanMetrics.TourOtherSpendPercent__c}"/> 
+                                    <apex:outputText value="{0, number, ##,###} "><apex:param value="{!adPlanMetrics.TourOtherSpend__c}"/>  </apex:outputText>
+                                </apex:outputText>
+                                    
+                            </apex:outputPanel>
+                            
+                    
+                    </apex:panelGrid>
+                </apex:outputPanel>
+                
+                 <apex:actionFunction action="{!getAdPlan}" name="rerenderAdPlan" rerender="AdPlanMetricsTop, AdPlanMetricsBottom" />    
+            </apex:form>
+
+        </div>  <!-- rome-lds page-container -->
+    	
+    	<br/>
+    	
+        <apex:outputPanel rendered="{!ISBLANK(adPlanMetrics.Tour__c)}" layout="block" styleClass="container wide slds-m-bottom--x-small" >
+    		<div id="adplan-not-associated-to_tour">
+            	<p>This Ad Plan has not been associated with a Tour</p>
+	        </div>
+    	</apex:outputPanel>
+
+        <apex:outputPanel rendered="{!NOT(ISBLANK(adPlanMetrics.Tour__c))}" layout="block">
+        	<div id="all-grids-container" class="all-grids-container slds-m-top--x-large hide">
+    	    	
+    	    	<GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+
+    	    	<iframe id="gridFrame" scrolling="auto" height="480" width="100%" frameborder="0" data-grid-name="adplantouring" src="{!gridPage}gname=Ad Plan Touring&fpf=AdPlan__c&fpv={!AdPlan__c.Id}&sh=0&ssb=0&sbb=1"></iframe>
+        	</div>
+        </apex:outputPanel>
+
+    	<script type="text/javascript">
+                var lneAdPlanLocal = {};
+                var ad = lneAdPlanLocal;
+                ad.settings = {};
+                 
+                 var oldChildGridState = '';
+                 var newChildGridState = '';
+                 
+                 var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                 var eventer = window[eventMethod];
+                 var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+                
+                ad.init = function() {
+                    console.log('lneAdPlanLocal init ');
+                    var gridId;
+                    var id;
+                    var raw;
+                    var split = [];
+                    var inSplit = [];
+                    var settings = ad.settings;
+                    /*** Refresh for Marketing Budgets Tables ***/ 
+                    eventer(messageEvent, function(e) {
+                         if (typeof e.data == 'string' && (e.data == 'Saving' || e.data == 'Loaded' || e.data == 'Deleting')) {
+                            oldChildGridState = newChildGridState;
+                            newChildGridState = e.data;
+                                
+                            if (newChildGridState == 'Loaded' && oldChildGridState == 'Saving' || e.data == 'Deleting'){
+                                 console.log('start rerender' + e.data);
+                                 setTimeout(function(){
+                                     rerenderAdPlan();
+                                 },1000)
+                                 
+                            }
+                                 
+                                 
+                                 /*setTimeout(function(){
+                                      console.log("before rendering")
+                                 },5000)*/
+                                 
+                                 /*setTimeout(function(){
+                                    console.log('rerender'); 
+                                    
+                                 },5000)*/
+
+                             setTimeout(function(){
+                                 ad.setBudgetTables();
+                             },2000)
+                         }
+                     }, false);
+                     
+                     
+
+                    /**
+                    *   Parse value of uiGridVisibility, use default if not found (dev mostly)
+                    *   Build object that has gridname and true/false for visibility
+                    *       Go through page and give each grid hide as necessary
+                    */ 
+                    raw = $('body').attr('data-grid-visibility');
+
+                    if (!raw) {
+                        raw = '|Radio=false|Digital=false|Television=false|Print=false|Outdoor=false|ProductionMiscellaneous=false|';
+                    }
+
+                    split = raw.split('|');
+
+                    for (var i = 0; i < split.length; i++) {
+                        if (split[i].indexOf('=') > 1) {
+                            inSplit = split[i].split('=');
+                            settings[inSplit[0].toLowerCase()] = inSplit[1].toLowerCase();
+                        }
+                    }
+
+                    for (var key in settings) {
+                        if (settings.hasOwnProperty(key)) {
+                            gridId = '#grid-container-' + key;
+                            checkboxId = '#checkbox-channel-' + key;
+                            if (settings[key] === 'true') {
+                                //-- show the channel box checked and the channel grid itself
+                                $(checkboxId).prop('checked', true);
+                                if ($(gridId).hasClass('hide')) {
+                                    $(gridId).removeClass('hide');
+                                }
+                            } else {
+                                $(checkboxId).prop('checked', false);
+                                $(gridId).addClass('hide');
+                            }
+                        }
+                    }
+
+                    /**
+                    *   Channel and select list visibility on load
+                    *   if no grids aka channels are set to visible right away 
+                    *       show the control so user can select some channels to work with
+                    */
+
+                    if ($('body').attr('data-grid-visibility').indexOf('true') === -1) {
+                        console.log('no channels selected on load');
+                        console.log('select channels $ ',$('[data-control="menu-bar"] [data-action="select-channels"]') );
+                        //-- hide class there to prevent content flicker while loading
+                        $('#toggle-grid-list').removeClass('hide');
+                        $('[data-control="menu-bar"] [data-action="select-channels"]').trigger('click');
+                        $('[data-control="menu-bar"] [data-action="select-channels"]').addClass('active');
+                        $('.grid-container').each(function() {
+                            $(this).addClass('hide');
+                        });
+                    } else {
+                        console.log('found grids');
+                        console.log($('body').attr('data-grid-visibility'));
+                        $('.grid-container').each(function() {
+                            id = $(this).attr('id');
+                            id = id.slice(15);
+
+                            if (settings[id] === 'true') {
+                                $(this).removeClass('hide');
+                            } else {
+                                $(this).addClass('hide');
+                            }
+                        });
+                        if (!$('#toggle-grid-list').hasClass('hide')) {
+                            $('#toggle-grid-list').addClass('hide');
+                        }
+                        $('[data-control="menu-bar"] [data-action="select-channels"]').removeClass('active');
+                    }
+                
+                    //-- Now the reveal
+                    $('#loader').addClass('hide');
+                    $('body').removeClass('hide');
+                    $('#all-grids-container').removeClass('hide');
+
+                    /**
+                    *   Event handlers
+                    */
+                    $('#toggle-grid-list').on('click', 'input[type="checkbox"]', function(event) {
+                        var namedGrid = $(this).attr('data-grid-name').toLowerCase();
+                        var $container = $('#grid-container-' + $(this).attr('data-grid-name').toLowerCase());
+                        var elId = $(this).attr('id');
+
+                        // any new change... save possible
+                        $('#save-channel-visibility').text('Save');
+                        
+                        if (!$(this).prop('checked')) {
+                            //-- Can we uncheck, that is does the grid have unsaved changes?
+                            event.preventDefault();
+                            lneSharedJs.handleFocusLoss(namedGrid);
+                        } else {
+                            settings[namedGrid] = 'true';
+                            $(this).prop('checked', true);
+                            if ($container.hasClass('hide')) {
+                                $container.removeClass('hide');
+                            }
+                        }
+                    });
+
+                    $('[data-control="menu-bar"]').on('click', '[data-control="item"]', function(event) {
+                        // TODO: As more options are developed, have the handler logic break out into own func
+
+                        /*
+                        $('[data-control="menu-bar"] [data-control="item"]').each(function(index) {
+                            $(this).removeClass('current');
+                        });
+                        */
+
+                        //-- Mark active
+                        if ($(this).hasClass('active')) {
+                            $(this).removeClass('active');
+                        } else {
+                            $(this).addClass('active');
+                        }
+
+                        //-- actions for each item selection
+                        if ($(this).attr('data-action') === 'select-channels' && $(this).hasClass('active')) {
+                            $('#toggle-grid-list').removeClass('hide');
+                        } else if ($(this).attr('data-action') === 'select-channels' && !$(this).hasClass('active')) {
+                            $('#toggle-grid-list').addClass('hide');
+                        }
+                    });
+
+                    $('#save-channel-visibility').on('click', function(event) {
+                        console.log('#save-channel-visibility event',event);
+                        event.preventDefault();
+                        ad.setBudgetTables();
+                        ad.saveGridVisibility(event);
+                    });
+                };
+
+               
+                ad.completeVisibilityToggle = function(namedGrid, gridHasChanges, gridHasRows) {
+                    console.log('ad.completeVisibilityToggle ' + namedGrid + ' . gridHasChanges ' + gridHasChanges + 
+                        ' gridHasRows ' + gridHasRows);
+                    var id = '#checkbox-channel-' + namedGrid.toLowerCase();
+
+                    console.log('ad.completeVisibilityToggle for namedGrid ' + namedGrid + ' id checkbox is ' + id);
+                    console.log('gridHasChanges ' + gridHasChanges + ' gridHasRows ' + gridHasRows);
+
+
+                    if (gridHasChanges === 'true' || gridHasRows === 'true') {
+                        console.log('grid has changes');
+                        $(id).addClass('unsaved');
+                        $(id).attr('data-status', 'unsaved');
+                        $(id).closest('.channel-container').addClass('unsaved');
+                        $('#save-channel-visibility').prop('disabled', true);
+                    } else {
+                        console.log('grid has no changes');
+                        //-- we need to uncheck the checkbox for real now
+                        $(id).prop('checked', false);
+                        $(id).removeClass('unsaved');
+                        $(id).attr('data-status', 'saved');
+                        $(id).closest('.channel-container').removeClass('unsaved');
+                        ad.settings[namedGrid] = 'false';
+                        $('#grid-container-' + namedGrid.toLowerCase()).addClass('hide');
+
+                        if ($('#toggle-grid-list input[data-status="unsaved"]').length === 0) {
+                            console.log('allow saves');
+                            $('#save-channel-visibility').prop('disabled', false);
+                        }
+                    }
+                };
+
+                ad.saveGridVisibility = function(event) {
+                    console.log('ad.saveGridVisibility event is',event);
+                    var adPlanId = $('body').attr('data-current-record-id');
+                    var concat = '';
+                    var settings = ad.settings;
+
+                    for (var key in settings) {
+                        if (settings.hasOwnProperty(key) && key != undefined && key != 'undefined') {
+                            concat += '|' + key + '=' + settings[key];
+                        }
+                    }
+
+                    concat += '|';
+                    console.log('concat new uiGridVisibility__c is ' + concat);
+
+                    var record = new RemoteObjectModel.AdPlan__c({
+                        Id: adPlanId,
+                        uiGridVisibility__c: concat
+                    });
+                    record.update(updateCallback);
+
+                    // Callback to handle DML Remote Objects calls
+                    function updateCallback(err, ids){
+                        if (err) { 
+                            console.log(err);
+                            $('#save-channel-visibility').text('Save unavailable at this time');
+                        } else {
+                            console.log('success saved grid visibility');
+                            $('#save-channel-visibility').text('Saved Successfully');
+                            $('[data-control="menu-bar"] [data-action="select-channels"]').trigger('click');
+                        }
+                    }
+                };
+                
+                ad.setBudgetTables = function(){
+                    var showDigital = ad.settings.digital;
+                    var showOutdoor = ad.settings.outdoor;
+                    var showPrint = ad.settings.print;
+                    var showproductMisc = ad.settings.productionmiscellaneous;
+                    var showRadio = ad.settings.radio;
+                    var showTelevision = ad.settings.television;
+                    var isAssociatedToTour = {! NOT( ISBLANK( adPlanMetrics.Tour__c )) };
+                    
+                    // IF /ELSE for hiding/ showing Local Plan Budgetgs. If more is added, this will need to  be a dynamic funciton 
+                    if(showDigital == "true"){
+                        $('.DigitalTable').css('display','inline-block')
+                        $('.DigitalTable').parent().css('display','table-cell')
+                    }else{
+                         $('.DigitalTable').css('display','none')
+                         $('.DigitalTable').parent().css('display','none');
+                    }
+                    
+                    if(showOutdoor == "true"){
+                        $('.OutdoorTable').css('display','inline-block')
+                        $('.OutdoorTable').parent().css('display','table-cell')
+                    }else{
+                        $('.OutdoorTable').css('display','none')
+                        $('.OutdoorTable').parent().css('display','none')
+                    }
+                    
+                    if(showPrint == "true"){
+                        $('.PrintTable').css('display','inline-block')
+                        $('.PrintTable').parent().css('display','table-cell')
+                    }else{
+                        $('.PrintTable').css('display','none')
+                         $('.PrintTable').parent().css('display','none')
+                    }
+                    
+                    if(showproductMisc == "true"){
+                        $('.Production_Misc_Table').css('display','inline-block')
+                        $('.Production_Misc_Table').parent().css('display','table-cell')
+                    }else{
+                         $('.Production_Misc_Table').css('display','none')
+                         $('.Production_Misc_Table').parent().css('display','none');
+                    }
+                    if(showRadio == "true"){
+                        $('.RadioTable').css('display','inline-block');
+                        $('.RadioTable').parent().css('display','table-cell');
+                    }else{
+                         $('.RadioTable').css('display','none');
+                         $('.RadioTable').parent().css('display','none');
+                    }
+                    
+                    if(showTelevision == "true"){
+                        $('.TelevisionTable').css('display','inline-block')
+                        $('.TelevisionTable').parent().css('display','table-cell')
+                    }else{
+                         $('.TelevisionTable').css('display','none');
+                         $('.TelevisionTable').parent().css('display','none');
+                    }
+                    
+                    if(showDigital == "false" && showOutdoor == "false" && showPrint == "false" && showproductMisc == "false" && showRadio == "false" && showTelevision == "false" && isAssociatedToTour == false){
+                        $('.localMarketingTableBottom').css('display','none');
+                        $('.localMarketingTableBottom').parent().css('display','table-cell');
+                    }else{
+                        $('.localMarketingTableBottom').css('display','table');
+                    }
+                }
+                $(document).ready(function() {
+                    ad.init();
+                    //-- Handles leaving grid focus and selecting/unselecting visible channels aka grids
+                    lneSharedJs.sharedInit();  
+                    
+                    ad.setBudgetTables()
+                });
+            </script>
+
+    </body>
+    </html>
+</apex:page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Canada_Concerts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Edit rights for all members of the Canada Concerts division</description>
+        <label>Canada Concerts</label>
+        <sharedTo>
+            <group>CanadaConcertsDivision</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CanadaConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Comedy_Concerts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Edit rights for all members of the Comedy Concerts division</description>
+        <label>Comedy Concerts</label>
+        <sharedTo>
+            <group>ComedyOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Comedy</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>T_C_Touring</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Edit rights for all members of the T&amp;C division</description>
+        <label>T&amp;C Touring</label>
+        <sharedTo>
+            <group>TCTouringOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TCTouring</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Touring</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Edit rights for all members of the NAC division</description>
+        <label>Touring</label>
+        <sharedTo>
+            <group>TouringOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Touring</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

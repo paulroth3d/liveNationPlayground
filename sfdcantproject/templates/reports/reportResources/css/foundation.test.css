@@ -1,0 +1,8 @@
+  .row.display {
+    background: #eeeeee;
+    font-size: 11px;
+    line-height: 2em;
+    border: solid 1px #c6c6c6;
+  }
+    .row.display .columns:nth-child(2) {
+      background: #e1e1e1; }

@@ -1,0 +1,160 @@
+<!--
+/**
+ * Page that the user will be brought to after a successful run through LNE_PromoterCreateEvent page.
+ * @see LNE_PromoterCreateEvent
+ * @author Paul Roth <proth@salesforce.com>
+ **/
+-->
+<apex:page controller="LNE_PromoterCreateEventResults_CC" showHeader="false" sidebar="false" standardStylesheets="false" action="{!gotoEventPage}">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <apex:stylesheet value="{!URLFOR($Resource.LNE_RomeLDS_Sp17, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <!--
+        /** @TODO: investigate whether it is better to use sforce.one to navigate or use action instead **/
+        <script type='text/javascript'>
+            var newEventId="{!newEventId}";
+            debugger;
+            try {
+                sforce.one.navigateToSObject( newEventId );
+            } catch( err ){
+                console.error( 'Unable to navigate using sforce.one. this should not happen' );
+                debugger;
+                
+                if( newEventId ){
+                    window.parent.location.href = '/' + newEventId;
+                }
+            }
+        </script>
+        -->
+        <apex:pageMessages />
+
+        <div class="rome-lds">
+
+            <apex:outputPanel rendered="{!isCloning}">
+                <apex:form >
+                    <apex:actionFunction action="{!getCloneJob}" name="getCloneJobJS" oncomplete="checkJob();" rerender="jobStatusPanel,jobErrorsPanel,jobCompletedDatePanel,scriptPanel" />
+                    
+                        <!-- MASTHEAD -->
+                        <div class="slds-page-header">
+                            <div class="slds-grid">
+                                <div class="slds-col slds-has-flexi-truncate">
+                                    <div class="slds-media slds-no-space slds-grow">
+                                        <div class="slds-media__figure">
+                                            <svg class="slds-icon slds-icon-custom-custom108" aria-hidden="true">
+                                                <use xlink:href="{!URLFOR($Resource.LNE_RomeLDS_Sp17, '/assets/icons/custom-sprite/svg/symbols.svg#custom108')}"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <p class="slds-text-title--caps slds-line-height--reset"></p>
+                                            <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Code Coverage Monitor">Event Clone Progress</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-no-flex slds-grid slds-align-top" id='headerActions'>
+                                </div>
+                            </div>
+                        </div>
+
+                    <apex:outputPanel id="mainPanel">
+                        <div class='slds-p-horizontal--medium adminPanel' style="margin-top: 20px;">
+                            <article class="slds-card">
+                                <div class="slds-card__header slds-grid">
+                                    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                                        <div class="slds-media__figure">
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <h2>
+                                                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
+                                                    <span class="slds-text-heading--small">Events</span>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                    </header>
+                                    <div class="slds-no-flex">
+                                    </div>
+                                </div>
+                                <div class="slds-card__body">
+                                    <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--cell-buffer">
+                                        <thead>
+                                            <tr class="slds-text-title--caps">
+                                                <th scope="col" style="width: 250px;">
+                                                    <div class="slds-truncate" title="Status">Status</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="Status">Errors</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="Status">Completed Date</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="slds-hint-parent">
+                                                <th scope="row">
+                                                    <div class="slds-truncate">
+                                                        <apex:outputPanel id="jobStatusPanel">
+                                                            {!cloneJob.Status}
+                                                            <apex:outputPanel rendered="{!!jobCompleted}">
+                                                                <div class="slds-spinner_container">
+                                                                  <div role="status" class="slds-spinner slds-spinner--x-small">
+                                                                    <span class="slds-assistive-text">Loading</span>
+                                                                    <div class="slds-spinner__dot-a"></div>
+                                                                    <div class="slds-spinner__dot-b"></div>
+                                                                  </div>
+                                                                </div>
+                                                            </apex:outputPanel>
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                </th>
+                                                <th scope="row">
+                                                    <div class="slds-truncate">
+                                                        <apex:outputPanel id="jobErrorsPanel">
+                                                            {!cloneJob.ExtendedStatus}
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                </th>
+                                                <th scope="row">
+                                                    <div class="slds-truncate">
+                                                        <apex:outputPanel id="jobCompletedDatePanel">
+                                                            {!cloneJobCompletedDate}
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </article>
+                        </div> 
+
+                        <apex:outputPanel id="scriptPanel">
+
+                            <script type="text/javascript">
+                                var jobCompleted = {!jobCompleted};
+                            </script>
+
+                        </apex:outputPanel>
+
+                    </apex:outputPanel>
+
+                    <script type="text/javascript">
+
+                    var intervalPointer = setInterval(refreshJob, 1000);
+
+                    function refreshJob() {
+                        getCloneJobJS();
+                    }
+
+                    function checkJob() {
+                        if (jobCompleted === true) {
+                            clearInterval(intervalPointer);
+                        }
+                    }
+                    
+                    </script>
+                </apex:form>
+            </apex:outputPanel>
+
+        </div>
+    </html>
+</apex:page>

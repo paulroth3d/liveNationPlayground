@@ -1,0 +1,155 @@
+body.recordDetailStyle .hide,
+.slds-input.hide {
+    display: none;
+}
+body.recordDetailStyle .show {
+    display: block;
+}
+body.recordDetailStyle  {
+    margin: 32px;
+}
+body.recordDetailStyle .row {
+    margin: 0;
+}
+body.recordDetailStyle .container {
+    border-top: 1px solid rgb(216, 221, 230);
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    padding: .5rem;
+    vertical-align: top;
+    width: 48%;
+}
+body.recordDetailStyle .container.last-on-page {
+    margin-bottom: 2.5rem;
+}
+body.recordDetailStyle .container .dataCol,
+body.recordDetailStyle .container .controlCol {
+    display: inline-block;
+    vertical-align: top;
+}
+body.recordDetailStyle .container .dataCol {
+    width: 94%;
+}
+body.recordDetailStyle .container .controlCol {
+    width: 4%;
+}
+body.recordDetailStyle .container.mini {
+    margin-right: 5%;
+    width: auto;
+}
+body.recordDetailStyle .drop-container {
+    margin-right: 16px;
+    width: auto;
+}
+body.recordDetailStyle .error-header {
+    background: rgb(194, 57, 52);
+    border-radius: 0.25em;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+    padding: 1rem;
+    width: 90%;
+}
+body.recordDetailStyle .button-box {
+    display: inline-block;
+    margin: 0 8px;
+}
+body.recordDetailStyle label {
+    color: rgb(84, 105, 141);
+    display: block;
+    font-size: .75rem;
+    margin-bottom: 4px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+.forceInlineEdit label {
+    padding-left: .5rem;
+}
+body.recordDetailStyle .slds-icon_container .slds-icon {
+    fill: rgb(224, 229, 238);
+    height: .875rem;
+    width: .875rem;
+}
+
+body.recordDetailStyle a.inlineEditTrigger {
+    color: rgb(224, 229, 238);
+}
+
+body.recordDetailStyle .inlineEditTrigger:visited .slds-icon_container .slds-icon,
+body.recordDetailStyle .inlineEditTrigger:hover .slds-icon_container .slds-icon,
+body.recordDetailStyle .inlineEditTrigger:active .slds-icon_container .slds-icon {
+    fill: rgb(84, 105, 141);
+}
+
+body.recordDetailStyle .rome-lds .main-container input {
+    border-radius: 0.25em;
+    margin-bottom: 5px;
+}
+body.recordDetailStyle .dateOnlyInput input.date {
+    margin-right: 12px;
+    width: 11em;
+}
+body.recordDetailStyle .or {
+    float: right;
+    margin-right: 20px;
+}
+body.recordDetailStyle input.errored,
+body.recordDetailStyle select.errored {
+    border: 2px solid rgb(194, 57, 52);
+    border-radius: 0.25em;
+}
+body.recordDetailStyle p.errored {
+    color: rgb(194, 57, 52);
+}
+body.recordDetailStyle p.errored.no-container {
+    margin-top: 8px;
+}
+body.recordDetailStyle .component-error {
+    position: relative;
+}
+
+.forceDetailPanel .risen {
+    box-shadow: 0 2px 4px 4px rgba(0,0,0,.16);
+    border-radius: .25rem;
+    margin-left: 4px;
+    padding-left: 4px;
+    width: 98%;
+}
+.forceDetailPanel .riseTransitionEnabled {
+    transition: .1s box-shadow ease-in-out;
+}
+
+.forceDetailPanel .edit-footer {
+    position: fixed;
+    width: 920px;
+    left: 24px;
+    bottom: -15px;
+    right: 0;
+    z-index: 6000;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.forceDetailPanel .forceInlineEdit .footer.active {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: .25rem;
+    box-shadow: none;
+    max-height: 72px;
+    margin: 0 0 0 -20px;
+    width: 100%;
+}
+
+.forceDetailPanel .forceInlineEdit h2,
+.forceDetailPanel .forceInlineEdit h3 {
+    padding-left: 0.75rem;
+}
+
+.forceDetailPanel .forceInlineEdit .footer.active .actionsContainer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 0;
+    text-align: center;
+}

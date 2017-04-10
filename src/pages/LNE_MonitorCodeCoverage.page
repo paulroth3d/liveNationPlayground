@@ -1,0 +1,778 @@
+<!--
+/**
+ * LNE_MonitorCodeCoverage - admin page to monitor current code coverage.
+ * <p>Page to work with batches and other administrative functions.</p>
+ * @author Paul Roth <proth@salesforce.com>
+ **/
+-->
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0"
+><html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Rome Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <apex:includeScript value="{! URLFOR( $Resource.LNE_GeneralResources, 'js/lib/underscore.js' )}" />
+    <apex:includeScript value="{! URLFOR( $Resource.LNE_GeneralResources, 'js/remoting/RemotingHelper.js' )}" />
+    <apex:includeScript value="{! URLFOR( $Resource.LNE_Angular_1_6_1, 'angular.js')}" />
+    <apex:includeScript value="{! URLFOR( $Resource.LNE_JSForce, 'jsforce.min.js' )}" />
+    <apex:includeScript value="{! URLFOR( $Resource.LNE_GeneralResources, 'js/events/LNE_PostMessage.js' )}" />
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_RomeLDS_Sp17, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+    <apex:includeScript value="{! URLFOR( $Resource.LNE_GeneralResources, 'js/lib/alertify.js' )}" />
+    <apex:stylesheet value="{! URLFOR( $Resource.LNE_GeneralResources, 'css/lib/alertify.css' )}" id="alertifyCSS" />
+        <style type='text/css'>
+        .hidden {
+            display: none;
+        }
+        .poorCoverage {
+            background: #FFAAAA;
+            color: #FF0000;
+        }
+        .goodCoverage {
+            background: #c9f3c9;
+            color: #309230;
+        }
+        .adminPanel {
+            margin-top: 20px;
+        }
+        .modalContainer {
+            background-color: rgba( 0,0,0, 0.2);
+        }
+        .errorList {
+            color: #AA0000;
+        }
+    </style>
+    <script name="ltngButton" type='text/template'>
+                    <button id='{{ btnId }}' class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive" ng-click="handleClick()">
+                        <span class="slds-text-not-selected">
+                            <svg class="slds-button__icon--stateful slds-button__icon--left" aria-hidden="true">
+                                <use xlink:href="{{ getSrcPath() }}"></use>
+                            </svg>{{ value }}</span>
+                    </button>
+    </script>
+    <script name='ltngIconHolder' type='text/template'>
+                            <span class="slds-icon_container slds-icon-{{ iconType }}-{{ getIconClassName() }}" title="{{ title }}">
+                                <svg class="slds-icon slds-icon--small" aria-hidden="true">
+                                    <use xlink:href="{{ getSrcPath() }}"></use>
+                                </svg>
+                            </span>
+    </script>
+    <script name='ltngSvg2' type='text/template'>
+                            <svg class="slds-icon slds-icon-{{ iconType }}-{{ iconName }}" aria-hidden="true">
+                                <use xlink:href="{{ getSrcPath() }}" ></use>
+                            </svg>
+    </script>
+</head>
+ 
+<body>   
+ 
+    <!-- REQUIRED SLDS WRAPPER -->
+    <div ng-app="myApp" ng-controller="coverageMonitor" class="rome-lds">
+        
+        
+        
+        <!-- MASTHEAD -->
+        <div class="slds-page-header">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media slds-no-space slds-grow">
+                        <div class="slds-media__figure">
+                            <ltng-svg2 icon-type='standard' icon-name='custom' />
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-title--caps slds-line-height--reset">Rome Admin Panel</p>
+                            <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Code Coverage Monitor">Code Coverage Monitor</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-no-flex slds-grid slds-align-top" id='headerActions'>
+                    <ltng-button btn-id='refreshBtn' value='Refresh' icon-type='utility' icon-name='rotate' handle-click="reload()" />
+                </div>
+            </div>
+        </div>
+        
+        <!-- recent tests -->
+        <div class='recentTests slds-p-horizontal--medium adminPanel' ng-controller='lneTestResults'>
+            <article class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <ltng-icon-holder title='Recent Test Results' icon-type='standard' icon-name='product_required' icon-class='product-required' /> 
+                        </div>
+                        <div class="slds-media__body">
+                            <h2>
+                                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
+                                    <span class="slds-text-heading--small">Recent Test Results</span>
+                                </a>
+                            </h2>
+                        </div>
+                    </header>
+                    <div class="slds-no-flex">
+                        <form class='slds-form--inline'>
+                            <div class='slds-form-element'>
+                                <div class='slds-form-element__control'>
+                                    <input type='text' class='slds-input' ng-model='testResultFilter' placeholder=' -search by name-' />
+                                </div>
+                            </div>
+                            <div class='slds-form-element'>
+                                <ltng-button btn-id='downloadResults' value='Download' icon-type='utility' icon-name='download' handle-click="handleDownload()" />
+                                <ltng-button btn-id='downloadTasks' value='Tasks' icon-type='utility' icon-name='download' handle-click="downloadTasks()" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--cell-buffer">
+                        <thead>
+                            <tr class="slds-text-title--caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="ApexClassId" ng-click="sorter.changeField('ApexClassId')">Id</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="TestDate" ng-click="sorter.changeField('TestDate')">Timestamp</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="outcome" ng-click="sorter.changeField('Outcome')">Outcome</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="className" ng-click="sorter.changeField('ApexClass.Name')">ApexClass.Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="methodName" ng-click="sorter.changeField('MethodName')">Method Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="className" >Message</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="className" >Stack Trace</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="testResult in testFailures | orderBy:sorter.fieldName:sorter.isAscending|filter:{Name:testResultFilter}" class="slds-hint-parent">
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ testResult.ApexClassId }}"><a href="javascript:void(0);" ng-click="openRecord( testResult.ApexClassId )" >{{ testResult.ApexClassId }}</a></div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ testResult.TestDate }}">{{ testResult.TestDate }} GMT</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ testResult.Outcome }}">{{ testResult.Outcome }}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ testResult.ApexClass.Name }}">{{ testResult.ApexClass.Name }}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ testResult.MethodName }}">{{ testResult.MethodName }}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ testResult.Message }}"><a href='javascript:void(0);' ng-click='popup( testResult.Message )'>Show</a></div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ testResult.StackTrace }}"><a href='javascript:void(0);' ng-click='popup( testResult.StackTrace )'>Show</a></div>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--
+                <div class="slds-card__footer"><a href="javascript:void(0);">View All <span class="slds-assistive-text">entity type</span></a></div>
+                -->
+            </article>
+        </div>
+        
+        <!-- class coverage -->
+        <div class='classCoverage slds-p-horizontal--medium adminPanel' ng-controller='lneClassCoverage'>
+            <article class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <ltng-icon-holder title='Recent Test Results' icon-type='standard' icon-name='task' /> 
+                        </div>
+                        <div class="slds-media__body">
+                            <h2>
+                                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
+                                    <span class="slds-text-heading--small">Class Coverage ({{ coveredLines }} / {{ totalLines }} : {{ coveredPct * 100 | number:2 }}% )</span>
+                                </a>
+                            </h2>
+                        </div>
+                    </header>
+                    <div class="slds-no-flex">
+                        <form class='slds-form--inline'>
+                        	<div class='slds-form-element'>
+                        		Show All: <input type='checkbox' ng-model="showAll" ng-click="listAllHandler( $event, e.id )" />
+                        	</div>
+                            <div class='slds-form-element'>
+                                <div class='slds-form-element__control'>
+                                    <input type='text' class='slds-input' ng-model='classCoverageFilter' placeholder=' -search by name-' />
+                                </div>
+                            </div>
+                            <div class='slds-form-element'>
+                                <ltng-button btn-id='downloadCoverage' value='Download' icon-type='utility' icon-name='download' handle-click="handleDownload()" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--cell-buffer">
+                        <thead>
+                            <tr class="slds-text-title--caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Id" ng-click="sorter.changeField('ApexClassOrTriggerId')">Id</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Name" ng-click="sorter.changeField('ApexClassOrTrigger.Name');">Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="PoorCoverage" ng-click="sorter.changeField('PoorCoverage');">Poor Coverage</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="CoveragePct" ng-click="sorter.changeField('CoveragePct');">Coverage %</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="TotalLines" ng-click="sorter.changeField('TotalLines');">Total Lines</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="record in classCoverage | orderBy:sorter.fieldName:sorter.isAscending | filter: { classUpperName : classCoverageFilter }" class="slds-hint-parent">
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ record.ApexClassOrTriggerId }}"><a ng-click="openRecord( record.ApexClassOrTriggerId )" href="javascript:void(0);">{{ record.ApexClassOrTriggerId }}</a></div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ record.ApexClassOrTrigger.Name }}">{{ record.ApexClassOrTrigger.Name }}</div>
+                                </th>
+                                <th scope="row" class="{{ (record.PoorCoverage?'poorCoverage':'goodCoverage') }}">
+                                    <div class="slds-truncate" title="{{ record.PoorCoverage }}"><a ng-click="showCoverage( record.ApexClassOrTriggerId )" href='javascript:void(0);'>{{ record.PoorCoverage }}</a></div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ record.CoveragePct }}">{{ record.CoveragePct | number:2 }} %</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{{ record.TotalLines }}">{{ record.TotalLines }}</div>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--
+                <div class="slds-card__footer"><a href="javascript:void(0);">View All <span class="slds-assistive-text">entity type</span></a></div>
+                -->
+            </article>
+        </div>
+        
+        <div class='hidden' id='downloadSection' />
+        
+        <!-- PAGE HEADER -->
+        <!-- / PAGE HEADER -->
+        
+        <!-- PRIMARY CONTENT WRAPPER -->
+
+        <!-- / PRIMARY CONTENT WRAPPER -->
+        
+        <!-- FOOTER -->
+        <!-- / FOOTER -->
+        
+    </div>
+    <!-- / REQUIRED SLDS WRAPPER -->   
+    
+    <!-- JAVASCRIPT -->
+    <script type='text/javascript'>
+        alertify.parent(document.body);
+        
+        var app = angular.module( 'myApp', [] );
+        app.constant( 'access', '{!$Api.Session_ID}');
+        app.value( 'romeLDS', '{! $Resource.LNE_RomeLDS_Sp17 }');
+        app.value( 'testRunner', 'Deployment Manager');
+        app.value( 'testFilter', 'LNE_%' );
+        app.value( 'brokenTestStory', 'US765');
+        app.value( 'coverageStory', 'US764' );
+        
+        app.constant( 'conn', new jsforce.Connection( { accessToken: '{!$Api.Session_ID}' } ));
+        app.value( 'testsToIgnore', ['LNE_TICKETREVENUETAB_CX_NAKO','LNE_TESTLIGHTNINGSUBTABCOMCHILD_C']); //-- note these are upper case and case sensitive.
+        app.value( 'testSuffix', '_TEST' );
+        
+        //-- convert all templates
+        var templateElements= angular.element( document.querySelectorAll( "script[type='text/template']" ));
+        var t, templates = {};
+        for( var i = 0; i < templateElements.length; i++ ){
+          t=templateElements[i];
+          templates[ t.getAttribute( "name" ) ] = t.textContent;
+        }
+        
+        var TableSorter = function( fieldName, isAscending ){
+            this.fieldName = fieldName;
+            this.isAscending = isAscending;
+            
+            this.changeField = function( fieldName ){
+                if( this.fieldName == fieldName ){
+                    this.isAscending = !this.isAscending;
+                } else {
+                    this.fieldName = fieldName;
+                }
+            }
+            
+            return( this );
+        }
+        
+        /**
+         * Service to download files.
+         * @param fileName
+         * @param fileContents.
+         **/
+        app.service( "fileDownloader", function( $location ){
+            
+            this.download = function( fileName, fileContents ){
+                var encodedURI = encodeURI( fileContents );
+                
+                console.log( "attempt to download" );
+                //debugger;
+                
+                var url = $location.absUrl();
+                if( url.indexOf( "isdtp=p1" ) > -1 ){
+                    console.log( "download from LEX" );
+                    window.open( encodedURI, "_blank" );
+                } else {
+                    console.log( "download standard" );
+                    
+                    try {
+                        var el = angular.element( document.querySelector( "#downloadSection" ))[0];
+                        var link=document.createElement("a");
+                        link.setAttribute("href", encodedURI );
+                        link.setAttribute( "download", fileName );
+                        
+                        el.appendChild( link );
+                        link.click();
+                        el.removeChild( link );
+                    } catch( err ){
+                        console.error( "error occurred while printing out the results" );
+                        console.log( fileContents );
+                        try {
+                            document.body.removeChild( link );
+                        } catch(err){}
+                    }
+                }
+            }
+        })
+        
+        /**
+         *  Component that defines a large LDS icon
+         *  @param iconType (String) - the lds icon group it belongs to
+         *  @param iconName (String) - the name of the icon.
+         **/
+        app.directive( 'ltngSvg2', function(){
+            return {
+                template: templates.ltngSvg2,
+                scope: {
+                    'iconType': '@',
+                    'iconName': '@'
+                },
+                controller: function( $scope, $element, $attrs, romeLDS ){
+                    $scope.getSrcPath = function(){
+                        return( romeLDS + '/assets/icons/' + $attrs.iconType + '-sprite/svg/symbols.svg#' + $attrs.iconName );
+                    }
+                }
+            }
+        });
+        
+        /**
+         *  Component for a button with a lightnig icon.
+         *  @param btnId (String) id of the button
+         *  @param iconType (String) lds icon group
+         *  @param iconName (String) name of the icon to show
+         *  @param value (String) - text to show on the button
+         *  @param handleClick (function) - function to call when the button is clicked
+         **/
+        app.directive( 'ltngButton', function(){
+            return {
+                template: templates.ltngButton,
+                scope: {
+                    'btnId': '@',
+                    'iconType': '@',
+                    'iconName': '@',
+                    'value': '@',
+                    'handleClick': '&'
+                },
+                controller: function( $scope, $element, $attrs, romeLDS ){
+                    $scope.getSrcPath = function(){
+                        return( romeLDS + '/assets/icons/' + $attrs.iconType + '-sprite/svg/symbols.svg#' + $attrs.iconName );
+                    }
+                }
+            };
+        })
+        
+        
+        /**
+         * Component that defines a small button used in a grouping.
+         * @param iconType (String) - lds icon group
+         * @param iconName (String) - lds name of the icon
+         * @param iconClass (String?) - css class of the icon / if needed( for example, some change _ to - for classes)
+         * @param title (String) title of the group
+         **/
+        app.directive( 'ltngIconHolder', function(){
+            return {
+                template: templates.ltngIconHolder,
+                scope: {
+                    'iconType': '@',
+                    'iconClass': '@',
+                    'iconName': '@',
+                    'title': '@'
+                },
+                controller: function( $scope, $element, $attrs, romeLDS ){
+                    $scope.getIconClassName = function(){
+                        if( $attrs.iconClass ){
+                            return( $attrs.iconClass );
+                        } else {
+                            return( $attrs.iconName );
+                        }
+                    }
+                    $scope.getSrcPath = function(){
+                        return( romeLDS + '/assets/icons/' + $attrs.iconType + '-sprite/svg/symbols.svg#' + $attrs.iconName );
+                    }
+                }
+            }
+        });
+        
+        app.controller( 'coverageMonitor', function( $rootScope, $scope, $timeout ){
+            var ctrl = this;
+            
+            /** called when the top refresh button is pressed **/
+            $scope.reload = function(){
+                $rootScope.$broadcast( 'reloadRequested', 1,'2-3' );
+            }
+        });
+        
+        /**
+         * Controller for the test results section
+         **/
+        app.controller( 'lneTestResults', function( $rootScope, $scope, conn, testRunner, testFilter, fileDownloader, brokenTestStory ){
+            
+            $scope.sorter = new TableSorter( 'ApexClass.Name', true );
+            //$scope.testFailures = [{"attributes":{"type":"ApexTestResult","url":"/services/data/v37.0/sobjects/ApexTestResult/07MR0000002k8e2MAA"},"AsyncApexJobId":"707R000000b9MdiIAE","Id":"07MR0000002k8e2MAA","Outcome":"Fail","ApexClassId":"01pR0000000ImxgIAC","ApexClass":{"attributes":{"type":"ApexClass","url":"/services/data/v37.0/sobjects/ApexClass/01pR0000000ImxgIAC"},"Name":"LNE_AncillaryTab_CX_Test"},"MethodName":"validateDetermineRelatedAncillariesWNoRel","Message":"System.AssertException: Assertion Failed","StackTrace":"Class.LNE_AncillaryTab_CX_Test.validateDetermineRelatedAncillariesWNoRel: line 72, column 1","TestTimestamp":"2017-01-29T10:10:25.000+0000"},{"attributes":{"type":"ApexTestResult","url":"/services/data/v37.0/sobjects/ApexTestResult/07MR0000002k8eiMAA"},"AsyncApexJobId":"707R000000b9MdiIAE","Id":"07MR0000002k8eiMAA","Outcome":"Fail","ApexClassId":"01pR0000000MsSNIA0","ApexClass":{"attributes":{"type":"ApexClass","url":"/services/data/v37.0/sobjects/ApexClass/01pR0000000MsSNIA0"},"Name":"LNE_FinancialCalculator_Test"},"MethodName":"testFinancialCalculator","Message":"System.AssertException: Assertion Failed: Expected: 0.0, Actual: null","StackTrace":"Class.LNE_FinancialCalculator_Test.testFinancialCalculator: line 372, column 1","TestTimestamp":"2017-01-29T10:09:53.000+0000"},{"attributes":{"type":"ApexTestResult","url":"/services/data/v37.0/sobjects/ApexTestResult/07MR0000002k8dQMAQ"},"AsyncApexJobId":"707R000000b9MdiIAE","Id":"07MR0000002k8dQMAQ","Outcome":"Fail","ApexClassId":"01pR0000000MmlYIAS","ApexClass":{"attributes":{"type":"ApexClass","url":"/services/data/v37.0/sobjects/ApexClass/01pR0000000MmlYIAS"},"Name":"LNE_ExpenseTab_CX_Test"},"MethodName":"validateGetEvent","Message":"System.AssertException: Assertion Failed","StackTrace":"Class.LNE_ExpenseTab_CX_Test.validateGetEvent: line 109, column 1","TestTimestamp":"2017-01-29T10:07:36.000+0000"},{"attributes":{"type":"ApexTestResult","url":"/services/data/v37.0/sobjects/ApexTestResult/07MR0000002k8dLMAQ"},"AsyncApexJobId":"707R000000b9MdiIAE","Id":"07MR0000002k8dLMAQ","Outcome":"Fail","ApexClassId":"01pR0000000MxbtIAC","ApexClass":{"attributes":{"type":"ApexClass","url":"/services/data/v37.0/sobjects/ApexClass/01pR0000000MxbtIAC"},"Name":"LNE_BonusStartPointValidation_T_Test"},"MethodName":"testNewBonus","Message":"System.AssertException: Assertion Failed: Same value: 0","StackTrace":"Class.LNE_BonusStartPointValidation_T_Test.testNewBonus: line 160, column 1","TestTimestamp":"2017-01-29T10:07:25.000+0000"}];
+            
+            $rootScope.$on( 'reloadRequested', function( event, args ){
+                console.log( 'reload was requested. received by lneTestResults' );
+                
+                //-- get recent test results.
+                var query = 'select AsyncApexJob.JobType, AsyncApexJobId, ClassesCompleted, ClassesEnqueued, CreatedById, CreatedDate, EndTime, Id, IsAllTests, IsDeleted, JobName, LastModifiedById, LastModifiedDate, MethodsCompleted, MethodsEnqueued, MethodsFailed, Source, StartTime, Status, SystemModstamp, TestTime, User.name ' +
+                    'from ApexTestRunResult ' +
+                    'where Status = \'Completed\' ' +
+                    'AND ClassesEnqueued > 40 ' +
+                    //'AND User.Name = \'' + testRunner + '\' ' +
+                    'ORDER BY CreatedDate desc ' +
+                    'LIMIT 1';
+                conn.query( query, function( err, result ){
+                    if( err ){
+                        console.log( 'error found:' ); console.log( err );
+                    } else {
+                        console.log( 'success' ); console.log( result );
+                        var lastJob = result.records.pop();
+                        var lastJobId = lastJob.AsyncApexJobId;
+                        
+                        var query2 = 'select AsyncApexJobId, Id, Outcome, ApexClassId, ApexClass.Name, MethodName, Message, StackTrace, TestTimestamp ' +
+                            'from ApexTestResult ' +
+                            'where AsyncApexJobId in (\'' + lastJobId + '\') ' +
+                            'AND Outcome = \'Fail\' ' +
+                            'order by outcome desc, TestTimestamp desc';
+                        conn.query( query2, function( err, result ){
+                            if( err ){
+                                console.error( 'error found' ); console.error( err );
+                            } else {
+                                console.log( 'success' ); console.log( result );
+                                
+                                var record;
+                                var dt;
+                                for( var i = 0; i < result.records.length; i++ ){
+                                    record = result.records[i];
+                                    record.Name = record.ApexClass.Name;
+                                    dt = record.TestTimestamp.match( /(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)/i );
+                                    if( dt ){
+                                        record.TestDate = '' + dt[2] + '/' + dt[3] + '/' + dt[1] + ' ' + dt[4] + ':' + dt[5];
+                                    }
+                                }
+                                
+                                $scope.testFailures = result.records;
+                                $scope.$apply();
+                            }
+                        });
+                    }
+                });
+            })
+            
+            
+            
+            $scope.handleDownload = function(){
+                console.log( 'coverage download started' );
+                var scope = $scope;
+                
+                var resultFile='data:text/plain;charset=utf-8,TestResults:' + (new Date()).toString() + "\n\n";
+                
+                _.each( $scope.testFailures, function( record ){
+                    resultFile += "-    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -\n"
+                    resultFile += 'ApexClass.Name: ' + record.ApexClass.Name + "\n";
+                    resultFile += 'ApexClassId: ' + record.ApexClassId + "\n";
+                    resultFile += 'TestDate: ' + record.TestDate + "\n";
+                    resultFile += 'Outcome: ' + record.Outcome + "\n";
+                    resultFile += 'MethodName: ' + record.MethodName + "\n";
+                    resultFile += 'Message: ' + record.Message + "\n";
+                    resultFile += 'StackTrace: ' + record.StackTrace + "\n\n\n\n\n\n"
+                });
+                
+                fileDownloader.download( "TestFailures.txt", resultFile );
+            }
+            
+            $scope.downloadTasks = function(){
+                console.log( 'coverage download started' );
+                var scope = $scope;
+                
+                var resultFile='data:text/csv;charset=utf-8,' +
+                    "Task Index, Formatted ID, Name, Release, Iteration, State, Estimate, To Do, Owner, Work Product\n";
+                
+                var getMessageType  = function( obj ){
+                  var message = obj.Message;
+                  var shortMessage = '';
+                  if( message.indexOf( 'CANNOT_EXECUTE_FLOW_TRIGGER' ) > -1 ){
+                     shortMessage = '- flow error';
+                  } else if( message.indexOf( 'System.NullPointerException' ) > -1 ){
+                    shortMessage = '- NullPointerException';
+                  } else if( message.indexOf( 'System.AssertException' ) > -1 ){
+                    shortMessage = '- failed assertion';
+                  } else {
+                    var m = message.match( /caused by:\s*([^:\n]+)/i );
+                    if( m ){
+                      shortMessage = '- ' + m[1];
+                    } else {
+                      m = message.match( /System\.LimitException: (.+)/i );
+                      if( m ){
+                        shortMessage = '- LIMIT:' + m[1];
+                      }
+                    } 
+                  }
+                  return( shortMessage );
+                };
+                
+                var errorMessage;
+                _.each( $scope.testFailures, function( record ){
+                    
+                    resultFile += ',,';
+                    resultFile += 'TEST: ' + record.ApexClass.Name + '-' + record.MethodName + ':' + getMessageType( record );
+                    resultFile += ",,,Defined,,,," + brokenTestStory + "\n";
+                });
+                
+                fileDownloader.download( "TestFailuresTasks.csv", resultFile );
+            }
+            
+            $scope.popup = function( message ){
+                console.log( 'popup clicked' );
+                //alertify.alert( '<pre>' + message + '</pre>' );
+                alertify.alert( message );
+            }
+            
+            $scope.openRecord = function( recordId ){
+                $rootScope.$broadcast( 'openRecord', recordId );
+            }
+            
+            $rootScope.completeInitialization( 'lneTestResults' );
+        });
+        
+        /**
+         * Controller for the class coverage section
+         **/
+        app.controller( 'lneClassCoverage', function( $rootScope, $scope, conn, testFilter, testsToIgnore, testSuffix, fileDownloader ){
+            $scope.sorter = new TableSorter( 'ApexClass.Name', true );
+            //$scope.classCoverage = [{"attributes":{"type":"ApexCodeCoverageAggregate","url":"/services/data/v37.0/tooling/sobjects/ApexCodeCoverageAggregate/715R00000006cPYIAY"},"ApexClassOrTriggerId":"01qR0000000Dr7pIAC","ApexClassOrTrigger":{"attributes":{"type":"Name","url":"/services/data/v37.0/tooling/sobjects/ApexTrigger/01qR0000000Dr7pIAC"},"Name":"LNE_Account"},"NumLinesCovered":15,"NumLinesUncovered":0,"Coverage":{"coveredLines":[7,8,11,12,13,14,15,16,18,19,20,21,22,23,24],"uncoveredLines":[]}},{"attributes":{"type":"ApexCodeCoverageAggregate","url":"/services/data/v37.0/tooling/sobjects/ApexCodeCoverageAggregate/715R00000006caoIAA"},"ApexClassOrTriggerId":"01pR0000000IeqXIAS","ApexClassOrTrigger":{"attributes":{"type":"Name","url":"/services/data/v37.0/tooling/sobjects/ApexClass/01pR0000000IeqXIAS"},"Name":"LNE_AccountDMA_Autoassign_T"},"NumLinesCovered":70,"NumLinesUncovered":8,"Coverage":{"coveredLines":[18,19,21,25,26,28,31,32,34,37,38,40,41,43,44,46,47,50,51,52,57,58,59,61,63,65,66,70,71,72,73,75,82,83,85,88,92,95,97,100,103,104,105,108,111,119,120,124,127,130,132,133,138,139,142,143,144,147,153,156,158,161,169,170,173,180,191,192,195,196],"uncoveredLines":[22,98,163,164,174,175,199,200]}},{"attributes":{"type":"ApexCodeCoverageAggregate","url":"/services/data/v37.0/tooling/sobjects/ApexCodeCoverageAggregate/715R00000006cQ2IAI"},"ApexClassOrTriggerId":"01pR0000000IeZ2IAK","ApexClassOrTrigger":{"attributes":{"type":"Name","url":"/services/data/v37.0/tooling/sobjects/ApexClass/01pR0000000IeZ2IAK"},"Name":"LNE_AccountTermsUpdated_Batch"},"NumLinesCovered":55,"NumLinesUncovered":3,"Coverage":{"coveredLines":[28,35,36,43,44,45,48,51,52,55,57,59,60,63,66,68,69,73,76,77,80,81,83,84,85,89,90,93,94,99,100,102,109,112,113,115,116,124,125,133,140,141,145,146,148,151,172,173,174,175,176,177,178,179,180],"uncoveredLines":[39,40,96]}},{"attributes":{"type":"ApexCodeCoverageAggregate","url":"/services/data/v37.0/tooling/sobjects/ApexCodeCoverageAggregate/715R00000006cQ7IAI"},"ApexClassOrTriggerId":"01pR0000000IeZ7IAK","ApexClassOrTrigger":{"attributes":{"type":"Name","url":"/services/data/v37.0/tooling/sobjects/ApexClass/01pR0000000IeZ7IAK"},"Name":"LNE_AccountTermsUpdated_BatchSchedule"},"NumLinesCovered":5,"NumLinesUncovered":0,"Coverage":{"coveredLines":[14,17,19,20,21],"uncoveredLines":[]}},{"attributes":{"type":"ApexCodeCoverageAggregate","url":"/services/data/v37.0/tooling/sobjects/ApexCodeCoverageAggregate/715R00000006cOxIAI"},"ApexClassOrTriggerId":"01pR0000000IeXaIAK","ApexClassOrTrigger":{"attributes":{"type":"Name","url":"/services/data/v37.0/tooling/sobjects/ApexClass/01pR0000000IeXaIAK"},"Name":"LNE_AccountTermsUpdated_T"},"NumLinesCovered":48,"NumLinesUncovered":0,"Coverage":{"coveredLines":[27,29,32,33,35,36,38,39,42,45,46,47,48,50,51,52,53,55,56,62,63,73,74,76,77,78,79,80,81,82,88,89,90,93,96,97,98,99,100,101,103,104,105,107,116,117,119,121],"uncoveredLines":[]}}];
+            
+            $scope.totalLines;
+            $scope.coveredLines;
+            $scope.coveredPct;
+            $scope.showAll=false;
+            
+            $scope.openRecord = function( recordId ){
+                $rootScope.$broadcast( 'openRecord', recordId );
+            }
+            
+            $scope.showCoverage = function( recordId ){
+                console.log( 'showCoverage' );
+                var record = $scope.findRecordByField( 'ApexClassOrTriggerId', recordId );
+
+                //console.log( record );
+                if( record.Coverage.uncoveredLines && record.Coverage.uncoveredLines.length > 0 ){
+                    alertify.alert( 'uncoveredLines: ' + record.Coverage.uncoveredLines.join(', ') );
+                } else if( record.Coverage.coveredLines && record.Coverage.coveredLines.length > 0 ){
+                    alertify.alert( 'All lines covered' );
+                } else {
+                    alertify.alert( "<pre>No coverage found.\n" +
+                        "Either no tests found or related tests failed.</pre>" );
+                }
+            }
+            
+            $scope.findRecordByField = function( fieldName, value ){
+                var record;
+                if( $scope.classCoverage ){
+                    for( var i = 0; i < $scope.classCoverage.length; i++ ){
+                        record = $scope.classCoverage[i];
+                        if( record[fieldName] == value ){
+                            return( record );
+                        }
+                    }
+                }
+                return( null );
+            }
+            
+            $scope.handleDownload = function(){
+                console.log( 'coverage download started' );
+                var scope = $scope;
+                console.log( $scope.classCoverage );
+                
+                var csvContent= 'data:text/csv;charset=utf-8,' +
+                    "Id, Name, Poor Coverage, Coverage Pct, Total Lines, Uncovered Lines, Covered Lines\n";
+                _.each( $scope.classCoverage, function( record, index ){
+                    //console.log( 'record' ); console.log( record );
+                    csvContent += '"' + record.ApexClassOrTriggerId + '","' + record.ApexClassOrTrigger.Name + '","' + record.PoorCoverage + '","' + record.CoveragePct + '","' + record.TotalLines + '","';
+                    if( record.Coverage && record.Coverage.uncoveredLines ){
+                        csvContent += record.Coverage.uncoveredLines + '","';
+                    } else {
+                        csvContent += '","';
+                    }
+                    if( record.Coverage && record.Coverage.coveredLines ){
+                        csvContent += record.Coverage.coveredLines + '"';
+                    } else {
+                        csvContent += '"';
+                    }
+                    csvContent += "\n";
+                });
+                
+                fileDownloader.download( 'coverage.csv', csvContent );
+                /*
+                try {
+                    var encodedURI = encodeURI( csvContent );
+                    var link=document.createElement("a");
+                    link.setAttribute("href", encodedURI );
+                    link.setAttribute( "download", "coverage.csv" );
+                    
+                    document.body.appendChild( link );
+                    link.click();
+                    document.body.removeChild( link );
+                } catch( err ){
+                    console.error( "error occurred while printing out the results" );
+                    console.log( csvContent );
+                    try {
+                        document.body.removeChild( link );
+                    } catch(err){}
+                }
+                */
+            }
+            
+            $rootScope.$on( 'reloadRequested', function( event, args ){
+                console.log( 'reload was requested. received by lne classCoverage' );
+                
+                var nameFilter = 'where ApexClassOrTrigger.Name like \'' + testFilter + '\' ';
+                
+                //-- get code coverage
+                var query = 'SELECT ApexClassOrTriggerId, ApexClassOrTrigger.Name, NumLinesCovered, NumLinesUncovered, Coverage ' +
+                    'FROM ApexCodeCoverageAggregate ' +
+                    ( $scope.showAll !== true ? nameFilter : '' ) +
+                    'order by ApexClassOrTrigger.Name asc ';
+                conn.tooling.query( query, function( err, result ){
+                    if( err ){
+                        console.log( 'error found:' ); console.log( err );
+                    } else {
+                        console.log( 'success' ); console.log( result );
+                        var record;
+                        var results = [];
+                        var classUpperName;
+                        console.log( 'testsToIgnore:' + testsToIgnore );
+                        console.log( 'testSuffix:' + testSuffix );
+                        
+                        var totalLines = 0;
+                        var coveredLines = 0;
+                        
+                        if( result.records ){
+                            for( var i = 0; i < result.records.length; i++ ){
+                                
+                                record = result.records[i];
+                                classUpperName = record.ApexClassOrTrigger.Name.toUpperCase();
+                                record.classUpperName = classUpperName;
+                                
+                                if( $scope.showAll !== true && classUpperName.endsWith( testSuffix )){
+                                    console.log( 'ignoring:' + classUpperName );
+                                } else if( $scope.showAll !== true && testsToIgnore.indexOf( classUpperName ) > -1 ){
+                                    console.log( 'ignoring class:' + classUpperName );
+                                } else {
+                                    record.TotalLines = record.NumLinesCovered + record.NumLinesUncovered;
+                                    record.CoveragePct = (record.NumLinesCovered / record.TotalLines) * 100;
+                                    
+                                    totalLines += record.TotalLines;
+                                    coveredLines += record.NumLinesCovered;
+                                    
+                                    if( !record.CoveragePct ){
+                                        record.CoveragePct = 0;
+                                    }
+                                    record.PoorCoverage = record.CoveragePct < 75;
+                                    results.push( record );
+                                }
+                            }
+                        }
+                        
+                        $scope.totalLines = totalLines;
+                        $scope.coveredLines = coveredLines;
+                        $scope.coveredPct = (coveredLines / totalLines );
+                        
+                        $scope.classCoverage = results;
+                        $scope.$apply();
+                    }
+                });
+            })
+            
+            $scope.listAllHandler = function(){
+            	$rootScope.$broadcast( 'reloadRequested', 1,'2-3' );
+            }
+            
+            $rootScope.completeInitialization( 'lneClassCoverage' );
+        });
+        
+        
+        /**
+         * Start method for the app
+         **/
+        app.run( function( $rootScope, conn, testRunner, testFilter, testsToIgnore, testSuffix ){
+            console.log( 'rootscope called' );
+            
+            $rootScope.initStatus = { lneTestResults: false, lneClassCoverage: false };
+            $rootScope.completeInitialization = function( groupType ){
+                //debugger;
+                $rootScope.initStatus[groupType] = true;
+                if( $rootScope.isInitialized() ){
+                    $rootScope.$broadcast( 'reloadRequested', 1,'2-3' );
+                }
+            }
+            $rootScope.isInitialized = function(){
+                //debugger;
+                for( var fieldName in $rootScope.initStatus ){
+                    if( $rootScope.initStatus.hasOwnProperty( fieldName )){
+                        if( !$rootScope.initStatus[fieldName] ){
+                            return(false);
+                        }
+                    }
+                }
+                return( true );
+            }
+            
+            $rootScope.$on( 'openRecord', function( event, recordId ){
+                console.log( 'open record requested' );
+                //sforce.one.navigateToSObject( recordId );
+                window.open( window.location.origin + '/' + recordId );
+            });
+            
+            
+        });
+        
+        
+        
+        console.log( 'page finished loading' );
+    </script>
+    <!-- / JAVASCRIPT -->
+    
+</body>
+</html>
+</apex:page>

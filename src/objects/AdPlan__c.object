@@ -1,0 +1,2193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Ad_Plan_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Ad_Plan_Compact_Page_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Ad_Plan_Compact_Page_Layout</fullName>
+        <fields>AdPlanTitle__c</fields>
+        <fields>EventDate__c</fields>
+        <fields>PrimaryHeadlinerArtist__c</fields>
+        <fields>Venue__c</fields>
+        <fields>PublicOnSale__c</fields>
+        <fields>OwnerId</fields>
+        <fields>LastModifiedById</fields>
+        <label>Ad Plan Compact Page Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Marketing plan for events</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AdPlanName__c</fullName>
+        <externalId>false</externalId>
+        <label>Ad Plan Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AdPlanNotRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Ad Plan Not Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AdPlanPartOfTour__c</fullName>
+        <description>Indicator used in Wave to check if the Ad Plan/Event is part of the Tour</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( Tour__c )), TRUE, FALSE)</formula>
+        <label>AdPlanPartOfTour?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AdPlanTitle__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name &amp; &quot; - &quot; &amp; AdPlanName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ad Plan Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AdPlanWithEvent__c</fullName>
+        <description>True if Ad Plan is associated with an Event</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK( Event__c )), TRUE, FALSE)</formula>
+        <inlineHelpText>True if Ad Plan is associated with an Event</inlineHelpText>
+        <label>AdPlan With Event?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Artists__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist(s)</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CloseEnd__c</fullName>
+        <externalId>false</externalId>
+        <label>Close End</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CloseStart__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Start</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CurrencyDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyExchange__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Currency Exchange</label>
+        <referenceTo>CurrencyExchange__c</referenceTo>
+        <relationshipLabel>Ad Plans</relationshipLabel>
+        <relationshipName>Ad_Plans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DigitalDefaultCommission__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Digital Default Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DigitalSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>DigitalSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Digital Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DigitalSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Digital Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Digital</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>Drives sharing rules to provide read-only access to other division members</description>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventDateTime__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event Date Time</label>
+        <referenceTo>EventDateTime__c</referenceTo>
+        <relationshipName>AdPlans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Event__c),  StandaloneDate__c,  Event__r.EventLastDate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.EventName__c</formula>
+        <label>Event Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>Event__c</referenceTo>
+        <relationshipName>AdPlans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ExemptionReason__c</fullName>
+        <externalId>false</externalId>
+        <label>Exemption Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FirstDate__c</fullName>
+        <externalId>false</externalId>
+        <label>First Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Geography__c</fullName>
+        <externalId>false</externalId>
+        <label>Geography</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LNEAPIID__c</fullName>
+        <externalId>true</externalId>
+        <label>LNE API ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LNEAdPlanBudget__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Ad Plan Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNESpend__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>LastDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MaintenanceEnd__c</fullName>
+        <externalId>false</externalId>
+        <label>Maintenance End</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MaintenanceStart__c</fullName>
+        <externalId>false</externalId>
+        <label>Maintenance Start</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Market</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-LNE Budget</label>
+        <summarizedField>NonLNEBudget__c.Budget__c</summarizedField>
+        <summaryForeignKey>NonLNEBudget__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>NonLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-LNE Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OfficeName__c</fullName>
+        <description>Drives sharing rules to provide edit access to other office members</description>
+        <externalId>false</externalId>
+        <label>Office Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OnSaleEnd__c</fullName>
+        <externalId>false</externalId>
+        <label>On Sale End</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OnSaleStart__c</fullName>
+        <externalId>false</externalId>
+        <label>On Sale Start</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OutdoorDefaultCommission__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Outdoor Default Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OutdoorSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>OutdoorSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outdoor Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OutdoorSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Outdoor Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Outdoor</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryHeadlinerArtist__c</fullName>
+        <description>Automatically populated via trigger on Deal and Event PB Flow</description>
+        <externalId>false</externalId>
+        <label>Primary Headliner Artist</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrimaryVenueOffice__c</fullName>
+        <description>Drives sharing rules to provide edit access to marketing members of the venue&apos;s primary office</description>
+        <externalId>false</externalId>
+        <label>Primary Venue Office</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrintDefaultCommission__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Print Default Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PrintSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>PrintSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Print Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PrintSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Print Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Print</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ProductionMiscellaneousSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProductionMiscellaneousSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Production/Miscellaneous Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ProductionMiscellaneousSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Production/Miscellaneous Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Production/Miscellaneous</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>PublicOnSale__c</fullName>
+        <externalId>false</externalId>
+        <label>Public On Sale</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PurchaseURL__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchase URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RadioDefaultCommission__c</fullName>
+        <defaultValue>0.15</defaultValue>
+        <externalId>false</externalId>
+        <label>Radio Default Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RadioSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>RadioSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Radio Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RadioSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Radio Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Radio</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RecordTypeName__c</fullName>
+        <externalId>false</externalId>
+        <formula>RecordType.DeveloperName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Type Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RemainingLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>LNEAdPlanBudget__c -  TotalLNESpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining LNE Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RemainingNonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>NonLNEBudget__c -  NonLNESpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Non-LNE Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_for_Currency_Recalc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF 
+( 
+ISNULL(CurrencyExchange__c), 
+TRUE, 
+IF 
+( 
+ISNULL(CurrencyDate__c), 
+IF 
+( 
+CurrencyExchange__r.IsCurrent__c = FALSE, 
+TRUE, 
+FALSE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = FALSE) , 
+IF 
+( 
+AND(CurrencyExchange__r.StartDate__c &lt;= CurrencyDate__c, CurrencyExchange__r.EndDate__c &gt;= CurrencyDate__c), 
+FALSE, 
+TRUE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = TRUE), 
+IF 
+( 
+(CurrencyExchange__r.StartDate__c &gt; CurrencyDate__c) = TRUE, 
+TRUE, 
+FALSE 
+) , 
+TRUE 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled for Currency Recalc</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>StandaloneDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Standalone Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Assigned</fullName>
+                    <default>false</default>
+                    <label>Assigned</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TVDefaultCommission__c</fullName>
+        <defaultValue>0.15</defaultValue>
+        <externalId>false</externalId>
+        <label>TV Default Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TelevisionSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>TelevisionSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Television Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TelevisionSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Television Spend</label>
+        <summarizedField>Advertisement__c.NetCostToAdPlan__c</summarizedField>
+        <summaryFilterItems>
+            <field>Advertisement__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Television</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Advertisement__c.HasNonLNEBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Advertisement__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>TotalLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>LNESpend__c + TourSpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total LNE Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TourBudgetPercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour Budget %</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TourBudgetRemaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourBudget__c - TourSpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tour Budget Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TourBudget__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TourDigitalSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourDigitalSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tour Digital Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TourDigitalSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour Digital Spend</label>
+        <summarizedField>TourCampaignAdPlan__c.AllocatedAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaignAdPlan__c.TourCampaignType__c</field>
+            <operation>equals</operation>
+            <value>Digital</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>TourCampaignAdPlan__c.HasNonLNETourBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaignAdPlan__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>TourName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Tour__r.TourName__c</formula>
+        <label>Tour Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TourOtherSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>TourOtherSpend__c / (LNESpend__c + TourSpend__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tour Other Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TourOtherSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour Other Spend</label>
+        <summarizedField>TourCampaignAdPlan__c.AllocatedAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaignAdPlan__c.TourCampaignType__c</field>
+            <operation>equals</operation>
+            <value>Misc,Production</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>TourCampaignAdPlan__c.HasNonLNETourBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaignAdPlan__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>TourSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour Spend</label>
+        <summarizedField>TourCampaignAdPlan__c.AllocatedAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaignAdPlan__c.HasNonLNETourBudget__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaignAdPlan__c.AdPlan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Tour__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tour</label>
+        <referenceTo>Tour__c</referenceTo>
+        <relationshipLabel>Ad Plans</relationshipLabel>
+        <relationshipName>Ad_Plans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VenueOwnership__c</fullName>
+        <description>Drives sharing rules to provide edit access to booking members of the venue&apos;s primary office when Owned/Operated</description>
+        <externalId>false</externalId>
+        <label>Venue Ownership</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Venue__r.VenueName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Venue</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxDigitalSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(DigitalSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Digital Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEAdPlanBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEAdPlanBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Ad Plan Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNESpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NonLNEBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Non-LNE Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNonLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NonLNESpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Non-LNE Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOutdoorSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OutdoorSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Outdoor Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPrintSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PrintSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Print Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProductionMiscellaneousSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProductionMiscellaneousSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Production/Miscellaneous Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRadioSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RadioSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Radio Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRemainingLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RemainingLNEBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Remaining LNE Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRemainingNonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RemainingNonLNEBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Remaining Non-LNE Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTelevisionSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TelevisionSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Television Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalLNESpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total LNE Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTourBudgetRemaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TourBudgetRemaining__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Tour Budget Remaining (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTourBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TourBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Tour Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTourDigitalSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TourDigitalSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Tour Digital Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTourOtherSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TourOtherSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Tour Other Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTourSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TourSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Tour Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>uiGridVisibility__c</fullName>
+        <defaultValue>&quot;|radio=false|digital=false|television=false|print=false|outdoor=false|productionmiscellaneous=false|&quot;</defaultValue>
+        <description>Used by Visualforce to determine what grids are visible or not on the Ad Plan Record page (Plan subtab initially)</description>
+        <externalId>false</externalId>
+        <label>uiGridVisibility</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Ad Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Event__c</columns>
+        <columns>AdPlanName__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>MyAdPlansInProgress</fullName>
+        <columns>NAME</columns>
+        <columns>AdPlanName__c</columns>
+        <columns>Venue__c</columns>
+        <columns>RemainingLNEBudget__c</columns>
+        <columns>LNEAdPlanBudget__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Draft,Assigned</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <label>My Ad Plans In Progress</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AP-{000000}</displayFormat>
+        <label>Ad Plan ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Ad Plans</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Local</fullName>
+        <active>true</active>
+        <description>Local record type designated for marketing plans to a specific region</description>
+        <label>Local</label>
+        <picklistValues>
+            <picklist>Market__c</picklist>
+            <values>
+                <fullName>Albany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Albuquerque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amarillo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ames</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anchcorage%2C AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appleton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aspen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlanta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Augusta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Austin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baltimore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baton Rouge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bay Area</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beaumont</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biloxi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Birmingham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bonnyville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boston</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bozeman</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brandon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Buffalo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burlington%2C VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burnaby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calgary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charleston%2C SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charleston%2C WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charlotte</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Charlottetown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chattanooga</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cheyenne%2C WY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chicago</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chilliwack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cincinnati</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleveland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colorado Springs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Columbia - SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Columbus%2C OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corpus Christi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cranbrook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dallas- Fort Worth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Davenport%2C IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dawson Creek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dayton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Des Moines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detroit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dodge City</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duncan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edmonton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>El Paso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estevan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eugene</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evanston</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evansville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fargo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Farmington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fort Myers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fort Nelson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fort Wayne-IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fresno%2C CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gainesville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand Forks%2C ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand Rapids%2C MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grande Prairie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Falls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Bay%2C WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greensboro - Winston Salem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greenville - Spartanburg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hamilton%2C ON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hampton - NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hampton Roads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hartford %2F New Haven</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hartford- Stafford Springs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honolulu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Houston</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Huntsville%2C AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indianapolis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jackson - MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jacksonville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joliet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kamloops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kansas City</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kelowna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kitchener%2C ON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knoxville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lafayette</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laredo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Las Cruces</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Las Vegas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lethbridge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lexington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lincoln</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Little Rock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>London</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Los Angeles - Orange County</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louisville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lubbock%2C TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Madison</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manchester</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mankato</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicine Hat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Memphis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mexico City</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miami</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Milwaukee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minneapolis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missoula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moncton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montreal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moose Jaw</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Muskegon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Myrtle Beach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NYC - Long Island</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nanaimo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nashville</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nelson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Jersey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Mexico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Orleans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Westminster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oakland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oklahoma City</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omaha</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orlando</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ottawa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Palm Springs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pemberton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pensacola</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Penticton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peoria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Philadelphia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phoenix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pittsburgh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portland%2C OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portland%2FMaine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prince Albert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prince George</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Providence %2F New Bedford</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provo%2FOrem UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Raleigh %2F Durham</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red Deer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reno</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Richmond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Roanoke %2F Lynchburg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rochester</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rockford</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sacramento - Stockton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salt Lake City</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Antonio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Diego</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Francisco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Jose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Juan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saskatoon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savannah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seattle - Tacoma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shrevport%2C LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Bend%2C IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Dakota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Springfield%2C IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Springfield%2C MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>St%2E Louis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surrey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Syracuse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tampa- St%2E Petersburg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toledo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Topeka - KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toronto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tucson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tulsa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tupleo%2C MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undefined Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vancouver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vernon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victoria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virginia Beach - Norfolk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waco%2FTemple%2FBryan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington%2C DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waterloo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waterloo%2C ON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wausau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West Palm Beach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wheeling%2FWV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Whistler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wichita</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wilkes-Barre %2F Scranton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Winnipeg%2C MB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellowknife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Youngstown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ypsilanti%2C MI</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>AdPlanName__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventDateTime__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RecordTypeName__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>AdPlanName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventDateTime__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RecordTypeName__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>LNE_AdPlanBudget</fullName>
+        <active>true</active>
+        <description>LNE Ad Plan Budget is required if Event is null</description>
+        <errorConditionFormula>ISBLANK(LNEAdPlanBudget__c) &amp;&amp; ISBLANK(Event__c) &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>LNEAdPlanBudget__c</errorDisplayField>
+        <errorMessage>LNE Ad Plan Budget is required if Event is not specified</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_AdPlanName</fullName>
+        <active>true</active>
+        <description>Ad Plan Name is required if Event is null</description>
+        <errorConditionFormula>ISBLANK(AdPlanName__c) &amp;&amp;  ISBLANK(Event__c)&amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>AdPlanName__c</errorDisplayField>
+        <errorMessage>Ad Plan Name is required if Event is not specified</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_EventChildOffice</fullName>
+        <active>true</active>
+        <description>Checks to see if the user has access to the events office/division. If not, user can not create child records related to the event.</description>
+        <errorConditionFormula>!CONTAINS( &apos;,&apos; + $User.OfficeAccess__c + &apos;,&apos;,
+&apos;,&apos; + Event__r.Office__r.OfficeID__c + &apos;,&apos;)
+&amp;&amp; Event__c &lt;&gt; NULL
+&amp;&amp; !$Setup.GeneralSettings__c.GlobalDataAdministrator__c
+&amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+
+/* Financial Calculator is running and making updates */
+!$Setup.GeneralSettings__c.BypassPBFlow__c</errorConditionFormula>
+        <errorMessage>You cannot create child records of the event because you do not have authorized access to the events office/division</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_ExemptionReasonBlank</fullName>
+        <active>true</active>
+        <description>If Ad Plan Not Required is not checked and was previously not checked, Exemption Reason must be blank.</description>
+        <errorConditionFormula>AdPlanNotRequired__c = FALSE &amp;&amp; PRIORVALUE(AdPlanNotRequired__c) = FALSE &amp;&amp; NOT(ISBLANK(ExemptionReason__c)) &amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>AdPlanNotRequired__c</errorDisplayField>
+        <errorMessage>Ad Plan Not Required should be checked or Exemption Reason must be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_ExemptionReasonNotBlank</fullName>
+        <active>true</active>
+        <description>If Ad Plan Not Required is checked, then Exemption Reason can&apos;t be blank.</description>
+        <errorConditionFormula>AdPlanNotRequired__c = TRUE &amp;&amp;  ISBLANK(ExemptionReason__c) &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>ExemptionReason__c</errorDisplayField>
+        <errorMessage>If Ad Plan Not Required is checked, then Exemption Reason is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_StandAloneDate</fullName>
+        <active>true</active>
+        <description>If ad plan is standalone (not associated with an event), standalone date is required.</description>
+        <errorConditionFormula>ISBLANK(Event__c) &amp;&amp; ISBLANK(StandaloneDate__c)&amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>StandaloneDate__c</errorDisplayField>
+        <errorMessage>If ad plan is standalone, standalone date is required.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Promotions_Report</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Promotions Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>{!$Site.Prefix}/one/one.app?source=aloha#/sObject/00OR0000001BQjf/view?a:t=1489106355293&amp;fv0={!AdPlan__c.Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Run_DDP</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Run Document Package</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__looplus?eid={!AdPlan__c.Id}</url>
+    </webLinks>
+</CustomObject>

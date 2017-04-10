@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Canada Touring</fullName>
+        <default>false</default>
+        <label>Canada Touring</label>
+    </customValue>
+    <customValue>
+        <fullName>Comedy Touring</fullName>
+        <default>false</default>
+        <label>Comedy Touring</label>
+    </customValue>
+    <customValue>
+        <fullName>EDM Touring</fullName>
+        <default>false</default>
+        <label>EDM Touring</label>
+    </customValue>
+    <customValue>
+        <fullName>Global Touring</fullName>
+        <default>false</default>
+        <label>Global Touring</label>
+    </customValue>
+    <customValue>
+        <fullName>NAC Touring</fullName>
+        <default>false</default>
+        <label>NAC Touring</label>
+    </customValue>
+    <customValue>
+        <fullName>T&amp;C Touring</fullName>
+        <default>false</default>
+        <label>T&amp;C Touring</label>
+    </customValue>
+    <customValue>
+        <fullName>Local Offer</fullName>
+        <default>false</default>
+        <label>Local Offer</label>
+    </customValue>
+    <masterLabel>Buying Group</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

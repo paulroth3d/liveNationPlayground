@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Albany</fullName>
+        <default>false</default>
+        <label>Albany</label>
+    </customValue>
+    <customValue>
+        <fullName>Albuquerque</fullName>
+        <default>false</default>
+        <label>Albuquerque</label>
+    </customValue>
+    <customValue>
+        <fullName>Amarillo</fullName>
+        <default>false</default>
+        <label>Amarillo</label>
+    </customValue>
+    <customValue>
+        <fullName>Ames</fullName>
+        <default>false</default>
+        <label>Ames</label>
+    </customValue>
+    <customValue>
+        <fullName>Anchcorage, AK</fullName>
+        <default>false</default>
+        <label>Anchcorage, AK</label>
+    </customValue>
+    <customValue>
+        <fullName>Appleton</fullName>
+        <default>false</default>
+        <label>Appleton</label>
+    </customValue>
+    <customValue>
+        <fullName>Aspen</fullName>
+        <default>false</default>
+        <label>Aspen</label>
+    </customValue>
+    <customValue>
+        <fullName>Atlanta</fullName>
+        <default>false</default>
+        <label>Atlanta</label>
+    </customValue>
+    <customValue>
+        <fullName>Augusta</fullName>
+        <default>false</default>
+        <label>Augusta</label>
+    </customValue>
+    <customValue>
+        <fullName>Austin</fullName>
+        <default>false</default>
+        <label>Austin</label>
+    </customValue>
+    <customValue>
+        <fullName>Baltimore</fullName>
+        <default>false</default>
+        <label>Baltimore</label>
+    </customValue>
+    <customValue>
+        <fullName>Banff</fullName>
+        <default>false</default>
+        <label>Banff</label>
+    </customValue>
+    <customValue>
+        <fullName>Baton Rouge</fullName>
+        <default>false</default>
+        <label>Baton Rouge</label>
+    </customValue>
+    <customValue>
+        <fullName>Bay Area</fullName>
+        <default>false</default>
+        <label>Bay Area</label>
+    </customValue>
+    <customValue>
+        <fullName>Beaumont</fullName>
+        <default>false</default>
+        <label>Beaumont</label>
+    </customValue>
+    <customValue>
+        <fullName>Billings</fullName>
+        <default>false</default>
+        <label>Billings</label>
+    </customValue>
+    <customValue>
+        <fullName>Biloxi</fullName>
+        <default>false</default>
+        <label>Biloxi</label>
+    </customValue>
+    <customValue>
+        <fullName>Birmingham</fullName>
+        <default>false</default>
+        <label>Birmingham</label>
+    </customValue>
+    <customValue>
+        <fullName>Boise</fullName>
+        <default>false</default>
+        <label>Boise</label>
+    </customValue>
+    <customValue>
+        <fullName>Bonnyville</fullName>
+        <default>false</default>
+        <label>Bonnyville</label>
+    </customValue>
+    <customValue>
+        <fullName>Boston</fullName>
+        <default>false</default>
+        <label>Boston</label>
+    </customValue>
+    <customValue>
+        <fullName>Bozeman</fullName>
+        <default>false</default>
+        <label>Bozeman</label>
+    </customValue>
+    <customValue>
+        <fullName>Brandon</fullName>
+        <default>false</default>
+        <label>Brandon</label>
+    </customValue>
+    <customValue>
+        <fullName>Branson</fullName>
+        <default>false</default>
+        <label>Branson</label>
+    </customValue>
+    <customValue>
+        <fullName>Buffalo</fullName>
+        <default>false</default>
+        <label>Buffalo</label>
+    </customValue>
+    <customValue>
+        <fullName>Burlington, VT</fullName>
+        <default>false</default>
+        <label>Burlington, VT</label>
+    </customValue>
+    <customValue>
+        <fullName>Burnaby</fullName>
+        <default>false</default>
+        <label>Burnaby</label>
+    </customValue>
+    <customValue>
+        <fullName>Calgary</fullName>
+        <default>false</default>
+        <label>Calgary</label>
+    </customValue>
+    <customValue>
+        <fullName>Charleston, SC</fullName>
+        <default>false</default>
+        <label>Charleston, SC</label>
+    </customValue>
+    <customValue>
+        <fullName>Charleston, WV</fullName>
+        <default>false</default>
+        <label>Charleston, WV</label>
+    </customValue>
+    <customValue>
+        <fullName>Charlotte</fullName>
+        <default>false</default>
+        <label>Charlotte</label>
+    </customValue>
+    <customValue>
+        <fullName>Charlottetown</fullName>
+        <default>false</default>
+        <label>Charlottetown</label>
+    </customValue>
+    <customValue>
+        <fullName>Chattanooga</fullName>
+        <default>false</default>
+        <label>Chattanooga</label>
+    </customValue>
+    <customValue>
+        <fullName>Cheyenne, WY</fullName>
+        <default>false</default>
+        <label>Cheyenne, WY</label>
+    </customValue>
+    <customValue>
+        <fullName>Chicago</fullName>
+        <default>false</default>
+        <label>Chicago</label>
+    </customValue>
+    <customValue>
+        <fullName>Chilliwack</fullName>
+        <default>false</default>
+        <label>Chilliwack</label>
+    </customValue>
+    <customValue>
+        <fullName>Cincinnati</fullName>
+        <default>false</default>
+        <label>Cincinnati</label>
+    </customValue>
+    <customValue>
+        <fullName>Cleveland</fullName>
+        <default>false</default>
+        <label>Cleveland</label>
+    </customValue>
+    <customValue>
+        <fullName>Colorado Springs</fullName>
+        <default>false</default>
+        <label>Colorado Springs</label>
+    </customValue>
+    <customValue>
+        <fullName>Columbia - SC</fullName>
+        <default>false</default>
+        <label>Columbia - SC</label>
+    </customValue>
+    <customValue>
+        <fullName>Columbus, OH</fullName>
+        <default>false</default>
+        <label>Columbus, OH</label>
+    </customValue>
+    <customValue>
+        <fullName>Corpus Christi</fullName>
+        <default>false</default>
+        <label>Corpus Christi</label>
+    </customValue>
+    <customValue>
+        <fullName>Cranbrook</fullName>
+        <default>false</default>
+        <label>Cranbrook</label>
+    </customValue>
+    <customValue>
+        <fullName>Dallas- Fort Worth</fullName>
+        <default>false</default>
+        <label>Dallas- Fort Worth</label>
+    </customValue>
+    <customValue>
+        <fullName>Davenport, IA</fullName>
+        <default>false</default>
+        <label>Davenport, IA</label>
+    </customValue>
+    <customValue>
+        <fullName>Dawson Creek</fullName>
+        <default>false</default>
+        <label>Dawson Creek</label>
+    </customValue>
+    <customValue>
+        <fullName>Dayton</fullName>
+        <default>false</default>
+        <label>Dayton</label>
+    </customValue>
+    <customValue>
+        <fullName>Denver</fullName>
+        <default>false</default>
+        <label>Denver</label>
+    </customValue>
+    <customValue>
+        <fullName>Des Moines</fullName>
+        <default>false</default>
+        <label>Des Moines</label>
+    </customValue>
+    <customValue>
+        <fullName>Detroit</fullName>
+        <default>false</default>
+        <label>Detroit</label>
+    </customValue>
+    <customValue>
+        <fullName>Dodge City</fullName>
+        <default>false</default>
+        <label>Dodge City</label>
+    </customValue>
+    <customValue>
+        <fullName>Duncan</fullName>
+        <default>false</default>
+        <label>Duncan</label>
+    </customValue>
+    <customValue>
+        <fullName>Edmonton</fullName>
+        <default>false</default>
+        <label>Edmonton</label>
+    </customValue>
+    <customValue>
+        <fullName>El Paso</fullName>
+        <default>false</default>
+        <label>El Paso</label>
+    </customValue>
+    <customValue>
+        <fullName>Estevan</fullName>
+        <default>false</default>
+        <label>Estevan</label>
+    </customValue>
+    <customValue>
+        <fullName>Eugene</fullName>
+        <default>false</default>
+        <label>Eugene</label>
+    </customValue>
+    <customValue>
+        <fullName>Evanston</fullName>
+        <default>false</default>
+        <label>Evanston</label>
+    </customValue>
+    <customValue>
+        <fullName>Evansville</fullName>
+        <default>false</default>
+        <label>Evansville</label>
+    </customValue>
+    <customValue>
+        <fullName>Fargo</fullName>
+        <default>false</default>
+        <label>Fargo</label>
+    </customValue>
+    <customValue>
+        <fullName>Farmington</fullName>
+        <default>false</default>
+        <label>Farmington</label>
+    </customValue>
+    <customValue>
+        <fullName>Fort Myers</fullName>
+        <default>false</default>
+        <label>Fort Myers</label>
+    </customValue>
+    <customValue>
+        <fullName>Fort Nelson</fullName>
+        <default>false</default>
+        <label>Fort Nelson</label>
+    </customValue>
+    <customValue>
+        <fullName>Fort Wayne-IN</fullName>
+        <default>false</default>
+        <label>Fort Wayne-IN</label>
+    </customValue>
+    <customValue>
+        <fullName>Fresno, CA</fullName>
+        <default>false</default>
+        <label>Fresno, CA</label>
+    </customValue>
+    <customValue>
+        <fullName>Gainesville</fullName>
+        <default>false</default>
+        <label>Gainesville</label>
+    </customValue>
+    <customValue>
+        <fullName>Grand Forks, ND</fullName>
+        <default>false</default>
+        <label>Grand Forks, ND</label>
+    </customValue>
+    <customValue>
+        <fullName>Grand Rapids, MI</fullName>
+        <default>false</default>
+        <label>Grand Rapids, MI</label>
+    </customValue>
+    <customValue>
+        <fullName>Grande Prairie</fullName>
+        <default>false</default>
+        <label>Grande Prairie</label>
+    </customValue>
+    <customValue>
+        <fullName>Great Falls</fullName>
+        <default>false</default>
+        <label>Great Falls</label>
+    </customValue>
+    <customValue>
+        <fullName>Green Bay, WI</fullName>
+        <default>false</default>
+        <label>Green Bay, WI</label>
+    </customValue>
+    <customValue>
+        <fullName>Greensboro - Winston Salem</fullName>
+        <default>false</default>
+        <label>Greensboro - Winston Salem</label>
+    </customValue>
+    <customValue>
+        <fullName>Greenville - Spartanburg</fullName>
+        <default>false</default>
+        <label>Greenville - Spartanburg</label>
+    </customValue>
+    <customValue>
+        <fullName>Hamilton, ON</fullName>
+        <default>false</default>
+        <label>Hamilton, ON</label>
+    </customValue>
+    <customValue>
+        <fullName>Hampton - NH</fullName>
+        <default>false</default>
+        <label>Hampton - NH</label>
+    </customValue>
+    <customValue>
+        <fullName>Hampton Roads</fullName>
+        <default>false</default>
+        <label>Hampton Roads</label>
+    </customValue>
+    <customValue>
+        <fullName>Hartford / New Haven</fullName>
+        <default>false</default>
+        <label>Hartford / New Haven</label>
+    </customValue>
+    <customValue>
+        <fullName>Hartford- Stafford Springs</fullName>
+        <default>false</default>
+        <label>Hartford- Stafford Springs</label>
+    </customValue>
+    <customValue>
+        <fullName>Honolulu</fullName>
+        <default>false</default>
+        <label>Honolulu</label>
+    </customValue>
+    <customValue>
+        <fullName>Houston</fullName>
+        <default>false</default>
+        <label>Houston</label>
+    </customValue>
+    <customValue>
+        <fullName>Huntsville, AL</fullName>
+        <default>false</default>
+        <label>Huntsville, AL</label>
+    </customValue>
+    <customValue>
+        <fullName>Indianapolis</fullName>
+        <default>false</default>
+        <label>Indianapolis</label>
+    </customValue>
+    <customValue>
+        <fullName>Jackson - MS</fullName>
+        <default>false</default>
+        <label>Jackson - MS</label>
+    </customValue>
+    <customValue>
+        <fullName>Jacksonville</fullName>
+        <default>false</default>
+        <label>Jacksonville</label>
+    </customValue>
+    <customValue>
+        <fullName>Joliet</fullName>
+        <default>false</default>
+        <label>Joliet</label>
+    </customValue>
+    <customValue>
+        <fullName>Kamloops</fullName>
+        <default>false</default>
+        <label>Kamloops</label>
+    </customValue>
+    <customValue>
+        <fullName>Kansas City</fullName>
+        <default>false</default>
+        <label>Kansas City</label>
+    </customValue>
+    <customValue>
+        <fullName>Kelowna</fullName>
+        <default>false</default>
+        <label>Kelowna</label>
+    </customValue>
+    <customValue>
+        <fullName>Kitchener, ON</fullName>
+        <default>false</default>
+        <label>Kitchener, ON</label>
+    </customValue>
+    <customValue>
+        <fullName>Knoxville</fullName>
+        <default>false</default>
+        <label>Knoxville</label>
+    </customValue>
+    <customValue>
+        <fullName>Lafayette</fullName>
+        <default>false</default>
+        <label>Lafayette</label>
+    </customValue>
+    <customValue>
+        <fullName>Laredo</fullName>
+        <default>false</default>
+        <label>Laredo</label>
+    </customValue>
+    <customValue>
+        <fullName>Las Cruces</fullName>
+        <default>false</default>
+        <label>Las Cruces</label>
+    </customValue>
+    <customValue>
+        <fullName>Las Vegas</fullName>
+        <default>false</default>
+        <label>Las Vegas</label>
+    </customValue>
+    <customValue>
+        <fullName>Lethbridge</fullName>
+        <default>false</default>
+        <label>Lethbridge</label>
+    </customValue>
+    <customValue>
+        <fullName>Lexington</fullName>
+        <default>false</default>
+        <label>Lexington</label>
+    </customValue>
+    <customValue>
+        <fullName>Lincoln</fullName>
+        <default>false</default>
+        <label>Lincoln</label>
+    </customValue>
+    <customValue>
+        <fullName>Little Rock</fullName>
+        <default>false</default>
+        <label>Little Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>London</fullName>
+        <default>false</default>
+        <label>London</label>
+    </customValue>
+    <customValue>
+        <fullName>Los Angeles - Orange County</fullName>
+        <default>false</default>
+        <label>Los Angeles - Orange County</label>
+    </customValue>
+    <customValue>
+        <fullName>Louisville</fullName>
+        <default>false</default>
+        <label>Louisville</label>
+    </customValue>
+    <customValue>
+        <fullName>Lubbock, TX</fullName>
+        <default>false</default>
+        <label>Lubbock, TX</label>
+    </customValue>
+    <customValue>
+        <fullName>Madison</fullName>
+        <default>false</default>
+        <label>Madison</label>
+    </customValue>
+    <customValue>
+        <fullName>Manchester</fullName>
+        <default>false</default>
+        <label>Manchester</label>
+    </customValue>
+    <customValue>
+        <fullName>Mankato</fullName>
+        <default>false</default>
+        <label>Mankato</label>
+    </customValue>
+    <customValue>
+        <fullName>Medicine Hat</fullName>
+        <default>false</default>
+        <label>Medicine Hat</label>
+    </customValue>
+    <customValue>
+        <fullName>Memphis</fullName>
+        <default>false</default>
+        <label>Memphis</label>
+    </customValue>
+    <customValue>
+        <fullName>Mexico City</fullName>
+        <default>false</default>
+        <label>Mexico City</label>
+    </customValue>
+    <customValue>
+        <fullName>Miami</fullName>
+        <default>false</default>
+        <label>Miami</label>
+    </customValue>
+    <customValue>
+        <fullName>Milwaukee</fullName>
+        <default>false</default>
+        <label>Milwaukee</label>
+    </customValue>
+    <customValue>
+        <fullName>Minneapolis</fullName>
+        <default>false</default>
+        <label>Minneapolis</label>
+    </customValue>
+    <customValue>
+        <fullName>Missoula</fullName>
+        <default>false</default>
+        <label>Missoula</label>
+    </customValue>
+    <customValue>
+        <fullName>Mobile</fullName>
+        <default>false</default>
+        <label>Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>Moline</fullName>
+        <default>false</default>
+        <label>Moline</label>
+    </customValue>
+    <customValue>
+        <fullName>Moncton</fullName>
+        <default>false</default>
+        <label>Moncton</label>
+    </customValue>
+    <customValue>
+        <fullName>Montreal</fullName>
+        <default>false</default>
+        <label>Montreal</label>
+    </customValue>
+    <customValue>
+        <fullName>Moose Jaw</fullName>
+        <default>false</default>
+        <label>Moose Jaw</label>
+    </customValue>
+    <customValue>
+        <fullName>Murray</fullName>
+        <default>false</default>
+        <label>Murray</label>
+    </customValue>
+    <customValue>
+        <fullName>Muskegon</fullName>
+        <default>false</default>
+        <label>Muskegon</label>
+    </customValue>
+    <customValue>
+        <fullName>Myrtle Beach</fullName>
+        <default>false</default>
+        <label>Myrtle Beach</label>
+    </customValue>
+    <customValue>
+        <fullName>Nanaimo</fullName>
+        <default>false</default>
+        <label>Nanaimo</label>
+    </customValue>
+    <customValue>
+        <fullName>Nashville</fullName>
+        <default>false</default>
+        <label>Nashville</label>
+    </customValue>
+    <customValue>
+        <fullName>Nelson</fullName>
+        <default>false</default>
+        <label>Nelson</label>
+    </customValue>
+    <customValue>
+        <fullName>New Jersey</fullName>
+        <default>false</default>
+        <label>New Jersey</label>
+    </customValue>
+    <customValue>
+        <fullName>New Mexico</fullName>
+        <default>false</default>
+        <label>New Mexico</label>
+    </customValue>
+    <customValue>
+        <fullName>New Orleans</fullName>
+        <default>false</default>
+        <label>New Orleans</label>
+    </customValue>
+    <customValue>
+        <fullName>New Westminster</fullName>
+        <default>false</default>
+        <label>New Westminster</label>
+    </customValue>
+    <customValue>
+        <fullName>NYC - Long Island</fullName>
+        <default>false</default>
+        <label>NYC - Long Island</label>
+    </customValue>
+    <customValue>
+        <fullName>Oakland</fullName>
+        <default>false</default>
+        <label>Oakland</label>
+    </customValue>
+    <customValue>
+        <fullName>Oklahoma City</fullName>
+        <default>false</default>
+        <label>Oklahoma City</label>
+    </customValue>
+    <customValue>
+        <fullName>Omaha</fullName>
+        <default>false</default>
+        <label>Omaha</label>
+    </customValue>
+    <customValue>
+        <fullName>Orlando</fullName>
+        <default>false</default>
+        <label>Orlando</label>
+    </customValue>
+    <customValue>
+        <fullName>Ottawa</fullName>
+        <default>false</default>
+        <label>Ottawa</label>
+    </customValue>
+    <customValue>
+        <fullName>Palm Springs</fullName>
+        <default>false</default>
+        <label>Palm Springs</label>
+    </customValue>
+    <customValue>
+        <fullName>Pemberton</fullName>
+        <default>false</default>
+        <label>Pemberton</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensacola</fullName>
+        <default>false</default>
+        <label>Pensacola</label>
+    </customValue>
+    <customValue>
+        <fullName>Penticton</fullName>
+        <default>false</default>
+        <label>Penticton</label>
+    </customValue>
+    <customValue>
+        <fullName>Peoria</fullName>
+        <default>false</default>
+        <label>Peoria</label>
+    </customValue>
+    <customValue>
+        <fullName>Philadelphia</fullName>
+        <default>false</default>
+        <label>Philadelphia</label>
+    </customValue>
+    <customValue>
+        <fullName>Phoenix</fullName>
+        <default>false</default>
+        <label>Phoenix</label>
+    </customValue>
+    <customValue>
+        <fullName>Pittsburgh</fullName>
+        <default>false</default>
+        <label>Pittsburgh</label>
+    </customValue>
+    <customValue>
+        <fullName>Portland, OR</fullName>
+        <default>false</default>
+        <label>Portland, OR</label>
+    </customValue>
+    <customValue>
+        <fullName>Portland/Maine</fullName>
+        <default>false</default>
+        <label>Portland/Maine</label>
+    </customValue>
+    <customValue>
+        <fullName>Prince Albert</fullName>
+        <default>false</default>
+        <label>Prince Albert</label>
+    </customValue>
+    <customValue>
+        <fullName>Prince George</fullName>
+        <default>false</default>
+        <label>Prince George</label>
+    </customValue>
+    <customValue>
+        <fullName>Providence / New Bedford</fullName>
+        <default>false</default>
+        <label>Providence / New Bedford</label>
+    </customValue>
+    <customValue>
+        <fullName>Provo/Orem UT</fullName>
+        <default>false</default>
+        <label>Provo/Orem UT</label>
+    </customValue>
+    <customValue>
+        <fullName>Raleigh / Durham</fullName>
+        <default>false</default>
+        <label>Raleigh / Durham</label>
+    </customValue>
+    <customValue>
+        <fullName>Red Deer</fullName>
+        <default>false</default>
+        <label>Red Deer</label>
+    </customValue>
+    <customValue>
+        <fullName>Regina</fullName>
+        <default>false</default>
+        <label>Regina</label>
+    </customValue>
+    <customValue>
+        <fullName>Reno</fullName>
+        <default>false</default>
+        <label>Reno</label>
+    </customValue>
+    <customValue>
+        <fullName>Richmond</fullName>
+        <default>false</default>
+        <label>Richmond</label>
+    </customValue>
+    <customValue>
+        <fullName>Roanoke / Lynchburg</fullName>
+        <default>false</default>
+        <label>Roanoke / Lynchburg</label>
+    </customValue>
+    <customValue>
+        <fullName>Rochester</fullName>
+        <default>false</default>
+        <label>Rochester</label>
+    </customValue>
+    <customValue>
+        <fullName>Rockford</fullName>
+        <default>false</default>
+        <label>Rockford</label>
+    </customValue>
+    <customValue>
+        <fullName>Sacramento - Stockton</fullName>
+        <default>false</default>
+        <label>Sacramento - Stockton</label>
+    </customValue>
+    <customValue>
+        <fullName>Salt Lake City</fullName>
+        <default>false</default>
+        <label>Salt Lake City</label>
+    </customValue>
+    <customValue>
+        <fullName>San Antonio</fullName>
+        <default>false</default>
+        <label>San Antonio</label>
+    </customValue>
+    <customValue>
+        <fullName>San Diego</fullName>
+        <default>false</default>
+        <label>San Diego</label>
+    </customValue>
+    <customValue>
+        <fullName>San Francisco</fullName>
+        <default>false</default>
+        <label>San Francisco</label>
+    </customValue>
+    <customValue>
+        <fullName>San Jose</fullName>
+        <default>false</default>
+        <label>San Jose</label>
+    </customValue>
+    <customValue>
+        <fullName>San Juan</fullName>
+        <default>false</default>
+        <label>San Juan</label>
+    </customValue>
+    <customValue>
+        <fullName>Saskatoon</fullName>
+        <default>false</default>
+        <label>Saskatoon</label>
+    </customValue>
+    <customValue>
+        <fullName>Savannah</fullName>
+        <default>false</default>
+        <label>Savannah</label>
+    </customValue>
+    <customValue>
+        <fullName>Seattle - Tacoma</fullName>
+        <default>false</default>
+        <label>Seattle - Tacoma</label>
+    </customValue>
+    <customValue>
+        <fullName>Shrevport, LA</fullName>
+        <default>false</default>
+        <label>Shrevport, LA</label>
+    </customValue>
+    <customValue>
+        <fullName>South Bend, IN</fullName>
+        <default>false</default>
+        <label>South Bend, IN</label>
+    </customValue>
+    <customValue>
+        <fullName>South Dakota</fullName>
+        <default>false</default>
+        <label>South Dakota</label>
+    </customValue>
+    <customValue>
+        <fullName>Springfield, IL</fullName>
+        <default>false</default>
+        <label>Springfield, IL</label>
+    </customValue>
+    <customValue>
+        <fullName>Springfield, MA</fullName>
+        <default>false</default>
+        <label>Springfield, MA</label>
+    </customValue>
+    <customValue>
+        <fullName>St. Louis</fullName>
+        <default>false</default>
+        <label>St. Louis</label>
+    </customValue>
+    <customValue>
+        <fullName>Surrey</fullName>
+        <default>false</default>
+        <label>Surrey</label>
+    </customValue>
+    <customValue>
+        <fullName>Syracuse</fullName>
+        <default>false</default>
+        <label>Syracuse</label>
+    </customValue>
+    <customValue>
+        <fullName>Tampa- St. Petersburg</fullName>
+        <default>false</default>
+        <label>Tampa- St. Petersburg</label>
+    </customValue>
+    <customValue>
+        <fullName>Toledo</fullName>
+        <default>false</default>
+        <label>Toledo</label>
+    </customValue>
+    <customValue>
+        <fullName>Topeka - KS</fullName>
+        <default>false</default>
+        <label>Topeka - KS</label>
+    </customValue>
+    <customValue>
+        <fullName>Toronto</fullName>
+        <default>false</default>
+        <label>Toronto</label>
+    </customValue>
+    <customValue>
+        <fullName>Trail</fullName>
+        <default>false</default>
+        <label>Trail</label>
+    </customValue>
+    <customValue>
+        <fullName>Tucson</fullName>
+        <default>false</default>
+        <label>Tucson</label>
+    </customValue>
+    <customValue>
+        <fullName>Tulsa</fullName>
+        <default>false</default>
+        <label>Tulsa</label>
+    </customValue>
+    <customValue>
+        <fullName>Tupleo, MS</fullName>
+        <default>false</default>
+        <label>Tupleo, MS</label>
+    </customValue>
+    <customValue>
+        <fullName>Unassigned</fullName>
+        <default>false</default>
+        <label>Unassigned</label>
+    </customValue>
+    <customValue>
+        <fullName>Undefined Market</fullName>
+        <default>false</default>
+        <label>Undefined Market</label>
+    </customValue>
+    <customValue>
+        <fullName>Vancouver</fullName>
+        <default>false</default>
+        <label>Vancouver</label>
+    </customValue>
+    <customValue>
+        <fullName>Vernon</fullName>
+        <default>false</default>
+        <label>Vernon</label>
+    </customValue>
+    <customValue>
+        <fullName>Victoria</fullName>
+        <default>false</default>
+        <label>Victoria</label>
+    </customValue>
+    <customValue>
+        <fullName>Virginia Beach - Norfolk</fullName>
+        <default>false</default>
+        <label>Virginia Beach - Norfolk</label>
+    </customValue>
+    <customValue>
+        <fullName>Waco/Temple/Bryan</fullName>
+        <default>false</default>
+        <label>Waco/Temple/Bryan</label>
+    </customValue>
+    <customValue>
+        <fullName>Washington, DC</fullName>
+        <default>false</default>
+        <label>Washington, DC</label>
+    </customValue>
+    <customValue>
+        <fullName>Waterloo</fullName>
+        <default>false</default>
+        <label>Waterloo</label>
+    </customValue>
+    <customValue>
+        <fullName>Waterloo, ON</fullName>
+        <default>false</default>
+        <label>Waterloo, ON</label>
+    </customValue>
+    <customValue>
+        <fullName>Wausau</fullName>
+        <default>false</default>
+        <label>Wausau</label>
+    </customValue>
+    <customValue>
+        <fullName>West Palm Beach</fullName>
+        <default>false</default>
+        <label>West Palm Beach</label>
+    </customValue>
+    <customValue>
+        <fullName>Wheeling/WV</fullName>
+        <default>false</default>
+        <label>Wheeling/WV</label>
+    </customValue>
+    <customValue>
+        <fullName>Whistler</fullName>
+        <default>false</default>
+        <label>Whistler</label>
+    </customValue>
+    <customValue>
+        <fullName>Wichita</fullName>
+        <default>false</default>
+        <label>Wichita</label>
+    </customValue>
+    <customValue>
+        <fullName>Wilkes-Barre / Scranton</fullName>
+        <default>false</default>
+        <label>Wilkes-Barre / Scranton</label>
+    </customValue>
+    <customValue>
+        <fullName>Winnipeg, MB</fullName>
+        <default>false</default>
+        <label>Winnipeg, MB</label>
+    </customValue>
+    <customValue>
+        <fullName>Yellowknife</fullName>
+        <default>false</default>
+        <label>Yellowknife</label>
+    </customValue>
+    <customValue>
+        <fullName>Youngstown</fullName>
+        <default>false</default>
+        <label>Youngstown</label>
+    </customValue>
+    <customValue>
+        <fullName>Ypsilanti, MI</fullName>
+        <default>false</default>
+        <label>Ypsilanti, MI</label>
+    </customValue>
+    <masterLabel>Market</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

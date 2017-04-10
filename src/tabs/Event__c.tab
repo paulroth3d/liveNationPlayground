@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description>LiveNation Promoted Events.
+Usually a promoted show or activity coordinated by LNE but also may represent holds, rentals, bookings at third party venues, tours consisting of multiple shows, festivals, and festival stages.</description>
+    <icon>Sys/Evt.png</icon>
+    <mobileReady>false</mobileReady>
+    <motif>Custom233: TV Widescreen</motif>
+</CustomTab>

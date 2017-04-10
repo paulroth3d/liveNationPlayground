@@ -1,0 +1,30 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="LNE_EventDeletionUtil">
+	<!-- scripts -->
+    <ltng:require scripts="{! join(',',
+            $Resource.LNE_GeneralResources+'/js/lightning/LNE_PostMessage.js',
+            $Resource.LNE_GeneralResources+'/js/lightning/LNE_MessagePostOffice.js'
+        )}"
+    	afterScriptsLoaded='{!c.handleScriptsLoaded}'
+    />
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="showButtons" type="Boolean" default="true"/>
+    <!-- component -->
+    <p>Are you sure you want to delete this Event?</p>
+    <br/>
+    <aura:if isTrue="{!v.showButtons}">
+        <div class="slds-grid" style="height: 50px;padding-top:15px;">
+            <div class="slds-container--right">
+                <ui:button label="Yes" press="{!c.clickYes}" class="slds-button--destructive"/>
+                <ui:button label="No" press="{!c.clickNo}"/>
+            </div>
+        </div>
+    </aura:if>  
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--small" role="alert">
+            <span class="slds-assistive-text">Loading...</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </aura:if>   
+        
+</aura:component>

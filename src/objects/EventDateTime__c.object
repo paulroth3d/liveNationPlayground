@@ -1,0 +1,2341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>EventDateTimeCompactLayout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>EventDateTimeCompactLayout</fullName>
+        <fields>Event__c</fields>
+        <fields>EventDate__c</fields>
+        <fields>PublicOnSale__c</fields>
+        <fields>StartTime__c</fields>
+        <fields>OwnerId</fields>
+        <label>Event Date Time Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The specific date(s) and time(s) on which the event is scheduled</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>LNE_MassTicketCount_EventDTListFields</fullName>
+        <description>Fields displayed as columns for list of Event Date time of MassManualTicketCount page</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Event__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>EventDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>StartTime__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>EventName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Venue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Venue__r.VenueName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>LNE_MassTicketCount_EventDTListFields</label>
+    </fieldSets>
+    <fields>
+        <fullName>AnnounceDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Announce Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AnnounceTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Announce Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Artists__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist(s)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Country</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CurfewTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Curfew Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>Drives sharing rules to provide read-only access to other division members</description>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DoorTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Door Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Event End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventName__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Pending Unlikely</fullName>
+                    <default>false</default>
+                    <label>Pending Unlikely</label>
+                </value>
+                <value>
+                    <fullName>Pending Likely</fullName>
+                    <default>false</default>
+                    <label>Pending Likely</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Flash Complete</fullName>
+                    <default>false</default>
+                    <label>Flash Complete</label>
+                </value>
+                <value>
+                    <fullName>Postponed</fullName>
+                    <default>false</default>
+                    <label>Postponed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventType__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Promoted Show</fullName>
+                    <default>false</default>
+                    <label>Promoted Show</label>
+                </value>
+                <value>
+                    <fullName>Rental</fullName>
+                    <default>false</default>
+                    <label>Rental</label>
+                </value>
+                <value>
+                    <fullName>Buy Sell</fullName>
+                    <default>false</default>
+                    <label>Buy Sell</label>
+                </value>
+                <value>
+                    <fullName>Gospel Brunch</fullName>
+                    <default>false</default>
+                    <label>Gospel Brunch</label>
+                </value>
+                <value>
+                    <fullName>Festival</fullName>
+                    <default>false</default>
+                    <label>Festival</label>
+                </value>
+                <value>
+                    <fullName>Hold</fullName>
+                    <default>false</default>
+                    <label>Hold</label>
+                </value>
+                <value>
+                    <fullName>Booked/Not Available</fullName>
+                    <default>false</default>
+                    <label>Booked/Not Available</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventYear__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>Event__c</referenceTo>
+        <relationshipLabel>Event Date Times</relationshipLabel>
+        <relationshipName>EventDateTimes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Geography__c</fullName>
+        <externalId>false</externalId>
+        <label>Geography</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HidePreviouslyForecastedLiftBfrTxs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hide Previously Forecasted Lift Bfr Txs</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HidePreviouslyForecastedProjPdTkt__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hide Previously Forecasted Proj Pd Tkt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsEventMultiScale__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.UsingMultiScale__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Event Multi-Scale?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LotTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Lot Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Market</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Used to store the external system notes such as Caterease Venue Names</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OfficeName__c</fullName>
+        <description>Drives sharing rules to provide edit access to other office members</description>
+        <externalId>false</externalId>
+        <label>Office Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrevForecastedPlatinumLiftbeforeFee__c</fullName>
+        <externalId>false</externalId>
+        <label>Prev Forecasted Platinum Lift before Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PreviouslyForecastedGrossSales__c</fullName>
+        <externalId>false</externalId>
+        <label>Previously Forecasted Gross Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PreviouslyForecastedLiftBeforeTaxes__c</fullName>
+        <externalId>false</externalId>
+        <label>Previously Forecasted Lift Before Taxes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PreviouslyForecastedProjPaidTickets__c</fullName>
+        <externalId>false</externalId>
+        <label>Previously Forecasted Proj Paid Tickets</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PreviouslyProjectedGrossSales__c</fullName>
+        <externalId>false</externalId>
+        <label>Previously Projected Gross Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryHeadlinerArtist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary Headliner Artist</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Artist does not exist or does not match search entry.</errorMessage>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Artist</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Event Date Times (Primary Headliner Artist)</relationshipLabel>
+        <relationshipName>PrimaryHeadlinerEventDateTimes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryVenueOffice__c</fullName>
+        <description>Drives sharing rules to provide edit access to booking members of the venue&apos;s primary office</description>
+        <externalId>false</externalId>
+        <label>Primary Venue Office</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PublicOnSale__c</fullName>
+        <externalId>false</externalId>
+        <label>Public On Sale</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PublicVisibilityviaPublicOnSale__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Drives sharing rules to provide read-only access to all internal users</description>
+        <externalId>false</externalId>
+        <label>Public Visibility via Public On Sale</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>StartTimeSortable__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( CONTAINS(StartTime__c, &quot;AM&quot;) , &quot;1&quot;  &amp; StartTime__c, &quot;2&quot; &amp; StartTime__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Time Sortable</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Country__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>State</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>ACT - Australian Capital Territory</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>NSW - New South Wales</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>NT - Northern Territory</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>QLD - Queensland</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>SA - South Australia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>TAS - Tasmania</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>VIC - Victoria</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AU - Australia</controllingFieldValue>
+                <valueName>WA - Western Australia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BS - Bahamas</controllingFieldValue>
+                <valueName>BI - Bimini</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>AC - Acre</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>AL - Alagoas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>AM - Amazonas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>AP - Amapá</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>BA - Bahia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>CE - Ceará</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>DF - Distrito Federal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>ES - Espírito Santo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>GO - Goiás</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>MA - Maranhão</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>MG - Minas Gerais</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>MS - Mato Grosso do Sul</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>MT - Mato Grosso</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>PA - Pará</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>PB - Paraíba</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>PE - Pernambuco</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>PI - Piauí</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>PR - Paraná</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>RJ - Rio de Janeiro</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>RN - Rio Grande do Norte</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>RO - Rondônia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>RR - Roraima</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>RS - Rio Grande do Sul</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>SC - Santa Catarina</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>SE - Sergipe</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>SP - São Paulo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BR - Brazil</controllingFieldValue>
+                <valueName>TO - Tocantins</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>AB - Alberta</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>BC - British Columbia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>MB - Manitoba</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>NB - New Brunswick</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>NL - Newfoundland and Labrador</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>NS - Nova Scotia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>NT - Northwest Territories</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>NU - Nunavut</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>ON - Ontario</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>PE - Prince Edward Island</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>QC - Quebec</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>SK - Saskatchewan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CA - Canada</controllingFieldValue>
+                <valueName>YT - Yukon Territories</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>AG - Aguascalientes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>BC - Baja California</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>BS - Baja California Sur</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>CH - Chihuahua</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>CL - Colima</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>CM - Campeche</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>CO - Coahuila</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>CS - Chiapas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>DF - Federal District</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>DG - Durango</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>GR - Guerrero</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>GT - Guanajuato</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>HG - Hidalgo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>JA - Jalisco</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>ME - Mexico State</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>MI - Michoacán</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>MO - Morelos</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>NA - Nayarit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>NL - Nuevo León</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>OA - Oaxaca</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>PB - Puebla</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>QE - Querétaro</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>QR - Quintana Roo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>SI - Sinaloa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>SL - San Luis Potosí</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>SO - Sonora</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>TB - Tabasco</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>TL - Tlaxcala</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>TM - Tamaulipas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>VE - Veracruz</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>YU - Yucatán</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>ZA - Zacatecas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MX - Mexico</controllingFieldValue>
+                <valueName>MD - Mexico D.F.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>11 - Beijing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>12 - Tianjin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>13 - Hebei</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>14 - Shanxi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>15 - Nei Mongol</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>21 - Liaoning</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>22 - Jilin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>23 - Heilongjiang</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>31 - Shanghai</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>32 - Jiangsu</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>33 - Zhejiang</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>34 - Anhui</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>35 - Fujian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>36 - Jiangxi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>37 - Shandong</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>41 - Henan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>42 - Hubei</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>43 - Hunan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>44 - Guangdong</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>45 - Guangxi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>46 - Hainan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>50 - Chongqing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>51 - Sichuan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>52 - Guizhou</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>53 - Yunnan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>54 - Xizang</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>61 - Shaanxi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>62 - Gansu</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>63 - Qinghai</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>64 - Ningxia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>65 - Xinjiang</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>71 - Taiwan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>91 - Hong Kong</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CN - China</controllingFieldValue>
+                <valueName>92 - Macao</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>AN - Andaman and Nicobar Islands</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>AP - Andhra Pradesh</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>AR - Arunachal Pradesh</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>AS - Assam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>BR - Bihar</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>CH - Chandigarh</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>CT - Chhattisgarh</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>DD - Daman and Diu</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>DL - Delhi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>DN - Dadra and Nagar Haveli</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>GA - Goa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>GJ - Gujarat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>HP - Himachal Pradesh</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>HR - Haryana</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>JH - Jharkhand</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>JK - Jammu and Kashmir</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>KA - Karnataka</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>KL - Kerala</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>LD - Lakshadweep</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>MH - Maharashtra</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>ML - Meghalaya</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>MN - Manipur</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>MP - Madhya Pradesh</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>MZ - Mizoram</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>NL - Nagaland</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>OR - Odisha</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>PB - Punjab</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>PY - Puducherry</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>RJ - Rajasthan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>SK - Sikkim</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>TN - Tamil Nadu</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>TR - Tripura</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>UP - Uttar Pradesh</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>UT - Uttarakhand</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IN - India</controllingFieldValue>
+                <valueName>WB - West Bengal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>CE - Clare</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>CN - Cavan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>CO - Cork</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>CW - Carlow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>D - Dublin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>DL - Donegal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>G - Galway</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>KE - Kildare</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>KK - Kilkenny</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>KY - Kerry</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>LD - Longford</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>LH - Louth</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>LK - Limerick</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>LM - Leitrim</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>LS - Laois</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>MH - Meath</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>MN - Monaghan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>MO - Mayo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>OY - Offaly</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>RN - Roscommon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>SO - Sligo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>TA - Tipperary</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>WD - Waterford</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>WH - Westmeath</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>WW - Wicklow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IE - Ireland</controllingFieldValue>
+                <valueName>WX - Wexford</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>GB - United Kingdom</controllingFieldValue>
+                <valueName>EN - England</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AG - Agrigento</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AL - Alessandria</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AN - Ancona</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AO - Aosta</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AP - Ascoli Piceno</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AQ - L&apos;Aquila</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AR - Arezzo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AT - Asti</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>AV - Avellino</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BA - Bari</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BG - Bergamo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BI - Biella</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BL - Belluno</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BN - Benevento</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BO - Bologna</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BR - Brindisi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BS - Brescia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BT - Barletta-Andria-Trani</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>BZ - Bolzano</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CA - Cagliari</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CB - Campobasso</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CE - Caserta</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CH - Chieti</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CI - Carbonia-Iglesias</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CL - Caltanissetta</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CN - Cuneo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CO - Como</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CR - Cremona</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CS - Cosenza</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CT - Catania</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>CZ - Catanzaro</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>EN - Enna</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>FC - Forlì-Cesena</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>FE - Ferrara</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>FG - Foggia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>FI - Florence</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>FM - Fermo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>FR - Frosinone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>GE - Genoa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>GO - Gorizia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>GR - Grosseto</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>IM - Imperia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>IS - Isernia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>KR - Crotone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>LC - Lecco</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>LE - Lecce</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>LI - Livorno</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>LO - Lodi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>LT - Latina</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>LU - Lucca</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>MB - Monza and Brianza</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>MC - Macerata</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>ME - Messina</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>MI - Milan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>MN - Mantua</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>MO - Modena</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>MS - Massa and Carrara</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>MT - Matera</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>NA - Naples</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>NO - Novara</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>NU - Nuoro</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>OG - Ogliastra</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>OR - Oristano</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>OT - Olbia-Tempio</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PA - Palermo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PC - Piacenza</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PD - Padua</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PE - Pescara</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PG - Perugia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PI - Pisa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PN - Pordenone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PO - Prato</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PR - Parma</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PT - Pistoia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PU - Pesaro and Urbino</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PV - Pavia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>PZ - Potenza</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RA - Ravenna</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RC - Reggio Calabria</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RE - Reggio Emilia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RG - Ragusa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RI - Rieti</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RM - Rome</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RN - Rimini</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>RO - Rovigo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>SA - Salerno</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>SI - Siena</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>SO - Sondrio</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>SP - La Spezia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>SR - Syracuse</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>SS - Sassari</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>SV - Savona</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TA - Taranto</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TE - Teramo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TN - Trento</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TO - Turin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TP - Trapani</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TR - Terni</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TS - Trieste</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>TV - Treviso</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>UD - Udine</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VA - Varese</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VB - Verbano-Cusio-Ossola</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VC - Vercelli</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VE - Venice</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VI - Vicenza</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VR - Verona</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VS - Medio Campidano</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VT - Viterbo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IT - Italy</controllingFieldValue>
+                <valueName>VV - Vibo Valentia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AA - Armed Forces Americas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AE - Armed Forces Europe</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AK - Alaska</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AL - Alabama</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AP - Armed Forces Pacific</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AR - Arkansas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AS - American Samoa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>AZ - Arizona</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>CA - California</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>CO - Colorado</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>CT - Connecticut</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>DC - District of Columbia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>DE - Delaware</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>FL - Florida</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>FM - Federated Micronesia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>GA - Georgia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>GU - Guam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>HI - Hawaii</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>IA - Iowa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>ID - Idaho</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>IL - Illinois</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>IN - Indiana</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>KS - Kansas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>KY - Kentucky</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>LA - Louisiana</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MA - Massachusetts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MD - Maryland</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>ME - Maine</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MH - Marshall Islands</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MI - Michigan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MN - Minnesota</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MO - Missouri</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MP - Northern Mariana Islands</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MS - Mississippi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>MT - Montana</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>NC - North Carolina</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>ND - North Dakota</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>NE - Nebraska</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>NH - New Hampshire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>NJ - New Jersey</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>NM - New Mexico</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>NV - Nevada</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>NY - New York</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>OH - Ohio</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>OK - Oklahoma</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>OR - Oregon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>PA - Pennsylvania</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>PR - Puerto Rico</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>PW - Palau</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>RI - Rhode Island</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>SC - South Carolina</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>SD - South Dakota</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>TN - Tennessee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>TX - Texas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>UM - United States Minor Outlying Islands</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>UT - Utah</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>VA - Virginia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>VI - US Virgin Islands</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>VT - Vermont</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>WA - Washington</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>WI - Wisconsin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>WV - West Virginia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>US - United States</controllingFieldValue>
+                <valueName>WY - Wyoming</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>StatusCancelPostpone__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(Event__r.Status__c),
+  &quot;Cancelled&quot;, 1,
+  &quot;Postponed&quot;, 1,
+  0
+) = 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Cancel-Postpone</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StatusPostConfirm__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(Event__r.Status__c),
+  &quot;Confirmed&quot;, 1,
+  &quot;Flash Started&quot;, 1,
+  &quot;Flash Complete&quot;, 1,
+  0
+) = 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Post-Confirm</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StatusPreConfirm__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(Event__r.Status__c),
+  &quot;Draft&quot;, 1,
+  &quot;Pending Likely&quot;, 1,
+  &quot;Pending Unlikely&quot;, 1,
+  0
+) = 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Pre-Confirm</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Subtype__c</fullName>
+        <externalId>false</externalId>
+        <label>Subtype</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>EventType__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Club Night</fullName>
+                    <default>false</default>
+                    <label>Club Night</label>
+                </value>
+                <value>
+                    <fullName>Filler Show</fullName>
+                    <default>false</default>
+                    <label>Filler Show</label>
+                </value>
+                <value>
+                    <fullName>Internal Rental</fullName>
+                    <default>false</default>
+                    <label>Internal Rental</label>
+                </value>
+                <value>
+                    <fullName>Promoted</fullName>
+                    <default>false</default>
+                    <label>Promoted</label>
+                </value>
+                <value>
+                    <fullName>Radio Show</fullName>
+                    <default>false</default>
+                    <label>Radio Show</label>
+                </value>
+                <value>
+                    <fullName>Rental/Special Events/Venue Holds</fullName>
+                    <default>false</default>
+                    <label>Rental/Special Events/Venue Holds</label>
+                </value>
+                <value>
+                    <fullName>Restaurant Show</fullName>
+                    <default>false</default>
+                    <label>Restaurant Show</label>
+                </value>
+                <value>
+                    <fullName>Special Event</fullName>
+                    <default>false</default>
+                    <label>Special Event</label>
+                </value>
+                <value>
+                    <fullName>Tentpole</fullName>
+                    <default>false</default>
+                    <label>Tentpole</label>
+                </value>
+                <value>
+                    <fullName>Holiday</fullName>
+                    <default>false</default>
+                    <label>Holiday</label>
+                </value>
+                <value>
+                    <fullName>Major Local Event</fullName>
+                    <default>false</default>
+                    <label>Major Local Event</label>
+                </value>
+                <value>
+                    <fullName>Competitive Event</fullName>
+                    <default>false</default>
+                    <label>Competitive Event</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Promoted Show</controllingFieldValue>
+                <valueName>Club Night</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Promoted Show</controllingFieldValue>
+                <valueName>Filler Show</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Promoted Show</controllingFieldValue>
+                <controllingFieldValue>Rental</controllingFieldValue>
+                <valueName>Radio Show</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Promoted Show</controllingFieldValue>
+                <valueName>Restaurant Show</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Promoted Show</controllingFieldValue>
+                <valueName>Tentpole</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rental</controllingFieldValue>
+                <valueName>Internal Rental</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rental</controllingFieldValue>
+                <valueName>Special Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hold</controllingFieldValue>
+                <valueName>Promoted</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hold</controllingFieldValue>
+                <valueName>Rental/Special Events/Venue Holds</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UsingTicketFeed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Using Ticket Feed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VenueHold__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Venue Hold</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VenueName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Venue__r.Name</formula>
+        <label>Venue Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VenueOwnership__c</fullName>
+        <description>Drives sharing rules to provide edit access to booking members of the venue&apos;s primary office when Owned/Operated</description>
+        <externalId>false</externalId>
+        <label>Venue Ownership</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Venue</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Venue does not exist or does not match filter criteria.</errorMessage>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Venue</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Event Date Times</relationshipLabel>
+        <relationshipName>EventDateTimes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WaveVenue__c</fullName>
+        <description>Wave related field to reduce relationships in Boomi ETL (reduce the SOQL to less than 20000 chars)</description>
+        <externalId>false</externalId>
+        <formula>Venue__r.Name</formula>
+        <inlineHelpText>Wave related field to reduce relationships in Boomi ETL (reduce the SOQL to less than 20000 chars)</inlineHelpText>
+        <label>WaveVenue</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPrevForecastedPlatinumLiftbeforeFee__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PrevForecastedPlatinumLiftbeforeFee__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Prev Fore. Plat. Lift before Fee (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPreviouslyForecastedGrossSales__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PreviouslyForecastedGrossSales__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Previously Forecasted Gross Sales (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPreviouslyForecastedLiftBeforeTaxes__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PreviouslyForecastedLiftBeforeTaxes__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Prev Forecasted Lift Before Taxes (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPreviouslyForecastedProjPaidTickets__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PreviouslyForecastedProjPaidTickets__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Prev Forecasted Proj Paid Tickets (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPreviouslyProjectedGrossSales__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PreviouslyProjectedGrossSales__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Previously Projected Gross Sales (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Date Time</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>EDT-{000000}</displayFormat>
+        <label>Event Date Time ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Date Times</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>StartTime__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>EventName__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventDate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>StartTime__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventName__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventDate__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>StartTime__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>EventName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>StartTime__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>LNE_EventChildOffice</fullName>
+        <active>true</active>
+        <description>Checks to see if the user has access to the events office/division. If not, user can not create child records related to the event.</description>
+        <errorConditionFormula>!CONTAINS( &apos;,&apos; + $User.OfficeAccess__c + &apos;,&apos;,
+&apos;,&apos; + Event__r.Office__r.OfficeID__c + &apos;,&apos;)
+&amp;&amp; !$Setup.GeneralSettings__c.GlobalDataAdministrator__c
+&amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+
+/* Financial Calculator is running and making updates */
+!$Setup.GeneralSettings__c.BypassPBFlow__c</errorConditionFormula>
+        <errorMessage>You cannot create child records of the event because you do not have authorized access to the events office/division</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_EventDateYear</fullName>
+        <active>false</active>
+        <description>DISABLED: Legacy data prevents this from being enforced on the backend. It likely remains a front-end validation in VF on event creation.
+
+Event Date (if year specified) or Event Year can&apos;t be set for more than 5 years from todays year</description>
+        <errorConditionFormula>AND(
+!$Setup.GeneralSettings__c.BypassAutomation__c,
+YEAR(EventDate__c) - YEAR(TODAY()) &gt; 5)
+||
+
+AND(!$Setup.GeneralSettings__c.BypassAutomation__c,
+VALUE(EventYear__c) - YEAR(TODAY()) &gt; 5)</errorConditionFormula>
+        <errorMessage>Event Date or Event Year can&apos;t be more than 5 years from the current year.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_EventDateYearBlank</fullName>
+        <active>true</active>
+        <description>Event Date or Event Year must be selected.</description>
+        <errorConditionFormula>AND(ISBLANK(EventDate__c) = TRUE,
+ISBLANK(EventYear__c) = TRUE,
+!$Setup.GeneralSettings__c.BypassAutomation__c)</errorConditionFormula>
+        <errorMessage>Event Date or Event Year must be selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_EventYearNumberFormat</fullName>
+        <active>true</active>
+        <description>Event Year must be a number.</description>
+        <errorConditionFormula>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+EventYear__c &lt;&gt; NULL &amp;&amp;
+NOT(ISNUMBER(  EventYear__c ))</errorConditionFormula>
+        <errorDisplayField>EventYear__c</errorDisplayField>
+        <errorMessage>Event Year must be a number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_ShowStartTime</fullName>
+        <active>true</active>
+        <description>Show start time is required if event status is &quot;Confirmed&quot;</description>
+        <errorConditionFormula>ISNEW() &amp;&amp;
+ISPICKVAL(Event__r.Status__c, &quot;Confirmed&quot;) &amp;&amp;
+ISBLANK(StartTime__c) &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>StartTime__c</errorDisplayField>
+        <errorMessage>Start time is required if event status is confirmed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_TimeFormat</fullName>
+        <active>true</active>
+        <description>All time fields must be in this format: HH:MM AM|PM</description>
+        <errorConditionFormula>NOT(REGEX( CurfewTime__c , &quot;[0-1]?[0-9]:[0-5][0-9] [A|P]M&quot;))
+&amp;&amp;!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+CurfewTime__c &lt;&gt; NULL
+||
+
+NOT(REGEX( DoorTime__c , &quot;[0-1]?[0-9]:[0-5][0-9] [A|P]M&quot;))
+&amp;&amp;!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+DoorTime__c &lt;&gt; NULL
+||
+
+NOT(REGEX( LotTime__c , &quot;[0-1]?[0-9]:[0-5][0-9] [A|P]M&quot;))
+&amp;&amp;!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+LotTime__c &lt;&gt; NULL
+||
+
+NOT(REGEX( StartTime__c , &quot;[0-1]?[0-9]:[0-5][0-9] [A|P]M&quot;))
+&amp;&amp;!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+StartTime__c &lt;&gt; NULL
+||
+
+NOT(REGEX( AnnounceTime__c , &quot;[0-1]?[0-9]:[0-5][0-9] [A|P]M&quot;))
+&amp;&amp;!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp; AnnounceTime__c &lt;&gt; NULL</errorConditionFormula>
+        <errorMessage>All time fields must be in HH:MM AM|PM format</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

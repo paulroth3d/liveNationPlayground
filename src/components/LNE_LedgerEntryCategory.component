@@ -1,0 +1,19 @@
+<apex:component selfClosing="true" >
+	<apex:attribute name="ledgerCategory" type="LNE_LedgerCategoryModel" required="true" description="LNE_LedgerCategoryModel"/>
+
+	<div class="category">
+		<strong>{!ledgerCategory.category}</strong><br/>
+		<ul>
+		<apex:repeat var="e" value="{!ledgerCategory.entries}">
+			<li>
+				<label>
+					<apex:inputField value="{!e.FlashApplicable__c}"/>
+					<span class="expense_name">{!e.GLAccount__r.Name}</span>
+					<span class="gl_code">{!e.GLAccount__r.GLCode__c}</span>
+				</label>
+			</li>
+		</apex:repeat>
+		</ul>
+	</div>
+
+</apex:component>

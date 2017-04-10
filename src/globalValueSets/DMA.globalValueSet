@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ABILENE-SWEETWATER</fullName>
+        <default>false</default>
+        <label>ABILENE-SWEETWATER</label>
+    </customValue>
+    <customValue>
+        <fullName>ALBANY, GA</fullName>
+        <default>false</default>
+        <label>ALBANY, GA</label>
+    </customValue>
+    <customValue>
+        <fullName>ALBANY-SCHENECTADY-TROY</fullName>
+        <default>false</default>
+        <label>ALBANY-SCHENECTADY-TROY</label>
+    </customValue>
+    <customValue>
+        <fullName>ALBUQUERQUE-SANTA FE</fullName>
+        <default>false</default>
+        <label>ALBUQUERQUE-SANTA FE</label>
+    </customValue>
+    <customValue>
+        <fullName>ALEXANDRIA, LA</fullName>
+        <default>false</default>
+        <label>ALEXANDRIA, LA</label>
+    </customValue>
+    <customValue>
+        <fullName>ALPENA</fullName>
+        <default>false</default>
+        <label>ALPENA</label>
+    </customValue>
+    <customValue>
+        <fullName>AMARILLO</fullName>
+        <default>false</default>
+        <label>AMARILLO</label>
+    </customValue>
+    <customValue>
+        <fullName>ANCHORAGE</fullName>
+        <default>false</default>
+        <label>ANCHORAGE</label>
+    </customValue>
+    <customValue>
+        <fullName>ATLANTA</fullName>
+        <default>false</default>
+        <label>ATLANTA</label>
+    </customValue>
+    <customValue>
+        <fullName>AUGUSTA-AIKEN</fullName>
+        <default>false</default>
+        <label>AUGUSTA-AIKEN</label>
+    </customValue>
+    <customValue>
+        <fullName>AUSTIN</fullName>
+        <default>false</default>
+        <label>AUSTIN</label>
+    </customValue>
+    <customValue>
+        <fullName>BAKERSFIELD</fullName>
+        <default>false</default>
+        <label>BAKERSFIELD</label>
+    </customValue>
+    <customValue>
+        <fullName>BALTIMORE</fullName>
+        <default>false</default>
+        <label>BALTIMORE</label>
+    </customValue>
+    <customValue>
+        <fullName>BANGOR</fullName>
+        <default>false</default>
+        <label>BANGOR</label>
+    </customValue>
+    <customValue>
+        <fullName>BATON ROUGE</fullName>
+        <default>false</default>
+        <label>BATON ROUGE</label>
+    </customValue>
+    <customValue>
+        <fullName>BEAUMONT-PORT ARTHUR</fullName>
+        <default>false</default>
+        <label>BEAUMONT-PORT ARTHUR</label>
+    </customValue>
+    <customValue>
+        <fullName>BEND, OR</fullName>
+        <default>false</default>
+        <label>BEND, OR</label>
+    </customValue>
+    <customValue>
+        <fullName>BILLINGS</fullName>
+        <default>false</default>
+        <label>BILLINGS</label>
+    </customValue>
+    <customValue>
+        <fullName>BILOXI-GULFPORT</fullName>
+        <default>false</default>
+        <label>BILOXI-GULFPORT</label>
+    </customValue>
+    <customValue>
+        <fullName>BINGHAMTON</fullName>
+        <default>false</default>
+        <label>BINGHAMTON</label>
+    </customValue>
+    <customValue>
+        <fullName>BIRMINGHAM (ANN AND TUSC)</fullName>
+        <default>false</default>
+        <label>BIRMINGHAM (ANN AND TUSC)</label>
+    </customValue>
+    <customValue>
+        <fullName>BLUEFIELD-BECKLEY-OAK HILL</fullName>
+        <default>false</default>
+        <label>BLUEFIELD-BECKLEY-OAK HILL</label>
+    </customValue>
+    <customValue>
+        <fullName>BOISE</fullName>
+        <default>false</default>
+        <label>BOISE</label>
+    </customValue>
+    <customValue>
+        <fullName>BOSTON (MANCHESTER)</fullName>
+        <default>false</default>
+        <label>BOSTON (MANCHESTER)</label>
+    </customValue>
+    <customValue>
+        <fullName>BOWLING GREEN</fullName>
+        <default>false</default>
+        <label>BOWLING GREEN</label>
+    </customValue>
+    <customValue>
+        <fullName>BUFFALO</fullName>
+        <default>false</default>
+        <label>BUFFALO</label>
+    </customValue>
+    <customValue>
+        <fullName>BURLINGTON-PLATTSBURGH</fullName>
+        <default>false</default>
+        <label>BURLINGTON-PLATTSBURGH</label>
+    </customValue>
+    <customValue>
+        <fullName>BUTTE-BOZEMAN</fullName>
+        <default>false</default>
+        <label>BUTTE-BOZEMAN</label>
+    </customValue>
+    <customValue>
+        <fullName>CASPER-RIVERTON</fullName>
+        <default>false</default>
+        <label>CASPER-RIVERTON</label>
+    </customValue>
+    <customValue>
+        <fullName>CEDAR RAPIDS-WTRLO-IWC&amp;DUB</fullName>
+        <default>false</default>
+        <label>CEDAR RAPIDS-WTRLO-IWC&amp;DUB</label>
+    </customValue>
+    <customValue>
+        <fullName>CHAMPAIGN&amp;SPRNGFLD-DECATUR</fullName>
+        <default>false</default>
+        <label>CHAMPAIGN&amp;SPRNGFLD-DECATUR</label>
+    </customValue>
+    <customValue>
+        <fullName>CHARLESTON, SC</fullName>
+        <default>false</default>
+        <label>CHARLESTON, SC</label>
+    </customValue>
+    <customValue>
+        <fullName>CHARLESTON-HUNTINGTON</fullName>
+        <default>false</default>
+        <label>CHARLESTON-HUNTINGTON</label>
+    </customValue>
+    <customValue>
+        <fullName>CHARLOTTE</fullName>
+        <default>false</default>
+        <label>CHARLOTTE</label>
+    </customValue>
+    <customValue>
+        <fullName>CHARLOTTESVILLE</fullName>
+        <default>false</default>
+        <label>CHARLOTTESVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>CHATTANOOGA</fullName>
+        <default>false</default>
+        <label>CHATTANOOGA</label>
+    </customValue>
+    <customValue>
+        <fullName>CHEYENNE-SCOTTSBLUFF</fullName>
+        <default>false</default>
+        <label>CHEYENNE-SCOTTSBLUFF</label>
+    </customValue>
+    <customValue>
+        <fullName>CHICAGO</fullName>
+        <default>false</default>
+        <label>CHICAGO</label>
+    </customValue>
+    <customValue>
+        <fullName>CHICO-REDDING</fullName>
+        <default>false</default>
+        <label>CHICO-REDDING</label>
+    </customValue>
+    <customValue>
+        <fullName>CINCINNATI</fullName>
+        <default>false</default>
+        <label>CINCINNATI</label>
+    </customValue>
+    <customValue>
+        <fullName>CLARKSBURG-WESTON</fullName>
+        <default>false</default>
+        <label>CLARKSBURG-WESTON</label>
+    </customValue>
+    <customValue>
+        <fullName>CLEVELAND-AKRON (CANTON)</fullName>
+        <default>false</default>
+        <label>CLEVELAND-AKRON (CANTON)</label>
+    </customValue>
+    <customValue>
+        <fullName>COLORADO SPRINGS-PUEBLO</fullName>
+        <default>false</default>
+        <label>COLORADO SPRINGS-PUEBLO</label>
+    </customValue>
+    <customValue>
+        <fullName>COLUMBIA, SC</fullName>
+        <default>false</default>
+        <label>COLUMBIA, SC</label>
+    </customValue>
+    <customValue>
+        <fullName>COLUMBIA-JEFFERSON CITY</fullName>
+        <default>false</default>
+        <label>COLUMBIA-JEFFERSON CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>COLUMBUS, GA (OPELIKA, AL)</fullName>
+        <default>false</default>
+        <label>COLUMBUS, GA (OPELIKA, AL)</label>
+    </customValue>
+    <customValue>
+        <fullName>COLUMBUS, OH</fullName>
+        <default>false</default>
+        <label>COLUMBUS, OH</label>
+    </customValue>
+    <customValue>
+        <fullName>COLUMBUS-TUPELO-W PNT-HSTN</fullName>
+        <default>false</default>
+        <label>COLUMBUS-TUPELO-W PNT-HSTN</label>
+    </customValue>
+    <customValue>
+        <fullName>CORPUS CHRISTI</fullName>
+        <default>false</default>
+        <label>CORPUS CHRISTI</label>
+    </customValue>
+    <customValue>
+        <fullName>DALLAS-FT. WORTH</fullName>
+        <default>false</default>
+        <label>DALLAS-FT. WORTH</label>
+    </customValue>
+    <customValue>
+        <fullName>DAVENPORT-R.ISLAND-MOLINE</fullName>
+        <default>false</default>
+        <label>DAVENPORT-R.ISLAND-MOLINE</label>
+    </customValue>
+    <customValue>
+        <fullName>DAYTON</fullName>
+        <default>false</default>
+        <label>DAYTON</label>
+    </customValue>
+    <customValue>
+        <fullName>DENVER</fullName>
+        <default>false</default>
+        <label>DENVER</label>
+    </customValue>
+    <customValue>
+        <fullName>DES MOINES-AMES</fullName>
+        <default>false</default>
+        <label>DES MOINES-AMES</label>
+    </customValue>
+    <customValue>
+        <fullName>DETROIT</fullName>
+        <default>false</default>
+        <label>DETROIT</label>
+    </customValue>
+    <customValue>
+        <fullName>DOTHAN</fullName>
+        <default>false</default>
+        <label>DOTHAN</label>
+    </customValue>
+    <customValue>
+        <fullName>DULUTH-SUPERIOR</fullName>
+        <default>false</default>
+        <label>DULUTH-SUPERIOR</label>
+    </customValue>
+    <customValue>
+        <fullName>ELMIRA (CORNING)</fullName>
+        <default>false</default>
+        <label>ELMIRA (CORNING)</label>
+    </customValue>
+    <customValue>
+        <fullName>EL PASO (LAS CRUCES)</fullName>
+        <default>false</default>
+        <label>EL PASO (LAS CRUCES)</label>
+    </customValue>
+    <customValue>
+        <fullName>ERIE</fullName>
+        <default>false</default>
+        <label>ERIE</label>
+    </customValue>
+    <customValue>
+        <fullName>EUGENE</fullName>
+        <default>false</default>
+        <label>EUGENE</label>
+    </customValue>
+    <customValue>
+        <fullName>EUREKA</fullName>
+        <default>false</default>
+        <label>EUREKA</label>
+    </customValue>
+    <customValue>
+        <fullName>EVANSVILLE</fullName>
+        <default>false</default>
+        <label>EVANSVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>FAIRBANKS</fullName>
+        <default>false</default>
+        <label>FAIRBANKS</label>
+    </customValue>
+    <customValue>
+        <fullName>FARGO-VALLEY CITY</fullName>
+        <default>false</default>
+        <label>FARGO-VALLEY CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>FLINT-SAGINAW-BAY CITY</fullName>
+        <default>false</default>
+        <label>FLINT-SAGINAW-BAY CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>FRESNO-VISALIA</fullName>
+        <default>false</default>
+        <label>FRESNO-VISALIA</label>
+    </customValue>
+    <customValue>
+        <fullName>FT. MYERS-NAPLES</fullName>
+        <default>false</default>
+        <label>FT. MYERS-NAPLES</label>
+    </customValue>
+    <customValue>
+        <fullName>FT. SMITH-FAY-SPRNGDL-RGRS</fullName>
+        <default>false</default>
+        <label>FT. SMITH-FAY-SPRNGDL-RGRS</label>
+    </customValue>
+    <customValue>
+        <fullName>FT. WAYNE</fullName>
+        <default>false</default>
+        <label>FT. WAYNE</label>
+    </customValue>
+    <customValue>
+        <fullName>GAINESVILLE</fullName>
+        <default>false</default>
+        <label>GAINESVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>GLENDIVE</fullName>
+        <default>false</default>
+        <label>GLENDIVE</label>
+    </customValue>
+    <customValue>
+        <fullName>GRAND JUNCTION-MONTROSE</fullName>
+        <default>false</default>
+        <label>GRAND JUNCTION-MONTROSE</label>
+    </customValue>
+    <customValue>
+        <fullName>GRAND RAPIDS-KALMZOO-B.CRK</fullName>
+        <default>false</default>
+        <label>GRAND RAPIDS-KALMZOO-B.CRK</label>
+    </customValue>
+    <customValue>
+        <fullName>GREAT FALLS</fullName>
+        <default>false</default>
+        <label>GREAT FALLS</label>
+    </customValue>
+    <customValue>
+        <fullName>GREEN BAY-APPLETON</fullName>
+        <default>false</default>
+        <label>GREEN BAY-APPLETON</label>
+    </customValue>
+    <customValue>
+        <fullName>GREENSBORO-H.POINT-W.SALEM</fullName>
+        <default>false</default>
+        <label>GREENSBORO-H.POINT-W.SALEM</label>
+    </customValue>
+    <customValue>
+        <fullName>GREENVILLE-N.BERN-WASHNGTN</fullName>
+        <default>false</default>
+        <label>GREENVILLE-N.BERN-WASHNGTN</label>
+    </customValue>
+    <customValue>
+        <fullName>GREENVLL-SPART-ASHEVLL-AND</fullName>
+        <default>false</default>
+        <label>GREENVLL-SPART-ASHEVLL-AND</label>
+    </customValue>
+    <customValue>
+        <fullName>GREENWOOD-GREENVILLE</fullName>
+        <default>false</default>
+        <label>GREENWOOD-GREENVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>HARLINGEN-WSLCO-BRNSVL-MCA</fullName>
+        <default>false</default>
+        <label>HARLINGEN-WSLCO-BRNSVL-MCA</label>
+    </customValue>
+    <customValue>
+        <fullName>HARRISBURG-LNCSTR-LEB-YORK</fullName>
+        <default>false</default>
+        <label>HARRISBURG-LNCSTR-LEB-YORK</label>
+    </customValue>
+    <customValue>
+        <fullName>HARRISONBURG</fullName>
+        <default>false</default>
+        <label>HARRISONBURG</label>
+    </customValue>
+    <customValue>
+        <fullName>HARTFORD &amp; NEW HAVEN</fullName>
+        <default>false</default>
+        <label>HARTFORD &amp; NEW HAVEN</label>
+    </customValue>
+    <customValue>
+        <fullName>HATTIESBURG-LAUREL</fullName>
+        <default>false</default>
+        <label>HATTIESBURG-LAUREL</label>
+    </customValue>
+    <customValue>
+        <fullName>HELENA</fullName>
+        <default>false</default>
+        <label>HELENA</label>
+    </customValue>
+    <customValue>
+        <fullName>HONOLULU</fullName>
+        <default>false</default>
+        <label>HONOLULU</label>
+    </customValue>
+    <customValue>
+        <fullName>HOUSTON</fullName>
+        <default>false</default>
+        <label>HOUSTON</label>
+    </customValue>
+    <customValue>
+        <fullName>HUNTSVILLE-DECATUR (FLOR)</fullName>
+        <default>false</default>
+        <label>HUNTSVILLE-DECATUR (FLOR)</label>
+    </customValue>
+    <customValue>
+        <fullName>IDAHO FALS-POCATLLO(JCKSN)</fullName>
+        <default>false</default>
+        <label>IDAHO FALS-POCATLLO(JCKSN)</label>
+    </customValue>
+    <customValue>
+        <fullName>INDIANAPOLIS</fullName>
+        <default>false</default>
+        <label>INDIANAPOLIS</label>
+    </customValue>
+    <customValue>
+        <fullName>JACKSON, MS</fullName>
+        <default>false</default>
+        <label>JACKSON, MS</label>
+    </customValue>
+    <customValue>
+        <fullName>JACKSON, TN</fullName>
+        <default>false</default>
+        <label>JACKSON, TN</label>
+    </customValue>
+    <customValue>
+        <fullName>JACKSONVILLE</fullName>
+        <default>false</default>
+        <label>JACKSONVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>JOHNSTOWN-ALTOONA-ST COLGE</fullName>
+        <default>false</default>
+        <label>JOHNSTOWN-ALTOONA-ST COLGE</label>
+    </customValue>
+    <customValue>
+        <fullName>JONESBORO</fullName>
+        <default>false</default>
+        <label>JONESBORO</label>
+    </customValue>
+    <customValue>
+        <fullName>JOPLIN-PITTSBURG</fullName>
+        <default>false</default>
+        <label>JOPLIN-PITTSBURG</label>
+    </customValue>
+    <customValue>
+        <fullName>JUNEAU</fullName>
+        <default>false</default>
+        <label>JUNEAU</label>
+    </customValue>
+    <customValue>
+        <fullName>KANSAS CITY</fullName>
+        <default>false</default>
+        <label>KANSAS CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>KNOXVILLE</fullName>
+        <default>false</default>
+        <label>KNOXVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>LA CROSSE-EAU CLAIRE</fullName>
+        <default>false</default>
+        <label>LA CROSSE-EAU CLAIRE</label>
+    </customValue>
+    <customValue>
+        <fullName>LAFAYETTE, IN</fullName>
+        <default>false</default>
+        <label>LAFAYETTE, IN</label>
+    </customValue>
+    <customValue>
+        <fullName>LAFAYETTE, LA</fullName>
+        <default>false</default>
+        <label>LAFAYETTE, LA</label>
+    </customValue>
+    <customValue>
+        <fullName>LAKE CHARLES</fullName>
+        <default>false</default>
+        <label>LAKE CHARLES</label>
+    </customValue>
+    <customValue>
+        <fullName>LANSING</fullName>
+        <default>false</default>
+        <label>LANSING</label>
+    </customValue>
+    <customValue>
+        <fullName>LAREDO</fullName>
+        <default>false</default>
+        <label>LAREDO</label>
+    </customValue>
+    <customValue>
+        <fullName>LAS VEGAS</fullName>
+        <default>false</default>
+        <label>LAS VEGAS</label>
+    </customValue>
+    <customValue>
+        <fullName>LEXINGTON</fullName>
+        <default>false</default>
+        <label>LEXINGTON</label>
+    </customValue>
+    <customValue>
+        <fullName>LIMA</fullName>
+        <default>false</default>
+        <label>LIMA</label>
+    </customValue>
+    <customValue>
+        <fullName>LINCOLN &amp; HASTINGS-KRNY</fullName>
+        <default>false</default>
+        <label>LINCOLN &amp; HASTINGS-KRNY</label>
+    </customValue>
+    <customValue>
+        <fullName>LITTLE ROCK-PINE BLUFF</fullName>
+        <default>false</default>
+        <label>LITTLE ROCK-PINE BLUFF</label>
+    </customValue>
+    <customValue>
+        <fullName>LOS ANGELES</fullName>
+        <default>false</default>
+        <label>LOS ANGELES</label>
+    </customValue>
+    <customValue>
+        <fullName>LOUISVILLE</fullName>
+        <default>false</default>
+        <label>LOUISVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>LUBBOCK</fullName>
+        <default>false</default>
+        <label>LUBBOCK</label>
+    </customValue>
+    <customValue>
+        <fullName>MACON</fullName>
+        <default>false</default>
+        <label>MACON</label>
+    </customValue>
+    <customValue>
+        <fullName>MADISON</fullName>
+        <default>false</default>
+        <label>MADISON</label>
+    </customValue>
+    <customValue>
+        <fullName>MANKATO</fullName>
+        <default>false</default>
+        <label>MANKATO</label>
+    </customValue>
+    <customValue>
+        <fullName>MARQUETTE</fullName>
+        <default>false</default>
+        <label>MARQUETTE</label>
+    </customValue>
+    <customValue>
+        <fullName>MEDFORD-KLAMATH FALLS</fullName>
+        <default>false</default>
+        <label>MEDFORD-KLAMATH FALLS</label>
+    </customValue>
+    <customValue>
+        <fullName>MEMPHIS</fullName>
+        <default>false</default>
+        <label>MEMPHIS</label>
+    </customValue>
+    <customValue>
+        <fullName>MERIDIAN</fullName>
+        <default>false</default>
+        <label>MERIDIAN</label>
+    </customValue>
+    <customValue>
+        <fullName>MIAMI-FT. LAUDERDALE</fullName>
+        <default>false</default>
+        <label>MIAMI-FT. LAUDERDALE</label>
+    </customValue>
+    <customValue>
+        <fullName>MILWAUKEE</fullName>
+        <default>false</default>
+        <label>MILWAUKEE</label>
+    </customValue>
+    <customValue>
+        <fullName>MINNEAPOLIS-ST. PAUL</fullName>
+        <default>false</default>
+        <label>MINNEAPOLIS-ST. PAUL</label>
+    </customValue>
+    <customValue>
+        <fullName>MINOT-BSMRCK-DCKNS(WLSTON)</fullName>
+        <default>false</default>
+        <label>MINOT-BSMRCK-DCKNS(WLSTON)</label>
+    </customValue>
+    <customValue>
+        <fullName>MISSOULA</fullName>
+        <default>false</default>
+        <label>MISSOULA</label>
+    </customValue>
+    <customValue>
+        <fullName>MOBILE-PENSACOLA (FT WALT)</fullName>
+        <default>false</default>
+        <label>MOBILE-PENSACOLA (FT WALT)</label>
+    </customValue>
+    <customValue>
+        <fullName>MONROE-EL DORADO</fullName>
+        <default>false</default>
+        <label>MONROE-EL DORADO</label>
+    </customValue>
+    <customValue>
+        <fullName>MONTEREY-SALINAS</fullName>
+        <default>false</default>
+        <label>MONTEREY-SALINAS</label>
+    </customValue>
+    <customValue>
+        <fullName>MONTGOMERY-SELMA</fullName>
+        <default>false</default>
+        <label>MONTGOMERY-SELMA</label>
+    </customValue>
+    <customValue>
+        <fullName>MYRTLE BEACH-FLORENCE</fullName>
+        <default>false</default>
+        <label>MYRTLE BEACH-FLORENCE</label>
+    </customValue>
+    <customValue>
+        <fullName>NASHVILLE</fullName>
+        <default>false</default>
+        <label>NASHVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>NEW ORLEANS</fullName>
+        <default>false</default>
+        <label>NEW ORLEANS</label>
+    </customValue>
+    <customValue>
+        <fullName>NEW YORK</fullName>
+        <default>false</default>
+        <label>NEW YORK</label>
+    </customValue>
+    <customValue>
+        <fullName>NORFOLK-PORTSMTH-NEWPT NWS</fullName>
+        <default>false</default>
+        <label>NORFOLK-PORTSMTH-NEWPT NWS</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTH PLATTE</fullName>
+        <default>false</default>
+        <label>NORTH PLATTE</label>
+    </customValue>
+    <customValue>
+        <fullName>ODESSA-MIDLAND</fullName>
+        <default>false</default>
+        <label>ODESSA-MIDLAND</label>
+    </customValue>
+    <customValue>
+        <fullName>OKLAHOMA CITY</fullName>
+        <default>false</default>
+        <label>OKLAHOMA CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>OMAHA</fullName>
+        <default>false</default>
+        <label>OMAHA</label>
+    </customValue>
+    <customValue>
+        <fullName>ORLANDO-DAYTONA BCH-MELBRN</fullName>
+        <default>false</default>
+        <label>ORLANDO-DAYTONA BCH-MELBRN</label>
+    </customValue>
+    <customValue>
+        <fullName>OTTUMWA-KIRKSVILLE</fullName>
+        <default>false</default>
+        <label>OTTUMWA-KIRKSVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>PADUCAH-CAPE GIRARD-HARSBG</fullName>
+        <default>false</default>
+        <label>PADUCAH-CAPE GIRARD-HARSBG</label>
+    </customValue>
+    <customValue>
+        <fullName>PALM SPRINGS</fullName>
+        <default>false</default>
+        <label>PALM SPRINGS</label>
+    </customValue>
+    <customValue>
+        <fullName>PANAMA CITY</fullName>
+        <default>false</default>
+        <label>PANAMA CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>PARKERSBURG</fullName>
+        <default>false</default>
+        <label>PARKERSBURG</label>
+    </customValue>
+    <customValue>
+        <fullName>PEORIA-BLOOMINGTON</fullName>
+        <default>false</default>
+        <label>PEORIA-BLOOMINGTON</label>
+    </customValue>
+    <customValue>
+        <fullName>PHILADELPHIA</fullName>
+        <default>false</default>
+        <label>PHILADELPHIA</label>
+    </customValue>
+    <customValue>
+        <fullName>PHOENIX (PRESCOTT)</fullName>
+        <default>false</default>
+        <label>PHOENIX (PRESCOTT)</label>
+    </customValue>
+    <customValue>
+        <fullName>PITTSBURGH</fullName>
+        <default>false</default>
+        <label>PITTSBURGH</label>
+    </customValue>
+    <customValue>
+        <fullName>PORTLAND, OR</fullName>
+        <default>false</default>
+        <label>PORTLAND, OR</label>
+    </customValue>
+    <customValue>
+        <fullName>PORTLAND-AUBURN</fullName>
+        <default>false</default>
+        <label>PORTLAND-AUBURN</label>
+    </customValue>
+    <customValue>
+        <fullName>PRESQUE ISLE</fullName>
+        <default>false</default>
+        <label>PRESQUE ISLE</label>
+    </customValue>
+    <customValue>
+        <fullName>PROVIDENCE-NEW BEDFORD</fullName>
+        <default>false</default>
+        <label>PROVIDENCE-NEW BEDFORD</label>
+    </customValue>
+    <customValue>
+        <fullName>QUINCY-HANNIBAL-KEOKUK</fullName>
+        <default>false</default>
+        <label>QUINCY-HANNIBAL-KEOKUK</label>
+    </customValue>
+    <customValue>
+        <fullName>RALEIGH-DURHAM (FAYETVLLE)</fullName>
+        <default>false</default>
+        <label>RALEIGH-DURHAM (FAYETVLLE)</label>
+    </customValue>
+    <customValue>
+        <fullName>RAPID CITY</fullName>
+        <default>false</default>
+        <label>RAPID CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>RENO</fullName>
+        <default>false</default>
+        <label>RENO</label>
+    </customValue>
+    <customValue>
+        <fullName>RICHMOND-PETERSBURG</fullName>
+        <default>false</default>
+        <label>RICHMOND-PETERSBURG</label>
+    </customValue>
+    <customValue>
+        <fullName>ROANOKE-LYNCHBURG</fullName>
+        <default>false</default>
+        <label>ROANOKE-LYNCHBURG</label>
+    </customValue>
+    <customValue>
+        <fullName>ROCHESTER, NY</fullName>
+        <default>false</default>
+        <label>ROCHESTER, NY</label>
+    </customValue>
+    <customValue>
+        <fullName>ROCHESTR-MASON CITY-AUSTIN</fullName>
+        <default>false</default>
+        <label>ROCHESTR-MASON CITY-AUSTIN</label>
+    </customValue>
+    <customValue>
+        <fullName>ROCKFORD</fullName>
+        <default>false</default>
+        <label>ROCKFORD</label>
+    </customValue>
+    <customValue>
+        <fullName>SACRAMNTO-STKTON-MODESTO</fullName>
+        <default>false</default>
+        <label>SACRAMNTO-STKTON-MODESTO</label>
+    </customValue>
+    <customValue>
+        <fullName>SALISBURY</fullName>
+        <default>false</default>
+        <label>SALISBURY</label>
+    </customValue>
+    <customValue>
+        <fullName>SALT LAKE CITY</fullName>
+        <default>false</default>
+        <label>SALT LAKE CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>SAN ANGELO</fullName>
+        <default>false</default>
+        <label>SAN ANGELO</label>
+    </customValue>
+    <customValue>
+        <fullName>SAN ANTONIO</fullName>
+        <default>false</default>
+        <label>SAN ANTONIO</label>
+    </customValue>
+    <customValue>
+        <fullName>SAN DIEGO</fullName>
+        <default>false</default>
+        <label>SAN DIEGO</label>
+    </customValue>
+    <customValue>
+        <fullName>SAN FRANCISCO-OAK-SAN JOSE</fullName>
+        <default>false</default>
+        <label>SAN FRANCISCO-OAK-SAN JOSE</label>
+    </customValue>
+    <customValue>
+        <fullName>SANTABARBRA-SANMAR-SANLUOB</fullName>
+        <default>false</default>
+        <label>SANTABARBRA-SANMAR-SANLUOB</label>
+    </customValue>
+    <customValue>
+        <fullName>SAVANNAH</fullName>
+        <default>false</default>
+        <label>SAVANNAH</label>
+    </customValue>
+    <customValue>
+        <fullName>SEATTLE-TACOMA</fullName>
+        <default>false</default>
+        <label>SEATTLE-TACOMA</label>
+    </customValue>
+    <customValue>
+        <fullName>SHERMAN-ADA</fullName>
+        <default>false</default>
+        <label>SHERMAN-ADA</label>
+    </customValue>
+    <customValue>
+        <fullName>SHREVEPORT</fullName>
+        <default>false</default>
+        <label>SHREVEPORT</label>
+    </customValue>
+    <customValue>
+        <fullName>SIOUX CITY</fullName>
+        <default>false</default>
+        <label>SIOUX CITY</label>
+    </customValue>
+    <customValue>
+        <fullName>SIOUX FALLS(MITCHELL)</fullName>
+        <default>false</default>
+        <label>SIOUX FALLS(MITCHELL)</label>
+    </customValue>
+    <customValue>
+        <fullName>SOUTH BEND-ELKHART</fullName>
+        <default>false</default>
+        <label>SOUTH BEND-ELKHART</label>
+    </customValue>
+    <customValue>
+        <fullName>SPOKANE</fullName>
+        <default>false</default>
+        <label>SPOKANE</label>
+    </customValue>
+    <customValue>
+        <fullName>SPRINGFIELD, MO</fullName>
+        <default>false</default>
+        <label>SPRINGFIELD, MO</label>
+    </customValue>
+    <customValue>
+        <fullName>SPRINGFIELD-HOLYOKE</fullName>
+        <default>false</default>
+        <label>SPRINGFIELD-HOLYOKE</label>
+    </customValue>
+    <customValue>
+        <fullName>ST. JOSEPH</fullName>
+        <default>false</default>
+        <label>ST. JOSEPH</label>
+    </customValue>
+    <customValue>
+        <fullName>ST. LOUIS</fullName>
+        <default>false</default>
+        <label>ST. LOUIS</label>
+    </customValue>
+    <customValue>
+        <fullName>SYRACUSE</fullName>
+        <default>false</default>
+        <label>SYRACUSE</label>
+    </customValue>
+    <customValue>
+        <fullName>TALLAHASSEE-THOMASVILLE</fullName>
+        <default>false</default>
+        <label>TALLAHASSEE-THOMASVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>TAMPA-ST. PETE (SARASOTA)</fullName>
+        <default>false</default>
+        <label>TAMPA-ST. PETE (SARASOTA)</label>
+    </customValue>
+    <customValue>
+        <fullName>TERRE HAUTE</fullName>
+        <default>false</default>
+        <label>TERRE HAUTE</label>
+    </customValue>
+    <customValue>
+        <fullName>TOLEDO</fullName>
+        <default>false</default>
+        <label>TOLEDO</label>
+    </customValue>
+    <customValue>
+        <fullName>TOPEKA</fullName>
+        <default>false</default>
+        <label>TOPEKA</label>
+    </customValue>
+    <customValue>
+        <fullName>TRAVERSE CITY-CADILLAC</fullName>
+        <default>false</default>
+        <label>TRAVERSE CITY-CADILLAC</label>
+    </customValue>
+    <customValue>
+        <fullName>TRI-CITIES, TN-VA</fullName>
+        <default>false</default>
+        <label>TRI-CITIES, TN-VA</label>
+    </customValue>
+    <customValue>
+        <fullName>TUCSON (SIERRA VISTA)</fullName>
+        <default>false</default>
+        <label>TUCSON (SIERRA VISTA)</label>
+    </customValue>
+    <customValue>
+        <fullName>TULSA</fullName>
+        <default>false</default>
+        <label>TULSA</label>
+    </customValue>
+    <customValue>
+        <fullName>TWIN FALLS</fullName>
+        <default>false</default>
+        <label>TWIN FALLS</label>
+    </customValue>
+    <customValue>
+        <fullName>TYLER-LONGVIEW(LFKN&amp;NCGD)</fullName>
+        <default>false</default>
+        <label>TYLER-LONGVIEW(LFKN&amp;NCGD)</label>
+    </customValue>
+    <customValue>
+        <fullName>UTICA</fullName>
+        <default>false</default>
+        <label>UTICA</label>
+    </customValue>
+    <customValue>
+        <fullName>VICTORIA</fullName>
+        <default>false</default>
+        <label>VICTORIA</label>
+    </customValue>
+    <customValue>
+        <fullName>WACO-TEMPLE-BRYAN</fullName>
+        <default>false</default>
+        <label>WACO-TEMPLE-BRYAN</label>
+    </customValue>
+    <customValue>
+        <fullName>WASHINGTON, DC (HAGRSTWN)</fullName>
+        <default>false</default>
+        <label>WASHINGTON, DC (HAGRSTWN)</label>
+    </customValue>
+    <customValue>
+        <fullName>WATERTOWN</fullName>
+        <default>false</default>
+        <label>WATERTOWN</label>
+    </customValue>
+    <customValue>
+        <fullName>WAUSAU-RHINELANDER</fullName>
+        <default>false</default>
+        <label>WAUSAU-RHINELANDER</label>
+    </customValue>
+    <customValue>
+        <fullName>WEST PALM BEACH-FT. PIERCE</fullName>
+        <default>false</default>
+        <label>WEST PALM BEACH-FT. PIERCE</label>
+    </customValue>
+    <customValue>
+        <fullName>WHEELING-STEUBENVILLE</fullName>
+        <default>false</default>
+        <label>WHEELING-STEUBENVILLE</label>
+    </customValue>
+    <customValue>
+        <fullName>WICHITA FALLS &amp; LAWTON</fullName>
+        <default>false</default>
+        <label>WICHITA FALLS &amp; LAWTON</label>
+    </customValue>
+    <customValue>
+        <fullName>WICHITA-HUTCHINSON PLUS</fullName>
+        <default>false</default>
+        <label>WICHITA-HUTCHINSON PLUS</label>
+    </customValue>
+    <customValue>
+        <fullName>WILKES BARRE-SCRANTON</fullName>
+        <default>false</default>
+        <label>WILKES BARRE-SCRANTON</label>
+    </customValue>
+    <customValue>
+        <fullName>WILMINGTON</fullName>
+        <default>false</default>
+        <label>WILMINGTON</label>
+    </customValue>
+    <customValue>
+        <fullName>YAKIMA-PASCO-RCHLND-KNNWCK</fullName>
+        <default>false</default>
+        <label>YAKIMA-PASCO-RCHLND-KNNWCK</label>
+    </customValue>
+    <customValue>
+        <fullName>YOUNGSTOWN</fullName>
+        <default>false</default>
+        <label>YOUNGSTOWN</label>
+    </customValue>
+    <customValue>
+        <fullName>YUMA-EL CENTRO</fullName>
+        <default>false</default>
+        <label>YUMA-EL CENTRO</label>
+    </customValue>
+    <customValue>
+        <fullName>ZANESVILLE</fullName>
+        <default>false</default>
+        <label>ZANESVILLE</label>
+    </customValue>
+    <description>Nielsen&apos;s Designated Market Area (DMA)</description>
+    <masterLabel>DMA</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

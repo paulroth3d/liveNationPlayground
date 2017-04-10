@@ -1,0 +1,3 @@
+#list of last autodeploy git revision by environment.
+#note, the commit is non-inclusive (changes in that commit will not be migrated)
+

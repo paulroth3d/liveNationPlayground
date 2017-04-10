@@ -1,0 +1,14 @@
+The Venue terms for {!Account.Name} have been Updated.
+
+Please see the record in Salesforce for more information.
+{!Account.Link}
+
+The terms were changed to:
+=	=	=	=	=	=	=	=	=	=	=	=
+{!Account.GlobalTerms__c}
+=	=	=	=	=	=	=	=	=	=	=	=
+
+From the following terms:
+=	=	=	=	=	=	=	=	=	=	=	=
+{!Account.PreviousGlobalTerms__c}
+=	=	=	=	=	=	=	=	=	=	=	=

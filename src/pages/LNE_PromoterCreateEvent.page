@@ -1,0 +1,536 @@
+<apex:page standardController="Event__c" extensions="LNE_PromoterCreateEvent_CX" sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Promoter {!pageTitle}</title>
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+
+            <style>
+                .hide {
+                    display: none;
+                }
+                .show {
+                    display: block;
+                }
+                #LNE_PromoterCreateEvent--body {
+                    margin: 32px;
+                }
+                .row {
+                    margin: 0;
+                }
+                .container {
+                    display: inline-block;
+                    margin: 0 0 12px 0;
+                    padding: 0;
+                    vertical-align: top;
+                    width: 38%;
+                }
+                .container.mini {
+                    margin-right: 5%;
+                    width: auto;
+                }
+                .component-container.container {
+                    width: 100%;
+                }
+                .container.component-display-values {
+                    margin-top: 8px;
+                    margin-bottom: 16px;
+                }
+                .drop-container {
+                    margin-right: 16px;
+                    width: auto;
+                }
+                .restart-container {
+                    border: 1px solid gray;
+                    margin: 0 0 32px 0;
+                    padding: 16px;
+                }
+
+                .error-header {
+                    background: rgb(194, 57, 52);
+                    border-radius: 0.25em;
+                    color: rgb(255, 255, 255);
+                    font-size: larger;
+                    line-height: 1.25;
+                    margin: 0 0 16px 0;
+                    padding: 1rem;
+                    width: 90%;
+                }
+                .flow-container.container {
+                    margin: 0 0;
+                    width: 80%;
+                }
+                .button-container .confirm-container
+                .button-container .restart-container {
+                    display: inline-block;
+                    float: right;
+                    margin: 0 32px;
+                }
+
+                label {
+                    display: block;
+                    margin-bottom: 4px;
+                }
+                input {
+                    border-radius: 0.25em;
+                }
+                .dateOnlyInput input.date {
+                    margin-right: 12px;
+                    width: 11em;
+                }
+                .or {
+                    float: right;
+                    margin-right: 20px;
+                }
+                input.errored,
+                select.errored {
+                    border: 2px solid rgb(194, 57, 52);
+                    border-radius: 0.25em;
+                }
+                p.errored {
+                    color: rgb(194, 57, 52);
+                }
+                p.errored.no-container {
+                    margin-top: 8px;
+                }
+                .component-error {
+                    position: relative;
+                }
+
+                /* flow panel overrides 
+                        -- start all with body .flow-container 
+                */
+                body .flow-container .bPageBlock, 
+                body .flow-container .secondaryPalette.bPageBlock, 
+                body .flow-container .individualPalette .secondaryPalette.bPageBlock {
+                    background-color: transparent;
+                    border: none;
+                    margin-top: 0;
+                }
+
+                body .flow-container .apexp .bPageBlock.apexDefaultPageBlock .pbHeader {
+                    border: none;
+                }
+
+                body .flow-container .pbBody table.detailList td {
+                    padding: 8px 12px 8px 0;
+                    text-align: left;
+                }
+                body .flow-container .pbBody table.detailList td.labelCol {
+                    min-width: 120px;
+                    text-align: right;
+                }
+
+                body .flow-container input[type="text"] {
+                    min-width: 520px;
+                }
+                /* 
+                    button overrides 
+                        make input.FlowPreviousBtn and input.FlowNextBtn take on appearance of
+                        lds branded button
+                */
+
+                body .flow-container input.FlowPreviousBtn,
+                body .flow-container input.FlowNextBtn {
+                    -webkit-appearance: button;
+                    cursor: pointer; 
+                    position: relative;
+                    display: inline-block;
+                    padding: 0;
+                    background: transparent;
+                      background-clip: border-box;
+                    border: 1px solid transparent;
+                      border-radius: 0.25rem;
+                    font-size: 0.75rem;
+                    line-height: 1.875rem;
+                    text-decoration: none;
+                    color: #0070d2;
+                    -webkit-appearance: none;
+                    white-space: normal;
+                    -webkit-user-select: none;
+                       -moz-user-select: none;
+                        -ms-user-select: none;
+                            user-select: none;
+                    transition: color 0.05s linear, background-color 0.05s linear; 
+                }
+
+                body .flow-container  input.FlowPreviousBtn:hover, body .flow-container  input.FlowPreviousBtn:focus, body .flow-container  input.FlowPreviousBtn:active, body .flow-container  input.FlowPreviousBtn:visited {
+                  text-decoration: none; }
+                body .flow-container  input.FlowPreviousBtn:hover, body .flow-container  input.FlowPreviousBtn:focus {
+                  color: #005fb2; }
+                body .flow-container  input.FlowPreviousBtn:focus {
+                  outline: 0;
+                  box-shadow: 0 0 3px #0070D2; }
+                body .flow-container  input.FlowPreviousBtn:active {
+                  color: #00396b; }
+                body .flow-container input.FlowPreviousBtn[disabled] {
+                  color: #d8dde6; }
+                body .flow-container  input.FlowPreviousBtn:hover input.FlowPreviousBtn__icon, body .flow-container  input.FlowPreviousBtn:focus input.FlowPreviousBtn__icon, body .flow-container  input.FlowPreviousBtn:active input.FlowPreviousBtn__icon, body .flow-container  input.FlowPreviousBtn[disabled] input.FlowPreviousBtn__icon {
+                  fill: currentColor; }
+                body .flow-container  input.FlowPreviousBtn + input.FlowPreviousBtn-group {
+                  margin-left: 0.25rem; }
+                body .flow-container  input.FlowPreviousBtn + input.FlowPreviousBtn {
+                  margin-left: 0.25rem; }
+              body .flow-container  input.FlowPreviousBtn-space-left {
+                margin-left: 0.25rem; }
+              body .flow-container  input.FlowPreviousBtn {
+                text-align: center; }
+                body .flow-container  input.FlowPreviousBtn:focus {
+                  outline: 0;
+                  box-shadow: 0 0 3px #0070D2; }
+              body .flow-container  input.FlowPreviousBtn {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                text-align: center;
+                vertical-align: middle;
+                background-color: #0070d2;
+                border: 1px solid #0070d2;
+                color: white; }
+                body .flow-container  input.FlowPreviousBtn:link, body .flow-container  input.FlowPreviousBtn:visited, body .flow-container  input.FlowPreviousBtn:active {
+                  color: white; }
+                body .flow-container  input.FlowPreviousBtn:hover, body .flow-container  input.FlowPreviousBtn:focus {
+                  background-color: #005fb2;
+                  color: white; }
+                body .flow-container  input.FlowPreviousBtn:active {
+                  background-color: #00396b; }
+                body .flow-container  input.FlowPreviousBtn[disabled] {
+                  background: #e0e5ee;
+                  border-color: transparent;
+                  color: white; }
+
+                body .flow-container  input.FlowNextBtn:hover, body .flow-container  input.FlowNextBtn:focus, body .flow-container  input.FlowNextBtn:active, body .flow-container  input.FlowNextBtn:visited {
+                  text-decoration: none; }
+                body .flow-container  input.FlowNextBtn:hover, body .flow-container  input.FlowNextBtn:focus {
+                  color: #005fb2; }
+                body .flow-container  input.FlowNextBtn:focus {
+                  outline: 0;
+                  box-shadow: 0 0 3px #0070D2; }
+                body .flow-container  input.FlowNextBtn:active {
+                  color: #00396b; }
+                body .flow-container input.FlowNextBtn[disabled] {
+                  color: #d8dde6; }
+                body .flow-container  input.FlowNextBtn:hover input.FlowNextBtn__icon, body .flow-container  input.FlowNextBtn:focus input.FlowNextBtn__icon, body .flow-container  input.FlowNextBtn:active input.FlowNextBtn__icon, body .flow-container  input.FlowNextBtn[disabled] input.FlowNextBtn__icon {
+                  fill: currentColor; }
+                body .flow-container  input.FlowNextBtn + input.FlowNextBtn-group {
+                  margin-left: 0.25rem; }
+                body .flow-container  input.FlowNextBtn + input.FlowNextBtn {
+                  margin-left: 0.25rem; }
+              body .flow-container  input.FlowNextBtn-space-left {
+                margin-left: 0.25rem; }
+              body .flow-container  input.FlowNextBtn {
+                text-align: center; }
+                body .flow-container  input.FlowNextBtn:focus {
+                  outline: 0;
+                  box-shadow: 0 0 3px #0070D2; }
+              body .flow-container  input.FlowNextBtn {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                text-align: center;
+                vertical-align: middle;
+                background-color: #0070d2;
+                border: 1px solid #0070d2;
+                color: white; }
+                body .flow-container  input.FlowNextBtn:link, body .flow-container  input.FlowNextBtn:visited, body .flow-container  input.FlowNextBtn:active {
+                  color: white; }
+                body .flow-container  input.FlowNextBtn:hover, body .flow-container  input.FlowNextBtn:focus {
+                  background-color: #005fb2;
+                  color: white; }
+                body .flow-container  input.FlowNextBtn:active {
+                  background-color: #00396b; }
+                body .flow-container  input.FlowNextBtn[disabled] {
+                  background: #e0e5ee;
+                  border-color: transparent;
+                  color: white; }
+
+                body .flow-container input.FlowPreviousBtn {
+                    margin-right: 8px;
+                }
+
+                .centeredMessage {
+                    display: flex;
+                    height: 100%;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+
+                .italicFont {
+                    font-style: italic;
+                }
+            </style>
+
+        </head>
+
+        <body class="rome-lds" id="LNE_PromoterCreateEvent--body">
+
+            <div class="rome-lds main-container" id="main-container">
+
+                <div class="slds-spinner_container hide" id="grid-spin">
+                  <div role="status" class="slds-spinner slds-spinner--large">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                </div>
+
+                <div class="slds-spinner_container hide" id="access-error-message">
+                    <div role="status" class="centeredMessage">
+                        <span class="slds-icon_container" style="margin:10px;">
+                          <svg class="slds-icon slds-icon-text-warning slds-icon--large" aria-hidden="true">
+                            <use xlink:href="{!URLFOR($Resource.LNE_romelds, '/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                          </svg>
+                          <span class="slds-assistive-text">Warning Icon</span>
+                        </span>
+                        <div>You may not clone an event for this venue.</div>
+                    </div>
+                </div>
+
+                <apex:form id="mainForm">
+
+                    <div class="container">
+                        <h2 class="slds-text-heading--large slds-m-bottom--x-small">{!pageTitle}</h2>
+                    </div>
+
+                    <apex:outputPanel id="pageForm">
+                            <apex:outputPanel id="validationPanel" rendered="{!showError}">
+                                <div class="row" id="error-header" data-validated="{!validated}">
+                                    <div class="error-header">
+                                        <p>Review the errors on this page.</p>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <div class="first-row row">
+                                <div class="container">
+                                    <apex:outputLabel value="Type" for="recordType" />
+                                    <apex:inputField style="display:none;" id="recordType" value="{!currentRecordType.Id}" />
+                                    <apex:outputText value="{!currentRecordType.Name}" />
+                                </div>
+                                <div class="container">
+                                    <apex:outputLabel value="Sub Type" for="SubType" />
+                                    <!-- show input -->
+                                    <apex:inputField id="subType" rendered="{!not(showFlow) && not(validated)}" value="{!eventRecord.Subtype__c}" />
+                                    <apex:inputField id="subType-errored" rendered="{!not(showFlow) && errorTypeSubtype}" value="{!eventRecord.Subtype__c}" styleClass="errored" />
+                                    <!-- show selected -->
+                                    <apex:outputText rendered="{!(showFlow || validated) && not(errorTypeSubtype) && vSubtype != null}" value="{!vSubtype}" />
+                                    <apex:outputPanel layout="none" rendered="{!(showFlow || validated) && not(
+                                    errorTypeSubtype) && vSubtype == null}">
+                                        <em>None selected</em>
+                                    </apex:outputPanel>
+                                    <!-- show error message -->                                    
+                                    <apex:outputPanel layout="none" rendered="{!errorTypeSubtype}">
+                                        <p class="errored no-container">Subtype is required</p>
+                                    </apex:outputPanel>      
+                                </div>
+                            </div>
+                            <div class="middle-row row">
+                                <div class="container">
+                                    <apex:outputLabel value="Artist" for="Artist" />
+                                    <apex:inputField id="Artist" rendered="{!(not(showFlow) && not(showCloningPanel)) || errorTypeArtist}" value="{!headlinerArtist.Artist__c}" styleClass="{!IF(errorTypeArtist,'errored','')}"/>
+                                    <apex:outputPanel layout="none" rendered="{!errorTypeArtist}">
+                                        <p class="errored no-container">Artist is required unless the record type is Rental or the record type is Hold with Subtype Rental/Special Events/Venue Holds</p>
+                                    </apex:outputPanel>
+                                    <apex:outputText rendered="{!(showFlow || validated) && not(errorTypeArtist)}" value="{!IF(LEN(vPrimaryHeadlinerArtistName)=0,'None selected', vPrimaryHeadlinerArtistName)}" styleClass="{!IF(LEN(vPrimaryHeadlinerArtistName)=0,'italicFont', '')}"/>
+                                </div>
+                            </div>
+                            <div class="middle-row row">
+                                <div class="container">
+                                    <apex:outputLabel value="Event Date" for="EventDate" />
+                                    <!-- show input -->
+                                    <apex:inputField id="EventDate" rendered="{!not(showFlow) && not(showCloningPanel) && not(errorTypeDate)}" value="{!eventDateTime.EventDate__c}" styleClass="date" type="date" />
+                                    <apex:inputField id="EventDate-errored" rendered="{!not(showFlow) && not(showCloningPanel) && errorTypeDate}" value="{!eventDateTime.EventDate__c}" styleClass="date errored" type="date" />
+                                    <!-- show selected -->
+                                    <apex:outputText rendered="{!(showFlow || showCloningPanel) && vEventDate != null}" value="{0, date, MMMM d','  yyyy}">
+                                        <apex:param value="{!vEventDate}" /> 
+                                    </apex:outputText>
+                                    <apex:outputPanel layout="none" rendered="{!(showFlow || showCloningPanel) && vEventDate == null}">
+                                        <em>None selected</em>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!not(showFlow) && not(showCloningPanel)}">
+                                        <span class="or"> &#8212; OR &#8212; </span>
+                                    </apex:outputPanel>
+                                </div>
+                                <div class="container">
+                                    <!-- show input -->
+                                    <apex:outputPanel layout="none" rendered="{!not(showFlow) || (showFlow && vTargetYear != null) }">
+                                        <apex:outputLabel value="Year" />
+                                    </apex:outputPanel>
+                                    <apex:inputText id="year" rendered="{!not(showFlow) && not(errorTypeDate)}" value="{!eventDateTime.EventYear__c}" html-placeholder="Year" disabled="{!isCloning && parentEvent.ShowCount__c > 1}"/>
+                                    <apex:inputText id="year-errored" rendered="{!not(showFlow) && errorTypeDate}" value="{!eventDateTime.EventYear__c}" html-placeholder="Year" styleClass="errored" disabled="{!isCloning && parentEvent.ShowCount__c > 1}" />
+                                    <!-- show selected -->
+                                    <apex:outputText rendered="{!showFlow && vTargetYear != null}" value="{!vTargetYear}" />
+                                </div>              
+                            </div>
+                            <apex:outputPanel layout="none" rendered="{!errorTypeDate}">
+                                <div class="middle-row row">
+                                    <p class="errored">Either a start date or target year is required</p>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel layout="none" rendered="{!not(showFlow) && vOfficeName == null}">
+                                <div class="container component-container">
+                                    <script type="text/javascript">
+                                        // Component input values written to hidden fields that apex controller will read
+                                        function ovpComponentSelectChanged() {
+                                            insertComponentValuesInMarkup();
+                                            checkConfirmButtonShown();
+                                        }
+
+                                        function insertComponentValuesInMarkup() {
+                                            var componentOffice, componentOfficeName, componentVenue, componentVenueName; 
+                                            var componentPromoter, componentPromoterName;
+
+                                            componentOffice = $('select[id$="office-select"] option:selected').val(); 
+                                            componentOfficeName = $('select[id$="office-select"] option:selected').text();
+                                            componentVenue = $('#venue-select option:selected').val();
+                                            componentVenueName = $('#venue-select option:selected').text();
+                                            componentPromoter = $('#promoter-select option:selected').val();
+                                            componentPromoterName = $('#promoter-select option:selected').text();
+
+                                            $('input[id$="component-office-value"]').val(componentOffice);
+                                            $('input[id$="component-office-name-value"]').val(componentOfficeName);
+                                            $('input[id$="component-venue-value"]').val(componentVenue);
+                                            $('input[id$="component-venue-name-value"]').val(componentVenueName);
+                                            $('input[id$="component-promoter-value"]').val(componentPromoter);
+                                            $('input[id$="component-promoter-name-value"]').val(componentPromoterName);
+                                        }
+                                    
+                                        function checkConfirmButtonShown() {
+                                            if ($('input[id$="component-office-value"]').val()  !== '' &&
+                                                $('input[id$="component-venue-value"]').val() !== '' &&
+                                                $('input[id$="component-promoter-value"]').val() !== '')
+                                            {
+                                                console.log('component happy let confirm show');
+                                                $('#confirm-wrapper').removeClass('hide');
+                                            }
+                                        }
+
+                                        function showSpinner() {
+                                            $('#grid-spin').show();
+                                        }
+                                    </script>
+                                    
+                                    <c:LNE_OfficeVenuePromoterPicker eventVenueId="{!originalEventVenueId}" isCloning="{!isCloning}"/>
+
+                                    <apex:outputPanel layout="none" rendered="{!errorTypeComponentIncomplete}">
+                                        <p class="errored component-error">Office, Venue and Promoter are required</p>
+                                    </apex:outputPanel>
+                                    <script type="text/javascript">
+                                        if ($('p.component-error') && $('#error-header').attr('data-validated') === 'true') {
+                                            $('select[id$="office-select"]').addClass('errored');
+                                            $('#promoter-select').addClass('errored');
+                                            $('#venue-select').addClass('errored');
+                                        }
+                                    </script>
+
+                                    <!-- pass values back to controller -->
+                                    <apex:inputText styleClass="hide" id="component-office-value" value="{!componentOffice}" />
+                                    <apex:inputText styleClass="hide" id="component-office-name-value" value="{!componentOfficeName}" />
+                                    <apex:inputText styleClass="hide" id="component-venue-value" value="{!componentVenue}" />
+                                    <apex:inputText styleClass="hide" id="component-venue-name-value" value="{!componentVenueName}" />
+                                    <apex:inputText styleClass="hide" id="component-promoter-value" value="{!componentPromoter}" />
+                                    <apex:inputText styleClass="hide" id="component-promoter-name-value" value="{!componentPromoterName}" />
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel rendered="{!showFlow || (vOfficeName != null && vVenueName != null && vPromoterName != null) }" layout="none">
+                                <div class="last-row row">
+                                    <div class="container component-display-values mini">
+                                        <label for="office-value">Office</label>
+                                        <apex:outputText value="{!vOfficeName}"/>
+                                    </div>
+                                    <div class="container component-display-values mini">
+                                        <label for="office-value">Venue</label>
+                                        <apex:outputText value="{!vVenueName}"/>
+                                    </div>
+                                    <div class="container component-display-values mini">
+                                        <label for="office-value">Promoter</label>
+                                        <apex:outputText value="{!vPromoterName}"/>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                    </apex:outputPanel>
+
+                    <div class="row button-row hide" id="confirm-wrapper">
+                        <apex:outputPanel id="confirmPanel" layout="none">
+                            <!-- hide class removed when venue and promoter dropdowns are client side rendered -->
+                            <div class="confirm-container">
+                                <apex:commandButton action="{!confirm}" value="Confirm" rendered="{!not(showFlow)}" rerender="mainFlow,flowPanel,confirmPanel,restartPanel,pageForm,validationPanel,cloningPanel" status="buttonStatus" styleClass="slds-button slds-button--brand">
+                                </apex:commandButton>
+                                &nbsp;
+                                <apex:actionStatus startText=" (Please wait...)" stopText="" id="buttonStatus"/>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="restartPanel">
+                            <apex:outputPanel layout="none" rendered="{!showFlow || validated}">
+                                <div class="restart-container slds-m-top--small">
+                                    <apex:outputPanel layout="none">
+                                        <p>If you would like to change any of the above values - reset to clear all values and start again.</p>
+                                    </apex:outputPanel>
+                                    <apex:commandButton action="{!restart}" value="Reset" styleClass="slds-button"/>
+                                </div>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </div>
+                </apex:form>
+
+                <apex:outputPanel id="flowPanel" styleClass="flow-panel">
+                    <apex:outputPanel layout="none" rendered="{!showFlow}"> 
+                        <div class="row">
+                            <div class="container">
+                                <h2 class="slds-text-heading--medium slds-m-bottom--xx-small">Additional Information</h2>
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="container flow-container">
+                                <flow:interview id="mainFlow" name="LNE_NewEventScreen" reRender="mainFlow" finishLocation="{!flowFinished}">
+                                    <apex:param name="vRecordTypeId" value="{!vRecordTypeId}" />
+                                    <apex:param name="vRecordTypeName" value="{!vRecordTypeName}" />
+                                    <apex:param name="vSubtype" value="{!vSubtype}" />
+                                    <apex:param name="vPrimaryHeadlinerArtist" value="{!vPrimaryHeadlinerArtist}" />
+                                    <apex:param name="vPrimaryHeadlinerArtistName" value="{!vPrimaryHeadlinerArtistName}" />
+                                    <apex:param name="vEventDate" value="{!vEventDate}" />
+                                    <apex:param name="vTargetYear" value="{!vTargetYear}" />
+                                    <apex:param name="vOffice" value="{!vOffice}" />
+                                    <apex:param name="vVenue" value="{!vVenue}" />
+                                    <apex:param name="vVenueName" value="{!vVenueName}" />
+                                    <apex:param name="vPromoter" value="{!vPromoter}" />
+                                    <apex:param name="vAppetizeEvent" value="{!vAppetizeEvent}" />
+                                    <apex:param name="vOver5Hours" value="{!vOver5Hours}" />
+                                    <apex:param name="vTemporaryStageToBeUsed" value="{!vTemporaryStageToBeUsed}" />
+                                </flow:interview>
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+
+                <apex:form >
+                    <div class="row button-row">
+                        <apex:outputPanel id="cloningPanel" styleClass="flow-panel">
+                            <apex:outputPanel layout="none" rendered="{!showCloningPanel}"> 
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="container">
+                                        <h2 class="slds-text-heading--medium slds-m-bottom--xx-small">Event Name</h2>
+                                    </div> 
+                                </div>
+
+                                <apex:inputText value="{!clonedEventName}" style="width:600px;"/>
+
+                                <br/>
+
+                                <div style="margin-top: 20px;">
+                                    <apex:commandButton action="{!confirmClone}" value="Finish" styleClass="slds-button slds-button--brand" onclick="showSpinner();"/>
+                                </div>
+
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </div>
+                </apex:form>
+            </div>      <!-- main-container -->
+
+        </body>
+
+    </html>
+
+</apex:page>

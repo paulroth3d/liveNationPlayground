@@ -1,0 +1,264 @@
+<!-- TEST PAGE.
+    No functionality needed, nor should it be used in production.
+    Used only for development for the wave project and not needed for deployment to production.
+    Used for team gelling around helper bookmarklets and supplementary materials.
+    @author Paul Roth <proth@salesforce.com> - 708-522-5307
+-->
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false"
+    applyHtmlTag="false" applyBodyTag="false" docType="html-5.0"
+>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LiveNation Bookmarklets</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style type='text/css'>
+    .center {
+         float: none;
+         margin-left: auto;
+         margin-right: auto;
+    }
+    </style>
+  </head>
+  <body>
+    
+    <div class="jumbotron">
+        <a id="SCRUM_FORM" name="SCRUM_FORM" />
+        <div class="container">
+            <h1><a href='#SCRUM_FORM'>Can&apos;t make standup?</a></h1>
+            <h3>Fill-Out this form and let Paul know</h3>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="https://sfdc.co/LiveNationScrum">LNE Standup</a></p>
+        </div>
+    </div>
+    
+    <div class="jumbotron">
+        <a id="FIND_USER" name="FIND_USER" />
+        <div class="container">
+            <h1><a href='#FIND_USER'>Finds as a specific user</a></h1>
+            <h3>Finds the user (helpful for adding in groups / etc)</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var whichType=prompt('Which user should we use?\n\n'+'(NOTE: booker/promoter/etc. or 0-5 work)\n\n'+'0: (promoter) Test Promoter\n'+'1: (booker) Test Booker\n'+'2: (finance) Test Financial\n'+'3: (data) Test Data\n'+'4: (marketing) Test Marketing\n'+'5: (integration) Integration User\n'+'6: (dan) Dan Condon User\n'+'7: (joe) Joe Taylor\n');var userId=null;if(window.location.href.indexOf('/lne--dev0')>0){switch(whichType){case 'booker':case 'promoter':case '0':case '1':userId='005R00000026DCp';break;case 'finance':case 'financial':case '2':userId='005R0000002OPhH';break;case 'data':case '3':userId='005R0000002JRmJ';break;case 'market':case 'marketing':case '4':userId='005R0000002TB7A';break;case 'integration':case '5':userId='00536000002vIz6';break;case 'dan':case '6':alert('Dan\'s user does not exist in Dev0');return;break;case 'joe':case '7':alert('Joe\'s user does not exist in Dev0');return;break;default:alert('Did not understand:'+whichType+'. Please try again');break;}}else if(window.location.href.indexOf('/lne--qa0')>0){switch(whichType){case 'booker':case 'promoter':case '0':case '1':userId='0056C000000Dejt';break;case 'finance':case 'financial':case '2':userId='0056C000000Dw8C';break;case 'data':case '3':userId='0056C000000DhTF';break;case 'market':case 'marketing':case '4':userId='0056C000000Eg28';break;case 'integration':case '4':userId='00536000002vIz6';break;case 'dan':case '5':userId='0056C000000DgPv';break;case 'joe':case '6':userId='0056C000000Edhr';break;default:alert('Did not understand:'+whichType+'. Please try again');break;}}else{alert('Unknown domain');}if(userId){var url=window.location.protocol+'//'+window.location.host+'/'+userId+'?noredirect=1';window.open(url,'_blank');}})();">Find User</a></p>
+        </div>
+    </div>
+    
+    <div class="jumbotron">
+        <a id="Login_User" name="Login_User" />
+        <div class="container">
+            <h1><a href='#Login_User'>Login as User</a></h1>
+            <h3>Logs in as a particular user</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var whichType=prompt('Which user should we use?\n\n'+'(NOTE: booker/promoter/etc. or 0-5 work)\n\n'+'0: (promoter) Test Promoter\n'+'1: (booker) Test Booker\n'+'2: (finance) Test Financial\n'+'3: (data) Test Data\n'+'4: (marketing) Test Marketing\n'+'5: (integration) Integration User\n'+'6: (dan) Dan Condon User\n'+'7: (joe) Joe Taylor\n');var userId=null;var orgId=null;if(window.location.href.indexOf('/lne--dev0')>0){orgId='00DR0000001v4Il';switch(whichType){case 'booker':case 'promoter':case '0':case '1':userId='005R00000026DCp';break;case 'finance':case 'financial':case '2':userId='005R0000002OPhH';break;case 'data':case '3':userId='005R0000002JRmJ';break;case 'market':case 'marketing':case '4':userId='005R0000002TB7A';break;case 'integration':case '5':userId='00536000002vIz6';break;case 'dan':case '6':alert('Dan\'s user does not exist in Dev0');return;break;case 'joe':case '7':alert('Joe\'s user does not exist in Dev0');return;break;default:alert('Did not understand:'+whichType+'. Please try again');break;}}else if(window.location.href.indexOf('/lne--qa0')>0){orgId='00D6C0000000MTC';switch(whichType){case 'booker':case 'promoter':case '0':case '1':userId='0056C000000Dejt';break;case 'finance':case 'financial':case '2':userId='0056C000000Dw8C';break;case 'data':case '3':userId='0056C000000DhTF';break;case 'market':case 'marketing':case '4':userId='0056C000000Eg28';break;case 'integration':case '4':userId='00536000002vIz6';break;case 'dan':case '5':userId='0056C000000DgPv';break;case 'joe':case '6':userId='0056C000000Edhr';break;default:alert('Did not understand:'+whichType+'. Please try again');break;}}else{alert('Unknown domain');}if(userId){var url=window.location.protocol+'//'+window.location.host+'/servlet/servlet.su?oid='+orgId+'&suorgadminid='+userId+'&targetURL=%2Fhome%2Fhome.jsp&retURL=%2F005%3FisUserEntityOverride%3D1%26retURL%3D%252Fsetup%252Fhome%26isdtp%3Dp1%26sfdcIFrameOrigin%3Dhttps%253A%252F%252F'+window.location.host+'%26sfdcIFrameHost%3Dweb';window.open(url,'_blank');}})();">Login as User</a></p>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="jumbotron">
+        <a id="SEARCH_SFDC" name="SEARCH_SFDC" />
+        <div class="container">
+            <h1><a href='#SEARCH_SFDC'>Search Salesforce Data</a></h1>
+            <p>Searches Salesforce for your environment</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var searchTerm=prompt('what should we search for?');window.open(window.location.protocol+'//'+window.location.host+'/_ui/search/ui/UnifiedSearchResults?searchType=2&str='+searchTerm,'_blank');})();">Search SFDC</a></p>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="jumbotron">
+        <a id="SEARCH_SETUP" name="SEARCH_SETUP" />
+        <div class="container">
+            <h1><a href='#SEARCH_SETUP'>Search Setup</a></h1>
+            <p>Searches Salesforce Setup for terms</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var searchTerm=prompt('what should we search for?');window.open(window.location.protocol+'//'+window.location.host+'/ui/setup/SetupSearchResultsPage?setupSearch='+searchTerm,'_blank');})();">Search Setup</a></p>
+        </div>
+    </div>
+    
+    
+    <!--
+    url for the bookmarklet should be this:
+    javascript:(function(){if(window.myRefreshTimer){clearTimeout(window.myRefreshTimer);}function startTimeout(){window.myRefreshTimer=setTimeout(function(){btns=$(&quot;button[data-tooltip='Refresh Jobs']&quot;);stopRunningFound=$(&quot;div.job-item-content a.stop-running&quot;);if(btns&amp;&amp;btns.length>0&amp;&amp;stopRunningFound&amp;&amp;stopRunningFound.length>0){btns[0].click();}else{console.warn(&quot;checked&quot;);}setTimeout(function(){$(&quot;div#userJobs div.datagrid div.jobRow_0 div.datagridrowitem div.expandIcon&quot;).click();},2000);startTimeout();},30000);}startTimeout();console.warn(&quot;Datasets will refresh every minute.&quot;);console.warn(&quot;To Cancel, run the following in your console:&quot;);console.warn(&quot;clearTimeout( window.myRefreshTimer );&quot;);})();
+    not working, so come back to it later.
+    <div class="jumbotron">
+        <a id="DATASET_REFRESHER" name="DATASET_REFRESHER" />
+        <div class="container">
+            <h1><a href='#DATASET_REFRESHER'>Dataset Refresher</a></h1>
+            <h3>Auto refreshes Datasets during run. Meaning you don't have to repeatedly click refresh while in the Data Monitor > Dataset View.</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){if(window.myRefreshTimer){clearTimeout(window.myRefreshTimer);}function startTimeout(){window.myRefreshTimer=setTimeout(function(){btns=$(&quot;button[data-tooltip='Refresh Jobs']&quot;);stopRunningFound=$(&quot;div.job-item-content a.stop-running&quot;);if(btns&amp;&amp;btns.length>0&amp;&amp;stopRunningFound&amp;&amp;stopRunningFound.length>0){btns[0].click();}else{console.warn(&quot;checked&quot;);}setTimeout(function(){$(&quot;div#userJobs div.datagrid div.jobRow_0 div.datagridrowitem div.expandIcon&quot;).click();},2000);startTimeout();},30000);}startTimeout();console.warn(&quot;Datasets will refresh every minute.&quot;);console.warn(&quot;To Cancel, run the following in your console:&quot;);console.warn(&quot;clearTimeout( window.myRefreshTimer );&quot;);})();">Data Load Refresher</a></p>
+        </div>
+    </div>
+    -->
+    
+    
+    
+    <div class="jumbotron">
+        <a id="SETUP" name="SETUP" />
+        <div class="container">
+            <h1><a href='#SETUP'>Classic Setup</a></h1>
+            <p>Navigates to the classic settings</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your search term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var url=window.location.protocol+'//'+window.location.host+'/p/setup/custent/CustomObjectsPage?setupid=CustomObjects';var win=window.open(url,'_blank');function checkWin(){if(win.document){win.document.title=UserContext.userName;}else{setTimeout(checkWin,5000);}}setTimeout(checkWin,5000);})();">Classic Setup</a></p>
+        </div>
+    </div>
+    
+    
+    
+    <div class="jumbotron">
+        <a id="LIGHTNING_SETUP" name="LIGHTNING_SETUP" />
+        <div class="container">
+            <h1><a href='#LIGHTNING_SETUP'>Lightning Setup</a></h1>
+            <p>Navigates to the Lightning Experience settings - assuming you're in Lightning Experience</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your search term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var url=window.location.protocol+'//'+window.location.host+'/one/one.app#/setup/home';var win=window.open(url,'_blank');})();">Lightning Setup</a></p>
+        </div>
+    </div>
+    
+    
+    
+    <div class="jumbotron">
+        <a id="LIGHTNING_SETUP" name="LIGHTNING_APP_BUILDER" />
+        <div class="container">
+            <h1><a href='#LIGHTNING_APP_BUILDER'>Lightning App Builder</a></h1>
+            <p>Navigates to the Lightning App Builder</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then navigate to an area in Salesforce with Lightning Experience enabled, and simply tap the bookmarklet</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var url=window.location.protocol+'//'+window.location.host+'/one/one.app#/setup/FlexiPageList/home';var win=window.open(url,'_blank');})();">App Builder</a></p>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="jumbotron">
+        <a id="SEARCH_RALLY" name="SEARCH_RALLY" />
+        <div class="container">
+            <h1><a href='#SEARCH_RALLY'>Search Rally</a></h1>
+            <h3>Searches Rally for a particular UserStory/Defect/etc.</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your search term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var rallyProject='58107682671d';var searchQuery=prompt('Rally Search');if(!searchQuery){return;}window.open('https://rally1.rallydev.com/#/'+rallyProject+'/search?keywords='+searchQuery,'_blank');})();">Search Rally</a></p>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="jumbotron">
+        <a id="RALLY_TASK_STORY" name="SEARCH_RALLY" />
+        <div class="container">
+            <h1><a href='#RALLY_TASK_STORY'>Rally Task Fix</a></h1>
+            <p>Rally Tasks and Story<br />at the SAME TIME</p>
+            <h3>Its a magical concept.</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then, when you're on a rally story detail, click the button</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href='javascript:(function()%7Burl2%3D"http://mm-proth.s3.amazonaws.com/bookmarklets/rallyFixTarget.html"%3BopenWindow%3Dwindow.open(url2%2B"%3Ff1%3D"%2Bwindow.location.href%2B"%26f2%3D"%2Bwindow.location.href%2B"/tasks","RallyFix","")%3B%7D)()%3B'>Rally Task Fix</a></p>
+        </div>
+    </div>
+    
+    
+    <div class="jumbotron">
+        <a id="SWAP_SFDC_USER" name="SWAP_SFDC_USER" />
+        <div class="container">
+            <h1><a href='#SWAP_SFDC_USER'>Swap SFDC User</a></h1>
+            <p>Swaps betten the User Chatter page and their User Info page (used for login)</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your search term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){originalLocation = window.location.href.replace( '/UserProfilePage?', '/upp?' ); newLocation1=originalLocation.replace( /\/([a-zA-Z0-9]{15,18})[?&].*/, '/_ui/core/userprofile/UserProfilePage?u=$1' ); newLocation2=originalLocation.replace( /[?&]u=([a-zA-Z0-9]{15,})\&.+/g, '%E2%80%A0$1?noredirect=1' ).replace( /\/_ui\/core\/[^%E2%80%A0]+%E2%80%A0/g, '/' ); if( newLocation1 != originalLocation ){   window.location.href=newLocation1; } else if( newLocation2 != originalLocation ){ window.location.href=newLocation2; } })()">Swap SFDC User</a></p>
+        </div>
+    </div>
+    
+    
+    <div class="jumbotron">
+        <a id="RENAME_WINDOW" name="RENAME_WINDOW" />
+        <div class="container">
+            <h1><a href='#RENAME_WINDOW'>Rename Window</a></h1>
+            <p>Helpful link to allow you to rename windows, so exposé shows windows in a way that you can tell what is what</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your search term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){window.document.title=window.prompt('New window title?');})()">Rename Window</a></p>
+        </div>
+    </div>
+    
+    <div class="jumbotron">
+        <a id="GITHUB_COMMIT" name="GITHUB_COMMIT" />
+        <div class="container">
+            <h1><a href='#GITHUB_COMMIT'>Github Commit</a></h1>
+            <p>Helpful to navigate someone directly to a specific commit.</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your commit hash term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var commitHash=prompt('What is the commit hash?');if( !commitHash ){return;}var githubBase='https://github.com/SalesforceCloudServices/liveNationSFDC/commit/';window.open(githubBase+commitHash,'_blank'); })()">Github Commit</a></p>
+        </div>
+    </div>
+    
+    <div class="jumbotron">
+        <a id="GITHUB_COMPARE" name="GITHUB_COMPARE" />
+        <div class="container">
+            <h1><a href='#GITHUB_COMPARE'>Github Compare</a></h1>
+            <p>Compare one revision to another.</p>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your commit hash term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var gitFromCommit=prompt('What is the start commit hash?');if( !gitFromCommit ){return;}var gitToCommit=prompt('What is the end commit hash?');if( !gitToCommit ){return;}var githubBase='https://github.com/SalesforceCloudServices/liveNationSFDC/compare/';window.open(githubBase+gitFromCommit+'...'+gitToCommit,'_blank'); })()">Github Compare</a></p>
+        </div>
+    </div>
+    
+    <div class="jumbotron">
+        <a id="SFDC_ID" name="SFDC_ID" />
+        <div class="container">
+            <h1><a href='#SFDC_ID'>Open SalesForce ID</a></h1>
+            <h3>Opens SalesForce to a particular SalesForce ID</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then simply tap the bookmarklet and enter your search term</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var isLightning=(window.location.href.indexOf('/one/one.app')>-1);var isLEX=(typeof $A!=='undefined');var sfdcId=prompt('What is the SalesForce.com ID?');if(!sfdcId){return;}var apexPage=null;var apexMatches=apexMatches=sfdcId.match('(^|/)apex/([a-zA-Z0-9_+]+)');var targetURL='/'+sfdcId;if(isLEX){try{targetURL=targetURL.replace('//','/');var evt=$A.get('e.force:navigateToURL');evt.setParams({'url':targetURL});evt.fire();return;}catch(err){alert('In LEX, but cannot navigate to URL:'+targetURL);return;}}if(isLightning){if(apexMatches){targetURL='/one/one.app#/n/'+apexMatches[2];}else{targetURL='/one/one.app#/sObject/'+sfdcId+'/view'}}var resultURL=window.location.protocol+'//'+window.location.host+targetURL;window.open(resultURL,'_blank');})();">Open SFDC ID</a></p>
+        </div>
+    </div>
+    
+    <div class="jumbotron">
+        <a id="Open_Grid" name="Open_Grid" />
+        <div class="container">
+            <h1><a href='#Open_Grid'>Opens a grid</a></h1>
+            <h3>Opens a GridBuddy Grid</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then click and enter a Grid Name and a Event Id (blank for default)</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function(){var gridName=prompt('Grid Name?');var eventId=prompt('event Id?');var domain=window.location.host;if(!eventId){if(window.location.href.indexOf('/lne--dev0')>0){domain='lne--dev0--gblite.cs2.visual.force.com';eventId='a0VR0000006QiLxMAK';}else if(window.location.href.indexOf('/lne--qa0')>0){domain='lne--qa0--gblite.cs63.visual.force.com';eventId='a0c6C0000008S9m';}else{alert('Unknown domain');return;}}window.open(window.location.protocol+'//'+domain+'/apex/Grid?gname='+gridName+'&fpf=Event__c&fpv='+eventId+'&sbb=0&sh=0&ssb=0','_blank');})();">Open Grid</a></p>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <a id="Splunk_Timestamp" name="Splunk_Timestamp" />
+        <div class="container">
+            <h1><a href='#Splunk_Timestamp'>Splunk Timestamp</a></h1>
+            <h3>Converts Splunk Timestamp to before and after criteria</h3>
+            <p>To install, drag the link below to your bookmarks bar</p>
+            <p>Then Click on the Bookmarklet, enter the timestamp from Splunk, and check the console</p>
+            <p class='bkmklt'><a class="btn btn-primary btn-lg" role="button" href="javascript:(function()%7Bvar%20splunkTimeStamp%3Dprompt(%22what%20is%20the%20splunk%20timestamp%3F%22)%3Bvar%20windowSizeIn%3Dprompt(%22how%20many%20%2B-%20seconds%20should%20I%20window%20for%3F%22)%3Bvar%20windowSize%3DparseInt(windowSizeIn)%3Bif(!windowSize)%7BwindowSize%3D0%3B%7Delse%20if(isNaN(windowSize))%7Bconsole.error(%22did%20not%20understand%20windowSize:%22%2BwindowSizeIn)%3BwindowSize%3D0%3B%7Delse%7BwindowSize*%3D1000%3B%7Dfunction%20parseSplunkToDate(splunkTimeStamp)%7Bvar%20timeMatch%3DsplunkTimeStamp.match(/%5E(%5Cd%7B4%7D)(%5Cd%7B2%7D)(%5Cd%7B2%7D)(%5Cd%7B2%7D)(%5Cd%7B2%7D)(%5Cd%7B2%7D)/)%3Bvar%20matchDate%3Dnull%3Bif(timeMatch)%7BmatchDate%3Dnew%20Date(Date.UTC(timeMatch%5B1%5D,timeMatch%5B2%5D,timeMatch%5B3%5D,timeMatch%5B4%5D,timeMatch%5B5%5D,timeMatch%5B6%5D))%3B%7Delse%7Bwindow.error(%22DateTime%20did%20not%20match%20time%20pattern:%22%2BsplunkTimeStamp)%3B%7Dreturn(matchDate)%3B%7Dfunction%20dateToUTCDate(splunkDate)%7Bvar%20results%3Dnull%3Bif(splunkDate)%7Bresults%3D(%22%22%2BsplunkDate.getUTCMonth()%2B%27/%27%2BsplunkDate.getUTCDate()%2B%27/%27%2BsplunkDate.getUTCFullYear()%2B%27T%27%2BsplunkDate.getUTCHours()%2B%27:%27%2BsplunkDate.getUTCMinutes()%2B%27:%27%2BsplunkDate.getUTCSeconds())%3B%7Dreturn(results)%3B%7Dfunction%20dateToSplunkDate(splunkDate)%7Bvar%20results%3Dnull%3Bif(splunkDate)%7Bresults%3D(%22%22%2BsplunkDate.getUTCMonth()%2B%27/%27%2BsplunkDate.getUTCDate()%2B%27/%27%2BsplunkDate.getUTCFullYear()%2B%27:%27%2BsplunkDate.getUTCHours()%2B%27:%27%2BsplunkDate.getUTCMinutes()%2B%27:%27%2BsplunkDate.getUTCSeconds())%3B%7Dreturn(results)%3B%7Dvar%20results%3Bif(!splunkTimeStamp)%7Bconsole.log(%22aborting%22)%3Breturn%3B%7Dvar%20splunkDate%3DparseSplunkToDate(splunkTimeStamp)%3Bif(!splunkDate)%7Breturn%3B%7Dvar%20beginDate%3Dnew%20Date(splunkDate.getTime()-windowSize)%3Bvar%20endDate%3Dnew%20Date(splunkDate.getTime()%2BwindowSize)%3Bconsole.log(%22splunkTimeStamp:%22%2BsplunkTimeStamp)%3Bresults%3D(%27earliest%3D%22%27%2BdateToSplunkDate(beginDate)%2B%27%22%20%27%2B%27latest%3D%22%27%2BdateToSplunkDate(endDate)%2B%27%22%27)%3Bconsole.log(results)%3Bprompt(%22Copy%20the%20following%22%2Cresults)%3B%7D)()%3B">SplunkTS</a></p>
+        </div>
+    </div>
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body></html>
+</apex:page>

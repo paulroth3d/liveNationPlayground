@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Adult Contemporary</fullName>
+        <default>false</default>
+        <label>Adult Contemporary</label>
+    </customValue>
+    <customValue>
+        <fullName>Alternative Rock</fullName>
+        <default>false</default>
+        <label>Alternative Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>Classic Rock</fullName>
+        <default>false</default>
+        <label>Classic Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>Comedy</fullName>
+        <default>false</default>
+        <label>Comedy</label>
+    </customValue>
+    <customValue>
+        <fullName>Country / Folk</fullName>
+        <default>false</default>
+        <label>Country / Folk</label>
+    </customValue>
+    <customValue>
+        <fullName>Electronic Dance Music</fullName>
+        <default>false</default>
+        <label>Electronic Dance Music</label>
+    </customValue>
+    <customValue>
+        <fullName>Hard Rock</fullName>
+        <default>false</default>
+        <label>Hard Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>Jazz / Blues</fullName>
+        <default>false</default>
+        <label>Jazz / Blues</label>
+    </customValue>
+    <customValue>
+        <fullName>Latin</fullName>
+        <default>false</default>
+        <label>Latin</label>
+    </customValue>
+    <customValue>
+        <fullName>Metal</fullName>
+        <default>false</default>
+        <label>Metal</label>
+    </customValue>
+    <customValue>
+        <fullName>Other - Music</fullName>
+        <default>false</default>
+        <label>Other - Music</label>
+    </customValue>
+    <customValue>
+        <fullName>Other - NonMusic</fullName>
+        <default>false</default>
+        <label>Other - NonMusic</label>
+    </customValue>
+    <customValue>
+        <fullName>R&amp;B</fullName>
+        <default>false</default>
+        <label>R&amp;B</label>
+    </customValue>
+    <customValue>
+        <fullName>Rap / Hip Hop</fullName>
+        <default>false</default>
+        <label>Rap / Hip Hop</label>
+    </customValue>
+    <customValue>
+        <fullName>Rock</fullName>
+        <default>false</default>
+        <label>Rock</label>
+    </customValue>
+    <customValue>
+        <fullName>Sport Event</fullName>
+        <default>false</default>
+        <label>Sport Event</label>
+    </customValue>
+    <customValue>
+        <fullName>Theatre</fullName>
+        <default>false</default>
+        <label>Theatre</label>
+    </customValue>
+    <customValue>
+        <fullName>Top 40 / Pop</fullName>
+        <default>false</default>
+        <label>Top 40 / Pop</label>
+    </customValue>
+    <description>Defines the musical genre of the artist</description>
+    <masterLabel>Genre</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

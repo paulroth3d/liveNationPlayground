@@ -1,0 +1,19 @@
+<aura:component >
+    <!-- attributes -->
+	<aura:attribute name='quickLink' type='QuickLink__c' description="QuickLink SObject" access='public' />
+    <!-- handlers -->
+    <aura:handler name='init' value='{!this}' action='{!c.doInit}' />
+    <aura:handler name='change' value='{!v.quickLink}' action='{!c.handleQuickLinkChanged}' />
+    <li class='slds-p-horizontal--large slds-size--1-of-2'>
+        <div class='slds-tile'>
+            <aura:if isTrue='{! v.quickLink.IconName__c }'>
+            <span class="slds-avatar slds-avatar--x-small">
+                <c:svgIcon svgPath="{! $Resource.LNE_RomeLDS_Sp17 + '/assets/icons/' + (v.quickLink.IconGroup__c?v.quickLink.IconGroup__c:'standard') + '-sprite/svg/symbols.svg#' + v.quickLink.IconName__c }" category="{! (v.quickLink.IconGroup__c?v.quickLink.IconGroup__c:'standard') }" size="x-small" name="{! v.quickLink.IconName__c }" />
+            </span>
+            </aura:if>
+            <span class='slds-truncate' title='{! v.quickLink.Name }'>
+                <ui:outputURL click='{! c.handleLinkClicked }' label='{! v.quickLink.Name }' title='{! v.quickLink.Description__c }' />
+            </span>
+        </div>
+    </li>
+</aura:component>

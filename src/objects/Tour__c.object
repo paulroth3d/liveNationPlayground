@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Tour_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Tour_Compact_Page_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Tour_Compact_Page_Layout</fullName>
+        <fields>TourTitle__c</fields>
+        <fields>TourHeadliner__c</fields>
+        <fields>TourBooker__c</fields>
+        <fields>TourMarketer__c</fields>
+        <fields>BuyingGroup__c</fields>
+        <fields>TourMarketingBudget__c</fields>
+        <label>Tour Compact Page Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A collection of Events and Ad Plans that are linked together with additional tour-level processes and activities</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AggregatedTour__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Aggregated Tour?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BuyingGroup__c</fullName>
+        <externalId>false</externalId>
+        <label>Buying Group</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>BuyingGroup</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ClosingLinkTitle__c</fullName>
+        <defaultValue>&quot;[=ArtistName] at [=VenueName]&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Closing Link Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClosingPostBody__c</fullName>
+        <defaultValue>&quot;Tickets onsale now for [=ArtistName]&apos;s show in [=VenueCity] on [=ShowDate]! Click below &amp; get yours!&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Closing Post Body</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CrossCollateralization__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cross-Collateralization?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyExchange__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Currency Exchange</label>
+        <referenceTo>CurrencyExchange__c</referenceTo>
+        <relationshipLabel>Tours</relationshipLabel>
+        <relationshipName>Tours</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DigitalSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>DigitalSpend__c/ LNESpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Digital Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DigitalSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Digital Spend</label>
+        <summarizedField>TourCampaign__c.NetAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaign__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Digital</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>TourCampaign__c.NonLNETourBudgetBlank__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaign__c.Tour__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Office</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.Type</field>
+                <operation>equals</operation>
+                <value>Division</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Tours</relationshipLabel>
+        <relationshipName>Tours</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FilterArtist__c</fullName>
+        <description>The Tour daily auto association process will include this Artist&apos;s name in its search of Events to associate.</description>
+        <externalId>false</externalId>
+        <label>Filter Artist</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FilterDivision__c</fullName>
+        <description>The Tour daily auto association process will include this Division&apos;s name in its search of Events to associate.</description>
+        <externalId>false</externalId>
+        <label>Filter Division</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FilterEndDate__c</fullName>
+        <description>The Tour daily auto association process will include this date as the latest show date in its search of Events to associate.</description>
+        <externalId>false</externalId>
+        <label>Filter End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FilterExpirationDate__c</fullName>
+        <description>Until the date in this field, the Tour daily auto association process will include this record&apos;s filter criteria in its search of Events to associate.</description>
+        <externalId>false</externalId>
+        <label>Filter Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FilterStartDate__c</fullName>
+        <description>The Tour daily auto association process will include this date as the earliest show date in its search of Events to associate.</description>
+        <externalId>false</externalId>
+        <label>Filter Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FilterVenueType__c</fullName>
+        <description>The Tour daily auto association process will include only this venue type in its search of Events to associate.</description>
+        <externalId>false</externalId>
+        <label>Filter Venue Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LNEMarketingBudget__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Marketing Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNESpend__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Spend</label>
+        <summarizedField>TourCampaign__c.NetAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaign__c.NonLNETourBudgetBlank__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaign__c.Tour__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>MiscSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>MiscSpend__c/LNESpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Misc Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>MiscSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Misc Spend</label>
+        <summarizedField>TourCampaign__c.NetAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaign__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Misc</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>TourCampaign__c.NonLNETourBudgetBlank__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaign__c.Tour__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>NonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-LNE Budget</label>
+        <summarizedField>NonLNETourBudget__c.Budget__c</summarizedField>
+        <summaryForeignKey>NonLNETourBudget__c.Tour__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>NonLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-LNE Spend</label>
+        <summarizedField>TourCampaign__c.NetAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaign__c.NonLNETourBudgetBlank__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaign__c.Tour__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OnSaleLinkTitle__c</fullName>
+        <defaultValue>&quot;[=ArtistName] at [=VenueName]&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>OnSale Link Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OnSalePostBody__c</fullName>
+        <defaultValue>&quot;Tickets onsale now for [=ArtistName]&apos;s show in [=VenueCity] on [=ShowDate]! Click below &amp; get yours!&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>OnSale Post Body</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OracleProjectCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Oracle Project Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreSaleCode__c</fullName>
+        <externalId>false</externalId>
+        <label>PreSale Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreSaleLinkTitle__c</fullName>
+        <defaultValue>&quot;[=ArtistName] at [=VenueName]&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>PreSale Link Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreSalePostBody__c</fullName>
+        <defaultValue>&quot;PRESALE for [=ArtistName]’s show at the [=VenueName] in [=VenueCity] on [=ShowDate] has begun! Use code &apos;[=Code]&apos;  &amp; click below to get yours!&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>PreSale Post Body</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProductionSpendPercent__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProductionSpend__c/LNESpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Production Spend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ProductionSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Production Spend</label>
+        <summarizedField>TourCampaign__c.NetAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>TourCampaign__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Production</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>TourCampaign__c.NonLNETourBudgetBlank__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TourCampaign__c.Tour__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ReTargetingLinkTitle__c</fullName>
+        <defaultValue>&quot;See [=ArtistName] on [=ShowDate]&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>ReTargeting Link Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReTargetingPostBody__c</fullName>
+        <defaultValue>&quot;Your [=ArtistName] tickets are waiting…Don’t miss the tour at [=VenueName].&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>ReTargeting Post Body</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RemainingLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>LNEMarketingBudget__c -  LNESpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining LNE Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RemainingNonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>NonLNEBudget__c -  NonLNESpend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Non-LNE Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RequestID__c</fullName>
+        <externalId>false</externalId>
+        <label>Request ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduled_for_Currency_Recalc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF 
+( 
+ISNULL(CurrencyExchange__c), 
+TRUE, 
+IF 
+( 
+ISNULL(CurrencyDate__c), 
+IF 
+( 
+CurrencyExchange__r.IsCurrent__c = FALSE, 
+TRUE, 
+FALSE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = FALSE) , 
+IF 
+( 
+AND(CurrencyExchange__r.StartDate__c &lt;= CurrencyDate__c, CurrencyExchange__r.EndDate__c &gt;= CurrencyDate__c), 
+FALSE, 
+TRUE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = TRUE), 
+IF 
+( 
+(CurrencyExchange__r.StartDate__c &gt; CurrencyDate__c) = TRUE, 
+TRUE, 
+FALSE 
+) , 
+TRUE 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled for Currency Recalc</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Artist Passed</fullName>
+                    <default>false</default>
+                    <label>Artist Passed</label>
+                </value>
+                <value>
+                    <fullName>LNE Passed</fullName>
+                    <default>false</default>
+                    <label>LNE Passed</label>
+                </value>
+                <value>
+                    <fullName>Postponed</fullName>
+                    <default>false</default>
+                    <label>Postponed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TotalEndofTourDinner__c</fullName>
+        <externalId>false</externalId>
+        <label>Total End of Tour Dinner</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalMiscExpense__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Misc Expense</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalPerDiems__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Per Diems</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalTE__c</fullName>
+        <externalId>false</externalId>
+        <label>Total T&amp;E</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalTSO__c</fullName>
+        <externalId>false</externalId>
+        <formula>TotalTE__c + TotalEndofTourDinner__c + TotalTourRep__c + TotalMiscExpense__c + TotalPerDiems__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total TSO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalTourRep__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Tour Rep</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TourBooker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tour Booker</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Tours</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TourCoHeadliner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tour Co-Headliner</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Artist</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Tours (Tour Co-Headliner)</relationshipLabel>
+        <relationshipName>Tours2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TourHeadliner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tour Headliner</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Artist</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Tours (Tour Headliner)</relationshipLabel>
+        <relationshipName>Tours1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TourMarketer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Tour Marketer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Tours1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TourMarketingBudget__c</fullName>
+        <defaultValue>0.4</defaultValue>
+        <externalId>false</externalId>
+        <label>Tour Marketing Budget %</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TourName__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TourTitle__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name &amp; &quot; - &quot; &amp; TourName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tour Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxDigitalSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(DigitalSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Digital Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEMarketingBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEMarketingBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Marketing Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNESpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxMiscSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(MiscSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Misc Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NonLNEBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Non-LNE Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNonLNESpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NonLNESpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Non-LNE Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProductionSpend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProductionSpend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Production Spend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRemainingLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RemainingLNEBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Remaining LNE Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRemainingNonLNEBudget__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RemainingNonLNEBudget__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Remaining Non-LNE Budget (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalEndofTourDinner__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalEndofTourDinner__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total End of Tour Dinner (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalMiscExpense__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalMiscExpense__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total Misc Expense (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalPerDiems__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalPerDiems__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total Per Diems (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalTE__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalTE__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total T&amp;E (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalTSO__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalTSO__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total TSO (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalTourRep__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalTourRep__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total Tour Rep (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Tour</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>TourName__c</columns>
+        <columns>TourHeadliner__c</columns>
+        <columns>TourCoHeadliner__c</columns>
+        <columns>BuyingGroup__c</columns>
+        <columns>Division__c</columns>
+        <columns>TourBooker__c</columns>
+        <columns>TourMarketer__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Tou-{000000}</displayFormat>
+        <label>Tour ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Tours</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>TourName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TourHeadliner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TourCoHeadliner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BuyingGroup__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Division__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TourBooker__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>TourMarketer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>TourName__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>TourHeadliner__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>TourCoHeadliner__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BuyingGroup__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Division__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>TourBooker__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>TourMarketer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>TourHeadliner__c</searchFilterFields>
+        <searchFilterFields>TourCoHeadliner__c</searchFilterFields>
+        <searchFilterFields>BuyingGroup__c</searchFilterFields>
+        <searchFilterFields>Division__c</searchFilterFields>
+        <searchFilterFields>TourBooker__c</searchFilterFields>
+        <searchFilterFields>TourMarketer__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchResultsAdditionalFields>TourName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TourHeadliner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TourCoHeadliner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BuyingGroup__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Division__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TourBooker__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TourMarketer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Tour_Tracking_Link_Report</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Tour Tracking Link Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>{!$Site.Prefix}/one/one.app?source=aloha#/sObject/00OR0000001BRCc/view?a:t=1489106355293&amp;fv0={!Tour__c.Name}</url>
+    </webLinks>
+</CustomObject>

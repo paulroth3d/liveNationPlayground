@@ -1,0 +1,74 @@
+<apex:component controller="LNE_EventDateTimeTabs_C" selfClosing="true" >
+
+	<apex:attribute name="eventId" assignTo="{!event_Id}" description="Id of Event__c record" type="Id" required="true"/>
+	<apex:attribute name="showSummary" description="Show Summary Tab" type="Boolean" default="false"/>
+	<apex:attribute name="width" description="Width of strip" type="String" default="100%"/>
+
+	<apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+	<style type="text/css">
+		
+		.tab-strip {
+			width: {!width};
+			overflow-x: scroll;
+		}
+	</style>
+
+	<!-- <div class="slds-tabs--scoped tab-strip"> -->
+		<ul class="slds-tabs--scoped__nav" role="tablist">
+		<apex:outputPanel layout="none" rendered="{!showSummary}">
+			<li class="edt-tab slds-tabs--scoped__item" role="presentation">
+				<a class="slds-tabs--scoped__link" href="javascript:void(0);" onclick="tabClicked(this);" data-recordid="summary" role="tab" tabindex="0">
+					Summary
+				</a>
+			</li> 
+		</apex:outputPanel>
+		<apex:repeat var="e" value="{!eventDateTimes}">
+			<li class="edt-tab slds-tabs--scoped__item" role="presentation">
+				<a class="slds-tabs--scoped__link" href="javascript:void(0);" onclick="tabClicked(this);" data-recordid="{!e.Id}" role="tab" tabindex="0">
+					<span>
+						<apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+							<apex:param value="{!e.EventDate__c}"/>
+						</apex:outputText>
+					</span>
+					<span>
+						<apex:outputText value=" {0}">
+							<apex:param value="{!e.StartTime__c}"/>
+						</apex:outputText>
+					</span>
+				</a>
+			</li>
+		</apex:repeat>
+		</ul>
+	<!-- </div> -->
+
+	<script type="text/javascript">
+	
+		$(document).ready( function(){
+			//-- DE382
+			const widthNeeded = $('.slds-tabs--scoped__nav')[0].scrollWidth;
+			$('ul.slds-tabs--scoped__nav').width(`${widthNeeded}px`);
+		});
+
+		// highlight first tab
+		var tabs = document.getElementsByClassName('edt-tab'),
+			tab = tabs[0];
+
+		tab.classList.add('slds-active');
+		
+		function tabClicked(obj) {
+
+			// deactivate tabs
+			var tabs = document.getElementsByClassName('edt-tab');
+			for (var i = 0, l = tabs.length; i < l; i++) {
+				tabs[i].classList.remove('slds-active');	
+			}
+			// activate clicked tab
+			obj.parentElement.classList.add('slds-active');
+
+			// send event
+			document.body.dispatchEvent(new CustomEvent('eventdatetime-tab-clicked', { detail: obj.dataset.recordid }));
+		}
+
+	</script>
+
+</apex:component>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>LNETourReports</members>
+        <members>LNETourReports/Ad_Spend</members>
+        <members>LNETourReports/Artist_Guarantee</members>
+        <members>LNETourReports/Artist_Headliner_Guarantees</members>
+        <members>LNETourReports/Budget_Variance</members>
+        <members>LNETourReports/Offer_Financials</members>
+        <members>LNETourReports/Offers</members>
+        <members>LNETourReports/Promotions_by_Ad_Plan</members>
+        <members>LNETourReports/TourCampaignswithAdPlans</members>
+        <members>LNETourReports/Vendor_Advertisements</members>
+        <members>LNETourReports/Venues</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ReportType</name>
+    </types>
+    <version>39.0</version>
+</Package>

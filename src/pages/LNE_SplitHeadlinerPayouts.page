@@ -1,0 +1,217 @@
+<!--
+/**
+ *  US648 - LNE_SplitHeadlinerPayouts
+ *  @author: Vinay Kanuganti
+**/
+-->
+<apex:page controller="LNE_SplitHeadlinerPayouts_C" showHeader="false" sidebar="false" standardStylesheets="false" action="{!init}"
+ >
+	<!-- uncomment if the popup will be used within grid -->
+	<apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage.js")}" />
+	<apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/jquery-min.js")}" />
+	<apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+	<!-- Used to simplify remoting calls -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/remoting/RemotingHelper.js")}" />
+    <apex:includeScript value="{! urlFor( $Resource.LNE_GeneralResources, 'js/lib/jquery-ui.min.js' )}" />
+    <style type='text/css'>
+        .hidden {
+			display: none;
+		}
+        .panelMargin {
+            margin-top: 20px;
+        }
+        .errorcontainer{
+        	color: #cc0000;
+        	font-weight:bold;
+        }
+    </style>
+	<script type='text/javascript'>
+		
+		$(document).ready( function(){
+			console.log( 'document is now ready' );
+			calculateSpitTotal();
+
+			$('.slds-input').each(function() {
+				calculateLineSplitBackendPercentage(this);
+		    });
+
+			$('.slds-input').keyup(function() {
+				calculateSpitTotal();
+				calculateLineSplitBackendPercentage(this);
+			});
+		});
+
+		function calculateSpitTotal(){
+			var totalSplit = 0;
+			$('.slds-input').each(function() {
+				if(!isNaN(this.value) && this.value.length!=0){
+		        	totalSplit += Number(this.value);
+		        }
+		    });
+			$('#SplitTotal').text(totalSplit);
+		}
+
+		function calculateLineSplitBackendPercentage(r){
+			//BackendPercent__c * SplitPercentage__c
+
+			var splitPercent = $(r).closest('tr').find('.slds-input').val();
+			var backendPercent = $(r).closest('tr').find('.backendPercentage').text();
+			console.log('@@@ splitPercentage - '+ splitPercent);
+			console.log('@@@ backendPercent - '+ backendPercent);
+
+			var splitBackendPercentCalc = (splitPercent * backendPercent) / 100;
+			$(r).closest('tr').find('.splitBackendPercentgeCalc').text(splitBackendPercentCalc);
+		}
+
+		function checkSave(){
+			var saveSuccess = '{!saveSuccess}';
+			console.log('saveSuccess - '+ saveSuccess);
+			if(saveSuccess){
+				closeAndRefresh();
+			}
+		}
+		
+		function closeAndRefresh(){
+			//window.self.close();
+			window.opener.postMessage('refresh', '*');
+            window.setTimeout(window.close, 1000);
+		}
+
+		function checkSplits(){
+			var totalSplit = 0;
+			var errorMessage = '';
+			
+			$('.slds-input').each(function() {
+				if(isNaN(this.value) || this.value.length == 0){
+		        	errorMessage = '<div>Error: Invalid Split. The Split % must be positive integer.</div>';
+		        }else if(this.value < 0){
+		        	errorMessage = '<div>Error: The Split % must be positive</div>';
+	        	}else{
+	        		totalSplit += Number(this.value);
+	        	}		        
+		    });
+
+			if(errorMessage != ''){
+			 	$errorDiv = $(errorMessage).addClass('error');
+				$(".errorcontainer").html($errorDiv.html());
+				return false;
+			}else if(totalSplit != 100){
+			 	$errorDiv = $('<div>Error: The Split % must total to 100%</div>').addClass('error');
+				$(".errorcontainer").html($errorDiv.html());
+
+				return false;
+			}
+
+			savechanges();	
+		}
+		
+	</script>
+
+	<head>
+	<title>Split Headliner Payouts: {!currentEvent.EventName__c}</title>
+	</head>
+
+	<apex:form >
+	<body class="rome-lds">
+		<!-- HEAD -->
+        <div class="slds-page-header">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media slds-no-space slds-grow">
+                        <div class="slds-media__body">
+                            <p class="slds-page-header__title slds-text-title--caps slds-line-height--reset">Split Headliner Payouts: {!currentEvent.EventName__c}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-p-horizontal--medium panelMargin">
+
+        <article class="slds-card">
+
+		    <div class="slds-card__header slds-grid">
+	            <header class="slds-media slds-media--center slds-has-flexi-truncate">
+	                <div class="slds-media__body">
+	                    <h2>
+	                        <p class="slds-text-title--caps slds-line-height--reset">Primary Headliner Backend % : &nbsp; <apex:outputText value="{!primaryHeadliner.BackendPercent__c}" /></p>
+	                    </h2>
+	                </div>
+	            </header>
+	        </div>
+
+	        <div class="slds-card__header slds-grid">
+	        	<!-- <div class="errorcontainer"></div> -->
+		        <apex:outputPanel id="pageMessages" styleClass="errorcontainer">
+			   		<apex:pageMessages />
+			    </apex:outputPanel>
+		    </div>
+
+	        <div class="slds-card__body">
+				<table class="slds-table slds-table--bordered slds-table--fixed-layout" role="grid">
+					<thead>
+						<tr class="slds-line-height--reset">
+							<th focusable="true" class="slds-text-title--caps" scope="col">
+								<div class="slds-truncate" title="Start Time">Artist Name</div>
+							</th>
+							<th focusable="true" class="slds-text-title--caps" scope="col">
+								<div class="slds-truncate" title="Event Name">Split %</div>
+							</th>
+							<th focusable="true" class="slds-text-title--caps" scope="col">
+								<div class="slds-truncate" title="Event Name">Split Backend %</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<apex:repeat value="{!headlinerList}" var="headliner">
+							<tr>
+								<td role="gridcell">
+									<div class="slds-truncate" title="Artist Name">{!headliner.Artist__r.Name}</div>
+								</td>
+								<td role="gridcell">
+									<div class="slds-truncate" title="Split %">
+									<apex:inputField styleClass="slds-input" id="splitPercentage" value="{!headliner.SplitPercentage__c}" />
+									</div>
+								</td>
+								<td role="gridcell">
+									<div class="slds-truncate hidden" styleClass="backendPercentage"  id="BackendPercentage">
+										<div class="backendPercentage" >{!headliner.BackendPercent__c}
+										</div>
+									</div>
+									<div class="splitBackendPercentgeCalc" id="SplitBackendPercentgeCalc"></div>
+								</td>
+							</tr>
+						</apex:repeat>
+
+							<tr>
+								<td role="gridcell">
+									<div class="slds-truncate" title="Total">Total</div>
+								</td>
+								<td role="gridcell">
+									<div class="slds-truncate" Id="SplitTotal">
+									</div>
+								</td>
+								<td role="gridcell">
+									
+								</td>
+							</tr>
+
+					</tbody>
+				</table>
+
+				<div class="slds-card__header slds-grid">
+					<apex:actionFunction name="savechanges" action="{!save}" reRender="pageMessages" oncomplete="checkSave();"/>
+    
+					<input type="button" name="Close" value="Close" class="slds-button slds-button--brand" onclick="closeAndRefresh();" />
+					<input type="button" name="Save" value="Save" class="slds-button slds-button--brand" onclick="checkSplits();" />
+					<!--
+					<apex:commandButton styleClass="slds-button slds-button--brand" title="Cancel" value="Cancel" action="{!cancel}" oncomplete="closeAndRefresh()"/>
+					<apex:commandButton styleClass="slds-button slds-button--brand" title="Save" value="Save" action="{!save}" onclick="return checkSplits();" oncomplete="checkSave()" /> 
+					-->
+				</div>
+			</div>
+		</article>
+		</div>
+	</body>
+	</apex:form>
+</apex:page>

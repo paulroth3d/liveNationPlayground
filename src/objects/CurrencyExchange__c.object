@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Dated currency exchange</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( RecordType.DeveloperName == &apos;Current&apos;,
+    &apos;Current &apos; &amp; TEXT(CurrencyIsoCode),
+    TEXT(CurrencyIsoCode) &amp; &apos; - (&apos; &amp;
+         IF( NOT(ISBLANK( StartDate__c )), &apos; Effective &apos; &amp; TEXT( StartDate__c ), &apos;&apos; ) &amp;
+         IF( NOT(ISBLANK( EndDate__c )), &apos; Until &apos; &amp; TEXT( EndDate__c ), &apos;&apos; ) &amp;
+    &quot; )&quot;
+)</formula>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndDateFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>EndDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last day that the Currency Exchange Rate is in effect. (Automatically handled)</inlineHelpText>
+        <label>End Date Value</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExchangeRate__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Conversion rate of this currency type against the corporate currency.
+(e.g: 1.4 means 1.4 USD is needed to purchase 1 of this currency)</inlineHelpText>
+        <label>Exchange Rate</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsCurrent__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( RecordTypeName__c == &quot;Current&quot;, true, false )</formula>
+        <label>Is Current</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OfferRate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The rate to be used by promoters when planning offers</inlineHelpText>
+        <label>Offer Rate</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecordTypeName__c</fullName>
+        <defaultValue>&quot;Dated&quot;</defaultValue>
+        <description>Record Type Name of the Currency Exchange.
+(Used to ensure formula field limits are adhered to)</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date that the Currency Exchange rate takes effect</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TEST_Is_Dated_Currency__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>TEST Is Dated Currency</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Currency Exchange</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>CURRENCY_ISO_CODE</columns>
+        <columns>RecordTypeName__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>IsCurrent__c</columns>
+        <columns>StartDate__c</columns>
+        <columns>EndDateFormula__c</columns>
+        <columns>EndDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Current</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>CURRENCY_ISO_CODE</columns>
+        <columns>ExchangeRate__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CurrencyExchange__c.Current</value>
+        </filters>
+        <label>Current</label>
+    </listViews>
+    <listViews>
+        <fullName>Historical_Canadian</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>CURRENCY_ISO_CODE</columns>
+        <columns>ExchangeRate__c</columns>
+        <columns>StartDate__c</columns>
+        <columns>EndDateFormula__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CurrencyExchange__c.Dated</value>
+        </filters>
+        <filters>
+            <field>CURRENCY_ISO_CODE</field>
+            <operation>equals</operation>
+            <value>CAD</value>
+        </filters>
+        <label>Historical Canadian</label>
+    </listViews>
+    <listViews>
+        <fullName>Historical_GBP</fullName>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>CURRENCY_ISO_CODE</columns>
+        <columns>ExchangeRate__c</columns>
+        <columns>StartDate__c</columns>
+        <columns>EndDateFormula__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CurrencyExchange__c.Dated</value>
+        </filters>
+        <filters>
+            <field>CURRENCY_ISO_CODE</field>
+            <operation>equals</operation>
+            <value>GBP</value>
+        </filters>
+        <label>Historical British Pound</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CE-{0000000}</displayFormat>
+        <label>Currency Exchange Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Currency Exchanges</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Current</fullName>
+        <active>true</active>
+        <description>The single set of current Currency Exchange Rates (1 per IsoType)</description>
+        <label>Current</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Dated</fullName>
+        <active>true</active>
+        <description>Historical / Projected Currency Exchange rates.</description>
+        <label>Dated</label>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Description__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <icon>Sys/CA.png</icon>
+    <label>Event Calendar</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom126: TV Widescreen</motif>
+    <page>LNE_CalendarTab</page>
+</CustomTab>

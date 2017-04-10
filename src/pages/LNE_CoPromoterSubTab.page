@@ -1,0 +1,79 @@
+<apex:page standardController="Event__c" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+        <head>
+            <title>Co-Promoter</title>
+            
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script><!-- PostMessage communicates between windows -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+            
+            <style>
+                .spacer{
+                    height:20px;
+                    display:block;
+                }
+                
+                .bold{
+                    font-weight:bold;
+                }
+                
+                #LNE_CoPromoterSubTab--body{
+                    padding-left:1.5em;
+                }
+            </style>
+        </head>
+        
+        <body id="LNE_CoPromoterSubTab--body">
+            <div class="spacer"></div>
+            <div id="all-grids-container">
+                <div id="grid-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+                    <iframe id="gridFramepr" data-grid-name="primarycopromoters" scrolling="auto" height="360" width="100%" frameborder="0" src="{!gridPage}gname=Primary%20Co-Promoters&fpf=Event__c&fpv={!Id}&sh=0&ssb=0&sbb=1"></iframe>
+                    
+                    <iframe id="gridFramesc" data-grid-name="secondarycopromoters" scrolling="auto" height="360" width="100%" frameborder="0" src="{!gridPage}gname=Secondary%20Co-Promoters&fpf=Event__c&fpv={!Id}&sh=0&ssb=0&sbb=1"></iframe>
+                </div>
+            </div>
+            
+            <script type="text/javascript">
+                lneCoPromoterSubTab = {};
+                cpst = lneCoPromoterSubTab;
+                var oldChildGridState = '';
+                var newChildGridState = '';
+                
+                var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+                    
+                cpst.init = function() {
+                    console.log('lneCoPromoterSubTab init');
+                    lneSharedJs.sharedInit();
+                 
+                    eventer(messageEvent, function (e) {
+                        if (typeof e.data == 'string' && (e.data == 'Saving' || e.data == 'SavingPL' || e.data == 'Loaded' || e.data == 'SavingErrors')) {
+                            oldChildGridState = newChildGridState;
+                            newChildGridState = e.data;
+                            
+                            console.log(e.data);
+                                
+                            if (newChildGridState == 'Loaded' && (oldChildGridState == 'Saving' || oldChildGridState == 'SavingPL')){
+                                console.log('event data = ' + e.data);
+    
+                                setTimeout(function(){
+                                   console.log('refresh secondary grid');
+                                   var secondaryGridIframeLoc = $('#gridFramesc').attr('src');
+                                   $('#gridFramesc').attr('src', secondaryGridIframeLoc);
+                                }, 500);
+                            }
+                        }
+                    }, false);
+                };
+
+                cpst.init();
+            </script>
+            <c:LNE_Copyright />
+        </body>
+    </html>
+</apex:page>

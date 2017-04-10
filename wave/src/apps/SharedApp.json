@@ -1,0 +1,49 @@
+{
+    "applicationStatus": "newstatus",
+    "assetSharingUrl": "https://lne--tst.cs63.my.salesforce.com/analytics/wave/application?assetId=00l36000001QyMGAA0&orgId=00D6C0000000aJf&loginHost=cs63.salesforce.com&urlType=sharing",
+    "canBeSharedExternally": false,
+    "createdBy": {
+        "id": "00536000002vIsAAAU",
+        "name": "Analytics Integration User",
+        "profilePhotoUrl": "https://lne--tst--c.cs63.content.force.com/profilephoto/005/T"
+    },
+    "createdDate": "2016-08-12T16:16:19.000Z",
+    "icon": {
+        "id": "00l36000001QyMGAA0",
+        "name": "16.png",
+        "url": "/analytics/wave/web/proto/images/app/icons/16.png"
+    },
+    "id": "00l36000001QyMGAA0",
+    "label": "Shared App",
+    "lastModifiedBy": {
+        "id": "00536000002vIsAAAU",
+        "name": "Analytics Integration User",
+        "profilePhotoUrl": "https://lne--tst--c.cs63.content.force.com/profilephoto/005/T"
+    },
+    "lastModifiedDate": "2016-08-12T16:16:19.000Z",
+    "name": "SharedApp",
+    "permissions": {
+        "manage": true,
+        "modify": true,
+        "view": true
+    },
+    "shares": [
+        {
+            "accessType": "view",
+            "shareType": "organization",
+            "sharedWithId": "00G3600000239obEAA",
+            "sharedWithLabel": "All Internal Users"
+        },
+        {
+            "accessType": "manage",
+            "imageUrl": "https://lne--tst--c.cs63.content.force.com/profilephoto/005/T",
+            "shareType": "user",
+            "sharedWithId": "00536000002vIsAAAU",
+            "sharedWithLabel": "Analytics Integration User"
+        }
+    ],
+    "templateOptions": {},
+    "templateValues": {},
+    "type": "folder",
+    "url": "/services/data/v37.0/wave/folders/00l36000001QyMGAA0"
+}

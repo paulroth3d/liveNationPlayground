@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Rich</fullName>
+        <default>false</default>
+        <label>Rich</label>
+    </customValue>
+    <customValue>
+        <fullName>Standard</fullName>
+        <default>false</default>
+        <label>Standard</label>
+    </customValue>
+    <customValue>
+        <fullName>Video</fullName>
+        <default>false</default>
+        <label>Video</label>
+    </customValue>
+    <customValue>
+        <fullName>Native</fullName>
+        <default>false</default>
+        <label>Native</label>
+    </customValue>
+    <description>Different forms of media for ads - mostly related to electronic media</description>
+    <masterLabel>Media Type Format</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

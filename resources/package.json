@@ -1,0 +1,20 @@
+{
+  "name": "resources",
+  "version": "0.0.1",
+  "description": "Builder for resources used within LiveNation",
+  "main": "LNE_UnderscoreJS_1_8_3.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-ant-sfdc": "^1.5.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-debug-task": "^0.1.8",
+    "npm-run": "^4.1.0",
+    "prompt": "^1.0.0",
+    "underscore": "^1.8.3"
+  }
+}

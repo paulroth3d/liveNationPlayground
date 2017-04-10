@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>As a local promoter, I would like an event creation screen that consolidates the most important event-related information so that I can start the booking process without visiting several screens.</description>
+    <label>LNE_PromoterCreateEvent</label>
+    <packageVersions>
+        <majorNumber>5</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>GBLite</namespace>
+    </packageVersions>
+</ApexPage>

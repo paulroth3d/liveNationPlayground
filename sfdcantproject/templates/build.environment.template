@@ -1,0 +1,12 @@
+#Override for the location of the 'src' folder.
+#To Use, remove the pound/hash to allow the line to be active and specify the path to the 'src' folder'
+# ( This MUST end with a folder named 'src' - similar to the force.com ide and other standards )
+#src.path=force/src
+
+#Override for the location of the 'resources' directory
+#To Use, remove the pound/hash to allow the line to be active and specify the path to the 'resources' folder'
+#resources.path=resources
+
+# lists of resources that can be extracted/compiled/deployed in a group 
+# note: all fileResources must have a matching zipResources
+

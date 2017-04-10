@@ -1,0 +1,932 @@
+<apex:page applyBodyTag="false"
+    applyHtmlTag="false"
+    extensions="LNE_TourRoutingBooking_CX" 
+    showHeader="false" 
+    sidebar="false" 
+    standardController="Tour__c" 
+    standardStylesheets="false" 
+    title="Routing - Booking">
+<apex:variable var="canEdit" value="{!OR($Setup.GeneralSettings__c.GlobalDataAdministrator__c,$Permission.TourBooking)}"/>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+    <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources,'jquery/jquery-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/jquery-ui.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/mustache.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_GeneralResources,'css/lib/jquery-ui.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds,'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+    <style type="text/css">
+        .strong { font-weight: bold; }
+    </style>
+</head>
+<body>
+  <div class="rome-lds slds-content">
+    <div class="slds-backdrop"></div>
+    <!-- filter -->
+    <div id="filter" role="dialog" tabindex="-1" aria-labelledby="dialog-header" class="slds-modal slds-modal--prompt">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header slds-theme--alert-texture">
+          <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close">
+            <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+              <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+            </svg>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 class="slds-text-heading--medium">Automated Tour Association</h2>
+        </div>
+        <div class="slds-modal__content slds-p-around--medium">
+          <div class="slds-panel slds-grid slds-grid--vertical slds-nowrap slds-has-divider--top slds-has-divider--bottom">
+            <div class="slds-form--stacked slds-grow slds-scrollable--y">
+              <div class="slds-panel__section slds-p-bottom--x-small">
+                <div class="slds-media">
+                  <div class="slds-media__body">
+                    <p class="slds-truncate slds-text-heading--medium" title="Matching Criteria">Matching Criteria:</p>
+                  </div>
+                </div>
+              </div>
+              <div class="slds-panel__section slds-p-top--xx-small">
+                <div class="slds-form-element slds-hint-parent slds-has-divider--bottom">
+                  <span class="slds-form-element__label">Artist</span>
+                  <div class="slds-form-element__control">
+                    <span class="filter-artist slds-form-element__static"></span>
+                  </div>
+                </div>
+                <div class="slds-form-element slds-hint-parent">
+                  <span class="slds-form-element__label">Event Dates</span>
+                  <div class="slds-form-element__control">
+                    <span class="filter-dates slds-form-element__static"></span>
+                  </div>
+                </div>
+                <div class="slds-form-element slds-hint-parent slds-has-divider--top slds-p-top--x-small">
+                  <span class="slds-form-element__label">Division</span>
+                  <div class="slds-form-element__control">
+                    <span class="filter-division slds-form-element__static"></span>
+                  </div>
+                </div>
+                <div class="slds-form-element slds-hint-parent slds-has-divider--top slds-p-top--x-small">
+                  <span class="slds-form-element__label">Venue</span>
+                  <div class="slds-form-element__control">
+                    <span class="filter-venue slds-form-element__static"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slds-panel__section">
+            <div class="slds-grid slds-wrap">
+              <div class="slds-size--2-of-5">
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label" for="input-event_date_begin">
+                    Filter will be in effect until:
+                  </label>
+                  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+                    <svg class="svg-today slds-input__icon slds-icon-text-default" aria-hidden="true">
+                      <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#event')}"></use>
+                    </svg>
+                    <input class="filter-expiration slds-input" type="date" />
+                  </div>
+                </div>
+              </div>
+              <div class="slds-size--3-of-5">
+                <div class="slds-form-element">   
+                  <label class="slds-form-element__label">&nbsp;</label>
+                  <div class="slds-form-element__control slds-m-around--x-small">
+                    <a class="future">90 days</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slds-modal__footer">
+          <section class="slds-clearfix">
+            <div class="slds-float--right">
+              <button id="button-dialog-cancel" class="slds-button">Cancel</button>
+              <button id="button-dialog-save" class="slds-button slds-button--brand">Save Filter</button>
+            </div>
+            <div class="slds-float--left">
+              <button id="button-dialog-remove" class="slds-button slds-button--neutral">Remove Filter</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- dialog -->
+    <div id="dialog" role="dialog" tabindex="-1" aria-labelledby="dialog-header" class="slds-modal slds-modal--prompt">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header slds-theme--alert-texture">
+          <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close">
+            <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+              <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+            </svg>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 class="slds-text-heading--medium"></h2>
+        </div>
+        <div class="slds-modal__content slds-p-around--medium">
+        </div>
+        <div class="slds-modal__footer">
+          <button id="button-dialog-cancel" class="slds-button slds-button--neutral">Cancel</button>
+          <button id="button-dialog-confirm" class="slds-button slds-button--brand">Delete</button>
+        </div>
+      </div>
+    </div>
+    <!-- search -->
+    <div class="slds-section slds-is-open {!IF(canEdit,'slds-show','slds-hide')}">
+      <h3 class="slds-section__title">
+        <button class="slds-button slds-section__title-action">
+          <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon--left" aria-hidden="true">
+            <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+          </svg>Search</button>
+      </h3>
+      <div class="slds-section__content slds-show">
+
+        <fieldset class="slds-form--compound">
+          <legend class="slds-form-element__label slds-text-title--caps">SEARCH EVENTS</legend>
+
+          <div id="div-search" class="slds-grid slds-wrap">
+
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-artist">Artist</label>
+                <input type="text" id="input-artist" class="slds-input" value="{!Tour__c.FilterArtist__c}" />
+              </div>
+            </div>
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-event_title">Event Search</label>
+                <input type="text" id="input-event_title" class="slds-input exclusive" />
+              </div>
+            </div>
+
+            <div class="slds-size--2-of-8">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-event_date_begin">
+                  <abbr class="slds-required" title="required">*</abbr> Event Date
+                </label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+                  <svg class="svg-today slds-input__icon slds-icon-text-default" aria-hidden="true">
+                    <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#event')}"></use>
+                  </svg>
+                  <input type="date" id="input-event_date_begin" class="slds-input" value="{!startFormatted}" />
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--2-of-8">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-event_date_end">&nbsp;</label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+                  <svg class="svg-today slds-input__icon slds-icon-text-default" aria-hidden="true">
+                    <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#event')}"></use>
+                  </svg>
+                  <input type="date" id="input-event_date_end" class="slds-input" value="{!endFormatted}" />
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--1-of-8">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="input-event_id">Event Id</label>
+                <div class="slds-form-element__control slds-input-has-fixed-addon">
+                  <span class="slds-form-element__addon">EVT-</span>
+                  <input type="text" id="input-event_id" class="slds-input slds-text-align--right exclusive" placeholder="000000" />
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--3-of-8"></div>
+
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="select-division">Division</label>
+                <div class="slds-form-element__control">
+                  <div class="slds-select_container">
+                    <select id="select-division" class="slds-select">
+                    <apex:repeat var="d" value="{!divisions}">
+                      <option value="{!d.value}">{!d.label}</option>
+                    </apex:repeat>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--1-of-2"></div>
+
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <label class="slds-form-element__label" for="select-venue_type">Venue Type</label>
+                <div class="slds-form-element__control">
+                  <div class="slds-select_container">
+                    <select id="select-venue_type" class="slds-select">
+                    <apex:repeat var="v" value="{!venueTypes}">
+                      <option value="{!v.value}">{!v.label}</option>
+                    </apex:repeat>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slds-size--1-of-2"></div>
+
+            <div class="slds-size--1-of-2">
+              <!-- filter link -->
+              <div class="slds-m-left--small slds-m-top--small {!IF(ISBLANK(Tour__c.FilterExpirationDate__c),'slds-hide','slds-show')}">
+                <a id="a-filter-dialog">
+                  <span class="slds-icon_container">
+                    <svg class="slds-icon slds-icon--x-small slds-icon-text-default" aria-hidden="true">
+                      <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/action-sprite/svg/symbols.svg#filter')}"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Filter</span>
+                  </span>
+                  <span class="text">Automated Tour Association</span>
+                </a>&nbsp;
+                <apex:outputText styleClass="effective-until" value="in effect until {0,date,MM/dd/yyyy}" rendered="{!NOT(ISBLANK(Tour__c.FilterExpirationDate__c))}">
+                  <apex:param value="{!Tour__c.FilterExpirationDate__c}"/>
+                </apex:outputText>
+              </div>
+            </div>
+            <div class="slds-size--1-of-2">
+              <div class="slds-form-element slds-p-around--x-small">
+                <section class="slds-clearfix">
+                  <div class="slds-float--right">
+                    <button id="button-reset" class="slds-button">Reset</button>
+                    <button id="button-search" class="slds-button slds-button--brand">Search</button>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <fieldset class="slds-form--compound">
+          <legend class="slds-form-element__label slds-text-title--caps">EVENT RESULTS</legend>
+          <div class="slds-form-element__group">
+            <div class="slds-form-element__row">
+              <div class="slds-form-element slds-size--1-of-1">
+                <label class="slds-form-element__label" for="input-artist">Events</label>
+                <select id="select-search-result" multiple="multiple" size="5" class="slds-select"></select>
+              </div>
+            </div>
+            <div class="slds-form-element__row">
+              <div class="slds-form-element slds-size--1-of-1">
+                <section class="slds-clearfix">
+                  <div class="slds-float--right">
+                    <button id="button-deselect" class="slds-button">Deselect All</button>
+                    <button id="button-add" class="slds-button slds-button--brand" disabled="disabled">Add</button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+    </div>
+
+    <div id="section-tour_events" class="slds-section slds-is-open">
+      <h3 class="slds-section__title">
+        <button class="slds-button slds-section__title-action">
+          <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon--left" aria-hidden="true">
+            <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+          </svg>Tour Events</button>
+      </h3>
+      <div class="slds-section__content slds-show">
+
+        <div class="slds-m-around--x-small">
+          <table id="events-table" class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+              <tr class="slds-text-title--caps">
+                <th scope="col" class="{!IF(canEdit,'slds-show','slds-hide')}"></th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Event Title">Event Title</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Status">Status</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Primary Headliner Artist">Primary Headliner Artist</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Venue">Venue</div>
+                </th>
+                <th scope="col">
+                  <div class="slds-truncate strong" title="Show Count">Show Count</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script id="event-template" type="text/html">
+      <tr data-recordid="{{Id}}">
+        <td scope="row" class="{!IF(canEdit,'slds-show','slds-hide')}">
+          <div class="del-div slds-truncate" title="delete">
+              <svg class="action-delete slds-icon slds-icon-text-default slds-icon--x-small">
+                  <use xlink:href="{!URLFOR($Resource.LNE_romelds,'assets/icons/utility-sprite/svg/symbols.svg#delete')}"></use>
+              </svg>
+          </div>
+          <div class="slds-spinner_container slds-hide">
+            <div role="status" class="slds-spinner slds-spinner--x-small">
+              <span class="slds-assistive-text">Deleting</span>
+              <div class="slds-spinner__dot-a"></div>
+              <div class="slds-spinner__dot-b"></div>
+            </div>
+          </div>
+        </td>
+        <td data-label="Event Title">
+          <div class="slds-truncate" title="{{EventTitle__c}}">{{EventTitle__c}}</div>
+        </td>
+        <td data-label="Status">
+          <div class="slds-truncate" title="{{Status__c}}">{{Status__c}}</div>
+        </td>
+        <td data-label="Primary Headliner Artist">
+          <div class="slds-truncate" title="{{PrimaryHeadlinerArtist__c}}">{{PrimaryHeadlinerArtist__c}}</div>
+        </td>
+        <td data-label="Venue">
+          <div class="slds-truncate" title="{{Venue__r.Name}}">{{Venue__r.Name}}</div>
+        </td>
+        <td data-label="Show Count">
+          <div class="slds-truncate" title="{{ShowCount__c}}">{{ShowCount__c}}</div>
+        </td>
+      </tr>
+  </script>
+
+  <script type="text/javascript">
+    (function($) {
+
+      var dialogTimeout,
+          isAdding = false,
+          isSearching = false,
+          hasSearched = false,
+          originalFilters = {
+            isNew: false,
+            artist: '{!Tour__c.FilterArtist__c}',
+            division: '{!Tour__c.FilterDivision__c}',
+            endDate: '{!Tour__c.FilterEndDate__c}' === '' ? null : new Date('{!Tour__c.FilterEndDate__c}'),
+            expirationDate: '{!Tour__c.FilterExpirationDate__c}' === '' ? null : new Date('{!Tour__c.FilterExpirationDate__c}'),
+            startDate: '{!Tour__c.FilterStartDate__c}' === '' ? null : new Date('{!Tour__c.FilterStartDate__c}'),
+            venue: '{!Tour__c.FilterVenueType__c}'
+          },
+          searchResults = {},
+          template = $('#event-template').text(),
+          tourId = '{!Tour__c.Id}',
+          today = '{!todayFormatted}',
+          $eventId = $('#input-event_id'),
+          $eventTitle = $('#input-event_title'),
+          $eventsTbody = $('#events-table tbody'),
+          $artist = $('#input-artist'),
+          $buttonAdd = $('#button-add'),
+          $buttonSearch = $('#button-search'),
+          $dialog = $('#dialog'),
+          $filter = $('#filter'),
+          $filterLink = $('#a-filter-dialog'),
+          $buttonDialogCancel = $dialog.find('#button-dialog-cancel'),
+          $buttonDialogConfirm = $dialog.find('#button-dialog-confirm'),
+          $buttonDialogCancel = $filter.find('#button-dialog-cancel'),
+          $buttonDialogSave = $filter.find('#button-dialog-save'),
+          $buttonDialogRemove = $filter.find('#button-dialog-remove'),
+          $backdrop = $('.slds-backdrop'),
+          $dialogHeader = $('#dialog .slds-modal__header'),
+          $division = $('#select-division'),
+          $eventBegin = $('#input-event_date_begin'),
+          $eventEnd = $('#input-event_date_end'),
+          $searchInputs = $('#div-search').find('.slds-input, .slds-select'),
+          $searchResult = $('#select-search-result'),
+          $venueType = $('#select-venue_type');
+
+      // pre-select dropdown selections
+      $division.find('option[value="{!Tour__c.FilterDivision__c}"]').prop('selected', true);
+      $venueType.find('option[value="{!Tour__c.FilterVenueType__c}"]').prop('selected', true);
+
+      // section visibility
+      $('.slds-section__title').on('click', function() {
+        var $this = $(this);
+        $this.parent().toggleClass('slds-is-open');
+        $this.siblings('.slds-section__content').toggleClass('slds-show slds-hide');
+      });
+
+      // calendars icons, sets input to today
+      $('.svg-today').on('click', function() {
+        $(this).siblings('.slds-input').each(function() {
+          if (!this.disabled) {
+            this.valueAsDate = new Date();
+            $(this).blur();
+          }
+        });
+      });
+
+      // resets search inputs
+      $('#button-reset').on('click', function() {
+        $searchInputs
+          .attr('disabled', false)
+          .attr('checked', false)
+          .val('');
+        $eventBegin.val(today).blur();
+        updateFilterLinkVisibility();
+      });
+
+      // exclusive search inputs, Event Name and Event Id
+      $('input.exclusive').on('input', function() {
+        // if has value then disable other inputs
+        var _this = this,
+            disabled = this.value !== '';
+        $searchInputs.each(function() {
+          if (this !== _this) {
+            $(this).attr('disabled', disabled);
+          }
+        });
+      });
+
+      // // search events
+      $artist.autocomplete({
+        delay: 200,
+        minLength: 3,
+        source: function(request, responseCallback) {
+          LNE_TourRoutingBooking_CX.searchArtists(
+            request.term,
+            function(result) {
+              responseCallback(result.map(function(r) {
+                return formatName(r);
+              }));
+            }
+          );
+        }
+      });
+
+      $eventBegin.on('input blur', function() {
+        var $this = $(this),
+            $elem = $this.closest('.slds-form-element');
+        if ($this.val()) {
+          $elem.removeClass('slds-has-error');
+          $buttonSearch.prop('disabled', false);
+        }
+        else {
+          $elem.addClass('slds-has-error');
+          $buttonSearch.prop('disabled', true);
+        }
+      });
+
+      $filter.find('input.filter-expiration').on('input blur', function() {
+        var $this = $(this),
+            $elem = $this.closest('.slds-form-element');
+        if ($this.val().length > 0
+         && this.valueAsDate > new Date()
+         && this.valueAsDate <= addYears(new Date(), 1)
+        ) {
+          $elem.removeClass('slds-has-error');
+          $buttonDialogSave.prop('disabled', false);
+        }
+        else {
+          $elem.addClass('slds-has-error');
+          $buttonDialogSave.prop('disabled', true);
+        }
+      });
+
+      $buttonSearch.on('click', doSearch);
+
+      $searchInputs.on('keypress', function(e) {
+        if (e.which == 13) {
+          doSearch();
+        }
+      });
+
+      function updateFilterLinkVisibility() {
+        // open filter link if left-hand search, startdate is required
+        // so will be there, but artist also needs to be enabled w/value
+        if (hasSearched && $artist.is(':not(:disabled)') && $artist.val().trim().length > 0) {
+          $filterLink.find('span.text').text('New Automated Tour Association');
+          $filterLink.siblings('span.effective-until').text('');
+          $filterLink.parent()
+            .addClass('slds-show')
+            .removeClass('slds-hide');
+        }
+        else if (originalFilters.expirationDate != null) {
+          $filterLink.find('span.text').text('Automated Tour Association');
+          $filterLink.siblings('span.effective-until').text('in effect until ' + formatDate(originalFilters.expirationDate));
+          $filterLink.parent()
+            .addClass('slds-show')
+            .removeClass('slds-hide');
+        }
+        else {
+          $filterLink.parent()
+            .addClass('slds-hide')
+            .removeClass('slds-show');
+        }
+      }
+
+      function doSearch() {
+
+        if (isSearching) {
+            return;
+        }
+
+        // set a flag that a seach has been performed
+        hasSearched = true;
+
+        // disables search button
+        toggleSearchButton();
+
+        var searchTerms = {
+          eventId: $eventId.val().trim(),
+          eventTitle: $eventTitle.val().trim(),
+          artist: $artist.val().trim(),
+          division: $division.val(),
+          eventBegin: reformatDate($eventBegin.val()),
+          eventEnd: reformatDate($eventEnd.val()),
+          venueType: $venueType.val()
+        };
+
+        // remove current options
+        $searchResult.find('option').remove();
+
+        // search callback
+        LNE_TourRoutingBooking_CX.searchEvents(
+          searchTerms,
+          tourId,
+          function(results) {
+            // create/add new options
+            createSearchResults(results);
+            // reenable search
+            toggleSearchButton();
+            // sets the filtering link
+            updateFilterLinkVisibility();
+          }
+        );
+
+        function toggleSearchButton() {
+          isSearching = !isSearching;
+          $buttonSearch
+            .attr('disabled', isSearching)
+            .text('Search' + (isSearching ? 'ing...' : ''));
+        }
+
+      }
+
+      // toggle Add button
+      $searchResult.on('change', function() {
+        $buttonAdd.attr('disabled', $searchResult.find('option:selected').length < 1);
+      });
+
+      $('#button-deselect').on('click', function() {
+        $searchResult.find('option:selected').attr('selected', false);
+        $buttonAdd.attr('disabled', true);
+      });
+
+      // add event
+      $buttonAdd.on('click', doAdd);
+
+      function doAdd() {
+
+        if (isAdding) {
+          return;
+        }
+
+        toggleAddButton();
+
+        // get ids of each selected option
+        var eventIds = $searchResult.find('option:selected')
+          .map(function() {
+            return this.value;
+          })
+          .get();
+
+        LNE_TourRoutingBooking_CX.associateEventsToTour(
+          eventIds,
+          tourId,
+          function(results) {
+
+            var errors = [];
+
+            for (rid in results) {
+              var result = results[rid],
+                  item = searchResults[rid];
+              if (result === '') {
+                // add to table
+                $eventsTbody.append(Mustache.render(template, item));
+                // remove from options
+                $searchResult.find('option[value="' + rid + '"]').remove();
+              }
+              else {
+                errors.push(item.EventTitle__c + ' could not be added to the Tour: ' + result);
+              }
+            }
+
+            if (errors.length > 0) {
+              openDialog({
+                isError: true,
+                messages: ['The following error(s) occured.  They will need to be resolved before the Event(s) can be added.'].concat(errors)
+              });
+            }
+
+            toggleAddButton();
+
+          }
+        );
+
+        function toggleAddButton() {
+          isAdding = !isAdding;
+          $buttonAdd
+            .attr('disabled', isAdding)
+            .text('Add' + (isAdding ? 'ing...' : ''));
+        }
+
+      }
+
+      // remove event
+      $('#events-table').on('click', 'svg.action-delete', function() {
+
+        var _this = this;
+
+        openDialog({
+          messages: 'Are you sure you want to remove this Event from the Tour?',
+          confirm: function() {
+
+            var $this = $(_this),
+                $parentTr = $this.parents('tr:first'),
+                $spinner = $this.parent().siblings('.slds-spinner_container'),
+                recordId = $parentTr.data('recordid');
+
+            $spinner.toggleClass('slds-hide slds-show');
+
+            LNE_TourRoutingBooking_CX.associateEventsToTour(
+              [recordId],
+              null,
+              function(results) {
+                var result = results[recordId];
+                if (result === '') {
+                  $parentTr.fadeOut(function() {
+                    $parentTr.remove();
+                  });
+                }
+                else {
+                  //uh oh couldnt remove the association...
+                  $spinner.toggleClass('slds-hide slds-show');
+                  openDialog({
+                    isError: true,
+                    messages: 'Could not remove the Event from the Tour: ' + result, 
+                    duration: 3000
+                  });
+                  
+                }
+              }
+            );
+
+          }
+        });
+
+      });
+
+      // dialog closures
+      $dialog.find('#button-dialog-cancel, .slds-modal__close').on('click', closeDialog);
+      $filter.find('#button-dialog-cancel, .slds-modal__close').on('click', closeFilter);
+
+      function openDialog(settings) {
+
+        settings = settings || {};
+
+        if (settings.messages) {
+          var $messages = $dialog.find('.slds-modal__content');
+          $messages.text('');
+
+          if (typeof settings.messages === 'string') {
+            settings.messages = [settings.messages];
+          }
+
+          settings.messages.forEach(function(message) {
+            $messages.append('<p>' + message + '</p>');
+          });
+
+          if (settings.isError) {
+            $dialogHeader
+              .addClass('slds-theme--error')
+              .removeClass('slds-notify--alert')
+              .find('h2').text('Error');
+            $buttonDialogCancel.text('Close');
+            $buttonDialogConfirm.hide();
+          }
+          else {
+            $dialogHeader
+              .addClass('slds-notify--alert')
+              .removeClass('slds-theme--error')
+              .find('h2').text('Confirm');
+            $buttonDialogCancel.text('Cancel');
+            $buttonDialogConfirm.show();
+            // bind once so the callback can be passed
+            $buttonDialogConfirm.one('click', function() {
+              closeDialog();
+              if (settings.confirm) {
+                settings.confirm();
+              }
+            });
+
+          }
+
+          $dialog.addClass('slds-fade-in-open');
+          $backdrop.addClass('slds-backdrop--open');
+
+          if (settings.duration) {
+            dialogTimeout = setTimeout(closeDialog, settings.duration);
+          }
+
+        }
+
+      }
+
+      function openFilter(filters) {
+        // update dialog values
+        var dates = filters.endDate == null
+          ? 'After ' + formatDate(filters.startDate)
+          : formatDate(filters.startDate) + ' to ' + formatDate(filters.endDate);
+
+        $filter.find('input.filter-expiration')[0].valueAsDate = filters.expirationDate;
+        $filter.find('span.filter-artist').text(filters.artist);
+        $filter.find('span.filter-dates').text(dates);
+        // show/hide division
+        if (filters.division === '') {
+          $filter.find('span.filter-division')
+            .closest('.slds-form-element')
+              .hide();
+        }
+        else {
+          $filter.find('span.filter-division')
+            .text(filters.division)
+            .closest('.slds-form-element')
+              .show();
+        }
+        // show/hide venue
+        if (filters.venue === '') {
+          $filter.find('span.filter-venue')
+            .closest('.slds-form-element')
+              .hide();
+        }
+        else {
+          $filter.find('span.filter-venue')
+            .text(filters.venue)
+            .closest('.slds-form-element')
+              .show();
+        }
+
+        // bind controls
+        if (filters.isNew) {
+          $buttonDialogRemove.hide();
+        }
+        else {
+          $buttonDialogRemove
+            .one('click', function() {
+              originalFilters = {
+                artist: '',
+                division: '',
+                endDate: null,
+                expirationDate: null,
+                startDate: null,
+                venue: ''
+              };
+              saveFilters(originalFilters);
+            })
+            .show();
+        }
+
+        $buttonDialogSave.one('click', function() {
+          filters.expirationDate = new Date($filter.find('input.filter-expiration').val());
+          filters.isNew = false;
+          originalFilters = filters;
+          hasSearched = false;
+          saveFilters(filters);
+        });
+
+        // show filter dialog
+        $filter.addClass('slds-fade-in-open');
+        $backdrop.addClass('slds-backdrop--open');
+
+        function saveFilters(newFilters) {
+          var searchFilters = $.extend(true, {}, newFilters);
+          delete searchFilters.isNew;
+          searchFilters.endDate = reformatDate2(searchFilters.endDate);
+          searchFilters.expirationDate = reformatDate2(searchFilters.expirationDate);
+          searchFilters.startDate = reformatDate2(searchFilters.startDate);
+          LNE_TourRoutingBooking_CX.updateTourFilters(tourId, searchFilters, closeFilter);
+        }
+
+      }
+
+      $filter.find('a.future').on('click', function() {
+        $filter.find('input.filter-expiration')[0].valueAsDate = addDays(new Date(), 90);
+        $filter.find('input.filter-expiration').blur();
+      });
+
+      // filter dialog
+      $filterLink.on('click', function() {
+        if (hasSearched && $artist.is(':not(:disabled)') && $artist.val().trim().length > 0) {
+          openFilter({
+            isNew: true,
+            artist: $artist.val(),
+            division: $division.val(),
+            endDate: $eventEnd.val() === '' ? null : new Date($eventEnd.val()),
+            expirationDate: addDays(new Date('{!TODAY()}'), 90),
+            startDate: new Date($eventBegin.val()),
+            venue: $venueType.val()
+          });
+        }
+        else {
+          openFilter(originalFilters);
+        }
+      });
+
+      function createSearchResults(results) {
+        // create/add new options
+        searchResults = {};
+        (results || []).forEach(function(item) {
+            formatItem(item);
+            searchResults[item.Id] = item;
+            $searchResult.append(
+                $('<option></option>')
+                    .attr('value', item.Id)
+                    .text(item.EventTitle__c)
+            );
+        });
+      }
+
+      function closeDialog() {
+        if (dialogTimeout) {
+          clearTimeout(dialogTimeout);
+        }
+        $dialog.removeClass('slds-fade-in-open');
+        $backdrop.removeClass('slds-backdrop--open');
+      }
+
+      function closeFilter() {
+        $filter.removeClass('slds-fade-in-open');
+        $backdrop.removeClass('slds-backdrop--open');
+        updateFilterLinkVisibility();
+      }
+
+      function formatName(val) {
+        var dom = new DOMParser().parseFromString('<!doctype html><body>' + (val || ''), 'text/html');
+        return dom.body.textContent;
+      }
+
+      function formatItem(item) {
+        item.EventTitle__c = formatName(item.EventTitle__c);
+        item.PrimaryHeadlinerArtist__c = formatName(item.PrimaryHeadlinerArtist__c);
+        return item;
+      }
+
+      function reformatDate(val) {
+        return val
+          ? new Date(val).toUTCString()
+          : null;
+      }
+
+      function reformatDate2(val) {
+        return val
+          ? val.toUTCString()
+          : null;
+      }
+
+      function pad(n) {
+        return n < 10 ? '0' + n : n;
+      }
+
+      function formatDate(d) {
+        var result = '';
+        if (d != null) {
+          result = pad(d.getUTCMonth() + 1) + '/' + pad(d.getUTCDate()) + '/' + d.getUTCFullYear();
+        }
+        return result;
+      }
+
+      function addDays(date, days) {
+        var result = new Date(date);
+        result.setDate(date.getDate() + days);
+        return result;
+      }
+
+      function addYears(date, days) {
+        var result = new Date(date);
+        result.setFullYear(date.getFullYear() + days);
+        return result;
+      }
+
+      // presearch events
+      LNE_TourRoutingBooking_CX.presearchEvents(tourId, createSearchResults);
+
+      // get current events
+      LNE_TourRoutingBooking_CX.getEvents(
+        tourId,
+        function(results) {
+          results.forEach(function(item) {
+            $eventsTbody.append(Mustache.render(template, formatItem(item)));
+          });
+        }
+      );
+
+    })(jQuery);
+  </script>
+</body>
+</html>
+</apex:page>

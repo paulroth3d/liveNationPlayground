@@ -1,0 +1,58 @@
+<apex:page standardController="Event__c"  extensions="LNE_EventDateTime_CX" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title></title>
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+            <style>
+                .hide {
+                    display: none;
+                }
+
+                .show {
+                    display: block;
+                }
+            </style>
+
+        </head>
+
+        <body class="rome-lds">
+            
+            <apex:outputPanel rendered="{!not(IsBlank(Id))}">
+            <div id="all-grids-container">
+                <div id="grid-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+                    <iframe id="grid-frame-event-date-time" data-grid-name="eventdatetime" scrolling="auto" height="780" width="100%" frameborder="0" src="{!gridPage}gname=Event%20Date%20Time&fpf=Event__c&fpv={!Id}&sh=0&ssb=0&sbb=0"></iframe>
+                </div>
+            </div>
+            </apex:outputPanel>
+
+            <!-- Keep at end of body to help load time and ensure jquery available -->
+            <script type="text/javascript">
+                // keep everything within 1 global object for this page
+                var lneEventDateTime = {};
+                
+                var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+
+                lneEventDateTime.init = function() {
+                    console.log('event date time INIT');
+                    lneSharedJs.sharedInit();
+                };
+
+                /**
+                *   Kick off init
+                */
+                lneEventDateTime.init();
+            </script>
+
+
+        </body>
+
+    </html>
+</apex:page>

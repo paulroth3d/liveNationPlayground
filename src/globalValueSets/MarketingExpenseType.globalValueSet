@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Advertising Materials Production</fullName>
+        <default>false</default>
+        <label>Advertising Materials Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Agency Commission</fullName>
+        <default>false</default>
+        <label>Agency Commission</label>
+    </customValue>
+    <customValue>
+        <fullName>Email Marketing</fullName>
+        <default>false</default>
+        <label>Email Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Flyer &amp; Poster Distribution</fullName>
+        <default>false</default>
+        <label>Flyer &amp; Poster Distribution</label>
+    </customValue>
+    <customValue>
+        <fullName>Flyer &amp; Poster Production</fullName>
+        <default>false</default>
+        <label>Flyer &amp; Poster Production</label>
+    </customValue>
+    <customValue>
+        <fullName>Graphic/Digital Design</fullName>
+        <default>false</default>
+        <label>Graphic/Digital Design</label>
+    </customValue>
+    <customValue>
+        <fullName>National Allocation - Misc</fullName>
+        <default>false</default>
+        <label>National Allocation - Misc</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Press Conference</fullName>
+        <default>false</default>
+        <label>Press Conference</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Relations</fullName>
+        <default>false</default>
+        <label>Public Relations</label>
+    </customValue>
+    <customValue>
+        <fullName>Tour Launch</fullName>
+        <default>false</default>
+        <label>Tour Launch</label>
+    </customValue>
+    <description>Classification for advertising production or miscellaneous costs</description>
+    <masterLabel>Marketing Expense Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

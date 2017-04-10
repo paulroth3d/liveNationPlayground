@@ -1,0 +1,224 @@
+<apex:component controller="LNE_OfficeVenuePromoterPicker_CC">
+	
+	<apex:attribute name="eventVenueId" assignTo="{!originalEventVenueId}" description="Original Event Venue Id" type="String" required="true" />
+	<apex:attribute name="isCloning" description="Is Cloning" type="Boolean" required="true" />
+	<apex:attribute name="isEdit" description="Is Editing" type="Boolean" default="false" />
+	<apex:attribute name="isLocked" description="Is Locked" type="Boolean" default="false" />
+
+
+	<apex:attribute name="eventOfficeId" description="Current Office" type="String" default="" />
+	<apex:attribute name="eventPromoterId" description="Current Promoter" type="String" default="" />
+
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"/>
+
+	<style>
+		.row {
+			clear: both;
+			width: 100%;
+		}
+		.hide {
+			visibility: hidden;
+		}
+		.show {
+			visibility: visible;
+		}		
+	</style>
+
+	<div id="ovpp-picker-container" class="component-container rome-lds">
+
+	    <div class="container" id="response-errors">
+	    </div>
+
+	    <div class="row">
+		    <div class="drop-container container">
+		    	<label for="office-select">Office&nbsp;</label>	
+			    <!-- <select class="select" id="office-select" onchange="ovpComponentSelectChanged(this);"  >
+			    	<apex:outputPanel layout="none" rendered="{!(Offices == null)}">
+			    		<option value="null" selected="selected">-- No offices available --</option>
+					</apex:outputPanel>
+			    	<apex:outputPanel layout="none" rendered="{!(DefaultOffice == null && Offices != null)}">
+						<option value="null" selected="selected">-- Please select an office --</option>
+					</apex:outputPanel>
+				    <apex:repeat value="{!Offices}" var="office">
+				    	<apex:outputPanel layout="none" rendered="{!(DefaultOffice == null || office.Id != DefaultOffice.Id)}">
+				    		<option value="{!office.Id}">{!office.Name}</option>
+				    	</apex:outputPanel>
+				    	<apex:outputPanel layout="none" rendered="{!(DefaultOffice != null && office.Id == DefaultOffice.Id)}">
+				    		<option value="{!office.Id}" selected="selected">{!office.Name}</option>
+						</apex:outputPanel>				
+					</apex:repeat>
+				</select> -->
+
+				<apex:selectList id="office-select" value="{!selectedOfficeId}" multiselect="false" size="1" onchange="ovpComponentSelectChanged(this);">
+		            <apex:selectOptions value="{!offices}"/>
+		        </apex:selectList>
+			</div>
+
+		    <div id="venue-container" class="drop-container container hide">
+		    	<label for="venue-select">Venue</label>
+			    <select class="select" onchange="ovpComponentSelectChanged(this);" id="venue-select"><!-- js rendered --></select>
+			</div>
+
+		    <div id="promoter-container" class="drop-container container hide">
+		    	<label for="promoter-select">Promoter</label>
+			    <select class="select" onchange="ovpComponentSelectChanged(this);" id="promoter-select"><!-- js rendered --></select>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		var LNE_OfficeVenuePromoterPicker = {};
+		var ovpp = LNE_OfficeVenuePromoterPicker;
+		var loading = true;
+		const originalEventOffice = '{!eventOfficeId}';
+		const originalEventPromoter = '{!eventPromoterId}';
+		const originalEventVenue = '{!eventVenueId}';
+		const isVenueAccessible = {!isVenueAccessible};
+		const isCloning = {!isCloning};
+		const isEdit = {!isEdit};
+		const venueMap = {!venueMapJSON};
+
+		ovpp.init = function() {
+			console.log('ovpp init');
+// debugger;
+			if (isEdit && originalEventOffice != '') {
+				$('select[id$="office-select"] option[value="' + originalEventOffice + '"]').attr('selected', true);
+			}
+
+			if ((isCloning === true && isVenueAccessible === true) || isCloning === false) {
+				$('#grid-spin').show();
+
+				// Setup handlers
+				$('#ovpp-picker-container').on('change', 'select[id$="office-select"]', function(){
+					if ($(this).find('option:selected').val() != 'null') {
+						getPromotersAndVenues(
+							$(this).find('option:selected').text(), 
+							$(this).find('option:selected').val(),
+							isEdit ? originalEventVenue : ''
+						);
+					}
+				});
+
+				const selectedOfficeText = $('select[id$="office-select"] option:selected').text();
+				const selectedOfficeVal = $('select[id$="office-select"] option:selected').val();
+
+				if (selectedOfficeText && selectedOfficeText != '' && selectedOfficeVal && selectedOfficeVal != '') {
+					getPromotersAndVenues(selectedOfficeText, selectedOfficeVal, originalEventVenue);
+				} else {
+					$('#grid-spin').hide();
+				}
+			} else if (isCloning === true && isVenueAccessible === false) {
+				$('form[id$="mainForm"]').hide();
+				$('#access-error-message').show();
+			}
+
+		};
+
+		function getPromotersAndVenues(text, val, defaultVenueId) {
+			ovpp.getVenues(val, defaultVenueId);
+			ovpp.getPromoters(text);
+		}
+
+		ovpp.getVenues = function(selectedOfficeId, defaultVenueId) {
+	        if (selectedOfficeId) {
+	        	ovpp.popVenuesDropdown(selectedOfficeId, defaultVenueId);
+		    } else {
+		    	console.log('No selectedOfficeId provided!');
+		    }
+	    };
+
+		ovpp.getPromoters = function(selectedOfficeName) {
+			$('#grid-spin').show();
+	        if (selectedOfficeName) {
+		        Visualforce.remoting.Manager.invokeAction(
+		            '{!$RemoteAction.LNE_OfficeVenuePromoterPicker_CC.getPromoters}',
+		            selectedOfficeName, 
+		            function(result, event){
+		                if (event.status) {
+		                	ovpp.popPromotersDropdown(result);
+		                } else if (event.type === 'exception') {
+		                    $("#response-errors").html(event.message + '<br/><pre>' + event.where + '</pre>');
+		                    console.log('Error event ',event);
+
+		                } else {
+		                    $("#response-errors").html(event.message);
+		                    console.log('Error event ',event);
+		                }
+		                loading = false;
+		            }, 
+		            {escape: true}
+		        );
+		    } else {
+		    	console.log('No selectedOfficeName provided!');
+		    }
+	    };
+
+	    ovpp.popVenuesDropdown = function(selectedOfficeId, defaultId) {
+	    	$('#venue-container').removeClass('hide');
+
+	    	const venueListIsAvailable = venueMap.hasOwnProperty(selectedOfficeId) && venueMap[selectedOfficeId].length > 0;
+
+	    	if (venueListIsAvailable === true) {
+                markup = '';
+                
+                for (var i = 0; i < venueMap[selectedOfficeId].length; i++) {
+                    markup += '<option value="' + venueMap[selectedOfficeId][i].optionValue + '">' + venueMap[selectedOfficeId][i].optionLabel + '</option>';
+                }
+                
+                $('#venue-select').html(markup);
+
+                if (defaultId && defaultId != '') {
+                	$('#venue-select').find(`[value='${defaultId}']`).attr('selected', true);
+                }
+                
+                //-- If user goes with default and doesn't touch select we still need to put value in markup
+                //-- for apex controller
+                try { ovpComponentSelectChanged(); } catch(e) {}
+	    	} else {
+	    		$('#grid-spin').hide();
+	    		$('#venue-select').html('<option value="null">No Venues available</option>');
+	    		//$('#venue-select').attr('disabled', 'disabled');
+	    	}
+	    };
+
+	    ovpp.popPromotersDropdown = function(result) {
+	    	$('#promoter-container').removeClass('hide');
+	    	$('#grid-spin').hide();
+
+	    	if (result) {
+    			console.log('popPromotersDropdown result ',result);
+                var markup = '';
+                var defaultId = (isEdit ? originalEventPromoter : '') || '{!$User.Id}';
+
+                for (var i = 0; i < result.length; i++) {
+                	if (result[i].Id === defaultId) {
+                    	markup += '<option value="' + result[i].Id + '" selected="selected">' + result[i].Name + '</option>';
+                	} else {
+                    	markup += '<option value="' + result[i].Id + '">' + result[i].Name + '</option>';                		
+                	}
+                }
+                
+                $('#promoter-select').html(markup);
+                //-- If user goes with default and doesn't touch select we still need to put value in markup
+                //-- for apex controller
+                try { ovpComponentSelectChanged(); } catch(e) {}
+
+                $('#get-promoter-results-debug').html('<p> ' + (new Date()).toISOString() + ' --- ' + result.length + ' results found </p>');
+	    	} else {
+	    		$('#promoter-select').html('<option value="null">No Promoters available</option>');
+	    		//$('#promoter-select').attr('disabled', 'disabled');
+	    		$('#get-promo-results-debug').html('<p> ' + (new Date()).toISOString() + ' no results found </p>');
+	    	}
+
+	    };
+
+		$(document).ready(function(){
+			ovpp.init();
+			$('select').attr('disabled', {!isLocked});
+		});
+
+	</script>
+
+</apex:component>

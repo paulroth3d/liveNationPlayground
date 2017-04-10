@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Comedy_Marketer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Comedy Marketer</label>
+        <sharedTo>
+            <group>ComedyMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Comedy_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access where geography = North America</description>
+        <label>Comedy North America</label>
+        <sharedTo>
+            <group>ComedyOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_AC_Entertainment_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is AC Entertainment</description>
+        <label>Edit Owned Venue Ledger Entry for AC Entertainment Marketing</label>
+        <sharedTo>
+            <group>ACEntertainmentMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>AC Entertainment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Atlanta_Birmingham_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Atlanta/Birmingham</description>
+        <label>Edit Owned Venue Ledger Entry for Atlanta/Birmingham Marketing</label>
+        <sharedTo>
+            <group>AtlantaBirminghamMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Atlanta/Birmingham</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Baltimore_Washington_DC_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Baltimore/Washington DC</description>
+        <label>Edit Owned Venue Ledger Entry for Baltimore/Washington DC Marketing</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Baltimore/Washington DC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Boise_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Boise</description>
+        <label>Edit Owned Venue Ledger Entry for Boise Marketing</label>
+        <sharedTo>
+            <group>BoiseMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boise</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_BostBostonon_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Boston</description>
+        <label>Edit Owned Venue Ledger Entry for Boston Marketing</label>
+        <sharedTo>
+            <group>BostonMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Canada_Concerts_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Division users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Canada Concerts, Toronto, or Vancouver</description>
+        <label>Edit Owned Venue Ledger Entry for Canada Concerts Marketing</label>
+        <sharedTo>
+            <group>CanadaConcertsMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Canada Concerts,Toronto,Vancouver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Carolinas_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Carolinas</description>
+        <label>Edit Owned Venue Ledger Entry for Carolinas Marketing</label>
+        <sharedTo>
+            <group>CarolinasMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Carolinas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Chicago_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Chicago</description>
+        <label>Edit Owned Venue Ledger Entry for Chicago Marketing</label>
+        <sharedTo>
+            <group>ChicagoMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Chicago</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Comedy_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Comedy</description>
+        <label>Edit Owned Venue Ledger Entry for Comedy Marketing</label>
+        <sharedTo>
+            <group>ComedyMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Comedy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Connecticut_Upstate_NY_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Connecticut/Upstate NY</description>
+        <label>Edit Owned Venue Ledger Entry for Connecticut/Upstate NY Marketing</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Connecticut/Upstate NY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Country_Nation_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Country Nation</description>
+        <label>Edit Owned Venue Ledger Entry for Country Nation Marketing</label>
+        <sharedTo>
+            <group>CountryNationMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Country Nation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Crossroads_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Crossroads</description>
+        <label>Edit Owned Venue Ledger Entry for Crossroads Marketing</label>
+        <sharedTo>
+            <group>CrossroadsMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Dallas_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Dallas</description>
+        <label>Edit Owned Venue Ledger Entry for Dallas Marketing</label>
+        <sharedTo>
+            <group>DallasMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Dallas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Denver_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Denver</description>
+        <label>Edit Owned Venue Ledger Entry for Denver Marketing</label>
+        <sharedTo>
+            <group>DenverMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Denver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Detroit_Indy_Cleveland_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Detroit/Indy/Cleveland</description>
+        <label>Edit Owned Venue Ledger Entry for Detroit/Indy/Cleveland Marketing</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Detroit/Indy/Cleveland,Detroit,Indianapolis,Cleveland</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_EDM_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is EDM</description>
+        <label>Edit Owned Venue Ledger Entry for EDM Marketing</label>
+        <sharedTo>
+            <group>EDMMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>EDM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Festivals_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Festivals</description>
+        <label>Edit Owned Venue Ledger Entry for Festivals Marketing</label>
+        <sharedTo>
+            <group>FestivalsMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Festivals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Hollywood_Bowl_ABE_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Hollywood Bowl ABE Marketing users read-write access to all Ledger Entries where Hollywood Bowl ABE is the Marketing</description>
+        <label>Edit Owned Venue Ledger Entry for Hollywood Bowl ABE Marketing</label>
+        <sharedTo>
+            <group>HollywoodBowlABEMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>equals</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Houston_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Houston</description>
+        <label>Edit Owned Venue Ledger Entry for Houston Marketing</label>
+        <sharedTo>
+            <group>HoustonMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Houston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_LN_Urban_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is LN Urban</description>
+        <label>Edit Owned Venue Ledger Entry for LN Urban Marketing</label>
+        <sharedTo>
+            <group>LNUrbanMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>LN Urban</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Las_Vegas_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Las Vegas</description>
+        <label>Edit Owned Venue Ledger Entry for Las Vegas Marketing</label>
+        <sharedTo>
+            <group>LasVegasMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Las Vegas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Los_Angeles_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Marketing users read-write access to all Ad Plans at an owned &amp; operated Venue where the Primary Office is Los Angeles</description>
+        <label>Edit Owned Venue Ad Plan for Los Angeles Marketing</label>
+        <sharedTo>
+            <group>LosAngelesMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Los Angeles</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Miami_Tampa_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Miami/Tampa</description>
+        <label>Edit Owned Venue Ledger Entry for Miami/Tampa Marketing</label>
+        <sharedTo>
+            <group>MiamiTampaMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Miami/Tampa</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Nashville_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Nashville</description>
+        <label>Edit Owned Venue Ledger Entry for Nashville Marketing</label>
+        <sharedTo>
+            <group>NashvilleMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Nashville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_New_Orleans_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is New Orleans</description>
+        <label>Edit Owned Venue Ledger Entry for New Orleans Marketing</label>
+        <sharedTo>
+            <group>NewOrleansMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New Orleans</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_New_York_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is New York</description>
+        <label>Edit Owned Venue Ledger Entry for New York Marketing</label>
+        <sharedTo>
+            <group>NewYorkMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Philadelphia_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Philadelphia</description>
+        <label>Edit Owned Venue Ledger Entry for Philadelphia Marketing</label>
+        <sharedTo>
+            <group>PhiladelphiaMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Philadelphia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Phoenix_Albuquerque_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Phoenix/Albuquerque</description>
+        <label>Edit Owned Venue Ledger Entry for Phoenix/Albuquerque Marketing</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Phoenix/Albuquerque</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Pittsburgh_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Pittsburgh</description>
+        <label>Edit Owned Venue Ledger Entry for Pittsburgh Marketing</label>
+        <sharedTo>
+            <group>PittsburghMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Pittsburgh</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_San_Diego_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is San Diego</description>
+        <label>Edit Owned Venue Ledger Entry for San Diego Marketing</label>
+        <sharedTo>
+            <group>SanDiegoMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Diego</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_San_Francisco_Sacramento_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is San Francisco/Sacramento</description>
+        <label>Edit Owned Venue Ledger Entry for San Francisco/Sacramento Marketing</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Francisco/Sacramento</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Seattle_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Seattle</description>
+        <label>Edit Owned Venue Ledger Entry for Seattle Marketing</label>
+        <sharedTo>
+            <group>SeattleMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Seattle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_St_Louis_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is St Louis</description>
+        <label>Edit Owned Venue Ledger Entry for St Louis Marketing</label>
+        <sharedTo>
+            <group>StLouisMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>St Louis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_T_C_Concerts_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is T&amp;C Concerts</description>
+        <label>Edit Owned Venue Ledger Entry for T&amp;C Concerts Marketing</label>
+        <sharedTo>
+            <group>TCConcertsMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>T&amp;C Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Ad_Plan_for_Touring_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Marketing users read-write access to all Ledger Entries at an owned &amp; operated Venue where the Primary Office is Touring</description>
+        <label>Edit Owned Venue Ledger Entry for Touring Marketing</label>
+        <sharedTo>
+            <group>TouringMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Touring</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>T_C_Touring_Marketer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>T&amp;C Touring Marketer</label>
+        <sharedTo>
+            <group>TCTouringMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>T_C_Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>T&amp;C Touring North America</label>
+        <sharedTo>
+            <group>TCTouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Touring_Marketer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Touring Marketer</label>
+        <sharedTo>
+            <group>TouringMarketing</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Touring North America</label>
+        <sharedTo>
+            <group>TouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Ad_Plan_for_Theaters_Clubs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all Theaters &amp; Clubs users read-only access to all Theaters &amp; Clubs Ad Plans except Crossroads</description>
+        <label>View Ad Plan for Theaters &amp; Clubs</label>
+        <sharedTo>
+            <group>TheatersClubsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>Theaters &amp; Clubs</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Ad_Plan_for_US_Concerts</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all US Concerts users read-only access to all US Concerts Ad Plans except Hollywood Bowl ABE</description>
+        <label>View Ad Plan for US Concerts</label>
+        <sharedTo>
+            <group>USConcertsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>US Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_AC_Entertainment_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Office public group users read-write access to all Ledger Entries created by AC Entertainment personnel</description>
+        <label>Edit Ledger Entry for AC Entertainment Marketing</label>
+        <sharedTo>
+            <group>ACEntertainmentMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ACEntertainment</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Atlanta_Birmingham_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Office public group users read-write access to all Ledger Entries created by Atlanta/Birmingham personnel</description>
+        <label>Edit Ledger Entry for Atlanta/Birmingham Marketing</label>
+        <sharedTo>
+            <group>AtlantaBirminghamMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>AtlantaBirmingham</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Baltimore_Washington_DC_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Office public group users read-write access to all Ledger Entries created by Baltimore/Washington DC personnel</description>
+        <label>Edit Ledger Entry for Baltimore/Washington DC Marketing</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BaltimoreWashingtonDC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Boise_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Office public group users read-write access to all Ledger Entries created by Boise personnel</description>
+        <label>Edit Ledger Entry for Boise Marketing</label>
+        <sharedTo>
+            <group>BoiseMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boise</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Boston_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Office public group users read-write access to all Ledger Entries created by Boston personnel</description>
+        <label>Edit Ledger Entry for Boston Marketing</label>
+        <sharedTo>
+            <group>BostonMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Canada_Concerts_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Office public group users read-write access to all Ledger Entries created by Canada Concerts personnel</description>
+        <label>Edit Ledger Entry for Canada Concerts Marketing</label>
+        <sharedTo>
+            <group>CanadaConcertsMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CanadaConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Carolinas_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Office public group users read-write access to all Ledger Entries created by Carolinas personnel</description>
+        <label>Edit Ledger Entry for Carolinas Marketing</label>
+        <sharedTo>
+            <group>CarolinasMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Carolinas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Chicago_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Office public group users read-write access to all Ledger Entries created by Chicago personnel</description>
+        <label>Edit Ledger Entry for Chicago Marketing</label>
+        <sharedTo>
+            <group>ChicagoMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Chicago</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Comedy_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Office public group users read-write access to all Ledger Entries created by Comedy personnel</description>
+        <label>Edit Ledger Entry for Comedy Marketing</label>
+        <sharedTo>
+            <group>ComedyMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Comedy</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Connecticut_Upstate_NY_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Office public group users read-write access to all Ledger Entries created by Connecticut/Upstate NY personnel</description>
+        <label>Edit Ledger Entry for Connecticut/Upstate NY Marketing</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ConnecticutUpstateNY</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Country_Nation_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Office public group users read-write access to all Ledger Entries created by Country Nation personnel</description>
+        <label>Edit Ledger Entry for Country Nation Marketing</label>
+        <sharedTo>
+            <group>CountryNationMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CountryNation</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Crossroads_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Office public group users read-write access to all Ledger Entries created by Crossroads personnel</description>
+        <label>Edit Ledger Entry for Crossroads Marketing</label>
+        <sharedTo>
+            <group>CrossroadsMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Crossroads</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Dallas_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Office public group users read-write access to all Ledger Entries created by Dallas personnel</description>
+        <label>Edit Ledger Entry for Dallas Marketing</label>
+        <sharedTo>
+            <group>DallasMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Dallas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Denver_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Office public group users read-write access to all Ledger Entries created by Denver personnel</description>
+        <label>Edit Ledger Entry for Denver Marketing</label>
+        <sharedTo>
+            <group>DenverMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Denver</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Detroit_Indy_Cleveland_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Office public group users read-write access to all Ledger Entries created by Detroit/Indy/Cleveland personnel</description>
+        <label>Edit Ledger Entry for Detroit/Indy/Cleveland Marketing</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>DetroitIndyCleveland</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_EDM_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Office public group users read-write access to all Ledger Entries created by EDM personnel</description>
+        <label>Edit Ledger Entry for EDM Marketing</label>
+        <sharedTo>
+            <group>EDMMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>EDM</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Festivals_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Office public group users read-write access to all Ledger Entries created by Festivals personnel</description>
+        <label>Edit Ledger Entry for Festivals Marketing</label>
+        <sharedTo>
+            <group>FestivalsMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Festivals</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Houston_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Office public group users read-write access to all Ledger Entries created by Houston personnel</description>
+        <label>Edit Ledger Entry for Houston Marketing</label>
+        <sharedTo>
+            <group>HoustonMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Houston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_LN_Urban_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Office public group users read-write access to all Ledger Entries created by LN Urban personnel</description>
+        <label>Edit Ledger Entry for LN Urban Marketing</label>
+        <sharedTo>
+            <group>LNUrbanMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LNUrban</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Las_Vegas_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Office public group users read-write access to all Ledger Entries created by Las Vegas personnel</description>
+        <label>Edit Ledger Entry for Las Vegas Marketing</label>
+        <sharedTo>
+            <group>LasVegasMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LasVegas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Los_Angeles_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Marketing public group users read-write access to all Ad Plans created by Los Angeles personnel</description>
+        <label>Edit Ad Plan for Los Angeles Marketing</label>
+        <sharedTo>
+            <group>LosAngelesMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LosAngeles</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Miami_Tampa_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Office public group users read-write access to all Ledger Entries created by Miami/Tampa personnel</description>
+        <label>Edit Ledger Entry for Miami/Tampa Marketing</label>
+        <sharedTo>
+            <group>MiamiTampaMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MiamiTampa</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Nashville_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Office public group users read-write access to all Ledger Entries created by Nashville personnel</description>
+        <label>Edit Ledger Entry for Nashville Marketing</label>
+        <sharedTo>
+            <group>NashvilleMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Nashville</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_New_Orleans_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Office public group users read-write access to all Ledger Entries created by New Orleans personnel</description>
+        <label>Edit Ledger Entry for New Orleans Marketing</label>
+        <sharedTo>
+            <group>NewOrleansMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewOrleans</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_New_York_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Office public group users read-write access to all Ledger Entries created by New York personnel</description>
+        <label>Edit Ledger Entry for New York Marketing</label>
+        <sharedTo>
+            <group>NewYorkMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewYork</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Philadelphia_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Office public group users read-write access to all Ledger Entries created by Philadelphia personnel</description>
+        <label>Edit Ledger Entry for Philadelphia Marketing</label>
+        <sharedTo>
+            <group>PhiladelphiaMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Philadelphia</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Phoenix_Albuquerque_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Office public group users read-write access to all Ledger Entries created by Phoenix/Albuquerque personnel</description>
+        <label>Edit Ledger Entry for Phoenix/Albuquerque Marketing</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>PhoenixAlbuquerque</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Pittsburgh_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Office public group users read-write access to all Ledger Entries created by Pittsburgh personnel</description>
+        <label>Edit Ledger Entry for Pittsburgh Marketing</label>
+        <sharedTo>
+            <group>PittsburghMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Pittsburgh</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_San_Diego_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Office public group users read-write access to all Ledger Entries created by San Diego personnel</description>
+        <label>Edit Ledger Entry for San Diego Marketing</label>
+        <sharedTo>
+            <group>SanDiegoMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanDiego</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_San_Francisco_Sacramento_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Office public group users read-write access to all Ledger Entries created by San Francisco/Sacramento personnel</description>
+        <label>Edit Ledger Entry for San Francisco/Sacramento Marketing</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanFranciscoSacramento</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Seattle_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Office public group users read-write access to all Ledger Entries created by Seattle personnel</description>
+        <label>Edit Ledger Entry for Seattle Marketing</label>
+        <sharedTo>
+            <group>SeattleMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Seattle</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_St_Louis_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Office public group users read-write access to all Ledger Entries created by St Louis personnel</description>
+        <label>Edit Ledger Entry for St Louis Marketing</label>
+        <sharedTo>
+            <group>StLouisMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>StLouis</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_T_C_Concerts_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Office public group users read-write access to all Ledger Entries created by T&amp;C Concerts personnel</description>
+        <label>Edit Ledger Entry for T&amp;C Concerts Marketing</label>
+        <sharedTo>
+            <group>TCConcertsMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TCConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Ad_Plan_for_Touring_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Office public group users read-write access to all Ledger Entries created by Touring personnel</description>
+        <label>Edit Ledger Entry for Touring Marketing</label>
+        <sharedTo>
+            <group>TouringMarketing</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Touring</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

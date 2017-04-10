@@ -1,0 +1,53 @@
+<aura:component controller="LNE_API_UpdatePurchaseURL_C"
+	implements="force:LightningQuickAction,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+	access="global"
+>
+    <!-- public -->
+	<!-- protected -->
+    <aura:attribute name="hasAccess" type="Boolean" default="false"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="showNoAccessMessage" type="Boolean" default="false"/>
+    <aura:attribute name='initComplete' type='Boolean' default='false' description='Initialization completed' />
+    <aura:attribute name='defaultSearch' type='String' description='Default Search String' access='global' />
+    <aura:attribute name='venue' type='Account' description='Current Artist Account' />
+    <aura:attribute name='apiSettings' type='API_Settings__c' description='API Settings' />
+    <aura:attribute name='recordId' type='Id' description='Id of the current Artist' />
+    <aura:attribute name='hasResults' type='Boolean' default='false' description='Whether there were results found from the API call' />
+    <aura:attribute name="noResultsFound" type="Boolean" default="false"/>
+    <!-- private -->
+    <!-- scripts -->
+    <!-- handlers -->
+    <aura:handler name='init' value='{!this}' action='{!c.doInit}' />
+    <aura:handler event='aura:waiting' action='{!c.showSpinner}' />
+    <aura:handler event='aura:doneWaiting' action='{!c.hideSpinner}' />
+    <!-- elements -->
+    
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--medium" style="z-index:999;" role="alert">
+            <span class="slds-assistive-text">Loading...</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.hasAccess}">
+		<div class='container'>
+			<div class='slds-form--stacked'>
+				<aura:if isTrue='{! v.hasResults }'>
+					<div class='slds-form-element'>
+						<ui:inputSelect label='Possible Matches:' class='dynamic' aura:id='apiResultSel' change='{! c.handleEventSelected }' />
+					</div>
+				</aura:if>
+			</div>
+		</div>
+	</aura:if>
+    
+    <aura:if isTrue='{! v.noResultsFound }'>
+        <center><div>No results found.</div></center>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.showNoAccessMessage}">
+        <center><div>You do not have access to the Ad Plan/Event to make this update.</div></center>
+    </aura:if> 
+	
+</aura:component>

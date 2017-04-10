@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+    access="global"
+>
+    <!-- public -->
+    <aura:attribute name='pageName' type='String' default='LNE_TestLightningComm' required='true' description="API name of the page to load" access='global' />
+    <aura:attribute name='urlArguments' type='String' default='' description="Optional additional GET Parameters" access='global' />
+    <aura:attribute name='height' type='Integer' default='600' description="Height of the iFrame" access='global' />
+    
+    <!-- protected -->
+    <aura:attribute name='recordId' type='Id' access='global' description='Id of the record to be sent (automatic on record detail)' />
+    
+    <!-- private -->
+    <aura:attribute name="setupComplete" type='Boolean' default='false' access='public' />
+    <aura:attribute name='sideNavWidth' type='String' default='100%' access='public' />
+    
+    <div class='windowHandle'>
+        <lightning:button label='Open Pro Forma' onclick='{!c.openWindow}' />
+    </div>
+    <div aura:id="sidenav" id="mySidenav" class="sidenav" style="{!'width:100%; left:'+v.sideNavWidth }">
+        <lightning:button variant="base" class='slds-notify__close' iconName="utility:close" onclick="{! c.closeWindow }" />
+        <lightning:tabset >
+        	<lightning:tab >
+            	<aura:set attribute='label'>
+                	Pro Forma
+                </aura:set>
+                <c:LNE_VisualforceContainer pageName='{! v.pageName }' urlArguments="{! 'Id=' + v.recordId + '&amp;' + v.urlArguments }" height='{! v.height }' />
+            </lightning:tab>
+        	<lightning:tab >
+            	<aura:set attribute='label'>
+                	Feed
+                </aura:set>
+                <forceChatter:publisher context='RECORD' recordId='{! v.recordId }' />
+                <forceChatter:feed type='record' subjectId='{! v.recordId }' feedDesign='BROWSE' />
+            </lightning:tab>
+        </lightning:tabset>
+        
+    </div>
+</aura:component>

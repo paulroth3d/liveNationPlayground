@@ -1,0 +1,7905 @@
+{
+  "events": [
+    {
+      "evcode": "ERE0223",
+      "epdate": "THU 23-FEB-2017",
+      "settlement": "NRS100",
+      "auditdata": [
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 12,
+          "STYPENAME": "W-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": -5,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 12,
+          "STYPENAME": "W-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": -34,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 12,
+          "STYPENAME": "W-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 5,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 12,
+          "STYPENAME": "W-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 34,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 24,
+          "STYPENAME": "9-ADA",
+          "QUALIFIERS": [],
+          "SCOUNT": -24,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 7,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 3,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 5,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 3,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 19,
+          "STYPENAME": "4-PLAT",
+          "QUALIFIERS": [],
+          "SCOUNT": 8,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [],
+          "SCOUNT": -8,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [],
+          "SCOUNT": 26,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 26,
+          "STYPENAME": "===",
+          "QUALIFIERS": [],
+          "SCOUNT": -20,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 21,
+          "STYPENAME": "6-SUPP",
+          "QUALIFIERS": [],
+          "SCOUNT": -10,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 20,
+          "STYPENAME": "5-ART",
+          "QUALIFIERS": [],
+          "SCOUNT": -16,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 13,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 7,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 19,
+          "STYPENAME": "4-PLAT",
+          "QUALIFIERS": [],
+          "SCOUNT": -8,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 22,
+          "STYPENAME": "7-HK",
+          "QUALIFIERS": [],
+          "SCOUNT": -16,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 22,
+          "STYPENAME": "7-HK",
+          "QUALIFIERS": [],
+          "SCOUNT": 16,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 17,
+          "STYPENAME": "2-PRSS",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 17,
+          "STYPENAME": "2-PRSS",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [],
+          "SCOUNT": 26,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 16,
+          "STYPENAME": "1-TMRK",
+          "QUALIFIERS": [],
+          "SCOUNT": -26,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 16,
+          "STYPENAME": "1-TMRK",
+          "QUALIFIERS": [],
+          "SCOUNT": 26,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 24,
+          "STYPENAME": "9-ADA",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -1,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 24,
+          "STYPENAME": "9-ADA",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -1,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 24,
+          "STYPENAME": "9-ADA",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 24,
+          "STYPENAME": "9-ADA",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [],
+          "SCOUNT": 74,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -3,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -3,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP2"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP2HOLD"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 425,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 38.25
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -1,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 17,
+          "STYPENAME": "2-PRSS",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 14,
+          "STYPENAME": "E-HOLD",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 14,
+          "STYPENAME": "E-HOLD",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [],
+          "SCOUNT": 21,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 23,
+          "STYPENAME": "8-LNT",
+          "QUALIFIERS": [],
+          "SCOUNT": -5,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 3,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 3,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -5,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -38,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -3,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": -12,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": -11,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP3"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP3HOLD"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 350,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 31.5
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 3,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 3,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 3,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 5,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "WCACC"
+            }
+          ],
+          "SCOUNT": 11,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 8,
+              "QUALNAME": "COMPAN"
+            }
+          ],
+          "SCOUNT": 12,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 5,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP2"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP2HOLD"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 425,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 38.25
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 8,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 8,
+          "STYPENAME": "COMP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "MKTGH"
+            }
+          ],
+          "SCOUNT": 126,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 16,
+          "STYPENAME": "1-TMRK",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "MKTGH"
+            }
+          ],
+          "SCOUNT": -126,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 12,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 38,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 74,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP2"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP2HOLD"
+            }
+          ],
+          "SCOUNT": 7,
+          "PRICE": 137.61,
+          "SOLDPRICE": 425,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 38.25
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 30,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 18,
+          "STYPENAME": "3HKVIP",
+          "QUALIFIERS": [],
+          "SCOUNT": -30,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 9,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 12,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -3,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 42,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP3"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP3HOLD"
+            }
+          ],
+          "SCOUNT": 5,
+          "PRICE": 137.61,
+          "SOLDPRICE": 350,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 31.5
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 44,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": 22,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -70,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXGL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 10,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 8,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 19,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 61,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 78,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 11,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 21,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXGL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -22,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 9,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 138,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 19,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -58,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 58,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 3,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 16,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXGL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": 8,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 1,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXGL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 3,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 40,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 14,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 19,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 99,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 15,
+          "STYPENAME": "F-PUBL",
+          "QUALIFIERS": [],
+          "SCOUNT": -19,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -13,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP3"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP3HOLD"
+            }
+          ],
+          "SCOUNT": 25,
+          "PRICE": 137.61,
+          "SOLDPRICE": 350,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 31.5
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 32,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 136,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": 7,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 14,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 109,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -11,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 8,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 11,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 122,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 16,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 39,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 17,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -29,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 10,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 17,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 24,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 91,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": 7,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 11,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 44,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 32,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP3"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP3HOLD"
+            }
+          ],
+          "SCOUNT": 5,
+          "PRICE": 137.61,
+          "SOLDPRICE": 350,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 31.5
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 64,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 23,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 267,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 25,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 195,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 18,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 8,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 54,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 103,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 7,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXGL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 20,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 115,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 16,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 49,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP2"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP2HOLD"
+            }
+          ],
+          "SCOUNT": 9,
+          "PRICE": 137.61,
+          "SOLDPRICE": 425,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 38.25
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 23,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 97,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 163,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 277,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 166,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 34,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "VIP1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 30,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 166,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP3HOLD"
+            }
+          ],
+          "SCOUNT": -39,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 488,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": -58,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": -28,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP2HOLD"
+            }
+          ],
+          "SCOUNT": -18,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBL"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 18,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": -30,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 39,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": -50,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": -59,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 15,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 15,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 9,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 30,
+          "STYPENAME": "???",
+          "QUALIFIERS": [],
+          "SCOUNT": -2,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 5,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "COVERT"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": -8,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 16,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": -8,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": -1,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 130,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 15,
+          "STYPENAME": "F-PUBL",
+          "QUALIFIERS": [],
+          "SCOUNT": -18,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": -24,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 15,
+          "STYPENAME": "F-PUBL",
+          "QUALIFIERS": [],
+          "SCOUNT": -20,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 244,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 25,
+          "STYPENAME": "H-VNE",
+          "QUALIFIERS": [],
+          "SCOUNT": -174,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 75,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 25,
+          "STYPENAME": "H-VNE",
+          "QUALIFIERS": [],
+          "SCOUNT": -122,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 11,
+          "STYPENAME": "T-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 86,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [],
+          "SCOUNT": 20,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 25,
+          "STYPENAME": "H-VNE",
+          "QUALIFIERS": [],
+          "SCOUNT": -148,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 5,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "COVERT"
+            }
+          ],
+          "SCOUNT": 1,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 11,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXVI3"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI3HOLD"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 350,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 31.5
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 9,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 12,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 14,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "COVERT"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 8,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 35,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 8,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 22,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 5,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 9,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 30,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "GOLD"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 27,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "DREAMS"
+            }
+          ],
+          "SCOUNT": 9,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 14,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 1,
+          "STYPENAME": "ADULT",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "TURNTABLE"
+            }
+          ],
+          "SCOUNT": 32,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXVI1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI1HOLD"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "2AMXP"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 11,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 24,
+          "STYPENAME": "9-ADA",
+          "QUALIFIERS": [],
+          "SCOUNT": 24,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 7,
+          "STYPENAME": "V-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": -116,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 2,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 7,
+          "STYPENAME": "V-TYPE",
+          "QUALIFIERS": [],
+          "SCOUNT": 202,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 19,
+          "STYPENAME": "4-PLAT",
+          "QUALIFIERS": [],
+          "SCOUNT": -100,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 26,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -2,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": -10,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "2AMXP"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -4,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 4,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 16,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXVI3"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI3HOLD"
+            }
+          ],
+          "SCOUNT": 3,
+          "PRICE": 137.61,
+          "SOLDPRICE": 350,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 31.5
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXVI1"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI1HOLD"
+            }
+          ],
+          "SCOUNT": 12,
+          "PRICE": 137.61,
+          "SOLDPRICE": 500,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 45
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -10,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -10,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "2AMXP"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": 16,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 3,
+          "STYPENAME": "G-VIP",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXVI2"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI2HOLD"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 425,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 38.25
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": -14,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "2AMXP"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 30,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 16,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 46,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "2AMXP"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": 26,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 67,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "2AMXP"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": 66,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 12,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 80,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 29,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "1AMXC"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXCNTHOLD"
+            }
+          ],
+          "SCOUNT": 16,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 14,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 130,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "1AMXC"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXCNTHOLD"
+            }
+          ],
+          "SCOUNT": 47,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 368,
+          "PRICE": 63.76,
+          "SOLDPRICE": 63.76,
+          "FACFEE": 0,
+          "SCVHRG": 16.55,
+          "VAT": 5.74
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 60,
+          "PRICE": 90.83,
+          "SOLDPRICE": 90.83,
+          "FACFEE": 0,
+          "SCVHRG": 18.95,
+          "VAT": 8.17
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI2HOLD"
+            }
+          ],
+          "SCOUNT": -6,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "AMXBLU"
+            }
+          ],
+          "SCOUNT": 242,
+          "PRICE": 45.41,
+          "SOLDPRICE": 45.41,
+          "FACFEE": 0,
+          "SCVHRG": 14.3,
+          "VAT": 4.09
+        },
+        {
+          "OPTYPE": 1,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 2,
+          "STYPENAME": "J-AMEX",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 0,
+              "QUALNAME": "3AMXG"
+            },
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 29,
+          "PRICE": 137.61,
+          "SOLDPRICE": 137.61,
+          "FACFEE": 0,
+          "SCVHRG": 22.15,
+          "VAT": 12.38
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI3HOLD"
+            }
+          ],
+          "SCOUNT": -9,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -1280,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": -65,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": -22,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": -72,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -977,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI1HOLD"
+            }
+          ],
+          "SCOUNT": -10,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": -60,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": -90,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -457,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -948,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -866,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXCNTHOLD"
+            }
+          ],
+          "SCOUNT": -63,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 65,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": 22,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 16,
+          "STYPENAME": "1-TMRK",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "MKTGH"
+            }
+          ],
+          "SCOUNT": 126,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI3HOLD"
+            }
+          ],
+          "SCOUNT": 9,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI2HOLD"
+            }
+          ],
+          "SCOUNT": 6,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXVI1HOLD"
+            }
+          ],
+          "SCOUNT": 10,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 72,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXPLTHOLD"
+            }
+          ],
+          "SCOUNT": 90,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXCNTHOLD"
+            }
+          ],
+          "SCOUNT": 63,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 15,
+          "STYPENAME": "F-PUBL",
+          "QUALIFIERS": [],
+          "SCOUNT": 20,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 15,
+          "STYPENAME": "F-PUBL",
+          "QUALIFIERS": [],
+          "SCOUNT": 18,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 15,
+          "STYPENAME": "F-PUBL",
+          "QUALIFIERS": [],
+          "SCOUNT": 19,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 30,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 28,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 58,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXBLUHOLD"
+            }
+          ],
+          "SCOUNT": 59,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 25,
+          "STYPENAME": "H-VNE",
+          "QUALIFIERS": [],
+          "SCOUNT": 174,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 25,
+          "STYPENAME": "H-VNE",
+          "QUALIFIERS": [],
+          "SCOUNT": 122,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 25,
+          "STYPENAME": "H-VNE",
+          "QUALIFIERS": [],
+          "SCOUNT": 148,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 23,
+          "STYPENAME": "8-LNT",
+          "QUALIFIERS": [],
+          "SCOUNT": 5,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 21,
+          "STYPENAME": "6-SUPP",
+          "QUALIFIERS": [],
+          "SCOUNT": 10,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 20,
+          "STYPENAME": "5-ART",
+          "QUALIFIERS": [],
+          "SCOUNT": 16,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP3HOLD"
+            }
+          ],
+          "SCOUNT": 39,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP2HOLD"
+            }
+          ],
+          "SCOUNT": 18,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "AMXGLDHOLD"
+            }
+          ],
+          "SCOUNT": 60,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [
+            {
+              "GRPTYPE": 2,
+              "QUALNAME": "VIP1HOLD"
+            }
+          ],
+          "SCOUNT": 50,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 19,
+          "STYPENAME": "4-PLAT",
+          "QUALIFIERS": [],
+          "SCOUNT": 100,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 18,
+          "STYPENAME": "3HKVIP",
+          "QUALIFIERS": [],
+          "SCOUNT": 30,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 17,
+          "STYPENAME": "2-PRSS",
+          "QUALIFIERS": [],
+          "SCOUNT": 6,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 26,
+          "STYPENAME": "===",
+          "QUALIFIERS": [],
+          "SCOUNT": 20,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": 175,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -602,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -1806,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": 916,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": -1297,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 5,
+          "PLEVELNAME": "P5",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": 282,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 4,
+          "PLEVELNAME": "P4",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": 2274,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 3,
+          "PLEVELNAME": "P3",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": 32,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 2,
+          "PLEVELNAME": "P2",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": 1882,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        },
+        {
+          "OPTYPE": 0,
+          "PLEVEL": 1,
+          "PLEVELNAME": "P1",
+          "STYPE": 0,
+          "STYPENAME": "OPEN",
+          "QUALIFIERS": [],
+          "SCOUNT": 2672,
+          "PRICE": 0,
+          "SOLDPRICE": 0,
+          "FACFEE": 0,
+          "SCVHRG": 0,
+          "VAT": 0
+        }
+      ]
+    }
+  ]
+}

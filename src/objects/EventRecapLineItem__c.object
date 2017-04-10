@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Beer</fullName>
+                    <default>false</default>
+                    <label>Beer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CommissionRate__c</fullName>
+        <externalId>false</externalId>
+        <label>Commission Rate</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConcessionaireSplit__c</fullName>
+        <externalId>false</externalId>
+        <label>Concessionaire Split</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cos__c</fullName>
+        <externalId>false</externalId>
+        <label>Cos</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventRecap__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Recap</label>
+        <referenceTo>EventRecap__c</referenceTo>
+        <relationshipLabel>Event Recap Line Items</relationshipLabel>
+        <relationshipName>EventRecapLineItems</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>GrossSalesAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Gross Sales Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NameDetail__c</fullName>
+        <externalId>false</externalId>
+        <label>Name Detail</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NetOfTax__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Of Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SalesName__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alcoholic Bev Inseat</fullName>
+                    <default>false</default>
+                    <label>Alcoholic Bev Inseat</label>
+                </value>
+                <value>
+                    <fullName>Alcoholic Bev VIP</fullName>
+                    <default>false</default>
+                    <label>Alcoholic Bev VIP</label>
+                </value>
+                <value>
+                    <fullName>Can Craft</fullName>
+                    <default>false</default>
+                    <label>Can Craft</label>
+                </value>
+                <value>
+                    <fullName>Can Dom</fullName>
+                    <default>false</default>
+                    <label>Can Dom</label>
+                </value>
+                <value>
+                    <fullName>Can Prem</fullName>
+                    <default>false</default>
+                    <label>Can Prem</label>
+                </value>
+                <value>
+                    <fullName>Catering Beverage</fullName>
+                    <default>false</default>
+                    <label>Catering Beverage</label>
+                </value>
+                <value>
+                    <fullName>Catering Food</fullName>
+                    <default>false</default>
+                    <label>Catering Food</label>
+                </value>
+                <value>
+                    <fullName>Draft Craft</fullName>
+                    <default>false</default>
+                    <label>Draft Craft</label>
+                </value>
+                <value>
+                    <fullName>Draft Dom</fullName>
+                    <default>false</default>
+                    <label>Draft Dom</label>
+                </value>
+                <value>
+                    <fullName>Draft Prem</fullName>
+                    <default>false</default>
+                    <label>Draft Prem</label>
+                </value>
+                <value>
+                    <fullName>Food Inseat</fullName>
+                    <default>false</default>
+                    <label>Food Inseat</label>
+                </value>
+                <value>
+                    <fullName>Food VIP</fullName>
+                    <default>false</default>
+                    <label>Food VIP</label>
+                </value>
+                <value>
+                    <fullName>Frozen Drink</fullName>
+                    <default>false</default>
+                    <label>Frozen Drink</label>
+                </value>
+                <value>
+                    <fullName>General Concessions - All Other NA Bev.</fullName>
+                    <default>false</default>
+                    <label>General Concessions - All Other NA Bev.</label>
+                </value>
+                <value>
+                    <fullName>General Concessions - Food</fullName>
+                    <default>false</default>
+                    <label>General Concessions - Food</label>
+                </value>
+                <value>
+                    <fullName>General Concessions - Water</fullName>
+                    <default>false</default>
+                    <label>General Concessions - Water</label>
+                </value>
+                <value>
+                    <fullName>Guy&apos;s Burgers</fullName>
+                    <default>false</default>
+                    <label>Guy&apos;s Burgers</label>
+                </value>
+                <value>
+                    <fullName>Liquor - Double</fullName>
+                    <default>false</default>
+                    <label>Liquor - Double</label>
+                </value>
+                <value>
+                    <fullName>Liquor - Single</fullName>
+                    <default>false</default>
+                    <label>Liquor - Single</label>
+                </value>
+                <value>
+                    <fullName>Location Specific Beverage</fullName>
+                    <default>false</default>
+                    <label>Location Specific Beverage</label>
+                </value>
+                <value>
+                    <fullName>Location Specific Food</fullName>
+                    <default>false</default>
+                    <label>Location Specific Food</label>
+                </value>
+                <value>
+                    <fullName>Location Specific Other</fullName>
+                    <default>false</default>
+                    <label>Location Specific Other</label>
+                </value>
+                <value>
+                    <fullName>NA Beverage Inseat</fullName>
+                    <default>false</default>
+                    <label>NA Beverage Inseat</label>
+                </value>
+                <value>
+                    <fullName>NA Beverage VIP</fullName>
+                    <default>false</default>
+                    <label>NA Beverage VIP</label>
+                </value>
+                <value>
+                    <fullName>Pizza</fullName>
+                    <default>false</default>
+                    <label>Pizza</label>
+                </value>
+                <value>
+                    <fullName>Rita &amp; Malt Beverage</fullName>
+                    <default>false</default>
+                    <label>Rita &amp; Malt Beverage</label>
+                </value>
+                <value>
+                    <fullName>Tobacco</fullName>
+                    <default>false</default>
+                    <label>Tobacco</label>
+                </value>
+                <value>
+                    <fullName>Value Beer</fullName>
+                    <default>false</default>
+                    <label>Value Beer</label>
+                </value>
+                <value>
+                    <fullName>Wine - Bottle</fullName>
+                    <default>false</default>
+                    <label>Wine - Bottle</label>
+                </value>
+                <value>
+                    <fullName>Wine - Glass</fullName>
+                    <default>false</default>
+                    <label>Wine - Glass</label>
+                </value>
+                <value>
+                    <fullName>Wine - Half Bottle</fullName>
+                    <default>false</default>
+                    <label>Wine - Half Bottle</label>
+                </value>
+                <value>
+                    <fullName>Wine - Premium</fullName>
+                    <default>false</default>
+                    <label>Wine - Premium</label>
+                </value>
+                <value>
+                    <fullName>Koozie Sales</fullName>
+                    <default>false</default>
+                    <label>Koozie Sales</label>
+                </value>
+                <value>
+                    <fullName>Refillable Stainless Steel Cup</fullName>
+                    <default>false</default>
+                    <label>Refillable Stainless Steel Cup</label>
+                </value>
+                <value>
+                    <fullName>Subcontractor</fullName>
+                    <default>false</default>
+                    <label>Subcontractor</label>
+                </value>
+                <value>
+                    <fullName>Supplemental Reporting</fullName>
+                    <default>false</default>
+                    <label>Supplemental Reporting</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ShowNotes__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Notes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Catering</fullName>
+                    <default>false</default>
+                    <label>Catering</label>
+                </value>
+                <value>
+                    <fullName>Food/Sub Deal</fullName>
+                    <default>false</default>
+                    <label>Food/Sub Deal</label>
+                </value>
+                <value>
+                    <fullName>VIP</fullName>
+                    <default>false</default>
+                    <label>VIP</label>
+                </value>
+                <value>
+                    <fullName>Inseat</fullName>
+                    <default>false</default>
+                    <label>Inseat</label>
+                </value>
+                <value>
+                    <fullName>Concessions</fullName>
+                    <default>false</default>
+                    <label>Concessions</label>
+                </value>
+                <value>
+                    <fullName>SubContractor</fullName>
+                    <default>false</default>
+                    <label>SubContractor</label>
+                </value>
+                <value>
+                    <fullName>Location Specific Deals</fullName>
+                    <default>false</default>
+                    <label>Location Specific Deals</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
+                </value>
+                <value>
+                    <fullName>Supplemental Reporting</fullName>
+                    <default>false</default>
+                    <label>Supplemental Reporting</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UnitsSold__c</fullName>
+        <externalId>false</externalId>
+        <label>Units Sold</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UserNotes__c</fullName>
+        <externalId>false</externalId>
+        <label>User Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>fxGrossSalesAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(GrossSalesAmount__c / (EventRecap__r.EventDateTime__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Gross Sales Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNetOfTax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NetOfTax__c / (EventRecap__r.EventDateTime__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Net Of Tax (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Recap Line Item</label>
+    <nameField>
+        <displayFormat>ELI-{000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Recap Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

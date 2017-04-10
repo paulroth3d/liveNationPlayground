@@ -1,0 +1,65 @@
+<aura:component controller="LNE_GenerateTourShortlinks_C"
+	implements="force:LightningQuickAction,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+	access="global"
+>
+
+  <!-- attributes -->
+  <aura:attribute name="isProcessing" type="Boolean" default="false" />
+  <aura:attribute name="numProcessed" type="Integer" default="0" />
+  <aura:attribute name="recordIdIndices" type="Object" default="{}" />
+  <aura:attribute name="records" type="TourCampaignAdPlan__c[]" default="[]" />
+  <aura:attribute name="requestId" type="String" default="" />
+  <aura:attribute name="types" type="String[]" default="[]" />
+  <aura:attribute name="vendors" type="String[]" default="[]" />
+
+  <style>
+    select.slds-select { height: 133px!important; }
+  </style>
+
+  <!-- handlers -->
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <!-- elements -->
+
+  <div class="slds-size--1-of-1">
+  <aura:if isTrue="{!v.isProcessing}">
+
+    <div class="slds-box slds-box--x-small slds-text-align--center slds-m-around--x-small slds-text-heading--medium">
+      <aura:if isTrue="{!lessthan(v.numProcessed,v.records.length)}">
+        <em>Updating Links ({!v.numProcessed}/{!v.records.length})...</em>
+        <aura:set attribute="else">
+          Update Complete! 
+        </aura:set>
+      </aura:if>
+    </div>
+
+    <aura:set attribute="else">
+
+      <div class="slds-form--stacked">
+        <div class="slds-form-element">
+          <ui:inputSelect multiple="true" aura:id="vendors" label="Vendor" class="slds-select" labelClass="slds-form-element__label">
+            <aura:iteration items="{!v.vendors}" var="vendor">
+              <ui:inputSelectOption text="{!vendor}" label="{!vendor}"/>
+            </aura:iteration>
+          </ui:inputSelect>
+        </div>
+        <div class="slds-form-element">
+          <ui:inputSelect multiple="true" aura:id="types" label="Announcement Type" class="slds-select" labelClass="slds-form-element__label">
+            <aura:iteration items="{!v.types}" var="type">
+              <ui:inputSelectOption text="{!type}" label="{!type}"/>
+            </aura:iteration>
+          </ui:inputSelect>
+        </div>
+      </div>
+      
+      <section class="slds-clearfix">
+        <div class="slds-float--right slds-m-top--small">
+          <lightning:button variant="brand" label="Generate" onclick="{!c.getRecords}" />
+        </div>
+      </section>
+
+    </aura:set>
+  </aura:if>
+  </div>
+
+</aura:component>

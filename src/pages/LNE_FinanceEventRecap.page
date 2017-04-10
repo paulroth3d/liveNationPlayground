@@ -1,0 +1,225 @@
+<apex:page standardController="Event__c" extensions="LNE_EventStandardController_CX"
+    showHeader="false" sidebar="false" standardStylesheets="false"
+>
+	<!-- PostMessage communicates between windows -->
+	<apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage2.js")}" />
+    <!-- Used to simplify remoting calls -->
+	<apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/remoting/RemotingHelper.js")}" />
+	<!-- handles routing of PostMessages -->
+	<apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_MessagePostOffice.js")}" />
+	
+	<!-- JQuery, not essential -->
+	<apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/jquery-min.js")}" />
+	<!-- underscore, again not essential -->
+	<apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/underscore.js")}" />
+	
+	<!-- page scripts -->
+	<script type='text/javascript'>
+		console.log( 'page is ready' );
+		
+		jQuery(document).ready( function(){
+			console.log( 'document is now ready' );
+			//debugger;
+		});
+		
+		/**
+		 *  Handler for dispatching the results from one page to the next.
+		**/
+		function dispatchResults(){
+		    console.log('LNE_TestLightningComm dispatch');
+			
+			//-- determine the input number of spots.
+			var someValue = jQuery( "input[name*='myForm:currentCount']").val();
+			
+			var auraId='{!$CurrentPage.parameters.auraId}';
+			
+			var pageName = 'TEST_DemoLightningComm';
+			var isSuccessful = true;
+			
+			//-- messageType should always be 'saveComplete' to refresh all other lightningComponents.
+			var messageType = 'saveComplete';
+            
+			//-- send the data payload as an object with stuff to return.
+			//-- always include src as some unique identifier for the page
+			var data = {
+				someValue: someValue,
+				auraId: auraId,
+				src: window.location.href
+			};
+			
+			var postMessage = new LNE_PostMessage( pageName, messageType, isSuccessful, data );
+			
+			//-- works if in a grid overlay
+			postMessage.dispatch( parent );
+			
+			//-- works if in a popup
+			postMessage.dispatch( window.opener );
+		}
+		
+		function dispatchExampleAuraMessage(){
+		    console.log( 'dispatch example aura message' );
+		    
+		    var messageText='Example message shown in Toast';
+		    
+		    var pageName = 'TEST_DemoLightningComm';
+			var isSuccessful = true;
+			
+			//-- some custom message type. Again, only saveComplete is special/recognized for now.
+			var messageType = 'showToast';
+            
+			//-- send the data payload as an object with stuff to return.
+			//-- always include src as some unique identifier for the page
+			var data = {
+			    message: messageText,
+			    auraId: auraId,
+				src: window.location.href
+			};
+			
+			//-- to make it work in Aura, we include the following
+			data.auraMessageType='e.force:showToast';
+			data.auraMessageData={'title': 'Toast Header', 'message':messageText };
+			
+			var postMessage = new LNE_PostMessage( pageName, messageType, isSuccessful, data );
+			
+			//-- works if in a grid overlay
+			postMessage.dispatch( parent );
+			
+			//-- works if in a popup
+			postMessage.dispatch( window.opener );
+		}
+		
+		//-- handle inbound PostMessages
+		this.postOffice = new LNE_MessagePostOffice(this);
+		
+		//-- handle any inbound events
+        this.postOffice.addTypeHandler( 'saveComplete', function( myPostMessage ){
+            if( myPostMessage.data.src != window.location.href ){
+                //-- some other tab told us to refresh
+                console.log( "TEST_DemoLightningComm - another page told me to refresh" );
+                window.location.href=window.location.href;
+            }
+        });
+        
+        postOffice.listenForPostEvents(window);
+	</script>
+	
+	<h2>Finance/Event Recap Subtab</h2>
+	
+    <!-- this only demonstrates differrences between pages -->
+	<p>DEMO input for:{!Event__c.Name}</p>
+	
+	<apex:pageBlock >
+	    <apex:form id="myForm" >
+	        <apex:inputField id="currentCount" value="{!Event__c.ProjectedPaidTickets__c}" />
+            
+            <!-- custom save used only so we remain on the same page -->
+	        <apex:commandButton action="{!customSave}" value="Save" oncomplete="dispatchResults(); return false;" />
+	    </apex:form>
+	</apex:pageBlock>
+	
+	<div>
+	    <button onclick='javascript:dispatchExampleAuraMessage(); return false;'>Aura Event from VF</button>
+	</div>
+    
+    <apex:pageBlock rendered="true">
+    <div class='overflow' style='color:#AAA'>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum ex 
+		sed tellus tristique pharetra. Suspendisse imperdiet purus iaculis posuere 
+		tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+		inceptos himenaeos. Donec non mauris dolor. Aenean blandit leo ut lorem laoreet 
+		pellentesque. Etiam scelerisque mollis ante, non tincidunt neque congue sit amet. 
+		Etiam pretium ornare elit non posuere. Donec mollis porta malesuada. Integer et 
+		faucibus libero. Nullam finibus tempor dui ut ultrices.</p>
+		
+		<p>Mauris sed vulputate velit. Morbi ac ligula fermentum, egestas ipsum vitae, 
+		tempus metus. Morbi varius quis odio vitae pretium. Cras rhoncus eu ligula at 
+		laoreet. Nam in eros fermentum, fermentum ex eu, sodales nunc. Pellentesque 
+		vestibulum blandit dolor eget varius. Aenean vel pretium libero. Nunc interdum 
+		arcu dui, eu vehicula lacus maximus a. Phasellus ut ipsum at metus bibendum egestas.</p>
+		
+		<p>Donec hendrerit, eros sit amet dictum egestas, augue massa sagittis nulla, 
+		nec pulvinar risus turpis eget tellus. Sed luctus, eros non pellentesque mattis, 
+		massa mi porttitor enim, vitae fermentum tortor erat vel risus. Suspendisse 
+		luctus justo eu lacus luctus, at venenatis ligula gravida. Vestibulum tortor ex, 
+		fermentum a lobortis vitae, vehicula sed sapien. Aenean mattis erat eu rhoncus 
+		ullamcorper. Duis luctus volutpat nisi id ultrices. Maecenas et efficitur odio, 
+		non gravida enim. Sed placerat nec diam in dapibus. Vestibulum venenatis euismod 
+		purus in malesuada.</p>
+		
+		<p>Aliquam auctor nunc nec tincidunt consequat. Sed bibendum neque lacinia 
+		pretium elementum. Phasellus nec elit ut augue maximus auctor. Integer aliquet 
+		quam magna. Suspendisse sagittis tincidunt scelerisque. Praesent congue, orci vel 
+		porta rutrum, arcu quam ullamcorper nisi, eget ultrices mauris sem at dui. 
+		Vivamus blandit sollicitudin elementum. Praesent blandit non lacus ut volutpat. 
+		Sed a elementum tellus, eu tincidunt diam. Maecenas dictum posuere volutpat. Duis 
+		elementum elementum ultricies. Fusce leo mauris, consequat non mi non, dictum 
+		vehicula libero. Cras non feugiat magna, ut vehicula odio. Duis dapibus orci non 
+		efficitur ornare. Integer euismod risus augue, sed convallis ipsum mattis 
+		efficitur. Nunc sit amet odio purus.</p>
+		
+		<p>Duis non maximus lorem. Curabitur in viverra ante, at vehicula mi. Donec vel 
+		egestas metus, non aliquam libero. Donec ornare faucibus justo eu tristique. 
+		Nullam dapibus dignissim orci. Cras dictum sem tortor, ut placerat ipsum lobortis 
+		non. Etiam posuere lacus eget finibus tristique.</p>
+		
+		<p>Mauris et dignissim nisi. Nullam augue diam, interdum ut convallis eu, 
+		sollicitudin eu neque. Quisque scelerisque ut urna a commodo. Fusce sit amet 
+		pulvinar urna. Donec quis ante ut ligula scelerisque feugiat sed in lacus. Donec 
+		at arcu quis diam auctor imperdiet non id enim. Integer sit amet sagittis nunc. 
+		Nulla rhoncus lacus ut aliquet faucibus. Nulla nec semper nisi, vel consequat 
+		dolor. Integer vel odio eu tellus ullamcorper consectetur. Donec quis dolor non 
+		massa gravida commodo. Aenean aliquam aliquam massa, ac placerat lacus ultrices 
+		vel. Phasellus felis leo, accumsan eu auctor nec, vulputate id ipsum. Etiam 
+		sagittis imperdiet lacus, in tempus risus consequat eleifend. Sed rutrum 
+		facilisis ligula, sed semper neque.</p>
+		
+		<p>Suspendisse nec elit mollis, imperdiet neque quis, accumsan enim. 
+		Suspendisse potenti. Aliquam fermentum vehicula enim sit amet accumsan. Aliquam 
+		finibus et dui at placerat. Sed eget porttitor elit. Curabitur fringilla commodo 
+		vehicula. Nunc consequat sit amet neque nec ullamcorper. Nunc convallis risus nec 
+		elit finibus interdum. Donec ligula sem, consectetur non vehicula ut, mollis ac 
+		nisl. Suspendisse sollicitudin volutpat porta. Praesent eu orci consequat metus 
+		dapibus eleifend eget vel nulla. Pellentesque efficitur tellus fermentum neque 
+		efficitur, at facilisis quam feugiat. Cum sociis natoque penatibus et magnis dis 
+		parturient montes, nascetur ridiculus mus. Quisque a gravida odio, a aliquet massa.</p>
+		
+		<p>Fusce a purus ultrices, consectetur orci eget, bibendum dui. Integer 
+		interdum ullamcorper quam, quis luctus orci varius nec. Nulla maximus nisi diam. 
+		Duis scelerisque, odio nec gravida sagittis, ante quam tempus ex, sit amet 
+		commodo nunc turpis eu mi. Vivamus efficitur velit et laoreet dapibus. Aliquam 
+		elementum justo et dui aliquet, a sollicitudin purus egestas. Donec dignissim 
+		iaculis urna, a pulvinar lacus luctus non. Mauris aliquet blandit elit, eget 
+		malesuada enim finibus nec. Pellentesque habitant morbi tristique senectus et 
+		netus et malesuada fames ac turpis egestas. Ut ullamcorper enim tincidunt tempus 
+		ornare. Sed nec dui lacus. Aliquam nibh tellus, finibus id risus non, bibendum 
+		commodo ex.</p>
+		
+		<p>Pellentesque pulvinar, mi faucibus pretium rhoncus, dui justo vehicula 
+		mauris, egestas semper ipsum felis non orci. Nunc et pretium eros. In vel turpis 
+		aliquam, finibus quam in, tristique tortor. Nullam pellentesque venenatis ipsum 
+		sit amet accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Quisque condimentum faucibus ultricies. Aliquam quis elementum ligula. Vivamus 
+		fermentum imperdiet molestie. Ut tincidunt orci in nulla mollis congue. Mauris 
+		mollis purus at tellus accumsan interdum vel varius dolor. In lacinia eget magna 
+		at pharetra. Vivamus elementum nisl ac purus congue venenatis. Nulla tempus metus 
+		quis neque sollicitudin, aliquet malesuada orci dapibus. Maecenas ut lacus 
+		tincidunt, venenatis nisl sed, pharetra orci. Donec in ornare metus.</p>
+		
+		<p>Donec arcu elit, bibendum eu ultricies quis, pulvinar id ante. Maecenas 
+		congue, ligula quis porta aliquet, magna neque vehicula erat, at pellentesque 
+		lacus lorem in leo. Quisque vitae felis eget magna tempor commodo. Vestibulum 
+		ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+		Suspendisse rhoncus, tellus accumsan sagittis posuere, tellus justo bibendum est, 
+		vel fringilla nunc nunc vel nibh. Sed non laoreet libero. Sed venenatis neque 
+		eget nulla volutpat ultrices. Integer vitae aliquet metus, in luctus mi. Proin 
+		vulputate, metus faucibus placerat hendrerit, risus nibh suscipit purus, eget 
+		dapibus enim sem sed velit. Aenean a quam vel nisl tincidunt commodo. 
+		Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac 
+		turpis egestas. Donec fringilla ante eu arcu lobortis lacinia. Nunc tempus orci a 
+		mollis maximus. Suspendisse varius massa nulla, nec sodales turpis porta eu. Ut 
+		sodales augue sed ipsum vestibulum rhoncus. Nam tempus nec neque fringilla 
+		consectetur.</p>
+    </div>
+    </apex:pageBlock>
+</apex:page>

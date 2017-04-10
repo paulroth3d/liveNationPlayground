@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Announce</fullName>
+        <default>false</default>
+        <label>Announce</label>
+    </customValue>
+    <customValue>
+        <fullName>Presale</fullName>
+        <default>false</default>
+        <label>Presale</label>
+    </customValue>
+    <customValue>
+        <fullName>Onsale</fullName>
+        <default>false</default>
+        <label>Onsale</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle</fullName>
+        <default>false</default>
+        <label>Middle</label>
+    </customValue>
+    <customValue>
+        <fullName>Closing</fullName>
+        <default>false</default>
+        <label>Closing</label>
+    </customValue>
+    <customValue>
+        <fullName>Ongoing</fullName>
+        <default>false</default>
+        <label>Ongoing</label>
+    </customValue>
+    <description>Map advertisements to marketing phases/general timing</description>
+    <masterLabel>Announcement Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

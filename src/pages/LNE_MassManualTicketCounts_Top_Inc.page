@@ -1,0 +1,64 @@
+<apex:page controller="LNE_MassManualTicketCounts_C"  showHeader="false" sidebar="false">
+
+Search <br />
+<apex:form >
+<table class="slds-table slds-table--bordered slds-table--fixed-layout" role="grid">
+		<thead>
+			<tr class="slds-line-height--reset">
+				<th focusable="true" class="slds-text-title--caps" scope="col">
+					<div class="slds-truncate" title="Start Time">Market</div>
+				</th>
+				<th focusable="true" class="slds-text-title--caps" scope="col">
+					<div class="slds-truncate" title="Event Name">Venue</div>
+				</th>
+				<th focusable="true" class="slds-text-title--caps" scope="col">
+					<div class="slds-truncate" title="Event Name">Artist</div>
+				</th>
+				<th focusable="true" class="slds-text-title--caps" scope="col">
+					<div class="slds-truncate" title="Feed Ticket Count">Event Date</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td role="gridcell">
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<apex:inputField styleClass="slds-input" value="{!eventDateTimeSearch.Market__c}" />
+						</div>
+					</div>
+				</td>
+				<td role="gridcell">
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<apex:inputText styleClass="slds-input" html-data-control="venue-search-input" />
+						</div>
+					</div>
+				</td>
+				<td role="gridcell">
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<apex:inputText styleClass="slds-input" html-data-control="artist-search-input" />
+						</div>
+					</div>
+				</td>
+				<td role="gridcell">
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<apex:inputField styleClass="slds-input" value="{!eventDateTimeSearch.EventDate__c}" />
+						</div>
+					</div>
+				</td>
+				<td role="gridcell">
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<apex:inputField styleClass="slds-input" value="{!eventDateTimeSearch.EventEndDate__c}" />
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<apex:commandButton action="{!runSearch}" value="Search" />
+</apex:form>
+</apex:page>

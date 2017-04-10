@@ -1,0 +1,222 @@
+<apex:page standardController="Tour__c" extensions="LNE_CampaignTab_CX" sidebar="false" showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>Campaigns</title>
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+            <style>
+                .hide,
+                .rome-lds .slds-grid.hide {
+                    display: none;
+                }
+
+                .show {
+                    display: block;
+                }
+                
+                .bold{
+                    font-weight:bold;
+                }
+                .spacer{
+                    height:25px;
+                    display:block;
+                }
+                .menu-bar {
+                    width: 100%;
+                    margin-top:15px;
+                }
+
+                .menu-bar .item {
+                    border-right: solid 1px;
+                    cursor: pointer;
+                    display: inline-block;
+                    margin: 0 12px 0 0;
+                    min-width: 120px;
+                    padding-right: 12px;
+                    text-align: center;
+                }
+
+                .menu-bar .item.last {
+                    border: none;
+                }
+                .menu-bar .item.active {
+                    font-weight: 800;
+                }
+
+                .container.instruction,
+                .container.wide {
+                    width: 100%;
+                }
+
+                .toggle-grid-list {
+                    width: 60%;
+                }
+
+                #save-channel-visibility {
+                    margin-left: 24px;
+                    min-width: 136px;
+                }
+
+                #unsaved-grid-list-message {
+                    color: rgb(225,161,82);
+                }
+
+                .rome-lds .unsaved .slds-form-element__label {
+                    color: rgb(225,161,82);
+                }
+                
+                .grid-container {
+                    margin: 16px 0 32px 0;
+                }
+
+                tr.rowA td, tr.rowB td { border-bottom:1px solid #c7c7c7;  font-size:11.36px; padding:4px 8px; }
+                
+                .rowB td:first-child{
+                    min-width:80px;
+                }
+                
+                .localMarketingTableTop{
+                    width:auto !important;
+                }
+                .localMarketingTableBottom{
+                    width:auto !important;
+                }
+
+                .localMarketingTableTour{
+                    display:inline-block;
+                }
+            </style>
+
+        </head>
+
+        <body class="rome-lds" id="LNE_CampaignTab--body">
+              <apex:form id="AdPlanMetrics">
+
+                <apex:actionFunction name="updateAdPlanMetrics" action="{!refreshTour}" rerender="AdPlanMetrics"/>
+
+                     <apex:panelGrid id="AdPlanMetricsTop" styleClass="localMarketingTableTop" columns="7" rowClasses="rowA,rowB" cellpadding="0" cellspacing="0">
+                         <apex:outputText value=""/>
+                          <apex:outputText value="{0, number, ##,###}"> 
+                             <apex:outputText value="LNE Budget:  " styleClass="bold"/>
+                            <apex:param value="{!tour.LNEMarketingBudget__c}"/> 
+                          </apex:outputText>
+                          
+                           <apex:outputText value="{0, number, ##,###}"> 
+                               <apex:outputText value="LNE Spend:  " styleClass="bold"/> 
+                                <apex:param value="{!tour.LNESpend__c}"/>
+                           </apex:outputText>
+                         
+                         <apex:outputText value="{0, number, ##,###}">
+                              <apex:outputText value="Remaining LNE Budget:  " styleClass="bold" /> 
+                             <apex:param value="{!tour.RemainingLNEBudget__c}"/> 
+                        </apex:outputText>
+                        
+                        <apex:outputText value="{0, number, ##,###}">
+                             <apex:outputText value="Non-LNE Budget:  " styleClass="bold"/> 
+                            <apex:param value="{!tour.NonLNEBudget__c}"/> 
+                        </apex:outputText>
+                        
+                        <apex:outputText value="{0, number, ##,###}"> 
+                            <apex:outputText value="Non-LNE Spend:  " styleClass="bold"/> 
+                            <apex:param value="{!tour.NonLNESpend__c}"/>
+                        </apex:outputText>
+                         
+                         <apex:outputText value="{0, number, ##,###}"> 
+                            <apex:outputText value="Remaining Non-LNE Budget:  " styleClass="bold"/> 
+                            <apex:param value="{!tour.RemainingNonLNEBudget__c}"/> 
+                         </apex:outputText>
+                        
+                    </apex:panelGrid>
+
+
+                    <!--<div class="spacer"></div>-->
+                    
+                    <apex:outputPanel id="AdPlanMetricsBottom">
+                        <apex:panelGrid styleClass="localMarketingTableBottom" rowClasses="rowA,rowB" columns="9" cellpadding="0" cellspacing="0">
+                              <apex:outputText value=""/>
+                                
+                                <apex:outputPanel styleClass="localMarketingTable DigitalTable">
+                                    <apex:outputText value="({0, number, ##}%)"> 
+                                        <apex:outputText value="Digital:  " styleClass="bold"/> 
+                                        <apex:param value="{!tour.DigitalSpendPercent__c}"/> 
+                                        <apex:outputText value="{0, number, ##,###} "> <apex:param value="{!tour.DigitalSpend__c}"/> </apex:outputText>
+                                    </apex:outputText>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel styleClass="localMarketingTable MiscTable">
+                                     <apex:outputText value="({0, number, ##}%)">  
+                                        <apex:outputText value="Misc:  " styleClass="bold"/> 
+                                        <apex:param value="{!tour.MiscSpendPercent__c}"/> 
+                                        <apex:outputText value="{0, number, ##,###} "><apex:param value="{!tour.MiscSpend__c}"/>  </apex:outputText>
+                                    </apex:outputText>
+                                </apex:outputPanel>
+                               
+                                <apex:outputPanel styleClass="localMarketingTable Production_Table">
+                                    <apex:outputText value="({0, number, ##}%)">  
+                                        <apex:outputText value="Production:  " styleClass="bold"/> 
+                                        <apex:param value="{!tour.ProductionSpendPercent__c}"/> 
+                                        <apex:outputText value="{0, number, ##,###} "><apex:param value="{!tour.ProductionSpend__c}"/>  </apex:outputText>
+                                    </apex:outputText>
+                                        
+                                </apex:outputPanel>
+                                
+                        
+                        </apex:panelGrid>
+                    </apex:outputPanel>
+                    
+                </apex:form>
+            
+            <div class="spacer"></div>
+            
+            <apex:outputPanel >
+                <apex:form >
+                    <div style="margin-left: 0px;">
+                        <apex:commandButton action="{!showTourCampaigns}" value="Campaigns" styleClass="slds-button slds-button--neutral {!IF(gridToShow='tour_campaign', 'slds-button--brand' ,'')}"/>
+                        <apex:commandButton action="{!showTourAdPlans}" value="Ad Plans" styleClass="slds-button slds-button--neutral {!IF(gridToShow='tour_ad_plan', 'slds-button--brand' ,'')}"/>
+                        <a href="{!'/one/one.app#/sObject/'+matrixReportId+'/view?fv0='+tour.Name}" target="_blank" style="margin-left: 10px;">Matrix Report</a>
+                    </div>
+                </apex:form>
+            </apex:outputPanel>
+
+            <div id="all-grids-container">
+                <div id="grid-container" class="show">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+
+                    <apex:outputPanel rendered="{!gridToShow='tour_campaign'}">
+                        <!-- Tour Campaign Grid -->
+                        <div id="grid-frame-tour">
+                          <iframe id="grid-frame-tour-campaign" data-grid-name="tourcampaign" data-origin="{!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}" scrolling="auto" height="780" width="100%" frameborder="0" src="{!gridPage}gname=Tour%20Campaign&fpf=Tour__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                        </div>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!gridToShow='tour_ad_plan'}">
+                        <!-- Tour Ad Plans with Campaigns Grid -->
+                        <div id="grid-frame-tour-ad-plans">
+                          <iframe id="grid-frame-tour-ad-plans-with-campaigns" data-grid-name="touradplanswithcampaigns" data-origin="{!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}" scrolling="auto" height="780" width="100%" frameborder="0" src="{!gridPage}gname=Tour%20Ad%20Plans%20with%20Campaigns&fpf=Tour__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                        </div>
+                    </apex:outputPanel>
+
+                    
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                
+                (function($) {
+                    // watch for loaded event from gridbuddy iframe
+                    $(window).on('message', function(e) {
+                        if (e.originalEvent.data == 'Loaded') {
+                            setTimeout(updateAdPlanMetrics, 1000);
+                        }
+                    });
+                })(jQuery);
+
+            </script>
+            <c:LNE_Copyright />
+        </body>
+    </html>
+</apex:page>

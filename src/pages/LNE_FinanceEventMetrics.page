@@ -1,0 +1,557 @@
+<apex:page standardController="Event__c" extensions="LNE_FinanceSubTabs_CX,LNE_EventStandardController_CX" showHeader="false" sidebar="false" standardStylesheets="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.LNE_GeneralResources, 'css/lneCommon.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+        <!-- Used to simplify remoting calls -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/remoting/RemotingHelper.js')}" />
+        <!-- handles routing of PostMessages -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_MessagePostOffice.js')}" />
+        <!-- JQuery, not essential -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/jquery-min.js')}" />
+        <!-- underscore, again not essential -->
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/underscore.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/recordDetailStyleForm.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+        <apex:includeScript value="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}" />
+    </head>
+    
+    <body class="rome-lds forceDetailPanel recordDetailStyle" id="LNE_FinanceSummary--body">
+        <div class="rome-lds main-container" id="recdet-main-container">
+            <apex:form >
+                <apex:outputPanel id="topHeader">
+                <div class="slds-page-header" role="banner">
+                  <div class="slds-media slds-media--center">
+                    <div class="slds-media__body">
+                      <p class="slds-page-header__title slds-truncate" title="Event Metrics">Event Metrics</p>
+                    </div>
+                    <div class="slds-media__figure slds-media__figure--reverse">
+                      <apex:outputPanel rendered="{!event.MetricsComplete__c}">
+                        <button class="slds-button slds-button--success" disabled="true">Event Metrics Completed</button>
+                      </apex:outputPanel>
+                      <apex:outputPanel rendered="{!NOT(event.MetricsComplete__c)}">
+                        <button class="slds-button slds-button--neutral" onclick="completeEventMetrics(); return(false);" >Event Metrics Complete</button>
+                      </apex:outputPanel>
+                    </div>
+                  </div>
+                </div>
+                </apex:outputPanel>
+                <apex:actionFunction action="{!completeEventMetrics}" name="completeEventMetrics" rerender="topHeader,pageMessages"
+                    oncomplete="recdet.handleSuccessfulSave(); return( false );"
+                />
+                
+                <apex:outputPanel id="pageMessages">
+                    <apex:pageMessages />
+                </apex:outputPanel>
+                
+                <!-- allows the page to refresh if save successfully completed -->
+                <apex:outputPanel id="pageRefresherOuter">
+                    <apex:outputPanel id="pageRefresher">
+                        <script type='text/javascript'>
+                            var d = '{! now() }';
+                            if( '{! shouldPageRefresh }' == 'true' ){
+                                debugger;
+                                window.location.href=window.location.href;
+                            }
+                        </script>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+                
+                <!-- oracle project id -->
+                <!-- not editable - input field missing -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="oprojid-input">
+                        <span>Oracle Project Id</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="oprojid-input" value="{!Event__c.OracleProjectId__c}" />
+                        <apex:outputText id="oprojid-value" style="field-value" html-data-control="read-only" value="{!Event__c.OracleProjectId__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- gross reserved capacity -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="grossreserved-input">
+                        <span>Gross Reserved Capacity</span>
+                    </label> 
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="grossreserved-input" value="{!Event__c.GrossReservedCapacity__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.GrossReservedCapacity__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- gl company name -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="glcname-input">
+                        <span>GL Company Name</span>
+                    </label>
+                    <div class="dataCol">
+                        <div class='slds-select_container hide' data-control="input">
+                            <apex:inputField styleClass="slds-select" style="" id="glcname-input" value="{!Event__c.GLCompanyName__c}" />
+                        </div>
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.GLCompanyName__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- reserved kills -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="rk-input">
+                        <span>Reserved Kills</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="rk-input" value="{!Event__c.ReservedKills__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.ReservedKills__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- GL Company Venue Type -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="glvt-input">
+                        <span>GL Company Venue Type</span>
+                    </label>
+                    <div class="dataCol">
+                        <div class='slds-select_container hide' data-control='input'>
+                            <apex:inputField styleClass="slds-select" html-data-control="input" style="" id="glvt-input" value="{!Event__c.GLCompanyVenueType__c}" />
+                        </div>
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.GLCompanyVenueType__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- net manifested reserved capacity -->
+                <div class="container">
+                    <!-- Net Manifested Reserved Capacity (read-only and calculated: Gross Reserved Capacity - Reserved Kills) -->
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="nmrc-input">
+                        <span>Net Manifested Reserved Capacity</span>
+                    </label>  
+                    <div class="dataCol">
+                        <!-- @TODO: show value on edit screen too
+                        <apex:outputText styleClass="field-value" html-data-control="input" style="" id="nmrc-input" value="{!Event__c.NetManifestedReservedCapacity__c}" />
+                        -->
+                        <apex:outputText styleClass="field-value" style="" id="nmrc-input" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.NetManifestedReservedCapacity__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                    </div>
+                </div>
+                
+                <!-- exclude from oracle financial updates -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="excoracle-input">
+                        <span>Exclude from Oracle Financial Updates</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="excoracle-input" value="{!Event__c.ExcludefromOracleFinancialUpdates__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{!Event__c.ExcludefromOracleFinancialUpdates__c}" />
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- reserved comps -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="rcomp-input">
+                        <span>Reserved Comps</span>
+                    </label>   
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="rcomp-input" value="{!Event__c.ReservedComps__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.ReservedComps__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- event type id -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="evt-typeid-input">
+                        <span>Event Type</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:outputText id="evt-typeid-input" style="" value="{!Event__c.RecordType.Name}" />
+                    </div>
+                </div>
+                <!-- reserved paid attendance -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="rpa-input">
+                        <span>Reserved Paid Attendance</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="rpa-input" value="{!Event__c.ReservedPaidAttendance__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.ReservedPaidAttendance__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- show count -->
+                <!-- not editable / input fieldmissing -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="sc-input">
+                        <span>Show Count</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:outputText id="sc-input" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.ShowCount__c}" />
+                        </apex:outputText>
+                    </div>
+                </div>
+                <!-- gross lawn capacity -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="glcap-input">
+                        <span>Gross Lawn Capacity</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="glcap-input" value="{!Event__c.GrossLawnCapacity__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.GrossLawnCapacity__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- paid attendance -->
+                <div class="container">
+                    <!-- Paid Attendance (read-only and calculated: Reserved Paid Attendance + Lawn Paid Attendance) -->
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="pa-input">
+                        <span>Paid Attendance</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:outputText id="pa-input" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.PaidAttendance__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                    </div>
+                </div>
+                <!-- lawn kills -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="lawnk-input">
+                        <span>Lawn Kills</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="lawnk-input" value="{!Event__c.LawnKills__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.LawnKills__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- drop count -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="dc-input">
+                        <span>Drop Count</span>
+                    </label>  
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="dc-input" value="{!Event__c.ActualDropCount__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.ActualDropCount__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- net manifested lawn capacity -->
+                <!-- not editable -->
+                <!-- input field missing -->
+                <div class="container">
+                    <!-- Net Manifested Lawn Capacity (read-only and calculated: Gross Lawn Capacity - Lawn Kills) -->
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="nmlcap-input">
+                        <span>Net Manifested Lawn Capacity</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.NetManifestedLawnCapacity__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                    </div>
+                </div>
+                <!-- net capacity -->
+                <!-- not editable -->
+                <!-- input missing -->
+                <div class="container">
+                    <!-- Net Capacity (read-only and calculated: Net Manifested Reserved Capacity + Net Manifested Lawn Capacity) -->
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="nc-input">
+                        <span>Net Capacity</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:outputText id="nc-input" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.NetCapacity__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                    </div>
+                </div>
+                <!-- lawn comps -->
+                <div class="container">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="lawncomps-input">
+                        <span>Lawn Comps</span>
+                    </label>
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="lawncomps-input" value="{!Event__c.LawnComps__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.LawnComps__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class='container'>
+                    <div class='dataCol'>&nbsp;</div>
+                    <div class='controlCol'>&nbsp;</div>
+                </div>
+                <!-- lawn paid attendance -->
+                <div class="container last-on-page">
+                    <label class="label inputLabel uiLabel-left form-element__label uiLabel" for="lawnpaid-input">
+                        <span>Lawn Paid Attendance</span>
+                    </label>  
+                    <div class="dataCol">
+                        <apex:inputField styleClass="slds-input hide" html-data-control="input" style="" id="lawnpaid-input" value="{!Event__c.LawnPaidAttendance__c}" />
+                        <apex:outputText styleClass="field-value" html-data-control="read-only" style="" value="{0, number, #,###,###}">
+                            <apex:param value="{!Event__c.LawnPaidAttendance__c}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="controlCol">
+                        <a class="inlineEditTrigger" data-control="edit">
+                            <span class="slds-icon_container slds-icon-utility-edit slds-button__icon forceIcon">
+                                <svg class="slds-icon--xx-small slds-icon" focusable="false" data-key="edit">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/slds-icons/v7.6.0/utility-sprite/svg/symbols.svg#edit"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- buttons -->
+                <div class="edit-footer footer hide">
+                    <div class="actionsContainer" id="actions-wrapper">
+                        <apex:outputPanel id="savePanel" layout="none">
+                        <!-- hide class removed when venue and promoter dropdowns are client side rendered -->
+                            <div class="cancel-container button-box">
+                                <button data-control="cancel-edit" class="slds-button slds-button--neutral uiButton--neutral uiButton forceActionButton" aria-live="off" type="button" title="Cancel" data-aura-class="uiButton forceActionButton">
+                                    <span class="label bBody truncate" dir="ltr">Cancel</span>
+                                </button>
+                            </div>
+                            <div class="save-container button-box">
+                                <!-- pageRefresherOuter,pageMessages,pageRefresher -->
+                                <apex:commandButton action="{!customSave}" value="Save" rerender="pageMessages,pageRefresherOuter" status="buttonStatus" styleClass="slds-button slds-button--brand" />
+                                &nbsp;
+                                <apex:actionStatus startText=" (Please wait...)" stopText="" id="buttonStatus"/>
+                            </div>
+                        </apex:outputPanel>
+                    </div>
+                </div>
+
+                <div id="all-grids-container">
+                    <div id="grid-container">
+                        <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+        
+                        <!-- Flash Grid -->
+                        <div id="grid-frame-performingrightsfees">
+                          <iframe id="grid-frame-performingrightsfees-iframe" data-grid-name="performingrightsfees" data-origin="{!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}" scrolling="auto" height="570" width="100%" frameborder="0" src="{!gridPage}gname=Performing%20Rights%20Fees&fpf=Event__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                        </div>
+        
+                    </div>
+                </div>
+
+            </apex:form>
+        </div>
+
+        <script type="text/javascript">
+        
+            
+            function remotingHelper(){
+            var remotingArguments = _.union(arguments);
+            try {
+                var remotingFunctionName = remotingArguments.shift();
+
+                var failureHandler = remotingArguments.pop();
+                var successHandler = remotingArguments.pop();
+                var scope = this;
+
+                var remotingHandler = function(result,event){
+                    //console.log('remoting returned');
+                    if(event.status){
+                        successHandler.call( scope, result );
+                    } else if( event.type == 'exception' ){
+                        console.log( 'remoting failure' ); debugger;
+                        failureHandler.call( scope, event.message, result, event);
+                    } else {
+                        console.log( 'unknown remoting failure' ); debugger;
+                        failureHandler.call( scope, event.message, result, event);
+                    }
+                }
+
+                var errorString='';
+                if( !remotingFunctionName || typeof remotingFunctionName !== 'string' ){
+                    errorString = 'remoting call error: remoting function name was not sent or was not understood:' + remotingFunctionName + '. Please check the remoting call directory as the first arguement';
+                } else if( remotingFunctionName.indexOf('.') < 0 ){
+                    errorString = 'remoting call error: remember that the remoting call must include the ApexClassName. Ex: TEST_PostMessgeParent_C.getMessage';
+                } else if( !failureHandler || typeof failureHandler !== 'function' ){
+                    errorString = 'remoting call error: the last two arguments must be: a success handler and an error handler. The error handler was not found.';
+                } else if( !successHandler || typeof successHandler !== 'function' ){
+                    errorString = 'remoting call error: the last two arguments must be: a success handler and an error handler. the success handler was not found.';
+                }
+
+                var remotingFunctionNameTranslation = '';
+                if( errorString ){
+                    console.error( errorString );
+                    console.error(arguments);
+                    failureHandler(errorString);
+                    return;
+                }
+
+                var newArguments = _.union( [remotingFunctionName], remotingArguments, [remotingHandler] );
+                console.log('{!event}');
+                console.log(newArguments);
+                Visualforce.remoting.Manager.invokeAction.apply(Visualforce.remoting.Manager, newArguments);
+            } catch( err ){
+                console.error( err ); debugger;
+            }
+        }
+     
+        
+        this.postOffice = new LNE_MessagePostOffice(this);
+        this.postOffice.addTypeHandler( 'defaultFees', function( myPostMessage ){
+            var targetFrame = jQuery( "iframe#grid-frame-performingrightsfees-iframe" )[0];
+
+            //-- get the value from remoting and pass the results to the child iframe on success
+            var eventId = '{!event}';
+            console.log(eventId);
+            remotingHelper( 'LNE_FinanceSubTabs_CX.defaultFees', eventId,
+                    function( messageResult ){
+                        var pageName = 'LNE_FinanceEventMetrics';
+                        var isSuccessful = true;
+
+                        //-- some custom message type. Again, only saveComplete is special/recognized for now.
+                        var messageType = 'defaultFees_completed'
+
+                        //-- send the data payload as an object with stuff to return.
+                        //-- always include src as some unique identifier for the page
+                        var data = {
+                            message: messageResult,
+                            src: window.location.href
+                        };
+
+                         var responseMessage = new LNE_PostMessage( pageName,messageType,isSuccessful,data);
+                         responseMessage.dispatch( targetFrame.contentWindow );
+
+                    }, function( errorMessage ){
+                        console.log( 'Default Fees :FAILURE:' + errorMessage );
+                        debugger;
+                    }
+            );
+        });
+        this.postOffice.listenForPostEvents(window);
+        
+         var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+        
+            $(document).ready(function() {
+                lneRecordDetailStyleForm.init();
+                //-- Handles leaving grid focus and selecting/unselecting visible channels aka grids
+                lneSharedJs.sharedInit();                      
+            });        
+            
+            
+            
+        </script>    
+    </body>
+</html>
+</apex:page>

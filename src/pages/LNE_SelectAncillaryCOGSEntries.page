@@ -1,0 +1,280 @@
+<apex:page sidebar="false" showHeader="false" controller="LNE_SelectAncillaryCOGSEntries">
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+      <title>Select Revenue and Expense Placeholders</title>
+
+      <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+      <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+
+      <apex:form >
+        <apex:actionFunction action="{!getRelatedRevenuesExpenses}" name="GetRelatedRevenuesExpenses_JS" oncomplete="setPreviousRevenuesExpenses('{!previousSelectedEntriesJson}');">
+          <apex:param name="grre_eventId" assignTo="{!eventId}" value="" />
+        </apex:actionFunction>
+
+        <apex:actionFunction action="{!addOrRemoveRevenueExpenseEntries}" name="SaveSelectedRevenuesExpenses_JS" oncomplete="saveSelectedRevenuesExpensesCallback('{!saveSelectedRevenuesExpensesSuccess}');">
+          <apex:param name="ssre_selectedEntriesJson" assignTo="{!selectedEntriesJson}" value="" />
+        </apex:actionFunction>
+      </apex:form>
+
+      <style>
+        body {
+          position: relative;
+          margin: 0;
+          min-width: 100vw;
+          overflow-x: hidden;
+        }
+
+        h1 {
+          font-size: 1.05rem;
+        }
+
+        li {
+          clear: both;
+          cursor: pointer;
+        }
+
+        .ancillaries-list, .cogs-list {
+          padding: 20px;
+          width: 50%;
+        }
+
+        .button-box {
+          align-items: flex-end;
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+          justify-content: flex-end;
+        }
+
+        .category {
+          padding-bottom: 5px;
+          padding-top: 15px;
+
+          width: calc(100% - 4px);
+          margin: 3px;
+          background-color: white;
+          min-height: 5vh;
+          display: inline-block;
+          position: relative;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+          padding: 10px;
+          box-sizing: border-box;
+          border-radius: 3px;
+          -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+          break-inside: avoid-column;
+        }
+
+        .error-msg {
+          color: red;
+        }
+
+        .gl_code {
+          float: right;
+        }
+
+        .header {
+          border-bottom: 1px solid black;
+          margin: 0 20px;
+        }
+
+        .revenue-expense-list {
+          display: flex;
+        }
+
+        .section {
+          border-bottom: 1px solid black;
+          margin-bottom: 15px;
+        }
+      </style>
+    </head>
+
+    <body class="rome-lds">
+      <div class="slds-text-heading--medium header">Select Revenues and Expenses</div>
+
+      <div class="revenue-expense-list">
+        <div class="ancillaries-list">
+          <div class="slds-text-heading--small section">Revenues</div>
+        </div>
+
+        <div class="cogs-list">
+          <div class="slds-text-heading--small section">Expenses (COGS)</div>
+        </div>
+      </div>
+
+      <div class="button-box">
+        <div class="error-msg"></div>
+
+        <div>
+          <button class="slds-button slds-button--brand" type="button" id="save-selected-revenues-expenses">Save</button>
+
+          <button class="slds-button" type="cancel" id="cancel-selected-revenues-expenses">Cancel</button>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        var eventId = getParameterByName('event_id');
+        var revenueExpenseList = JSON.parse('{!revenueExpenseEntriesJson}');
+        var prevSelectedRevenuesExpenses = [];
+        
+        function compareByCategorySort(a, b) {
+          if (a.CategorySort__c < b.CategorySort__c) {
+            return -1;
+          } else if (a.CategorySort__c > b.CategorySort__c) {
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+        
+        function compareByGLAccountNameSort(a, b) {
+            if (a.Name < b.Name) {
+                return -1;
+            } else if (a.Name > b.Name) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        function createRevenueExpenseListFromJson() {
+          var categories = [];
+          var categoryId = 0;
+
+          for (var i = 0; i < revenueExpenseList.length; i++) {
+            if (categoryId !== revenueExpenseList[i]['CategorySort__c']) {
+              categories.push(revenueExpenseList[i]);
+              categoryId = revenueExpenseList[i]['CategorySort__c'];
+            }
+          }
+
+          categories.sort(compareByCategorySort);
+          revenueExpenseList.sort(compareByGLAccountNameSort);
+            
+          var htmlStr = {
+            ancillaries: '',
+            cogs: ''
+          };
+
+          for (var j = 0; j < categories.length; j++) {
+            var col;
+
+            if (categories[j]['Category__c'].indexOf('COGS') > -1) {
+              col = 'cogs';
+            } else {
+              col = 'ancillaries';
+            }
+
+            htmlStr[col] += '<div class="category">';
+            htmlStr[col] += '<strong>' + categories[j]['Category__c'] + '</strong><br/>';
+            htmlStr[col] += '<ul>';
+
+            for (var k = 0; k < revenueExpenseList.length; k++) {
+              if (revenueExpenseList[k]['Category__c'] === categories[j]['Category__c']) {
+
+                htmlStr[col] += '<li><input type="checkbox" name="' + revenueExpenseList[k]['Id'] + '" value="' + revenueExpenseList[k]['Id'] + '" data-type="' + revenueExpenseList[k]['Type__c'];
+
+                if (prevSelectedRevenuesExpenses.indexOf(revenueExpenseList[k]['Id']) > -1) {
+                  htmlStr[col] += '" checked>&nbsp;';
+                } else {
+                  htmlStr[col] += '">&nbsp;';
+                }
+
+                htmlStr[col] += '<span class="expense_name">' + revenueExpenseList[k]['Name'] + '</span>';
+                htmlStr[col] += '<span class="gl_code">' + revenueExpenseList[k]['GLCode__c'] + '</span></li>';
+              }
+            }
+
+            htmlStr[col] += '</ul></div>';
+          }
+
+          $('.ancillaries-list').append(htmlStr['ancillaries']);
+          $('.cogs-list').append(htmlStr['cogs']);
+
+          setupEventHandlers();
+        }
+
+        function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+
+          name = name.replace(/[\[\]]/g, "\\$&");
+
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+          var results = regex.exec(url);
+
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function setPreviousRevenuesExpenses(prevRevenuesExpensesJson) {
+          var revenuesExpenses = JSON.parse(prevRevenuesExpensesJson);
+          var relatedRevenuesExpensesArr = [];
+
+          for (var i = 0; i < revenuesExpenses.length; i++) {
+            relatedRevenuesExpensesArr.push(revenuesExpenses[i]['GLAccount__c']);
+          }
+
+          prevSelectedRevenuesExpenses = relatedRevenuesExpensesArr;
+
+          createRevenueExpenseListFromJson();
+        }
+
+        function saveSelectedRevenuesExpensesCallback(saveSelectedRevenuesExpensesSuccess) {
+          if (saveSelectedRevenuesExpensesSuccess == 'false') {
+            $('#error-msg').html('<p>Failure adding or removing revenues or expenses</p>');
+            $('#error-msg').show();
+
+            $('#save-selected-revenues-expenses').attr('disabled', false);
+            $('#save-selected-revenues-expenses').text('Save');
+          } else {
+            $('#save-selected-revenues-expenses').attr('disabled', false);
+            $('#save-selected-revenues-expenses').text('Save');
+
+            window.self.close();
+          }
+        }
+
+        function setupEventHandlers() {
+          $('ul li span').click(function() {
+            var chbx = $(this).prev('input');
+
+            if (chbx.prop('checked')) {
+              chbx.prop('checked', false);
+            } else {
+              chbx.prop('checked', true);
+            }
+          });
+
+          $('#save-selected-revenues-expenses').click(function() {
+            $('#error-msg').hide();
+            $('#save-selected-revenues-expenses').attr('disabled', true);
+            $('#save-selected-revenues-expenses').text('Saving...');
+
+            var checkedEntries = [];
+
+            $('input:checked').each(function() {
+              checkedEntries.push({
+                id: $(this).attr('name'),
+                type: $(this).data('type')
+              });
+            });
+
+            SaveSelectedRevenuesExpenses_JS(JSON.stringify(checkedEntries));
+          });
+
+          $('#cancel-selected-revenues-expenses').click(function() {
+            window.self.close();
+          });
+        }
+
+        if (eventId) {
+          GetRelatedRevenuesExpenses_JS(eventId);
+        } else {
+          createRevenueExpenseListFromJson();
+        }
+      </script>
+    </body>
+  </html>
+</apex:page>

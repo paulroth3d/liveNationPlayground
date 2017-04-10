@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ApplyTicketScale__c</fullName>
+        <externalId>false</externalId>
+        <label>Apply Ticket Scale</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>RateType__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All Paid Tickets</fullName>
+                    <default>false</default>
+                    <label>All Paid Tickets</label>
+                </value>
+                <value>
+                    <fullName>All Drop Count</fullName>
+                    <default>false</default>
+                    <label>All Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Selected Tickets</fullName>
+                    <default>false</default>
+                    <label>Selected Tickets</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Per Cap</controllingFieldValue>
+                <valueName>All Paid Tickets</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Per Cap</controllingFieldValue>
+                <valueName>All Drop Count</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Per Cap</controllingFieldValue>
+                <valueName>Selected Tickets</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ArtistAmountRate__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist Amount/Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ArtistAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ArtistMax__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ArtistMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ArtistRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Gross</fullName>
+                    <default>false</default>
+                    <label>% of Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Adjusted Gross</fullName>
+                    <default>false</default>
+                    <label>% of Adjusted Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BaseAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Base Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>COGSAtFlash__c</fullName>
+        <externalId>false</externalId>
+        <label>COGS at Flash</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>COGSAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>COGS At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>COGSatForecast__c</fullName>
+        <externalId>false</externalId>
+        <label>COGS at Forecast</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>LedgerEntry__r.Category__c</formula>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContraAccount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(LedgerEntry__r.GLAccount__r.RelatedContra__c)), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contra Account?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ContraAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ContraAtFlash__c</fullName>
+        <externalId>false</externalId>
+        <formula>FlashContraAmount__c + ((FlashContraPercent__c + Flash3rdPartyPercent__c) * FlashGrossRevenue__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contra at Flash</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ContraAtForecast__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra At Forecast</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ContraPercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ContraType__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Cap</fullName>
+                    <default>false</default>
+                    <label>Per Cap</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contra_At_Forecast__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra % At Forecast</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ContraatSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra at Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CurrentFlashFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(FlashRateType__c),
+&quot;Flat&quot;, FlashRateAmount__c,
+&quot;Per Drop Count&quot;, FlashRateAmount__c * LedgerEntry__r.Event__r.ActualDropCount__c,
+&quot;Per Paid Ticket&quot;, FlashRateAmount__c * LedgerEntry__r.Event__r.PaidAttendance__c,
+&quot;% of Net Gross&quot;, FlashRateAmount__c / 100 * LedgerEntry__r.Event__r.SettlementNetGross__c,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Flash Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CurrentFlash__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Flash</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventAdvertisingSettlementPlan__c</fullName>
+        <description>Internal field only used in Apex triggers</description>
+        <externalId>false</externalId>
+        <formula>TEXT(LedgerEntry__r.Event__r.AdvertisingSettlementPlan__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Advertising Settlement Plan</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustment__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Adjustment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentatSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Adjustment at Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExternalId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <inlineHelpText>Unique External Id for the Ledger Entry Breakout</inlineHelpText>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Flash3rdPartyPercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash 3rd Party %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FlashAdjustments__c</fullName>
+        <externalId>false</externalId>
+        <formula>CurrentFlash__c - OriginalFlash__c</formula>
+        <label>Flash Adjustments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FlashCapacityRange__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash Capacity Range</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FlashContraAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash Contra Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FlashContraPercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash Contra %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FlashGrossPerPaid__c</fullName>
+        <externalId>false</externalId>
+        <formula>FlashGrossRevenue__c / LedgerEntry__r.Event__r.PaidAttendance__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Flash Gross Per Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FlashGrossRevenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash Gross Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FlashNetPerPaid__c</fullName>
+        <externalId>false</externalId>
+        <formula>FlashNetRevenue__c / LedgerEntry__r.Event__r.PaidAttendance__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Flash Net Per Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FlashNetRevenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>FlashGrossRevenue__c - ContraAtFlash__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Flash Net Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FlashOverridden__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Flash Overridden</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FlashRateAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash Rate Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FlashRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Flash Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GLAccount__c</fullName>
+        <externalId>false</externalId>
+        <formula>LedgerEntry__r.GLAccount__r.Name</formula>
+        <label>GL Account</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GLCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>LedgerEntry__r.GLAccount__r.GLCode__c</formula>
+        <label>GL Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GrossPerPaid__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Gross Per Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GrossRevenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Gross Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GrossRevenueatSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>Gross Revenue at Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>HouseNut__c</fullName>
+        <externalId>false</externalId>
+        <formula>LedgerEntry__r.HouseNut__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>House Nut</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InHouseMax__c</fullName>
+        <externalId>false</externalId>
+        <label>In House Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InHouseMin__c</fullName>
+        <externalId>false</externalId>
+        <label>In House Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InHouseProjection__c</fullName>
+        <externalId>false</externalId>
+        <label>In House Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InHouseRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>In House Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Truck</fullName>
+                    <default>false</default>
+                    <label>Per Truck</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Gross</fullName>
+                    <default>false</default>
+                    <label>% of Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Adjusted Gross</fullName>
+                    <default>false</default>
+                    <label>% of Adjusted Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>InHouseRate__c</fullName>
+        <externalId>false</externalId>
+        <label>In House Rate / $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InHouseatSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>In House at Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IsShadow__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(LedgerEntry__r.RecordType.DeveloperName = &quot;Contra&quot;, True, False)</formula>
+        <label>Is Shadow</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LNTouringAmountRate__c</fullName>
+        <externalId>false</externalId>
+        <label>LN Touring Amount/Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LNTouringAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>LN Touring Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNTouringMax__c</fullName>
+        <externalId>false</externalId>
+        <label>LN Touring Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNTouringMin__c</fullName>
+        <externalId>false</externalId>
+        <label>LN Touring Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNTouringRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>LN Touring Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Gross</fullName>
+                    <default>false</default>
+                    <label>% of Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Adjusted Gross</fullName>
+                    <default>false</default>
+                    <label>% of Adjusted Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LedgerEntry__c</fullName>
+        <externalId>false</externalId>
+        <label>Ledger Entry</label>
+        <referenceTo>LedgerEntry__c</referenceTo>
+        <relationshipLabel>Ledger Entry Breakouts</relationshipLabel>
+        <relationshipName>LedgerEntryBreakouts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Max__c</fullName>
+        <externalId>false</externalId>
+        <label>Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Min__c</fullName>
+        <externalId>false</externalId>
+        <label>Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NetPerPaid__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Per Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NetRevenueatSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Revenue at Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OfferAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OfferAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OfferMax__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OfferMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OfferRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Truck</fullName>
+                    <default>false</default>
+                    <label>Per Truck</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Gross</fullName>
+                    <default>false</default>
+                    <label>% of Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Adjusted Gross</fullName>
+                    <default>false</default>
+                    <label>% of Adjusted Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OfferRate__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer Rate / $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OriginalFlash__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Flash</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ParentRecordTypeID__c</fullName>
+        <description>Internal field only used in Apex triggers</description>
+        <externalId>false</externalId>
+        <formula>LedgerEntry__r.RecordTypeId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Record Type ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PlanAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Plan Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectionAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Projection Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PromoterAmountRate__c</fullName>
+        <externalId>false</externalId>
+        <label>Promoter Amount/Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PromoterAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Promoter Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PromoterMax__c</fullName>
+        <externalId>false</externalId>
+        <label>Promoter Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PromoterMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Promoter Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PromoterRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Promoter Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Gross</fullName>
+                    <default>false</default>
+                    <label>% of Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Adjusted Gross</fullName>
+                    <default>false</default>
+                    <label>% of Adjusted Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Cap</fullName>
+                    <default>false</default>
+                    <label>Per Cap</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ResponsibleifnotLNE__c</fullName>
+        <externalId>false</externalId>
+        <label>Responsible if not LNE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SelectedTicketScale__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Selected Ticket Scale</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SettleAtActual__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Settle At Actual</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SettlementExpenseVariance__c</fullName>
+        <externalId>false</externalId>
+        <formula>OfferAtSellout__c -  Settlement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Expense Variance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementNotes__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SettlementOnly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>New Breakouts in Settlement set this to true from the grid JS and further processing takes this flag into account to ignore these records on the Booking side.</description>
+        <externalId>false</externalId>
+        <label>Settlement Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SettlementRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Gross</fullName>
+                    <default>false</default>
+                    <label>% of Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Adjusted Gross</fullName>
+                    <default>false</default>
+                    <label>% of Adjusted Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Settlement__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>TicketScaleList__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Scale List</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VenueAmountRate__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Amount/Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VenueAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>VenueMax__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>VenueMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>VenueRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Drop Count</fullName>
+                    <default>false</default>
+                    <label>Per Drop Count</label>
+                </value>
+                <value>
+                    <fullName>Per Paid Ticket</fullName>
+                    <default>false</default>
+                    <label>Per Paid Ticket</label>
+                </value>
+                <value>
+                    <fullName>% of Net Gross</fullName>
+                    <default>false</default>
+                    <label>% of Net Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Gross</fullName>
+                    <default>false</default>
+                    <label>% of Gross</label>
+                </value>
+                <value>
+                    <fullName>% of Adjusted Gross</fullName>
+                    <default>false</default>
+                    <label>% of Adjusted Gross</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>X3rdPartyPercent__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Party %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>fxArtistAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ArtistAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Artist Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxArtistMax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ArtistMax__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Artist Max (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxArtistMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ArtistMin__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Artist Min (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBaseAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BaseAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Base Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCOGSAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(COGSAtSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>COGS At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCOGSatForecast__c</fullName>
+        <externalId>false</externalId>
+        <formula>(COGSatForecast__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>COGS at Forecast (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxContraAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ContraAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Contra Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxContraAtForecast__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ContraAtForecast__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Contra At Forecast (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxContraatSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ContraatSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Contra at Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCurrentFlashFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CurrentFlashFormula__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Current Flash Formula (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCurrentFlash__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CurrentFlash__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Current Flash (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustment__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustment__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Expense Adjustment (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustmentatSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustmentatSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Expense Adjustment at Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxFlashAdjustments__c</fullName>
+        <externalId>false</externalId>
+        <formula>(FlashAdjustments__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Flash Adjustments (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxGrossPerPaid__c</fullName>
+        <externalId>false</externalId>
+        <formula>(GrossPerPaid__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Gross Per Paid (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxGrossRevenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>(GrossRevenue__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Gross Revenue (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxGrossRevenueatSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(GrossRevenueatSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Gross Revenue at Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxInHouseMax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(InHouseMax__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>In House Max (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxInHouseMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>(InHouseMin__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>In House Min (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxInHouseProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(InHouseProjection__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>In House Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxInHouseatSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(InHouseatSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>In House at Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNTouringAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNTouringAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LN Touring Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNTouringMax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNTouringMax__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LN Touring Max (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNTouringMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNTouringMin__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LN Touring Min (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxMax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Max__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Max (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Min__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Min (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNetPerPaid__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NetPerPaid__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Net Per Paid (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNetRevenueatSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NetRevenueatSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Net Revenue at Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNet_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Net_Revenue__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Net Revenue (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOfferAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OfferAtProjection__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Offer At Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOfferAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OfferAtSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Offer At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOfferMax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OfferMax__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Offer Max (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOfferMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OfferMin__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Offer Min (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOriginalFlash__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OriginalFlash__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Original Flash (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPlanAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PlanAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Plan Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectionAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectionAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projection Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPromoterAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PromoterAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Promoter Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPromoterMax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PromoterMax__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Promoter Max (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPromoterMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PromoterMin__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Promoter Min (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementExpenseVariance__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementExpenseVariance__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Expense Variance (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlement__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Settlement__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxVenueAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(VenueAmount__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Venue Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxVenueMax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(VenueMax__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Venue Max (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxVenueMin__c</fullName>
+        <externalId>false</externalId>
+        <formula>(VenueMin__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Venue Min (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Ledger Entry Breakout</label>
+    <nameField>
+        <displayFormat>LEB-{000000}</displayFormat>
+        <label>Ledger Entry Breakout ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Ledger Entry Breakouts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>LNE_ApplyTicketScaleRequired</fullName>
+        <active>true</active>
+        <description>If Rate Type = &quot;Per Cap&quot;, then apply ticket scale is required.</description>
+        <errorConditionFormula>AND(ISPICKVAL(RateType__c, &quot;Per Cap&quot;), ISPICKVAL(ApplyTicketScale__c, &quot;&quot;), !$Setup.GeneralSettings__c.BypassAutomation__c)</errorConditionFormula>
+        <errorDisplayField>ApplyTicketScale__c</errorDisplayField>
+        <errorMessage>If Rate Type = &quot;Per Cap&quot;, Apply Ticket Scale is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Contra_Type_With_Contra_Amount</fullName>
+        <active>true</active>
+        <description>Contra Type should be selected when a Contra Amount have been entered</description>
+        <errorConditionFormula>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+!ISBLANK(ContraAmount__c) &amp;&amp;
+ISBLANK(TEXT(ContraType__c))</errorConditionFormula>
+        <errorDisplayField>ContraType__c</errorDisplayField>
+        <errorMessage>Contra Type must be selected when entering a Contra Amount.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,291 @@
+<!--
+/**
+ * Controller for the page
+ * /apex/LNE_FinanceAncillaries?auraId=1%3A1609%3Ba&Id=a0VR0000006rzGQMAY&t=1003
+-->
+<apex:page applyHtmlTag="false" standardController="Event__c" extensions="LNE_FinanceAncillaryTab_CX" sidebar="false" showHeader="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+  <title>Ancillary</title>
+  <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+  <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"/>
+  <!-- PostMessage communicates between windows -->
+  <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+  <style type="text/css">
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+  </style>
+</head>
+<body class="rome-lds" id="LNE_AncillaryTab--body"
+  data-event-id="{!Event__c.Id}"
+  data-no-ancillary-expected="{!Event__c.NoExpectedAncillaries__c}"
+  data-related-ancillaries="{!relatedAncillaries}"
+  data-ancillaries-count="{!ancillaryCount}"
+  data-cogs-count="{!cogCount}">
+
+  <apex:form >
+    <apex:actionFunction action="{!updateEvent}" name="UpdateEvent_JS" oncomplete="lneAncillaryTab.updateEventCallback('{!updateEventSuccess}');">
+      <apex:param name="ue_eventId" assignTo="{!eventId}" value="" />
+      <apex:param name="ue_eventNoExpectedAncillaries" assignTo="{!eventNoExpectedAncillaries}" value="" />
+    </apex:actionFunction>
+    <apex:actionFunction action="{!getCountOfRelatedAncillaries}" name="GetCountOfRelatedAncillaries_JS" oncomplete="refreshGrids('{!ancillaryCount}', '{!cogCount}');"/>
+  </apex:form>
+
+  <section class="slds-clearfix slds-p-around--x-small">
+    <div class="slds-float--right">
+      <button id="button-copy-flash" class="slds-button slds-button--brand">Copy to Flash</button>
+    </div>
+    <div class="slds-float--left">
+      <a id="select-revenues-expenses-button">Select Ancillaries</a>
+    </div>
+  </section>
+
+  <div id="toggle-container" class="hide">
+    <form>
+      <input type="checkbox" id="toggle-grid-checkbox" />
+      <label for="toggle-grid-checkbox" id="toggle-grid-label">
+        There are no ancillaries expected for this event.
+      </label>
+    </form>
+  </div>
+
+  <div id="all-grids-container">
+    <div id="grid-container" class="hide">
+      <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+      <!-- Ancillary Revenues Grid -->
+      <div id="grid-frame-ancillary">
+        <iframe id="gridancillary" data-grid-name="financeancillaryrevenues" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Finance%20Ancillary%20Revenues&fpf=FlashFilter__c&fpv={!Event__c.Id}&sh=0&ssb=0&sbb=1"></iframe>
+      </div>
+      <!-- COGS Grid -->
+      <div id="grid-frame-cogs">
+        <iframe id="gridcogs" data-grid-name="financecogsexpenses" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Finance%20COGS%20Expenses&fpf=FlashFilter__c&fpv={!Event__c.Id}&sh=0&ssb=0&sbb=1"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Keep at end of body to help load time and ensure jquery available -->
+  <script type="text/javascript">
+      var overlayWindow = null;
+      var selectAncillariesUrl = createApexURL('LNE_SelectFinanceAncillaryCOGSEntries');
+      // keep everything within 1 global object for this page
+      lneAncillaryTab = {};
+
+      // common values
+      lneAncillaryTab = {
+          toggleContainerId: 'toggle-container',
+          toggleId: 'toggle-grid-checkbox',
+          gridId: 'grid-container',
+          bodyId: 'LNE_AncillaryTab--body',
+          eventId: ''
+      };
+
+      function postRefreshMessage() {
+          var WINDOW_PAGE_NAME = 'LNE_FinanceAncillaries';
+          var auraId = '{!$CurrentPage.parameters.auraId}';
+          var messageType = 'saveComplete';
+          var isSuccessful = true;
+
+          var data = {
+              auraId: auraId,
+              src: window.location.href
+          };
+
+          var postMessage = new LNE_PostMessage( WINDOW_PAGE_NAME, messageType, isSuccessful, data );
+          postMessage.dispatch( parent );
+
+          location.reload(true);
+      }
+
+      // functions
+      function applySelectedAncillaries() {
+        var initialFocus = true;
+
+        overlayWindow = window.open(selectAncillariesUrl + '?id={!Event__c.Id}', '_blank', 'location=no,width=900,height=600');
+
+        $(overlayWindow).on('unload blur', function() {
+            closeOverlayWindow();
+            //GetCountOfRelatedAncillaries_JS();
+            window.location.reload();
+        });
+      }
+
+      function closeOverlayWindow() {
+          if (overlayWindow && !overlayWindow.closed) {
+              overlayWindow.close();
+          }
+
+          overlayWindow = null;
+      }
+
+      function createApexURL(pageName) {
+        var currentLocation = window.location.href;
+        var ajaxURL = currentLocation.replace( 'gblite.', 'c.' );
+
+        ajaxURL = ajaxURL.substring(0, ajaxURL.toLowerCase().indexOf('/apex/' )) + '/apex/' + pageName;
+
+        return( ajaxURL );
+      }
+
+      function refreshGrids(ancillaryCount, cogsCount) {
+        var ancillaryGridContainer = $('#grid-frame-ancillary');
+        var cogsGridContainer = $('#grid-frame-cogs');
+
+        if (ancillaryCount > 0) {
+          var ancillaryIframeLoc = $('#grid-frame-ancillary-revenues').attr('src');
+
+          $('#grid-frame-ancillary-revenues').attr('src', ancillaryIframeLoc);
+
+          ancillaryGridContainer.show();
+        } else {
+          ancillaryGridContainer.hide();
+        }
+
+        if (cogsCount > 0) {
+          var cogsIframeLoc = $('#grid-frame-cogs-expenses').attr('src');
+
+          $('#grid-frame-cogs-expenses').attr('src', cogsIframeLoc);
+
+          cogsGridContainer.show();
+        } else {
+          cogsGridContainer.hide();
+        }
+
+        if (ancillaryCount > 0 || cogsCount > 0) {
+          $('#toggle-container').hide();
+        } else {
+          $('#toggle-container').show();
+        }
+      }
+
+      lneAncillaryTab.init = function() {
+          console.log( "ancillary tab init" );
+          var atab = lneAncillaryTab;
+          var $body = $('#' + atab.bodyId);
+
+          atab.noExpAncillary = $body.attr('data-no-ancillary-expected');
+          atab.relatedAncillaries = $body.attr('data-related-ancillaries');
+          atab.eventId = $body.attr('data-event-id');
+
+          window.console.log('Ancillary Tab init obj is ', atab);
+
+          var $toggleContainer = $('#' + atab.toggleContainerId);
+          var $grid = $('#' + atab.gridId);
+
+          /*
+          *   Upon load of Ancillaries tab, query Ledger Entry records to see if there are records of Record Type = (Ancillary or COGS)
+          *       related to the current event. This is in the var lneAncillaryTab.relatedAncillaries (read from DOM got by apex)
+          *
+          *   If records found, do not display the checkbox/text and only show the grid WITH NO checkbox and text
+          *
+          *   If records are not found, display the checkbox/text ONLY.
+          *        The current value of Event__c.NoExpectedAncillaries__c then determines if grid is visible.
+          *
+          */
+          if (atab.relatedAncillaries == 'true') {
+              $grid.attr('class','show');
+          } else {
+              $toggleContainer.attr('class', 'show');
+
+              if (atab.noExpAncillary == 'false') {
+                  $grid.attr('class','show');
+              }
+          }
+
+          var ancillaryCount = $('body').data('ancillaries-count');
+          var cogsCount = $('body').data('cogs-count');
+
+          if (ancillaryCount > 0) {
+            $('#grid-frame-ancillary').show();
+          } else {
+            $('#grid-frame-ancillary').hide();
+          }
+
+          if (cogsCount > 0) {
+            $('#grid-frame-cogs').show();
+          } else {
+            $('#grid-frame-cogs').hide();
+          }
+
+          if (atab.noExpAncillary == 'true') {
+              var $box = $('#' + atab.toggleId);
+              $box.attr('checked', 'checked');
+          }
+          
+          if ($('input[id="toggle-grid-checkbox"]:checked').length > 0){
+            $('#select-revenues-expenses-button').hide(); 
+          } else {
+            $('#select-revenues-expenses-button').show(); 
+          }
+
+          // Event handlers
+          $('#toggle-grid-checkbox').on('click', function() {
+              var atab = lneAncillaryTab;
+
+              if ($grid.hasClass('hide')) {
+                  $grid.attr('class', 'show');
+                  atab.setNoAncillaryExpected(false);
+              } else {
+                  $grid.attr('class', 'hide');
+                  atab.setNoAncillaryExpected(true);
+              }
+          });
+
+          $('#select-revenues-expenses-button').on('click', function() {
+              if (!overlayWindow && document.hasFocus()) {
+                  applySelectedAncillaries();
+              }
+          });
+
+          $('#button-copy-flash').on('click', function() {
+            LNE_FinanceAncillaryTab_CX.copyToFlash('{!Event__c.Id}', postRefreshMessage);
+          });
+
+          lneSharedJs.handleFocusLoss();
+      };
+
+      lneAncillaryTab.setNoAncillaryExpected = function(newValue) {
+          var atab = lneAncillaryTab;
+          atab.noExpAncillary = newValue;
+
+          window.console.log('lneAncillaryTab.setNoAncillaryExpected new value is ' + newValue);
+          
+          if (newValue){
+            $('#select-revenues-expenses-button').hide(); 
+          } else {
+            $('#select-revenues-expenses-button').show(); 
+          }
+
+          UpdateEvent_JS(atab.eventId, newValue);
+      };
+
+      lneAncillaryTab.updateEventCallback = function(updateSuccess) {
+          if (updateSuccess == 'false') {
+              window.console.log('Could not save Event__c.NoExpectedAncillaries__c');
+              // handle error
+              window.alert('Unable to save Event__c.NoExpectedAncillaries__c');
+          } else {
+              window.console.log('Saved Event__c.NoExpectedAncillaries__c');
+          }
+      };
+
+
+      /**
+      *
+      *   Kick off init
+      *
+      */
+      lneAncillaryTab.init();
+  </script>
+  <c:LNE_Copyright />
+</body>
+</html>
+</apex:page>

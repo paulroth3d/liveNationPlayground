@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <description>Standard component to allow user to choose an office, venue and promoter. Logic to determine venue and promoter choices available are based on office selected.</description>
+    <label>LNE_OfficeVenuePromoterPicker</label>
+    <packageVersions>
+        <majorNumber>5</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>GBLite</namespace>
+    </packageVersions>
+</ApexComponent>

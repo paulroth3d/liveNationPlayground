@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Advertisement__c$MediaTypeFormat__c</field>
+    </columns>
+    <columns>
+        <field>Advertisement__c$Market__c</field>
+    </columns>
+    <columns>
+        <field>Advertisement__c$StartDate__c</field>
+    </columns>
+    <columns>
+        <field>Advertisement__c$EndDate__c</field>
+    </columns>
+    <columns>
+        <field>Advertisement__c$Notes__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Advertisement__c$AdPlan__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AP-000002</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Advertisement__c$Vendor__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Ad Spend</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Advertisements__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Advertisement__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

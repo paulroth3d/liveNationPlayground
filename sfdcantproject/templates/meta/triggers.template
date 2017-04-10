@@ -1,0 +1,2 @@
+trigger ##FILENAME## on Account (after update){
+}

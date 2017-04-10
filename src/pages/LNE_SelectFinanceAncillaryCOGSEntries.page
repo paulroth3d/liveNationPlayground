@@ -1,0 +1,111 @@
+<apex:page applyBodyTag="false" 
+	extensions="LNE_SelectFinanceAncillaryCOGSEntries_CX"
+	showHeader="false" 
+	sidebar="false" 
+	standardController="Event__c" 
+>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+  <title>Select Revenue and Expense Placeholders</title>
+  <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"/>
+
+  <style>
+    body {
+      position: relative;
+      margin: 0;
+      min-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 1.05rem;
+    }
+
+    li {
+      clear: both;
+      cursor: pointer;
+    }
+
+    .ancillaries-list, .cogs-list {
+      padding: 20px;
+      width: 50%;
+    }
+
+    .button-box {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      justify-content: flex-end;
+    }
+
+    .category {
+      padding-bottom: 5px;
+      padding-top: 15px;
+
+      width: calc(100% - 4px);
+      margin: 3px;
+      background-color: white;
+      min-height: 5vh;
+      display: inline-block;
+      position: relative;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid-column;
+    }
+
+    .error-msg {
+      color: red;
+    }
+
+    .gl_code {
+      float: right;
+    }
+
+    .header {
+      border-bottom: 1px solid black;
+      margin: 0 20px;
+    }
+
+    .revenue-expense-list {
+      display: flex;
+    }
+
+    .section {
+      border-bottom: 1px solid black;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body class="rome-lds">
+<apex:form >
+  <div class="slds-text-heading--medium header">Select Revenues and Expenses</div>
+  <div class="revenue-expense-list">
+    <div class="ancillaries-list">
+      <div class="slds-text-heading--small section">Revenues</div>
+      <apex:repeat var="a" value="{!ancillaries}">
+      	<c:LNE_LedgerEntryCategory ledgerCategory="{!a}"/>
+      </apex:repeat>
+    </div>
+    <div class="cogs-list">
+      <div class="slds-text-heading--small section">Expenses (COGS)</div>
+      <apex:repeat var="c" value="{!cogs}">
+      	<c:LNE_LedgerEntryCategory ledgerCategory="{!c}"/>
+      </apex:repeat>
+    </div>
+  </div>
+  <div class="button-box">
+    <div>
+      <apex:commandLink value="Save" styleClass="slds-button slds-button--brand" action="{!updateLedgerEntries}" oncomplete="window.self.close()"/>
+      <apex:commandLink value="Cancel" styleClass="slds-button slds-button--brand" onclick="window.self.close()"/>
+    </div>
+  </div>
+</apex:form>
+</body>
+</html>
+</apex:page>

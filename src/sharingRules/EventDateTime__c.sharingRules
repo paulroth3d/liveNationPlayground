@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Comedy_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Comedy North America</label>
+        <sharedTo>
+            <group>ComedyOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_AC_Entertainment_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is AC Entertainment</description>
+        <label>Edit Owned Venue Event Date Time for AC Entertainment Operations</label>
+        <sharedTo>
+            <group>ACEntertainmentOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>AC Entertainment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Atlanta_Birmingham_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Atlanta/Birmingham</description>
+        <label>Edit Owned Venue Event Date Time for Atlanta/Birmingham Operations</label>
+        <sharedTo>
+            <group>AtlantaBirminghamOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Atlanta/Birmingham</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Baltimore_Washington_DC_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Baltimore/Washington DC</description>
+        <label>Edit Owned Venue Event Date Time for Baltimore/Washington DC Operations</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Baltimore/Washington DC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Boise_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Boise</description>
+        <label>Edit Owned Venue Event Date Time for Boise Operations</label>
+        <sharedTo>
+            <group>BoiseOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boise</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_BostBostonon_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Boston</description>
+        <label>Edit Owned Venue Event Date Time for Boston Operations</label>
+        <sharedTo>
+            <group>BostonOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Canada_Concerts_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Division users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Canada Concerts, Toronto, or Vancouver</description>
+        <label>Edit Owned Venue Event Date Time for Canada Concerts Operations</label>
+        <sharedTo>
+            <group>CanadaConcertsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Canada Concerts,Toronto,Vancouver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Carolinas_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Carolinas</description>
+        <label>Edit Owned Venue Event Date Time for Carolinas Operations</label>
+        <sharedTo>
+            <group>CarolinasOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Carolinas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Chicago_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Chicago</description>
+        <label>Edit Owned Venue Event Date Time for Chicago Operations</label>
+        <sharedTo>
+            <group>ChicagoOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Chicago</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Comedy_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Comedy</description>
+        <label>Edit Owned Venue Event Date Time for Comedy Operations</label>
+        <sharedTo>
+            <group>ComedyOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Comedy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Connecticut_Upstate_NY_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Connecticut/Upstate NY</description>
+        <label>Edit Owned Venue Event Date Time for Connecticut/Upstate NY Operations</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Connecticut/Upstate NY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Country_Nation_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Country Nation</description>
+        <label>Edit Owned Venue Event Date Time for Country Nation Operations</label>
+        <sharedTo>
+            <group>CountryNationOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Country Nation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Crossroads_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Crossroads</description>
+        <label>Edit Owned Venue Event Date Time for Crossroads Operations</label>
+        <sharedTo>
+            <group>CrossroadsOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Dallas_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Dallas</description>
+        <label>Edit Owned Venue Event Date Time for Dallas Operations</label>
+        <sharedTo>
+            <group>DallasOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Dallas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Denver_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Denver</description>
+        <label>Edit Owned Venue Event Date Time for Denver Operations</label>
+        <sharedTo>
+            <group>DenverOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Denver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Detroit_Indy_Cleveland_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Detroit/Indy/Cleveland</description>
+        <label>Edit Owned Venue Event Date Time for Detroit/Indy/Cleveland Operations</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Detroit/Indy/Cleveland,Detroit,Indianapolis,Cleveland</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_EDM_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is EDM</description>
+        <label>Edit Owned Venue Event Date Time for EDM Operations</label>
+        <sharedTo>
+            <group>EDMDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>EDM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Festivals_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Festivals</description>
+        <label>Edit Owned Venue Event Date Time for Festivals Operations</label>
+        <sharedTo>
+            <group>FestivalsOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Festivals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Hollywood_Bowl_ABE_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Hollywood Bowl ABE Office users read-write access to all Event Date Times where Hollywood Bowl ABE is the Office</description>
+        <label>Edit Owned Venue Event Date Time for Hollywood Bowl ABE Operations</label>
+        <sharedTo>
+            <group>HollywoodBowlABEOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>equals</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Houston_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Houston</description>
+        <label>Edit Owned Venue Event Date Time for Houston Operations</label>
+        <sharedTo>
+            <group>HoustonOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Houston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_LN_Urban_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is LN Urban</description>
+        <label>Edit Owned Venue Event Date Time for LN Urban Operations</label>
+        <sharedTo>
+            <group>LNUrbanDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>LN Urban</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Las_Vegas_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Las Vegas</description>
+        <label>Edit Owned Venue Event Date Time for Las Vegas Operations</label>
+        <sharedTo>
+            <group>LasVegasOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Las Vegas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Los_Angeles_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Los Angeles</description>
+        <label>Edit Owned Venue Event Date Time for Los Angeles Operations</label>
+        <sharedTo>
+            <group>LosAngelesOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Los Angeles</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Miami_Tampa_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Miami/Tampa</description>
+        <label>Edit Owned Venue Event Date Time for Miami/Tampa Operations</label>
+        <sharedTo>
+            <group>MiamiTampaOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Miami/Tampa</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Nashville_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Nashville</description>
+        <label>Edit Owned Venue Event Date Time for Nashville Operations</label>
+        <sharedTo>
+            <group>NashvilleOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Nashville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_New_Orleans_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is New Orleans</description>
+        <label>Edit Owned Venue Event Date Time for New Orleans Operations</label>
+        <sharedTo>
+            <group>NewOrleansOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New Orleans</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_New_York_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is New York</description>
+        <label>Edit Owned Venue Event Date Time for New York Operations</label>
+        <sharedTo>
+            <group>NewYorkOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Philadelphia_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Philadelphia</description>
+        <label>Edit Owned Venue Event Date Time for Philadelphia Operations</label>
+        <sharedTo>
+            <group>PhiladelphiaOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Philadelphia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Phoenix_Albuquerque_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Phoenix/Albuquerque</description>
+        <label>Edit Owned Venue Event Date Time for Phoenix/Albuquerque Operations</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Phoenix/Albuquerque</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Pittsburgh_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Pittsburgh</description>
+        <label>Edit Owned Venue Event Date Time for Pittsburgh Operations</label>
+        <sharedTo>
+            <group>PittsburghOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Pittsburgh</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_San_Diego_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is San Diego</description>
+        <label>Edit Owned Venue Event Date Time for San Diego Operations</label>
+        <sharedTo>
+            <group>SanDiegoOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Diego</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_San_Francisco_Sacramento_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is San Francisco/Sacramento</description>
+        <label>Edit Owned Venue Event Date Time for San Francisco/Sacramento Operations</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Francisco/Sacramento</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Seattle_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Seattle</description>
+        <label>Edit Owned Venue Event Date Time for Seattle Operations</label>
+        <sharedTo>
+            <group>SeattleOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Seattle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_St_Louis_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is St Louis</description>
+        <label>Edit Owned Venue Event Date Time for St Louis Operations</label>
+        <sharedTo>
+            <group>StLouisOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>St Louis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_T_C_Concerts_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is T&amp;C Concerts</description>
+        <label>Edit Owned Venue Event Date Time for T&amp;C Concerts Operations</label>
+        <sharedTo>
+            <group>TCConcertsOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>T&amp;C Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_Date_Time_for_Touring_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Office users read-write access to all Event Date Times at an owned &amp; operated Venue where the Primary Office is Touring</description>
+        <label>Edit Owned Venue Event Date Time for Touring Operations</label>
+        <sharedTo>
+            <group>TouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Touring</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>T_C_Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>T&amp;C Touring North America</label>
+        <sharedTo>
+            <group>TCTouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Touring North America</label>
+        <sharedTo>
+            <group>TouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Event_Date_Time_for_All_Internal_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all LNE users read-only access to all Event Date Times on or after their public on sale date except Hollywood Bowl ABE</description>
+        <label>View Event Date Time for All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>PublicVisibilityviaPublicOnSale__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Event_Date_Time_for_Theaters_Clubs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all Theaters &amp; Clubs users read-only access all Theaters &amp; Clubs Event Date Times</description>
+        <label>View Event Date Time for Theaters &amp; Clubs</label>
+        <sharedTo>
+            <group>TheatersClubsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>Theaters &amp; Clubs</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Event_Date_Time_for_US_Concerts</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all US Concerts users read-only access to all US Concerts Event Date Times except Hollywood Bowl ABE</description>
+        <label>View Event Date Time for US Concerts</label>
+        <sharedTo>
+            <group>USConcertsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>US Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_AC_Entertainment_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Office public group users read-write access to all Event Date Times created by AC Entertainment personnel</description>
+        <label>Edit Event Date Time for AC Entertainment Operations</label>
+        <sharedTo>
+            <group>ACEntertainmentOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ACEntertainment</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Atlanta_Birmingham_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Office public group users read-write access to all Event Date Times created by Atlanta/Birmingham personnel</description>
+        <label>Edit Event Date Time for Atlanta/Birmingham Operations</label>
+        <sharedTo>
+            <group>AtlantaBirminghamOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>AtlantaBirmingham</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Baltimore_Washington_DC_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Office public group users read-write access to all Event Date Times created by Baltimore/Washington DC personnel</description>
+        <label>Edit Event Date Time for Baltimore/Washington DC Operations</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BaltimoreWashingtonDC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Boise_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Office public group users read-write access to all Event Date Times created by Boise personnel</description>
+        <label>Edit Event Date Time for Boise Operations</label>
+        <sharedTo>
+            <group>BoiseOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boise</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Boston_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Office public group users read-write access to all Event Date Times created by Boston personnel</description>
+        <label>Edit Event Date Time for Boston Operations</label>
+        <sharedTo>
+            <group>BostonOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Canada_Concerts_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Office public group users read-write access to all Event Date Times created by Canada Concerts personnel</description>
+        <label>Edit Event Date Time for Canada Concerts Operations</label>
+        <sharedTo>
+            <group>CanadaConcertsDivision</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CanadaConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Carolinas_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Office public group users read-write access to all Event Date Times created by Carolinas personnel</description>
+        <label>Edit Event Date Time for Carolinas Operations</label>
+        <sharedTo>
+            <group>CarolinasOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Carolinas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Chicago_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Office public group users read-write access to all Event Date Times created by Chicago personnel</description>
+        <label>Edit Event Date Time for Chicago Operations</label>
+        <sharedTo>
+            <group>ChicagoOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Chicago</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Comedy_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Office public group users read-write access to all Event Date Times created by Comedy personnel</description>
+        <label>Edit Event Date Time for Comedy Operations</label>
+        <sharedTo>
+            <group>ComedyOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Comedy</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Connecticut_Upstate_NY_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Office public group users read-write access to all Event Date Times created by Connecticut/Upstate NY personnel</description>
+        <label>Edit Event Date Time for Connecticut/Upstate NY Operations</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ConnecticutUpstateNY</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Country_Nation_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Office public group users read-write access to all Event Date Times created by Country Nation personnel</description>
+        <label>Edit Event Date Time for Country Nation Operations</label>
+        <sharedTo>
+            <group>CountryNationOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CountryNation</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Crossroads_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Office public group users read-write access to all Event Date Times created by Crossroads personnel</description>
+        <label>Edit Event Date Time for Crossroads Operations</label>
+        <sharedTo>
+            <group>CrossroadsOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Crossroads</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Dallas_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Office public group users read-write access to all Event Date Times created by Dallas personnel</description>
+        <label>Edit Event Date Time for Dallas Operations</label>
+        <sharedTo>
+            <group>DallasOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Dallas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Denver_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Office public group users read-write access to all Event Date Times created by Denver personnel</description>
+        <label>Edit Event Date Time for Denver Operations</label>
+        <sharedTo>
+            <group>DenverOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Denver</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Detroit_Indy_Cleveland_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Office public group users read-write access to all Event Date Times created by Detroit/Indy/Cleveland personnel</description>
+        <label>Edit Event Date Time for Detroit/Indy/Cleveland Operations</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>DetroitIndyCleveland</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_EDM_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Office public group users read-write access to all Event Date Times created by EDM personnel</description>
+        <label>Edit Event Date Time for EDM Operations</label>
+        <sharedTo>
+            <group>EDMDivision</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>EDM</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Festivals_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Office public group users read-write access to all Event Date Times created by Festivals personnel</description>
+        <label>Edit Event Date Time for Festivals Operations</label>
+        <sharedTo>
+            <group>FestivalsOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Festivals</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Houston_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Office public group users read-write access to all Event Date Times created by Houston personnel</description>
+        <label>Edit Event Date Time for Houston Operations</label>
+        <sharedTo>
+            <group>HoustonOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Houston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_LN_Urban_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Office public group users read-write access to all Event Date Times created by LN Urban personnel</description>
+        <label>Edit Event Date Time for LN Urban Operations</label>
+        <sharedTo>
+            <group>LNUrbanDivision</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LNUrban</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Las_Vegas_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Office public group users read-write access to all Event Date Times created by Las Vegas personnel</description>
+        <label>Edit Event Date Time for Las Vegas Operations</label>
+        <sharedTo>
+            <group>LasVegasOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LasVegas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Los_Angeles_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Office public group users read-write access to all Event Date Times created by Los Angeles personnel</description>
+        <label>Edit Event Date Time for Los Angeles Operations</label>
+        <sharedTo>
+            <group>LosAngelesOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LosAngeles</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Miami_Tampa_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Office public group users read-write access to all Event Date Times created by Miami/Tampa personnel</description>
+        <label>Edit Event Date Time for Miami/Tampa Operations</label>
+        <sharedTo>
+            <group>MiamiTampaOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MiamiTampa</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Nashville_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Office public group users read-write access to all Event Date Times created by Nashville personnel</description>
+        <label>Edit Event Date Time for Nashville Operations</label>
+        <sharedTo>
+            <group>NashvilleOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Nashville</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_New_Orleans_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Office public group users read-write access to all Event Date Times created by New Orleans personnel</description>
+        <label>Edit Event Date Time for New Orleans Operations</label>
+        <sharedTo>
+            <group>NewOrleansOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewOrleans</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_New_York_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Office public group users read-write access to all Event Date Times created by New York personnel</description>
+        <label>Edit Event Date Time for New York Operations</label>
+        <sharedTo>
+            <group>NewYorkOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewYork</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Philadelphia_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Office public group users read-write access to all Event Date Times created by Philadelphia personnel</description>
+        <label>Edit Event Date Time for Philadelphia Operations</label>
+        <sharedTo>
+            <group>PhiladelphiaOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Philadelphia</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Phoenix_Albuquerque_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Office public group users read-write access to all Event Date Times created by Phoenix/Albuquerque personnel</description>
+        <label>Edit Event Date Time for Phoenix/Albuquerque Operations</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>PhoenixAlbuquerque</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Pittsburgh_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Office public group users read-write access to all Event Date Times created by Pittsburgh personnel</description>
+        <label>Edit Event Date Time for Pittsburgh Operations</label>
+        <sharedTo>
+            <group>PittsburghOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Pittsburgh</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_San_Diego_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Office public group users read-write access to all Event Date Times created by San Diego personnel</description>
+        <label>Edit Event Date Time for San Diego Operations</label>
+        <sharedTo>
+            <group>SanDiegoOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanDiego</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_San_Francisco_Sacramento_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Office public group users read-write access to all Event Date Times created by San Francisco/Sacramento personnel</description>
+        <label>Edit Event Date Time for San Francisco/Sacramento Operations</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanFranciscoSacramento</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Seattle_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Office public group users read-write access to all Event Date Times created by Seattle personnel</description>
+        <label>Edit Event Date Time for Seattle Operations</label>
+        <sharedTo>
+            <group>SeattleOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Seattle</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_St_Louis_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Office public group users read-write access to all Event Date Times created by St Louis personnel</description>
+        <label>Edit Event Date Time for St Louis Operations</label>
+        <sharedTo>
+            <group>StLouisOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>StLouis</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_T_C_Concerts_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Office public group users read-write access to all Event Date Times created by T&amp;C Concerts personnel</description>
+        <label>Edit Event Date Time for T&amp;C Concerts Operations</label>
+        <sharedTo>
+            <group>TCConcertsOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TCConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_Date_Time_for_Touring_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Office public group users read-write access to all Event Date Times created by Touring personnel</description>
+        <label>Edit Event Date Time for Touring Operations</label>
+        <sharedTo>
+            <group>TouringOffice</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Touring</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

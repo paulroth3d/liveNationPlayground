@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for co-promoter data review group when a new co-promoter record is created or updated</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Co-Promoter Data Review Template</name>
+    <style>none</style>
+    <subject>Alert: New Co-Promoter Record has been created or updated and needs review</subject>
+    <textOnly>This email notification is to alert you that a new co-promoter record has been created or updated and requires review.  Link to the co-promoter record: {!Account.Link}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

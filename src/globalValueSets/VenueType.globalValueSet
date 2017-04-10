@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>00011 Amphitheatre</fullName>
+        <default>false</default>
+        <label>00011 Amphitheatre</label>
+    </customValue>
+    <customValue>
+        <fullName>00013 Arena</fullName>
+        <default>false</default>
+        <label>00013 Arena</label>
+    </customValue>
+    <customValue>
+        <fullName>00015 Club</fullName>
+        <default>false</default>
+        <label>00015 Club</label>
+    </customValue>
+    <customValue>
+        <fullName>00010 Comedy</fullName>
+        <default>false</default>
+        <label>00010 Comedy</label>
+    </customValue>
+    <customValue>
+        <fullName>00017 Festival</fullName>
+        <default>false</default>
+        <label>00017 Festival</label>
+    </customValue>
+    <customValue>
+        <fullName>00020 Other</fullName>
+        <default>false</default>
+        <label>00020 Other</label>
+    </customValue>
+    <customValue>
+        <fullName>00012 Stadium</fullName>
+        <default>false</default>
+        <label>00012 Stadium</label>
+    </customValue>
+    <customValue>
+        <fullName>00014 Theatre</fullName>
+        <default>false</default>
+        <label>00014 Theatre</label>
+    </customValue>
+    <customValue>
+        <fullName>00016 Tours</fullName>
+        <default>false</default>
+        <label>00016 Tours</label>
+    </customValue>
+    <customValue>
+        <fullName>00000 Placeholder Value</fullName>
+        <default>false</default>
+        <label>00000 Placeholder Value</label>
+    </customValue>
+    <description>GL Company Venue Type for Oracle integration</description>
+    <masterLabel>GL Venue Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

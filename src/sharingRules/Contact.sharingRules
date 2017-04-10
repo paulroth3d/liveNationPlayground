@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>AllInternalUsersContactSharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provides read-write access to members of the public group &quot;All Internal Users&quot; on contacts except those marked as hidden</description>
+        <label>All Internal Users Contact Sharing</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Hidden__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

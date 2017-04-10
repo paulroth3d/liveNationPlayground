@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Comedy_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Comedy North America</label>
+        <sharedTo>
+            <group>ComedyOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Event_for_Hollywood_Bowl_ABE_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Hollywood Bowl ABE Booking users read-write access to all Events where Hollywood Bowl ABE is the Office</description>
+        <label>Edit Event for Hollywood Bowl ABE Booking</label>
+        <sharedTo>
+            <group>HollywoodBowlABEBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>equals</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_AC_Entertainment_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is AC Entertainment</description>
+        <label>Edit Owned Venue Event for AC Entertainment Booking</label>
+        <sharedTo>
+            <group>ACEntertainmentBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>AC Entertainment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Atlanta_Birmingham_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Atlanta/Birmingham</description>
+        <label>Edit Owned Venue Event for Atlanta/Birmingham Booking</label>
+        <sharedTo>
+            <group>AtlantaBirminghamBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Atlanta/Birmingham</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Baltimore_Washington_DC_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Baltimore/Washington DC</description>
+        <label>Edit Owned Venue Event for Baltimore/Washington DC Booking</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Baltimore/Washington DC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Boise_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Boise</description>
+        <label>Edit Owned Venue Event for Boise Booking</label>
+        <sharedTo>
+            <group>BoiseBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boise</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Boston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Boston</description>
+        <label>Edit Owned Venue Event for Boston Booking</label>
+        <sharedTo>
+            <group>BostonBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Canada_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Canada Concerts, Toronto, or Vancouver</description>
+        <label>Edit Owned Venue Event for Canada Concerts Booking</label>
+        <sharedTo>
+            <group>CanadaConcertsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Canada Concerts,Toronto,Vancouver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Carolinas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Carolinas</description>
+        <label>Edit Owned Venue Event for Carolinas Booking</label>
+        <sharedTo>
+            <group>CarolinasBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Carolinas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Chicago_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Chicago</description>
+        <label>Edit Owned Venue Event for Chicago Booking</label>
+        <sharedTo>
+            <group>ChicagoBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Chicago</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Comedy_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Comedy</description>
+        <label>Edit Owned Venue Event for Comedy Booking</label>
+        <sharedTo>
+            <group>ComedyBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Comedy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Connecticut_Upstate_NY_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Connecticut/Upstate NY</description>
+        <label>Edit Owned Venue Event for Connecticut/Upstate NY Booking</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Connecticut/Upstate NY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Country_Nation_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Country Nation</description>
+        <label>Edit Owned Venue Event for Country Nation Booking</label>
+        <sharedTo>
+            <group>CountryNationBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Country Nation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Crossroads_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Crossroads</description>
+        <label>Edit Owned Venue Event for Crossroads Booking</label>
+        <sharedTo>
+            <group>CrossroadsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Dallas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Dallas</description>
+        <label>Edit Owned Venue Event for Dallas Booking</label>
+        <sharedTo>
+            <group>DallasBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Dallas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Denver_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Denver</description>
+        <label>Edit Owned Venue Event for Denver Booking</label>
+        <sharedTo>
+            <group>DenverBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Denver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Detroit_Indy_Cleveland_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Detroit/Indy/Cleveland</description>
+        <label>Edit Owned Venue Event for Detroit/Indy/Cleveland Booking</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Detroit/Indy/Cleveland,Detroit,Indianapolis,Cleveland</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_EDM_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is EDM</description>
+        <label>Edit Owned Venue Event for EDM Booking</label>
+        <sharedTo>
+            <group>EDMBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>EDM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Festivals_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Festivals</description>
+        <label>Edit Owned Venue Event for Festivals Booking</label>
+        <sharedTo>
+            <group>FestivalsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Festivals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Houston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Houston</description>
+        <label>Edit Owned Venue Event for Houston Booking</label>
+        <sharedTo>
+            <group>HoustonBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Houston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_LN_Urban_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is LN Urban</description>
+        <label>Edit Owned Venue Event for LN Urban Booking</label>
+        <sharedTo>
+            <group>LNUrbanBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>LN Urban</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Las_Vegas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Las Vegas</description>
+        <label>Edit Owned Venue Event for Las Vegas Booking</label>
+        <sharedTo>
+            <group>LasVegasBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Las Vegas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Los_Angeles_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Los Angeles</description>
+        <label>Edit Owned Venue Event for Los Angeles Booking</label>
+        <sharedTo>
+            <group>LosAngelesBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Los Angeles</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Miami_Tampa_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Miami/Tampa</description>
+        <label>Edit Owned Venue Event for Miami/Tampa Booking</label>
+        <sharedTo>
+            <group>MiamiTampaBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Miami/Tampa</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Nashville_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Nashville</description>
+        <label>Edit Owned Venue Event for Nashville Booking</label>
+        <sharedTo>
+            <group>NashvilleBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Nashville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_New_Orleans_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is New Orleans</description>
+        <label>Edit Owned Venue Event for New Orleans Booking</label>
+        <sharedTo>
+            <group>NewOrleansBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New Orleans</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_New_York_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is New York</description>
+        <label>Edit Owned Venue Event for New York Booking</label>
+        <sharedTo>
+            <group>NewYorkBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Philadelphia_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Philadelphia</description>
+        <label>Edit Owned Venue Event for Philadelphia Booking</label>
+        <sharedTo>
+            <group>PhiladelphiaBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Philadelphia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Phoenix_Albuquerque_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Phoenix/Albuquerque</description>
+        <label>Edit Owned Venue Event for Phoenix/Albuquerque Booking</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Phoenix/Albuquerque</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Pittsburgh_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Pittsburgh</description>
+        <label>Edit Owned Venue Event for Pittsburgh Booking</label>
+        <sharedTo>
+            <group>PittsburghBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Pittsburgh</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_San_Diego_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is San Diego</description>
+        <label>Edit Owned Venue Event for San Diego Booking</label>
+        <sharedTo>
+            <group>SanDiegoBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Diego</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_San_Francisco_Sacramento_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is San Francisco/Sacramento</description>
+        <label>Edit Owned Venue Event for San Francisco/Sacramento Booking</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Francisco/Sacramento</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Seattle_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Seattle</description>
+        <label>Edit Owned Venue Event for Seattle Booking</label>
+        <sharedTo>
+            <group>SeattleBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Seattle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_St_Louis_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is St Louis</description>
+        <label>Edit Owned Venue Event for St Louis Booking</label>
+        <sharedTo>
+            <group>StLouisBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>St Louis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_T_C_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is T&amp;C Concerts</description>
+        <label>Edit Owned Venue Event for T&amp;C Concerts Booking</label>
+        <sharedTo>
+            <group>TCConcertsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>T&amp;C Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Event_for_Touring_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Booking users read-write access to all Events at an owned &amp; operated Venue where the Primary Office is Touring</description>
+        <label>Edit Owned Venue Event for Touring Booking</label>
+        <sharedTo>
+            <group>TouringBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Touring</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>T_C_Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>T&amp;C Touring North America</label>
+        <sharedTo>
+            <group>TCTouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Touring North America</label>
+        <sharedTo>
+            <group>TouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Event_for_All_Internal_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all LNE users read-only access to all Events on or after their public on sale date except Hollywood Bowl ABE and Crossroads</description>
+        <label>View Event for All Internal Users</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>PublicVisibilityviaPublicOnSale__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Hollywood Bowl ABE,Crossroads</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Event_for_Theaters_Clubs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all Theaters &amp; Clubs users read-only access to all Theaters &amp; Clubs Events except Crossroads</description>
+        <label>View Event for Theaters &amp; Clubs</label>
+        <sharedTo>
+            <group>TheatersClubsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>Theaters &amp; Clubs</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Event_for_US_Concerts</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all US Concerts users read-only access to all US Concerts Events except Hollywood Bowl ABE</description>
+        <label>View Event for US Concerts</label>
+        <sharedTo>
+            <group>USConcertsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>US Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_AC_Entertainment_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Booking public group users read-write access to all Events created by AC Entertainment personnel</description>
+        <label>Edit Event for AC Entertainment Booking</label>
+        <sharedTo>
+            <group>ACEntertainmentBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ACEntertainment</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Atlanta_Birmingham_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Booking public group users read-write access to all Events created by Atlanta/Birmingham personnel</description>
+        <label>Edit Event for Atlanta/Birmingham Booking</label>
+        <sharedTo>
+            <group>AtlantaBirminghamBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>AtlantaBirmingham</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Baltimore_Washington_DC_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Booking public group users read-write access to all Events created by Baltimore/Washington DC personnel</description>
+        <label>Edit Event for Baltimore/Washington DC Booking</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BaltimoreWashingtonDC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Boise_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Booking public group users read-write access to all Events created by Boise personnel</description>
+        <label>Edit Event for Boise Booking</label>
+        <sharedTo>
+            <group>BoiseBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boise</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Boston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Booking public group users read-write access to all Events created by Boston personnel</description>
+        <label>Edit Event for Boston Booking</label>
+        <sharedTo>
+            <group>BostonBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Canada_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Booking public group users read-write access to all Events created by Canada Concerts personnel</description>
+        <label>Edit Event for Canada Concerts Booking</label>
+        <sharedTo>
+            <group>CanadaConcertsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CanadaConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Carolinas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Booking public group users read-write access to all Events created by Carolinas personnel</description>
+        <label>Edit Event for Carolinas Booking</label>
+        <sharedTo>
+            <group>CarolinasBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Carolinas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Chicago_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Booking public group users read-write access to all Events created by Chicago personnel</description>
+        <label>Edit Event for Chicago Booking</label>
+        <sharedTo>
+            <group>ChicagoBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Chicago</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Comedy_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Booking public group users read-write access to all Events created by Comedy personnel</description>
+        <label>Edit Event for Comedy Booking</label>
+        <sharedTo>
+            <group>ComedyBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Comedy</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Connecticut_Upstate_NY_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Booking public group users read-write access to all Events created by Connecticut/Upstate NY personnel</description>
+        <label>Edit Event for Connecticut/Upstate NY Booking</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ConnecticutUpstateNY</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Country_Nation_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Booking public group users read-write access to all Events created by Country Nation personnel</description>
+        <label>Edit Event for Country Nation Booking</label>
+        <sharedTo>
+            <group>CountryNationBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CountryNation</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Crossroads_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Booking public group users read-write access to all Events created by Crossroads personnel</description>
+        <label>Edit Event for Crossroads Booking</label>
+        <sharedTo>
+            <group>CrossroadsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Crossroads</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Dallas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Booking public group users read-write access to all Events created by Dallas personnel</description>
+        <label>Edit Event for Dallas Booking</label>
+        <sharedTo>
+            <group>DallasBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Dallas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Denver_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Booking public group users read-write access to all Events created by Denver personnel</description>
+        <label>Edit Event for Denver Booking</label>
+        <sharedTo>
+            <group>DenverBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Denver</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Detroit_Indy_Cleveland_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Booking public group users read-write access to all Events created by Detroit/Indy/Cleveland personnel</description>
+        <label>Edit Event for Detroit/Indy/Cleveland Booking</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>DetroitIndyCleveland</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_EDM_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Booking public group users read-write access to all Events created by EDM personnel</description>
+        <label>Edit Event for EDM Booking</label>
+        <sharedTo>
+            <group>EDMBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>EDM</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Festivals_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Booking public group users read-write access to all Events created by Festivals personnel</description>
+        <label>Edit Event for Festivals Booking</label>
+        <sharedTo>
+            <group>FestivalsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Festivals</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Houston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Booking public group users read-write access to all Events created by Houston personnel</description>
+        <label>Edit Event for Houston Booking</label>
+        <sharedTo>
+            <group>HoustonBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Houston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_LN_Urban_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Booking public group users read-write access to all Events created by LN Urban personnel</description>
+        <label>Edit Event for LN Urban Booking</label>
+        <sharedTo>
+            <group>LNUrbanBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LNUrban</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Las_Vegas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Booking public group users read-write access to all Events created by Las Vegas personnel</description>
+        <label>Edit Event for Las Vegas Booking</label>
+        <sharedTo>
+            <group>LasVegasBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LasVegas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Los_Angeles_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Booking public group users read-write access to all Events created by Los Angeles personnel</description>
+        <label>Edit Event for Los Angeles Booking</label>
+        <sharedTo>
+            <group>LosAngelesBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LosAngeles</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Miami_Tampa_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Booking public group users read-write access to all Events created by Miami/Tampa personnel</description>
+        <label>Edit Event for Miami/Tampa Booking</label>
+        <sharedTo>
+            <group>MiamiTampaBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MiamiTampa</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Nashville_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Booking public group users read-write access to all Events created by Nashville personnel</description>
+        <label>Edit Event for Nashville Booking</label>
+        <sharedTo>
+            <group>NashvilleBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Nashville</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_New_Orleans_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Booking public group users read-write access to all Events created by New Orleans personnel</description>
+        <label>Edit Event for New Orleans Booking</label>
+        <sharedTo>
+            <group>NewOrleansBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewOrleans</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_New_York_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Booking public group users read-write access to all Events created by New York personnel</description>
+        <label>Edit Event for New York Booking</label>
+        <sharedTo>
+            <group>NewYorkBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewYork</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Philadelphia_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Booking public group users read-write access to all Events created by Philadelphia personnel</description>
+        <label>Edit Event for Philadelphia Booking</label>
+        <sharedTo>
+            <group>PhiladelphiaBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Philadelphia</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Phoenix_Albuquerque_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Booking public group users read-write access to all Events created by Phoenix/Albuquerque personnel</description>
+        <label>Edit Event for Phoenix/Albuquerque Booking</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>PhoenixAlbuquerque</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Pittsburgh_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Booking public group users read-write access to all Events created by Pittsburgh personnel</description>
+        <label>Edit Event for Pittsburgh Booking</label>
+        <sharedTo>
+            <group>PittsburghBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Pittsburgh</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_San_Diego_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Booking public group users read-write access to all Events created by San Diego personnel</description>
+        <label>Edit Event for San Diego Booking</label>
+        <sharedTo>
+            <group>SanDiegoBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanDiego</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_San_Francisco_Sacramento_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Booking public group users read-write access to all Events created by San Francisco/Sacramento personnel</description>
+        <label>Edit Event for San Francisco/Sacramento Booking</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanFranciscoSacramento</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Seattle_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Booking public group users read-write access to all Events created by Seattle personnel</description>
+        <label>Edit Event for Seattle Booking</label>
+        <sharedTo>
+            <group>SeattleBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Seattle</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_St_Louis_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Booking public group users read-write access to all Events created by St Louis personnel</description>
+        <label>Edit Event for St Louis Booking</label>
+        <sharedTo>
+            <group>StLouisBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>StLouis</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_T_C_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Booking public group users read-write access to all Events created by T&amp;C Concerts personnel</description>
+        <label>Edit Event for T&amp;C Concerts Booking</label>
+        <sharedTo>
+            <group>TCConcertsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TCConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Event_for_Touring_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Booking public group users read-write access to all Events created by Touring personnel</description>
+        <label>Edit Event for Touring Booking</label>
+        <sharedTo>
+            <group>TouringBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Touring</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,229 @@
+<apex:page standardController="Tour__c" extensions="LNE_TSOTab_CX"
+    showHeader="false" sidebar="false" standardStylesheets="false"
+>
+    <!-- PostMessage communicates between windows -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage2.js")}" />
+    <!-- JQuery, not essential -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/jquery-min.js")}" />
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>TSO</title>
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+             <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+            
+              <style>
+                .tourTotalsTable{ margin:0px 0px 15px 3px; width:650px!important;}
+                
+                tr.totalRowA td, tr.totalRowB td { border-bottom:1px solid #c7c7c7;  font-size:11.36px;}
+                tr.totalRowA td, tr.totalRowB td, tr.totalRowC td { padding:4px 8px; text-align:right; font-size:11.36px;}
+
+                .spacer{
+                    height:20px;
+                    display:block;
+                }
+                
+                .bold{
+                    font-weight:bold;
+                }
+                
+                #LNE_TSOTab--body{
+                    padding-left:1.5em;
+                }
+            </style>
+
+
+        </head>
+
+        <body class="rome-lds" id="LNE_TSOTab--body"
+        
+            data-tour-id="{!Tour__c.Id}">
+            
+            <apex:form >
+                 <apex:actionFunction action="{!getTourTotals}" name="rerenderTourTotals" rerender="tourTotalsTable" />
+                    
+                 <apex:panelGrid id="tourTotalsTable" styleClass="tourTotalsTable" columns="6" rowClasses="totalRowA,totalRowB, totalRowC" cellpadding="0" cellspacing="0">
+                   
+                     <apex:outputText value="Total Tour Rep" styleClass="bold"/> 
+                     <apex:outputText value="Total T&E" styleClass="bold" /> 
+                     <apex:outputText value="Total Per Diems" styleClass="bold"/> 
+                     <apex:outputText value="Total End of Tour Dinner" styleClass="bold"/> 
+                     <apex:outputText value="Total Misc Expense" styleClass="bold" /> 
+                     <apex:outputText value="Total TSO" styleClass="bold"/> 
+
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="total_tour_rep" value="{!tourTotals.TotalTourRep__c }"/> </apex:outputText>
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="total_te" value="{!tourTotals.TotalTE__c}"/> </apex:outputText> 
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="total_per_diems" value="{!tourTotals.TotalPerDiems__c}"/> 
+                    </apex:outputText> 
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="total_end_of_tour_dinner" value="{!tourTotals.TotalEndofTourDinner__c}"/> </apex:outputText>
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="total_misc_expense" value="{!tourTotals.TotalMiscExpense__c }"/> </apex:outputText> 
+                    <apex:outputText value="{0, number, ##,###}"> <apex:param id="total_tso" value="{!tourTotals.TotalTSO__c}"/> 
+                    </apex:outputText> 
+                    
+                </apex:panelGrid>
+            
+            </apex:form>
+            
+            <div class="spacer"></div>
+            
+           
+
+            <apex:pageBlock id="pBlock">
+
+            <div id="all-grids-container">
+                <div id="grid-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+
+                    <!-- TSO Grid -->
+                    <div id="grid-frame-TSO">
+                      <iframe id="grid-frame-TSO-iframe" data-grid-name="tourspecificoverhead" data-origin="{!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}" scrolling="auto" height="780" width="100%" frameborder="0" src="{!gridPage}gname=Tour-Specific Overhead&fpf=Tour__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                    </div>
+
+                </div>
+            </div>
+            </apex:pageBlock>
+
+            <!-- Keep at end of body to help load time and ensure jquery available -->
+            <script type="text/javascript">
+                
+                  var oldChildGridState = '';
+                var newChildGridState = '';
+                
+                // keep everything within 1 global object for this page
+                lneTSOTab = {};
+
+                // common values
+                lneTSOTab = {
+                    gridId: 'grid-container',
+                    bodyId: 'LNE_TSOTab--body',
+                    tourId: 'data-tour-id'
+                };
+
+                    
+            function dispatchResults(){
+                console.log('LNE_TSOTab dispatch');
+                
+                //-- NEEDS TO BE UPDATED, IF USED: placeholder for communcation.
+                var someValue = 'Placeholder';
+            
+                var pageName = 'LNE_TSOTab';
+                var isSuccessful = true;
+            
+                //-- messageType should always be 'saveComplete' to refresh all other lightningComponents.
+                var messageType = 'saveComplete';
+                
+                //-- send the data payload as an object with stuff to return.
+                //-- always include src as some unique identifier for the page
+                var data = {
+                    someValue: someValue,
+                    src: window.location.href
+                };
+            
+                var postMessage = new LNE_PostMessage( pageName, messageType, isSuccessful, data );
+            
+                //-- works if in a grid overlay
+                postMessage.dispatch( parent );
+            
+                //-- works if in a popup
+                postMessage.dispatch( window.opener );
+                
+            }
+        
+            function dispatchExampleAuraMessage(){
+                console.log( 'dispatch example aura message' );
+            
+                var messageText='Example message shown in Toast';
+            
+                var pageName = 'LNE_TSOTab';
+                var isSuccessful = true;
+            
+                //-- some custom message type. Again, only saveComplete is special/recognized for now.
+                var messageType = 'showToast';
+            
+                //-- send the data payload as an object with stuff to return.
+                //-- always include src as some unique identifier for the page
+                var data = {
+                    message: messageText,
+                    src: window.location.href
+                };  
+            
+                //-- to make it work in Aura, we include the following
+                data.auraMessageType='e.force:showToast';
+                data.auraMessageData={'title': 'Toast Header', 'message':messageText };
+                
+                var postMessage = new LNE_PostMessage( pageName, messageType, isSuccessful, data );
+                
+                //-- works if in a grid overlay
+                postMessage.dispatch( parent );
+            
+                //-- works if in a popup
+                postMessage.dispatch( window.opener );
+
+                
+            }
+        
+            function handlePageMessage( evt ){
+                console.log( "vf pageMessage received" );
+
+                var postMessage = new LNE_PostMessage();
+                if( postMessage.parse( evt )){
+                    if( postMessage.data.src != window.location.href ){
+                        console.log( "pay attention" );
+                        window.location.href=window.location.href;
+                    }   
+                }
+            }
+            
+            
+        
+            window.addEventListener( "message", handlePageMessage, false );
+            
+                function createApexURL(pageName) {
+                  var currentLocation = window.location.href;
+                  var ajaxURL = currentLocation.replace( 'gblite.', 'c.' );
+
+                  ajaxURL = ajaxURL.substring(0, ajaxURL.toLowerCase().indexOf('/apex/' )) + '/apex/' + pageName;
+
+                  return( ajaxURL );
+                }
+                
+                  var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+                
+                
+                lneTSOTab.init = function() {
+                 
+                   
+                    eventer(messageEvent, function (e) {
+                        if (typeof e.data == 'string' && (e.data == 'Saving' || e.data == 'SavingPL' || e.data == 'Loaded' || e.data == 'SavingErrors')) {
+                            oldChildGridState = newChildGridState;
+                            newChildGridState = e.data;
+                            
+                            console.log(e.data);
+                                
+                            if (newChildGridState == 'Loaded' && (oldChildGridState == 'Saving' || oldChildGridState == 'SavingPL')){
+                                
+                                console.log('rerenderTourTotals');
+                                setTimeout(function(){
+                                    rerenderTourTotals();
+                                }, 1000);
+                            } 
+                        }
+                    }, false);
+
+                    lneSharedJs.sharedInit();
+                };
+
+
+                lneTSOTab.init();
+
+
+            </script>
+            <c:LNE_Copyright />
+        </body>
+
+    </html>
+</apex:page>

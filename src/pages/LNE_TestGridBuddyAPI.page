@@ -1,0 +1,41 @@
+<!--
+/**
+ *  Example JSONP endpoint to perform an API request.
+ *  <p>For more information, see page 10 of the GridBuddyCustomizationGuide.pdf</p>
+ *  @author Paul Roth <proth@salesforce.com>
+ *  @param GET callback (String) - name of the JSONP function to call on success.
+ *  @param POST callback (String) - name of the JSONP function to call on success.
+ *  @param POST LedgerEntry__c (Object) - LedgerEntry object.
+ *  	Id (Id)
+ *  	RateType__c (String)
+ *  	BaseAmount__c (float)
+ *  @return (JSONP)
+ *  	Id (Id)
+ *  	RateType__c (String)
+ *  	BaseAmount__c (float)
+ *  	GrossRevenue__c (float)
+**/
+
+Just copy this API for whichever service
+make sure the params are updated though.
+
+-->
+<apex:page controller="LNE_TestGridBuddyAPI_CX"
+	action="{!processRequest}"
+	contentType="text/javascript; charset=utf-8"
+	showHeader="false" standardStylesheets="false" sidebar="false"
+>
+<!-- NOTE: this is JSONP
+	meaning that there a function handleJsonpCallback in javaScript
+	in the page calling this.
+	We are calling it from this script with the POJO response.
+	See the resulting code generated.
+	ex:
+	testApiCallback( "LNE_TestGridBuddyAPI", "success", {
+		"Id": "a0dR0000004sjAUIAY",
+		"RateType__c": "Flat",
+		"BaseAmount__c": "10,000.00"
+	} );
+-->
+{! jsonpCallback }( {!jsonResponse} );
+</apex:page>

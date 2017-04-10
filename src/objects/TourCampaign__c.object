@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Campaigns related to tours tracking digital ads, miscellaneous expenses, and production expenses and associated spend allocated to local Events</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Agency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Agency</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Vendor</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Tour Campaigns (Agency)</relationshipLabel>
+        <relationshipName>AgencyforTourCampaigns</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AllocatedTotal__c</fullName>
+        <externalId>false</externalId>
+        <label>Allocated Total</label>
+        <summarizedField>TourCampaignAdPlan__c.AllocatedAmount__c</summarizedField>
+        <summaryForeignKey>TourCampaignAdPlan__c.TourCampaign__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AnnouncementType__c</fullName>
+        <externalId>false</externalId>
+        <label>Announcement Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Announce</fullName>
+                    <default>false</default>
+                    <label>Announce</label>
+                </value>
+                <value>
+                    <fullName>Presale</fullName>
+                    <default>false</default>
+                    <label>Presale</label>
+                </value>
+                <value>
+                    <fullName>Onsale</fullName>
+                    <default>false</default>
+                    <label>Onsale</label>
+                </value>
+                <value>
+                    <fullName>Maintenance</fullName>
+                    <default>false</default>
+                    <label>Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Closing</fullName>
+                    <default>false</default>
+                    <label>Closing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Digital Production</fullName>
+                    <default>false</default>
+                    <label>Digital Production</label>
+                </value>
+                <value>
+                    <fullName>Display</fullName>
+                    <default>false</default>
+                    <label>Display</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Mobile</fullName>
+                    <default>false</default>
+                    <label>Mobile</label>
+                </value>
+                <value>
+                    <fullName>National Allocation - Digital</fullName>
+                    <default>false</default>
+                    <label>National Allocation - Digital</label>
+                </value>
+                <value>
+                    <fullName>Radio Streaming</fullName>
+                    <default>false</default>
+                    <label>Radio Streaming</label>
+                </value>
+                <value>
+                    <fullName>Search</fullName>
+                    <default>false</default>
+                    <label>Search</label>
+                </value>
+                <value>
+                    <fullName>Social</fullName>
+                    <default>false</default>
+                    <label>Social</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CoverageSort__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES(Coverage__c, &quot;Onsale&quot;), 1,
+  IF(INCLUDES(Coverage__c, &quot;Maintenance&quot;), 2,
+    IF(INCLUDES(Coverage__c, &quot;Closing&quot;), 3,
+    4)
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Coverage Sort</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Coverage__c</fullName>
+        <externalId>false</externalId>
+        <label>Coverage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Onsale</fullName>
+                    <default>false</default>
+                    <label>Onsale</label>
+                </value>
+                <value>
+                    <fullName>Maintenance</fullName>
+                    <default>false</default>
+                    <label>Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Closing</fullName>
+                    <default>false</default>
+                    <label>Closing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CurrencyDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyExchange__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Currency Exchange</label>
+        <referenceTo>CurrencyExchange__c</referenceTo>
+        <relationshipLabel>Tour Campaigns</relationshipLabel>
+        <relationshipName>Tour_Campaigns</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DigitalMediaTypeFormat__c</fullName>
+        <externalId>false</externalId>
+        <label>Digital Media Type Format</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Rich</fullName>
+                    <default>false</default>
+                    <label>Rich</label>
+                </value>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Native</fullName>
+                    <default>false</default>
+                    <label>Native</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>National__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>National</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NetAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NonLNETourBudgetBlank__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Non-LNE Tour Budget Blank</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NonLNETourBudget__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Non-LNE Tour Budget</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>NonLNETourBudget__c.Tour__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Tour__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>NonLNETourBudget__c</referenceTo>
+        <relationshipLabel>Tour Campaigns</relationshipLabel>
+        <relationshipName>TourCampaigns</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RemainingTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>NetAmount__c -  AllocatedTotal__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_for_Currency_Recalc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF 
+( 
+ISNULL(CurrencyExchange__c), 
+TRUE, 
+IF 
+( 
+ISNULL(CurrencyDate__c), 
+IF 
+( 
+CurrencyExchange__r.IsCurrent__c = FALSE, 
+TRUE, 
+FALSE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = FALSE) , 
+IF 
+( 
+AND(CurrencyExchange__r.StartDate__c &lt;= CurrencyDate__c, CurrencyExchange__r.EndDate__c &gt;= CurrencyDate__c), 
+FALSE, 
+TRUE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = TRUE), 
+IF 
+( 
+(CurrencyExchange__r.StartDate__c &gt; CurrencyDate__c) = TRUE, 
+TRUE, 
+FALSE 
+) , 
+TRUE 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled for Currency Recalc</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Tour__c</fullName>
+        <externalId>false</externalId>
+        <label>Tour</label>
+        <referenceTo>Tour__c</referenceTo>
+        <relationshipLabel>Tour Campaigns</relationshipLabel>
+        <relationshipName>Tour_Campaigns</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FBEvent - buyticketslink</fullName>
+                    <default>false</default>
+                    <label>FBEvent - buyticketslink</label>
+                </value>
+                <value>
+                    <fullName>FBEvent - description</fullName>
+                    <default>false</default>
+                    <label>FBEvent - description</label>
+                </value>
+                <value>
+                    <fullName>FBX</fullName>
+                    <default>false</default>
+                    <label>FBX</label>
+                </value>
+                <value>
+                    <fullName>Paid - artist page</fullName>
+                    <default>false</default>
+                    <label>Paid - artist page</label>
+                </value>
+                <value>
+                    <fullName>Paid - artist page image</fullName>
+                    <default>false</default>
+                    <label>Paid - artist page image</label>
+                </value>
+                <value>
+                    <fullName>Paid - artist page link</fullName>
+                    <default>false</default>
+                    <label>Paid - artist page link</label>
+                </value>
+                <value>
+                    <fullName>Paid - artist page video</fullName>
+                    <default>false</default>
+                    <label>Paid - artist page video</label>
+                </value>
+                <value>
+                    <fullName>Paid - dark post</fullName>
+                    <default>false</default>
+                    <label>Paid - dark post</label>
+                </value>
+                <value>
+                    <fullName>Paid - link post</fullName>
+                    <default>false</default>
+                    <label>Paid - link post</label>
+                </value>
+                <value>
+                    <fullName>Paid - Lncom</fullName>
+                    <default>false</default>
+                    <label>Paid - Lncom</label>
+                </value>
+                <value>
+                    <fullName>Paid - photo</fullName>
+                    <default>false</default>
+                    <label>Paid - photo</label>
+                </value>
+                <value>
+                    <fullName>Paid - promotion</fullName>
+                    <default>false</default>
+                    <label>Paid - promotion</label>
+                </value>
+                <value>
+                    <fullName>Paid - Sponsorship</fullName>
+                    <default>false</default>
+                    <label>Paid - Sponsorship</label>
+                </value>
+                <value>
+                    <fullName>Paid - text only</fullName>
+                    <default>false</default>
+                    <label>Paid - text only</label>
+                </value>
+                <value>
+                    <fullName>Paid - video</fullName>
+                    <default>false</default>
+                    <label>Paid - video</label>
+                </value>
+                <value>
+                    <fullName>Advertising Materials Production</fullName>
+                    <default>false</default>
+                    <label>Advertising Materials Production</label>
+                </value>
+                <value>
+                    <fullName>Agency Commission</fullName>
+                    <default>false</default>
+                    <label>Agency Commission</label>
+                </value>
+                <value>
+                    <fullName>Email Marketing</fullName>
+                    <default>false</default>
+                    <label>Email Marketing</label>
+                </value>
+                <value>
+                    <fullName>Flyer &amp; Poster Distribution</fullName>
+                    <default>false</default>
+                    <label>Flyer &amp; Poster Distribution</label>
+                </value>
+                <value>
+                    <fullName>Flyer &amp; Poster Production</fullName>
+                    <default>false</default>
+                    <label>Flyer &amp; Poster Production</label>
+                </value>
+                <value>
+                    <fullName>Graphic/Digital Design</fullName>
+                    <default>false</default>
+                    <label>Graphic/Digital Design</label>
+                </value>
+                <value>
+                    <fullName>National Allocation - Misc</fullName>
+                    <default>false</default>
+                    <label>National Allocation - Misc</label>
+                </value>
+                <value>
+                    <fullName>Press Conference</fullName>
+                    <default>false</default>
+                    <label>Press Conference</label>
+                </value>
+                <value>
+                    <fullName>Public Relations</fullName>
+                    <default>false</default>
+                    <label>Public Relations</label>
+                </value>
+                <value>
+                    <fullName>Tour Launch</fullName>
+                    <default>false</default>
+                    <label>Tour Launch</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Audio</fullName>
+                    <default>false</default>
+                    <label>Audio</label>
+                </value>
+                <value>
+                    <fullName>Banner</fullName>
+                    <default>false</default>
+                    <label>Banner</label>
+                </value>
+                <value>
+                    <fullName>Rich Media</fullName>
+                    <default>false</default>
+                    <label>Rich Media</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Vendor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Vendor</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Tour Campaigns</relationshipLabel>
+        <relationshipName>TourCampaigns</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>fxAllocatedTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AllocatedTotal__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Allocated Total (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxNetAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(NetAmount__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Net Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRemainingTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RemainingTotal__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Remaining Total (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Tour Campaign</label>
+    <nameField>
+        <displayFormat>TC-{000000}</displayFormat>
+        <label>Tour Campaign ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Tour Campaigns</pluralLabel>
+    <recordTypes>
+        <fullName>Digital</fullName>
+        <active>true</active>
+        <description>Represents digital ads</description>
+        <label>Digital</label>
+        <picklistValues>
+            <picklist>AnnouncementType__c</picklist>
+            <values>
+                <fullName>Announce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presale</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Digital Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Allocation - Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio Streaming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Coverage__c</picklist>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsale</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DigitalMediaTypeFormat__c</picklist>
+            <values>
+                <fullName>Native</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>FBEvent - buyticketslink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FBEvent - description</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FBX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - Lncom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - artist page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - artist page image</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - artist page link</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - artist page video</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - dark post</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - link post</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - photo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - promotion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - text only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid - video</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Misc</fullName>
+        <active>true</active>
+        <description>Represents misc expenses</description>
+        <label>Misc</label>
+        <picklistValues>
+            <picklist>AnnouncementType__c</picklist>
+            <values>
+                <fullName>Announce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presale</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Coverage__c</picklist>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsale</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DigitalMediaTypeFormat__c</picklist>
+            <values>
+                <fullName>Native</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Advertising Materials Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency Commission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flyer %26 Poster Distribution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flyer %26 Poster Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Graphic%2FDigital Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Allocation - Misc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tour Launch</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Production</fullName>
+        <active>true</active>
+        <description>Represents production expenses</description>
+        <label>Production</label>
+        <picklistValues>
+            <picklist>AnnouncementType__c</picklist>
+            <values>
+                <fullName>Announce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presale</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Coverage__c</picklist>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsale</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DigitalMediaTypeFormat__c</picklist>
+            <values>
+                <fullName>Native</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rich</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Audio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rich Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

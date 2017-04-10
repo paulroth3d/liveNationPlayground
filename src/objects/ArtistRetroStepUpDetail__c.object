@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BackEndPct__c</fullName>
+        <externalId>false</externalId>
+        <label>Back End %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>BackendPotentialNonFormula__c</fullName>
+        <externalId>false</externalId>
+        <label>Backend Potential (Non Formula)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BackendPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Deal__r.DealType__c,
+&quot;Retro Gross Deal&quot;,
+  IF(ISPICKVAL(Deal__r.DealApplicationType__c, &quot;Paid Tickets&quot;),
+
+    IF(Deal__r.Event__r.SelloutPaidTickets__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.SelloutPaidTickets__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.NetGrossPotential__c * BackEndPct__c,
+
+      0),
+
+
+    IF(Deal__r.Event__r.NetGrossPotential__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.NetGrossPotential__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.NetGrossPotential__c * BackEndPct__c,
+
+      0)),
+
+&quot;Retro Net Deal&quot;,
+  IF(ISPICKVAL(Deal__r.DealApplicationType__c, &quot;Paid Tickets&quot;),
+
+    IF(Deal__r.Event__r.SelloutPaidTickets__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.SelloutPaidTickets__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.NetPotPotential__c * BackEndPct__c,
+
+      0),
+
+
+    IF(Deal__r.Event__r.NetPotPotential__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.NetPotPotential__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.NetPotPotential__c * BackEndPct__c,
+
+      0)),
+
+
+&quot;Step Up Gross Deal&quot;,
+  IF(Deal__r.Event__r.NetGrossPotential__c &gt;= StartingRange__c,
+
+    (IF(Deal__r.Event__r.NetGrossPotential__c &lt;= EndingRange__c || EndingRange__c = 0,
+       Deal__r.Event__r.NetGrossPotential__c,
+       EndingRange__c
+     ) - StartingRange__c + IF(StartingRange__c = 0, 0, 1)) * BackEndPct__c,
+
+    0),
+
+
+&quot;Step Up Net Deal&quot;,
+  IF(Deal__r.Event__r.NetPotPotential__c &gt;= StartingRange__c,
+
+    (IF(Deal__r.Event__r.NetPotPotential__c &lt;= EndingRange__c || EndingRange__c = 0,
+       Deal__r.Event__r.NetPotPotential__c,
+       EndingRange__c
+     ) - StartingRange__c + IF(StartingRange__c = 0, 0, 1)) * BackEndPct__c,
+
+    0),
+
+
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Backend Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DealTypeApplication__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal Type Application</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paid Tickets</fullName>
+                    <default>false</default>
+                    <label>Paid Tickets</label>
+                </value>
+                <value>
+                    <fullName>To Be Shared Amount</fullName>
+                    <default>false</default>
+                    <label>To Be Shared Amount</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Deal__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal</label>
+        <referenceTo>Deal__c</referenceTo>
+        <relationshipLabel>Artist Retro/Step Up Details</relationshipLabel>
+        <relationshipName>Artist_Retro_Step_Up_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>DoesDealRangeStartAtZero__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>(Note, this is added to the detail record - not the deal to avoid split errors - some detail records save and the deal is at an invalid state)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether at least one Detail Range (Start/End) starts at Zero.</inlineHelpText>
+        <label>Does Deal Range Start at Zero?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndingRange__c</fullName>
+        <externalId>false</externalId>
+        <label>Ending Range</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsRangeInvalid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether the range (either start or end) is not valid (such as being negative).</inlineHelpText>
+        <label>Is Range Invalid ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedBackendNonFormula__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Backend (Non Formula)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedBackend__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Deal__r.DealType__c,
+&quot;Retro Gross Deal&quot;,
+  IF(ISPICKVAL(Deal__r.DealApplicationType__c, &quot;Paid Tickets&quot;),
+
+    IF(Deal__r.Event__r.ProjectedPaidTickets__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.ProjectedPaidTickets__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.ProjectedNetGross__c * BackEndPct__c,
+
+      0),
+
+
+    IF(Deal__r.Event__r.ProjectedNetGross__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.ProjectedNetGross__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.ProjectedNetGross__c * BackEndPct__c,
+
+      0)),
+
+
+&quot;Retro Net Deal&quot;,
+  IF(ISPICKVAL(Deal__r.DealApplicationType__c, &quot;Paid Tickets&quot;),
+
+    IF(Deal__r.Event__r.ProjectedPaidTickets__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.ProjectedPaidTickets__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.ProjectedNetPot__c * BackEndPct__c,
+
+      0),
+
+
+    IF(Deal__r.Event__r.ProjectedNetPot__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.ProjectedNetPot__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+      Deal__r.Event__r.ProjectedNetPot__c * BackEndPct__c,
+
+      0)),
+
+
+&quot;Step Up Gross Deal&quot;,
+  IF(Deal__r.Event__r.ProjectedNetGross__c &gt;= StartingRange__c,
+
+    (IF(Deal__r.Event__r.ProjectedNetGross__c &lt;= EndingRange__c || EndingRange__c = 0,
+       Deal__r.Event__r.ProjectedNetGross__c,
+       EndingRange__c
+     ) - StartingRange__c + IF(StartingRange__c = 0, 0, 1)) * BackEndPct__c,
+
+    0),
+
+
+&quot;Step Up Net Deal&quot;,
+  IF(Deal__r.Event__r.ProjectedNetPot__c &gt;= StartingRange__c,
+
+    (IF(Deal__r.Event__r.ProjectedNetPot__c &lt;= EndingRange__c || EndingRange__c = 0,
+       Deal__r.Event__r.ProjectedNetPot__c,
+       EndingRange__c
+     ) - StartingRange__c + IF(StartingRange__c = 0, 0, 1)) * BackEndPct__c,
+
+    0),
+
+
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Backend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementBackendNonFormula__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement Backend (Non Formula)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementBackend__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Deal__r.DealType__c,
+&quot;Retro Gross Deal&quot;,
+IF(ISPICKVAL(Deal__r.DealApplicationType__c, &quot;Paid Tickets&quot;),
+
+IF(Deal__r.Event__r.SettlementPaidTickets__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.SettlementPaidTickets__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+Deal__r.Event__r.SettlementNetGross__c * BackEndPct__c,
+
+0),
+
+
+IF(Deal__r.Event__r.SettlementNetGross__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.SettlementNetGross__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+Deal__r.Event__r.SettlementNetGross__c * BackEndPct__c,
+
+0)),
+
+
+&quot;Retro Net Deal&quot;,
+IF(ISPICKVAL(Deal__r.DealApplicationType__c, &quot;Paid Tickets&quot;),
+
+IF(Deal__r.Event__r.SettlementPaidTickets__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.SettlementPaidTickets__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+Deal__r.Event__r.SettlementNetPot__c * BackEndPct__c,
+
+0),
+
+
+IF(Deal__r.Event__r.SettlementNetPot__c &gt;= StartingRange__c &amp;&amp; (Deal__r.Event__r.SettlementNetPot__c &lt;= EndingRange__c || EndingRange__c = 0),
+
+Deal__r.Event__r.SettlementNetPot__c * BackEndPct__c,
+
+0)),
+
+
+&quot;Step Up Gross Deal&quot;,
+IF(Deal__r.Event__r.SettlementNetGross__c &gt;= StartingRange__c,
+
+(IF(Deal__r.Event__r.SettlementNetGross__c &lt;= EndingRange__c || EndingRange__c = 0,
+Deal__r.Event__r.SettlementNetGross__c,
+EndingRange__c
+) - StartingRange__c + IF(StartingRange__c = 0, 0, 1)) * BackEndPct__c,
+
+0),
+
+
+&quot;Step Up Net Deal&quot;,
+IF(Deal__r.Event__r.SettlementNetPot__c &gt;= StartingRange__c,
+
+(IF(Deal__r.Event__r.SettlementNetPot__c &lt;= EndingRange__c || EndingRange__c = 0,
+Deal__r.Event__r.SettlementNetPot__c,
+EndingRange__c
+) - StartingRange__c + IF(StartingRange__c = 0, 0, 1)) * BackEndPct__c,
+
+0),
+
+
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Backend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>StartingRange__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Starting Range</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartingRangelessonother__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Starting Range less on other?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>fxBackendPotentialNonFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BackendPotentialNonFormula__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Backend Potential (Non Formula) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBackendPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BackendPotential__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Backend Potential (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedBackendNonFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedBackendNonFormula__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Backend (Non Formula) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedBackend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedBackend__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Backend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBackendNonFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBackendNonFormula__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Backend (Non Formula) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBackend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBackend__c / (Deal__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Backend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Artist Retro/Step Up Detail</label>
+    <nameField>
+        <displayFormat>ARSUD-{000000}</displayFormat>
+        <label>Artist Retro/Step Up Detail ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Artist Retro/Step Up Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>LNE_DealRangeDoesNotStartAtZero</fullName>
+        <active>true</active>
+        <description>At least one of the Artist Retro/Step Up detail records for this Deal must have a starting range of zero.</description>
+        <errorConditionFormula>DoesDealRangeStartAtZero__c = false</errorConditionFormula>
+        <errorMessage>At least one of the Artist Retro/Step Up detail records for this Deal must have a starting range of zero.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_DealTypeApplication</fullName>
+        <active>true</active>
+        <description>Paid Tickets can&apos;t be selected for Deal Type Application when artist deal type is Step Up Gross Deal or Step Up Net Deal</description>
+        <errorConditionFormula>OR(ISPICKVAL(Deal__r.DealType__c, &quot;Step Up Gross Deal&quot;), ISPICKVAL(Deal__r.DealType__c, &quot;Step Up Net Deal&quot;)) &amp;&amp;
+ISPICKVAL(DealTypeApplication__c, &quot;Paid Tickets&quot;)&amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorMessage>Paid Tickets can&apos;t be selected for Deal Type Application when artist deal type is Step Up Gross Deal or Step Up Net Deal</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_EndingRange</fullName>
+        <active>true</active>
+        <description>Ending range can&apos;t be less than the starting range</description>
+        <errorConditionFormula>EndingRange__c &lt;  StartingRange__c &amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorMessage>Ending range can&apos;t be less than the starting range</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_InvalidStartEndRange</fullName>
+        <active>true</active>
+        <description>Artist Retro/Step Up Detail records may not have a negative Start or Ending Range</description>
+        <errorConditionFormula>IsRangeInvalid__c</errorConditionFormula>
+        <errorMessage>Artist Retro/Step Up Detail records may not have a negative Start or Ending Range</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_StartingRangelessonother</fullName>
+        <active>true</active>
+        <description>The starting range for one record may not be less than the ending range on another record with a lesser starting range</description>
+        <errorConditionFormula>StartingRangelessonother__c = TRUE &amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorMessage>Artist Retro/Step Up Detail records may not overlap between their starting range and ending range. Please review and correct.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

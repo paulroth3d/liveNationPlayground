@@ -1,0 +1,55 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" standardController="Account" extensions="LNE_RequestAccountUpdate_CX">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+          <title>Request Account Update</title>
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            
+            <!-- <script type="text/javascript" src="{!URLFOR($Resource.LNE_romelds, 'assets/js/app.js')}" />  -->
+            
+            <style>
+                .container {
+                    margin: 24px 24px 24px 24px;
+                }
+                
+                .container .slds-button {
+                    display: inline-block;
+                    margin-right: 48px;
+                }
+
+                .container.footer {
+                    padding: 8px 24px;
+                }
+
+            </style>
+
+        </head>
+
+        <body class="rome-lds">
+            <div class="body-wrapper" id="body-wrapper">
+                <div class="container">
+                    <apex:pageMessages />
+                </div>
+
+                <apex:form rendered="{!hideToggle}">
+                    <div class="container">
+                        <p>Please explain the field(s) and value(s) that need to be updated.</p>
+                    </div>
+                    
+                    <div class="container" id="form-box-post">
+                        <apex:inputTextarea required="true" id="update-text" rows="4" cols="70" value="{!LatestAccountRequest}"/>
+                    </div>
+
+                    <div class="container" id="form-box-buttons">
+                        <apex:commandButton action="{!submit}" styleClass="slds-button slds-button--brand" value="Submit" />
+                    </div>
+                </apex:form>
+            </div>
+        
+
+            <!-- Any inline js here -->
+
+
+        </body>
+    </html>
+</apex:page>

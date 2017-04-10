@@ -1,0 +1,199 @@
+<apex:page applyHtmlTag="false"
+  extensions="LNE_SettlementReportSetupTab_CX" 
+  showHeader="false"
+  sidebar="false" 
+  standardController="Event__c" 
+>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+  <title>Settlement Report Setup</title>
+  <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_MessagePostOffice.js')}" />
+</head>
+<body id="LNE_SettlementReportSetupTab_CX--body">
+<apex:form >
+  <div class="rome-lds">
+    <apex:outputPanel rendered="{!NOT(Event__c.SettlementStarted__c)}">
+        
+      <div style="margin:20px;">
+        <span class="slds-icon_container">
+          <svg class="slds-icon slds-icon-text-default slds-icon--x-small" aria-hidden="true">
+            <use xlink:href="{!URLFOR($Resource.LNE_romelds, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+          </svg>
+        </span>
+        <apex:commandLink action="{!startSettlement}" value="Start Settlement Process" />
+      </div>
+
+    </apex:outputPanel>
+
+    <apex:outputPanel rendered="{!Event__c.SettlementStarted__c}">
+    
+      <apex:inputHidden id="selectedDealIds" value="{!selectedDealIds}"/>
+      <!-- panels, one per deal artist : type -->
+      <apex:repeat var="d" value="{!deals}">
+        <div class="slds-section {!IF(d.Type__c=='Primary Headliner','slds-is-open','')}">
+          <h3 class="slds-section__title">
+            <span class="slds-button slds-section__title-action">
+              <div class="slds-form-element">
+                <div class="slds-form-element__control">
+                  <apex:outputPanel layout="none" rendered="{!d.Type__c=='Primary Headliner'}">
+                    <input type="checkbox" name="options" class="section__checkbox" data-dealid="{!d.Id}" checked="checked" />
+                  </apex:outputPanel>
+                  <apex:outputPanel layout="none" rendered="{!d.Type__c!='Primary Headliner'}">
+                    <input type="checkbox" name="options" class="section__checkbox" data-dealid="{!d.Id}" />
+                  </apex:outputPanel>
+                </div>
+              </div>
+              <apex:outputText value="{0} : {1}" styleClass="slds-m-left--x-small">
+                <apex:param value="{!d.Artist__r.Name}"/>
+                <apex:param value="{!d.Type__c}"/>
+              </apex:outputText>
+            </span>
+          </h3>
+          <div class="slds-section__content {!IF(d.Type__c=='Primary Headliner','slds-show','slds-hide')}">
+            <div class="slds-grid">
+              <!-- primary/co -->
+              <apex:outputPanel layout="none" rendered="{!d.Type__c!='Support'}">
+                <div class="slds-col">
+                  <c:LNE_DealIncludeGroup deal="{!d}" fieldset="{!primaryOptionsLeft}"/>
+                </div>
+                <div class="slds-col">
+                  <c:LNE_DealIncludeGroup deal="{!d}" fieldset="{!primaryOptionsRight}"/>
+                </div>
+              </apex:outputPanel>
+              <!-- support -->
+              <apex:outputPanel layout="none" rendered="{!d.Type__c=='Support'}">
+                <div class="slds-col">
+                  <c:LNE_DealIncludeGroup deal="{!d}" fieldset="{!supportOptions}"/>
+                </div>
+              </apex:outputPanel>
+            </div>
+          </div>
+        </div>
+      </apex:repeat>
+      <section class="slds-clearfix">
+        <div class="slds-float--right slds-m-top--xx-small slds-m-right--medium">
+          <apex:commandButton id="button-generate" action="{!saveDeals}" onclick="findSelectedDeals();" oncomplete="openTabs();" value="Generate Report" rendered="{!deals.size>0}" styleClass="slds-button slds-button--brand" />
+        </div>
+      </section>
+
+    </apex:outputPanel>
+
+  </div>
+</apex:form>
+  <script type="text/javascript">
+
+    (function($) {
+
+      // section header control, toggle visibility of each artist
+      $('h3.slds-section__title').on('click', function() {
+        var $this = $(this);
+        $this.parent().toggleClass('slds-is-open');
+        $this.siblings('div.slds-section__content').toggleClass('slds-hide slds-show');
+      });
+
+      $('input.section__checkbox')
+        .on('click', function(e) {
+          e.stopPropagation();
+          toggleGenerateButton();
+          if (this.checked) {
+            // expand section
+            $(this).closest('div.slds-section')
+              .addClass('slds-is-open')
+              .find('div.slds-section__content')
+                .addClass('slds-show')
+                .removeClass('slds-hide');
+          }
+          else {
+            // collapse section
+            $(this).closest('div.slds-section')
+              .removeClass('slds-is-open')
+              .find('div.slds-section__content')
+                .addClass('slds-hide')
+                .removeClass('slds-show');
+          }
+        })
+        .on('change', toggleSectionDisabled)
+        .each(toggleSectionDisabled);
+
+      function toggleGenerateButton() {
+        $('input[id$=":button-generate"]').prop('disabled', !$('input.section__checkbox:checked').length);
+      }
+
+      toggleGenerateButton();
+
+      function toggleSectionDisabled() {
+        $(this).closest('h3.slds-section__title').siblings().find('input:checkbox').prop('disabled', !this.checked);
+      }
+
+      function findSelectedDeals() {
+        var dealIds = $('input.section__checkbox:checked')
+          .map(function() {
+            return this.dataset.dealid;
+          })
+          .get()
+          .join();
+
+        $('input[id$=":selectedDealIds"]').val(dealIds);
+      }
+
+      function openTabs() {
+        // only open tabs for item there _were_ selected, not curretly
+        $('input[id$=":selectedDealIds"]').val().split(',').forEach(function(dealId) {
+
+          // send message to parent lightning, telling it to open a new tab
+          var postMessage = new LNE_PostMessage(
+            'LNE_EventOfferSheet', 
+            'openTab', 
+            true, 
+            {
+              auraId: '{!$CurrentPage.parameters.auraId}',
+              src: '/apex/loop__looplus?autorun=true&eid=' + dealId
+            }
+          );
+          postMessage.dispatch(window.parent);
+
+        });
+      }
+
+      window.findSelectedDeals = findSelectedDeals;
+      window.openTabs = openTabs;
+
+    })(jQuery);
+
+
+    function postRefreshMessage() {
+      var WINDOW_PAGE_NAME = 'LNE_SettlementBoxOfficeTab';
+      var auraId = '{!$CurrentPage.parameters.auraId}';
+      var messageType = 'saveComplete';
+      var isSuccessful = true;
+
+      var data = {
+        auraId: auraId,
+        src: window.location.href
+      };
+
+      var postMessage = new LNE_PostMessage( WINDOW_PAGE_NAME, messageType, isSuccessful, data );
+      postMessage.dispatch( parent );
+
+      location.reload(true);
+    }
+
+    //-- handle inbound PostMessages
+    this.postOffice = new LNE_MessagePostOffice(this);
+    
+    //-- handle any inbound events
+    this.postOffice.addTypeHandler( 'saveComplete', function( myPostMessage ){
+      if( myPostMessage.data.src != window.location.href ){
+        window.location.href=window.location.href;
+      }
+    });
+    
+    postOffice.listenForPostEvents(window);
+  </script>
+</body>
+</html>
+</apex:page>

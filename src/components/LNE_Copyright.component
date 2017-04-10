@@ -1,0 +1,10 @@
+<apex:component layout="block">
+    <style>
+        .gb-copyright {
+           font-size: 10px; 
+           margin-top: 10px;
+        }
+    </style>
+    
+    <div class="gb-copyright">GridBuddy copyright @ 2010-2016 Primal Cause, Inc. All rights reserved.</div>
+</apex:component>

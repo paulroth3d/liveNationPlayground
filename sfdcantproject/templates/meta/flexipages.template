@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <!--
+        example list view.
+        please note that MyAccounts list may not be available in your org
+        
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>entityName</name>
+                <value>Account</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>filterName</name>
+                <value>MyAccounts</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:filterListCard</componentName>
+        </componentInstances>
+        
+        Example recent list view
+        -->
+        <componentInstances>
+        	<componentInstanceProperties>
+        		<name>entityNames</name>
+        		<value>Account</value>
+        	</componentInstanceProperties>
+        	<componentName>flexipage:recentItems</componentName>
+        </componentInstances>
+        <name>main</name>
+    </flexiPageRegions>
+    <masterLabel>##FILENAME##</masterLabel>
+</FlexiPage>

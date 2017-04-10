@@ -1,0 +1,74 @@
+<aura:component controller="LNE_EventAlerts_C"
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+    access="global"
+>
+    <!-- SCRIPTS -->
+    <ltng:require scripts="{! join(',',
+            $Resource.LNE_Cometd + '/js/comet/common/target/org/cometd.js',
+            $Resource.LNE_Cometd + '/js/comet/jquery/src/main/webapp/jquery/jquery-1.5.1.js',
+            $Resource.LNE_Cometd + '/js/comet/jquery/src/main/webapp/jquery/json2.js',
+            $Resource.LNE_Cometd + '/js/comet/jquery/src/main/webapp/jquery/jquery.cometd.js'
+        )}"
+        afterScriptsLoaded="{!c.setupJS}"
+    />
+
+	<!-- ATTRIBUTES -->
+    <aura:attribute name="hideAlerts" type="Boolean" default="false" />
+    <aura:attribute name="jsLoaded" type="Boolean" default="false" />
+    <aura:attribute name="latestMessage" type="String" default="" />
+    <aura:attribute name="notificationIds" type="Id[]" default="" />
+    <aura:attribute name="notifications" type="Notification__c[]" default="" />
+    <aura:attribute name="numAlerts" type="Integer" default="0" />
+    <aura:attribute name="sessionId" type="Id" default="" />
+    <aura:attribute name="showList" type="Boolean" default="false" />
+    <aura:attribute name="userId" type="Id" default="" />
+    <aura:attribute name="useToast" type="Boolean" default="false" />
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="destroy" value="{!this}" action="{!c.handleDestroy}"/>
+
+    <aura:if isTrue="{!and(v.numAlerts!=0,not(v.hideAlerts))}">
+        <!-- TITLE BAR -->
+        <div class="slds-abs slds-notify_container" style="z-index:0">
+    		<div class="slds-notify slds-notify--alert slds-theme--alert-texture" role="alert">
+    			<lightning:button variant="base" class="slds-notify__close" iconName="utility:close" onclick="{! c.handleClose }" />
+    			<span class="slds-assistive-text">Info</span>
+    			<h2>
+                    <ui:outputURL label="{!v.latestMessage}" click="{!c.toggleMessages}" />
+                </h2>
+            </div>
+        </div>
+        <aura:if isTrue="{!v.showList}">
+            <!-- ALERTS LIST -->
+            <div class="slds-abs slds-theme--shade slds-theme--alert-texture">
+                <div aura:id="content" class="slds-notify__list slds-p-around--small">
+                    <ul class="slds-lookup__list" role="listbox" style="background-color:rgba(255,255,255,1);">
+                    <aura:iteration items="{!v.notifications}" var="item">
+                      <li role="presentation">
+                        <span class="slds-media slds-p-around--x-small" role="option">
+                          <c:svgIcon svgPath="/resource/LNE_romelds/assets/icons/standard-sprite/svg/symbols.svg#announcement" category="standard" size="small" name="announcement" />
+                          <div class="slds-media__body slds-p-top--xx-small slds-p-left--x-small">
+                            {!item.Type__c} : <ui:outputDate value="{!item.CreatedDate}" format="MM/dd/yyyy"/> • {!item.Description__c}
+                          </div>
+                        </span>
+                      </li>
+                    </aura:iteration>
+                    </ul>
+                    
+                </div>
+
+                <!-- DISMASSAL -->
+                <div>
+                    <section class="slds-clearfix slds-p-right--small slds-p-bottom--small">
+                      <div class="slds-float--right">
+                        <lightning:button label="Dismiss All" onclick="{!c.dismissAll}" />
+                      </div>
+                    </section>
+                </div>
+                
+            </div>
+
+            </aura:if>
+    </aura:if>
+
+</aura:component>

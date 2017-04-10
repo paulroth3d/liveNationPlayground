@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_Event_Flags</name>
+        <label>Assign Event Flags</label>
+        <locationX>35</locationX>
+        <locationY>1498</locationY>
+        <assignmentItems>
+            <assignToReference>vEvent.ApprovalFlags__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vApprovalFlags</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vEvent.AcknowledgementFlags__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vAckFlags</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Save_Event_Flags</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Finance_Approval_Text</name>
+        <label>Finance Approval Text</label>
+        <locationX>295</locationX>
+        <locationY>169</locationY>
+        <assignmentItems>
+            <assignToReference>vApprovalFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fFinanceApproval</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>T_C_High_Guarantee</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>High_Guarantee_for_Rsvd_Net_Gross_Text</name>
+        <label>High Guarantee for Rsvd Net Gross Text</label>
+        <locationX>292</locationX>
+        <locationY>752</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fHighGuaranteeForRsvdNetGross</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Paid_Target</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>High_Guarantee_Text</name>
+        <label>High Guarantee Text</label>
+        <locationX>293</locationX>
+        <locationY>44</locationY>
+        <assignmentItems>
+            <assignToReference>vApprovalFlags</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fHighGuarantee</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Finance_Approval</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Historical_Data_Unavailable_Text</name>
+        <label>Historical Data Unavailable Text</label>
+        <locationX>296</locationX>
+        <locationY>1010</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fHistoricalDataUnavailable</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Increase_In_Artist_Fees</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Increase_In_Artist_Fees_Text</name>
+        <label>Increase In Artist Fees Text</label>
+        <locationX>297</locationX>
+        <locationY>1131</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fIncreaseInArtistFees</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Larger_Venue</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Larger_Venue_Text</name>
+        <label>Larger Venue Text</label>
+        <locationX>296</locationX>
+        <locationY>1258</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fLargerVenue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Paid_Tickets_Increase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Offer_Requires_Approval_Not_Set_Text</name>
+        <label>Offer Requires Approval Not Set Text</label>
+        <locationX>546</locationX>
+        <locationY>497</locationY>
+        <assignmentItems>
+            <assignToReference>vApprovalFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fOfferRequiresApprovalNotSet</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Show_7500_Paid_in_Amp_or_Arena</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Offer_Requries_Approval_Set_Text</name>
+        <label>Offer Requries Approval Set Text</label>
+        <locationX>546</locationX>
+        <locationY>416</locationY>
+        <assignmentItems>
+            <assignToReference>vApprovalFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fOfferRequiresApprovalSet</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Show_7500_Paid_in_Amp_or_Arena</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Paid_Target_Text</name>
+        <label>Paid &lt; Target Text</label>
+        <locationX>295</locationX>
+        <locationY>879</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fPaidTarget</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Historical_Data_Unavailable</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Paid_Tickets_Increase_Text</name>
+        <label>Paid Tickets Increase Text</label>
+        <locationX>295</locationX>
+        <locationY>1375</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fPaidTicketsIncrease</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Event_Flags</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Show_7500_Paid_in_Amp_or_Arena_Text</name>
+        <label>Show &lt; 7500 Paid in Amp or Arena Text</label>
+        <locationX>293</locationX>
+        <locationY>632</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fShow7500PaidinAmporArena</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>High_Guarantee_for_Rsvd_Net_Gross</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>T_C_High_Guarantee_Text</name>
+        <label>T&amp;C High Guarantee Text</label>
+        <locationX>293</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>vAckFlags</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fTCHighGuarantee</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Offer_Requires_Approval</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Finance_Approval</name>
+        <label>Finance Approval</label>
+        <locationX>33</locationX>
+        <locationY>169</locationY>
+        <defaultConnector>
+            <targetReference>T_C_High_Guarantee</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False FA</defaultConnectorLabel>
+        <rules>
+            <name>True_FA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagFinanceApproval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Finance_Approval_Text</targetReference>
+            </connector>
+            <label>True FA</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>First_Level_Approval_Amount_Set</name>
+        <label>First Level Approval Amount Set</label>
+        <locationX>293</locationX>
+        <locationY>416</locationY>
+        <defaultConnector>
+            <targetReference>Offer_Requires_Approval_Not_Set_Text</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Set</defaultConnectorLabel>
+        <rules>
+            <name>Set</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FirstLevelApprovalAmount__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Offer_Requries_Approval_Set_Text</targetReference>
+            </connector>
+            <label>Set</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>High_Guarantee</name>
+        <label>High Guarantee</label>
+        <locationX>33</locationX>
+        <locationY>44</locationY>
+        <defaultConnector>
+            <targetReference>Finance_Approval</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False HG</defaultConnectorLabel>
+        <rules>
+            <name>True_HG</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagHighGuarantee__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>High_Guarantee_Text</targetReference>
+            </connector>
+            <label>True HG</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>High_Guarantee_for_Rsvd_Net_Gross</name>
+        <label>High Guarantee for Rsvd Net Gross</label>
+        <locationX>33</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Paid_Target</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False HGRNG</defaultConnectorLabel>
+        <rules>
+            <name>True_HGRNG</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagHighGuaranteeForRsvdNetGross__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>High_Guarantee_for_Rsvd_Net_Gross_Text</targetReference>
+            </connector>
+            <label>True HGRNG</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Historical_Data_Unavailable</name>
+        <label>Historical Data Unavailable</label>
+        <locationX>34</locationX>
+        <locationY>1008</locationY>
+        <defaultConnector>
+            <targetReference>Increase_In_Artist_Fees</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False HDU</defaultConnectorLabel>
+        <rules>
+            <name>True_HDU</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagHistoricalDataUnavailable__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Historical_Data_Unavailable_Text</targetReference>
+            </connector>
+            <label>True HDU</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Increase_In_Artist_Fees</name>
+        <label>Increase In Artist Fees</label>
+        <locationX>34</locationX>
+        <locationY>1134</locationY>
+        <defaultConnector>
+            <targetReference>Larger_Venue</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False IIAF</defaultConnectorLabel>
+        <rules>
+            <name>True_IIAF</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagIncreaseInArtistFees__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Increase_In_Artist_Fees_Text</targetReference>
+            </connector>
+            <label>True IIAF</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Larger_Venue</name>
+        <label>Larger Venue</label>
+        <locationX>34</locationX>
+        <locationY>1257</locationY>
+        <defaultConnector>
+            <targetReference>Paid_Tickets_Increase</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False LV</defaultConnectorLabel>
+        <rules>
+            <name>True_LV</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagLargerVenue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Larger_Venue_Text</targetReference>
+            </connector>
+            <label>True LV</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Offer_Requires_Approval</name>
+        <label>Offer Requires Approval</label>
+        <locationX>33</locationX>
+        <locationY>416</locationY>
+        <defaultConnector>
+            <targetReference>Show_7500_Paid_in_Amp_or_Arena</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False ORA</defaultConnectorLabel>
+        <rules>
+            <name>True_ORA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagOfferRequiresApproval__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>First_Level_Approval_Amount_Set</targetReference>
+            </connector>
+            <label>True ORA</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Paid_Target</name>
+        <label>Paid &lt; Target</label>
+        <locationX>34</locationX>
+        <locationY>882</locationY>
+        <defaultConnector>
+            <targetReference>Historical_Data_Unavailable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False PT</defaultConnectorLabel>
+        <rules>
+            <name>True_PT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagPaidTarget__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Paid_Target_Text</targetReference>
+            </connector>
+            <label>True PT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Paid_Tickets_Increase</name>
+        <label>Paid Tickets Increase</label>
+        <locationX>35</locationX>
+        <locationY>1379</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Event_Flags</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False PTI</defaultConnectorLabel>
+        <rules>
+            <name>True_PTI</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagPaidTicketsIncrease__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Paid_Tickets_Increase_Text</targetReference>
+            </connector>
+            <label>True PTI</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Show_7500_Paid_in_Amp_or_Arena</name>
+        <label>Show &lt; 7500 Paid in Amp or Arena</label>
+        <locationX>33</locationX>
+        <locationY>629</locationY>
+        <defaultConnector>
+            <targetReference>High_Guarantee_for_Rsvd_Net_Gross</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False 7500PaidAA</defaultConnectorLabel>
+        <rules>
+            <name>True_7500PaidAA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagShow7500PaidInAmpOrArena__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Show_7500_Paid_in_Amp_or_Arena_Text</targetReference>
+            </connector>
+            <label>True 7500PaidAA</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>T_C_High_Guarantee</name>
+        <label>T&amp;C High Guarantee</label>
+        <locationX>33</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Offer_Requires_Approval</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>False TCHG</defaultConnectorLabel>
+        <rules>
+            <name>True_TCHG</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vEvent.FlagTCHighGuarantee__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>T_C_High_Guarantee_Text</targetReference>
+            </connector>
+            <label>True TCHG</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>fFinanceApproval</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Finance Approval Required&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fHighGuarantee</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Guarantee &gt; $500k&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fHighGuaranteeForRsvdNetGross</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Guarantee &gt; 50% of Reserved Net Gross and Paid Tix &lt; 10000&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fHistoricalDataUnavailable</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Artist Historical Data Unavailable in the Market&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fIncreaseInArtistFees</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Increase in Artist Fees Since Last Play&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fLargerVenue</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Larger Venue Since Last Play in Market&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fOfferRequiresApprovalNotSet</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Offer requires approval: Guarantee approval threshold not set&quot; &amp;
+{!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fOfferRequiresApprovalSet</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Offer requires approval: Guarantee greater than &quot; &amp;
+{!vEvent.FirstLevelApprovalAmountText__c} &amp;
+{!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fPaidTarget</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Paid &lt; Venue Target&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fPaidTicketsIncrease</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Paid Increase Since Last Play in Market&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fShow7500PaidinAmporArena</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  Promoter Loss - Amp/Arena - Less Than 7500 Paid&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <formulas>
+        <name>fTCHighGuarantee</name>
+        <dataType>String</dataType>
+        <expression>&quot;•  T/C Guarantee &gt; $75k&quot; &amp; {!SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;)}</expression>
+    </formulas>
+    <interviewLabel>LNE Write Event Flags {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>LNE Write Event Flags</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Save_Event_Flags</name>
+        <label>Save Event Flags</label>
+        <locationX>36</locationX>
+        <locationY>1607</locationY>
+        <inputReference>vEvent</inputReference>
+    </recordUpdates>
+    <startElementReference>High_Guarantee</startElementReference>
+    <variables>
+        <name>vAckFlags</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>vApprovalFlags</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>vEvent</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Event__c</objectType>
+    </variables>
+</Flow>

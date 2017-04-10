@@ -1,0 +1,3670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The terms and relationships of artists, co-promoters, and possibly 3rd-party venues or other partners in an event who are required to participate in event revenues and/or expenses</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>ArtistOfferPrimaryEarnings</fullName>
+        <description>Reporting Options to be provided for Artist Offer
+(Primary Artist options for the Earnings Potential Section)</description>
+        <displayedFields>
+            <field>IncludeEarningsPotentialSection__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeArtistEarnings__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeArtistBonus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludePromoterEarnings__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Offer Primary Earnings</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistOfferPrimarySummary</fullName>
+        <description>Reporting Options to be provided for Artist Offer
+(Primary Artist options for the Summary Section)</description>
+        <displayedFields>
+            <field>IncludeSummarySection__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeNetGrossPotential__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeTotalTalent__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeToBeSharedAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeBreakeven__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeCoHeadliner__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Offer Primary Summary</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistOfferPrimaryTopLeft</fullName>
+        <description>Reporting Options to be provided for Artist Offer
+(Top Left list of options for Primary Artists)</description>
+        <displayedFields>
+            <field>IncludeCoPromoters__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeMerchDeal__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeVenueNotes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeMarketingNotes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeOfferWording__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeBonusWording__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeOfferNotes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Offer Primary Top Left</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistOfferPrimaryTopRight</fullName>
+        <description>Reporting Options to be provided for Artist Offer
+(Top Right list of options for Primary Artists)</description>
+        <displayedFields>
+            <field>IncludeTalentGuarantee__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeTicketScaling__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeTicketScalingMergedTotals__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeExpenses__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeExpenseBreakouts__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeDeductions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludePromotersAddress__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Offer Primary Top Right</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistOfferSupportEarnings</fullName>
+        <description>Reporting Options to be provided for Artist Offer
+(Support options for the Summary Section)</description>
+        <displayedFields>
+            <field>IncludeEarningsPotentialSection__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeArtistEarnings__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeTotalTalent__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeArtistBonus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Offer Support Earnings</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistOfferSupportTopLeft</fullName>
+        <description>Reporting Options to be provided for Artist Offer
+(Top Left list of options for Supporting Artists)</description>
+        <displayedFields>
+            <field>IncludeMerchDeal__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeVenueNotes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeMarketingNotes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeBonusWording__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeOfferNotes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Offer Support Top Left</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistOfferSupportTopRight</fullName>
+        <description>Reporting Options to be provided for Artist Offer
+(Top Right list of options for Supporting Artists)</description>
+        <displayedFields>
+            <field>IncludeTalentGuarantee__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludePromotersAddress__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Offer Support Top Right</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistSettlementPrimaryOptionsLeft</fullName>
+        <description>Reporting Options to be provided for Artist Settlement</description>
+        <displayedFields>
+            <field>IncludeBoxOfficeSummary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeMarketingBreakoutDetails__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeExpenses__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeExpenseBreakoutDetails__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeExpenseNotes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludePromoterSummary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Settlement Primary Options Left</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistSettlementPrimaryOptionsRight</fullName>
+        <description>Reporting Options to be provided for Artist Settlement</description>
+        <displayedFields>
+            <field>IncludeLNTouringExpenseColumn__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeArtistExpenseColumn__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeVenueExpenseColumn__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeOfferExpenseColumn__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeVarianceColumn__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeShowSummaryColumn__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Settlement Primary Options Right</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ArtistSettlementSupportOptions</fullName>
+        <description>Reporting Options to be provided for Artist Settlement</description>
+        <displayedFields>
+            <field>IncludeBoxOfficeSummary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IncludeExpenses__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Artist Settlement Support Options</label>
+    </fieldSets>
+    <fields>
+        <fullName>AncillaryRevenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Ancillary Revenue</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AncillaryShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   /* T */
+   LNEAncillaryShareAmountAtProjection__c,
+   /* F */
+   IF ((ProfitShareAmtAtProjFC__c + ExpenseAdjustShareAmtAtProjFC__c + AncillaryShareAmtAtProjFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      /* T */
+      0,
+      /* F */
+      AncillaryRevenue__c *  AncillaryShareAmtAtProjFC__c
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ancillary Share Amount At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AncillaryShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   /* T */
+   LNEAncillaryShareAmountAtSellout__c,
+   /* F */
+   IF ((ProfitShareAmtAtSellFC__c + ExpenseAdjustShareAmtAtSellFC__c + AncillaryShareAmtAtSellFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      /* T */
+      0,
+      /* F */
+      AncillaryRevenue__c *  AncillaryShareAmtAtSellFC__c
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ancillary Share Amount At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AncillaryShareAmtAtProjFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>/**/
+
+RollUpAncillaryShareAmtAtProj__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ancillary Share Amt At Proj FC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AncillaryShareAmtAtSellFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>RollUpAncillaryShareAmtAtSell__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ancillary Share Amt At Sell FC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ArtistBackendCalculationPotential__c</fullName>
+        <externalId>false</externalId>
+        <label>Artist Backend Calculation Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ArtistEarningsPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(DealType__c, &apos;Flat&apos;),
+/* TRUE */
+TotalGuaranteesandOverhead__c,
+
+/* FALSE - other Deal Types */
+IF(GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c =
+ MAX(
+  /* LEFT SIDE of MAX */
+  GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c,
+
+  /* RIGHT SIDE of MAX */
+  CASE(TEXT(DealType__c),
+   &apos;Percentage of Gross&apos;, (Event__r.NetGrossPotential__c * SplitBackendPercent__c),
+   &apos;Percentage of Net&apos;, (Event__r.NetPotPotential__c * SplitBackendPercent__c),
+   &apos;Promoter Profit&apos;, (Event__r.PotentialToBeSharedAmount__c * SplitBackendPercent__c),
+   &apos;Gross Split Point&apos;, (InclusiveArtistExpensesPerDealCalc__c + (Event__r.PotentialToBeSharedAmount__c * SplitBackendPercent__c)),
+  /* CASE() DEFAULT - and applies to all Retro/Step Up deal types */
+   BackendPotential__c)
+
+ /* END MAX */
+ ),
+
+/* TRUE - Event did not go into percentages - guarantees paid out */
+TotalGuaranteesandOverhead__c,
+
+/* FALSE - Event went into percentages - artist participation/overage paid out */
+CASE(TEXT(DealType__c),
+ &apos;Percentage of Gross&apos;, (Event__r.NetGrossPotential__c * SplitBackendPercent__c),
+ &apos;Percentage of Net&apos;, (Event__r.NetPotPotential__c * SplitBackendPercent__c),
+ &apos;Promoter Profit&apos;, (Event__r.PotentialToBeSharedAmount__c * SplitBackendPercent__c),
+ &apos;Gross Split Point&apos;, (InclusiveArtistExpensesPerDealCalc__c + (Event__r.PotentialToBeSharedAmount__c * SplitBackendPercent__c)),
+/* CASE() DEFAULT - and applies to all Retro/Step Up deal types */
+ BackendPotential__c)
+
+ /* END IFs */
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Artist Earnings Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ArtistSuppliedSL__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Artist Supplied S&amp;L</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ArtistWalkoutPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+   ISPICKVAL(DealType__c, &apos;Flat&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Percentage of Gross&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Percentage of Net&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Retro Gross Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Retro Net Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Step Up Gross Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Step Up Net Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Promoter Profit&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Gross Split Point&apos;),
+      /* TRUE */
+      ArtistEarningsPotential__c + BonusPotential__c,
+
+      /* FALSE */
+      0
+/* END IF */
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Artist Walkout Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Artist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Artist</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Artist Deals</relationshipLabel>
+        <relationshipName>ArtistDeals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BackendPercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Backend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>BackendPotential__c</fullName>
+        <externalId>false</externalId>
+        <label>Backend Potential</label>
+        <summarizedField>ArtistRetroStepUpDetail__c.BackendPotentialNonFormula__c</summarizedField>
+        <summaryForeignKey>ArtistRetroStepUpDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BonusPotentialGuarantee__c</fullName>
+        <description>If Bonus.Apply To = Guarantee, then the bonus will be included in the guarantee for deal calculation purposes.</description>
+        <externalId>false</externalId>
+        <label>Bonus Potential - Guarantee</label>
+        <summarizedField>BonusDetail__c.BonusPotentialatSellout__c</summarizedField>
+        <summaryFilterItems>
+            <field>BonusDetail__c.ApplyTo__c</field>
+            <operation>equals</operation>
+            <value>Guarantee</value>
+        </summaryFilterItems>
+        <summaryForeignKey>BonusDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BonusPotential__c</fullName>
+        <externalId>false</externalId>
+        <label>Bonus Potential</label>
+        <summarizedField>BonusDetail__c.BonusPotentialatSellout__c</summarizedField>
+        <summaryForeignKey>BonusDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>CoPromoterBonusAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   0,
+   IF((ProfitShareAmtAtProjFC__c + ExpenseAdjustShareAmtAtProjFC__c + AncillaryShareAmtAtProjFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      0,
+      ProjectedBonus__c
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Co-Promoter Bonus At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CoPromoterBonusAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   0,
+   IF ((ProfitShareAmtAtSellFC__c + ExpenseAdjustShareAmtAtSellFC__c + AncillaryShareAmtAtSellFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      0,
+      BonusPotential__c
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Co-Promoter Bonus At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CoPromoterWalkoutAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   LNECoPromoterWalkoutAtProjection__c ,
+   IF((ProfitShareAmtAtProjFC__c + ExpenseAdjustShareAmtAtProjFC__c + AncillaryShareAmtAtProjFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      0,
+      ProfitShareAmountAtProjection__c +  ExpenseAdjustmentShareAmountAtProj__c + AncillaryShareAmountAtProjection__c + CoPromoterBonusAtProjection__c
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Co-Promoter Walkout At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CoPromoterWalkoutAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   LNECoPromoterWalkoutAtSellout__c ,
+   IF ((ProfitShareAmtAtSellFC__c + ExpenseAdjustShareAmtAtSellFC__c + AncillaryShareAmtAtSellFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      0,
+      ProfitShareAmountAtSellout__c +  ExpenseAdjustmentShareAmountAtSell__c + AncillaryShareAmountAtSellout__c + CoPromoterBonusAtSellout__c
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Co-Promoter Walkout At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CoPromoter__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Co-Promoter</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Co-Promoter Deals</relationshipLabel>
+        <relationshipName>CoPromoterDeals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyExchange__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Currency Exchange</label>
+        <referenceTo>CurrencyExchange__c</referenceTo>
+        <relationshipLabel>Deals</relationshipLabel>
+        <relationshipName>Deals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DealApplicationType__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal Application Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>DealType__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paid Tickets</fullName>
+                    <default>false</default>
+                    <label>Paid Tickets</label>
+                </value>
+                <value>
+                    <fullName>To Be Shared Amount</fullName>
+                    <default>false</default>
+                    <label>To Be Shared Amount</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Retro Gross Deal</controllingFieldValue>
+                <controllingFieldValue>Retro Net Deal</controllingFieldValue>
+                <valueName>Paid Tickets</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Retro Gross Deal</controllingFieldValue>
+                <controllingFieldValue>Retro Net Deal</controllingFieldValue>
+                <controllingFieldValue>Step Up Gross Deal</controllingFieldValue>
+                <controllingFieldValue>Step Up Net Deal</controllingFieldValue>
+                <valueName>To Be Shared Amount</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DealCalculation__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal Calculation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Guarantee Only</fullName>
+                    <default>false</default>
+                    <label>Guarantee Only</label>
+                </value>
+                <value>
+                    <fullName>Inclusive of Other Talent Amount</fullName>
+                    <default>false</default>
+                    <label>Inclusive of Other Talent Amount</label>
+                </value>
+                <value>
+                    <fullName>Inclusive of Sound &amp; Lights</fullName>
+                    <default>false</default>
+                    <label>Inclusive of Sound &amp; Lights</label>
+                </value>
+                <value>
+                    <fullName>Inclusive of Sound &amp; Lights &amp; Other Talent Amount</fullName>
+                    <default>false</default>
+                    <label>Inclusive of Sound &amp; Lights &amp; Other Talent Amount</label>
+                </value>
+                <value>
+                    <fullName>Inclusive of Sound &amp; Lights &amp; Support</fullName>
+                    <default>false</default>
+                    <label>Inclusive of Sound &amp; Lights &amp; Support</label>
+                </value>
+                <value>
+                    <fullName>Inclusive of Sound &amp; Lights &amp; Support &amp; Other Talent Amount</fullName>
+                    <default>false</default>
+                    <label>Inclusive of Sound &amp; Lights &amp; Support &amp; Other Talent Amount</label>
+                </value>
+                <value>
+                    <fullName>Inclusive of Support</fullName>
+                    <default>false</default>
+                    <label>Inclusive of Support</label>
+                </value>
+                <value>
+                    <fullName>Inclusive of Support And Other Talent Amount</fullName>
+                    <default>false</default>
+                    <label>Inclusive of Support And Other Talent Amount</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>Guarantee Only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>Inclusive of Other Talent Amount</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>Inclusive of Sound &amp; Lights</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>Inclusive of Sound &amp; Lights &amp; Other Talent Amount</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Inclusive of Sound &amp; Lights &amp; Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Inclusive of Sound &amp; Lights &amp; Support &amp; Other Talent Amount</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Inclusive of Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Inclusive of Support And Other Talent Amount</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DealType__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Gross Split Point</fullName>
+                    <default>false</default>
+                    <label>Gross Split Point</label>
+                </value>
+                <value>
+                    <fullName>Percentage of Gross</fullName>
+                    <default>false</default>
+                    <label>Percentage of Gross</label>
+                </value>
+                <value>
+                    <fullName>Percentage of Net</fullName>
+                    <default>false</default>
+                    <label>Percentage of Net</label>
+                </value>
+                <value>
+                    <fullName>Promoter Profit</fullName>
+                    <default>false</default>
+                    <label>Promoter Profit</label>
+                </value>
+                <value>
+                    <fullName>Retro Gross Deal</fullName>
+                    <default>false</default>
+                    <label>Retro Gross Deal</label>
+                </value>
+                <value>
+                    <fullName>Retro Net Deal</fullName>
+                    <default>false</default>
+                    <label>Retro Net Deal</label>
+                </value>
+                <value>
+                    <fullName>Step Up Gross Deal</fullName>
+                    <default>false</default>
+                    <label>Step Up Gross Deal</label>
+                </value>
+                <value>
+                    <fullName>Step Up Net Deal</fullName>
+                    <default>false</default>
+                    <label>Step Up Net Deal</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <controllingFieldValue>Support</controllingFieldValue>
+                <valueName>Flat</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Gross Split Point</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Percentage of Gross</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Percentage of Net</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Promoter Profit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Retro Gross Deal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Retro Net Deal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Step Up Gross Deal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Primary Headliner</controllingFieldValue>
+                <controllingFieldValue>Co-Headliner</controllingFieldValue>
+                <valueName>Step Up Net Deal</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>Drives sharing rules to provide read-only access to other division members</description>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DownsideRisk__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Downside Risk</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DuplicatePrimaryHeadlinerArtist__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This will be checked if there is a more than 1 primary headliner artist designated for an event</description>
+        <externalId>false</externalId>
+        <label>Duplicate Primary Headliner Artist?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventLoss__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Loss</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>EventProfit__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Profit</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>Event__c</referenceTo>
+        <relationshipLabel>Deals</relationshipLabel>
+        <relationshipName>Deals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustShareAmtAtProjFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>RollUpExpenseAdjustmentAtProjection__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expense Adjust Share Amt At Proj FC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustShareAmtAtSellFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>RollUpExpenseAdjustmentAtSellout__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expense Adjust Share Amt At Sell FC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentLoss__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Adjustment Loss</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentProfit__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Adjustment Profit</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentShareAmountAtProj__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   /* T */
+   LNEExpenseAdjShareAmountAtProj__c ,
+   /* F */
+   IF ((ProfitShareAmtAtProjFC__c + ExpenseAdjustShareAmtAtProjFC__c + AncillaryShareAmtAtProjFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      /* T */
+      0,
+      /* F */
+      IF (ProfitShareAmtAtProjFC__c &gt;= 0,
+         /* T */
+         ExpenseAdjustmentProfit__c *  ExpenseAdjustShareAmtAtProjFC__c ,
+         /* F */
+         ExpenseAdjustmentLoss__c * ExpenseAdjustShareAmtAtProjFC__c
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expense Adjustment Share Amount At Proj</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentShareAmountAtSell__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   /* T */
+   LNEExpenseAdjShareAmountAtSell__c ,
+   /* F */
+   IF ((ProfitShareAmtAtSellFC__c + ExpenseAdjustShareAmtAtSellFC__c + AncillaryShareAmtAtSellFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      /* T */
+      0,
+      /* F */
+      IF (ProfitShareAmtAtSellFC__c &gt;= 0,
+         /* T */
+         ExpenseAdjustmentProfit__c *  ExpenseAdjustShareAmtAtSellFC__c ,
+         /* F */
+         ExpenseAdjustmentLoss__c * ExpenseAdjustShareAmtAtSellFC__c
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expense Adjustment Share Amount At Sell</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Geography__c</fullName>
+        <externalId>false</externalId>
+        <label>Geography</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GuaranteeAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Guarantee Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InPercentageAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectedArtistBackendCalculation__c &gt; GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>In Percentage at Projection?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InPercentageAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>ArtistBackendCalculationPotential__c &gt; GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>In Percentage at Sellout?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InPercentageAtSettlement__c</fullName>
+        <externalId>false</externalId>
+        <formula>SettlementArtistBackendCalculation__c &gt; GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>In Percentage at Settlement?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeArtistBonus__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Artist Bonus</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeArtistEarnings__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Artist Earnings</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeArtistExpenseColumn__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Artist Expense Column</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeBonusWording__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Bonus Wording</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeBoxOfficeSummary__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Box Office Summary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeBreakeven__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Breakeven</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeCoHeadliner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Co-Headliner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeCoPromoters__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Co-Promoters</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeDeductions__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Deductions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeEarningsPotentialSection__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Earnings Potential Section</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeExpenseBreakoutDetails__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Expense Breakout Details</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeExpenseBreakouts__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Expense Breakouts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeExpenseNotes__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Expense Notes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeExpenses__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Expenses</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeInOffer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether the deal should be included in the offer</inlineHelpText>
+        <label>Include in Offer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeLNTouringExpenseColumn__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include LN Touring Expense Column</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeMarketingBreakoutDetails__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Marketing Breakout Details</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeMarketingNotes__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Marketing Notes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeMerchDeal__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Merch Deal</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeNetGrossPotential__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Net Gross Potential</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeOfferExpenseColumn__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Offer Expense Column</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeOfferNotes__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Offer Notes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeOfferWording__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Offer Wording</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludePromoterEarnings__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Promoter Earnings</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludePromoterSummary__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Promoter Summary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludePromotersAddress__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Promoter&apos;s Address</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeShowSummaryColumn__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Show Summary Column</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeSummarySection__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Summary Section</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeTalentGuarantee__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Talent Guarantee</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeTicketScalingMergedTotals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Ticket Scaling Merged Totals</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeTicketScaling__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Ticket Scaling</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeToBeSharedAmount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include To Be Shared Amount</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeTotalTalent__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Total Talent, S&amp;L, &amp; Other</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeVarianceColumn__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Variance Column</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeVenueExpenseColumn__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Venue Expense Column</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeVenueNotes__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Include Venue Notes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IncludeinTradeReporting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include in Trade Reporting</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InclusiveArtistExpensesPerDealCalc__c</fullName>
+        <description>Per Deal Calc field: sum of artist expenses that are included in the comparison between inclusive guarantees and artist (backend) participation</description>
+        <externalId>false</externalId>
+        <label>Inclusive Artist Expenses Per Deal Calc</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNEAncillaryShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Ancillary Share Amount At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNEAncillaryShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Ancillary Share Amount At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNECoPromoterWalkoutAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Co-Promoter Walkout At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNECoPromoterWalkoutAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Co-Promoter Walkout At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNEExpenseAdjShareAmountAtProj__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Expense Adj Share Amount At Proj</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNEExpenseAdjShareAmountAtSell__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Expense Adj Share Amount At Sell</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNEProfitShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Profit Share Amount At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LNEProfitShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>LNE Profit Share Amount At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OfficeName__c</fullName>
+        <description>Drives sharing rules to provide edit access to other office members</description>
+        <externalId>false</externalId>
+        <label>Office Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OtherTalentAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Talent Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OtherTalentDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Talent Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OveragePotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(RecordType.DeveloperName = &quot;Artist&quot; &amp;&amp; !ISPICKVAL(Type__c, &quot;Support&quot;) &amp;&amp; ArtistBackendCalculationPotential__c &gt; GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c,
+
+/* Primary or Co-Headliner */
+ArtistBackendCalculationPotential__c - (GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c),
+
+/* Support */
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overage Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PotentialInclusiveArtistExpenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>ArtistSuppliedSL__c +
+
+IF(ISPICKVAL(StageType__c, &quot;Plan&quot;), Event__r.TotalSupportActExpenses__c,
+IF(ISPICKVAL(StageType__c, &quot;Settlement&quot;), Event__r.SettlementTotalSupportActExpenses__c,
+0))
+
++ OtherTalentAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Potential Inclusive Artist Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PotentialToBeSharedAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(SplitPercentage__c),
+  IF(ISPICKVAL(Type__c, &quot;Primary Headliner&quot;),
+    1,
+    0),
+  SplitPercentage__c
+) * Event__r.PotentialToBeSharedAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Potential To Be Shared Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PrimarySecondaryCoPromoter__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary/Secondary Co-Promoter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary</fullName>
+                    <default>false</default>
+                    <label>Primary</label>
+                </value>
+                <value>
+                    <fullName>Secondary</fullName>
+                    <default>false</default>
+                    <label>Secondary</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PrimaryVenueOffice__c</fullName>
+        <description>Drives sharing rules to provide edit access to booking members of the venue&apos;s primary office</description>
+        <externalId>false</externalId>
+        <label>Primary Venue Office</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProfitShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   /* T */
+   LNEProfitShareAmountAtProjection__c ,
+   /* F */
+   IF ((ProfitShareAmtAtProjFC__c + ExpenseAdjustShareAmtAtProjFC__c + AncillaryShareAmtAtProjFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      /* T */
+      0,
+      /* F */
+      IF (ProfitShareAmtAtProjFC__c &gt;= 0,
+         /* T */
+         EventProfit__c * ProfitShareAmtAtProjFC__c,
+         /* F */
+         EventLoss__c * ProfitShareAmtAtProjFC__c
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Profit Share Amount At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProfitShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &apos;Internal&apos;),
+   /* T */
+   LNEProfitShareAmountAtSellout__c ,
+   /* F */
+   IF ((ProfitShareAmtAtSellFC__c + ExpenseAdjustShareAmtAtSellFC__c + AncillaryShareAmtAtSellFC__c &lt; 0) &amp;&amp;  DownsideRisk__c = False,
+      /* T */
+      0,
+      /* F */
+      IF (ProfitShareAmtAtSellFC__c &gt;= 0,
+         /* T */
+         EventProfit__c * ProfitShareAmtAtSellFC__c,
+         /* F */
+         EventLoss__c * ProfitShareAmtAtSellFC__c
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Profit Share Amount At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProfitShareAmtAtProjFC__c</fullName>
+        <externalId>false</externalId>
+        <label>Profit Share Amt At Proj FC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProfitShareAmtAtSellFC__c</fullName>
+        <externalId>false</externalId>
+        <label>Profit Share Amt At Sell FC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedArtistBackendCalculation__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Artist Backend Calculation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedArtistEarnings__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(DealType__c, &apos;Flat&apos;),
+/* TRUE */
+TotalGuaranteesandOverhead__c,
+
+/* FALSE - other Deal Types */
+IF(GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + ProjectedBonusGuarantee__c =
+ MAX(
+  /* LEFT SIDE of MAX */
+  GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + ProjectedBonusGuarantee__c,
+
+  /* RIGHT SIDE of MAX */
+  CASE(TEXT(DealType__c),
+   &apos;Percentage of Gross&apos;, (Event__r.ProjectedNetGross__c * SplitBackendPercent__c),
+   &apos;Percentage of Net&apos;, (Event__r.ProjectedNetPot__c * SplitBackendPercent__c),
+   &apos;Promoter Profit&apos;, (Event__r.ProjectedToBeSharedAmount__c * SplitBackendPercent__c),
+   &apos;Gross Split Point&apos;, (InclusiveArtistExpensesPerDealCalc__c + (Event__r.ProjectedToBeSharedAmount__c * SplitBackendPercent__c)),
+  /* CASE() DEFAULT - and applies to all Retro/Step Up deal types */
+   ProjectedBackend__c)
+
+ /* END MAX*/
+ ),
+
+/* TRUE - Event did not go into percentages - guarantees paid out */
+TotalGuaranteesandOverhead__c,
+
+/* FALSE - Event went into percentages - artist participation/overage paid out */
+CASE(TEXT(DealType__c),
+ &apos;Percentage of Gross&apos;, (Event__r.ProjectedNetGross__c * SplitBackendPercent__c),
+ &apos;Percentage of Net&apos;, (Event__r.ProjectedNetPot__c * SplitBackendPercent__c),
+ &apos;Promoter Profit&apos;, (Event__r.ProjectedToBeSharedAmount__c * SplitBackendPercent__c),
+ &apos;Gross Split Point&apos;, (InclusiveArtistExpensesPerDealCalc__c + (Event__r.ProjectedToBeSharedAmount__c * SplitBackendPercent__c)),
+/* CASE() DEFAULT - and applies to all Retro/Step Up deal types */
+ ProjectedBackend__c)
+
+/* END IFs */
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Artist Earnings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedArtistWalkout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+   ISPICKVAL(DealType__c, &apos;Flat&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Percentage of Gross&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Percentage of Net&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Retro Gross Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Retro Net Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Step Up Gross Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Step Up Net Deal&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Promoter Profit&apos;) ||
+   ISPICKVAL(DealType__c, &apos;Gross Split Point&apos;),
+      /* TRUE */
+      ProjectedArtistEarnings__c + ProjectedBonus__c,
+
+      /* FALSE */
+      0
+/* END IF */
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Artist Walkout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedBackend__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Backend</label>
+        <summarizedField>ArtistRetroStepUpDetail__c.ProjectedBackendNonFormula__c</summarizedField>
+        <summaryForeignKey>ArtistRetroStepUpDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedBonusGuarantee__c</fullName>
+        <description>If Bonus.Apply To = Guarantee, then the bonus will be included in the guarantee for deal calculation purposes.</description>
+        <externalId>false</externalId>
+        <label>Projected Bonus - Guarantee</label>
+        <summarizedField>BonusDetail__c.BonusPotentialatProjection__c</summarizedField>
+        <summaryFilterItems>
+            <field>BonusDetail__c.ApplyTo__c</field>
+            <operation>equals</operation>
+            <value>Guarantee</value>
+        </summaryFilterItems>
+        <summaryForeignKey>BonusDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedBonus__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Bonus</label>
+        <summarizedField>BonusDetail__c.BonusPotentialatProjection__c</summarizedField>
+        <summaryForeignKey>BonusDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedOverage__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(RecordType.DeveloperName = &quot;Artist&quot; &amp;&amp; !ISPICKVAL(Type__c, &quot;Support&quot;) &amp;&amp; ProjectedArtistBackendCalculation__c &gt; GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c,
+
+/* Primary or Co-Headliner */
+ProjectedArtistBackendCalculation__c - (GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + BonusPotentialGuarantee__c),
+
+/* Support */
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Overage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedToBeSharedAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(SplitPercentage__c),
+  IF(ISPICKVAL(Type__c, &quot;Primary Headliner&quot;),
+    1,
+    0),
+  SplitPercentage__c
+) * Event__r.ProjectedToBeSharedAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected To Be Shared Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rank__c</fullName>
+        <defaultValue>2</defaultValue>
+        <description>Ordinal number that represents the artist&apos;s rank in the event lineup</description>
+        <externalId>false</externalId>
+        <label>Rank</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RetroStepUpStartAtZero__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Used to determine if any attempted save of Retro/Step Up records includes at least one where the starting range is zero - a requirement.</description>
+        <externalId>false</externalId>
+        <label>RetroStepUpStartAtZero</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RollUpAncillaryShareAmtAtProj__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Ancillary Share Amt At Proj</label>
+        <summarizedField>DealSettlementLedger__c.CurrentAmountAtProjectionNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>COGS,Ancillary</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpAncillaryShareAmtAtSell__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Ancillary Share Amt At Sell</label>
+        <summarizedField>DealSettlementLedger__c.CurrentAmountAtSelloutNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>COGS,Ancillary</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpArtistRetroCount__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Artist Retro Count</label>
+        <summaryForeignKey>ArtistRetroStepUpDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpBonusDetailsCount__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Bonus Details Count</label>
+        <summaryForeignKey>BonusDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpExpenseAdjustmentAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Expense Adjustment At Projection</label>
+        <summarizedField>DealSettlementLedger__c.ExpenseAdjustmentAtProjectionNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>Expenses</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpExpenseAdjustmentAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Expense Adjustment At Sellout</label>
+        <summarizedField>DealSettlementLedger__c.ExpenseAdjustmentAtSelloutNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>Expenses</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpPriCoProAncilShareAtProj__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Pri Co-Pro Ancil Share At Proj</label>
+        <summarizedField>DealSettlementLedger__c.PrimaryCoProShareAtProjectionNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>COGS,Ancillary</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpPriCoProAncilShareAtSell__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Pri Co-Pro Ancil Share At Sell</label>
+        <summarizedField>DealSettlementLedger__c.PrimaryCoProShareAtSelloutNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>COGS,Ancillary</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpPriCoProExpenseShareAtProj__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Pri Co-Pro Expense Share At Proj</label>
+        <summarizedField>DealSettlementLedger__c.PrimaryCoProShareAtProjectionNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>Expenses</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpPriCoProExpenseShareAtSell__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Pri Co-Pro Expense Share At Sell</label>
+        <summarizedField>DealSettlementLedger__c.PrimaryCoProShareAtSelloutNF__c</summarizedField>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.TypeNF__c</field>
+            <operation>equals</operation>
+            <value>Expenses</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>DealSettlementLedger__c.Share__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DealSettlementLedger__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpTalentOverheadAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll-Up Talent Overhead Amount</label>
+        <summarizedField>TalentOverhead__c.Amount__c</summarizedField>
+        <summaryForeignKey>TalentOverhead__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>RollUpTalentOverheadCount__c</fullName>
+        <externalId>false</externalId>
+        <label>Roll Up Talent Overhead Count</label>
+        <summaryForeignKey>TalentOverhead__c.Deal__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_for_Currency_Recalc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF 
+( 
+ISNULL(CurrencyExchange__c), 
+TRUE, 
+IF 
+( 
+ISNULL(CurrencyDate__c), 
+IF 
+( 
+CurrencyExchange__r.IsCurrent__c = FALSE, 
+TRUE, 
+FALSE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = FALSE) , 
+IF 
+( 
+AND(CurrencyExchange__r.StartDate__c &lt;= CurrencyDate__c, CurrencyExchange__r.EndDate__c &gt;= CurrencyDate__c), 
+FALSE, 
+TRUE 
+) , 
+IF 
+( 
+AND(ISBLANK(CurrencyExchange__r.StartDate__c) = FALSE,ISBLANK(CurrencyExchange__r.EndDate__c) = TRUE), 
+IF 
+( 
+(CurrencyExchange__r.StartDate__c &gt; CurrencyDate__c) = TRUE, 
+TRUE, 
+FALSE 
+) , 
+TRUE 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scheduled for Currency Recalc</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SettlementArtistBackendCalculation__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement Artist Backend Calculation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementArtistEarnings__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(DealType__c, &apos;Flat&apos;),
+/* TRUE */
+TotalGuaranteesandOverhead__c,
+
+/* FALSE - other Deal Types */
+IF(GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + SettlementBonusGuarantee__c =
+ MAX(
+  /* LEFT SIDE of MAX */
+  GuaranteeAmount__c + InclusiveArtistExpensesPerDealCalc__c + SettlementBonusGuarantee__c,
+
+  /* RIGHT SIDE of MAX */
+  CASE(TEXT(DealType__c),
+   &apos;Percentage of Gross&apos;, (Event__r.SettlementNetGross__c * SplitBackendPercent__c),
+   &apos;Percentage of Net&apos;, (Event__r.SettlementNetPot__c * SplitBackendPercent__c),
+   &apos;Promoter Profit&apos;, (Event__r.SettlementToBeSharedAmount__c * SplitBackendPercent__c),
+   &apos;Gross Split Point&apos;, (InclusiveArtistExpensesPerDealCalc__c + (Event__r.SettlementToBeSharedAmount__c * SplitBackendPercent__c)),
+  /* CASE() DEFAULT - and applies to all Retro/Step Up deal types */
+   SettlementBackend__c)
+
+ /* END MAX*/
+ ),
+
+/* TRUE - Event did not go into percentages - guarantees paid out */
+TotalGuaranteesandOverhead__c,
+
+/* FALSE - Event went into percentages - artist participation/overage paid out */
+CASE(TEXT(DealType__c),
+ &apos;Percentage of Gross&apos;, (Event__r.SettlementNetGross__c * SplitBackendPercent__c),
+ &apos;Percentage of Net&apos;, (Event__r.SettlementNetPot__c * SplitBackendPercent__c),
+ &apos;Promoter Profit&apos;, (Event__r.SettlementToBeSharedAmount__c * SplitBackendPercent__c),
+ &apos;Gross Split Point&apos;, (InclusiveArtistExpensesPerDealCalc__c + (Event__r.SettlementToBeSharedAmount__c * SplitBackendPercent__c)),
+  /* CASE() DEFAULT - and applies to all Retro/Step Up deal types */
+ SettlementBackend__c)
+
+/* END IFs */
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Artist Earnings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementArtistWalkout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+ISPICKVAL(DealType__c, &apos;Flat&apos;) ||
+ISPICKVAL(DealType__c, &apos;Percentage of Gross&apos;) ||
+ISPICKVAL(DealType__c, &apos;Percentage of Net&apos;) ||
+ISPICKVAL(DealType__c, &apos;Retro Gross Deal&apos;) ||
+ISPICKVAL(DealType__c, &apos;Retro Net Deal&apos;) ||
+ISPICKVAL(DealType__c, &apos;Step Up Gross Deal&apos;) ||
+ISPICKVAL(DealType__c, &apos;Step Up Net Deal&apos;) ||
+ISPICKVAL(DealType__c, &apos;Promoter Profit&apos;) ||
+ISPICKVAL(DealType__c, &apos;Gross Split Point&apos;),
+/* TRUE */
+SettlementArtistEarnings__c + ProjectedBonus__c,
+
+/* FALSE */
+0
+/* END IF */
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Artist Walkout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SettlementBackend__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement Backend</label>
+        <summarizedField>ArtistRetroStepUpDetail__c.SettlementBackendNonFormula__c</summarizedField>
+        <summaryForeignKey>ArtistRetroStepUpDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SettlementBonusGuarantee__c</fullName>
+        <description>If Bonus.Apply To = Guarantee, then the bonus will be included in the guarantee for deal calculation purposes.</description>
+        <externalId>false</externalId>
+        <label>Settlement Bonus - Guarantee</label>
+        <summarizedField>BonusDetail__c.SettlementBonus__c</summarizedField>
+        <summaryFilterItems>
+            <field>BonusDetail__c.ApplyTo__c</field>
+            <operation>equals</operation>
+            <value>Guarantee</value>
+        </summaryFilterItems>
+        <summaryForeignKey>BonusDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SettlementBonus__c</fullName>
+        <externalId>false</externalId>
+        <label>Settlement Bonus</label>
+        <summarizedField>BonusDetail__c.SettlementBonus__c</summarizedField>
+        <summaryForeignKey>BonusDetail__c.Deal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SettlementInclTotalSupportExpenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(StageType__c, &quot;Plan&quot;), Event__r.TotalSupportActExpenses__c,
+IF(ISPICKVAL(StageType__c, &quot;Settlement&quot;),  Event__r.SettlementTotalSupportActExpenses__c,
+0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Settlement Incl Total Support Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ShareInTalentOverhead__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Share In Talent Overhead</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SplitBackendPercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Split Backend %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>SplitPercentage__c</fullName>
+        <externalId>false</externalId>
+        <label>Split %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StageType__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Plan</fullName>
+                    <default>true</default>
+                    <label>Plan</label>
+                </value>
+                <value>
+                    <fullName>Projection</fullName>
+                    <default>false</default>
+                    <label>Projection</label>
+                </value>
+                <value>
+                    <fullName>Settlement</fullName>
+                    <default>false</default>
+                    <label>Settlement</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SupportActShare__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(FIND(&quot;Support&quot;, TEXT(DealCalculation__c)) &gt; 0,
+  IF(ISBLANK(SplitPercentage__c),
+    IF(ISPICKVAL(Type__c, &quot;Primary Headliner&quot;),
+      1,
+      0),
+    SplitPercentage__c
+  ) * Event__r.TotalSupportActExpenses__c,
+  0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Support Act Share</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalGuaranteesandOverhead__c</fullName>
+        <externalId>false</externalId>
+        <formula>GuaranteeAmount__c +  ArtistSuppliedSL__c  +  OtherTalentAmount__c +  RollUpTalentOverheadAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Guarantees &amp; Overhead</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TypeSort__c</fullName>
+        <description>Used to help sorting on the Event Offer Sheet tab.</description>
+        <externalId>false</externalId>
+        <formula>CASE(Type__c,
+&apos;Primary Headliner&apos;, -1,
+&apos;Co-Headliner&apos;, BLANKVALUE(Rank__c, 999),
+&apos;Support&apos;, 1000,
+1001)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type Sort</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary Headliner</fullName>
+                    <default>false</default>
+                    <label>Primary Headliner</label>
+                </value>
+                <value>
+                    <fullName>Co-Headliner</fullName>
+                    <default>false</default>
+                    <label>Co-Headliner</label>
+                </value>
+                <value>
+                    <fullName>Support</fullName>
+                    <default>false</default>
+                    <label>Support</label>
+                </value>
+                <value>
+                    <fullName>Venue</fullName>
+                    <default>false</default>
+                    <label>Venue</label>
+                </value>
+                <value>
+                    <fullName>3rd Party</fullName>
+                    <default>false</default>
+                    <label>3rd Party</label>
+                </value>
+                <value>
+                    <fullName>Artist</fullName>
+                    <default>false</default>
+                    <label>Artist</label>
+                </value>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                    <label>Internal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VenueOwnership__c</fullName>
+        <description>Drives sharing rules to provide edit access to booking members of the venue&apos;s primary office when Owned/Operated</description>
+        <externalId>false</externalId>
+        <label>Venue Ownership</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxAncillaryShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AncillaryShareAmountAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ancil. Share Amt At Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxAncillaryShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AncillaryShareAmountAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ancillary Share Amount At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxAncillaryShareAmtAtProjFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AncillaryShareAmtAtProjFC__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ancillary Share Amt At Proj FC (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxAncillaryShareAmtAtSellFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AncillaryShareAmtAtSellFC__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ancillary Share Amt At Sell FC (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxArtistBackendCalculationPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ArtistBackendCalculationPotential__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Artist Backend Calc Poten. (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxArtistEarningsPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ArtistEarningsPotential__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Artist Earnings Potential (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxArtistSuppliedSL__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ArtistSuppliedSL__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Artist Supplied S&amp;L (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxArtistWalkoutPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ArtistWalkoutPotential__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Artist Walkout Potential (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBackendPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BackendPotential__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Backend Potential (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotentialGuarantee__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotentialGuarantee__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Potential - Guarantee (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBonusPotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BonusPotential__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Bonus Potential (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCoPromoterBonusAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CoPromoterBonusAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Promoter Bonus At Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCoPromoterBonusAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CoPromoterBonusAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Promoter Bonus At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCoPromoterWalkoutAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CoPromoterWalkoutAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Promoter Walkout At Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCoPromoterWalkoutAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CoPromoterWalkoutAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Promoter Walkout At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustShareAmtAtProjFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustShareAmtAtProjFC__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Exp. Adj Share Amt At Proj FC (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustShareAmtAtSellFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustShareAmtAtSellFC__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Exp Adj Share Amt At Sell FC (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustmentShareAmountAtProj__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustmentShareAmountAtProj__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Expense Adj Share Amt At Proj (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustmentShareAmountAtSell__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustmentShareAmountAtSell__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Expense Adj Share Amount At Sell (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxGuaranteeAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(GuaranteeAmount__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Guarantee Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxInclusiveArtistExpensesPerDealCalc__c</fullName>
+        <externalId>false</externalId>
+        <formula>(InclusiveArtistExpensesPerDealCalc__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Inc. Artist Exp. Per Deal Calc (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEAncillaryShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEAncillaryShareAmountAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Ancil Share Amt. At Proj. (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEAncillaryShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEAncillaryShareAmountAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Ancil Share Amt. At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNECoPromoterWalkoutAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNECoPromoterWalkoutAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Co-Pro Walkout At Proj. (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNECoPromoterWalkoutAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNECoPromoterWalkoutAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Co-Promoter Walkout At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEExpenseAdjShareAmountAtProj__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEExpenseAdjShareAmountAtProj__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Exp Adj Share Amt. At Proj (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEExpenseAdjShareAmountAtSell__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEExpenseAdjShareAmountAtSell__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Exp. Adj Share Amt. At Sell (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEProfitShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEProfitShareAmountAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Profit Share Amt. At Proj. (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLNEProfitShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LNEProfitShareAmountAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>LNE Profit Share Amount At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOtherTalentAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OtherTalentAmount__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Other Talent Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxOveragePotential__c</fullName>
+        <externalId>false</externalId>
+        <formula>(OveragePotential__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Overage Potential (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPotentialInclusiveArtistExpenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PotentialInclusiveArtistExpenses__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Potential Inclusive Artist Exp (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPotentialToBeSharedAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PotentialToBeSharedAmount__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Potential To Be Shared Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProfitShareAmountAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProfitShareAmountAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Profit Share Amount At Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProfitShareAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProfitShareAmountAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Profit Share Amount At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProfitShareAmtAtProjFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProfitShareAmtAtProjFC__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Profit Share Amt At Proj FC (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProfitShareAmtAtSellFC__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProfitShareAmtAtSellFC__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Profit Share Amt At Sell FC (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedArtistBackendCalculation__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedArtistBackendCalculation__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Artist Backend Calc (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedArtistEarnings__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedArtistEarnings__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Artist Earnings (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedArtistWalkout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedArtistWalkout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Artist Walkout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedBackend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedBackend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Backend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedBonusGuarantee__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedBonusGuarantee__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Bonus - Guarantee (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedBonus__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedBonus__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Bonus (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedOverage__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedOverage__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Overage (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedToBeSharedAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedToBeSharedAmount__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected To Be Shared Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpAncillaryShareAmtAtProj__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpAncillaryShareAmtAtProj__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Roll Up Ancil. Share Amt At Proj (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpAncillaryShareAmtAtSell__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpAncillaryShareAmtAtSell__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Roll Up Ancil. Share Amt At Sell (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpExpenseAdjustmentAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpExpenseAdjustmentAtProjection__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Roll Up Exp Adj At Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpExpenseAdjustmentAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpExpenseAdjustmentAtSellout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Roll Up Exp. Adj At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpPriCoProAncilShareAtProj__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpPriCoProAncilShareAtProj__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Roll Up Pri Co-Pro Ancil At Proj (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpPriCoProAncilShareAtSell__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpPriCoProAncilShareAtSell__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>RollUp Pri Co-Pro Ancil Share Sell (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpPriCoProExpenseShareAtProj__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpPriCoProExpenseShareAtProj__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>RollUp Pri Co-Pro Exp Shar At Proj (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpPriCoProExpenseShareAtSell__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpPriCoProExpenseShareAtSell__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Rollup Pri CoPro Exp At Sell (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxRollUpTalentOverheadAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>(RollUpTalentOverheadAmount__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Roll-Up Talent Overhead Amount (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementArtistBackendCalculation__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementArtistBackendCalculation__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Artist Backend Calc. (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementArtistEarnings__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementArtistEarnings__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Artist Earnings (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementArtistWalkout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementArtistWalkout__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Artist Walkout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBackend__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBackend__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Backend (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBonusGuarantee__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBonusGuarantee__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Bonus - Guarantee (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementBonus__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementBonus__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Bonus (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSettlementInclTotalSupportExpenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SettlementInclTotalSupportExpenses__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Settlement Incl Total Support Exp (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSupportActShare__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SupportActShare__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Support Act Share (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalGuaranteesandOverhead__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalGuaranteesandOverhead__c / (CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total Guarantees &amp; Overhead (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Deal</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Dea-{000000}</displayFormat>
+        <label>Deal ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Deals</pluralLabel>
+    <recordTypes>
+        <fullName>Artist</fullName>
+        <active>true</active>
+        <label>Artist</label>
+        <picklistValues>
+            <picklist>DealApplicationType__c</picklist>
+            <values>
+                <fullName>Paid Tickets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Shared Amount</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DealCalculation__c</picklist>
+            <values>
+                <fullName>Guarantee Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Support %26 Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Support And Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DealType__c</picklist>
+            <values>
+                <fullName>Flat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gross Split Point</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Gross</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retro Gross Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retro Net Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Up Gross Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Up Net Deal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PrimarySecondaryCoPromoter__c</picklist>
+            <values>
+                <fullName>Primary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>StageType__c</picklist>
+            <values>
+                <fullName>Plan</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Projection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Settlement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Co-Headliner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Headliner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Support</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CoPromoter</fullName>
+        <active>true</active>
+        <label>Co-Promoter</label>
+        <picklistValues>
+            <picklist>DealApplicationType__c</picklist>
+            <values>
+                <fullName>Paid Tickets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Shared Amount</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DealCalculation__c</picklist>
+            <values>
+                <fullName>Guarantee Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Support %26 Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Support And Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DealType__c</picklist>
+            <values>
+                <fullName>Flat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gross Split Point</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Gross</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retro Gross Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retro Net Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Up Gross Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Up Net Deal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PrimarySecondaryCoPromoter__c</picklist>
+            <values>
+                <fullName>Primary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>StageType__c</picklist>
+            <values>
+                <fullName>Plan</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Projection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Settlement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>3rd Party</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Artist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>InternalCoPromoter</fullName>
+        <active>true</active>
+        <description>Limited record type to support visibility to co-promoter profit sharing</description>
+        <label>Internal Co-Promoter</label>
+        <picklistValues>
+            <picklist>DealApplicationType__c</picklist>
+            <values>
+                <fullName>Paid Tickets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To Be Shared Amount</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DealCalculation__c</picklist>
+            <values>
+                <fullName>Guarantee Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Sound %26 Lights %26 Support %26 Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusive of Support And Other Talent Amount</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DealType__c</picklist>
+            <values>
+                <fullName>Flat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gross Split Point</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Gross</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Net</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoter Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retro Gross Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retro Net Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Up Gross Deal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Up Net Deal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PrimarySecondaryCoPromoter__c</picklist>
+            <values>
+                <fullName>Primary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>StageType__c</picklist>
+            <values>
+                <fullName>Plan</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Projection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Settlement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Internal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Event__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Artist__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DealType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>LNE_BackEndPercent</fullName>
+        <active>true</active>
+        <description>BackEnd % required if Deal Type is Alternative Promoter Profit Deal, Gross Split Point, Percentage of Gross, Percentage of Net or Promoter Profit</description>
+        <errorConditionFormula>OR(
+ISPICKVAL(DealType__c, &quot;Alternative Promoter Profit Deal&quot;),
+ISPICKVAL(DealType__c, &quot;Gross Split Point&quot;),
+ISPICKVAL(DealType__c, &quot;Percentage of Gross&quot;),
+ISPICKVAL(DealType__c, &quot;Percentage of Net&quot;),
+ISPICKVAL(DealType__c, &quot;Promoter Profit&quot;)) &amp;&amp; ISBLANK(BackendPercent__c) &amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>BackendPercent__c</errorDisplayField>
+        <errorMessage>BackEnd % required if Deal Type is Alternative Promoter Profit Deal, Gross Split Point, Percentage of Gross, Percentage of Net or Promoter Profit</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_EventChildOffice</fullName>
+        <active>true</active>
+        <description>Checks to see if the user has access to the events office/division. If not, user can not create child records related to the event.</description>
+        <errorConditionFormula>!CONTAINS( &apos;,&apos; + $User.OfficeAccess__c + &apos;,&apos;,
+&apos;,&apos; + Event__r.Office__r.OfficeID__c + &apos;,&apos;)
+&amp;&amp; !$Setup.GeneralSettings__c.GlobalDataAdministrator__c
+&amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+
+/* Financial Calculator is running and making updates */
+!$Setup.GeneralSettings__c.BypassPBFlow__c</errorConditionFormula>
+        <errorMessage>You cannot create child records of the event because you do not have authorized access to the events office/division</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_OneRetroStepUpMustStartWithZero</fullName>
+        <active>true</active>
+        <description>At least one retro/step up child record must start with zero</description>
+        <errorConditionFormula>RetroStepUpStartAtZero__c  = false</errorConditionFormula>
+        <errorMessage>At least one of the Artist Retro/Step Up detail records for this Deal must have a starting range of zero.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_OtherTalentDescription</fullName>
+        <active>true</active>
+        <description>Other Talent Description required if Other Talent Amount &gt; 0</description>
+        <errorConditionFormula>ISBLANK(OtherTalentDescription__c) &amp;&amp;  OtherTalentAmount__c &gt; 0 &amp;&amp; !$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorDisplayField>OtherTalentDescription__c</errorDisplayField>
+        <errorMessage>Other Talent Description required if Other Talent Amount &gt; 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_PrimaryHeadlinerArtist</fullName>
+        <active>true</active>
+        <description>If &apos;Duplicate Primary Headliner Artist?&apos; is checked, then user can&apos;t save the deal record.</description>
+        <errorConditionFormula>DuplicatePrimaryHeadlinerArtist__c = TRUE &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</errorConditionFormula>
+        <errorMessage>You can only select one Primary Headliner per Event.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

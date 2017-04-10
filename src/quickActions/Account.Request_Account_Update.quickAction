@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Custom visualforce action that calls the LNE_RequestAccountUpdate VF page. This allows capture of text to record a change request for any account record type.</description>
+    <height>250</height>
+    <label>Request Record Update</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <page>LNE_RequestAccountUpdate</page>
+    <type>VisualforcePage</type>
+    <width>-100</width>
+</QuickAction>

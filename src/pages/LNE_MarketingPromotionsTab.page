@@ -1,0 +1,94 @@
+<!--
+/**
+ * Marketing Promotions visualforce page.
+ * @author Josh Krinsky
+ * /apex/LNE_MarketingPromotionsTab
+ **/
+-->
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" standardController="AdPlan__c" extensions="LNE_MarketingPromotionsTab_CX">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/underscore.js")}" />
+            <apex:includeScript value="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"/>
+
+            <!-- PostMessage communicates between windows -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+            <!-- Used to simplify remoting calls -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/remoting/RemotingHelper.js')}" />
+            <!-- handles routing of PostMessages -->
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_MessagePostOffice.js')}" />
+            <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+        </head>
+        <body>
+
+            <script>
+
+                var adPlan = JSON.parse("{!JSENCODE(adPlan_json)}");
+                var ticketScales = JSON.parse("{!JSENCODE(ticketScales_json)}");
+                var promoScales = JSON.parse("{!JSENCODE(promoScales_json)}");
+
+                window.onerror = function( errMsg, url, lineNumber ){
+                    console.log( 'uncaught javascript exception found' );
+                    return( false );
+                }
+
+                this.postOffice = new LNE_MessagePostOffice(this);
+
+                this.postOffice.addTypeHandler( 'promoGridReady', function(postMessage){
+                    var initMessage = new LNE_PostMessage( 'LNE_MarketingPromotionsTab','initPromotionsGrid',true,{adPlan:adPlan, ticketScales:ticketScales, promoScales:promoScales});
+                    initMessage.dispatch( targetFrame.contentWindow );
+
+                });
+
+                this.postOffice.addTypeHandler( 'promoScaleUpdate', function(postMessage){
+                    //console.log('parent.promoScaleUpdate!!!');
+                    //console.log('promoScale:');
+                    //console.log(postMessage.data.promoScale);
+                    var addPromoScale = postMessage.data.promoScale.Id == undefined;
+                    remotingHelper( 'LNE_MarketingPromotionsTab_CX.savePromoScale', postMessage.data.promoScale,
+                            function( promoScale ){
+
+                                if(addPromoScale){
+                                    //add the promo scale to the promo scales array if it wasn't there.
+                                    promoScales.push(promoScale);
+                                }else{
+                                    //replace the promo scale in the promo scales array with the updated one, just in case there were additional changes to it
+                                    for(var i=0; i<promoScales.length; i++){
+                                        if(promoScales[i].Id == promoScale.Id){
+                                            promoScales.splice(i, 1, promoScale);
+                                            break;
+                                        }
+                                    }
+                                }
+
+
+                                var responseMessage = new LNE_PostMessage( 'TEST_PostMessageParent','savePromoScaleResponse',true,{promoScale:promoScale});
+                                responseMessage.dispatch( targetFrame.contentWindow );
+                            },
+                            function( errorMessage ){
+                                console.log('failed to save promoScale: ' + errorMessage);
+                            }
+                    );
+                });
+
+                this.postOffice.listenForPostEvents(window);
+
+            </script>
+
+            <!-- include link for gridbuddy -->
+            <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+            <iframe id="gridFrame" scrolling="auto" height="1000" width="100%" frameborder="0" data-grid-name="promotionsgrid" src="{!gridPage}gname=Promotions Grid&fpf=AdPlan__c&fpv={!Id}&sh=0&ssb=0&sbb=1"></iframe>
+
+            <script>
+
+                var jq = $.noConflict();
+                var targetFrame = jq( 'iframe#gridFrame' )[0];
+
+            </script>
+        </body>
+    </html>
+</apex:page>

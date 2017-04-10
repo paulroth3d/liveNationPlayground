@@ -1,0 +1,28 @@
+## What was the Short Project Identifier (Callsign) for your project
+## (This was used when setting up your repostitory )
+#Ex: SWS
+phabProjectShort=
+
+## Phabricator ID for your project
+## (If you are unsure, or wish to find it
+## visit https://phabricator.modelmetricssoftware.com/conduit/method/repository.query/
+## and find 'phid' for your project
+#EX: PHID-REPO-ztqo2zsbpsjyphjlfzh2
+phabProjectId=
+
+## Path to the source code
+#EX: ../src
+srcPath=
+
+## Path to the output directory
+#EX: output
+outputPath=
+
+## Internal Commit regex
+## (Note: you must double escape backspaces)
+#EX: @INTERNAL\\b
+#EX: (@INTERNAL\\b|CONFIG:|WHITESPACE:)
+internalCommitRegex=(@INTERNAL\\b|CONFIG:|WHITESPACE:)
+
+#phabricatorSession=
+#phabricatorUserId=

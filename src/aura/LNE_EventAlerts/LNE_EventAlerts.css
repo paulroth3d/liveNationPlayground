@@ -1,0 +1,9 @@
+.THIS {
+    position:relative;
+}
+.THIS div.slds-abs {
+    position: absolute;
+}
+.THIS .slds-notify__close {
+    color: #FFF;
+}

@@ -1,0 +1,663 @@
+<!--
+/**
+ *  Manual Ticket Count Page
+ *  US199
+ *  @author Vinay -...
+ *  @Version US199 
+ *  /apex/LNE_MassManualTicketCounts
+**/
+-->
+<apex:page controller="LNE_MassManualTicketCounts_C" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+    <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+	<apex:stylesheet value="{! urlFor( $Resource.LNE_GeneralResources, 'css/lib/jquery-ui.css' )}" />
+
+    <!-- PostMessage communicates between windows -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage2.js")}" />
+    <!-- Used to simplify remoting calls -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/remoting/RemotingHelper.js")}" />
+    <!-- handles routing of PostMessages -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_MessagePostOffice.js")}" />
+    <!-- JQuery, not essential -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/jquery-min.js")}" />
+	<apex:includeScript value="{! urlFor( $Resource.LNE_GeneralResources, 'js/lib/jquery-ui.min.js' )}" />
+
+    <!-- underscore, again not essential -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/lib/underscore.js")}" />
+    
+    <style>
+    	.mass-counts-page .form-container {
+    		margin: 8px 0 16px 0;
+    	}
+    	.mass-counts-page .slds-table {
+    		width: 98%;
+    	}
+    	.mass-counts-page .slds-table.events-table {
+    		max-height: 340px;
+    		overflow: auto;
+    	}
+    	.mass-counts-page .slds-table .slds-form-element {
+    		width: 70%;
+    	}
+    	.mass-counts-page .slds-table.man-rows {
+    		margin-bottom: 8px;
+    	}
+    	.mass-counts-page .slds-table.man-rows:hover {
+    		cursor: pointer;
+    	}
+    	.mass-counts-page .slds-table.man-rows .slds-form-element {
+    		width: 60%;
+    	}
+    	.mass-counts-page .selected-waiting-edt {
+    		background-color: #F7F7F7;
+    	}
+    	.mass-counts-page .selected-edt {
+    		background-color: #EEEEEE;
+    	}
+    	.mass-counts-page .button-container {
+    		margin: 8px 2% 0 8px;
+    	}
+    	.mass-counts-page .button-container input {
+    		float: right;
+    	}
+    	.mass-counts-page h3 {
+    		margin: 8px 0 8px 0;
+    	}
+    	.mass-counts-page .search-results-container {
+    		height: 280px !important;
+    		overflow-y: auto;
+    		border-bottom: 1px solid #EEE;
+    		margin-bottom: 30px;
+    	}
+    	.mass-counts-page .search-results-box {
+    		position: relative;
+    		top: -30px;
+    	}
+    	.error.hide {
+    		display: none;
+    	}
+    	.error.show {
+    		display: block;
+    	}
+    	.error {
+    		color: red;
+    		display: block;
+    		margin: 8px 0 !important;
+    	}
+		.slds-has-error {
+			color: #c23934 !important;
+		}
+    </style>
+
+	<div class="rome-lds mass-counts-page">
+		<apex:form styleClass="form-container">
+
+			<h3 class="slds-text-heading--medium slds-m-bottom--x-small">Search</h3>
+
+			<p id="search-error" class="error hide">
+				Please select at least one of the following: Market, Venue and/or Artist in order to search.
+			</p>
+			<p id="search-error-dates" class="error hide">
+				You must provide an event on or after date
+			</p>
+
+			<table class="search-table slds-table slds-table--bordered slds-table--fixed-layout" role="grid">
+				<thead>
+					<tr class="slds-line-height--reset">
+						<th class="slds-text-title--caps" scope="col">
+							<div class="slds-truncate" title="Start Time">Market</div>
+						</th>
+						<th class="slds-text-title--caps" scope="col">
+							<div class="slds-truncate" title="Event Name">Venue</div>
+						</th>
+						<th class="slds-text-title--caps" scope="col">
+							<div class="slds-truncate" title="Event Name">Artist</div>
+						</th>
+						<th class="slds-text-title--caps" scope="col">
+							<div class="slds-truncate" title="Feed Ticket Count">Event On or After</div>
+						</th>
+						<th class="slds-text-title--caps" scope="col">
+							<div class="slds-truncate" title="Feed Ticket Count">Event On or Before</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td role="gridcell">
+							<div class="slds-form-element">
+								<div class="slds-form-element__control">
+									<apex:inputField styleClass="slds-input" html-data-control="market-search-input" value="{!eventDateTimeSearch.Market__c}" />
+								</div>
+							</div>
+						</td>
+						<td role="gridcell">
+							<div class="slds-form-element">
+								<div class="slds-form-element__control">
+									<apex:inputText styleClass="slds-input" html-data-control="venue-search-input" value="{!selectedVenueName}" />
+								</div>
+							</div>
+						</td>
+						<td role="gridcell">
+							<div class="slds-form-element">
+								<div class="slds-form-element__control">
+									<apex:inputText styleClass="slds-input" html-data-control="artist-search-input" value="{!eventDateTimeSearch.Artists__c}" />
+								</div>
+							</div>
+						</td>
+						<td role="gridcell">
+							<div class="slds-form-element">
+								<div class="slds-form-element__control">
+									<apex:inputField styleClass="slds-input on-or-after-in" html-data-control="event-after-search-input" type="date" value="{!eventDateTimeSearch.EventDate__c}" />
+								</div>
+							</div>
+						</td>
+						<td role="gridcell">
+							<div class="slds-form-element">
+								<div class="slds-form-element__control">
+									<apex:inputField styleClass="slds-input"  html-data-control="event-before-search-input" type="date" value="{!eventDateTimeSearch.EventEndDate__c}" />
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="button-container slds-clearfix">
+				<apex:commandButton html-data-control="search" styleClass="slds-button slds-button--brand" action="{!runSearch}" value="Search" />
+			</div>
+		</apex:form>
+		
+		<div class='search-results-box'>
+
+			<apex:outputPanel layout="none" id="datetime-op">
+			<apex:outputPanel layout="none" rendered="{!eventDateTimeWrapperList.size != 0}">
+				<div class='search-results-container'>
+					
+					<h3 class="slds-text-heading--medium slds-m-bottom--small">Search Results</h3>
+					
+					<table class="events-table slds-table slds-table--bordered slds-table--fixed-layout" role="grid">
+						<thead>
+							<tr class="slds-line-height--reset">
+								<th focusable="true" class="slds-is-sortable slds-is-resizable slds-text-title--caps" data-control="sort" scope="col">
+									<a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0">
+										<span class="slds-assistive-text">Sort Event Date</span>
+										<span class="slds-truncate" title="Name">Event Date</span>
+										<div class="slds-icon_container">
+		
+							  			</div>
+							  			<span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+									</a>
+						  		</th>
+								<th focusable="true" class="slds-text-title--caps" scope="col">
+									<div class="slds-truncate" title="Start Time">Start Time</div>
+								</th>
+								<th focusable="true" class="slds-text-title--caps" scope="col">
+									<div class="slds-truncate" title="Event Name">Event Name</div>
+								</th>
+								<th focusable="true" class="slds-text-title--caps" scope="col">
+									<div class="slds-truncate" title="Venue Name">Venue</div>
+								</th>
+								<th focusable="true" class="slds-text-title--caps" scope="col">
+									<div class="slds-truncate" title="Feed Ticket Count">Feed Ticket Count</div>
+								</th>
+								<th focusable="true" class="slds-text-title--caps" scope="col">
+									<div class="slds-truncate" title="Feed Gross Sales">Feed Gross Sales</div>
+								</th>
+								<th colspan="2" focusable="true" class="slds-text-title--caps" scope="col">
+									<div class="slds-truncate" title="Feed Gross Sales">Last Feed Date</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<apex:repeat value="{!eventDateTimeWrapperList}" var="ev">
+								<apex:form >
+									<tr data-control="event-row">
+										<td role="gridcell">
+											<div class="slds-truncate" title="Start Time">
+												<apex:outputText value="{0, date, MMMM d','  yyyy}">
+												    <apex:param value="{!ev.eventDateTime.EventDate__c}" /> 
+												</apex:outputText>
+											</div>
+										</td>
+										<td role="gridcell">
+											<div class="slds-truncate" title="Start Time">{!ev.eventDateTime.StartTime__c}</div>
+										</td>
+										<td role="gridcell">
+											<div class="slds-truncate" title="Event Name"><a onclick='openRecord( "{! ev.eventDateTime.Event__c }"); return(false);'>{!ev.eventDateTime.EventName__c}</a></div>
+										</td>
+										<td role="gridcell">
+											<div class="slds-truncate" title="Venue Name">{!ev.eventDateTime.Venue__r.VenueName__c}</div>
+										</td>
+										<td role="gridcell">
+											<div class="slds-truncate" title="Feed Ticket Count"><apex:outputText value="{0, number, ###,###,### }">
+												    <apex:param value="{!ev.FeedTicketCount}" /> 
+												</apex:outputText></div>
+										</td>
+										<td role="gridcell">
+											<div class="slds-truncate" title="Feed Gross Sales"><apex:outputText value="{0, number, ###,###,##0.00 }">
+												    <apex:param value="{!ev.FeedGrossSales}" /> 
+												</apex:outputText></div>
+										</td>
+										<td colspan="2" role="gridcell">
+											<div class="slds-truncate" title="Feed Gross Sales">
+												<apex:outputText value="{0, date, MMMM d','  yyyy}">
+												    <apex:param value="{!ev.LastFeedDate}" /> 
+												</apex:outputText>
+											</div>
+										</td>
+										<td style="display: none;">
+											<div class="button">
+												<!-- @TODO: refactor to a command function instead -->
+										 		<apex:commandLink value="refresh" action="{!getManualTicketCountList}" rerender="manual-op" html-data-control="show-manual-rows" styleClass="slds-button slds-button--brand" oncomplete="handleEventDateTimeSelected(this);return(false);">
+										            <apex:param name="Id"
+										                value="{!ev.eventDateTime.Id}"
+										                assignTo="{!eventDateTimeId}"
+										                />
+										        </apex:commandLink>
+											</div>
+										</td>
+									</tr>
+								</apex:form>
+							</apex:repeat>
+						</tbody>
+					</table>
+					
+				</div>
+			</apex:outputPanel>
+			</apex:outputPanel>
+			
+			
+			<apex:outputPanel layout="none" id="manual-op">
+			<apex:outputPanel layout="none" rendered="{!eventDateTimeWrapperList.size != 0}">
+			
+			<apex:form styleClass="form-container mtc-form">
+				
+				<div style='pageMessages'>
+					<apex:pageMessages />
+				</div>
+	
+				<!-- @TODO: for some reason, adding in this rendered
+					does not rerender when the manual-op is rerendered
+					rendered="{! if( eventDateTimeSelected != null, true, false ) }}"
+				-->
+				<apex:outputPanel layout="none" id="man-count-results" >
+					
+					<h3 class="slds-text-heading--medium slds-m-bottom--small slds-m-top--medium">
+						<span>{! if( isBlank( eventDateTimeSelected.StartTime__c ), '', 'Counts for ' ) }</span>
+						<apex:outputText value="{0, date, MMMM d','  yyyy}">
+						    <apex:param value="{! eventDateTimeSelected.EventDate__c}" /> 
+						</apex:outputText>
+						<span>{! if( isBlank( eventDateTimeSelected.StartTime__c ), '', 'at ' + eventDateTimeSelected.StartTime__c ) }</span>
+					</h3>
+					
+					<table class="man-rows slds-table slds-table--bordered slds-table--cell-buffer man-count-grid">
+						<thead>
+							<tr class="slds-text-title--caps">
+								<th scope="col">
+									<div class="slds-truncate" title="Ticket Sales Date *">Ticket Sales Date *</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Ticket Count *">Ticket Count *</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Gross Sales *">Gross Sales *</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Comps">Comps</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Kills">Kills</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Holds">Holds</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Open">Open</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Capacity">Capacity</div>
+								</th>
+								<th scope="col">
+									<div class="slds-truncate" title="Last Modified By">Last Modified</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<apex:repeat value="{!manualTicketCountList}" var="tc">
+								<tr html-data-id="{! tc.Id }">
+									<td data-label="Ticket Sales Date *">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control">
+												<apex:inputField styleClass="slds-input" value="{!tc.TicketSalesDate__c}" html-data-control="ticket-sales-date-input" html-data-required="required" />
+											</div>
+										</div>
+									</td>
+									<td data-label="Ticket Count *">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control">
+												<apex:inputField styleClass="slds-input ticket-count-in number-input" value="{!tc.TicketCount__c}" html-data-control="ticket-count-input" html-data-required="required" />
+											</div>
+										</div>
+									</td>
+									<td data-label="Gross Sales *">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control">
+												<apex:inputField styleClass="slds-input gross-sales-in number-input" value="{!tc.GrossSales__c}" html-data-control="gross-sales-input" html-data-required="required" />
+											</div>
+										</div>
+									</td>
+									<td data-label="Comps">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control">
+												<apex:inputField styleClass="slds-input comps-in number-input" value="{!tc.Comps__c}" html-data-control="comps-input" />
+											</div>
+										</div>
+									</td>
+									<td data-label="Kills">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control">
+												<apex:inputField styleClass="slds-input kills-in number-input" value="{!tc.Kills__c}" html-data-control="kills-input" />
+											</div>
+										</div>
+									</td>
+									<td data-label="Holds">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control">
+												<apex:inputField styleClass="slds-input holds-in number-input" value="{!tc.Holds__c}" html-data-control="holds-input" />
+											</div>
+										</div>
+									</td>
+									<td data-label="Open">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control">
+												<apex:inputField styleClass="slds-input open-in number-input" value="{!tc.Open__c}" html-data-control="open-input" />
+											</div>
+										</div>
+									</td>
+									<td data-label="Capacity">
+										<div class="slds-form-element">
+											<div class="slds-form-element__control capacity-out">
+												<apex:outputText value="{0, number, ###,###,### }">
+												    <apex:param value="{! (BLANKVALUE(tc.TicketCount__c,0) + BLANKVALUE(tc.Comps__c,0) + BLANKVALUE(tc.Kills__c,0) + BLANKVALUE(tc.Holds__c,0) + BLANKVALUE(tc.Open__c,0)) }" /> 
+												</apex:outputText>
+											</div>
+										</div>
+									</td>
+									<td data-label="Last Modified By">
+										<div class="slds-truncate">
+											<apex:outputPanel rendered="{! if( tc.id == null || tc.lastModifiedDate == null, false, true ) }">
+												{! tc.lastModifiedBy.Name } on
+												<apex:outputText value="{0, date, MMMM d','  yyyy}">
+												    <apex:param value="{! tc.LastModifiedDate }" /> 
+												</apex:outputText>
+											</apex:outputPanel>
+										</div>
+									</td>
+								</tr>
+							</apex:repeat>
+						</tbody>
+					</table>
+		
+					<div class="button-container slds-clearfix">
+						<apex:commandButton styleClass="slds-button slds-button--brand" action="{!saveManualTicketCountList}" value="Update" rerender="manual-op" rendered="{! eventDateTimeSelected.EventDate__c != null }" />
+					</div>
+					
+				</apex:outputPanel>
+			</apex:form>
+			</apex:outputPanel>
+			</apex:outputPanel>
+		
+		</div>
+
+		<!-- page scripts -->
+		<script type='text/javascript'>
+			console.log( 'page is ready' );
+	
+			jQuery(document).ready( function(){
+				console.log( 'document is now ready' );
+				
+				jQuery ('div.search-results-box').on( 'change', 'input.ticket-count-in, ' +
+					'input.comps-in, ' +
+					'input.kills-in, ' +
+					'input.holds-in, ' +
+					'input.open-in   ', handleChange
+				);
+				
+				jQuery( 'div.search-results-box' ).on( 'change', '.mtc-form input', function( evt ){
+					var target = evt.target;
+					console.log( 'input changed - checking for required' );
+					//debugger;
+					
+					var parent = jQuery( target ).closest( 'tr' );
+					var isEmptyRow = true;
+					var rowId = parent.attr( "html-data-id");
+					
+					if( rowId ){
+						//-- we're on an existing row
+						isEmptyRow = false;
+					} else {
+						jQuery( parent ).find( 'input' ).each( function( index, el ){
+							var val = jQuery( el ).val();
+							if( jQuery( el ).val() ){
+								isEmptyRow = false;
+							}
+						});
+					}
+					
+					console.log( 'isEmptyRow:' + isEmptyRow );
+					
+					if( isEmptyRow ){
+						jQuery( parent ).find( 'input[data-required="required"]' ).removeAttr( "required" );
+					} else {
+						jQuery( parent ).find( 'input[data-required="required"]' ).attr( "required", "required" );
+					}
+				});
+				
+				jQuery( 'div.search-results-box' ).on( 'change', '.mtc-form input.number-input', function( evt ){
+					console.log( 'changed a number' );
+					var val = jQuery( evt.target ).val();
+					
+					if( val ){
+						var val2 = parseInt( val );
+						if( isNaN( val2 ) ){
+							jQuery( evt.target ).addClass( 'slds-has-error' );
+							//jQuery( evt.target ).val( '' );
+						} else {
+							jQuery( evt.target ).removeClass( 'slds-has-error' );
+						}
+					}
+				});
+
+				//-- initalize the autocomplete from jQuery UI
+				jQuery( '[data-control="venue-search-input"]' ).autocomplete({
+					//-- delay in Milliseconds - to allow the user to type
+					delay: 500,
+					//-- minimum characters entered before searching.
+					minLength: 3,
+					//-- item that sets the data source
+					//-- @param request { term: (String) - search String } : the search being requested
+					//-- @param responseCallback (function( string[] ) ) - callback to be called with the list of the auto fill values.
+					source: function( request, responseCallback ){
+						doVenueSearch( request.term, responseCallback );
+					}
+				});
+
+				//-- initalize the autocomplete from jQuery UI
+				jQuery(  '[data-control="artist-search-input"]' ).autocomplete({
+					//-- delay in Milliseconds - to allow the user to type
+					delay: 500,
+					//-- minimum characters entered before searching.
+					minLength: 3,
+					//-- item that sets the data source
+					//-- @param request { term: (String) - search String } : the search being requested
+					//-- @param responseCallback (function( string[] ) ) - callback to be called with the list of the auto fill values.
+					source: function( request, responseCallback ){
+						doArtistSearch( request.term, responseCallback );
+					}
+				});
+
+				jQuery('[data-control="sort"]').on('click', function(ev) {
+					console.log('clicked sort');
+					console.log(jQuery(ev.target));
+				    var tb = jQuery(ev.target).closest('table');
+				    var body = tb.find('tbody').first();
+				    jQuery(body).each(function(index,el){
+				      var arr = jQuery.makeArray($("tr",this).detach());
+				      arr.reverse();
+				        jQuery(this).append(arr);
+				    });
+				});
+
+				jQuery('.events-table').on('click', 'tr', function(ev) {
+					
+					//-- @TODO: selectng a table row is called twice depending on where it is selected
+					//-- check so this is only called once...
+					
+					var row = jQuery( ev.target ).closest( 'tr ' );
+					
+					//-- @TODO: look into action functions instead...
+					var button = jQuery( row ).find( '[data-control="show-manual-rows"]' )[0];
+					button.click();
+					
+					//-- color the row
+					jQuery( '.selected-edt' ).removeClass( 'selected-edt' );
+					jQuery( '.selected-waiting-edt' ).removeClass( 'selected-waiting-edt' );
+					jQuery( row ).addClass( 'selected-waiting-edt' );
+				});
+
+				jQuery('[data-control="search"]').on('click', function(ev) {
+					var market = jQuery('[data-control="market-search-input"]').find(":selected").text();
+					var venue = jQuery('[data-control="venue-search-input"]').val();
+					var artist = jQuery('[data-control="artist-search-input"]').val();
+					var onOrAfter = jQuery('[data-control="event-after-search-input"]').val();
+					console.log('market is ' + market);
+					console.log('venue us ' + venue);
+					console.log('artist is ' + artist);
+
+					if (market === '--None--' && !venue && !artist) {
+						ev.preventDefault();
+						jQuery('#search-error').addClass('show').removeClass('hide');
+					} else {
+						jQuery('#search-error').addClass('hide').removeClass('show');
+					}
+					
+					if ( !onOrAfter ) {
+						ev.preventDefault();
+						jQuery('#search-error-dates').addClass('show').removeClass('hide');
+					} else {
+						jQuery('#search-error-dates').addClass('hide').removeClass('show');
+					}
+				});
+			});
+			
+			/**
+			 *  Handles if an eventdatetime was selected
+			 **/
+			function handleEventDateTimeSelected( el ){
+				console.log( 'event date time was selected' );
+				
+				var row = jQuery( el ).closest('tr' );
+				
+				jQuery( row ).removeClass( 'selected-waiting-edt' ).addClass( 'selected-edt' );
+			}
+			
+			/**
+			 *  handler if the comps the kills or holds change
+			 **/
+			function handleChange( evt ){
+				var target = evt.target;
+				console.log( 'change' );
+				//debugger;
+				
+				var parent = jQuery( target ).closest( 'tr' )[0];
+				var ticketCount = jQuery( parent ).find( 'input.ticket-count-in' ).val();
+				var comps = jQuery( parent ).find( 'input.comps-in' ).val();
+				var kills = jQuery( parent ).find( 'input.kills-in' ).val();
+				var holds = jQuery( parent ).find( 'input.holds-in' ).val();
+				var open = jQuery( parent ).find( 'input.open-in' ).val();
+				
+				var ticketCountVal = parseInt( ticketCount ) || 0;
+				var compsVal = parseInt( comps ) || 0;
+				var killsVal = parseInt( kills ) || 0;
+				var holdsVal = parseInt( holds ) || 0;
+				var openVal = parseInt( open ) || 0;
+				
+				var newCapacity = ticketCountVal + compsVal + killsVal + holdsVal + openVal;
+				
+				jQuery( parent ).find( 'div.capacity-out' ).text( newCapacity.toLocaleString() );
+			}
+			
+			/**
+			 * Opens a given record
+			 * @param recordId (Id)
+			 * @boolean inNewWindow (boolean-false)
+			 **/
+			function openRecord( recordId, inNewWindow ){
+				if( !inNewWindow ){
+					inNewWindow = false;
+				}
+				
+				if( typeof $A !== "undefined" ){
+					console.log( "$A is defined" );
+				} else if( typeof sforce !== "undefined" &&
+					typeof sforce.one !== "undefined"
+				){
+					console.log( 'salesforce.one is defined' );
+				} else {
+					console.log( "$A and sforce.one are not defined" );
+				}
+				if( inNewWindow ){
+					window.open( "/" + recordId );
+				} else {
+					window.open( "/" + recordId, "_blank" );
+				}
+			}
+
+			/**
+			 * Performs the remoting request.
+			 * @param search (string) - value to search on
+			 * @param successCallback (function( string[] ) ) - callback to be called with the list of the auto fill values.
+			 **/
+			function doVenueSearch( search, successCallback ){
+				
+				/**
+				 * calls a remoting method
+				 * @param (String) ApexClass.RemotingMethod
+				 * @param ... any additional arguments
+				 * @param (function) - success function called with the results from the remoting call
+				 * @param (function) - failure function called if an error occurred while calling remoting
+				 **/
+				remotingHelper( 'LNE_MassManualTicketCounts_C.searchVenues', search,
+					function( searchResults ){
+						console.log( 'searchResults:' + searchResults );
+						successCallback( searchResults );
+					}, function( errorMessage ){
+						console.error( 'there was an error:' + errorMessage );
+					}
+				);
+			}
+
+			/**
+			 * Performs the remoting request.
+			 * @param search (string) - value to search on
+			 * @param successCallback (function( string[] ) ) - callback to be called with the list of the auto fill values.
+			 **/
+			function doArtistSearch( search, successCallback ){
+				
+				/**
+				 * calls a remoting method
+				 * @param (String) ApexClass.RemotingMethod
+				 * @param ... any additional arguments
+				 * @param (function) - success function called with the results from the remoting call
+				 * @param (function) - failure function called if an error occurred while calling remoting
+				 **/
+				remotingHelper( 'LNE_MassManualTicketCounts_C.searchArtists', search,
+					function( searchResults ){
+						console.log( 'searchResults:' + searchResults );
+						successCallback( searchResults );
+					}, function( errorMessage ){
+						console.error( 'there was an error:' + errorMessage );
+					}
+				);
+			}
+		</script>
+	</div>
+</apex:page>

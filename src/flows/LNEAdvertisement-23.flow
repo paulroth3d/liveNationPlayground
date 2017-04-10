@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <processMetadataValues>
+            <name>apexSelection</name>
+            <value>
+                <stringValue>LNE_ProcessBuilderNoAction</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Do Nothing</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <actionName>LNE_ProcessBuilderNoAction</actionName>
+        <actionType>apex</actionType>
+    </actionCalls>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Bypass Automation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision11</name>
+        <label>myDecision11</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision14</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_12</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_12</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_12_A1</targetReference>
+            </connector>
+            <label>Commission Override</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision14</name>
+        <label>myDecision14</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision16</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_15</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_15</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_15_A1</targetReference>
+            </connector>
+            <label>Non LNE Budget</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision16</name>
+        <label>myDecision16</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_17</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_17</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_17_A1</targetReference>
+            </connector>
+            <label>Update Costs to Ad Plan</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>Default Format</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision9</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>New Format for Vendor</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision9</name>
+        <label>myDecision9</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision11</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_10</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_10</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_10_A1</targetReference>
+            </connector>
+            <label>Default Market</label>
+        </rules>
+    </decisions>
+    <description>Advertisement workflow to fill defaults</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE([Advertisement].RecordType.DeveloperName,
+&quot;Radio&quot;,
+IF(ISNULL([Advertisement].Commission__c),
+  IF(ISNULL([Advertisement].AdPlan__r.RadioDefaultCommission__c), 0, [Advertisement].AdPlan__r.RadioDefaultCommission__c),
+  [Advertisement].Commission__c
+),
+
+&quot;Digital&quot;,
+IF(ISNULL([Advertisement].Commission__c),
+  IF(ISNULL([Advertisement].AdPlan__r.DigitalDefaultCommission__c), 0, [Advertisement].AdPlan__r.DigitalDefaultCommission__c),
+  [Advertisement].Commission__c
+),
+
+&quot;Television&quot;,
+IF(ISNULL([Advertisement].Commission__c),
+  IF(ISNULL([Advertisement].AdPlan__r.TVDefaultCommission__c), 0 , [Advertisement].AdPlan__r.TVDefaultCommission__c),
+  [Advertisement].Commission__c
+),
+
+&quot;Print&quot;,
+IF(ISNULL([Advertisement].Commission__c),
+  IF(ISNULL([Advertisement].AdPlan__r.PrintDefaultCommission__c), 0, [Advertisement].AdPlan__r.PrintDefaultCommission__c),
+  [Advertisement].Commission__c
+),
+
+&quot;Outdoor&quot;,
+IF(ISNULL([Advertisement].Commission__c),
+  IF(ISNULL([Advertisement].AdPlan__r.OutdoorDefaultCommission__c), 0, [Advertisement].AdPlan__r.OutdoorDefaultCommission__c),
+  [Advertisement].Commission__c
+),
+
+&quot;ProductionMiscellaneous&quot;,
+0,
+
+0)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_13_myRule_12_A1_EffectiveCommission_c</name>
+        <dataType>Number</dataType>
+        <expression>CASE({!myVariable_current.RecordType.DeveloperName},
+&quot;Radio&quot;,
+IF(ISNULL({!myVariable_current.Commission__c}),
+  IF(ISNULL({!myVariable_current.AdPlan__r.RadioDefaultCommission__c}), 0, {!myVariable_current.AdPlan__r.RadioDefaultCommission__c}),
+  {!myVariable_current.Commission__c}
+),
+
+&quot;Digital&quot;,
+IF(ISNULL({!myVariable_current.Commission__c}),
+  IF(ISNULL({!myVariable_current.AdPlan__r.DigitalDefaultCommission__c}), 0, {!myVariable_current.AdPlan__r.DigitalDefaultCommission__c}),
+  {!myVariable_current.Commission__c}
+),
+
+&quot;Television&quot;,
+IF(ISNULL({!myVariable_current.Commission__c}),
+  IF(ISNULL({!myVariable_current.AdPlan__r.TVDefaultCommission__c}), 0 , {!myVariable_current.AdPlan__r.TVDefaultCommission__c}),
+  {!myVariable_current.Commission__c}
+),
+
+&quot;Print&quot;,
+IF(ISNULL({!myVariable_current.Commission__c}),
+  IF(ISNULL({!myVariable_current.AdPlan__r.PrintDefaultCommission__c}), 0, {!myVariable_current.AdPlan__r.PrintDefaultCommission__c}),
+  {!myVariable_current.Commission__c}
+),
+
+&quot;Outdoor&quot;,
+IF(ISNULL({!myVariable_current.Commission__c}),
+  IF(ISNULL({!myVariable_current.AdPlan__r.OutdoorDefaultCommission__c}), 0, {!myVariable_current.AdPlan__r.OutdoorDefaultCommission__c}),
+  {!myVariable_current.Commission__c}
+),
+
+&quot;ProductionMiscellaneous&quot;,
+0,
+
+0)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF([Advertisement__c].IsSplit__c,
+[Advertisement__c].SplitPct__c / 100 * [Advertisement__c].CalculatedGross__c,
+[Advertisement__c].CalculatedGross__c)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_18_myRule_17_A1_GrossCostToAdPlan_c</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!myVariable_current.IsSplit__c},
+{!myVariable_current.SplitPct__c} / 100 * {!myVariable_current.CalculatedGross__c},
+{!myVariable_current.CalculatedGross__c})</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF([Advertisement__c].IsSplit__c,
+[Advertisement__c].SplitAmount__c,
+[Advertisement__c].CalculatedNet__c)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_19_myRule_17_A1_NetCostToAdPlan_c</name>
+        <dataType>Currency</dataType>
+        <expression>IF({!myVariable_current.IsSplit__c},
+{!myVariable_current.SplitAmount__c},
+{!myVariable_current.CalculatedNet__c})</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>TEXT(MONTH(TODAY())) &amp; &quot;/&quot; &amp; TEXT(DAY(TODAY())) &amp; &quot;/&quot; &amp; TEXT(YEAR(TODAY()))  &amp; &quot; &quot; &amp; $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &amp; &quot;:&quot; &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; &quot;Format Type changed to &quot; &amp; TEXT([Advertisement].Format__c) &amp; &quot; in Ad Plan. Please update if correct.&quot;</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myRule_5_A1_LatestAccountRequest_c</name>
+        <dataType>String</dataType>
+        <expression>TEXT(MONTH(TODAY())) &amp; &quot;/&quot; &amp; TEXT(DAY(TODAY())) &amp; &quot;/&quot; &amp; TEXT(YEAR(TODAY()))  &amp; &quot; &quot; &amp; $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &amp; &quot;:&quot; &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; &quot;Format Type changed to &quot; &amp; TEXT({!myVariable_current.Format__c}) &amp; &quot; in Ad Plan. Please update if correct.&quot;</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>$Setup.EnvironmentIds__c.IntegrationUser__c</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_5_A1_OwnerId</name>
+        <dataType>String</dataType>
+        <expression>$Setup.EnvironmentIds__c.IntegrationUser__c</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>TEXT(MONTH(TODAY())) &amp; &quot;/&quot; &amp; TEXT(DAY(TODAY())) &amp; &quot;/&quot; &amp; TEXT(YEAR(TODAY()))  &amp; &quot; &quot; &amp; $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &amp; &quot;:&quot; &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; &quot;Format Type changed to &quot; &amp; TEXT([Advertisement].Format__c) &amp; &quot; in Ad Plan. Please update if correct.&quot; &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; [Advertisement__c].Vendor__c.RequestedAccountUpdates__c</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_8_myRule_5_A1_RequestedAccountUpdates_c</name>
+        <dataType>String</dataType>
+        <expression>TEXT(MONTH(TODAY())) &amp; &quot;/&quot; &amp; TEXT(DAY(TODAY())) &amp; &quot;/&quot; &amp; TEXT(YEAR(TODAY()))  &amp; &quot; &quot; &amp; $User.FirstName &amp; &quot; &quot; &amp; $User.LastName &amp; &quot;:&quot; &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; &quot;Format Type changed to &quot; &amp; TEXT({!myVariable_current.Format__c}) &amp; &quot; in Ad Plan. Please update if correct.&quot; &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; SUBSTITUTE($Label.LineBreak, &quot;-&quot;, &quot;&quot;) &amp; {!myVariable_current.Vendor__c.RequestedAccountUpdates__c}</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>$Setup.GeneralSettings__c.BypassAutomation__c ||
+$Setup.GeneralSettings__c.BypassPBFlow__c</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>$Setup.GeneralSettings__c.BypassAutomation__c ||
+$Setup.GeneralSettings__c.BypassPBFlow__c</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISBLANK(TEXT([Advertisement__c].Market__c)) &amp;&amp;
+!ISBLANK([Advertisement__c].AdPlan__r.Event__c) &amp;&amp;
+!ISBLANK([Advertisement__c].AdPlan__r.Event__r.Venue__c) &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_10</name>
+        <dataType>Boolean</dataType>
+        <expression>ISBLANK(TEXT({!myVariable_current.Market__c})) &amp;&amp;
+!ISBLANK({!myVariable_current.AdPlan__r.Event__c}) &amp;&amp;
+!ISBLANK({!myVariable_current.AdPlan__r.Event__r.Venue__c}) &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+(ISNEW() || ISCHANGED([Advertisement__c].Commission__c) || [Advertisement__c].RecalculateCommission__c)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_12</name>
+        <dataType>Boolean</dataType>
+        <expression>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+(ISNEW() || ISCHANGED({!myVariable_current.Commission__c}) || {!myVariable_current.RecalculateCommission__c})</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+(ISNEW() || ISCHANGED([Advertisement__c].NonLNEBudget__c ))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_15</name>
+        <dataType>Boolean</dataType>
+        <expression>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+(ISNEW() || ISCHANGED({!myVariable_current.NonLNEBudget__c} ))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>!$Setup.GeneralSettings__c.BypassAutomation__c</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_17</name>
+        <dataType>Boolean</dataType>
+        <expression>!$Setup.GeneralSettings__c.BypassAutomation__c</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>ISBLANK(TEXT([Advertisement__c].Format__c)) &amp;&amp;
+!ISBLANK([Advertisement__c].Vendor__c) &amp;&amp;
+!ISBLANK(TEXT([Advertisement__c].Vendor__r.Format__c)) &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_3</name>
+        <dataType>Boolean</dataType>
+        <expression>ISBLANK(TEXT({!myVariable_current.Format__c})) &amp;&amp;
+!ISBLANK({!myVariable_current.Vendor__c}) &amp;&amp;
+!ISBLANK(TEXT({!myVariable_current.Vendor__r.Format__c})) &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+TEXT([Advertisement__c].Format__c) != TEXT([Advertisement__c].Vendor__c.Format__c) &amp;&amp;
+(
+(ISNEW() &amp;&amp; !ISBLANK(TEXT([Advertisement__c].Format__c))) ||
+TEXT(PRIORVALUE([Advertisement__c].Format__c)) != TEXT([Advertisement__c].Format__c)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5</name>
+        <dataType>Boolean</dataType>
+        <expression>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+TEXT({!myVariable_current.Format__c}) != TEXT({!myVariable_current.Vendor__c.Format__c}) &amp;&amp;
+(
+(ISNEW() &amp;&amp; !ISBLANK(TEXT({!myVariable_current.Format__c}))) ||
+TEXT(PRIORVALUE({!myVariable_current.Format__c})) != TEXT({!myVariable_current.Format__c})
+)</expression>
+    </formulas>
+    <interviewLabel>LNEAdvertisement-23_InterviewLabel</interviewLabel>
+    <label>LNE Advertisement</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Advertisement__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Advertisement__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_10_A1</name>
+        <label>Update Market</label>
+        <locationX>1000</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision11</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Market</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Market__c</field>
+            <value>
+                <elementReference>myVariable_current.AdPlan__r.Event__r.Venue__r.Market__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Advertisement__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Advertisement__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_12_A1</name>
+        <label>Update Effective Commission</label>
+        <locationX>1200</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision14</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Effective Commission</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>EffectiveCommission__c</field>
+            <value>
+                <elementReference>formula_13_myRule_12_A1_EffectiveCommission_c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Recalculate Commission</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecalculateCommission__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Advertisement__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Advertisement__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_15_A1</name>
+        <label>Assigned</label>
+        <locationX>1500</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_15_A2</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Non-LNE Budget</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>NonLNEBudget__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Has Non LNE Budget</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>HasNonLNEBudget__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Advertisement__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>criteria</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Advertisement__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_15_A2</name>
+        <label>Unassigned</label>
+        <locationX>1500</locationX>
+        <locationY>300</locationY>
+        <connector>
+            <targetReference>myDecision16</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>inputDataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Non-LNE Budget</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>operatorDataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>NonLNEBudget__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Has Non LNE Budget</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>HasNonLNEBudget__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Advertisement__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Advertisement__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_17_A1</name>
+        <label>Update Costs</label>
+        <locationX>1700</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Currency</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Gross Cost to Ad Plan</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>GrossCostToAdPlan__c</field>
+            <value>
+                <elementReference>formula_18_myRule_17_A1_GrossCostToAdPlan_c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Currency</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Net Cost to Ad Plan</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>NetCostToAdPlan__c</field>
+            <value>
+                <elementReference>formula_19_myRule_17_A1_NetCostToAdPlan_c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Advertisement__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Advertisement__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_3_A1</name>
+        <label>Update Format</label>
+        <locationX>300</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision4</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Format</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Format__c</field>
+            <value>
+                <elementReference>myVariable_current.Vendor__r.Format__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Advertisement__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Advertisement__c].Vendor</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_5_A1</name>
+        <label>Update Vendor to In Review</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision9</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Vendor__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Account Request</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>LatestAccountRequest__c</field>
+            <value>
+                <elementReference>formula_6_myRule_5_A1_LatestAccountRequest_c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Owner ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>formula_7_myRule_5_A1_OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Requested Account Updates</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RequestedAccountUpdates__c</field>
+            <value>
+                <elementReference>formula_8_myRule_5_A1_RequestedAccountUpdates_c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status__c</field>
+            <value>
+                <stringValue>In Review</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Advertisement__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Advertisement__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

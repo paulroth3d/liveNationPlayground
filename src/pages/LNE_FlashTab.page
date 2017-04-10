@@ -1,0 +1,203 @@
+<apex:page standardController="Event__c" extensions="LNE_FlashTab_CX,LNE_FinanceSubTabs_CX"
+    showHeader="false" sidebar="false" standardStylesheets="false" id="LNE_FlashTabPage"
+>
+    <!-- PostMessage communicates between windows -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_PostMessage2.js')}" />
+    <!-- handles routing of PostMessages -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_MessagePostOffice.js')}" />
+    <!-- JQuery, is essential to LNE_ResizeEvent -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/lib/jquery-min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Flash</title>
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+        </head>
+
+        <body class="rome-lds" id="LNE_FlashTab--body"
+        
+            data-event-id="{!Event__c.Id}"
+            data-event-flash-started="{!flashProcess}">
+            
+            <apex:form id="flashForm">
+                
+                <apex:outputPanel id="topHeader">
+                    <div class="slds-page-header" role="banner">
+                      <div class="slds-media slds-media--center">
+                        <div class="slds-media__body">
+                          <p class="slds-page-header__title slds-truncate" title="Flash">Flash</p>
+                          <p class="slds-text-body--small"><apex:outputText value="{!lastQueuedToOracle}"/></p>
+                        </div>
+                        <div class="slds-media__figure slds-media__figure--reverse">
+                          <apex:outputPanel>
+                            <button id="button-copy-flash" class="slds-button slds-button--neutral">Copy to Flash</button>
+                          </apex:outputPanel>
+                          <apex:outputPanel rendered="{!showCompleteFlashButton}">
+                            <button class="slds-button slds-button--neutral" onclick="completeFlash(); return(false);">Flash Complete</button>
+                          </apex:outputPanel>
+                          <apex:outputPanel rendered="{!NOT(showCompleteFlashButton)}">
+                            <button class="slds-button slds-button--neutral" disabled="true">Flash Completed</button>
+                          </apex:outputPanel>
+                          <apex:outputPanel rendered="{!showExportToOracleButton}">
+                            <button class="slds-button slds-button--neutral" onclick="exportToOracle(); return(false);">Export to Oracle</button>
+                          </apex:outputPanel>
+                          <apex:outputPanel rendered="{!NOT(showExportToOracleButton)}">
+                            <button class="slds-button slds-button--neutral" disabled="true">Export to Oracle</button>
+                          </apex:outputPanel>
+                        </div>
+                      </div>
+                    </div>
+                </apex:outputPanel>
+                
+                <apex:actionFunction action="{!exportToOracle}" name="exportToOracle" rerender="flashForm, topHeader" oncomplete="dispatchResults();  return( false );"/>
+                <apex:actionFunction action="{!completeFlash}" name="completeFlash" rerender="flashForm, topHeader" oncomplete="dipatchResults(); return( false );"/>
+            </apex:form>
+            
+            <apex:outputPanel rendered="{!NOT(flashProcess)}">
+
+            <div id='startFlashProcessLink'>
+                <apex:form >
+                <apex:commandLink rerender="LNE_FlashTabPage" value="Start Flash Process" action="{!startFlashProcess}" oncomplete="postRefreshMessage();" status="progressSpinner"/>
+                <apex:actionStatus id="progressSpinner">
+                                    <apex:facet name="start">
+                                        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                                            <span class="slds-assistive-text">Loading...</span>
+                                            <div class="slds-spinner__dot-a"></div>
+                                            <div class="slds-spinner__dot-b"></div>
+                                        </div>
+                                    </apex:facet>
+                                </apex:actionStatus>
+               </apex:form>
+            </div>
+            </apex:outputPanel>
+            
+            <apex:outputPanel rendered="{!flashProcess}">
+
+
+            <div id="all-grids-container">
+                <div id="grid-container">
+                    <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+
+                    <!-- Flash Grid -->
+                    <div id="grid-frame-flash">
+                      <iframe id="grid-frame-flash-iframe" data-grid-name="flashgrid" data-origin="{!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}" scrolling="auto" height="880" width="100%" frameborder="0" src="{!gridPage}gname=Flash%20Grid&fpf=Event__c&fpv={!Id}&sbb=0&sh=0&ssb=0"></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+
+             </apex:outputPanel>
+             
+            <!-- Keep at end of body to help load time and ensure jquery available -->
+            <script type="text/javascript">
+                
+                // keep everything within 1 global object for this page
+                lneFlashTab = {};
+
+                // common values
+                lneFlashTab = {
+                    gridId: 'grid-container',
+                    bodyId: 'LNE_FlashTab--body',
+                    eventId: ''
+                };
+
+                    
+                var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+
+                function postRefreshMessage() {
+                    var WINDOW_PAGE_NAME = 'LNE_FlashTab';
+                    var auraId = '{!$CurrentPage.parameters.auraId}';
+                    var messageType = 'saveComplete';
+                    var isSuccessful = true;
+
+                    var data = {
+                        auraId: auraId,
+                        src: window.location.href
+                    };
+
+                    var postMessage = new LNE_PostMessage( WINDOW_PAGE_NAME, messageType, isSuccessful, data );
+                    postMessage.dispatch( parent );
+
+                    location.reload(true);
+                }
+
+                //-- handle inbound PostMessages
+                this.postOffice = new LNE_MessagePostOffice(this);
+                
+                //-- handle any inbound events
+                this.postOffice.addTypeHandler( 'saveComplete', function( myPostMessage ){
+                    if( myPostMessage.data.src != window.location.href ){
+                        window.location.href=window.location.href;
+                    }
+                });
+                
+                postOffice.listenForPostEvents(window);
+                
+                
+        
+            function handlePageMessage( evt ){
+                console.log( "vf pageMessage received" );
+
+                var postMessage = new LNE_PostMessage();
+                if( postMessage.parse( evt )){
+                    if( postMessage.data.src != window.location.href ){
+                        console.log( "pay attention" );
+                        window.location.href=window.location.href;
+                    }   
+                }
+            }
+            
+            
+        
+            window.addEventListener( "message", handlePageMessage, false );
+            
+                function createApexURL(pageName) {
+                  var currentLocation = window.location.href;
+                  var ajaxURL = currentLocation.replace( 'gblite.', 'c.' );
+
+                  ajaxURL = ajaxURL.substring(0, ajaxURL.toLowerCase().indexOf('/apex/' )) + '/apex/' + pageName;
+
+                  return( ajaxURL );
+                }
+                
+                lneFlashTab.init = function() {
+                    var atab = lneFlashTab;
+                    var $body = $('#' + atab.bodyId);
+
+                    atab.flashStartedProcess = $body.attr('data-event-flash-started');
+
+                    window.console.log('Ancillary Tab init obj is ', atab);
+
+                    var $grid = $('#' + atab.gridId);
+
+                    lneSharedJs.handleFocusLoss();
+                    
+                
+                };
+                
+                
+            
+        
+            lneFlashTab.init();
+
+                (function($){
+                    $('#button-copy-flash').on('click', function() {
+                        LNE_FlashTab_CX.copyToFlash('{!Event__c.Id}', postRefreshMessage);
+                    });
+                })(jQuery);
+        
+            </script>
+            <c:LNE_Copyright />
+        </body>
+    </html>
+    
+    
+    
+    
+   
+</apex:page>

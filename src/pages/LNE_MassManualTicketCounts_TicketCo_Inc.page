@@ -1,0 +1,112 @@
+<apex:page controller="LNE_MassManualTicketCounts_C" showHeader="false" sidebar="false">
+test end
+
+
+<h3>Ticket Counts for EventName at Venue on EventDate</h3>
+
+<apex:form >
+	<table class="slds-table slds-table--bordered slds-table--cell-buffer">
+		<thead>
+			<tr class="slds-text-title--caps">
+				<th scope="col">
+					<div class="slds-truncate" title="Ticket Sales Date *">Ticket Sales Date *</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Ticket Count *">Ticket Count *</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Gross Sales *">Gross Sales *</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Comps">Comps</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Kills">Kills</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Holds">Holds</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Open">Open</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Capacity">Capacity</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Last Modified By">Last Modified By</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<apex:repeat value="{!manualTicketCountList}" var="tc">
+				<tr>
+					<td data-label="Ticket Sales Date *">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.TicketSalesDate__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Ticket Count *">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.TicketCount__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Gross Sales *">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.GrossSales__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Comps">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.Comps__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Kills">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.Kills__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Holds">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.Holds__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Open">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.Open__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Capacity">
+						<div class="slds-form-element">
+							<div class="slds-form-element__control">
+								<apex:inputField styleClass="slds-input" value="{!tc.Capacity__c}" />
+							</div>
+						</div>
+					</td>
+					<td data-label="Last Modified By">
+						<div class="slds-truncate" title="4/14/2015">
+							{!tc.LastModifiedById} on {!tc.LastModifiedById}
+						</div>
+					</td>
+				</tr>
+			</apex:repeat>
+		</tbody>
+	</table>
+
+	<apex:commandButton styleClass="slds-button slds-button--brand" action="{!saveManualTicketCountList}" />
+</apex:form>
+
+</apex:page>

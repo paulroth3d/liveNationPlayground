@@ -1,0 +1,772 @@
+<apex:page standardController="Event__c" extensions="LNE_SettlementBoxOfficeTab_CX" sidebar="false" showHeader="false" id="LNE_SettlementBoxOfficeTabPage">
+
+    <!-- PostMessage communicates between windows -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_PostMessage2.js")}" />
+    <!-- handles routing of PostMessages -->
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,"js/events/LNE_MessagePostOffice.js")}" />
+    <apex:includeScript value="{!URLFOR($Resource.LNE_GeneralResources,'js/events/LNE_ResizeEvent.js')}" loadOnReady="true" />
+
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <head>
+            <title>Settlement Box Office Metrics</title>
+
+            <apex:stylesheet value="{!URLFOR($Resource.LNE_romelds, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+
+            <script type="text/javascript" src="{!URLFOR($Resource.GBLite__gb_resources, 'jquery/jquery-min.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.LNE_vf_shared_js, 'gridUnsavedChangePrompt.js')}"></script>
+            
+            <apex:form >
+                <apex:actionFunction action="{!checkPlatinumTicketScales}" name="CheckPlatinumTicketScales_JS" oncomplete="lneSettlementBoxOfficeTab.refreshPlatinumGrid('{!numPlatinumTicketScales}');">
+                </apex:actionFunction>
+            </apex:form>
+
+        </head>
+        
+        <body id="LNE_SettlementBoxOfficeTab--body">
+             <style>
+                html, body {
+                    overflow: auto;
+                    height: 200px;
+                }
+
+                .ticketRevenueMetrics, .dropCountGrid { margin:0px 0px 15px 3px; }
+                tr.selloutRowA td, tr.selloutRowB td, .dateTimeMetrics tfoot tr  { border-bottom:1px solid #c7c7c7; font-size: 11.36px;}
+                tr.selloutRowA td, tr.selloutRowB td, tr.selloutRowC td, .dateTimeMetrics tfoot tr { padding:4px 8px; text-align:right; font-size: 11.36px;}
+                .bold { font-weight:bold; }
+                
+                .revert-header {
+                    /*
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    cursor: pointer;  
+                    */
+                    margin-right: 10px;                
+                }     
+                
+                .revert-header:hover {
+                    text-decoration: underline;
+                }
+
+                .revertSpan {
+                    cursor: pointer;
+                }
+                
+                .floating-header {
+                    background-color: white;
+                    position: fixed;    
+                    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+                    width: 100%;
+                    padding-bottom: 10px;
+                }
+                
+                .boxOfficeGrid, .dropCountGrid { 
+                    margin:0px 0px 15px 3px;
+                }
+                
+                tr.selloutRowA td, tr.selloutRowB td { 
+                    border-bottom:1px solid #c7c7c7; 
+                }
+                
+                tr.selloutRowA td, tr.selloutRowB td, tr.selloutRowC td { 
+                    padding:4px 8px; text-align:right;
+                }
+                
+                .bold { 
+                    font-weight:bold; 
+                }
+                
+                #all-grids-container {
+                    /*height: 40%;
+                    position: relative;
+                    top: 140px;
+                    z-index: 9999;*/
+                }
+
+                .rowContainer {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .rowContainer-right {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+                
+                .verticalDivider {
+                    height: 50px;
+                    margin: 0 30px 0 30px;
+                    border-right: 1px solid #c7c7c7;
+                }
+                
+                input.multiscaleConvertButton, button.multiscaleConvertButton {
+                    margin-right: 30px;
+                }
+                
+                .rowMargin {
+                    margin-top: 20px;
+                }
+                
+                .dateTimeMetrics thead th, .dateTimeMetrics tfoot td {
+                    text-align: right;
+                    font-weight: bold;
+                    padding: 4px 8px;
+                }
+                
+                #dateTimeTabsContainer li a {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
+                
+                #dateTimeTabsContainer li a span {
+                    height: 17px;
+                    line-height: 2;
+                }
+                
+                .topContainerRow {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+            </style>
+
+            <div class="rome-lds">
+
+                <div class="slds-spinner_container hide" id="grid-spin">
+                  <div role="status" class="slds-spinner slds-spinner--large">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                </div>
+
+                <apex:outputPanel rendered="{!eventRecord.SettlementStarted__c = false}">
+                    
+                        <apex:form >
+                            <apex:actionFunction name="startSettlementJS" action="{!startSettlement}" oncomplete="postRefreshMessage();" rerender="LNE_SettlementArtistDealTabPage" status="progressSpinner"/>
+                            <div style="margin:20px;">
+                                <span class="slds-icon_container">
+                                    <svg class="slds-icon slds-icon-text-default slds-icon--x-small" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.LNE_romelds, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+                                    </svg>
+                                </span>
+                                <a id="startSettlementLink" onclick="startSettlement();return false;">Start Settlement Process</a>
+                                <apex:actionStatus id="progressSpinner">
+                                    <apex:facet name="start">
+                                        <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                                            <span class="slds-assistive-text">Loading...</span>
+                                            <div class="slds-spinner__dot-a"></div>
+                                            <div class="slds-spinner__dot-b"></div>
+                                        </div>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </div>
+                        </apex:form>
+
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!eventRecord.SettlementStarted__c = true}">
+
+                    <div class="add-floating-header">
+                        <div id="boxOfficeGridHeader" class="slds-clearfix">
+                            <div style='float:left'>
+                                <apex:form id="boxOfficeGridForm">
+                                    <apex:panelGrid columns="7" id="boxOfficeGrid" styleClass="boxOfficeGrid" rowClasses="selloutRowA,selloutRowB, selloutRowC" cellpadding="0" cellspacing="0">
+                                     
+                                        <apex:outputText value="" styleClass="bold"/>
+                                        <apex:outputText value="Show Count" styleClass="bold"/>
+                                        <apex:outputText value="Paid Tickets" styleClass="bold"/>
+                                        <apex:outputText value="Gross Box Office Receipts" styleClass="bold"/>
+                                        <apex:outputText value="Platinum Lift Revenue" styleClass="bold"/>
+                                        <apex:outputText value="Total Deductions and Adjustments" styleClass="bold"/>
+                                        <apex:outputText value="Net Box Office Receipts" styleClass="bold"/>
+                                        
+                                        <apex:outputText value="SETTLEMENT" styleClass="bold"/>
+                                        <apex:outputText value="{0, number, ###,###}"><apex:param value="{!eventMetrics.ShowCount__c}" /></apex:outputText>
+                                        <apex:outputText value="{0, number, ###,###}"><apex:param value="{!eventMetrics.SettlementPaidTickets__c}" /></apex:outputText>
+                                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.SettlementGrossSales__c}" /></apex:outputText>
+                                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.SettlementPlatinumLift__c}" /></apex:outputText>
+                                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.SettlementDeductions__c}" /></apex:outputText>
+                                        <apex:outputText value="{0, number, ###,###.00}"><apex:param value="{!eventMetrics.SettlementNetGross__c}" /></apex:outputText>
+                                        
+                                        <apex:actionFunction action="{!getBoxOfficeGrid}" name="rerenderBoxOfficeGrid" rerender="boxOfficeGrid" />
+
+                                        <apex:actionFunction action="{!getDateTimeSummary}" name="rerenderDateTimeSummaryJS" rerender="summaryGridPanel" oncomplete="showHideSummaryGrid();" />
+    
+                                    </apex:panelGrid>
+                                </apex:form> 
+                            </div>
+                                    
+                            <!-- request from dan since this is always done AFTER the ticket Scales generated -->
+                            <div style='float:right;'>
+                            <apex:form id="fieldsForm">
+                                <apex:panelGrid columns="3" id="fieldFormsGrid" styleClass="fieldFormsGrid" rowClasses="selloutRowC">
+                                    <apex:outputText value="{!$ObjectType['Event__c'].fields['NumberOfUpgrades__c'].Label}" styleClass="bold"/>
+                                    <apex:outputText value="{!$ObjectType['Event__c'].fields['ActualDropCount__c'].Label}" styleClass="bold"/>
+                                    <apex:outputText value=" " />
+                                    
+                                    <apex:inputField id="NumberOfUpgrades" value="{!Event__c.NumberOfUpgrades__c}" onBlur=""/>
+                                    <apex:inputField id="ActualDropCount" value="{!Event__c.ActualDropCount__c}" onBlur=""/>
+                                    <apex:panelGroup >
+                                        <apex:commandButton action="{!dropCountGridSave}" value="Apply" />
+                                    </apex:panelGroup>
+                                </apex:panelGrid>
+                            </apex:form>
+                            </div>
+                            </div>
+    
+                        <div class="rowContainer">
+                            <apex:form >
+                                <div style="margin-left: 0px;">
+                                    <apex:commandButton action="{!showBoxOfficeTab}" value="Box Office" styleClass="slds-button slds-button--neutral {!IF(tabToShow='box_office', 'slds-button--brand' ,'')}"/>
+                                    <apex:commandButton action="{!showPlatinumAndDeductionsTab}" value="Platinum/Deductions" styleClass="slds-button slds-button--neutral {!IF(tabToShow='platinum_and_deductions', 'slds-button--brand' ,'')}"/>
+                                </div>
+                            </apex:form>
+
+                            <span style="width:200px;max-width:70%;overflow:scroll;margin-left:20px;" id="dateTimeTabsContainer">
+                                <c:LNE_EventDateTimeTabs eventId="{!Id}" showSummary="true" width="500px" rendered="{!showEventDateTimeTabs}"/>
+                            </span>
+                        </div>
+
+                        
+                    </div>
+
+                    <div id="all-grids-container" class="floating-header-margin">
+                        <div id="grid-container" class="show">
+
+                            <div class="rowContainer">
+                                <apex:outputPanel id="summaryGridPanel">
+                                    
+                                    <apex:outputPanel id="summaryGridInnerPanel" rendered="{!multipleEventDateTimes == true}">
+                                        
+                                        <apex:variable value="{!0}" var="totalCapacity"/>
+                                        <apex:variable value="{!0}" var="totalKills"/>
+                                        <apex:variable value="{!0}" var="totalHolds"/>
+                                        <apex:variable value="{!0}" var="totalNetCapacity"/>
+                                        <apex:variable value="{!0}" var="totalComps"/>
+                                        <apex:variable value="{!0}" var="totalUnsold"/>
+                                        <apex:variable value="{!0}" var="totalActualSalesToDate"/>
+                                        <apex:variable value="{!0.00}" var="totalActualGrossToDate"/>
+                                        
+                                        <apex:dataTable value="{!dateTimeSummary}" var="dateTimeRow" id="dateTimeSummary" styleClass="ticketRevenueMetrics rowMargin dateTimeMetrics" rowClasses="selloutRowA,selloutRowB">
+                                            <apex:column >
+                                                <apex:facet name="header">Date/Time</apex:facet>
+                                                <apex:outputText value="{0} {1}" rendered="{!dateTimeRow['Id'] != null}">
+                                                    <apex:param value="{!CASE(MONTH(dateTimeMap[dateTimeRow['Id']]['EventDate__c']),1,"Jan",2,"Feb",3,"Mar",4,"Apr",5,"May",6,"Jun",7,"Jul",8,"Aug",9,"Sep",10,"Oct",11,"Nov","Dec")+' '+TEXT(DAY(dateTimeMap[dateTimeRow['Id']]['EventDate__c']))+' '+TEXT(YEAR(dateTimeMap[dateTimeRow['Id']]['EventDate__c']))}"></apex:param>
+                                                    <apex:param value="{!dateTimeMap[dateTimeRow['Id']]['StartTime__c']}"></apex:param>
+                                                </apex:outputText>
+                                                <apex:facet name="footer">
+                                                    <span>Total (All Dates)</span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Total Gross Capacity</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['totalCapacity'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalCapacity" value="{!totalCapacity + dateTimeRow['totalCapacity']}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalCapacityJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Kills</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['kills'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalKills" value="{!totalKills + IF(dateTimeRow['kills']=null, 0, dateTimeRow['kills'])}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalKillsJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Holds</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['holds'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalHolds" value="{!totalHolds + IF(dateTimeRow['holds']=null, 0, dateTimeRow['holds'])}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalHoldsJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Total Net Capacity</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['netCapacity'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalNetCapacity" value="{!totalNetCapacity + IF(dateTimeRow['netCapacity']=null, 0, dateTimeRow['netCapacity'])}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalNetCapacityJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Comps</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['comps'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalComps" value="{!totalComps + IF(dateTimeRow['comps']=null, 0, dateTimeRow['comps'])}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalCompsJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Unsold</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['unsold'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalUnsold" value="{!totalUnsold + IF(dateTimeRow['unsold']=null, 0, dateTimeRow['unsold'])}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalUnsoldJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Actual Sales To Date</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['actualSalesToDate'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalActualSalesToDate" value="{!totalActualSalesToDate + IF(dateTimeRow['actualSalesToDate']=null, 0, dateTimeRow['actualSalesToDate'])}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalActualSalesToDateJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Actual Gross To Date</apex:facet>
+                                                <apex:outputText value="{0, number, ###,##0.00}">
+                                                    <apex:param value="{!ROUND(dateTimeRow['actualGrossToDate'],0)}"/>
+                                                </apex:outputText>
+                                                <apex:variable var="totalActualGrossToDate" value="{!totalActualGrossToDate + IF(dateTimeRow['actualGrossToDate']=null, 0.0, dateTimeRow['actualGrossToDate'])}" />
+                                                <apex:facet name="footer">
+                                                    <span class="totalActualGrossToDateJS"></span>
+                                                </apex:facet>
+                                            </apex:column>
+                                        </apex:dataTable>
+                                        
+                                        <script>
+                                            function formatNumber( num, maxDecimals){
+                                                try {
+                                                    var result = num.toLocaleString(  "en-US", { minimumFractionDigits: maxDecimals, maximumFractionDigits: maxDecimals });
+                                                    return( result );
+                                                } catch( err ){
+                                                    console.log( 'unable to format number[' + num + ']' );
+                                                    return( num );
+                                                }
+                                            }
+                                            
+                                            document.getElementsByClassName('totalCapacityJS')[0].innerHTML = formatNumber({!ROUND(totalCapacity,0)}, 0);
+                                            document.getElementsByClassName('totalKillsJS')[0].innerHTML = formatNumber({!ROUND(totalKills,0)}, 0);
+                                            document.getElementsByClassName('totalHoldsJS')[0].innerHTML = formatNumber({!ROUND(totalHolds,0)}, 0);
+                                            document.getElementsByClassName('totalNetCapacityJS')[0].innerHTML = formatNumber({!ROUND(totalNetCapacity,0)}, 0);
+                                            document.getElementsByClassName('totalCompsJS')[0].innerHTML = formatNumber({!ROUND(totalComps,0)}, 0);
+                                            document.getElementsByClassName('totalUnsoldJS')[0].innerHTML = formatNumber({!ROUND(totalUnsold,0)}, 0);
+                                            document.getElementsByClassName('totalActualSalesToDateJS')[0].innerHTML = formatNumber({!ROUND(totalActualSalesToDate,0)}, 0);
+                                            document.getElementsByClassName('totalActualGrossToDateJS')[0].innerHTML = formatNumber({!totalActualGrossToDate}, 2);
+                                        </script>
+                                        
+                                    </apex:outputPanel>
+                                
+                                </apex:outputPanel>
+                                
+                            </div> 
+
+                            <GBLite:EmbedComponent baseGridUrl="{!$Page.GBLite__Grid}" />
+
+                            <apex:outputPanel rendered="{!tabToShow='box_office'}">
+                                <div id="grid-frame-ticket-audit">
+                                    <iframe id="grid-frame-ticket-audit-iframe" data-grid-name="ticketaudit" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Ticket%20Audit&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}"></iframe>
+                                </div>
+                                  
+                            </apex:outputPanel>
+
+                            <apex:outputPanel rendered="{!tabToShow='platinum_and_deductions'}">
+                                <div id="grid-frame-ticket-platinum-lift">
+                                    <iframe id="grid-frame-ticket-platinum-lift-iframe" data-grid-name="platinumliftcalculator" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Platinum%20Lift%20Calculator&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}&gridType=Settlement"></iframe>
+                                </div>
+                                <div id="grid-frame-before-adjusted-deductions">
+                                    <iframe id="grid-frame-before-adjusted-deductions-iframe" data-grid-name="beforeadjusteddeductions" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=Before%20Adjusted%20Deductions&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}&UsingTicketFeeds={!eventMetrics.UsingTicketFeed__c}&gridType=Settlement"></iframe>
+                                </div>
+                                <div id="grid-frame-after-adjusted-deductions">
+                                    <iframe id="grid-frame-after-adjusted-deductions-iframe" data-grid-name="afteradjusteddeductions" scrolling="auto" height="480" width="100%" frameborder="0" src="{!gridPage}gname=After%20Adjusted%20Deductions&fpf=EventIDStageType__c&fpv={!gridBuddyRecordsToShow}&sbb=0&sh=0&ssb=0&ro={!showGridsAsReadOnly}&parentid={!id}&UsingTicketFeeds={!eventMetrics.UsingTicketFeed__c}&gridType=Settlement"></iframe>
+                                </div>
+                            </apex:outputPanel>
+                            
+                        </div>
+                    </div>
+
+                </apex:outputPanel>
+            </div>
+
+            <script type="text/javascript">
+                function FloatingHeader(phh) {
+                    
+                    var PAGE_HEADER_HEIGHT = 280;
+                    var HEADER_PADDING = 15;
+                    var CLOSE_LABEL = 'Show Standard Header';
+                    
+                    var $fh = $('.add-floating-header');
+                    var pageHeaderHeight = phh || PAGE_HEADER_HEIGHT;
+                    let usingFixedHeader = false;
+                    
+                    this.initialize = function() {
+                        if($fh && $fh.length) {
+                            changeClassNames();
+                            addStyles();
+                            addFixedHeader();
+                            this.addPadding();
+                        }
+                    }
+                    
+                    this.destroy = function() {
+                        revertToStaticHeader();
+                    }
+
+                    this.fixedHeader = function() {
+                        return usingFixedHeader;
+                    }
+                    
+                    this.addPadding = function() {
+                        var padding = parseInt($fh.outerHeight()) + HEADER_PADDING + 'px';
+                        var $ele;
+                        var oldPadding;
+                        
+                        $('.floating-header-margin').each(function(idx, ele) {
+                            $ele = $(ele);
+                            oldPadding = parseInt($ele.css('paddingTop') || 0);
+                            $ele.css('paddingTop', padding).attr('old-padding', oldPadding);
+                        });
+                    }
+                    
+                    function removePadding() {
+                        var $ele;
+                        var oldPadding;
+                        
+                        $('.floating-header-margin').each(function(idx, ele) {
+                            $ele = $(ele);
+                            oldPadding = parseInt($ele.attr('old-padding') || 0) + 'px';
+                            //$ele.css('paddingTop', oldPadding);
+                            $ele.css('paddingTop', '0px');
+                        });
+                    }
+
+                    function revertToStaticHeader() {
+                        if($fh && $fh.length) {
+                            revertClassNames();
+                            removeStyles();
+                            removeFixedHeader();   
+                            removePadding();
+                        }                        
+                    }
+                    
+                    function changeClassNames() {
+                        $fh.removeClass('add-floating-header').addClass('floating-header');
+                    }
+                    
+                    function revertClassNames() {
+                        $fh.removeClass('floating-header').addClass('add-floating-header');
+                    }
+                    
+                    function addStyles() {
+                        //$('html, body').height($(window).height() - pageHeaderHeight);
+                        $('html, body').height('100%');
+                    }
+                    
+                    function removeStyles() {
+                        $('html, body').height('100%');
+                    }
+                    
+                    function addFixedHeader() {
+                        removeFixedHeader();
+                        
+                        $fh.append('<div class="revert-header rowContainer-right"><span class="revertSpan">' + CLOSE_LABEL + '</span></div>');
+                        $('.revert-header').click(revertToStaticHeader);
+                        usingFixedHeader = true;
+                    }
+                    
+                    function removeFixedHeader() {
+                        $('.revert-header').remove();
+                        usingFixedHeader = false;
+                    }                    
+                }
+        
+                var header = new FloatingHeader();
+                header.initialize();
+
+                var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
+                var eventer = window[eventMethod];
+                var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
+                var currentlySelectedTab = 'summary';
+                var clickedTab;
+                const usingMultiScale = {!multipleEventDateTimes};
+                const delimiter = '{!delimiter}';
+                let countPlatinumTicketScales = '{!numPlatinumTicketScales}';
+
+                function postRefreshMessage() {
+                    var WINDOW_PAGE_NAME = 'LNE_SettlementBoxOfficeTab';
+                    var auraId = '{!$CurrentPage.parameters.auraId}';
+                    var messageType = 'saveComplete';
+                    var isSuccessful = true;
+
+                    var data = {
+                        auraId: auraId,
+                        src: window.location.href
+                    };
+
+                    var postMessage = new LNE_PostMessage( WINDOW_PAGE_NAME, messageType, isSuccessful, data );
+                    postMessage.dispatch( parent );
+
+                    location.reload(true);
+                }
+
+                //-- handle inbound PostMessages
+                this.postOffice = new LNE_MessagePostOffice(this);
+                
+                //-- handle any inbound events
+                this.postOffice.addTypeHandler( 'saveComplete', function( myPostMessage ){
+                    if( myPostMessage.data.src != window.location.href ){
+                        window.location.href=window.location.href;
+                    }
+                });
+                
+                postOffice.listenForPostEvents(window);
+                
+                var oldChildGridState = '';
+                var newChildGridState = '';
+            
+                var lneSettlementBoxOfficeTab = {
+                    numPlatinumTicketScales: 0,
+                    showPlatinumLiftGrid: false
+                };
+
+                lneSettlementBoxOfficeTab.init = function() {
+                    setDateTimeTabsWidth();
+                    
+
+                    lneSettlementBoxOfficeTab.numPlatinumTicketScales = countPlatinumTicketScales;
+                    lneSettlementBoxOfficeTab.showHidePlatinumGrid();
+                   
+                    eventer(messageEvent, function (e) {
+                        if (typeof e.data == 'string' && (e.data == 'Saving' || e.data == 'SavingPL' || e.data == 'Loaded' || e.data == 'SavingErrors')) {
+                            oldChildGridState = newChildGridState;
+                            newChildGridState = e.data;
+                            
+                            console.log(e.data);
+                                
+                            if (newChildGridState == 'Loaded' && (oldChildGridState == 'Saving' || oldChildGridState == 'SavingPL')){
+
+                                if (oldChildGridState != 'SavingPL'){ // do not run if platinum lift is saved.
+                                    setTimeout(function () {
+                                      CheckPlatinumTicketScales_JS();
+                                    }, 1000);
+                                }
+                                
+                                setTimeout(function(){
+                                    rerenderBoxOfficeGrid();
+                                }, 1000);
+
+                                setTimeout(function(){
+                                    rerenderDateTimeSummaryJS();
+                                }, 1000);
+
+                                setTimeout(function(){
+                                    checkPlatinumForCurrentDateTime();
+                                }, 1000);
+                            } 
+                        }
+                    }, false);
+
+                    if (usingMultiScale == false) {
+                        toggleTicketScaleGrids('show'); 
+                    } else {
+                        toggleTicketScaleGrids('hide');
+                    }
+                    
+                    initTabs();
+                    showHideSummaryGrid();
+
+                    lneSharedJs.sharedInit();
+                };
+
+                lneSettlementBoxOfficeTab.refreshPlatinumGrid = function(numPlatinumTicketScales) {
+                    console.log('refreshPlatinumGrid');
+                    countPlatinumTicketScales = numPlatinumTicketScales;
+
+                    var platinumGridIframeLoc = $('#grid-frame-ticket-platinum-lift-iframe').attr('src');
+                    $('#grid-frame-ticket-platinum-lift-iframe').attr('src', platinumGridIframeLoc);
+
+                    lneSettlementBoxOfficeTab.showHidePlatinumGrid();
+                };
+
+                lneSettlementBoxOfficeTab.showHidePlatinumGrid = function() {
+                    if (countPlatinumTicketScales > 0) {
+                        console.log('show');
+                        lneSettlementBoxOfficeTab.showPlatinumLiftGrid = true;
+ 
+                        $('#grid-frame-ticket-platinum-lift-iframe').show();
+                    } else {
+                        console.log('hide');
+                        lneSettlementBoxOfficeTab.showPlatinumLiftGrid = false;
+
+                        $('#grid-frame-ticket-platinum-lift-iframe').hide();
+                    }
+                };
+                
+                lneSettlementBoxOfficeTab.init();
+
+                var startSettlementClicked = false;
+
+                function startSettlement() {
+                    if (startSettlementClicked == false) {
+                        disableStartSettlementLink();
+                        startSettlementClicked = true;
+                        startSettlementJS();
+                    }
+                }
+
+                function disableStartSettlementLink() {
+                    var link = document.getElementById('startSettlementLink');
+                    link.onclick = null;
+                    link.style.color = 'grey';
+                    link.style.cursor = 'default';
+                    var css = '#startSettlementLink:hover{ text-decoration: none; }';
+                    var style = document.createElement('style');
+                    style.appendChild(document.createTextNode(css));
+                    document.getElementsByTagName('head')[0].appendChild(style);
+                }
+
+                function setDateTimeTabsWidth() {
+                    const elList = $('.slds-tabs--scoped__nav');
+                    if (elList.length > 0) {
+                        const widthNeeded = elList[0].scrollWidth;
+                        $($('#dateTimeTabsContainer')[0]).width(`${widthNeeded}px`);
+                        $('#dateTimeTabsContainer ul').width(`${widthNeeded}px`);
+                    }
+                }
+
+                function showHideSummaryGrid() {
+                    $('#grid-spin').show();
+                    
+                    if (usingMultiScale === true) {
+                        if (currentlySelectedTab == 'summary') {
+                            $('.dateTimeMetrics').show();
+                            toggleTicketScaleGrids('hide');
+                            $('#grid-spin').hide(); 
+                        } else {
+                            $('.dateTimeMetrics').hide();
+                            toggleTicketScaleGrids('show');
+                            switchGridsToEventDateTime(currentlySelectedTab);
+                        }
+                    } else {
+                        $('.dateTimeMetrics').hide();
+                    }
+
+                    $('#grid-spin').hide();
+                }
+
+                function toggleTicketScaleGrids(action) {
+                    $('#grid-frame-ticket-audit-iframe, #grid-frame-ticket-platinum-lift-iframe')[action]();
+                    lneSettlementBoxOfficeTab.showHidePlatinumGrid();
+                }
+
+                function switchGridsToEventDateTime(selectedTab) {
+                    const newFpf = 'EventIDStageTypeDateTime__c';
+                    const ticketScaleSrc = $('#grid-frame-ticket-audit-iframe').attr('src');
+                    const platinumSrc = $('#grid-frame-ticket-platinum-lift-iframe').attr('src');
+                    let currentFpv;
+
+                    if (ticketScaleSrc) {
+                        currentFpv = ticketScaleSrc.match(/[&?]fpv=([^&?]+)[&?]/)[1];
+                    }
+
+                    if (platinumSrc) {
+                        currentFpv = platinumSrc.match(/[&?]fpv=([^&?]+)[&?]/)[1];
+                    }
+
+                    if (currentFpv) {
+                        const params = currentFpv.split(delimiter);
+                        if (params.length == 2) {
+                            params.push(selectedTab.substring(0,15));
+                        } else {
+                            params[2] = selectedTab.substring(0,15);
+                        }
+                        
+                        const newFpv = params.join(delimiter);
+
+                        if (ticketScaleSrc) {
+                            var newTicketScaleSrc = ticketScaleSrc.replace(/(fpf=).*?(&)/,'$1' + newFpf + '$2');
+                            newTicketScaleSrc = newTicketScaleSrc.replace(/(fpv=).*?(&)/,'$1' + newFpv + '$2');
+                            $('#grid-frame-ticket-audit-iframe').attr('src', newTicketScaleSrc);
+                        }
+
+                        if (platinumSrc) {
+                            var newPlatinumSrc = platinumSrc.replace(/(fpf=).*?(&)/,'$1' + newFpf + '$2');
+                            newPlatinumSrc = newPlatinumSrc.replace(/(fpv=).*?(&)/,'$1' + newFpv + '$2');
+                            $('#grid-frame-ticket-platinum-lift-iframe').attr('src', newPlatinumSrc);
+                        }
+                    }
+                }
+
+                function handleEventDateTimeTabClick() {
+                    $('#grid-spin').show();
+                    //win = $('#grid-frame-ticket-scale').get(0).contentWindow;
+                    //win.postMessage({'action': 'reportForNutSave'}, '*');
+
+                    if (clickedTab) {
+                        currentlySelectedTab = clickedTab;
+                        setActiveTab();
+                        showHideSummaryGrid();
+                        clickedTab = null;
+                        checkPlatinumForCurrentDateTime();
+                        lneSettlementBoxOfficeTab.showHidePlatinumGrid();
+
+                        if (header.fixedHeader() === true) {
+                            header.addPadding();
+                        }
+                    }
+                }
+
+                function initTabs() {
+                    $('#dateTimeTabsContainer a').prop('onclick',null);
+                    $('#dateTimeTabsContainer a').click(function(event){
+                        clickedTab = this.dataset.recordid;
+                        needToCheckGrids = true;
+                        event.preventDefault();
+                        handleEventDateTimeTabClick();
+                    });
+                }
+
+                function setActiveTab() {
+                    $('#grid-spin').hide();
+                    tabClicked($("#dateTimeTabsContainer").find(`[data-recordid='${currentlySelectedTab}']`)[0]);
+                }
+
+                function checkPlatinumForCurrentDateTime() {
+                    if (currentlySelectedTab && currentlySelectedTab != 'summary') {
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.LNE_SettlementBoxOfficeTab_CX.checkPlatinum}',
+                            currentlySelectedTab, 
+                            function(result, event){
+                                if (event.status) {
+                                    countPlatinumTicketScales = result;
+                                    lneSettlementBoxOfficeTab.showHidePlatinumGrid();
+                                } else if (event.type === 'exception') {
+                                    console.log('Error event ',event);
+
+                                } else {
+                                    console.log('Error event ',event);
+                                }
+                            }, 
+                            {escape: true}
+                        );
+                    }
+                }
+
+                setDateTimeTabsWidth();
+            </script>
+            
+            <c:LNE_Copyright />
+        </body>
+
+    </html>
+</apex:page>

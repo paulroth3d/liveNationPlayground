@@ -1,0 +1,1235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Pricing levels for venue tickets established per event</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ActualGrossToDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Gross To Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ActualSalesToDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Sales To Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ActualSalestoDateFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectedPaidTickets__c -  ActualSalesToDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Sales to Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AfterAdjustedDeductions__c</fullName>
+        <externalId>false</externalId>
+        <label>After Adjusted Deductions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AverageLiftPerTicket__c</fullName>
+        <externalId>false</externalId>
+        <label>Average Lift Per Ticket</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BeforeAdjustedDeductions__c</fullName>
+        <externalId>false</externalId>
+        <label>Before Adjusted Deductions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Capacity__c</fullName>
+        <externalId>false</externalId>
+        <label>Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comps__c</fullName>
+        <externalId>false</externalId>
+        <label>Comps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>Drives sharing rules to provide read-only access to other division members</description>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventDateTime__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event Date Time</label>
+        <referenceTo>EventDateTime__c</referenceTo>
+        <relationshipLabel>Ticket Scales</relationshipLabel>
+        <relationshipName>TicketScales</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventIDStageTypeDateTime__c</fullName>
+        <description>This field is being used in GridBuddy filters. Should not be on any page layouts.</description>
+        <externalId>false</externalId>
+        <label>Event ID Stage Type Date Time</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventIDStageType__c</fullName>
+        <description>This field is being used in GridBuddy filters. Should not be on any page layouts.</description>
+        <externalId>false</externalId>
+        <label>Event ID Stage Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>Event__c</referenceTo>
+        <relationshipLabel>Ticket Scales</relationshipLabel>
+        <relationshipName>TicketScales</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FaceValue__c</fullName>
+        <externalId>false</externalId>
+        <label>Face Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FirstDayCount__c</fullName>
+        <externalId>false</externalId>
+        <formula>TicketCountDay1__c -  TicketCountDay2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>1st Day Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FirstDayGross__c</fullName>
+        <externalId>false</externalId>
+        <formula>TicketGrossDay1__c -  TicketGrossDay2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>1st Day Gross</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ForecastGrossToGo__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectedGrossSales__c  -  ActualGrossToDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Forecast Gross To Go</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ForecastSalesToGo__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectedPaidTickets__c -  ActualSalesToDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Forecast Sales To Go</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Geography__c</fullName>
+        <externalId>false</externalId>
+        <label>Geography</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GrossSales__c</fullName>
+        <externalId>false</externalId>
+        <formula>SellableCapacity__c *  Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Gross Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Holds__c</fullName>
+        <externalId>false</externalId>
+        <label>Holds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Kills__c</fullName>
+        <externalId>false</externalId>
+        <label>Kills</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LiftAfterTaxes__c</fullName>
+        <externalId>false</externalId>
+        <formula>LiftBeforeTaxes__c -  PlatinumBeforeAdjustedDeductions__c -  PlatinumAfterAdjusted_Deductions__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lift After Taxes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LiftBeforeFee__c</fullName>
+        <externalId>false</externalId>
+        <label>Lift Before Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LiftBeforeTaxes__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(BEGINS(TEXT(Type__c), &quot;Platinum&quot;),
+LiftBeforeFee__c - TMFee__c,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lift Before Taxes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>MatchesEventStage__c</fullName>
+        <description>Whether the ticket scale currently matches the state of the event.</description>
+        <externalId>false</externalId>
+        <formula>OR(
+  /* stage type matches **/
+  (  Text( StageType__c ) == Event__r.StatusStage__c ),
+  /* or in settlement */
+  AND(  isPickVal(StageType__c,&apos;Settlement&apos;),  Event__r.SettlementStarted__c )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Matches Event Stage</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NetCapacity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Capacity__c - Kills__c - Holds__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OfficeName__c</fullName>
+        <description>Drives sharing rules to provide edit access to other office members</description>
+        <externalId>false</externalId>
+        <label>Office Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opens__c</fullName>
+        <externalId>false</externalId>
+        <label>Opens</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PlatinumAfterAdjusted_Deductions__c</fullName>
+        <externalId>false</externalId>
+        <label>Platinum After Adjusted Deductions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PlatinumBeforeAdjustedDeductions__c</fullName>
+        <externalId>false</externalId>
+        <label>Platinum Before Adjusted Deductions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PriceLevel__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Level</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryVenueOffice__c</fullName>
+        <description>Drives sharing rules to provide edit access to booking members of the venue&apos;s primary office</description>
+        <externalId>false</externalId>
+        <label>Primary Venue Office</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectedGrossSales__c</fullName>
+        <externalId>false</externalId>
+        <formula>ProjectedPaidTickets__c *  Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Gross Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedPaidTicketsAdjustedForZeroPrice__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Price__c = 0, 0, ProjectedPaidTickets__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Paid Tickets Adj for $0 Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProjectedPaidTickets__c</fullName>
+        <externalId>false</externalId>
+        <label>Projected Paid Tickets</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SecondDayCount__c</fullName>
+        <externalId>false</externalId>
+        <formula>TicketCountDay2__c -  TicketCountDay3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>2nd Day Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SecondDayGross__c</fullName>
+        <externalId>false</externalId>
+        <formula>TicketGrossDay2__c -  TicketGrossDay3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>2nd Day Gross</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SellableCapacity__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Price__c &lt;= 0 || ISBLANK(Price__c), 0, Capacity__c - Kills__c - Comps__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sellable Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShiftDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Shift Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ShowOnOffer__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Show On Offer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ShowPlatinumOnOffer__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Platinum On Offer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SoldValidation__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ActualSalesToDate__c!= (Capacity__c -  Kills__c -  Holds__c -  Comps__c -  Unsold__c), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sold Validation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>StageType__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Plan</fullName>
+                    <default>true</default>
+                    <label>Plan</label>
+                </value>
+                <value>
+                    <fullName>Projection</fullName>
+                    <default>false</default>
+                    <label>Projection</label>
+                </value>
+                <value>
+                    <fullName>Settlement</fullName>
+                    <default>false</default>
+                    <label>Settlement</label>
+                </value>
+                <value>
+                    <fullName>Audit</fullName>
+                    <default>false</default>
+                    <label>Audit</label>
+                </value>
+                <value>
+                    <fullName>Obsolete</fullName>
+                    <default>false</default>
+                    <label>Obsolete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TMFeePercent__c</fullName>
+        <defaultValue>0.129</defaultValue>
+        <externalId>false</externalId>
+        <label>TM Fee %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TMFee__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(LiftBeforeFee__c &gt; 0, TotalPlatinumSeatProceeds__c *  TMFeePercent__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TM Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ThirdDayCount__c</fullName>
+        <externalId>false</externalId>
+        <formula>TicketCountDay3__c -  TicketCountDay4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>3rd Day Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ThirdDayGross__c</fullName>
+        <externalId>false</externalId>
+        <formula>TicketGrossDay3__c -  TicketGrossDay4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>3rd Day Gross</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TicketCountDate1__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Date 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TicketCountDate2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Date 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TicketCountDate3__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Date 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TicketCountDate4__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Date 4</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TicketCountDay1__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Day 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TicketCountDay2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Day 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TicketCountDay3__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Day 3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TicketCountDay4__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Count Day 4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TicketGrossDay1__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Gross Day 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TicketGrossDay2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Gross Day 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TicketGrossDay3__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Gross Day 3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TicketGrossDay4__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Gross Day 4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TicketScaleType__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(BEGINS(TEXT(Type__c), &apos;Lawn&apos;), &apos;Lawn&apos;, &apos;Reserved&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ticket Scale Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalPlatinumSeatProceeds__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(BEGINS(TEXT(Type__c), &quot;Platinum&quot;),
+   IF(ISPICKVAL(StageType__c, &quot;Settlement&quot;),
+      /* Use ActualGrossToDate__c if it&apos;s Settlement */
+      ActualGrossToDate__c  +  LiftBeforeFee__c,
+      /* Otherwise use ProjectedGrossSales__c if it&apos;s NOT Settlement */
+      ProjectedGrossSales__c + LiftBeforeFee__c),
+/* If it&apos;s not Platinum, return 0 */
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Platinum Seat Proceeds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Reserved</fullName>
+                    <default>false</default>
+                    <label>Reserved</label>
+                </value>
+                <value>
+                    <fullName>Lawn</fullName>
+                    <default>false</default>
+                    <label>Lawn</label>
+                </value>
+                <value>
+                    <fullName>Platinum</fullName>
+                    <default>false</default>
+                    <label>Platinum</label>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                    <label>GA</label>
+                </value>
+                <value>
+                    <fullName>Rsvd - Value Channel</fullName>
+                    <default>false</default>
+                    <label>Rsvd - Value Channel</label>
+                </value>
+                <value>
+                    <fullName>Rsvd - 4 Pack</fullName>
+                    <default>false</default>
+                    <label>Rsvd - 4 Pack</label>
+                </value>
+                <value>
+                    <fullName>Lawn - Value Channel</fullName>
+                    <default>false</default>
+                    <label>Lawn - Value Channel</label>
+                </value>
+                <value>
+                    <fullName>Lawn - 4 Pack</fullName>
+                    <default>false</default>
+                    <label>Lawn - 4 Pack</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unsold__c</fullName>
+        <externalId>false</externalId>
+        <label>Unsold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VenueOwnership__c</fullName>
+        <description>Drives sharing rules to provide edit access to booking members of the venue&apos;s primary office when Owned/Operated</description>
+        <externalId>false</externalId>
+        <label>Venue Ownership</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxActualGrossToDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ActualGrossToDate__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Actual Gross To Date (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxAfterAdjustedDeductions__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AfterAdjustedDeductions__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>After Adjusted Deductions (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxAverageLiftPerTicket__c</fullName>
+        <externalId>false</externalId>
+        <formula>(AverageLiftPerTicket__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Average Lift Per Ticket (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxBeforeAdjustedDeductions__c</fullName>
+        <externalId>false</externalId>
+        <formula>(BeforeAdjustedDeductions__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Before Adjusted Deductions (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxFaceValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>(FaceValue__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Face Value (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxFirstDayGross__c</fullName>
+        <externalId>false</externalId>
+        <formula>(FirstDayGross__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>1st Day Gross (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxForecastGrossToGo__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ForecastGrossToGo__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Forecast Gross To Go (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxGrossSales__c</fullName>
+        <externalId>false</externalId>
+        <formula>(GrossSales__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Gross Sales (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLiftAfterTaxes__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LiftAfterTaxes__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Lift After Taxes (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLiftBeforeFee__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LiftBeforeFee__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Lift Before Fee (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxLiftBeforeTaxes__c</fullName>
+        <externalId>false</externalId>
+        <formula>(LiftBeforeTaxes__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Lift Before Taxes (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPlatinumAfterAdjusted_Deductions__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PlatinumAfterAdjusted_Deductions__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Platinum After Adjusted Deductions (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPlatinumBeforeAdjustedDeductions__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PlatinumBeforeAdjustedDeductions__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Platinum Before Adj Deductions (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPrice__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Price__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Price (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjPaidTicketsAdjForZeroPrice__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedPaidTicketsAdjustedForZeroPrice__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Proj Paid Tickets Adj for $0 (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxProjectedGrossSales__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ProjectedGrossSales__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Projected Gross Sales (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxSecondDayGross__c</fullName>
+        <externalId>false</externalId>
+        <formula>(SecondDayGross__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>2nd Day Gross (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTMFee__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TMFee__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>TM Fee (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxThirdDayGross__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ThirdDayGross__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>3rd Day Gross (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTicketGrossDay1__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TicketGrossDay1__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ticket Gross Day 1 (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTicketGrossDay2__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TicketGrossDay2__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ticket Gross Day 2 (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTicketGrossDay3__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TicketGrossDay3__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ticket Gross Day 3 (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTicketGrossDay4__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TicketGrossDay4__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Ticket Gross Day 4 (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxTotalPlatinumSeatProceeds__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TotalPlatinumSeatProceeds__c / (Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Total Platinum Seat Proceeds (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Ticket Scale</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>TS-{000000}</displayFormat>
+        <label>Ticket Scale ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Ticket Scales</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>LNE_EventChildOffice</fullName>
+        <active>true</active>
+        <description>Checks to see if the user has access to the events office/division. If not, user can not create child records related to the event.</description>
+        <errorConditionFormula>!$Setup.GeneralSettings__c.GlobalDataAdministrator__c &amp;&amp;
+!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+!CONTAINS( &apos;,&apos; + $User.OfficeAccess__c + &apos;,&apos;,
+&apos;,&apos; + Event__r.Office__r.OfficeID__c + &apos;,&apos;) &amp;&amp;
+
+/* Financial Calculator is running and making updates */
+!$Setup.GeneralSettings__c.BypassPBFlow__c</errorConditionFormula>
+        <errorMessage>You cannot create child records of the event because you do not have authorized access to the events office/division</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_PriceRequired</fullName>
+        <active>true</active>
+        <description>Price required if event record type is not rental, buy sell, or hold, stage type is not settlement and is not blank.</description>
+        <errorConditionFormula>!$Setup.GeneralSettings__c.GlobalDataAdministrator__c &amp;&amp;
+$Profile.Name != &quot;LNE Integration&quot; &amp;&amp;
+ISBLANK(Price__c) &amp;&amp;
+NOT(OR(
+  Event__r.RecordType.DeveloperName = &quot;Rental&quot;,
+  Event__r.RecordType.DeveloperName = &quot;BuySell&quot;,
+  Event__r.RecordType.DeveloperName = &quot;Hold&quot;,
+  ISPICKVAL(StageType__c, &quot;Settlement&quot;),
+  ISPICKVAL(StageType__c, &quot;Audit&quot;),
+  Event__r.UsingTicketFeed__c
+))</errorConditionFormula>
+        <errorDisplayField>Price__c</errorDisplayField>
+        <errorMessage>Price required if event record type is not rental, buy sell, or hold and stage type is not settlement.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LNE_ProjectedPaidTicketsRequired</fullName>
+        <active>true</active>
+        <description>Projected Paid Tickets is required if event record type is not rental, buy sell, or hold and stage type is not settlement.</description>
+        <errorConditionFormula>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+$Profile.Name != &quot;LNE Integration&quot; &amp;&amp;
+!Event__r.CloningInProcess__c &amp;&amp;
+ISBLANK(ProjectedPaidTickets__c) &amp;&amp;
+NOT(OR(
+  Event__r.RecordType.DeveloperName = &quot;Rental&quot;,
+  Event__r.RecordType.DeveloperName = &quot;BuySell&quot;,
+  Event__r.RecordType.DeveloperName = &quot;Hold&quot;,
+  ISPICKVAL(StageType__c, &quot;Settlement&quot;),
+  ISPICKVAL(StageType__c, &quot;Audit&quot;)
+))</errorConditionFormula>
+        <errorDisplayField>ProjectedPaidTickets__c</errorDisplayField>
+        <errorMessage>Projected Paid Tickets is required if event record type is not rental, buy sell, or hold and stage type is not settlement.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Projected_Paid_Greater_Than_Capacity</fullName>
+        <active>true</active>
+        <description>Projected Paid Tickets is entered as greater than Sellable Capacity</description>
+        <errorConditionFormula>!$Setup.GeneralSettings__c.BypassAutomation__c &amp;&amp;
+$Profile.Name != &quot;LNE Integration&quot; &amp;&amp;
+SellableCapacity__c &gt; 0 &amp;&amp;
+ProjectedPaidTickets__c &gt; SellableCapacity__c</errorConditionFormula>
+        <errorMessage>Projected Paid Tickets may not be greater than Sellable Capacity. Reduce the Projected Paid Tickets entered.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

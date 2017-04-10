@@ -1,0 +1,17 @@
+<apex:component selfClosing="true">
+  <apex:attribute name="deal" type="Deal__c" description="The Deal record" required="true"/>
+  <apex:attribute name="fieldset" type="Schema.FieldSetMember[]" description="The Field Set members" required="true"/>
+  <apex:attribute name="indent" type="Boolean" description="Indent the checkboxes" default="false"/>
+
+  <div class="fieldset-grouping slds-m-bottom--small slds-m-left--medium {!IF(indent,'indent-children','')}">
+    <apex:repeat value="{!fieldset}" var="f">
+      <div class="slds-form-element">
+        <label>
+          <apex:inputField value="{!deal[f.fieldPath]}"/>
+          <apex:outputText value="{!f.label}" styleClass="slds-m-left--x-small"/>
+        </label>
+      </div>
+    </apex:repeat>
+  </div>
+
+</apex:component>

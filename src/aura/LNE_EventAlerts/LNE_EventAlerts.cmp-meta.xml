@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>38.0</apiVersion>
+    <description>Notifier for alerts on an Event.
+
+These might be flags raised from issues found on the Event.
+But could also be extended to other flags raised that should be communicated to the end user.</description>
+</AuraDefinitionBundle>

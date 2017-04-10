@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>37.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Captures a desired change (regular text field) to an account Record for review. On submission: Appends the text of request to a history of desired changes field on account, changes account status, changes account owner.</description>
+    <label>LNE_RequestAccountUpdate</label>
+</ApexPage>

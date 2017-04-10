@@ -1,0 +1,2123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Comedy_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Comedy North America</label>
+        <sharedTo>
+            <group>ComedyOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_AC_Entertainment_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is AC Entertainment</description>
+        <label>Edit Owned Venue Deal for AC Entertainment Booking</label>
+        <sharedTo>
+            <group>ACEntertainmentBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>AC Entertainment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_AC_Entertainment_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is AC Entertainment</description>
+        <label>Edit Owned Venue Deal for AC Entertainment Settlement</label>
+        <sharedTo>
+            <group>ACEntertainmentSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>AC Entertainment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Atlanta_Birmingham_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Atlanta/Birmingham</description>
+        <label>Edit Owned Venue Deal for Atlanta/Birmingham Booking</label>
+        <sharedTo>
+            <group>AtlantaBirminghamBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Atlanta/Birmingham</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Atlanta_Birmingham_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Atlanta/Birmingham</description>
+        <label>Edit Owned Venue Deal for Atlanta/Birmingham Settlement</label>
+        <sharedTo>
+            <group>AtlantaBirminghamSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Atlanta/Birmingham</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Baltimore_Washington_DC_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Baltimore/Washington DC</description>
+        <label>Edit Owned Venue Deal for Baltimore/Washington DC Booking</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Baltimore/Washington DC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Baltimore_Washington_DC_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Baltimore/Washington DC</description>
+        <label>Edit Owned Venue Deal for Baltimore/Washington DC Settlement</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Baltimore/Washington DC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Boise_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Boise</description>
+        <label>Edit Owned Venue Deal for Boise Booking</label>
+        <sharedTo>
+            <group>BoiseBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boise</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Boise_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Boise</description>
+        <label>Edit Owned Venue Deal for Boise Settlement</label>
+        <sharedTo>
+            <group>BoiseSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boise</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Boston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Boston</description>
+        <label>Edit Owned Venue Deal for Boston Booking</label>
+        <sharedTo>
+            <group>BostonBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Boston_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Boston</description>
+        <label>Edit Owned Venue Deal for Boston Settlement</label>
+        <sharedTo>
+            <group>BostonSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Boston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Canada_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Canada Concerts</description>
+        <label>Edit Owned Venue Deal for Canada Concerts Booking</label>
+        <sharedTo>
+            <group>CanadaConcertsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Canada Concerts,Toronto,Vancouver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Canada_Concerts_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Canada Concerts</description>
+        <label>Edit Owned Venue Deal for Canada Concerts Settlement</label>
+        <sharedTo>
+            <group>CanadaConcertsSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Canada Concerts,Toronto,Vancouver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Carolinas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Carolinas</description>
+        <label>Edit Owned Venue Deal for Carolinas Booking</label>
+        <sharedTo>
+            <group>CarolinasBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Carolinas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Carolinas_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Carolinas</description>
+        <label>Edit Owned Venue Deal for Carolinas Settlement</label>
+        <sharedTo>
+            <group>CarolinasSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Carolinas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Chicago_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Chicago</description>
+        <label>Edit Owned Venue Deal for Chicago Booking</label>
+        <sharedTo>
+            <group>ChicagoBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Chicago</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Chicago_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Chicago</description>
+        <label>Edit Owned Venue Deal for Chicago Settlement</label>
+        <sharedTo>
+            <group>ChicagoSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Chicago</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Comedy_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Comedy</description>
+        <label>Edit Owned Venue Deal for Comedy Booking</label>
+        <sharedTo>
+            <group>ComedyBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Comedy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Comedy_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Comedy</description>
+        <label>Edit Owned Venue Deal for Comedy Settlement</label>
+        <sharedTo>
+            <group>ComedySettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Comedy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Connecticut_Upstate_NY_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Connecticut/Upstate NY</description>
+        <label>Edit Owned Venue Deal for Connecticut/Upstate NY Booking</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Connecticut/Upstate NY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Connecticut_Upstate_NY_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Connecticut/Upstate NY</description>
+        <label>Edit Owned Venue Deal for Connecticut/Upstate NY Settlement</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Connecticut/Upstate NY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Country_Nation_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Country Nation</description>
+        <label>Edit Owned Venue Deal for Country Nation Booking</label>
+        <sharedTo>
+            <group>CountryNationBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Country Nation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Country_Nation_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Country Nation</description>
+        <label>Edit Owned Venue Deal for Country Nation Settlement</label>
+        <sharedTo>
+            <group>CountryNationSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Country Nation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Crossroads_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Crossroads</description>
+        <label>Edit Owned Venue Deal for Crossroads Booking</label>
+        <sharedTo>
+            <group>CrossroadsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Crossroads_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Crossroads</description>
+        <label>Edit Owned Venue Deal for Crossroads Settlement</label>
+        <sharedTo>
+            <group>CrossroadsSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Dallas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Dallas</description>
+        <label>Edit Owned Venue Deal for Dallas Booking</label>
+        <sharedTo>
+            <group>DallasBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Dallas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Dallas_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Dallas</description>
+        <label>Edit Owned Venue Deal for Dallas Settlement</label>
+        <sharedTo>
+            <group>DallasSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Dallas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Denver_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Denver</description>
+        <label>Edit Owned Venue Deal for Denver Booking</label>
+        <sharedTo>
+            <group>DenverBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Denver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Denver_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Denver</description>
+        <label>Edit Owned Venue Deal for Denver Settlement</label>
+        <sharedTo>
+            <group>DenverSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Denver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Detroit_Indy_Cleveland_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Detroit/Indy/Cleveland</description>
+        <label>Edit Owned Venue Deal for Detroit/Indy/Cleveland Booking</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Detroit/Indy/Cleveland,Detroit,Indianapolis,Cleveland</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Detroit_Indy_Cleveland_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Detroit/Indy/Cleveland</description>
+        <label>Edit Owned Venue Deal for Detroit/Indy/Cleveland Settlement</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Detroit/Indy/Cleveland,Detroit,Indianapolis,Cleveland</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_EDM_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is EDM</description>
+        <label>Edit Owned Venue Deal for EDM Booking</label>
+        <sharedTo>
+            <group>EDMBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>EDM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_EDM_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is EDM</description>
+        <label>Edit Owned Venue Deal for EDM Settlement</label>
+        <sharedTo>
+            <group>EDMSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>EDM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Festivals_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Festivals</description>
+        <label>Edit Owned Venue Deal for Festivals Booking</label>
+        <sharedTo>
+            <group>FestivalsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Festivals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Festivals_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Festivals</description>
+        <label>Edit Owned Venue Deal for Festivals Settlement</label>
+        <sharedTo>
+            <group>FestivalsSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Festivals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Houston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Houston</description>
+        <label>Edit Owned Venue Deal for Houston Booking</label>
+        <sharedTo>
+            <group>HoustonBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Houston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Houston_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Houston</description>
+        <label>Edit Owned Venue Deal for Houston Settlement</label>
+        <sharedTo>
+            <group>HoustonSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Houston</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_LN_Urban_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is LN Urban</description>
+        <label>Edit Owned Venue Deal for LN Urban Booking</label>
+        <sharedTo>
+            <group>LNUrbanBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>LN Urban</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_LN_Urban_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is LN Urban</description>
+        <label>Edit Owned Venue Deal for LN Urban Settlement</label>
+        <sharedTo>
+            <group>LNUrbanSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>LN Urban</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Las_Vegas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Las Vegas</description>
+        <label>Edit Owned Venue Deal for Las Vegas Booking</label>
+        <sharedTo>
+            <group>LasVegasBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Las Vegas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Las_Vegas_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Las Vegas</description>
+        <label>Edit Owned Venue Deal for Las Vegas Settlement</label>
+        <sharedTo>
+            <group>LasVegasSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Las Vegas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Los_Angeles_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Los Angeles</description>
+        <label>Edit Owned Venue Deal for Los Angeles Booking</label>
+        <sharedTo>
+            <group>LosAngelesBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Los Angeles</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Los_Angeles_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Los Angeles</description>
+        <label>Edit Owned Venue Deal for Los Angeles Settlement</label>
+        <sharedTo>
+            <group>LosAngelesSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Los Angeles</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Miami_Tampa_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Miami/Tampa</description>
+        <label>Edit Owned Venue Deal for Miami/Tampa Booking</label>
+        <sharedTo>
+            <group>MiamiTampaBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Miami/Tampa</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Miami_Tampa_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Miami/Tampa</description>
+        <label>Edit Owned Venue Deal for Miami/Tampa Settlement</label>
+        <sharedTo>
+            <group>MiamiTampaSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Miami/Tampa</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Nashville_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Nashville</description>
+        <label>Edit Owned Venue Deal for Nashville Booking</label>
+        <sharedTo>
+            <group>NashvilleBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Nashville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Nashville_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Nashville</description>
+        <label>Edit Owned Venue Deal for Nashville Settlement</label>
+        <sharedTo>
+            <group>NashvilleSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Nashville</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_New_Orleans_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is New Orleans</description>
+        <label>Edit Owned Venue Deal for New Orleans Booking</label>
+        <sharedTo>
+            <group>NewOrleansBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New Orleans</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_New_Orleans_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is New Orleans</description>
+        <label>Edit Owned Venue Deal for New Orleans Settlement</label>
+        <sharedTo>
+            <group>NewOrleansSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New Orleans</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_New_York_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is New York</description>
+        <label>Edit Owned Venue Deal for New York Booking</label>
+        <sharedTo>
+            <group>NewYorkBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_New_York_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is New York</description>
+        <label>Edit Owned Venue Deal for New York Settlement</label>
+        <sharedTo>
+            <group>NewYorkSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Philadelphia_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Philadelphia</description>
+        <label>Edit Owned Venue Deal for Philadelphia Booking</label>
+        <sharedTo>
+            <group>PhiladelphiaBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Philadelphia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Philadelphia_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Philadelphia</description>
+        <label>Edit Owned Venue Deal for Philadelphia Settlement</label>
+        <sharedTo>
+            <group>PhiladelphiaSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Philadelphia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Phoenix_Albuquerque_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Phoenix/Albuquerque</description>
+        <label>Edit Owned Venue Deal for Phoenix/Albuquerque Booking</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Phoenix/Albuquerque</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Phoenix_Albuquerque_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Phoenix/Albuquerque</description>
+        <label>Edit Owned Venue Deal for Phoenix/Albuquerque Settlement</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Phoenix/Albuquerque</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Pittsburgh_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Pittsburgh</description>
+        <label>Edit Owned Venue Deal for Pittsburgh Booking</label>
+        <sharedTo>
+            <group>PittsburghBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Pittsburgh</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Pittsburgh_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Pittsburgh</description>
+        <label>Edit Owned Venue Deal for Pittsburgh Settlement</label>
+        <sharedTo>
+            <group>PittsburghSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Pittsburgh</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_San_Diego_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is San Diego</description>
+        <label>Edit Owned Venue Deal for San Diego Booking</label>
+        <sharedTo>
+            <group>SanDiegoBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Diego</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_San_Diego_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is San Diego</description>
+        <label>Edit Owned Venue Deal for San Diego Settlement</label>
+        <sharedTo>
+            <group>SanDiegoSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Diego</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_San_Francisco_Sacramento_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is San Francisco/Sacramento</description>
+        <label>Edit Owned Venue Deal for San Francisco/Sacramento Booking</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Francisco/Sacramento</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_San_Francisco_Sacramento_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is San Francisco/Sacramento</description>
+        <label>Edit Owned Venue Deal for San Francisco/Sacramento Settlement</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>San Francisco/Sacramento</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Seattle_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Seattle</description>
+        <label>Edit Owned Venue Deal for Seattle Booking</label>
+        <sharedTo>
+            <group>SeattleBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Seattle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Seattle_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Seattle</description>
+        <label>Edit Owned Venue Deal for Seattle Settlement</label>
+        <sharedTo>
+            <group>SeattleSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Seattle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_St_Louis_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is St Louis</description>
+        <label>Edit Owned Venue Deal for St Louis Booking</label>
+        <sharedTo>
+            <group>StLouisBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>St Louis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_St_Louis_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is St Louis</description>
+        <label>Edit Owned Venue Deal for St Louis Settlement</label>
+        <sharedTo>
+            <group>StLouisSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>St Louis</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_T_C_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is T&amp;C Concerts</description>
+        <label>Edit Owned Venue Deal for T&amp;C Concerts Booking</label>
+        <sharedTo>
+            <group>TCConcertsBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>T&amp;C Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_T_C_Concerts_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is T&amp;C Concerts</description>
+        <label>Edit Owned Venue Deal for T&amp;C Concerts Settlement</label>
+        <sharedTo>
+            <group>TCConcertsSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>T&amp;C Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Touring_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Booking users read-write access to all Booking Deals at an owned &amp; operated Venue where the Primary Office is Touring</description>
+        <label>Edit Owned Venue Deal for Touring Booking</label>
+        <sharedTo>
+            <group>TouringBooking</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Touring</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Plan,Projection</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Edit_Owned_Venue_Deal_for_Touring_Settlement</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Settlement users read-write access to all Settlement Deals at an owned &amp; operated Venue where the Primary Office is Touring</description>
+        <label>Edit Owned Venue Deal for Touring Settlement</label>
+        <sharedTo>
+            <group>TouringSettlement</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>PrimaryVenueOffice__c</field>
+            <operation>equals</operation>
+            <value>Touring</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VenueOwnership__c</field>
+            <operation>equals</operation>
+            <value>Owned/Operated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>StageType__c</field>
+            <operation>equals</operation>
+            <value>Settlement</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>T_C_Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>T&amp;C Touring North America</label>
+        <sharedTo>
+            <group>TCTouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Touring_North_America</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access when geography = North America</description>
+        <label>Touring North America</label>
+        <sharedTo>
+            <group>TouringOffice</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Geography__c</field>
+            <operation>equals</operation>
+            <value>North America</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Deal_for_Theaters_Clubs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all Theaters &amp; Clubs users read-only access to all Theaters &amp; Clubs Deals except Crossroads</description>
+        <label>View Deal for Theaters &amp; Clubs</label>
+        <sharedTo>
+            <group>TheatersClubsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>Theaters &amp; Clubs</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Crossroads</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>View_Deal_for_US_Concerts</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Provide all US Concerts users read-only access to all US Concerts Deals except Hollywood Bowl ABE</description>
+        <label>View Deal for US Concerts</label>
+        <sharedTo>
+            <group>USConcertsDivision</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>US Concerts</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>OfficeName__c</field>
+            <operation>notEqual</operation>
+            <value>Hollywood Bowl ABE</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_AC_Entertainment_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all AC Entertainment Booking public group users read-write access to all Deals created by AC Entertainment personnel</description>
+        <label>Edit Deal for AC Entertainment Booking</label>
+        <sharedTo>
+            <group>ACEntertainmentBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ACEntertainment</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Atlanta_Birmingham_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Atlanta/Birmingham Booking public group users read-write access to all Deals created by Atlanta/Birmingham personnel</description>
+        <label>Edit Deal for Atlanta/Birmingham Booking</label>
+        <sharedTo>
+            <group>AtlantaBirminghamBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>AtlantaBirmingham</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_BaltimoreWashingtonDC_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Baltimore/Washington DC Booking public group users read-write access to all Deals created by Baltimore/Washington DC personnel</description>
+        <label>Edit Deal for Baltimore/Washington DC Booking</label>
+        <sharedTo>
+            <group>BaltimoreWashingtonDCBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BaltimoreWashingtonDC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Boise_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boise Booking public group users read-write access to all Deals created by Boise personnel</description>
+        <label>Edit Deal for Boise Booking</label>
+        <sharedTo>
+            <group>BoiseBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boise</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Boston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Boston Booking public group users read-write access to all Deals created by Boston personnel</description>
+        <label>Edit Deal for Boston Booking</label>
+        <sharedTo>
+            <group>BostonBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Boston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Canada_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Canada Concerts Booking public group users read-write access to all Deals created by Canada Concerts personnel</description>
+        <label>Edit Deal for Canada Concerts Booking</label>
+        <sharedTo>
+            <group>CanadaConcertsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CanadaConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Carolinas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Carolinas Booking public group users read-write access to all Deals created by Carolinas personnel</description>
+        <label>Edit Deal for Carolinas Booking</label>
+        <sharedTo>
+            <group>CarolinasBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Carolinas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Chicago_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Chicago Booking public group users read-write access to all Deals created by Chicago personnel</description>
+        <label>Edit Deal for Chicago Booking</label>
+        <sharedTo>
+            <group>ChicagoBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Chicago</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Comedy_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Comedy Booking public group users read-write access to all Deals created by Comedy personnel</description>
+        <label>Edit Deal for Comedy Booking</label>
+        <sharedTo>
+            <group>ComedyBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Comedy</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Connecticut_Upstate_NY_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Connecticut/Upstate NY Booking public group users read-write access to all Deals created by Connecticut/Upstate NY personnel</description>
+        <label>Edit Deal for Connecticut/Upstate NY Booking</label>
+        <sharedTo>
+            <group>ConnecticutUpstateNYBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ConnecticutUpstateNY</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Country_Nation_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Country Nation Booking public group users read-write access to all Deals created by Country Nation personnel</description>
+        <label>Edit Deal for Country Nation Booking</label>
+        <sharedTo>
+            <group>CountryNationBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>CountryNation</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Crossroads_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Crossroads Booking public group users read-write access to all Deals created by Crossroads personnel</description>
+        <label>Edit Deal for Crossroads Booking</label>
+        <sharedTo>
+            <group>CrossroadsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Crossroads</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Dallas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Dallas Booking public group users read-write access to all Deals created by Dallas personnel</description>
+        <label>Edit Deal for Dallas Booking</label>
+        <sharedTo>
+            <group>DallasBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Dallas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Denver_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Denver Booking public group users read-write access to all Deals created by Denver personnel</description>
+        <label>Edit Deal for Denver Booking</label>
+        <sharedTo>
+            <group>DenverBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Denver</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Detroit_Indy_Cleveland_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Detroit/Indy/Cleveland Booking public group users read-write access to all Deals created by Detroit/Indy/Cleveland personnel</description>
+        <label>Edit Deal for Detroit/Indy/Cleveland Booking</label>
+        <sharedTo>
+            <group>DetroitIndyClevelandBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>DetroitIndyCleveland</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_EDM_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all EDM Booking public group users read-write access to all Deals created by EDM personnel</description>
+        <label>Edit Deal for EDM Booking</label>
+        <sharedTo>
+            <group>EDMBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>EDM</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Festivals_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Festivals Booking public group users read-write access to all Deals created by Festivals personnel</description>
+        <label>Edit Deal for Festivals Booking</label>
+        <sharedTo>
+            <group>FestivalsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Festivals</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Houston_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Houston Booking public group users read-write access to all Deals created by Houston personnel</description>
+        <label>Edit Deal for Houston Booking</label>
+        <sharedTo>
+            <group>HoustonBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Houston</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_LN_Urban_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all LN Urban Booking public group users read-write access to all Deals created by LN Urban personnel</description>
+        <label>Edit Deal for LN Urban Booking</label>
+        <sharedTo>
+            <group>LNUrbanBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LNUrban</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Las_Vegas_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Las Vegas Booking public group users read-write access to all Deals created by Las Vegas personnel</description>
+        <label>Edit Deal for Las Vegas Booking</label>
+        <sharedTo>
+            <group>LasVegasBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LasVegas</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Los_Angeles_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Los Angeles Booking public group users read-write access to all Deals created by Los Angeles personnel</description>
+        <label>Edit Deal for Los Angeles Booking</label>
+        <sharedTo>
+            <group>LosAngelesBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LosAngeles</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Miami_Tampa_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Miami/Tampa Booking public group users read-write access to all Deals created by Miami/Tampa personnel</description>
+        <label>Edit Deal for Miami/Tampa Booking</label>
+        <sharedTo>
+            <group>MiamiTampaBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MiamiTampa</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Nashville_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Nashville Booking public group users read-write access to all Deals created by Nashville personnel</description>
+        <label>Edit Deal for Nashville Booking</label>
+        <sharedTo>
+            <group>NashvilleBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Nashville</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_New_Orleans_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New Orleans Booking public group users read-write access to all Deals created by New Orleans personnel</description>
+        <label>Edit Deal for New Orleans Booking</label>
+        <sharedTo>
+            <group>NewOrleansBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewOrleans</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_New_York_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all New York Booking public group users read-write access to all Deals created by New York personnel</description>
+        <label>Edit Deal for New York Booking</label>
+        <sharedTo>
+            <group>NewYorkBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>NewYork</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Philadelphia_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Philadelphia Booking public group users read-write access to all Deals created by Philadelphia personnel</description>
+        <label>Edit Deal for Philadelphia Booking</label>
+        <sharedTo>
+            <group>PhiladelphiaBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Philadelphia</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Phoenix_Albuquerque_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Phoenix/Albuquerque Booking public group users read-write access to all Deals created by Phoenix/Albuquerque personnel</description>
+        <label>Edit Deal for Phoenix/Albuquerque Booking</label>
+        <sharedTo>
+            <group>PhoenixAlbuquerqueBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>PhoenixAlbuquerque</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Pittsburgh_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Pittsburgh Booking public group users read-write access to all Deals created by Pittsburgh personnel</description>
+        <label>Edit Deal for Pittsburgh Booking</label>
+        <sharedTo>
+            <group>PittsburghBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Pittsburgh</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_San_Diego_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Diego Booking public group users read-write access to all Deals created by San Diego personnel</description>
+        <label>Edit Deal for San Diego Booking</label>
+        <sharedTo>
+            <group>SanDiegoBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanDiego</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_San_Francisco_Sacramento_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all San Francisco/Sacramento Booking public group users read-write access to all Deals created by San Francisco/Sacramento personnel</description>
+        <label>Edit Deal for San Francisco/Sacramento Booking</label>
+        <sharedTo>
+            <group>SanFranciscoSacramentoBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SanFranciscoSacramento</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Seattle_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Seattle Booking public group users read-write access to all Deals created by Seattle personnel</description>
+        <label>Edit Deal for Seattle Booking</label>
+        <sharedTo>
+            <group>SeattleBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Seattle</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_St_Louis_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all St Louis Booking public group users read-write access to all Deals created by St Louis personnel</description>
+        <label>Edit Deal for St Louis Booking</label>
+        <sharedTo>
+            <group>StLouisBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>StLouis</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_T_C_Concerts_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all T&amp;C Concerts Booking public group users read-write access to all Deals created by T&amp;C Concerts personnel</description>
+        <label>Edit Deal for T&amp;C Concerts Booking</label>
+        <sharedTo>
+            <group>TCConcertsBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TCConcerts</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Edit_Deal_for_Touring_Booking</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provide all Touring Booking public group users read-write access to all Deals created by Touring personnel</description>
+        <label>Edit Deal for Touring Booking</label>
+        <sharedTo>
+            <group>TouringBooking</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Touring</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

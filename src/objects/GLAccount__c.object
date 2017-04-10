@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Definitions for General Ledger Accounts including GL codes, names, import options, etc. (Revenues &amp; Expenses - Ticket Revenues, Ancillary Revenues, Event Expenses, COGS Expenses, etc.)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ActiveFlag__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Active Flag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToBuySellEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To Buy Sell Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToCaterease__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To Caterease</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToGospelBrunchEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To Gospel Brunch Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToHOBEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To HOB Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToNAMusicEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To NA Music Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToPromotedEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To Promoted Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToRentalEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To Rental Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplyToSAPBPC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply To SAPBPC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvailableForForecast__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Available For Forecast</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CategorySort__c</fullName>
+        <externalId>false</externalId>
+        <label>Category Sort</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Advertising Expense</fullName>
+                    <default>false</default>
+                    <label>Advertising Expense</label>
+                </value>
+                <value>
+                    <fullName>Barter Advertising Expense</fullName>
+                    <default>false</default>
+                    <label>Barter Advertising Expense</label>
+                </value>
+                <value>
+                    <fullName>Barter Other Variable Expense</fullName>
+                    <default>false</default>
+                    <label>Barter Other Variable Expense</label>
+                </value>
+                <value>
+                    <fullName>Barter - Ticket Revenue</fullName>
+                    <default>false</default>
+                    <label>Barter - Ticket Revenue</label>
+                </value>
+                <value>
+                    <fullName>Booking Revenue</fullName>
+                    <default>false</default>
+                    <label>Booking Revenue</label>
+                </value>
+                <value>
+                    <fullName>Box Suite Event Revenue</fullName>
+                    <default>false</default>
+                    <label>Box Suite Event Revenue</label>
+                </value>
+                <value>
+                    <fullName>COGS - All Other</fullName>
+                    <default>false</default>
+                    <label>COGS - All Other</label>
+                </value>
+                <value>
+                    <fullName>COGS - Concessions</fullName>
+                    <default>false</default>
+                    <label>COGS - Concessions</label>
+                </value>
+                <value>
+                    <fullName>COGS - Merchandise</fullName>
+                    <default>false</default>
+                    <label>COGS - Merchandise</label>
+                </value>
+                <value>
+                    <fullName>Concession Revenue</fullName>
+                    <default>false</default>
+                    <label>Concession Revenue</label>
+                </value>
+                <value>
+                    <fullName>Co Promote Expenses</fullName>
+                    <default>false</default>
+                    <label>Co Promote Expenses</label>
+                </value>
+                <value>
+                    <fullName>Co Promote Sell Off Revenue</fullName>
+                    <default>false</default>
+                    <label>Co Promote Sell Off Revenue</label>
+                </value>
+                <value>
+                    <fullName>Event Rent Expense</fullName>
+                    <default>false</default>
+                    <label>Event Rent Expense</label>
+                </value>
+                <value>
+                    <fullName>Event Sponsorship Revenue</fullName>
+                    <default>false</default>
+                    <label>Event Sponsorship Revenue</label>
+                </value>
+                <value>
+                    <fullName>Facility Maintenance Fee</fullName>
+                    <default>false</default>
+                    <label>Facility Maintenance Fee</label>
+                </value>
+                <value>
+                    <fullName>Insurance Expense</fullName>
+                    <default>false</default>
+                    <label>Insurance Expense</label>
+                </value>
+                <value>
+                    <fullName>Merchandise Revenue</fullName>
+                    <default>false</default>
+                    <label>Merchandise Revenue</label>
+                </value>
+                <value>
+                    <fullName>Operating Expense</fullName>
+                    <default>false</default>
+                    <label>Operating Expense</label>
+                </value>
+                <value>
+                    <fullName>Other Event Revenue</fullName>
+                    <default>false</default>
+                    <label>Other Event Revenue</label>
+                </value>
+                <value>
+                    <fullName>Other Variable Expense</fullName>
+                    <default>false</default>
+                    <label>Other Variable Expense</label>
+                </value>
+                <value>
+                    <fullName>Parking Revenue</fullName>
+                    <default>false</default>
+                    <label>Parking Revenue</label>
+                </value>
+                <value>
+                    <fullName>Production Expense</fullName>
+                    <default>false</default>
+                    <label>Production Expense</label>
+                </value>
+                <value>
+                    <fullName>PSS/Box Suites - Event</fullName>
+                    <default>false</default>
+                    <label>PSS/Box Suites - Event</label>
+                </value>
+                <value>
+                    <fullName>Rental/Special Event Expense</fullName>
+                    <default>false</default>
+                    <label>Rental/Special Event Expense</label>
+                </value>
+                <value>
+                    <fullName>Rental/Special Event Revenue</fullName>
+                    <default>false</default>
+                    <label>Rental/Special Event Revenue</label>
+                </value>
+                <value>
+                    <fullName>Season Seats - Event</fullName>
+                    <default>false</default>
+                    <label>Season Seats - Event</label>
+                </value>
+                <value>
+                    <fullName>Service Charge Rebate Revenue</fullName>
+                    <default>false</default>
+                    <label>Service Charge Rebate Revenue</label>
+                </value>
+                <value>
+                    <fullName>Sound &amp; Lights Expense</fullName>
+                    <default>false</default>
+                    <label>Sound &amp; Lights Expense</label>
+                </value>
+                <value>
+                    <fullName>Talent Fees</fullName>
+                    <default>false</default>
+                    <label>Talent Fees</label>
+                </value>
+                <value>
+                    <fullName>Ticket Revenue</fullName>
+                    <default>false</default>
+                    <label>Ticket Revenue</label>
+                </value>
+                <value>
+                    <fullName>VIP Nation Expense</fullName>
+                    <default>false</default>
+                    <label>VIP Nation Expense</label>
+                </value>
+                <value>
+                    <fullName>VIP Nation Revenue</fullName>
+                    <default>false</default>
+                    <label>VIP Nation Revenue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DeactivationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Deactivation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DefaultCalculation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Default Calculation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinancialCategorySAPBPC__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Category - SAPBPC</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ancillary</fullName>
+                    <default>false</default>
+                    <label>Ancillary</label>
+                </value>
+                <value>
+                    <fullName>Barter</fullName>
+                    <default>false</default>
+                    <label>Barter</label>
+                </value>
+                <value>
+                    <fullName>Co-Promoter</fullName>
+                    <default>false</default>
+                    <label>Co-Promoter</label>
+                </value>
+                <value>
+                    <fullName>Operating Expense</fullName>
+                    <default>false</default>
+                    <label>Operating Expense</label>
+                </value>
+                <value>
+                    <fullName>Promoter Profits</fullName>
+                    <default>false</default>
+                    <label>Promoter Profits</label>
+                </value>
+                <value>
+                    <fullName>PSS/LSM</fullName>
+                    <default>false</default>
+                    <label>PSS/LSM</label>
+                </value>
+                <value>
+                    <fullName>Rome Metrics</fullName>
+                    <default>false</default>
+                    <label>Rome Metrics</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GLCode__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>GL Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ImportRateType__c</fullName>
+        <externalId>false</externalId>
+        <label>Import Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Flat</fullName>
+                    <default>false</default>
+                    <label>Flat</label>
+                </value>
+                <value>
+                    <fullName>Per Cap</fullName>
+                    <default>false</default>
+                    <label>Per Cap</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RelatedContra__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Contra</label>
+        <referenceTo>GLAccount__c</referenceTo>
+        <relationshipLabel>Related Contra (GL Account)</relationshipLabel>
+        <relationshipName>GLAccount</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RentalMap__c</fullName>
+        <description>The code of the GL Account that this converts to when converting to Rental GL types.</description>
+        <externalId>false</externalId>
+        <label>Rental Map</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RevenueFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Needed for Oracle Integration</description>
+        <externalId>false</externalId>
+        <label>Revenue Flag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SettlementCalculation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Settlement Calculation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>TourFinanceAccessible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tour Finance Accessible</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ticket Revenue</fullName>
+                    <default>false</default>
+                    <label>Ticket Revenue</label>
+                </value>
+                <value>
+                    <fullName>Expenses</fullName>
+                    <default>false</default>
+                    <label>Expenses</label>
+                </value>
+                <value>
+                    <fullName>Ancillary</fullName>
+                    <default>false</default>
+                    <label>Ancillary</label>
+                </value>
+                <value>
+                    <fullName>Contra</fullName>
+                    <default>false</default>
+                    <label>Contra</label>
+                </value>
+                <value>
+                    <fullName>COGS</fullName>
+                    <default>false</default>
+                    <label>COGS</label>
+                </value>
+                <value>
+                    <fullName>Talent Fees</fullName>
+                    <default>false</default>
+                    <label>Talent Fees</label>
+                </value>
+                <value>
+                    <fullName>Co Promote Expense</fullName>
+                    <default>false</default>
+                    <label>Co Promote Expense</label>
+                </value>
+                <value>
+                    <fullName>Co Promote Revenue</fullName>
+                    <default>false</default>
+                    <label>Co Promote Revenue</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>GL Account</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>GLCode__c</columns>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Type__c</columns>
+        <columns>RelatedContra__c</columns>
+        <columns>CategorySort__c</columns>
+        <columns>AvailableForForecast__c</columns>
+        <columns>ApplyToPromotedEvent__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>GL Account Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>GL Accounts</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>GLCode__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>GLCode__c</searchFilterFields>
+        <searchFilterFields>Type__c</searchFilterFields>
+        <searchFilterFields>Category__c</searchFilterFields>
+        <searchFilterFields>AvailableForForecast__c</searchFilterFields>
+        <searchResultsAdditionalFields>GLCode__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AvailableForForecast__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

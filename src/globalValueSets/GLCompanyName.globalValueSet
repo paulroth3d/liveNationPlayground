@@ -1,0 +1,2459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>3065 [Alpine Valley Theater]</fullName>
+        <default>false</default>
+        <label>3065 [Alpine Valley Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>2009 [American Artists]</fullName>
+        <default>false</default>
+        <label>2009 [American Artists]</label>
+    </customValue>
+    <customValue>
+        <fullName>3066 [AmSouth Amphitheater]</fullName>
+        <default>false</default>
+        <label>3066 [AmSouth Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3167 [Aragon]</fullName>
+        <default>false</default>
+        <label>3167 [Aragon]</label>
+    </customValue>
+    <customValue>
+        <fullName>1024 [Ardee Festivals]</fullName>
+        <default>false</default>
+        <label>1024 [Ardee Festivals]</label>
+    </customValue>
+    <customValue>
+        <fullName>3168 [Ascend Amphitheater]</fullName>
+        <default>false</default>
+        <label>3168 [Ascend Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1018 [Atlanta Concerts]</fullName>
+        <default>false</default>
+        <label>1018 [Atlanta Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>1047 [Bamboozle Festival LLC]</fullName>
+        <default>false</default>
+        <label>1047 [Bamboozle Festival LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>3102 [Bayfront Park]</fullName>
+        <default>false</default>
+        <label>3102 [Bayfront Park]</label>
+    </customValue>
+    <customValue>
+        <fullName>3045 [Beach Concerts, Inc.]</fullName>
+        <default>false</default>
+        <label>3045 [Beach Concerts, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1008 [BGE (Concert Promotions)]</fullName>
+        <default>false</default>
+        <label>1008 [BGE (Concert Promotions)]</label>
+    </customValue>
+    <customValue>
+        <fullName>1999 [Bill Graham Entertainment]</fullName>
+        <default>false</default>
+        <label>1999 [Bill Graham Entertainment]</label>
+    </customValue>
+    <customValue>
+        <fullName>3999 [Bill Graham Special Events]</fullName>
+        <default>false</default>
+        <label>3999 [Bill Graham Special Events]</label>
+    </customValue>
+    <customValue>
+        <fullName>3123 [Blossom Music Center]</fullName>
+        <default>false</default>
+        <label>3123 [Blossom Music Center]</label>
+    </customValue>
+    <customValue>
+        <fullName>3011 [Bogart&apos;s]</fullName>
+        <default>false</default>
+        <label>3011 [Bogart&apos;s]</label>
+    </customValue>
+    <customValue>
+        <fullName>3110 [Boston Joint Venture]</fullName>
+        <default>false</default>
+        <label>3110 [Boston Joint Venture]</label>
+    </customValue>
+    <customValue>
+        <fullName>3109 [Brighton Music Hall]</fullName>
+        <default>false</default>
+        <label>3109 [Brighton Music Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>2019 [BSMG]</fullName>
+        <default>false</default>
+        <label>2019 [BSMG]</label>
+    </customValue>
+    <customValue>
+        <fullName>1046 [Buffalo Concerts]</fullName>
+        <default>false</default>
+        <label>1046 [Buffalo Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3052 [Camden Amphi]</fullName>
+        <default>false</default>
+        <label>3052 [Camden Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3007 [Capitol Music Hall]</fullName>
+        <default>false</default>
+        <label>3007 [Capitol Music Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>1126 [Carl Black Chevy Woods Amphitheater at Fontanel]</fullName>
+        <default>false</default>
+        <label>1126 [Carl Black Chevy Woods Amphitheater at Fontanel]</label>
+    </customValue>
+    <customValue>
+        <fullName>1001 [CCE Cleveland]</fullName>
+        <default>false</default>
+        <label>1001 [CCE Cleveland]</label>
+    </customValue>
+    <customValue>
+        <fullName>1001 [CCE Cleveland Promotions]</fullName>
+        <default>false</default>
+        <label>1001 [CCE Cleveland Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1012 [CDP-DC]</fullName>
+        <default>false</default>
+        <label>1012 [CDP-DC]</label>
+    </customValue>
+    <customValue>
+        <fullName>3026 [Cellar Door – Nissan Pavilion]</fullName>
+        <default>false</default>
+        <label>3026 [Cellar Door – Nissan Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1016 [Cellar Door Concerts-Carolinas]</fullName>
+        <default>false</default>
+        <label>1016 [Cellar Door Concerts-Carolinas]</label>
+    </customValue>
+    <customValue>
+        <fullName>1017 [Cellar Door Concerts-Florida]</fullName>
+        <default>false</default>
+        <label>1017 [Cellar Door Concerts-Florida]</label>
+    </customValue>
+    <customValue>
+        <fullName>1031 [Cellar Door Concerts-North Central]</fullName>
+        <default>false</default>
+        <label>1031 [Cellar Door Concerts-North Central]</label>
+    </customValue>
+    <customValue>
+        <fullName>1011 [Cellar Door Michigan]</fullName>
+        <default>false</default>
+        <label>1011 [Cellar Door Michigan]</label>
+    </customValue>
+    <customValue>
+        <fullName>1013 [Cellar Door Prod of Virginia]</fullName>
+        <default>false</default>
+        <label>1013 [Cellar Door Prod of Virginia]</label>
+    </customValue>
+    <customValue>
+        <fullName>3027 [Cellar Door Venues-GTE]</fullName>
+        <default>false</default>
+        <label>3027 [Cellar Door Venues-GTE]</label>
+    </customValue>
+    <customValue>
+        <fullName>1125 [Champions Square]</fullName>
+        <default>false</default>
+        <label>1125 [Champions Square]</label>
+    </customValue>
+    <customValue>
+        <fullName>3087 [Charles Playhouse]</fullName>
+        <default>false</default>
+        <label>3087 [Charles Playhouse]</label>
+    </customValue>
+    <customValue>
+        <fullName>3038 [Charlotte Amphi]</fullName>
+        <default>false</default>
+        <label>3038 [Charlotte Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3063 [Charter One Pavilion]</fullName>
+        <default>false</default>
+        <label>3063 [Charter One Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>9538 [City Lights Pavilion]</fullName>
+        <default>false</default>
+        <label>9538 [City Lights Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3033 [Clutch Cargo]</fullName>
+        <default>false</default>
+        <label>3033 [Clutch Cargo]</label>
+    </customValue>
+    <customValue>
+        <fullName>3022 [Cobb&apos;s Comedy Club]</fullName>
+        <default>false</default>
+        <label>3022 [Cobb&apos;s Comedy Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>3089 [Colonial Theater]</fullName>
+        <default>false</default>
+        <label>3089 [Colonial Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1009 [Comedy]</fullName>
+        <default>false</default>
+        <label>1009 [Comedy]</label>
+    </customValue>
+    <customValue>
+        <fullName>3097 [Comerica Theater]</fullName>
+        <default>false</default>
+        <label>3097 [Comerica Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3154 [Commodore]</fullName>
+        <default>false</default>
+        <label>3154 [Commodore]</label>
+    </customValue>
+    <customValue>
+        <fullName>3019 [Concord Pavilion]</fullName>
+        <default>false</default>
+        <label>3019 [Concord Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3802 [Coney Island Amphitheater]</fullName>
+        <default>false</default>
+        <label>3802 [Coney Island Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1034 [Contemporary Concerts]</fullName>
+        <default>false</default>
+        <label>1034 [Contemporary Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3121 [Coors Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3121 [Coors Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3042 [Cotton Club]</fullName>
+        <default>false</default>
+        <label>3042 [Cotton Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>1355 [Country Nation]</fullName>
+        <default>false</default>
+        <label>1355 [Country Nation]</label>
+    </customValue>
+    <customValue>
+        <fullName>1365 [Country Nation-Chicago]</fullName>
+        <default>false</default>
+        <label>1365 [Country Nation-Chicago]</label>
+    </customValue>
+    <customValue>
+        <fullName>3039 [CS - Chastain Promotions]</fullName>
+        <default>false</default>
+        <label>3039 [CS - Chastain Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1030 [CT Concerts, Inc.]</fullName>
+        <default>false</default>
+        <label>1030 [CT Concerts, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1038 [Dallas Promo Company Exports]</fullName>
+        <default>false</default>
+        <label>1038 [Dallas Promo Company Exports]</label>
+    </customValue>
+    <customValue>
+        <fullName>3050 [Darien Lake]</fullName>
+        <default>false</default>
+        <label>3050 [Darien Lake]</label>
+    </customValue>
+    <customValue>
+        <fullName>3028 [Deer Creek]</fullName>
+        <default>false</default>
+        <label>3028 [Deer Creek]</label>
+    </customValue>
+    <customValue>
+        <fullName>1359 [Delaware Junction]</fullName>
+        <default>false</default>
+        <label>1359 [Delaware Junction]</label>
+    </customValue>
+    <customValue>
+        <fullName>1023 [Delsener/Slater Enterprises]</fullName>
+        <default>false</default>
+        <label>1023 [Delsener/Slater Enterprises]</label>
+    </customValue>
+    <customValue>
+        <fullName>3126 [Denver]</fullName>
+        <default>false</default>
+        <label>3126 [Denver]</label>
+    </customValue>
+    <customValue>
+        <fullName>1021 [Denver Concert Promotions]</fullName>
+        <default>false</default>
+        <label>1021 [Denver Concert Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3056 [Desert Sky Amphi]</fullName>
+        <default>false</default>
+        <label>3056 [Desert Sky Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>1002 [DiCesare-Engler, Inc.]</fullName>
+        <default>false</default>
+        <label>1002 [DiCesare-Engler, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1045 [Don Law Agency]</fullName>
+        <default>false</default>
+        <label>1045 [Don Law Agency]</label>
+    </customValue>
+    <customValue>
+        <fullName>1044 [Don Law Events]</fullName>
+        <default>false</default>
+        <label>1044 [Don Law Events]</label>
+    </customValue>
+    <customValue>
+        <fullName>2019 [Eagle Eye]</fullName>
+        <default>false</default>
+        <label>2019 [Eagle Eye]</label>
+    </customValue>
+    <customValue>
+        <fullName>1110 [EDM Management Overhead]</fullName>
+        <default>false</default>
+        <label>1110 [EDM Management Overhead]</label>
+    </customValue>
+    <customValue>
+        <fullName>1027 [Electric Factory Concerts Inc]</fullName>
+        <default>false</default>
+        <label>1027 [Electric Factory Concerts Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>1309 [Electronic Nation]</fullName>
+        <default>false</default>
+        <label>1309 [Electronic Nation]</label>
+    </customValue>
+    <customValue>
+        <fullName>3801 [Encore Park]</fullName>
+        <default>false</default>
+        <label>3801 [Encore Park]</label>
+    </customValue>
+    <customValue>
+        <fullName>1029 [Evening Star Productions, Inc.]</fullName>
+        <default>false</default>
+        <label>1029 [Evening Star Productions, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1306 [Evenko]</fullName>
+        <default>false</default>
+        <label>1306 [Evenko]</label>
+    </customValue>
+    <customValue>
+        <fullName>3141 [Festival Holdings, LLC]</fullName>
+        <default>false</default>
+        <label>3141 [Festival Holdings, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>1121 [Festivals]</fullName>
+        <default>false</default>
+        <label>1121 [Festivals]</label>
+    </customValue>
+    <customValue>
+        <fullName>3108 [Fillmore Charlotte]</fullName>
+        <default>false</default>
+        <label>3108 [Fillmore Charlotte]</label>
+    </customValue>
+    <customValue>
+        <fullName>3096 [Fillmore Miami Beach At Jackie Gleason Theatre]</fullName>
+        <default>false</default>
+        <label>3096 [Fillmore Miami Beach At Jackie Gleason Theatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3044 [Fillmore Theater-Denver Co]</fullName>
+        <default>false</default>
+        <label>3044 [Fillmore Theater-Denver Co]</label>
+    </customValue>
+    <customValue>
+        <fullName>3044 [Filmore Theater-Denver Co]</fullName>
+        <default>false</default>
+        <label>3044 [Filmore Theater-Denver Co]</label>
+    </customValue>
+    <customValue>
+        <fullName>9539 [Fistar]</fullName>
+        <default>false</default>
+        <label>9539 [Fistar]</label>
+    </customValue>
+    <customValue>
+        <fullName>1057 [Founder’s Entertainment]</fullName>
+        <default>false</default>
+        <label>1057 [Founder’s Entertainment]</label>
+    </customValue>
+    <customValue>
+        <fullName>3163 [Fox Performing Arts]</fullName>
+        <default>false</default>
+        <label>3163 [Fox Performing Arts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3120 [Gibson Amphitheater]</fullName>
+        <default>false</default>
+        <label>3120 [Gibson Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3000 [Glen Helen Amphi]</fullName>
+        <default>false</default>
+        <label>3000 [Glen Helen Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3094 [Gramercy Theatre]</fullName>
+        <default>false</default>
+        <label>3094 [Gramercy Theatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3071 [Great Woods]</fullName>
+        <default>false</default>
+        <label>3071 [Great Woods]</label>
+    </customValue>
+    <customValue>
+        <fullName>3072 [Harborlights]</fullName>
+        <default>false</default>
+        <label>3072 [Harborlights]</label>
+    </customValue>
+    <customValue>
+        <fullName>1111 [Hard Events]</fullName>
+        <default>false</default>
+        <label>1111 [Hard Events]</label>
+    </customValue>
+    <customValue>
+        <fullName>1028 [Hershey Star Pavillion]</fullName>
+        <default>false</default>
+        <label>1028 [Hershey Star Pavillion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3124 [HiFi Buys Amphitheater]</fullName>
+        <default>false</default>
+        <label>3124 [HiFi Buys Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3124 [HiFi Buys Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3124 [HiFi Buys Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3032 [Historic St. Andrews Hall, Inc]</fullName>
+        <default>false</default>
+        <label>3032 [Historic St. Andrews Hall, Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>3166 [HOB Ace of Spades Corp]</fullName>
+        <default>false</default>
+        <label>3166 [HOB Ace of Spades Corp]</label>
+    </customValue>
+    <customValue>
+        <fullName>3111 [HOB Boston_Crossroads Presents, LLC]</fullName>
+        <default>false</default>
+        <label>3111 [HOB Boston_Crossroads Presents, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>1304 [HOB CAD Central]</fullName>
+        <default>false</default>
+        <label>1304 [HOB CAD Central]</label>
+    </customValue>
+    <customValue>
+        <fullName>1305 [HOB CAD West]</fullName>
+        <default>false</default>
+        <label>1305 [HOB CAD West]</label>
+    </customValue>
+    <customValue>
+        <fullName>3134 [HOB Club Anaheim]</fullName>
+        <default>false</default>
+        <label>3134 [HOB Club Anaheim]</label>
+    </customValue>
+    <customValue>
+        <fullName>3130 [HOB Club Chicago]</fullName>
+        <default>false</default>
+        <label>3130 [HOB Club Chicago]</label>
+    </customValue>
+    <customValue>
+        <fullName>3135 [HOB Club Cleveland]</fullName>
+        <default>false</default>
+        <label>3135 [HOB Club Cleveland]</label>
+    </customValue>
+    <customValue>
+        <fullName>3138 [HOB Club Dallas]</fullName>
+        <default>false</default>
+        <label>3138 [HOB Club Dallas]</label>
+    </customValue>
+    <customValue>
+        <fullName>3140 [HOB Club Houston]</fullName>
+        <default>false</default>
+        <label>3140 [HOB Club Houston]</label>
+    </customValue>
+    <customValue>
+        <fullName>3133 [HOB Club Las Vegas]</fullName>
+        <default>false</default>
+        <label>3133 [HOB Club Las Vegas]</label>
+    </customValue>
+    <customValue>
+        <fullName>3129 [HOB Club Los Angeles]</fullName>
+        <default>false</default>
+        <label>3129 [HOB Club Los Angeles]</label>
+    </customValue>
+    <customValue>
+        <fullName>3131 [HOB Club Myrtle Beach]</fullName>
+        <default>false</default>
+        <label>3131 [HOB Club Myrtle Beach]</label>
+    </customValue>
+    <customValue>
+        <fullName>3128 [HOB Club New Orleans]</fullName>
+        <default>false</default>
+        <label>3128 [HOB Club New Orleans]</label>
+    </customValue>
+    <customValue>
+        <fullName>3132 [HOB Club Orlando]</fullName>
+        <default>false</default>
+        <label>3132 [HOB Club Orlando]</label>
+    </customValue>
+    <customValue>
+        <fullName>3136 [HOB Club San Diego]</fullName>
+        <default>false</default>
+        <label>3136 [HOB Club San Diego]</label>
+    </customValue>
+    <customValue>
+        <fullName>1101 [Hollywood Bowl – ABE]</fullName>
+        <default>false</default>
+        <label>1101 [Hollywood Bowl – ABE]</label>
+    </customValue>
+    <customValue>
+        <fullName>3137 [House of Blues Atlantic City]</fullName>
+        <default>false</default>
+        <label>3137 [House of Blues Atlantic City]</label>
+    </customValue>
+    <customValue>
+        <fullName>3139 [House of Blues Boston]</fullName>
+        <default>false</default>
+        <label>3139 [House of Blues Boston]</label>
+    </customValue>
+    <customValue>
+        <fullName>9535 [Houston Broadway]</fullName>
+        <default>false</default>
+        <label>9535 [Houston Broadway]</label>
+    </customValue>
+    <customValue>
+        <fullName>1112 [Insomniac]</fullName>
+        <default>false</default>
+        <label>1112 [Insomniac]</label>
+    </customValue>
+    <customValue>
+        <fullName>3046 [Irving Plaza]</fullName>
+        <default>false</default>
+        <label>3046 [Irving Plaza]</label>
+    </customValue>
+    <customValue>
+        <fullName>3008 [Jacobs Pavilion]</fullName>
+        <default>false</default>
+        <label>3008 [Jacobs Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1054 [Las Vegas Promotions]</fullName>
+        <default>false</default>
+        <label>1054 [Las Vegas Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1307 [Live Nation Ontario Concerts]</fullName>
+        <default>false</default>
+        <label>1307 [Live Nation Ontario Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3100 [LN Hollywood (Hollywood Palladium)]</fullName>
+        <default>false</default>
+        <label>3100 [LN Hollywood (Hollywood Palladium)]</label>
+    </customValue>
+    <customValue>
+        <fullName>1100 [LN-HS Concerts]</fullName>
+        <default>false</default>
+        <label>1100 [LN-HS Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3092 [Louisville Palace Theater]</fullName>
+        <default>false</default>
+        <label>3092 [Louisville Palace Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1322 [Markets Management Overhead]</fullName>
+        <default>false</default>
+        <label>1322 [Markets Management Overhead]</label>
+    </customValue>
+    <customValue>
+        <fullName>3010 [Melody Tent &amp; Amph]</fullName>
+        <default>false</default>
+        <label>3010 [Melody Tent &amp; Amph]</label>
+    </customValue>
+    <customValue>
+        <fullName>3062 [Memorial Hall]</fullName>
+        <default>false</default>
+        <label>3062 [Memorial Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>3164 [Mercury Ballroom]</fullName>
+        <default>false</default>
+        <label>3164 [Mercury Ballroom]</label>
+    </customValue>
+    <customValue>
+        <fullName>9999 [Merriweather Post Pavilion]</fullName>
+        <default>false</default>
+        <label>9999 [Merriweather Post Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3057 [Mesa Del Sol]</fullName>
+        <default>false</default>
+        <label>3057 [Mesa Del Sol]</label>
+    </customValue>
+    <customValue>
+        <fullName>3031 [Michigan Holdings, LLC./Orbit Room]</fullName>
+        <default>false</default>
+        <label>3031 [Michigan Holdings, LLC./Orbit Room]</label>
+    </customValue>
+    <customValue>
+        <fullName>3105 [Mizner Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3105 [Mizner Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3153 [Molson Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3153 [Molson Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3155 [Molson MLSE JV]</fullName>
+        <default>false</default>
+        <label>3155 [Molson MLSE JV]</label>
+    </customValue>
+    <customValue>
+        <fullName>3055 [Montage Mountain]</fullName>
+        <default>false</default>
+        <label>3055 [Montage Mountain]</label>
+    </customValue>
+    <customValue>
+        <fullName>1010 [Montain Winery]</fullName>
+        <default>false</default>
+        <label>1010 [Montain Winery]</label>
+    </customValue>
+    <customValue>
+        <fullName>3029 [Murat Theater]</fullName>
+        <default>false</default>
+        <label>3029 [Murat Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1041 [Nashvile Promotions]</fullName>
+        <default>false</default>
+        <label>1041 [Nashvile Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1124 [Nashville Promotions (2015+)]</fullName>
+        <default>false</default>
+        <label>1124 [Nashville Promotions (2015+)]</label>
+    </customValue>
+    <customValue>
+        <fullName>3103 [National City Pavilion]</fullName>
+        <default>false</default>
+        <label>3103 [National City Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3103 [National City Pavillion]</fullName>
+        <default>false</default>
+        <label>3103 [National City Pavillion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1000 [New Avalon, Inc.]</fullName>
+        <default>false</default>
+        <label>1000 [New Avalon, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1042 [New Era Promotions, Inc]</fullName>
+        <default>false</default>
+        <label>1042 [New Era Promotions, Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>1123 [New Orleans Promotions]</fullName>
+        <default>false</default>
+        <label>1123 [New Orleans Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3026 [Nissian Pavilion]</fullName>
+        <default>false</default>
+        <label>3026 [Nissian Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3101 [Nob Hill Masonic]</fullName>
+        <default>false</default>
+        <label>3101 [Nob Hill Masonic]</label>
+    </customValue>
+    <customValue>
+        <fullName>1007 [NW Productions]</fullName>
+        <default>false</default>
+        <label>1007 [NW Productions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3069 [Oak Mountain Concerts]</fullName>
+        <default>false</default>
+        <label>3069 [Oak Mountain Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3059 [Oakdale Theater]</fullName>
+        <default>false</default>
+        <label>3059 [Oakdale Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3005 [Odeon Concert]</fullName>
+        <default>false</default>
+        <label>3005 [Odeon Concert]</label>
+    </customValue>
+    <customValue>
+        <fullName>3005 [Odeon Concert Club]</fullName>
+        <default>false</default>
+        <label>3005 [Odeon Concert Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>3091 [Opera House]</fullName>
+        <default>false</default>
+        <label>3091 [Opera House]</label>
+    </customValue>
+    <customValue>
+        <fullName>3070 [Orpheum Theater]</fullName>
+        <default>false</default>
+        <label>3070 [Orpheum Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3118 [Orpheum Theatre-Madison]</fullName>
+        <default>false</default>
+        <label>3118 [Orpheum Theatre-Madison]</label>
+    </customValue>
+    <customValue>
+        <fullName>3113 [Orpheum_Crossroads Presents, LLC]</fullName>
+        <default>false</default>
+        <label>3113 [Orpheum_Crossroads Presents, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>1040 [Pace Concerts, LTD]</fullName>
+        <default>false</default>
+        <label>1040 [Pace Concerts, LTD]</label>
+    </customValue>
+    <customValue>
+        <fullName>1352 [Pace Touring, Inc.]</fullName>
+        <default>false</default>
+        <label>1352 [Pace Touring, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>3095 [Paradise Lounge]</fullName>
+        <default>false</default>
+        <label>3095 [Paradise Lounge]</label>
+    </customValue>
+    <customValue>
+        <fullName>3095 [Paradise Rock Club]</fullName>
+        <default>false</default>
+        <label>3095 [Paradise Rock Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>3112 [Paradise_Crossroads Presents, LLC]</fullName>
+        <default>false</default>
+        <label>3112 [Paradise_Crossroads Presents, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>2004 [Parker Theater]</fullName>
+        <default>false</default>
+        <label>2004 [Parker Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3025 [Pier Six Pavilion]</fullName>
+        <default>false</default>
+        <label>3025 [Pier Six Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1300 [PMSI (LE)]</fullName>
+        <default>false</default>
+        <label>1300 [PMSI (LE)]</label>
+    </customValue>
+    <customValue>
+        <fullName>3051 [PNC Bank Arts Amphi]</fullName>
+        <default>false</default>
+        <label>3051 [PNC Bank Arts Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3004 [Polaris Amphitheater]</fullName>
+        <default>false</default>
+        <label>3004 [Polaris Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3104 [Pompano Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3104 [Pompano Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>1003 [Promotions/Cincinnati]</fullName>
+        <default>false</default>
+        <label>1003 [Promotions/Cincinnati]</label>
+    </customValue>
+    <customValue>
+        <fullName>2007 [PTG Corp.]</fullName>
+        <default>false</default>
+        <label>2007 [PTG Corp.]</label>
+    </customValue>
+    <customValue>
+        <fullName>2004 [PTG Florida]</fullName>
+        <default>false</default>
+        <label>2004 [PTG Florida]</label>
+    </customValue>
+    <customValue>
+        <fullName>3024 [Punch Line Comedy Club - Sac]</fullName>
+        <default>false</default>
+        <label>3024 [Punch Line Comedy Club - Sac]</label>
+    </customValue>
+    <customValue>
+        <fullName>3023 [Punch Line Comedy Club -SF]</fullName>
+        <default>false</default>
+        <label>3023 [Punch Line Comedy Club -SF]</label>
+    </customValue>
+    <customValue>
+        <fullName>3165 [Punch line Philadelphia]</fullName>
+        <default>false</default>
+        <label>3165 [Punch line Philadelphia]</label>
+    </customValue>
+    <customValue>
+        <fullName>1015 [Ritual, Inc]</fullName>
+        <default>false</default>
+        <label>1015 [Ritual, Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>1004 [Riverbend Amph Riverbend Music Center]</fullName>
+        <default>false</default>
+        <label>1004 [Riverbend Amph Riverbend Music Center]</label>
+    </customValue>
+    <customValue>
+        <fullName>9551 [Riverside Muni Non-Consolidating Company]</fullName>
+        <default>false</default>
+        <label>9551 [Riverside Muni Non-Consolidating Company]</label>
+    </customValue>
+    <customValue>
+        <fullName>3162 [Riverside Municipal Auditorium]</fullName>
+        <default>false</default>
+        <label>3162 [Riverside Municipal Auditorium]</label>
+    </customValue>
+    <customValue>
+        <fullName>9552 [Riverside PAC Non-Consolidating Company]</fullName>
+        <default>false</default>
+        <label>9552 [Riverside PAC Non-Consolidating Company]</label>
+    </customValue>
+    <customValue>
+        <fullName>3040 [Roxy Theater]</fullName>
+        <default>false</default>
+        <label>3040 [Roxy Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3017 [Sacramento Amphitheater]</fullName>
+        <default>false</default>
+        <label>3017 [Sacramento Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3015 [SAL]</fullName>
+        <default>false</default>
+        <label>3015 [SAL]</label>
+    </customValue>
+    <customValue>
+        <fullName>1122 [San Diego Promotions]</fullName>
+        <default>false</default>
+        <label>1122 [San Diego Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3061 [Sandstone Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3061 [Sandstone Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3016 [SAP]</fullName>
+        <default>false</default>
+        <label>3016 [SAP]</label>
+    </customValue>
+    <customValue>
+        <fullName>3049 [Saratoga Performing Arts Center]</fullName>
+        <default>false</default>
+        <label>3049 [Saratoga Performing Arts Center]</label>
+    </customValue>
+    <customValue>
+        <fullName>1350 [SFX Touring, Inc.]</fullName>
+        <default>false</default>
+        <label>1350 [SFX Touring, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>3014 [Shoreline Amphitheater]</fullName>
+        <default>false</default>
+        <label>3014 [Shoreline Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3125 [Smirnoff Music Centre]</fullName>
+        <default>false</default>
+        <label>3125 [Smirnoff Music Centre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3036 [Sound Advice Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3036 [Sound Advice Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>1019 [Southern Promotions]</fullName>
+        <default>false</default>
+        <label>1019 [Southern Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3035 [St. Andrews Hall]</fullName>
+        <default>false</default>
+        <label>3035 [St. Andrews Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>3009 [Star Lake Amphi]</fullName>
+        <default>false</default>
+        <label>3009 [Star Lake Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>1014 [Sunshine Promotions, Inc.]</fullName>
+        <default>false</default>
+        <label>1014 [Sunshine Promotions, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>3012 [Taft/Cincinnati]</fullName>
+        <default>false</default>
+        <label>3012 [Taft/Cincinnati]</label>
+    </customValue>
+    <customValue>
+        <fullName>3043 [Tampa]</fullName>
+        <default>false</default>
+        <label>3043 [Tampa]</label>
+    </customValue>
+    <customValue>
+        <fullName>1032 [TEG]</fullName>
+        <default>false</default>
+        <label>1032 [TEG]</label>
+    </customValue>
+    <customValue>
+        <fullName>3149 [The Aztec Theatre]</fullName>
+        <default>false</default>
+        <label>3149 [The Aztec Theatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3020 [The Fillmore]</fullName>
+        <default>false</default>
+        <label>3020 [The Fillmore]</label>
+    </customValue>
+    <customValue>
+        <fullName>3034 [The Fillmore Detroit]</fullName>
+        <default>false</default>
+        <label>3034 [The Fillmore Detroit]</label>
+    </customValue>
+    <customValue>
+        <fullName>3161 [The Fillmore Philadelphia]</fullName>
+        <default>false</default>
+        <label>3161 [The Fillmore Philadelphia]</label>
+    </customValue>
+    <customValue>
+        <fullName>3160 [The Fillmore Silver Spring]</fullName>
+        <default>false</default>
+        <label>3160 [The Fillmore Silver Spring]</label>
+    </customValue>
+    <customValue>
+        <fullName>3122 [The Gorge]</fullName>
+        <default>false</default>
+        <label>3122 [The Gorge]</label>
+    </customValue>
+    <customValue>
+        <fullName>3058 [The Meadows Music Theater]</fullName>
+        <default>false</default>
+        <label>3058 [The Meadows Music Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1323 [The Ritz]</fullName>
+        <default>false</default>
+        <label>1323 [The Ritz]</label>
+    </customValue>
+    <customValue>
+        <fullName>3041 [The Tabernacle]</fullName>
+        <default>false</default>
+        <label>3041 [The Tabernacle]</label>
+    </customValue>
+    <customValue>
+        <fullName>3002 [The Wiltern]</fullName>
+        <default>false</default>
+        <label>3002 [The Wiltern]</label>
+    </customValue>
+    <customValue>
+        <fullName>3054 [Theater of the Living Arts]</fullName>
+        <default>false</default>
+        <label>3054 [Theater of the Living Arts]</label>
+    </customValue>
+    <customValue>
+        <fullName>2010 [Tour 1]</fullName>
+        <default>false</default>
+        <label>2010 [Tour 1]</label>
+    </customValue>
+    <customValue>
+        <fullName>3090 [Tour 2]</fullName>
+        <default>false</default>
+        <label>3090 [Tour 2]</label>
+    </customValue>
+    <customValue>
+        <fullName>3006 [Tower City Amphitheater]</fullName>
+        <default>false</default>
+        <label>3006 [Tower City Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3053 [Tower Theater]</fullName>
+        <default>false</default>
+        <label>3053 [Tower Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3107 [Uptown Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3107 [Uptown Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3060 [Verizon Wireless Amphitheater-St. Louis]</fullName>
+        <default>false</default>
+        <label>3060 [Verizon Wireless Amphitheater-St. Louis]</label>
+    </customValue>
+    <customValue>
+        <fullName>3067 [Verizon Wireless Amphitheater-Texas]</fullName>
+        <default>false</default>
+        <label>3067 [Verizon Wireless Amphitheater-Texas]</label>
+    </customValue>
+    <customValue>
+        <fullName>3001 [Verizon Wireless Amphitheatre]</fullName>
+        <default>false</default>
+        <label>3001 [Verizon Wireless Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3068 [Verizon Wireless Theater]</fullName>
+        <default>false</default>
+        <label>3068 [Verizon Wireless Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3037 [Walnut Creek Amphi]</fullName>
+        <default>false</default>
+        <label>3037 [Walnut Creek Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3021 [Warfield Theater]</fullName>
+        <default>false</default>
+        <label>3021 [Warfield Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3106 [Warner Theatre - NA Music]</fullName>
+        <default>false</default>
+        <label>3106 [Warner Theatre - NA Music]</label>
+    </customValue>
+    <customValue>
+        <fullName>3048 [Westbury Theater]</fullName>
+        <default>false</default>
+        <label>3048 [Westbury Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3018 [White River Amphitheater]</fullName>
+        <default>false</default>
+        <label>3018 [White River Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3088 [Wilbur Theater]</fullName>
+        <default>false</default>
+        <label>3088 [Wilbur Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3003 [Wilturn Theater]</fullName>
+        <default>false</default>
+        <label>3003 [Wilturn Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1036 [Woodlands Amphi]</fullName>
+        <default>false</default>
+        <label>1036 [Woodlands Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3064 [World Music Theater]</fullName>
+        <default>false</default>
+        <label>3064 [World Music Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>0000 [Placeholder Value]</fullName>
+        <default>false</default>
+        <label>0000 [Placeholder Value]</label>
+    </customValue>
+    <customValue>
+        <fullName>3065	[Alpine Valley Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3065	[Alpine Valley Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>2009	[American Artists]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2009	[American Artists]</label>
+    </customValue>
+    <customValue>
+        <fullName>3066	[AmSouth Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3066	[AmSouth Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3167	[Aragon]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3167	[Aragon]</label>
+    </customValue>
+    <customValue>
+        <fullName>1024	[Ardee Festivals]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1024	[Ardee Festivals]</label>
+    </customValue>
+    <customValue>
+        <fullName>3168	[Ascend Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3168	[Ascend Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1018	[Atlanta Concerts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1018	[Atlanta Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>1047	[Bamboozle Festival LLC]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1047	[Bamboozle Festival LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>3102	[Bayfront Park]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3102	[Bayfront Park]</label>
+    </customValue>
+    <customValue>
+        <fullName>3045	[Beach Concerts, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3045	[Beach Concerts, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1008	[BGE (Concert Promotions)]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1008	[BGE (Concert Promotions)]</label>
+    </customValue>
+    <customValue>
+        <fullName>1999	[Bill Graham Entertainment]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1999	[Bill Graham Entertainment]</label>
+    </customValue>
+    <customValue>
+        <fullName>3999	[Bill Graham Special Events]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3999	[Bill Graham Special Events]</label>
+    </customValue>
+    <customValue>
+        <fullName>3123	[Blossom Music Center]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3123	[Blossom Music Center]</label>
+    </customValue>
+    <customValue>
+        <fullName>3011 	[Bogart&apos;s]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3011 	[Bogart&apos;s]</label>
+    </customValue>
+    <customValue>
+        <fullName>3110 	[Boston Joint Venture]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3110 	[Boston Joint Venture]</label>
+    </customValue>
+    <customValue>
+        <fullName>3109	[Brighton Music Hall]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3109	[Brighton Music Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>2019	[BSMG]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2019	[BSMG]</label>
+    </customValue>
+    <customValue>
+        <fullName>1046	[Buffalo Concerts ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1046	[Buffalo Concerts ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3052	[Camden Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3052	[Camden Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3007	[Capitol Music Hall]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3007	[Capitol Music Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>1126 	[Carl Black Chevy Woods Amphitheater at Fontanel]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1126 	[Carl Black Chevy Woods Amphitheater at Fontanel]</label>
+    </customValue>
+    <customValue>
+        <fullName>1001	[CCE Cleveland]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1001	[CCE Cleveland]</label>
+    </customValue>
+    <customValue>
+        <fullName>1001	[CCE Cleveland Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1001	[CCE Cleveland Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1012	[CDP-DC]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1012	[CDP-DC]</label>
+    </customValue>
+    <customValue>
+        <fullName>3026	[Cellar Door – Nissan Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3026	[Cellar Door – Nissan Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1016	[Cellar Door Concerts-Carolinas]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1016	[Cellar Door Concerts-Carolinas]</label>
+    </customValue>
+    <customValue>
+        <fullName>1017	[Cellar Door Concerts-Florida]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1017	[Cellar Door Concerts-Florida]</label>
+    </customValue>
+    <customValue>
+        <fullName>1031	[Cellar Door Concerts-North Central]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1031	[Cellar Door Concerts-North Central]</label>
+    </customValue>
+    <customValue>
+        <fullName>1011		[Cellar Door Michigan]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1011		[Cellar Door Michigan]</label>
+    </customValue>
+    <customValue>
+        <fullName>1013	[Cellar Door Prod of Virginia]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1013	[Cellar Door Prod of Virginia]</label>
+    </customValue>
+    <customValue>
+        <fullName>3027	[Cellar Door Venues-GTE]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3027	[Cellar Door Venues-GTE]</label>
+    </customValue>
+    <customValue>
+        <fullName>1125		[Champions Square]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1125		[Champions Square]</label>
+    </customValue>
+    <customValue>
+        <fullName>3087	[Charles Playhouse]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3087	[Charles Playhouse]</label>
+    </customValue>
+    <customValue>
+        <fullName>3038	[Charlotte Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3038	[Charlotte Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3063	[Charter One Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3063	[Charter One Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>9538	[City Lights Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>9538	[City Lights Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3033	[Clutch Cargo]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3033	[Clutch Cargo]</label>
+    </customValue>
+    <customValue>
+        <fullName>3022	[Cobb&apos;s Comedy Club]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3022	[Cobb&apos;s Comedy Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>3089	[Colonial Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3089	[Colonial Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1009	[Comedy]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1009	[Comedy]</label>
+    </customValue>
+    <customValue>
+        <fullName>3097	[Comerica Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3097	[Comerica Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3154	[Commodore ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3154	[Commodore ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3019	[Concord Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3019	[Concord Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3802	[Coney Island Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3802	[Coney Island Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1034	[Contemporary Concerts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1034	[Contemporary Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3121	[Coors Amphitheatre  ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3121	[Coors Amphitheatre  ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3042	[Cotton Club]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3042	[Cotton Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>1355	[Country Nation]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1355	[Country Nation]</label>
+    </customValue>
+    <customValue>
+        <fullName>1365	[Country Nation-Chicago]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1365	[Country Nation-Chicago]</label>
+    </customValue>
+    <customValue>
+        <fullName>3039	[CS - Chastain Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3039	[CS - Chastain Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1030	[CT Concerts, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1030	[CT Concerts, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1038	[Dallas Promo Company Exports]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1038	[Dallas Promo Company Exports]</label>
+    </customValue>
+    <customValue>
+        <fullName>3050	[Darien Lake]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3050	[Darien Lake]</label>
+    </customValue>
+    <customValue>
+        <fullName>3028	[Deer Creek]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3028	[Deer Creek]</label>
+    </customValue>
+    <customValue>
+        <fullName>1359	[Delaware Junction]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1359	[Delaware Junction]</label>
+    </customValue>
+    <customValue>
+        <fullName>1023	[Delsener/Slater Enterprises]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1023	[Delsener/Slater Enterprises]</label>
+    </customValue>
+    <customValue>
+        <fullName>3126	[Denver]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3126	[Denver]</label>
+    </customValue>
+    <customValue>
+        <fullName>1021	[Denver Concert Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1021	[Denver Concert Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3056	[Desert Sky Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3056	[Desert Sky Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>1002	[DiCesare-Engler, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1002	[DiCesare-Engler, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1045	[Don Law Agency]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1045	[Don Law Agency]</label>
+    </customValue>
+    <customValue>
+        <fullName>1044	[Don Law Events]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1044	[Don Law Events]</label>
+    </customValue>
+    <customValue>
+        <fullName>2019	[Eagle Eye]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2019	[Eagle Eye]</label>
+    </customValue>
+    <customValue>
+        <fullName>1110		[EDM Management Overhead]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1110		[EDM Management Overhead]</label>
+    </customValue>
+    <customValue>
+        <fullName>1027	[Electric Factory Concerts Inc]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1027	[Electric Factory Concerts Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>1309	[Electronic Nation]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1309	[Electronic Nation]</label>
+    </customValue>
+    <customValue>
+        <fullName>3801	[Encore Park]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3801	[Encore Park]</label>
+    </customValue>
+    <customValue>
+        <fullName>1029	[Evening Star Productions, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1029	[Evening Star Productions, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1306	[Evenko]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1306	[Evenko]</label>
+    </customValue>
+    <customValue>
+        <fullName>3141	[Festival Holdings, LLC]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3141	[Festival Holdings, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>1121		[Festivals]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1121		[Festivals]</label>
+    </customValue>
+    <customValue>
+        <fullName>3108	[Fillmore Charlotte]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3108	[Fillmore Charlotte]</label>
+    </customValue>
+    <customValue>
+        <fullName>3096	[Fillmore Miami Beach At Jackie Gleason Theatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3096	[Fillmore Miami Beach At Jackie Gleason Theatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3044	[Fillmore Theater-Denver Co]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3044	[Fillmore Theater-Denver Co]</label>
+    </customValue>
+    <customValue>
+        <fullName>3044	[Filmore Theater-Denver Co]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3044	[Filmore Theater-Denver Co]</label>
+    </customValue>
+    <customValue>
+        <fullName>9539	[Fistar]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>9539	[Fistar]</label>
+    </customValue>
+    <customValue>
+        <fullName>1057	[Founder’s Entertainment]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1057	[Founder’s Entertainment]</label>
+    </customValue>
+    <customValue>
+        <fullName>3163	[Fox Performing Arts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3163	[Fox Performing Arts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3120	[Gibson Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3120	[Gibson Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3000	[Glen Helen Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3000	[Glen Helen Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3094	[Gramercy Theatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3094	[Gramercy Theatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3071	[Great Woods]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3071	[Great Woods]</label>
+    </customValue>
+    <customValue>
+        <fullName>3072	[Harborlights]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3072	[Harborlights]</label>
+    </customValue>
+    <customValue>
+        <fullName>1111		[Hard Events]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1111		[Hard Events]</label>
+    </customValue>
+    <customValue>
+        <fullName>1028	[Hershey Star Pavillion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1028	[Hershey Star Pavillion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3124	[HiFi Buys Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3124	[HiFi Buys Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3124	[HiFi Buys Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3124	[HiFi Buys Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3032	[Historic St. Andrews Hall, Inc]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3032	[Historic St. Andrews Hall, Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>3166	[HOB Ace of Spades Corp]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3166	[HOB Ace of Spades Corp]</label>
+    </customValue>
+    <customValue>
+        <fullName>3111		[HOB Boston_Crossroads Presents, LLC]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3111		[HOB Boston_Crossroads Presents, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>1304	[HOB CAD Central]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1304	[HOB CAD Central]</label>
+    </customValue>
+    <customValue>
+        <fullName>1305	[HOB CAD West ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1305	[HOB CAD West ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3134	[HOB Club Anaheim]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3134	[HOB Club Anaheim]</label>
+    </customValue>
+    <customValue>
+        <fullName>3130	[HOB Club Chicago]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3130	[HOB Club Chicago]</label>
+    </customValue>
+    <customValue>
+        <fullName>3135	[HOB Club Cleveland]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3135	[HOB Club Cleveland]</label>
+    </customValue>
+    <customValue>
+        <fullName>3138	[HOB Club Dallas]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3138	[HOB Club Dallas]</label>
+    </customValue>
+    <customValue>
+        <fullName>3140	[HOB Club Houston]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3140	[HOB Club Houston]</label>
+    </customValue>
+    <customValue>
+        <fullName>3133	[HOB Club Las Vegas]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3133	[HOB Club Las Vegas]</label>
+    </customValue>
+    <customValue>
+        <fullName>3129	[HOB Club Los Angeles]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3129	[HOB Club Los Angeles]</label>
+    </customValue>
+    <customValue>
+        <fullName>3131	[HOB Club Myrtle Beach]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3131	[HOB Club Myrtle Beach]</label>
+    </customValue>
+    <customValue>
+        <fullName>3128	[HOB Club New Orleans]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3128	[HOB Club New Orleans]</label>
+    </customValue>
+    <customValue>
+        <fullName>3132	[HOB Club Orlando]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3132	[HOB Club Orlando]</label>
+    </customValue>
+    <customValue>
+        <fullName>3136	[HOB Club San Diego]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3136	[HOB Club San Diego]</label>
+    </customValue>
+    <customValue>
+        <fullName>1101		[Hollywood Bowl – ABE]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1101		[Hollywood Bowl – ABE]</label>
+    </customValue>
+    <customValue>
+        <fullName>3137	[House of Blues Atlantic City]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3137	[House of Blues Atlantic City]</label>
+    </customValue>
+    <customValue>
+        <fullName>3139	[House of Blues Boston]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3139	[House of Blues Boston]</label>
+    </customValue>
+    <customValue>
+        <fullName>9535	[Houston Broadway]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>9535	[Houston Broadway]</label>
+    </customValue>
+    <customValue>
+        <fullName>1112		[Insomniac]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1112		[Insomniac]</label>
+    </customValue>
+    <customValue>
+        <fullName>3046	[Irving Plaza]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3046	[Irving Plaza]</label>
+    </customValue>
+    <customValue>
+        <fullName>3008	[Jacobs Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3008	[Jacobs Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1054	[Las Vegas Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1054	[Las Vegas Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1307	[Live Nation Ontario Concerts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1307	[Live Nation Ontario Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3100	[LN Hollywood (Hollywood Palladium)]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3100	[LN Hollywood (Hollywood Palladium)]</label>
+    </customValue>
+    <customValue>
+        <fullName>1100		[LN-HS Concerts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1100		[LN-HS Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3092	[Louisville Palace Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3092	[Louisville Palace Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1322	[Markets Management Overhead]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1322	[Markets Management Overhead]</label>
+    </customValue>
+    <customValue>
+        <fullName>3010	[Melody Tent &amp; Amph]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3010	[Melody Tent &amp; Amph]</label>
+    </customValue>
+    <customValue>
+        <fullName>3062	[Memorial Hall]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3062	[Memorial Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>3164	[Mercury Ballroom]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3164	[Mercury Ballroom]</label>
+    </customValue>
+    <customValue>
+        <fullName>9999	[Merriweather Post Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>9999	[Merriweather Post Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3057	[Mesa Del Sol]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3057	[Mesa Del Sol]</label>
+    </customValue>
+    <customValue>
+        <fullName>3031	[Michigan Holdings, LLC./Orbit Room]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3031	[Michigan Holdings, LLC./Orbit Room]</label>
+    </customValue>
+    <customValue>
+        <fullName>3105	[Mizner Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3105	[Mizner Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3153	[Molson Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3153	[Molson Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3155	[Molson MLSE JV]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3155	[Molson MLSE JV]</label>
+    </customValue>
+    <customValue>
+        <fullName>3055	[Montage Mountain]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3055	[Montage Mountain]</label>
+    </customValue>
+    <customValue>
+        <fullName>1010	[Montain Winery]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1010	[Montain Winery]</label>
+    </customValue>
+    <customValue>
+        <fullName>3029	[Murat Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3029	[Murat Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1041	[Nashvile Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1041	[Nashvile Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>1124		[Nashville Promotions (2015+)]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1124		[Nashville Promotions (2015+)]</label>
+    </customValue>
+    <customValue>
+        <fullName>3103	[National City Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3103	[National City Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3103	[National City Pavillion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3103	[National City Pavillion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1000	[New Avalon, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1000	[New Avalon, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>1042	[New Era Promotions, Inc]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1042	[New Era Promotions, Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>1123		[New Orleans Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1123		[New Orleans Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3026	[Nissian Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3026	[Nissian Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>3101	[Nob Hill Masonic]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3101	[Nob Hill Masonic]</label>
+    </customValue>
+    <customValue>
+        <fullName>1007	[NW Productions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1007	[NW Productions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3069	[Oak Mountain Concerts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3069	[Oak Mountain Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3059	[Oakdale Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3059	[Oakdale Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3005	[Odeon Concert]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3005	[Odeon Concert]</label>
+    </customValue>
+    <customValue>
+        <fullName>3005	[Odeon Concert Club]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3005	[Odeon Concert Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>3091	[Opera House]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3091	[Opera House]</label>
+    </customValue>
+    <customValue>
+        <fullName>3070	[Orpheum Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3070	[Orpheum Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3118		[Orpheum Theatre-Madison]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3118		[Orpheum Theatre-Madison]</label>
+    </customValue>
+    <customValue>
+        <fullName>3113		[Orpheum_Crossroads Presents, LLC]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3113		[Orpheum_Crossroads Presents, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>1040	[Pace Concerts, LTD]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1040	[Pace Concerts, LTD]</label>
+    </customValue>
+    <customValue>
+        <fullName>1352	[Pace Touring, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1352	[Pace Touring, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>3095	[Paradise Lounge ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3095	[Paradise Lounge ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3095	[Paradise Rock Club]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3095	[Paradise Rock Club]</label>
+    </customValue>
+    <customValue>
+        <fullName>3112		[Paradise_Crossroads Presents, LLC]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3112		[Paradise_Crossroads Presents, LLC]</label>
+    </customValue>
+    <customValue>
+        <fullName>2004	[Parker Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2004	[Parker Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3025	[Pier Six Pavilion]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3025	[Pier Six Pavilion]</label>
+    </customValue>
+    <customValue>
+        <fullName>1300	[PMSI (LE)]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1300	[PMSI (LE)]</label>
+    </customValue>
+    <customValue>
+        <fullName>3051	[PNC Bank Arts Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3051	[PNC Bank Arts Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3004	[Polaris Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3004	[Polaris Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3104	[Pompano Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3104	[Pompano Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>1003	[Promotions/Cincinnati]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1003	[Promotions/Cincinnati]</label>
+    </customValue>
+    <customValue>
+        <fullName>2007	[PTG Corp.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2007	[PTG Corp.]</label>
+    </customValue>
+    <customValue>
+        <fullName>2004	[PTG Florida]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2004	[PTG Florida]</label>
+    </customValue>
+    <customValue>
+        <fullName>3024	[Punch Line Comedy Club - Sac]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3024	[Punch Line Comedy Club - Sac]</label>
+    </customValue>
+    <customValue>
+        <fullName>3023	[Punch Line Comedy Club -SF]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3023	[Punch Line Comedy Club -SF]</label>
+    </customValue>
+    <customValue>
+        <fullName>3165	[Punch line Philadelphia]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3165	[Punch line Philadelphia]</label>
+    </customValue>
+    <customValue>
+        <fullName>1015	[Ritual, Inc]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1015	[Ritual, Inc]</label>
+    </customValue>
+    <customValue>
+        <fullName>1004	[Riverbend Amph Riverbend Music Center]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1004	[Riverbend Amph Riverbend Music Center]</label>
+    </customValue>
+    <customValue>
+        <fullName>9551	[Riverside Muni Non-Consolidating Company]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>9551	[Riverside Muni Non-Consolidating Company]</label>
+    </customValue>
+    <customValue>
+        <fullName>3162	[Riverside Municipal Auditorium]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3162	[Riverside Municipal Auditorium]</label>
+    </customValue>
+    <customValue>
+        <fullName>9552	[Riverside PAC Non-Consolidating Company]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>9552	[Riverside PAC Non-Consolidating Company]</label>
+    </customValue>
+    <customValue>
+        <fullName>3040	[Roxy Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3040	[Roxy Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3017	[Sacramento Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3017	[Sacramento Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3015	[SAL]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3015	[SAL]</label>
+    </customValue>
+    <customValue>
+        <fullName>1122		[San Diego Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1122		[San Diego Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3061	[Sandstone Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3061	[Sandstone Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3016	[SAP]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3016	[SAP]</label>
+    </customValue>
+    <customValue>
+        <fullName>3049	[Saratoga Performing Arts Center]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3049	[Saratoga Performing Arts Center]</label>
+    </customValue>
+    <customValue>
+        <fullName>1350	[SFX Touring, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1350	[SFX Touring, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>3014	[Shoreline Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3014	[Shoreline Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3125	[Smirnoff Music Centre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3125	[Smirnoff Music Centre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3036	[Sound Advice Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3036	[Sound Advice Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>1019	[Southern Promotions]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1019	[Southern Promotions]</label>
+    </customValue>
+    <customValue>
+        <fullName>3035	[St. Andrews Hall]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3035	[St. Andrews Hall]</label>
+    </customValue>
+    <customValue>
+        <fullName>3009	[Star Lake Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3009	[Star Lake Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>1014	[Sunshine Promotions, Inc.]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1014	[Sunshine Promotions, Inc.]</label>
+    </customValue>
+    <customValue>
+        <fullName>3012	[Taft/Cincinnati]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3012	[Taft/Cincinnati]</label>
+    </customValue>
+    <customValue>
+        <fullName>3043	[Tampa]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3043	[Tampa]</label>
+    </customValue>
+    <customValue>
+        <fullName>1032	[TEG]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1032	[TEG]</label>
+    </customValue>
+    <customValue>
+        <fullName>3149	[The Aztec Theatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3149	[The Aztec Theatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3020	[The Fillmore]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3020	[The Fillmore]</label>
+    </customValue>
+    <customValue>
+        <fullName>3034	[The Fillmore Detroit]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3034	[The Fillmore Detroit]</label>
+    </customValue>
+    <customValue>
+        <fullName>3161	[The Fillmore Philadelphia]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3161	[The Fillmore Philadelphia]</label>
+    </customValue>
+    <customValue>
+        <fullName>3160	[The Fillmore Silver Spring]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3160	[The Fillmore Silver Spring]</label>
+    </customValue>
+    <customValue>
+        <fullName>3122	[The Gorge  ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3122	[The Gorge  ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3058	[The Meadows Music Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3058	[The Meadows Music Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1323	[The Ritz]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1323	[The Ritz]</label>
+    </customValue>
+    <customValue>
+        <fullName>3041	[The Tabernacle]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3041	[The Tabernacle]</label>
+    </customValue>
+    <customValue>
+        <fullName>3002	[The Wiltern]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3002	[The Wiltern]</label>
+    </customValue>
+    <customValue>
+        <fullName>3054	[Theater of the Living Arts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3054	[Theater of the Living Arts]</label>
+    </customValue>
+    <customValue>
+        <fullName>2010	[Tour 1]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>2010	[Tour 1]</label>
+    </customValue>
+    <customValue>
+        <fullName>3090	[Tour 2]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3090	[Tour 2]</label>
+    </customValue>
+    <customValue>
+        <fullName>3006	[Tower City Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3006	[Tower City Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3053	[Tower Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3053	[Tower Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3107	[Uptown Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3107	[Uptown Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3060	[Verizon Wireless Amphitheater-St. Louis]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3060	[Verizon Wireless Amphitheater-St. Louis]</label>
+    </customValue>
+    <customValue>
+        <fullName>3067	[Verizon Wireless Amphitheater-Texas]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3067	[Verizon Wireless Amphitheater-Texas]</label>
+    </customValue>
+    <customValue>
+        <fullName>3001	[Verizon Wireless Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3001	[Verizon Wireless Amphitheatre]</label>
+    </customValue>
+    <customValue>
+        <fullName>3068	[Verizon Wireless Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3068	[Verizon Wireless Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3037	[Walnut Creek Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3037	[Walnut Creek Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3021	[Warfield Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3021	[Warfield Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3106	[Warner Theatre - NA Music]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3106	[Warner Theatre - NA Music]</label>
+    </customValue>
+    <customValue>
+        <fullName>3048	[Westbury Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3048	[Westbury Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3018	[White River Amphitheater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3018	[White River Amphitheater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3088	[Wilbur Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3088	[Wilbur Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>3003	[Wilturn Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3003	[Wilturn Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1036	[Woodlands Amphi]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1036	[Woodlands Amphi]</label>
+    </customValue>
+    <customValue>
+        <fullName>3064	[World Music Theater]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3064	[World Music Theater]</label>
+    </customValue>
+    <customValue>
+        <fullName>1046 [Buffalo Concerts ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1046 [Buffalo Concerts ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3154 [Commodore ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3154 [Commodore ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3121 [Coors Amphitheatre  ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3121 [Coors Amphitheatre  ]</label>
+    </customValue>
+    <customValue>
+        <fullName>1305 [HOB CAD West ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1305 [HOB CAD West ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3095 [Paradise Lounge ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3095 [Paradise Lounge ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3122 [The Gorge  ]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3122 [The Gorge  ]</label>
+    </customValue>
+    <customValue>
+        <fullName>3122	[The Gorge]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3122	[The Gorge]</label>
+    </customValue>
+    <customValue>
+        <fullName>3095	[Paradise Lounge]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3095	[Paradise Lounge]</label>
+    </customValue>
+    <customValue>
+        <fullName>1305	[HOB CAD West]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1305	[HOB CAD West]</label>
+    </customValue>
+    <customValue>
+        <fullName>1046	[Buffalo Concerts]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>1046	[Buffalo Concerts]</label>
+    </customValue>
+    <customValue>
+        <fullName>3154	[Commodore]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3154	[Commodore]</label>
+    </customValue>
+    <customValue>
+        <fullName>3121	[Coors Amphitheatre]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>3121	[Coors Amphitheatre]</label>
+    </customValue>
+    <description>GL Company Name for Oracle Integration</description>
+    <masterLabel>GL Company Name</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

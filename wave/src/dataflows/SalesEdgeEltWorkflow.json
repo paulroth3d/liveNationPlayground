@@ -1,0 +1,1448 @@
+{
+    "101": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "AccountId"
+                },
+                {
+                    "name": "CurrencyIsoCode"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "CreatedDate"
+                },
+                {
+                    "name": "Description"
+                },
+                {
+                    "name": "ActivityDateTime"
+                },
+                {
+                    "name": "IsAllDayEvent"
+                },
+                {
+                    "name": "DurationInMinutes"
+                },
+                {
+                    "name": "EndDateTime"
+                },
+                {
+                    "name": "EventSubtype"
+                },
+                {
+                    "name": "GroupEventType"
+                },
+                {
+                    "name": "IsGroupEvent"
+                },
+                {
+                    "name": "IsChild"
+                },
+                {
+                    "name": "Location"
+                },
+                {
+                    "name": "LastModifiedDate"
+                },
+                {
+                    "name": "ShowAs"
+                },
+                {
+                    "name": "StartDateTime"
+                },
+                {
+                    "name": "Subject"
+                }
+            ],
+            "object": "Event"
+        }
+    },
+    "102": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Type"
+                },
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "PrimaryOffice__c"
+                },
+                {
+                    "name": "RecordTypeId"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "Description"
+                },
+                {
+                    "name": "Phone"
+                },
+                {
+                    "name": "Capacity__c"
+                }
+            ],
+            "object": "Account"
+        }
+    },
+    "103": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "DeveloperName"
+                },
+                {
+                    "name": "SobjectType"
+                },
+                {
+                    "name": "IsActive"
+                }
+            ],
+            "object": "RecordType"
+        }
+    },
+    "104": {
+        "action": "augment",
+        "parameters": {
+            "left": "101",
+            "left_key": [
+                "AccountId"
+            ],
+            "relationship": "AccountId",
+            "right": "102",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Type",
+                "Name",
+                "PrimaryOffice__c",
+                "RecordTypeId"
+            ]
+        }
+    },
+    "105": {
+        "action": "augment",
+        "parameters": {
+            "left": "104",
+            "left_key": [
+                "AccountId.PrimaryOffice__c"
+            ],
+            "relationship": "AccountId.PrimaryOffice__c",
+            "right": "102",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name",
+                "Id",
+                "Description",
+                "Phone",
+                "Type",
+                "Capacity__c"
+            ]
+        }
+    },
+    "106": {
+        "action": "augment",
+        "parameters": {
+            "left": "105",
+            "left_key": [
+                "AccountId.RecordTypeId"
+            ],
+            "relationship": "AccountId.RecordTypeId",
+            "right": "103",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name",
+                "Id",
+                "DeveloperName",
+                "SobjectType",
+                "IsActive"
+            ]
+        }
+    },
+    "107": {
+        "action": "sfdcRegister",
+        "parameters": {
+            "alias": "Rome_Events",
+            "name": "Rome Events",
+            "source": "106"
+        }
+    },
+    "108": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "AccountId"
+                },
+                {
+                    "name": "CurrencyIsoCode"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "CreatedDate"
+                },
+                {
+                    "name": "Description"
+                },
+                {
+                    "name": "ActivityDateTime"
+                },
+                {
+                    "name": "IsAllDayEvent"
+                },
+                {
+                    "name": "DurationInMinutes"
+                },
+                {
+                    "name": "EndDateTime"
+                },
+                {
+                    "name": "EventSubtype"
+                },
+                {
+                    "name": "GroupEventType"
+                },
+                {
+                    "name": "IsGroupEvent"
+                },
+                {
+                    "name": "IsChild"
+                },
+                {
+                    "name": "Location"
+                },
+                {
+                    "name": "LastModifiedDate"
+                },
+                {
+                    "name": "ShowAs"
+                },
+                {
+                    "name": "StartDateTime"
+                },
+                {
+                    "name": "Subject"
+                }
+            ],
+            "object": "Event"
+        }
+    },
+    "109": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Type"
+                },
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "RecordTypeId"
+                },
+                {
+                    "name": "Id"
+                }
+            ],
+            "object": "Account"
+        }
+    },
+    "110": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "DeveloperName"
+                },
+                {
+                    "name": "SobjectType"
+                },
+                {
+                    "name": "IsActive"
+                }
+            ],
+            "object": "RecordType"
+        }
+    },
+    "111": {
+        "action": "augment",
+        "parameters": {
+            "left": "108",
+            "left_key": [
+                "AccountId"
+            ],
+            "relationship": "AccountId",
+            "right": "109",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Type",
+                "Name",
+                "RecordTypeId"
+            ]
+        }
+    },
+    "112": {
+        "action": "augment",
+        "parameters": {
+            "left": "111",
+            "left_key": [
+                "AccountId.RecordTypeId"
+            ],
+            "relationship": "AccountId.RecordTypeId",
+            "right": "110",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name",
+                "Id",
+                "DeveloperName",
+                "SobjectType",
+                "IsActive"
+            ]
+        }
+    },
+    "113": {
+        "action": "sfdcRegister",
+        "parameters": {
+            "alias": "EventInfo2",
+            "name": "EventInfo2",
+            "source": "112"
+        }
+    },
+    "114": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "CurrencyIsoCode"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "CreatedDate"
+                },
+                {
+                    "name": "Description"
+                },
+                {
+                    "name": "ActivityDateTime"
+                },
+                {
+                    "name": "IsAllDayEvent"
+                },
+                {
+                    "name": "DurationInMinutes"
+                },
+                {
+                    "name": "EndDateTime"
+                },
+                {
+                    "name": "EventSubtype"
+                },
+                {
+                    "name": "GroupEventType"
+                },
+                {
+                    "name": "IsGroupEvent"
+                },
+                {
+                    "name": "IsChild"
+                },
+                {
+                    "name": "Location"
+                },
+                {
+                    "name": "LastModifiedDate"
+                },
+                {
+                    "name": "ShowAs"
+                },
+                {
+                    "name": "StartDateTime"
+                },
+                {
+                    "name": "Subject"
+                }
+            ],
+            "object": "Event"
+        }
+    },
+    "115": {
+        "action": "sfdcRegister",
+        "parameters": {
+            "alias": "EventTable",
+            "name": "EventTable",
+            "source": "114"
+        }
+    },
+    "116": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "AdPlan__c"
+                },
+                {
+                    "name": "NumberofClicks__c"
+                },
+                {
+                    "name": "NumberofImpressions__c"
+                },
+                {
+                    "name": "NumberofLocations__c"
+                },
+                {
+                    "name": "NumberofSpots__c"
+                },
+                {
+                    "name": "AAARate__c"
+                },
+                {
+                    "name": "AdSize__c"
+                },
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "AnnouncementType__c"
+                },
+                {
+                    "name": "ApplyNet__c"
+                },
+                {
+                    "name": "BuyType__c"
+                },
+                {
+                    "name": "CalculatedGross__c"
+                },
+                {
+                    "name": "CalculatedNet__c"
+                },
+                {
+                    "name": "CampaignType__c"
+                },
+                {
+                    "name": "Channel__c"
+                },
+                {
+                    "name": "Commission__c"
+                },
+                {
+                    "name": "CreatedDate"
+                },
+                {
+                    "name": "CurrencyIsoCode"
+                },
+                {
+                    "name": "Date__c"
+                },
+                {
+                    "name": "IsDeleted"
+                },
+                {
+                    "name": "EffectiveCommission__c"
+                },
+                {
+                    "name": "EndDate__c"
+                },
+                {
+                    "name": "EndTime__c"
+                },
+                {
+                    "name": "ExpenseType__c"
+                },
+                {
+                    "name": "Format__c"
+                },
+                {
+                    "name": "FormatSize__c"
+                },
+                {
+                    "name": "Gross__c"
+                },
+                {
+                    "name": "GrossCostToAdPlan__c"
+                },
+                {
+                    "name": "HasNonLNEBudget__c"
+                },
+                {
+                    "name": "LastModifiedDate"
+                },
+                {
+                    "name": "Market__c"
+                },
+                {
+                    "name": "MediaTypeFormat__c"
+                },
+                {
+                    "name": "Net__c"
+                },
+                {
+                    "name": "NetCostToAdPlan__c"
+                },
+                {
+                    "name": "Program__c"
+                },
+                {
+                    "name": "Rate__c"
+                },
+                {
+                    "name": "RecalculateCommission__c"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "Section__c"
+                },
+                {
+                    "name": "SourceSystemId__c"
+                },
+                {
+                    "name": "SpotType__c"
+                },
+                {
+                    "name": "StartDate__c"
+                },
+                {
+                    "name": "StartTime__c"
+                },
+                {
+                    "name": "SystemModstamp"
+                },
+                {
+                    "name": "RecordTypeId"
+                },
+                {
+                    "name": "NonLNEBudget__c"
+                }
+            ],
+            "object": "Advertisement__c"
+        }
+    },
+    "117": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "AdPlanName__c"
+                },
+                {
+                    "name": "AdPlanNotRequired__c"
+                },
+                {
+                    "name": "Artists__c"
+                },
+                {
+                    "name": "CloseEnd__c"
+                },
+                {
+                    "name": "CloseStart__c"
+                },
+                {
+                    "name": "CreatedDate"
+                },
+                {
+                    "name": "DigitalDefaultCommission__c"
+                },
+                {
+                    "name": "DigitalSpend__c"
+                },
+                {
+                    "name": "DigitalSpendPercent__c"
+                },
+                {
+                    "name": "ExemptionReason__c"
+                },
+                {
+                    "name": "FirstDate__c"
+                },
+                {
+                    "name": "Geography__c"
+                },
+                {
+                    "name": "LastDate__c"
+                },
+                {
+                    "name": "LNEAdPlanBudget__c"
+                },
+                {
+                    "name": "LNESpend__c"
+                },
+                {
+                    "name": "MaintenanceEnd__c"
+                },
+                {
+                    "name": "MaintenanceStart__c"
+                },
+                {
+                    "name": "Market__c"
+                },
+                {
+                    "name": "NonLNEBudget__c"
+                },
+                {
+                    "name": "NonLNESpend__c"
+                },
+                {
+                    "name": "OnSaleEnd__c"
+                },
+                {
+                    "name": "OnSaleStart__c"
+                },
+                {
+                    "name": "OutdoorDefaultCommission__c"
+                },
+                {
+                    "name": "OutdoorSpend__c"
+                },
+                {
+                    "name": "OutdoorSpendPercent__c"
+                },
+                {
+                    "name": "PrintDefaultCommission__c"
+                },
+                {
+                    "name": "PrintSpend__c"
+                },
+                {
+                    "name": "PrintSpendPercent__c"
+                },
+                {
+                    "name": "ProductionMiscellaneousSpend__c"
+                },
+                {
+                    "name": "ProductionMiscellaneousSpendPercent__c"
+                },
+                {
+                    "name": "RadioDefaultCommission__c"
+                },
+                {
+                    "name": "RadioSpend__c"
+                },
+                {
+                    "name": "RadioSpendPercent__c"
+                },
+                {
+                    "name": "RecordTypeName__c"
+                },
+                {
+                    "name": "RemainingLNEBudget__c"
+                },
+                {
+                    "name": "RemainingNonLNEBudget__c"
+                },
+                {
+                    "name": "SourceSystemId__c"
+                },
+                {
+                    "name": "StandaloneDate__c"
+                },
+                {
+                    "name": "Status__c"
+                },
+                {
+                    "name": "TelevisionSpend__c"
+                },
+                {
+                    "name": "TelevisionSpendPercent__c"
+                },
+                {
+                    "name": "TotalLNESpend__c"
+                },
+                {
+                    "name": "TourBudget__c"
+                },
+                {
+                    "name": "TourBudgetPercent__c"
+                },
+                {
+                    "name": "TourBudgetRemaining__c"
+                },
+                {
+                    "name": "TVDefaultCommission__c"
+                },
+                {
+                    "name": "Venue__c"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "OwnerId"
+                },
+                {
+                    "name": "RecordTypeId"
+                },
+                {
+                    "name": "EventDateTime__c"
+                }
+            ],
+            "object": "AdPlan__c"
+        }
+    },
+    "118": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "Id"
+                }
+            ],
+            "object": "User"
+        }
+    },
+    "119": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "DeveloperName"
+                },
+                {
+                    "name": "Id"
+                }
+            ],
+            "object": "RecordType"
+        }
+    },
+    "120": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "EventDate__c"
+                },
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "EventEndDate__c"
+                },
+                {
+                    "name": "Country__c"
+                },
+                {
+                    "name": "EventType__c"
+                },
+                {
+                    "name": "EventStatus__c"
+                },
+                {
+                    "name": "StartTime__c"
+                },
+                {
+                    "name": "State__c"
+                },
+                {
+                    "name": "Subtype__c"
+                },
+                {
+                    "name": "Event__c"
+                },
+                {
+                    "name": "Id"
+                }
+            ],
+            "object": "EventDateTime__c"
+        }
+    },
+    "121": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "ActualDropCount__c"
+                },
+                {
+                    "name": "AdjustedGrossPotential__c"
+                },
+                {
+                    "name": "AdvertisingBudget__c"
+                },
+                {
+                    "name": "AncillariesPerFan__c"
+                },
+                {
+                    "name": "Artists__c"
+                },
+                {
+                    "name": "BuyingGroup__c"
+                },
+                {
+                    "name": "DivisionFormula__c"
+                },
+                {
+                    "name": "EventFirstDate__c"
+                },
+                {
+                    "name": "EventCancelled__c"
+                },
+                {
+                    "name": "EventLastDate__c"
+                },
+                {
+                    "name": "EventName__c"
+                },
+                {
+                    "name": "FlashComplete__c"
+                },
+                {
+                    "name": "FlashCompletedBy__c"
+                },
+                {
+                    "name": "Geography__c"
+                },
+                {
+                    "name": "GLCompanyName__c"
+                },
+                {
+                    "name": "GLCompanyVenueType__c"
+                },
+                {
+                    "name": "GrossLawnCapacity__c"
+                },
+                {
+                    "name": "GrossPotential__c"
+                },
+                {
+                    "name": "GrossReservedCapacity__c"
+                },
+                {
+                    "name": "UsingHouseNut__c"
+                },
+                {
+                    "name": "HouseNutAmount__c"
+                },
+                {
+                    "name": "LawnComps__c"
+                },
+                {
+                    "name": "LawnKills__c"
+                },
+                {
+                    "name": "LawnPaidAttendance__c"
+                },
+                {
+                    "name": "Market__c"
+                },
+                {
+                    "name": "NetAncillaries__c"
+                },
+                {
+                    "name": "NetCapacity__c"
+                },
+                {
+                    "name": "NetGrossPotential__c"
+                },
+                {
+                    "name": "NetManifestedLawnCapacity__c"
+                },
+                {
+                    "name": "NetManifestedReservedCapacity__c"
+                },
+                {
+                    "name": "NetPotPotential__c"
+                },
+                {
+                    "name": "PaidAttendance__c"
+                },
+                {
+                    "name": "PlatinumLift__c"
+                },
+                {
+                    "name": "ProjectedAdjustedGross__c"
+                },
+                {
+                    "name": "ProjectedArtistCosts__c"
+                },
+                {
+                    "name": "ProjectedAverageTicketPrice__c"
+                },
+                {
+                    "name": "ProjectedDropCount__c"
+                },
+                {
+                    "name": "ProjectedDropCountPct__c"
+                },
+                {
+                    "name": "ProjectedGross__c"
+                },
+                {
+                    "name": "ProjectedGrossLift__c"
+                },
+                {
+                    "name": "ProjectedGrossSales__c"
+                },
+                {
+                    "name": "ProjectedNetGross__c"
+                },
+                {
+                    "name": "ProjectedNetPot__c"
+                },
+                {
+                    "name": "ProjectedPaidTickets__c"
+                },
+                {
+                    "name": "ProjectedSplitPoint__c"
+                },
+                {
+                    "name": "ProjectedToBeSharedAmount__c"
+                },
+                {
+                    "name": "PublicOnSale__c"
+                },
+                {
+                    "name": "Id"
+                },
+                {
+                    "name": "ReservedComps__c"
+                },
+                {
+                    "name": "ReservedKills__c"
+                },
+                {
+                    "name": "ReservedNetGross__c"
+                },
+                {
+                    "name": "ReservedPaidAttendance__c"
+                },
+                {
+                    "name": "SelloutAverageTicketPrice__c"
+                },
+                {
+                    "name": "SelloutDropCount__c"
+                },
+                {
+                    "name": "SelloutGrossLift__c"
+                },
+                {
+                    "name": "SelloutGrossSales__c"
+                },
+                {
+                    "name": "SelloutPaidTickets__c"
+                },
+                {
+                    "name": "SettlementAdjustedGross__c"
+                },
+                {
+                    "name": "SettlementArtistInclusiveGuarantee__c"
+                },
+                {
+                    "name": "SettlementArtistShare__c"
+                },
+                {
+                    "name": "SettlementArtistSuppliedSL__c"
+                },
+                {
+                    "name": "SettlementAverageTicketPrice__c"
+                },
+                {
+                    "name": "SettlementBackendPercentage__c"
+                },
+                {
+                    "name": "SettlementDealCalculation__c"
+                },
+                {
+                    "name": "SettlementDealType__c"
+                },
+                {
+                    "name": "SettlementDeductions__c"
+                },
+                {
+                    "name": "SettlementGross__c"
+                },
+                {
+                    "name": "SettlementGrossSales__c"
+                },
+                {
+                    "name": "SettlementGuarantee__c"
+                },
+                {
+                    "name": "SettlementHouseNut__c"
+                },
+                {
+                    "name": "SettlementNetGross__c"
+                },
+                {
+                    "name": "SettlementNetPot__c"
+                },
+                {
+                    "name": "SettlementPaidTickets__c"
+                },
+                {
+                    "name": "SettlementOtherTalentAmount__c"
+                },
+                {
+                    "name": "SettlementPlatinumLift__c"
+                },
+                {
+                    "name": "SettlementPlatinumRevenue__c"
+                },
+                {
+                    "name": "SettlementPromoterEarnings__c"
+                },
+                {
+                    "name": "SettlementRecapComplete__c"
+                },
+                {
+                    "name": "SettlementRecapCompletedBy__c"
+                },
+                {
+                    "name": "SettlementSplitPoint__c"
+                },
+                {
+                    "name": "SettlementStarted__c"
+                },
+                {
+                    "name": "SettlementToBeSharedAmount__c"
+                },
+                {
+                    "name": "SettlementTotalSupportActExpenses__c"
+                },
+                {
+                    "name": "ShowCount__c"
+                },
+                {
+                    "name": "SourceSystemId__c"
+                },
+                {
+                    "name": "Source__c"
+                },
+                {
+                    "name": "Status__c"
+                },
+                {
+                    "name": "Subtype__c"
+                },
+                {
+                    "name": "TalentOverhead__c"
+                },
+                {
+                    "name": "Office__c"
+                },
+                {
+                    "name": "Promoter__c"
+                },
+                {
+                    "name": "RecordTypeId"
+                }
+            ],
+            "object": "Event__c"
+        }
+    },
+    "122": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Name"
+                },
+                {
+                    "name": "Type"
+                },
+                {
+                    "name": "VenueName__c"
+                },
+                {
+                    "name": "GLCompanyName__c"
+                },
+                {
+                    "name": "GLCompanyVenueType__c"
+                },
+                {
+                    "name": "Id"
+                }
+            ],
+            "object": "Account"
+        }
+    },
+    "123": {
+        "action": "sfdcDigest",
+        "parameters": {
+            "fields": [
+                {
+                    "name": "Budget__c"
+                },
+                {
+                    "name": "Id"
+                }
+            ],
+            "object": "NonLNEBudget__c"
+        }
+    },
+    "124": {
+        "action": "augment",
+        "parameters": {
+            "left": "116",
+            "left_key": [
+                "AdPlan__c"
+            ],
+            "relationship": "AdPlan__c",
+            "right": "117",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "AdPlanName__c",
+                "AdPlanNotRequired__c",
+                "Artists__c",
+                "CloseEnd__c",
+                "CloseStart__c",
+                "CreatedDate",
+                "DigitalDefaultCommission__c",
+                "DigitalSpend__c",
+                "DigitalSpendPercent__c",
+                "ExemptionReason__c",
+                "FirstDate__c",
+                "Geography__c",
+                "LastDate__c",
+                "LNEAdPlanBudget__c",
+                "LNESpend__c",
+                "MaintenanceEnd__c",
+                "MaintenanceStart__c",
+                "Market__c",
+                "NonLNEBudget__c",
+                "NonLNESpend__c",
+                "OnSaleEnd__c",
+                "OnSaleStart__c",
+                "OutdoorDefaultCommission__c",
+                "OutdoorSpend__c",
+                "OutdoorSpendPercent__c",
+                "PrintDefaultCommission__c",
+                "PrintSpend__c",
+                "PrintSpendPercent__c",
+                "ProductionMiscellaneousSpend__c",
+                "ProductionMiscellaneousSpendPercent__c",
+                "RadioDefaultCommission__c",
+                "RadioSpend__c",
+                "RadioSpendPercent__c",
+                "RecordTypeName__c",
+                "RemainingLNEBudget__c",
+                "RemainingNonLNEBudget__c",
+                "SourceSystemId__c",
+                "StandaloneDate__c",
+                "Status__c",
+                "TelevisionSpend__c",
+                "TelevisionSpendPercent__c",
+                "TotalLNESpend__c",
+                "TourBudget__c",
+                "TourBudgetPercent__c",
+                "TourBudgetRemaining__c",
+                "TVDefaultCommission__c",
+                "Venue__c",
+                "Id",
+                "OwnerId",
+                "RecordTypeId",
+                "EventDateTime__c"
+            ]
+        }
+    },
+    "125": {
+        "action": "augment",
+        "parameters": {
+            "left": "124",
+            "left_key": [
+                "AdPlan__c.OwnerId"
+            ],
+            "relationship": "AdPlan__c.OwnerId",
+            "right": "118",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name"
+            ]
+        }
+    },
+    "126": {
+        "action": "augment",
+        "parameters": {
+            "left": "125",
+            "left_key": [
+                "AdPlan__c.RecordTypeId"
+            ],
+            "relationship": "AdPlan__c.RecordTypeId",
+            "right": "119",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name",
+                "DeveloperName"
+            ]
+        }
+    },
+    "127": {
+        "action": "augment",
+        "parameters": {
+            "left": "126",
+            "left_key": [
+                "AdPlan__c.EventDateTime__c"
+            ],
+            "relationship": "AdPlan__c.EventDateTime__c",
+            "right": "120",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "EventDate__c",
+                "Name",
+                "EventEndDate__c",
+                "Country__c",
+                "EventType__c",
+                "EventStatus__c",
+                "StartTime__c",
+                "State__c",
+                "Subtype__c",
+                "Event__c"
+            ]
+        }
+    },
+    "128": {
+        "action": "augment",
+        "parameters": {
+            "left": "127",
+            "left_key": [
+                "AdPlan__c.EventDateTime__c.Event__c"
+            ],
+            "relationship": "AdPlan__c.EventDateTime__c.Event__c",
+            "right": "121",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "ActualDropCount__c",
+                "AdjustedGrossPotential__c",
+                "AdvertisingBudget__c",
+                "AncillariesPerFan__c",
+                "Artists__c",
+                "BuyingGroup__c",
+                "DivisionFormula__c",
+                "EventFirstDate__c",
+                "EventCancelled__c",
+                "EventLastDate__c",
+                "EventName__c",
+                "FlashComplete__c",
+                "FlashCompletedBy__c",
+                "Geography__c",
+                "GLCompanyName__c",
+                "GLCompanyVenueType__c",
+                "GrossLawnCapacity__c",
+                "GrossPotential__c",
+                "GrossReservedCapacity__c",
+                "UsingHouseNut__c",
+                "HouseNutAmount__c",
+                "LawnComps__c",
+                "LawnKills__c",
+                "LawnPaidAttendance__c",
+                "Market__c",
+                "NetAncillaries__c",
+                "NetCapacity__c",
+                "NetGrossPotential__c",
+                "NetManifestedLawnCapacity__c",
+                "NetManifestedReservedCapacity__c",
+                "NetPotPotential__c",
+                "PaidAttendance__c",
+                "PlatinumLift__c",
+                "ProjectedAdjustedGross__c",
+                "ProjectedArtistCosts__c",
+                "ProjectedAverageTicketPrice__c",
+                "ProjectedDropCount__c",
+                "ProjectedDropCountPct__c",
+                "ProjectedGross__c",
+                "ProjectedGrossLift__c",
+                "ProjectedGrossSales__c",
+                "ProjectedNetGross__c",
+                "ProjectedNetPot__c",
+                "ProjectedPaidTickets__c",
+                "ProjectedSplitPoint__c",
+                "ProjectedToBeSharedAmount__c",
+                "PublicOnSale__c",
+                "Id",
+                "ReservedComps__c",
+                "ReservedKills__c",
+                "ReservedNetGross__c",
+                "ReservedPaidAttendance__c",
+                "SelloutAverageTicketPrice__c",
+                "SelloutDropCount__c",
+                "SelloutGrossLift__c",
+                "SelloutGrossSales__c",
+                "SelloutPaidTickets__c",
+                "SettlementAdjustedGross__c",
+                "SettlementArtistInclusiveGuarantee__c",
+                "SettlementArtistShare__c",
+                "SettlementArtistSuppliedSL__c",
+                "SettlementAverageTicketPrice__c",
+                "SettlementBackendPercentage__c",
+                "SettlementDealCalculation__c",
+                "SettlementDealType__c",
+                "SettlementDeductions__c",
+                "SettlementGross__c",
+                "SettlementGrossSales__c",
+                "SettlementGuarantee__c",
+                "SettlementHouseNut__c",
+                "SettlementNetGross__c",
+                "SettlementNetPot__c",
+                "SettlementPaidTickets__c",
+                "SettlementOtherTalentAmount__c",
+                "SettlementPlatinumLift__c",
+                "SettlementPlatinumRevenue__c",
+                "SettlementPromoterEarnings__c",
+                "SettlementRecapComplete__c",
+                "SettlementRecapCompletedBy__c",
+                "SettlementSplitPoint__c",
+                "SettlementStarted__c",
+                "SettlementToBeSharedAmount__c",
+                "SettlementTotalSupportActExpenses__c",
+                "ShowCount__c",
+                "SourceSystemId__c",
+                "Source__c",
+                "Status__c",
+                "Subtype__c",
+                "TalentOverhead__c",
+                "Office__c",
+                "Promoter__c",
+                "RecordTypeId"
+            ]
+        }
+    },
+    "129": {
+        "action": "augment",
+        "parameters": {
+            "left": "128",
+            "left_key": [
+                "AdPlan__c.EventDateTime__c.Event__c.Office__c"
+            ],
+            "relationship": "AdPlan__c.EventDateTime__c.Event__c.Office__c",
+            "right": "122",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name",
+                "Type",
+                "VenueName__c",
+                "GLCompanyName__c",
+                "GLCompanyVenueType__c"
+            ]
+        }
+    },
+    "130": {
+        "action": "augment",
+        "parameters": {
+            "left": "129",
+            "left_key": [
+                "AdPlan__c.EventDateTime__c.Event__c.Promoter__c"
+            ],
+            "relationship": "AdPlan__c.EventDateTime__c.Event__c.Promoter__c",
+            "right": "118",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name"
+            ]
+        }
+    },
+    "131": {
+        "action": "augment",
+        "parameters": {
+            "left": "130",
+            "left_key": [
+                "AdPlan__c.EventDateTime__c.Event__c.RecordTypeId"
+            ],
+            "relationship": "AdPlan__c.EventDateTime__c.Event__c.RecordTypeId",
+            "right": "119",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "DeveloperName",
+                "Name"
+            ]
+        }
+    },
+    "132": {
+        "action": "augment",
+        "parameters": {
+            "left": "131",
+            "left_key": [
+                "RecordTypeId"
+            ],
+            "relationship": "RecordTypeId",
+            "right": "119",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Name",
+                "DeveloperName"
+            ]
+        }
+    },
+    "133": {
+        "action": "augment",
+        "parameters": {
+            "left": "132",
+            "left_key": [
+                "NonLNEBudget__c"
+            ],
+            "relationship": "NonLNEBudget__c",
+            "right": "123",
+            "right_key": [
+                "Id"
+            ],
+            "right_select": [
+                "Budget__c"
+            ]
+        }
+    },
+    "134": {
+        "action": "sfdcRegister",
+        "parameters": {
+            "alias": "LocalMarketing",
+            "name": "LocalMarketing",
+            "source": "133"
+        }
+    }
+}

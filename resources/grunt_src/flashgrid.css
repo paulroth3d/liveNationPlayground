@@ -1,0 +1,8 @@
+//-- your info goes here:flashgrid
+//-- to deploy run: grunt deployGridBuddyResource:flashgrid
+
+/* dom added jan 3rd 2017 */
+.fixedHeaderContainer .fixedHeaderRow td[name="v5"],
+.fixedHeaderContainer .fixedHeaderRow td[name="v6"] {
+	display: none;
+}

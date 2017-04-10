@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Represents a request for refresh">
+    <aura:attribute name="sender" type='String' />
+    <aura:attribute name="targetName" type='String' />
+    <aura:attribute name="description" type='String' />
+</aura:event>

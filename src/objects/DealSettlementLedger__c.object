@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object linking the Deal with Ledger Entries so settlement values can be planned and settled upon per Deal</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CurrentAmountAtProjectionNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Amount At Projection (NF)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CurrentAmountAtSelloutNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Amount At Sellout (NF)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CurrentAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!Share__c, 0,
+   CASE(LedgerEntry__r.RecordType.DeveloperName,
+      &quot;COGS&quot;,
+         IF(PrimarySecondaryCoPromoter__c = &quot;Primary&quot;, LedgerEntry__r.COGSAtSellout__c * -1,LedgerEntry__r.COGSAtSellout__c * -1 - LedgerEntry__r.PrimaryCoProShareAtSellout__c),
+      &quot;Ancillary&quot;,
+         IF(PrimarySecondaryCoPromoter__c = &quot;Primary&quot;,LedgerEntry__r.NetRevenueatSellout__c, LedgerEntry__r.NetRevenueatSellout__c- LedgerEntry__r.PrimaryCoProShareAtSellout__c),
+      null
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Amount At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CurrentAmountatProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!Share__c, 0,
+   CASE(LedgerEntry__r.RecordType.DeveloperName,
+      &quot;COGS&quot;,
+         IF(PrimarySecondaryCoPromoter__c = &quot;Primary&quot;, LedgerEntry__r.COGSAtForecast__c * -1,LedgerEntry__r.COGSAtForecast__c * -1 - LedgerEntry__r.PrimaryCoProShareAtProjection__c),
+      &quot;Ancillary&quot;,
+         IF(PrimarySecondaryCoPromoter__c = &quot;Primary&quot;,LedgerEntry__r.NetRevenue__c, LedgerEntry__r.NetRevenue__c- LedgerEntry__r.PrimaryCoProShareAtProjection__c),
+      null
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Amount at Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DealTypeNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal Type (NF)</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DealType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Deal__r.Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Deal Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deal__c</fullName>
+        <externalId>false</externalId>
+        <label>Deal</label>
+        <referenceTo>Deal__c</referenceTo>
+        <relationshipLabel>Settlement Entries</relationshipLabel>
+        <relationshipName>DealSettlementLedgers</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>EventVenueOwnershipTypeNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Venue Ownership Type (NF)</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventVenueOwnershipType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(LedgerEntry__r.Event__r.Venue__r.OwnershipType__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Venue Ownership Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentAtProjectionNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Adjustment At Projection (NF)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentAtSelloutNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Expense Adjustment At Sellout (NF)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!Share__c, 0,
+   IF(LedgerEntry__r.RecordType.DeveloperName = &quot;Expenses&quot;,
+      IF(PrimarySecondaryCoPromoter__c = &quot;Primary&quot;,
+         LedgerEntry__r.ExpenseAdjustmentatSellout__c,
+         LedgerEntry__r.ExpenseAdjustmentatSellout__c - LedgerEntry__r.PrimaryCoProShareAtSellout__c
+      ),
+      0
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expense Adjustment At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpenseAdjustmentatProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!Share__c, 0,
+   IF(LedgerEntry__r.RecordType.DeveloperName = &quot;Expenses&quot;,
+      IF(PrimarySecondaryCoPromoter__c = &quot;Primary&quot;,
+         LedgerEntry__r.ExpenseAdjustment__c,
+         LedgerEntry__r.ExpenseAdjustment__c - LedgerEntry__r.PrimaryCoProShareAtProjection__c
+      ),
+      0
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expense Adjustment at Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GLDescription__c</fullName>
+        <externalId>false</externalId>
+        <formula>LedgerEntry__r.GLAccount__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GL Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GLType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(LedgerEntry__r.GLAccount__r.Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GL Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LedgerEntry__c</fullName>
+        <externalId>false</externalId>
+        <label>Ledger Entry</label>
+        <referenceTo>LedgerEntry__c</referenceTo>
+        <relationshipLabel>Settlement Entries</relationshipLabel>
+        <relationshipName>DealSettlementLedgers</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PrimaryCoProShareAtProjectionNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Co-Pro Share At Projection (NF)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryCoProShareAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!Share__c, 0,
+   IF(OR(LedgerEntry__r.RecordType.DeveloperName = &quot;Ancillary&quot;, LedgerEntry__r.RecordType.DeveloperName = &quot;COGS&quot;),
+      Deal__r.AncillaryRevenue__c * CurrentAmountatProjection__c,
+      IF(AND(LedgerEntry__r.RecordType.DeveloperName = &quot;Expenses&quot;,  ExpenseAdjustmentatProjection__c &gt; 0),
+         Deal__r.ExpenseAdjustmentProfit__c * ExpenseAdjustmentatProjection__c,
+         IF(AND(LedgerEntry__r.RecordType.DeveloperName = &quot;Expenses&quot;,  ExpenseAdjustmentatProjection__c &lt; 0),
+            Deal__r.ExpenseAdjustmentLoss__c * ExpenseAdjustmentatProjection__c,
+            0
+         )
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Co-Pro Share At Projection</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryCoProShareAtSelloutNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Co-Pro Share At Sellout (NF)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryCoProShareAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(!Share__c, 0,
+IF(OR(LedgerEntry__r.RecordType.DeveloperName = &quot;Ancillary&quot;, LedgerEntry__r.RecordType.DeveloperName = &quot;COGS&quot;),
+   /* True */
+   Deal__r.AncillaryRevenue__c * CurrentAmountAtSellout__c,
+   /* False */
+   IF(AND(LedgerEntry__r.RecordType.DeveloperName = &quot;Expenses&quot;,  ExpenseAdjustmentAtSellout__c &gt; 0),
+      /* True */
+      Deal__r.ExpenseAdjustmentProfit__c * ExpenseAdjustmentAtSellout__c,
+      /* False */
+      IF(AND(LedgerEntry__r.RecordType.DeveloperName = &quot;Expenses&quot;,  ExpenseAdjustmentAtSellout__c &lt; 0),
+         /* True */
+         Deal__r.ExpenseAdjustmentLoss__c * ExpenseAdjustmentAtSellout__c,
+         /* False */
+         0
+      )
+   )
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Co-Pro Share At Sellout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PrimarySecondaryCoPromoterNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary/Secondary Co-Promoter (NF)</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrimarySecondaryCoPromoter__c</fullName>
+        <externalId>false</externalId>
+        <formula>text( Deal__r.PrimarySecondaryCoPromoter__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary/Secondary Co-Promoter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Share__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Share</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>SourceSystemId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>TypeNF__c</fullName>
+        <externalId>false</externalId>
+        <label>Type (NF)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>LedgerEntry__r.RecordType.DeveloperName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCurrentAmountAtProjectionNF__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CurrentAmountAtProjectionNF__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Current Amount At Projection (NF) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCurrentAmountAtSelloutNF__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CurrentAmountAtSelloutNF__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Current Amount At Sellout (NF) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCurrentAmountAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CurrentAmountAtSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Current Amount At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxCurrentAmountatProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CurrentAmountatProjection__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Current Amount at Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustmentAtProjectionNF__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustmentAtProjectionNF__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Exp Adj At Projection (NF) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustmentAtSelloutNF__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustmentAtSelloutNF__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Expense Adjustment At Sellout (NF) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustmentAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustmentAtSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Expense Adjustment At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxExpenseAdjustmentatProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ExpenseAdjustmentatProjection__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Expense Adjustment at Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPrimaryCoProShareAtProjectionNF__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PrimaryCoProShareAtProjectionNF__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Pro Share At Projection (NF) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPrimaryCoProShareAtProjection__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PrimaryCoProShareAtProjection__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Pro Share At Projection (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPrimaryCoProShareAtSelloutNF__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PrimaryCoProShareAtSelloutNF__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Pro Share At Sellout (NF) (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>fxPrimaryCoProShareAtSellout__c</fullName>
+        <externalId>false</externalId>
+        <formula>(PrimaryCoProShareAtSellout__c / (LedgerEntry__r.Event__r.CurrencyExchange__r.ExchangeRate__c))</formula>
+        <label>Co-Pro Share At Sellout (USD)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Deal Settlement-Ledger</label>
+    <nameField>
+        <displayFormat>DSL-{000000}</displayFormat>
+        <label>Deal Settlement-Ledger ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Deal Settlement-Ledgers</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
